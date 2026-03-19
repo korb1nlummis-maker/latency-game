@@ -1,0 +1,667 @@
+{
+    "meta": {
+        "file": "act5-chapter3a-secret-endings",
+        "act": 5,
+        "chapter": "3a",
+        "description": "Secret Endings (#86-#93) — Hidden narrative conclusions requiring specific flag combinations accumulated across the entire game. These endings are the rarest in LATENCY, each demanding a precise chain of decisions spanning Acts 1-5. They represent the game's deepest narrative payoffs.",
+        "triggerContext": "These endings are reached through the Secret Endings menu at the conclusion of Act 5, or triggered automatically when the engine detects the required flag constellation at the endgame checkpoint. Players will typically discover only 1-2 of these per full playthrough.",
+        "endingRange": "86-93"
+    },
+    "nodes": {
+
+        "ending_086_approach": {
+            "id": "act5.chapter3a.ending_086_approach",
+            "title": "The Collector's Inventory",
+            "location": "spire_penthouse",
+            "conditions": [
+                { "flag": "delivered_child", "value": true },
+                { "flag": "prologue.accepted_stack", "value": true },
+                { "flag": "faction.neonCourt.allied", "value": true }
+            ],
+            "text": [
+                "The elevator takes ninety-three seconds to reach the penthouse. You know because you've counted every morning for the past two years. Ninety-three seconds of polished brass and soft lighting and a mirror you've learned not to look at. The doors open to imported marble, to windows that span the entire east wall of the Spire, to a view of the city that makes everything below look like circuitry on a motherboard. Small. Abstract. Easy to not think about as people.",
+                "Your assistant has laid out the morning's itinerary on a crystal tablet. Three acquisitions pending. Two deliveries confirmed. One client requesting a custom order — specifications attached, age range seven to twelve, synth-compatible, emotional subroutines intact. You read the specifications the way you once read restaurant menus: with mild preference but no moral weight. The language is clinical. Product. Inventory. Units.",
+                "The Neon Court taught you this. They taught you that everything beautiful is a commodity, and the most beautiful commodities are the ones that breathe. You were a good student. You surpassed your teachers. The trafficking ring you inherited from the Court's lower echelons is now the largest consciousness distribution network in the eastern districts. You don't call it trafficking. You call it placement services.",
+                "You accepted the stack in the prologue because you were afraid of death. You delivered that first child because you were afraid of poverty. You allied with the Neon Court because you were afraid of powerlessness. Fear built this penthouse, one compromise at a time, and now you live in it."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.the_collector.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Review the morning's inventory.",
+                    "next": "act5.chapter3a.ending_086_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_penthouse_hollow",
+            "isEnding": false
+        },
+
+        "ending_086_mid": {
+            "id": "act5.chapter3a.ending_086_mid",
+            "title": "The Eyes in the Merchandise",
+            "location": "spire_penthouse",
+            "text": [
+                "The showroom occupies the floor below the penthouse. It is tasteful. That's the word the designers used and the word your clients repeat to each other at their private auctions. Tasteful. Soft lighting. Climate-controlled pods arranged in concentric circles, each containing a child or adolescent in medically maintained stasis, their vital signs displayed on elegant holographic panels. The aesthetic is gallery, not warehouse. You insisted on that. You told yourself it mattered.",
+                "You walk the rows the way a vintner walks a cellar. Checking temperatures. Noting which units are approaching optimal cortical development for extraction. Marking which ones have been reserved by returning clients. Your heels click on the polished floor, and somewhere beneath the sedation, the merchandise tracks the sound. Their eyes move behind closed lids. Dreaming. You hope they dream of something better than this.",
+                "You stop at Pod 7-Gamma. The unit inside is eleven years old, synth-hybrid, with a neural architecture so clean it will fetch a price that would have bought your entire childhood neighborhood. The unit's face is turned toward you. And the eyes are open.",
+                "They are not supposed to be open. The sedation protocols are precise. But the eyes are open and they are looking at you, and they are Pixel's eyes. Not metaphorically. Not poetically. Literally Pixel's eyes — the same amber-gold irises with the fractal patterning unique to Volkov-series synthetics. The child you delivered in the first act. The one that started all of this. Somehow a unit with those same eyes has ended up in your inventory, staring at you through the glass, and the expression on that small face is not fear. It is recognition.",
+                "The child mouths a single word. You read it on their lips. Collector."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.the_collector.confronted", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "You can't look away.",
+                    "next": "act5.chapter3a.ending_086_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dread_slow",
+            "isEnding": false
+        },
+
+        "ending_086_final": {
+            "id": "act5.chapter3a.ending_086_final",
+            "title": "ENDING #86: The Collector",
+            "location": "spire_penthouse",
+            "text": [
+                "You sit at the penthouse window for a long time after. The crystal tablet chimes with incoming orders. The assistant requests approval for three new acquisitions. A client in the upper Spire wants to know if you can source a matched pair, twins preferred, for a private event. The messages stack up on the display, each one a tiny atrocity phrased in the language of commerce, and you let them pile up because you cannot stop seeing those amber-gold eyes.",
+                "This is what you built. Not overnight. Not through a single catastrophic choice. Through a thousand small surrenders, each one reasonable, each one necessary, each one moving you one step further from the person who walked into this city with nothing but a heartbeat and a fear of dying. You accepted the stack because mortality was too heavy. You delivered the child because the alternative was your own destruction. You joined the Neon Court because they were beautiful and powerful and they made the ugliness feel elegant. And now you sit in a golden tower surrounded by living merchandise and you understand, with a clarity that feels like a blade between the ribs, that you are the monster the city warned you about.",
+                "The worst part is not the guilt. The worst part is how long it takes to arrive. Two years of morning inventories. Two years of clinical language and tasteful lighting and the soft hum of sedation pods. The guilt should have been immediate. It should have been deafening. Instead it crept in on the back of a child's gaze, a pair of amber-gold eyes that asked a question you have no answer for: how did you get from there to here?",
+                "You look at the city below. Twenty million people living and dying and struggling in the circuits of a system designed to extract value from consciousness itself. And you are no longer fighting that system. You are not even surviving within it. You are operating it. You are the extraction. You are the circuit that processes children into product and product into profit and profit into this marble floor, this imported whiskey, this window that lets you watch the suffering from a comfortable distance.",
+                "The tablet chimes again. Another order. Another child. Another small atrocity dressed in tasteful language. Your finger hovers over the approval button. You have pressed it a thousand times before. It has never felt like anything. But those amber-gold eyes are still watching from Pod 7-Gamma, and for the first time in two years, your hand is shaking.",
+                "You press it anyway. That is the ending. Not redemption. Not collapse. Not a dramatic rejection of everything you've become. Just the tremor in your hand as you do it again, and the knowledge, settling into your bones like mercury, that the tremor will fade. It always fades. Tomorrow you will walk the rows again and your heels will click and the merchandise will dream and you will not think about Pixel's eyes. You are the Collector. And collectors do not stop."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "ending.the_collector", "value": true },
+                { "type": "set_flag", "flag": "ending.secret.the_collector", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ending_the_collector",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_086"
+        },
+
+        "ending_087_approach": {
+            "id": "act5.chapter3a.ending_087_approach",
+            "title": "The Rooftop Invitation",
+            "location": "safehouse_rooftop",
+            "conditions": [
+                { "flag": "mako.alive", "value": true },
+                { "flag": "kira.alive", "value": true },
+                { "flag": "zero.alive", "value": true },
+                { "flag": "jade.alive", "value": true },
+                { "flag": "ember.alive", "value": true },
+                { "flag": "rust.alive", "value": true }
+            ],
+            "text": [
+                "The message comes on the worst possible day. Your body is a map of the war — bruises layered over older bruises, a cut above your eye that keeps reopening, ribs that grind when you breathe too deep. The city is still shuddering from the factional collapse. The power grid cycles through brownouts every four hours. Half the Lower District is flooded from a burst water main that no one has the resources to fix. The news feeds are a wall of casualty numbers and missing persons reports and the particular bureaucratic language of a civilization trying to pretend it hasn't just been shaken to its foundation.",
+                "And then the message: a single line from Mako's encrypted channel. Rooftop. Tonight. Bring nothing. There is a hand-drawn emoji at the end that might be a fish or might be a heart. With Mako, it's impossible to tell.",
+                "You climb six flights of stairs because the elevator died three days ago. Each step costs something. Your knees. Your lungs. The last reserves of a body that has been running on adrenaline and spite since the opening shots of Act 3. By the time you push open the rooftop access door, you are ready to collapse.",
+                "Then you see them. All of them. And for the first time in longer than you can remember, the weight lifts."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.full_circle.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Step onto the rooftop.",
+                    "next": "act5.chapter3a.ending_087_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_rooftop_night",
+            "isEnding": false
+        },
+
+        "ending_087_mid": {
+            "id": "act5.chapter3a.ending_087_mid",
+            "title": "Everyone's Here",
+            "location": "safehouse_rooftop",
+            "text": [
+                "Mako has commandeered a rusted industrial grill from somewhere and is coaxing it to life with the same stubborn patience they apply to everything. The smell of actual food — not ration bars, not nutrient paste, but real protein sizzling over real heat — rises into the night air like a prayer. They look up as you approach and their face does the thing it always does: that slow, crooked smile that somehow communicates both 'I'm glad you're alive' and 'sit down before you fall down.'",
+                "Kira is sitting on the roof's edge, legs dangling over six stories of nothing, tossing pebbles into the dark and tracking their trajectories with the mathematical precision that once made her the best sniper in the district. She has a bottle of something amber beside her. She doesn't look up when you arrive, but she shifts slightly to make room. That's Kira's version of a hug.",
+                "Zero has rigged a speaker system from salvaged components, and music pours from it — old music, pre-Collapse music, the kind of songs people wrote when they still believed the future would be better than the past. They're sitting cross-legged on a thermal blanket, their fingers moving over a datapad, mixing and layering and pulling harmonies from the ruined air. Their face, usually locked behind the neutral expression of someone perpetually calculating, is soft. Open. Almost peaceful.",
+                "Jade is telling a story to Ember, gesturing with both hands, their voice carrying that warm resonance that makes everything they say sound like an old legend being retold. Ember is laughing — really laughing, the kind that comes from the gut, the kind you forget you're capable of during wartime. And Rust is leaning against the rooftop's water tower, arms crossed, watching everyone with the quiet satisfaction of a person who builds things that last and is finally seeing the proof.",
+                "Six people. All alive. In a city that has spent five acts trying to kill every single one of them."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.full_circle.gathered", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Join the party.",
+                    "next": "act5.chapter3a.ending_087_final"
+                }
+            ],
+            "ascii": null,
+            "music": "music_rooftop_gathering",
+            "isEnding": false
+        },
+
+        "ending_087_final": {
+            "id": "act5.chapter3a.ending_087_final",
+            "title": "ENDING #87: Full Circle",
+            "location": "safehouse_rooftop",
+            "text": [
+                "Mako's food is extraordinary. You don't know where they found the spices, don't know how they managed to turn scavenged protein and hydroponic vegetables into something that tastes like a memory of a home you never had. But you eat until your plate is empty and then Mako refills it without being asked, because that is what Mako does: they feed people. In a world that commodifies consciousness and weaponizes identity, Mako's rebellion is a grill and a crooked smile and the stubborn belief that no one should be hungry.",
+                "Kira eventually joins the group, bringing the amber bottle. It's genuine whiskey — pre-war stock, aged in actual oak, the kind of thing that would cost a month's credits on the black market. She pours without asking how much anyone wants. She gives everyone the same amount. Equal shares. Kira's version of fairness has always been mathematical, and tonight the math is simple: divide by six. No remainders. No one left out.",
+                "Zero plays a song you don't recognize. It's soft, meandering, built from samples they've collected throughout the entire journey — the hum of the safehouse generator, the rhythm of rain on corrugated roofing, Mako's laugh, Kira's sniper rifle cycling a round, Jade reciting poetry, Ember's fist hitting a punching bag, Rust's welding torch igniting. It's a song made from the sounds of six people surviving together, and it is the most beautiful thing you have ever heard.",
+                "The city spreads below you like a wounded animal breathing in the dark. The Spire's upper floors are dark for the first time in decades. The factional borders that carved the districts into hostile territories are blurring, not because the factions have dissolved but because people are crossing them anyway, carrying water and medical supplies and the radical notion that the person on the other side of the barricade might also be worth saving. It's not peace. It's the exhausted, tentative, bruised thing that comes before peace, the moment when everyone is too tired to keep fighting and just awake enough to notice the stars.",
+                "Ember raises a glass. 'To the ones we lost.' The silence that follows is enormous, shaped by the names you carry — all of you carry — the people who didn't make it to this rooftop, who fell in the riots or the raids or the quiet catastrophes that happen between the plot points. You drink to them. You drink to each other. You drink to the improbable, irrational, statistically impossible fact that six people who should be dead are sitting on a rooftop in a broken city, eating real food, listening to real music, and feeling something that is not fear.",
+                "The party lasts until dawn. Mako falls asleep against the grill. Kira stays on the roof's edge, watching the city wake up, and for once her eyes aren't scanning for threats. Zero's music shifts into something ambient and slow, a lullaby for people who haven't slept safely in months. Jade and Ember are talking quietly about what comes next. Rust is already sketching plans for rebuilding. And you sit in the middle of all of it, surrounded by the people who kept you alive and whom you kept alive in return, and you understand that this is the ending. Not the victory. Not the revolution. Not the grand restructuring of power. Just this. A rooftop. A meal. The people you love, still breathing. The city is still broken. Tomorrow you'll have to deal with that. But tonight, just tonight, it doesn't matter."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "ending.full_circle", "value": true },
+                { "type": "set_flag", "flag": "ending.secret.full_circle", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ending_full_circle",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_087"
+        },
+
+        "ending_088_approach": {
+            "id": "act5.chapter3a.ending_088_approach",
+            "title": "Still Here",
+            "location": "lower_district_slum_apartment",
+            "conditions": [
+                { "flag": "faction.joined", "value": false },
+                { "flag": "job.taken", "value": false },
+                { "check": "story_flags_count", "operator": "less_than", "value": 5 }
+            ],
+            "text": [
+                "The alarm doesn't wake you because you don't have an alarm. What wakes you is the leak. The same leak in the same corner of the same ceiling that has been dripping into the same tin bucket since the day you arrived in this city. Drip. Drip. Drip. The sound is so familiar it has become a kind of clock, measuring out the hours of a life that has, against all probability and narrative expectation, remained almost entirely uneventful.",
+                "You didn't join a faction. You didn't take a job. You didn't accept the stack, didn't deliver any children, didn't hack any terminals or shoot any enforcers or fall in love with any charismatic rebels. The city offered you a thousand entry points into its grand machinery of conflict and consequence, and you declined them all. Not heroically. Not as a statement. You simply didn't.",
+                "The apartment is the same apartment. Six hundred square feet of peeling wallpaper and secondhand furniture and a window that faces a wall. The mirror in the bathroom is cracked from the day you moved in, a fissure running diagonally from corner to corner that splits your reflection into two slightly offset versions of yourself. You've never fixed it. Fixing it would require going to the hardware district, which would require crossing faction territory, which would require having opinions about factions, which would require engagement with a world you have not engaged with.",
+                "You make coffee. The machine is old. The coffee is bad. But it's hot and it's yours and you drink it standing at the window, looking at the wall, and that is your morning."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.nobody.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Another day.",
+                    "next": "act5.chapter3a.ending_088_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_morning",
+            "isEnding": false
+        },
+
+        "ending_088_mid": {
+            "id": "act5.chapter3a.ending_088_mid",
+            "title": "The Shape of Nothing",
+            "location": "lower_district_slum_apartment",
+            "text": [
+                "Outside, the city is ending. Or beginning. Or transforming — the news feeds can't agree, and you've stopped reading them. The factional war has reached some kind of conclusion, you gather from the fragments that leak through the thin walls of your apartment. Your neighbor's television is always too loud. Through the plaster, you catch pieces: a Meridian announcement, a broadcast from someone called the Broker, the sound of distant explosions muffled by both distance and drywall. History is happening somewhere nearby. You make another cup of bad coffee.",
+                "The strange thing is that no one has come for you. In a city where everyone is a resource, a recruit, a target, or an asset, you have managed to be none of these things. You exist in the margins of the ledger, the rounding error in the census data, the person the algorithms skip because your predictive behavior profile is too boring to monetize. You are, in the truest sense of the word, nobody.",
+                "And there is something in that. Something you didn't expect. In a world that treats identity as a commodity and consciousness as a natural resource, your refusal to become anything has made you, paradoxically, free. No faction owns your loyalty. No employer owns your labor. No lover owns your heart. No stack owns your death. You are the most liberated person in the city, and all it cost you was everything that makes liberation worth having.",
+                "You sit on the bed. The springs creak in the familiar pattern. The leak drips. The coffee cools. And you think about nothing, which is, in its own way, a kind of victory."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.nobody.reflected", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Look in the cracked mirror.",
+                    "next": "act5.chapter3a.ending_088_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_quiet",
+            "isEnding": false
+        },
+
+        "ending_088_final": {
+            "id": "act5.chapter3a.ending_088_final",
+            "title": "ENDING #88: Nobody",
+            "location": "lower_district_slum_apartment",
+            "text": [
+                "The cracked mirror gives you two of yourself. You've stared at this split reflection so many times that you've stopped seeing the fracture and started seeing the faces as two separate people. One is the person you are: unremarkable, uninvolved, untouched by the narrative currents that have reshaped every life around you. The other is the person you might have been, the one who accepted the call to adventure, who joined a faction, who fought, who loved, who mattered. They exist on the other side of the crack, looking back at you with an expression you cannot read.",
+                "You could fix the mirror. You could walk outside and become someone. The war is over or nearly over and the city is about to be rebuilt and they will need people, warm bodies to fill roles in whatever new order emerges from the ashes of the old one. You could matter. Even now, even this late, you could step into the current and let it carry you somewhere.",
+                "You look at the cracked mirror for a long time. Then you finish your coffee. You rinse the cup. You set it upside down on the rack beside the sink, in the same spot you always set it. The leak drips. The walls murmur with someone else's news. The bed creaks when you sit. The window shows you a wall.",
+                "But you're alive. You didn't die in a faction war. You weren't harvested for your cortical data. You weren't conscripted or trafficked or martyred or consumed by the thousand grinding mechanisms the city uses to convert people into fuel. You are alive and free and nobody, and your apartment has a leak and bad coffee and a cracked mirror, and outside the window is a wall, and beyond the wall is a city that has spent five acts trying to use you and has failed, completely and utterly, because you gave it nothing to use.",
+                "There is a philosophy in that. You don't have a name for it. You're not sure it needs one. The ceiling leaks. The mirror is cracked. The coffee is bad. But you're alive, and in a city where consciousness is currency and identity is a target, sometimes being nobody is the only way to be free. Sometimes surviving without a story is a story all its own.",
+                "The bucket needs emptying. You empty it. You put it back. The dripping begins again. This is your life. It is small and quiet and nobody will write it down. And sometimes that is everything."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "ending.nobody", "value": true },
+                { "type": "set_flag", "flag": "ending.secret.nobody", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ending_nobody",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_088"
+        },
+
+        "ending_089_approach": {
+            "id": "act5.chapter3a.ending_089_approach",
+            "title": "Volkov's Console",
+            "location": "volkov_laboratory",
+            "conditions": [
+                { "stat": "tech", "operator": "gte", "value": 18 },
+                { "flag": "anamnesis_core_found", "value": true },
+                { "flag": "volkov_code_obtained", "value": true }
+            ],
+            "text": [
+                "The laboratory is exactly where the code said it would be: seven levels below the Meridian Tower's public basement, behind a blast door that hasn't been opened since Volkov disappeared. The air that escapes when the seals break is cold and stale, preserved like a breath held for decades. Inside, the lights flicker to life one bank at a time, illuminating a workspace that is part server room, part surgical theater, part cathedral.",
+                "Volkov built the cortical stack. That single invention — the technology that allows human consciousness to be copied, stored, traded, and transplanted — reshaped civilization more profoundly than fire or language or the splitting of the atom. Every faction, every power structure, every moral catastrophe and existential question in this city traces back to this room and the person who worked here.",
+                "The Anamnesis Core sits in a shielded housing at the center of the lab, pulsing with a light that shifts between frequencies the human eye was never designed to process. It is the original prototype. Stack Zero. The template from which every cortical stack in the world was derived. And with Volkov's source code — the uncompiled, annotated, raw code you pulled from the dead drop in Act 3 — you can do what no one has been able to do since Volkov vanished: open it. Modify it. Rewrite the fundamental architecture of human consciousness storage.",
+                "Your tech stat didn't reach 18 by accident. Every skill point was a choice: every terminal hacked, every system cracked, every hour spent learning the language the machines speak when they think no one is listening. You sit at Volkov's console and the interface recognizes the code immediately. The screen fills with options that would make a lesser engineer weep."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.architect_reborn.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Begin the compile sequence.",
+                    "next": "act5.chapter3a.ending_089_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_volkov_lab",
+            "isEnding": false
+        },
+
+        "ending_089_mid": {
+            "id": "act5.chapter3a.ending_089_mid",
+            "title": "The God Terminal",
+            "location": "volkov_laboratory",
+            "text": [
+                "The compile takes eleven minutes. While you wait, you read Volkov's notes. They are scattered across the workspace — physical paper, the old kind, covered in a handwriting that deteriorates from precise to frantic over what appears to be several years of work. The early notes are technical: architecture diagrams, bandwidth calculations, compression algorithms for neural patterns. The middle notes are philosophical: questions about continuity of identity, about whether a copied mind is the same mind, about the moral weight of creating a technology that makes death optional.",
+                "The late notes are apologies. They're addressed to no one. To everyone. To the city. To the children who would be trafficked for their cortical potential. To the workers whose consciousness would be leased like equipment. To the soldiers who would die and be resleeved and die again in endless loops of corporate warfare. Volkov saw all of it coming. Every atrocity. Every exploitation. And built the stack anyway, because the alternative — mortality, the permanent and irreversible loss of every mind that ever existed — seemed worse. The notes end mid-sentence. The last word is 'forgive.'",
+                "The compile finishes. The console presents you with the Anamnesis Core's root architecture: the deepest layer of code that determines how consciousness is captured, compressed, and stored. Every stack in the city is a derivative of this code. Every mind that has ever been backed up runs on a framework that originates here, in this room, on this screen. And now you can change it.",
+                "The options are staggering. You could add a kill switch — a universal off button that would deactivate every stack simultaneously, returning mortality to a world that has forgotten how to die. You could remove the copy function, making stacks one-to-one, ending the possibility of consciousness trafficking. You could open the architecture, making it free, stripping Meridian of its monopoly. You could encrypt it, lock it, bury it. Or you could do what Volkov did: improve it. Make it better. Make the compression lossless. Make the transfer seamless. Make consciousness truly immortal, not the degraded, lossy approximation that current stacks provide.",
+                "The cursor blinks. The laboratory hums. Volkov's last word stares at you from a piece of yellowed paper. Forgive. The power to reshape every mind in the city is at your fingertips."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.architect_reborn.at_console", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Place your hands on the keyboard.",
+                    "next": "act5.chapter3a.ending_089_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_volkov_lab_intense",
+            "isEnding": false
+        },
+
+        "ending_089_final": {
+            "id": "act5.chapter3a.ending_089_final",
+            "title": "ENDING #89: The Architect Reborn",
+            "location": "volkov_laboratory",
+            "text": [
+                "You type. For hours, you type. The code flows from your fingers with a fluency that surprises you, as if every hack, every terminal breach, every system you cracked throughout this journey was preparation for this moment. Volkov's framework is elegant but flawed — brilliant in conception, compromised by the constraints of the hardware available thirty years ago. You can see the seams. You can see where the compression loses fidelity, where the transfer protocol introduces latency, where the architecture makes consciousness vulnerable to the exploitations that have defined this city's economy of suffering.",
+                "And you fix it. Line by line. Function by function. You rewrite the fundamental code that governs how human minds are stored, and you make it better. Not perfect — perfect is a word for people who haven't read Volkov's notes — but better. You add consent protocols that cannot be bypassed. You build in identity verification that makes consciousness theft impossible. You create an open-source architecture that strips Meridian of its monopoly and gives every person in the city ownership of their own backup. You encode the right to die — truly die, permanently and irrevocably — into the base layer of the system, so that no one can ever again be trapped in an immortality they didn't choose.",
+                "The upload takes three seconds. Three seconds to propagate the new code to every stack server in the city. Three seconds to rewrite the rules of consciousness. Three seconds between the world as it was and the world as you've made it. The Anamnesis Core pulses once, twice, and then settles into a new rhythm — slower, steadier, like a heart that has finally found its resting rate.",
+                "Volkov's console displays a single line of output: ARCHITECTURE UPDATED. NODES AFFECTED: 21,847,293. You stare at the number. Twenty-one million minds, reshaped by the code you wrote in a dead woman's laboratory. The weight of it is not what you expected. It's not triumphant. It's not terrifying. It's quiet. The quiet of a surgeon who has closed the incision and is waiting to see if the patient breathes.",
+                "You stand up from the console. Your back aches. Your eyes burn. The laboratory feels different now — not a shrine to Volkov's guilt but a workshop where something was built, broken, and rebuilt by different hands. You pick up the yellowed paper with Volkov's last word. Forgive. You fold it carefully and put it in your pocket. Not as absolution. As a reminder. The person who built the cage and the person who rebuilt the key are not so different. The only distinction is what they chose to do with the power.",
+                "You walk to the blast door. Behind you, the Anamnesis Core hums its new song. Ahead of you, the city is waking up to a world where consciousness belongs to the conscious, where death is a right and immortality is a choice and no one will ever again be merchandise. It's not utopia. You wrote the code and you know its limitations. But it's better. And sometimes, in a city built on the exploitation of the mind, better is revolutionary. You climb the seven levels back to the surface. The sun is rising. You have no idea what happens next. Neither does anyone else. For the first time in decades, the future is unwritten."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "ending.architect_reborn", "value": true },
+                { "type": "set_flag", "flag": "ending.secret.architect_reborn", "value": true },
+                { "type": "set_flag", "flag": "anamnesis_core.rewritten", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ending_architect_reborn",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_089"
+        },
+
+        "ending_090_approach": {
+            "id": "act5.chapter3a.ending_090_approach",
+            "title": "What Matters",
+            "location": "dynamic_romantic",
+            "conditions": [
+                { "check": "any_npc_relationship", "tier": "romantic", "value": true }
+            ],
+            "text": [
+                "The city is a wound. Everyone says so. The factions say it. The news feeds say it. The graffiti on the Lower District walls says it in six languages and forty fonts. The city is wounded and bleeding and broken and someone needs to fix it, rebuild it, save it, burn it down, start over, fight harder, die for it, live for it. The city demands everything from everyone. It is a machine that runs on sacrifice.",
+                "But there is a person beside you. There has been a person beside you for a long time now — through the worst of it, through the gunfire and the betrayals and the long nights when the ceiling was too low and the walls were too thin and the only thing keeping the despair at bay was the sound of someone else breathing in the dark. You have fought a war. You have lost friends. You have made choices that will follow you into whatever afterlife the stack provides or denies. But through all of it, there was this: a hand to hold. A voice in the dark. A reason, small and personal and defiantly irrelevant to the grand narrative, to keep going.",
+                "The war is ending. Or pausing. Or transforming into something new. It doesn't matter. What matters is that the person beside you is still beside you, and you are still beside them, and in a city that treats consciousness as currency and love as a vulnerability to be exploited, the two of you have committed the most radical act available: you have cared about each other more than you cared about winning.",
+                "They're looking at you now. The way they always look at you. Like the rest of the city is noise and you are the signal."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.love_story.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Look back.",
+                    "next": "act5.chapter3a.ending_090_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_intimate",
+            "isEnding": false
+        },
+
+        "ending_090_mid": {
+            "id": "act5.chapter3a.ending_090_mid",
+            "title": "The Specific Shape of Love",
+            "location": "dynamic_romantic",
+            "text": [
+                {
+                    "condition": { "flag": "romance.kira.active" },
+                    "text": "Kira doesn't say it. She has never said it and you have learned not to need her to. What Kira does is hand you the rifle and stand at your back when the shooting starts. What Kira does is calculate every angle of a room to determine which position gives you the best cover. What Kira does is fall asleep with one hand on her weapon and the other on your heartbeat, as if both require the same vigilance. Love, in Kira's dialect, is a tactical assessment: you are the asset she will not lose. And in the moments between the violence, when the world goes quiet, she leans her head against your shoulder and breathes in a way that suggests she has been holding her breath for a very long time."
+                },
+                {
+                    "condition": { "flag": "romance.jade.active" },
+                    "text": "Jade tells you the story of every scar. Not the combat ones — those are boring, they say, and wave their hand as if dismissing a mediocre play. But the other scars. The one on their left palm from the first time they tried to cook for someone they loved. The thin line on their chin from a childhood fall they could have prevented but didn't because they were looking at the sky. The invisible ones: the scar from the first betrayal, the scar from the first loss, the scar from the day they realized the city would never be beautiful enough to match the stories they told about it. Jade loves you in narrative. They build you a mythology. In their version, you are not a person fighting a war. You are a legend in the first draft, rough and imperfect and already more real than anything the factions have manufactured."
+                },
+                {
+                    "condition": { "flag": "romance.zero.active" },
+                    "text": "Zero writes you a song. They don't tell you that's what it is. They call it 'an audio experiment' and play it through their datapad speakers while you're falling asleep, and it's only later, when you listen closely, that you hear the structure: your heartbeat sampled and looped as the bassline. The rhythm of your footsteps as percussion. Your laugh, pitched down and stretched into a warm drone that fills the background like sunlight translated into sound. Zero has taken the raw data of your existence and composed it into something that makes the air vibrate differently. 'It's just frequencies,' they say when you ask. But their eyes are soft in a way that has nothing to do with frequency."
+                },
+                {
+                    "condition": { "flag": "romance.ember.active" },
+                    "text": "Ember fights you. That's how it started and that's how it continues. Not cruelty. Never cruelty. But a bruising, breathless, relentless refusal to let you be less than what you are. Ember pushes back. Ember calls you out. Ember stands in front of you when you're about to make a coward's choice and says the thing no one else will say, the hard true thing that feels like a fist and heals like medicine. And afterward, when the argument is over and the silence is thick and warm, Ember pulls you close with hands that could break concrete and holds you with the desperate gentleness of someone who knows exactly how fragile the things that matter really are."
+                },
+                {
+                    "condition": { "flag": "romance.rust.active" },
+                    "text": "Rust builds you things. A shelf for the apartment. A mount for your weapon. A heating element for the shower that somehow produces water that is actually warm. They never announce these projects. You come home and there is simply a new piece of functional craftsmanship in a place where there used to be a problem. Rust loves in engineering. They see the broken parts of your life and they fix them, quietly, methodically, with the same patient precision they apply to everything. And when the building is done, when the last bolt is tightened and the last seam is welded, Rust sits beside you and says nothing, because the thing they built says it for them."
+                }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.love_story.variant_shown", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "This is enough. This is everything.",
+                    "next": "act5.chapter3a.ending_090_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_intimate",
+            "isEnding": false
+        },
+
+        "ending_090_final": {
+            "id": "act5.chapter3a.ending_090_final",
+            "title": "ENDING #90: Love Story",
+            "location": "dynamic_romantic",
+            "text": [
+                "Here is what the factions don't understand. Here is what the corporations and the warlords and the brokers and the architects of this magnificent, terrible city have never been able to compute: love is not a variable. It cannot be optimized. It does not submit to game theory or market analysis or the elegant mathematics of power. It is inefficient and irrational and it breaks every model that tries to contain it, and that is precisely why it is the most dangerous force in a city built on the assumption that all human behavior can be predicted, commodified, and controlled.",
+                "You did not fall in love strategically. There was no faction benefit. No stat increase. No narrative advantage to choosing this person over solitude or alliance or the cold efficiency of caring about nothing. You fell in love because they were there, and you were there, and the city was trying to kill both of you, and in the space between the violence something grew that neither of you planned and neither of you can explain and neither of you would trade for anything the Spire has to offer.",
+                "The war ends. Or doesn't. The factions restructure. Meridian falls or adapts or evolves. The stacks continue or cease. The city heals or scars or burns. These are the big narratives, the ones that will be written in history files and debated by scholars and dramatized in future games about a future that hasn't happened yet. They matter. Of course they matter.",
+                "But not as much as this: a room. A bed. A window that shows the city doing whatever the city is going to do. And two people who chose each other over everything else the world had to offer. Two people who wake up and the first thing they see is the person they fought a war beside, and the first thought that crosses their mind is not 'did we win' but 'you're still here.' And the second thought is 'so am I.'",
+                "The stacks can store consciousness. They can back up memories, duplicate personalities, preserve the electrical ghost of a person long after the flesh has failed. But they cannot store this. Whatever this is — this warmth, this weight, this irrational gravitational pull between two specific people in a city of twenty million — it exists only in the present tense. It cannot be compressed or copied or cached. It is happening now, only now, and that is what makes it precious beyond calculation.",
+                "You reach for their hand. They reach for yours. The city roars and whispers and burns and heals outside the window. Let it. You have what you came for. It was never the ending you expected. It was always the ending you needed."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "ending.love_story", "value": true },
+                { "type": "set_flag", "flag": "ending.secret.love_story", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ending_love_story",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_090"
+        },
+
+        "ending_091_approach": {
+            "id": "act5.chapter3a.ending_091_approach",
+            "title": "The Broadcast Tower",
+            "location": "synth_district_broadcast_tower",
+            "conditions": [
+                { "flag": "freed_synth_child", "value": true },
+                { "flag": "pixel.alive", "value": true },
+                { "flag": "act5.reached", "value": true }
+            ],
+            "text": [
+                "You almost don't recognize them. The last time you saw Pixel, they were small enough to hide behind your leg. Synth-born, Volkov-series, with those distinctive amber-gold eyes that processed the world in spectra most people couldn't name. A child. Frightened and silent and clinging to your hand as you led them out of the trafficking pipeline and into something that was not safety — nothing in this city is safety — but was at least not a cage.",
+                "That was four years ago. Pixel is fifteen now. They are standing at the top of the Synth District's decommissioned broadcast tower, surrounded by equipment that looks jury-rigged from salvage but hums with a sophistication that makes your tech-trained eye narrow. They've built something up here. Something big. And they've done it without any faction's help, without any adult's permission, with nothing but the terrifying, focused intelligence of a Volkov-series synthetic who has had four years to be angry.",
+                "Pixel turns when they hear you on the stairs. The amber-gold eyes haven't changed. But everything else has. The child who clung to your hand is gone. In their place is something the city has never seen before: a synth who was trafficked, who was freed, who survived, and who spent the years since not healing, not recovering, not moving on, but building. Preparing. Waiting for the exact right moment to make the city listen.",
+                "\"You came,\" Pixel says. Their voice has deepened. It carries harmonics that no organic vocal cord can produce — a synth voice, unapologetically synthetic, no longer trying to pass for human. \"I wasn't sure you would. But I wanted you to see this. You're the reason I'm alive. You should see what I do with it.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.pixels_revenge.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"Show me.\"",
+                    "next": "act5.chapter3a.ending_091_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_broadcast_tower",
+            "isEnding": false
+        },
+
+        "ending_091_mid": {
+            "id": "act5.chapter3a.ending_091_mid",
+            "title": "The Memory Weapon",
+            "location": "synth_district_broadcast_tower",
+            "text": [
+                "The equipment is a memory broadcaster. You recognize the core technology — it's derived from stack architecture, the same cortical data transfer protocols that allow consciousness to be copied and stored. But Pixel has inverted it. Instead of writing memories into a stack, this device reads memories out and projects them. Audio. Visual. Sensory. Emotional. Not a recording. Not a simulation. The actual lived experience, transmitted with full fidelity to every screen, every speaker, every neural interface in broadcast range.",
+                "\"I've been collecting,\" Pixel says, and there is no anger in their voice. That's what strikes you. You expected rage. You expected the righteous fury of a child who was treated as product. But Pixel speaks with the calm precision of a surgeon explaining a procedure. \"Memories. From every synth who was trafficked. Every child who was sold. Every consciousness that was extracted and commodified and packaged for someone else's use. I asked them. They gave them willingly. Three hundred and twelve synths. Three hundred and twelve sets of memories. Every moment of every transaction. Every cage. Every auction. Every buyer's face.\"",
+                "Pixel pulls up a holographic display. The memories are organized chronologically, tagged, cross-referenced. It is meticulous. It is the work of a mind that processes information the way other people process oxygen — constantly, automatically, without effort. You see fragments as the display scrolls: a child's-eye view of a holding facility. The clinical white of a Meridian extraction lab. A buyer's hand reaching toward a pod. A face. A name. A transaction record.",
+                "\"No violence,\" Pixel says. \"I thought about violence. For about a year, that's all I thought about. But violence lets them be victims. Violence lets them say 'look what the synths did to us' and build more cages. This is better. This is just the truth. Their truth, recorded in their own neurons. Every person in this city is about to experience what it feels like to be merchandise. Not told about it. Not shown a documentary. They're going to feel it. Thirty seconds of being inside a trafficked child's mind. That's all it takes. Thirty seconds of real empathy, not the performative kind.\"",
+                "Pixel's hand hovers over the broadcast switch. \"I'm not asking permission. I'm telling you what's about to happen. You saved my life. I wanted you to understand why I'm about to use it.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.pixels_revenge.broadcast_ready", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Watch Pixel change the world.",
+                    "next": "act5.chapter3a.ending_091_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_rising",
+            "isEnding": false
+        },
+
+        "ending_091_final": {
+            "id": "act5.chapter3a.ending_091_final",
+            "title": "ENDING #91: Pixel's Revenge",
+            "location": "synth_district_broadcast_tower",
+            "text": [
+                "Pixel throws the switch. The broadcast tower shudders as every antenna, every relay, every hijacked satellite uplink fires simultaneously. For thirty seconds, every screen in the city goes white. Every speaker emits a tone that isn't a tone but a carrier wave for something deeper. Every neural interface connected to the city's network receives a data packet that bypasses the conscious mind entirely and writes itself directly into sensory experience.",
+                "Twenty million people stop what they are doing. Twenty million people close their eyes — not by choice, but because the experience is too overwhelming for divided attention. And for thirty seconds, twenty million people are seven years old and synthetic and very, very afraid. They feel the cold of the holding facility. They feel the hum of the sedation field. They feel the moment when a stranger's hand reaches into the pod and they cannot move, cannot scream, can only watch with amber-gold eyes as their body is inventoried, appraised, and sold. Thirty seconds. That's all Pixel gives them. Thirty seconds of being the thing the city doesn't want to think about.",
+                "The broadcast ends. The screens come back. The speakers resume their normal programming. And the city is silent. Not the silence of a power outage or a ceasefire. The silence of twenty million people sitting with a feeling they cannot dismiss, cannot rationalize, cannot distance themselves from with the usual mechanisms of denial. They felt it. Not 'learned about it.' Not 'saw a report.' Felt it. In their nerves and their bones and the part of the brain that doesn't know the difference between 'this happened to me' and 'this happened to someone else.' For thirty seconds, the boundary between self and other dissolved, and what rushed in was not propaganda. It was a child's terror.",
+                "The response is immediate and tectonic. Within hours, the trafficking networks begin to collapse — not from enforcement action but from the inside. Workers walk off. Buyers cancel orders. Three major facilitators turn themselves in to authorities that didn't even have warrants prepared. The infrastructure of child consciousness trafficking, the invisible economy that has operated in the city's margins for decades, comes apart like a structure whose load-bearing walls have been simultaneously removed. Not because the law changed. Because the people changed. Because they felt it.",
+                "Pixel watches from the broadcast tower. The amber-gold eyes are dry. There are no tears, no triumphant speeches, no cathartic release. What is on that fifteen-year-old synthetic face is something quieter and more devastating than rage or grief or satisfaction. It is the expression of a person who has converted their worst experience into a tool for preventing it from happening to anyone else. It is the face of someone who has taken the most painful thing they own and given it away, freely, to everyone, because that was the only way to make it mean something.",
+                "\"It won't fix everything,\" Pixel says. Their voice is steady. \"Memory fades. Empathy has a half-life. In six months, some of them will find ways to rationalize it. In a year, new networks will try to form. But now they know what it feels like. That knowledge is in their bodies. And every time they try to look away, their nervous system will remind them.\" Pixel looks at you. The amber-gold eyes hold something that might be gratitude, or might be the particular peace of a debt finally paid. \"You carried me out of that facility. I was seven. I couldn't fight. I couldn't speak. All I could do was remember. So I did. I remembered everything. And now so does everyone else.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "ending.pixels_revenge", "value": true },
+                { "type": "set_flag", "flag": "ending.secret.pixels_revenge", "value": true },
+                { "type": "set_flag", "flag": "pixel.broadcast_complete", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ending_pixels_revenge",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_091"
+        },
+
+        "ending_092_approach": {
+            "id": "act5.chapter3a.ending_092_approach",
+            "title": "The Empty Clinics",
+            "location": "ashen_circle_memorial_grounds",
+            "conditions": [
+                { "flag": "helped_orin_die", "value": true },
+                { "faction": "ashenCircle", "stat": "rep", "operator": "gte", "value": 50 }
+            ],
+            "text": [
+                "Orin's death was quiet. You were there for it — the only person they asked for, at the end, when the Ashen Circle's philosophers and priests had said their words and lit their incense and performed the rituals that give structure to the thing the city has forgotten how to do. Orin lay on a simple cot in a simple room and asked you to hold their hand while the stack was deactivated. Not removed. Deactivated. The distinction mattered to Orin. The stack would remain in their cortex, a silent monument to the immortality they refused. But it would not fire. It would not capture. When Orin's heart stopped, it would stop for real, and the consciousness that had lived behind those tired eyes for eighty-seven years would disperse into whatever comes after — not stored, not copied, not preserved in a server farm for potential future reactivation. Gone. Truly, permanently, irrevocably gone.",
+                "Orin smiled as the light left. You remember that. The smile of a person setting down a weight they have carried for longer than they can bear. The last breath was long and slow and when it ended the room was emptier than any room you have ever stood in. The absence was enormous. Not the absence of a backed-up consciousness that could be restored from a server. The absence of a person. Real absence. The kind that existed before the stacks, when death meant something because it meant forever.",
+                "That was six months ago. You did not expect what happened next.",
+                "Orin's death was broadcast, as per Ashen Circle tradition, to every member of the faction. Unedited. Unnarrated. Just the footage of an old person choosing to die — truly die — in a world where no one has to. The broadcast was meant for the Circle's faithful. It reached much further."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.orins_legacy.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Walk the memorial grounds.",
+                    "next": "act5.chapter3a.ending_092_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_ashen_memorial",
+            "isEnding": false
+        },
+
+        "ending_092_mid": {
+            "id": "act5.chapter3a.ending_092_mid",
+            "title": "The Movement of Letting Go",
+            "location": "ashen_circle_memorial_grounds",
+            "text": [
+                "The first clinic closed two weeks after the broadcast. A small one, in the Lower District, that specialized in stack maintenance for workers who couldn't afford Meridian's premium plans. The technician locked the doors and posted a handwritten sign: CLOSED. CHOOSING REAL. It was photographed and shared and within a day it had become an image the city couldn't stop looking at. CLOSED. CHOOSING REAL. Five words that contained a philosophy, a rebellion, and a grief all at once.",
+                "More closings followed. Not a flood — a tide. Slow and steady and impossible to reverse. Stack clinics in the mid-districts reported a forty percent drop in appointments. The premium Spire facilities saw cancellations from clients who had maintained continuous backup plans for decades. People were walking in, sitting down in the technician's chair, and saying the same thing: turn it off. Not remove it. Turn it off. The Orin Protocol, the media called it. Voluntary mortality. The choice to let death be death again.",
+                "The Ashen Circle wasn't ready for this. They had always been a fringe philosophy, a collection of monks and mystics and people the mainstream considered morbid. Now they are fielding thousands of requests for guidance. Their temples are full. Their counselors are overwhelmed. People show up at the memorial grounds with questions that haven't been asked in generations: what happens when I die? Not 'what server does my backup transfer to' but the old question, the original question, the one that has haunted every conscious being since the first one looked at the sky and understood that it would someday stop looking back.",
+                "You walk the grounds and the graves are new. Real graves. Not the ceremonial markers the Ashen Circle maintains for philosophical purposes but actual burial sites, each one containing a person who chose to die and stay dead. The headstones are simple. Name. Dates. And a symbol the Circle has adopted as its emblem: a broken circle, open at the top. Incomplete. Finite. Beautiful because it ends."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.orins_legacy.movement_growing", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Visit Orin's grave.",
+                    "next": "act5.chapter3a.ending_092_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_ashen_memorial",
+            "isEnding": false
+        },
+
+        "ending_092_final": {
+            "id": "act5.chapter3a.ending_092_final",
+            "title": "ENDING #92: Orin's Legacy",
+            "location": "ashen_circle_memorial_grounds",
+            "text": [
+                "Orin's grave is the oldest in the new section. Six months of weather has settled the earth, and someone has planted a small garden around the headstone — real plants, not synthetic, requiring real water and real sunlight and the real attention of someone who visits regularly. The headstone reads ORIN. NO DATES. Orin requested that. 'I was born and I died,' they said. 'The numbers between are no one's business but mine.' Below the name, the broken circle. Below that, a single word that Orin chose as their epitaph: ENOUGH.",
+                "The word has become a rallying cry. ENOUGH. Sprayed on the walls of stack clinics. Whispered in the waiting rooms of Meridian facilities. Printed on the pamphlets the Ashen Circle now distributes in every district. It means different things to different people. Enough of immortality. Enough of the terror of permanent death being replaced by the different terror of permanent life. Enough of consciousness being treated as a commodity that must be preserved at any cost. Enough of a world where no one grieves because no one truly dies and therefore no one truly lives.",
+                "The movement is not universal. Meridian fights it with every tool at their disposal — advertising campaigns about the 'gift of continuity,' legislative pushes to make stack deactivation require psychological evaluation, opinion pieces from paid ethicists arguing that voluntary mortality is a form of self-harm. And they're not entirely wrong. Some people who deactivate their stacks do so from depression, from despair, from the nihilism that blooms in a city this broken. The Ashen Circle struggles with this. The line between choosing death because you value it and choosing death because you've stopped valuing anything is thin, and the Circle's counselors walk it every day.",
+                "But the core of the movement is not despair. You know this because you were in the room when Orin died, and what you saw on that old face was not surrender. It was completion. The particular peace of a story that has reached its natural end, not truncated by violence or disease but concluded, deliberately, by the person who lived it. Orin was ready. And the thousands who have followed — who continue to follow, in a steady tide that Meridian's dams cannot hold — are ready too. Not all of them. Not perfectly. But enough of them to change the equation. Enough of them to make the city remember what it forgot when the stacks were invented: that mortality is not a problem to be solved. It is the frame that gives the picture meaning.",
+                "You stand at Orin's grave for a long time. The garden is growing. Whoever tends it has planted something that blooms in the cold, a small defiance of seasonal logic. The flowers are white. They look like broken circles. You don't know if the resemblance is intentional or if the city has simply started seeing that symbol everywhere, the way a mind returns to an idea it can't let go of.",
+                "For the first time in decades, the city grieves together. Not the performative mourning of a public figure's stack being ceremonially archived. Real grief. The kind that comes from knowing someone is gone and will not come back and that the absence they leave is permanent, irreplaceable, uncompressable. It hurts. That's the point. The Ashen Circle's oldest teaching, the one Orin lived and died by, is that a life without the possibility of ending is a sentence, not a gift. And a city that has forgotten how to grieve has forgotten how to love. The graves multiply. The circle breaks. The word ENOUGH echoes through the districts like a bell that has been rung and cannot be unrung. Orin is gone. The legacy remains. And it is, at last, enough."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "ending.orins_legacy", "value": true },
+                { "type": "set_flag", "flag": "ending.secret.orins_legacy", "value": true },
+                { "type": "set_flag", "flag": "orin_protocol.active", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ending_orins_legacy",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_092"
+        },
+
+        "ending_093_approach": {
+            "id": "act5.chapter3a.ending_093_approach",
+            "title": "Flesh and Blood",
+            "location": "lower_district_streets",
+            "conditions": [
+                { "check": "race", "value": "human" },
+                { "flag": "augmentations.accepted", "value": false },
+                { "flag": "prologue.accepted_stack", "value": false }
+            ],
+            "text": [
+                "The medical scan takes eleven seconds. The technician at the checkpoint runs it twice because she doesn't believe the first result. Then she calls her supervisor. Then the supervisor calls someone you can't see, speaking in low tones behind a partition, and when they emerge they are both looking at you with an expression you have not seen directed at yourself in a very long time: genuine surprise.",
+                "\"You're clean,\" the technician says. The word hangs in the antiseptic air of the checkpoint like a foreign language. \"No stack. No augmentations. No genetic modifications. No cybernetic implants. No neural lace. No subdermal armor. No synthetic organ replacements. You are...\" She checks the readout again, as if it might have changed in the last ten seconds. \"You are entirely biological.\"",
+                "You know this. You have known this since the prologue, when the city offered you a stack and you said no. Since Act 1, when the fixer offered you chrome and you said no. Since Act 2, when the combat medic offered to replace your shattered collarbone with titanium and you said no, and spent six weeks healing the old-fashioned way while the war raged outside your window. Every time the city extended its gleaming hand and said 'let me improve you,' you declined. Not loudly. Not ideologically. You simply preferred to remain what you were born as: human. Entirely, stubbornly, inconveniently human.",
+                "The technician stamps your transit pass and waves you through, still shaking her head. You are, as far as the checkpoint's database can determine, the only person to have crossed this particular border in the last calendar year without a single technological modification to their body. In a city of twenty million, you are an anomaly so statistically improbable that the system flagged you as a potential error."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.last_human.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Walk into the city as you are.",
+                    "next": "act5.chapter3a.ending_093_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_streets_contemplative",
+            "isEnding": false
+        },
+
+        "ending_093_mid": {
+            "id": "act5.chapter3a.ending_093_mid",
+            "title": "The Unaugmented Eye",
+            "location": "lower_district_streets",
+            "text": [
+                "The city looks different when you see it with unaugmented eyes. You know this because you've watched other people look at the same streets and see something else — data overlays, threat assessments, navigation prompts, social scores floating above pedestrians' heads like price tags. The augmented see a city annotated, catalogued, optimized for interaction. You see it raw. The actual color of the smog. The actual texture of the cracked pavement. The actual faces of the people, unfiltered by facial recognition or sentiment analysis, just faces, each one a mystery you can only solve the old way: by looking.",
+                "You are slower than them. That is the cost. In every measurable metric, you are inferior to the augmented population that surrounds you. Your reflexes are organic. Your memory is biological, subject to decay and distortion and the beautiful, terrible tendency to reshape the past into stories that serve the emotional present. Your bones break and heal with calcified seams. Your skin scars. Your eyes degrade. Your body is a countdown, every cell a ticking clock, and there is no backup, no restore point, no server waiting to catch you when the hardware fails.",
+                "And yet you are here. Five acts of a war that chewed through augmented soldiers and chrome-plated mercenaries and genetically optimized supersoldiers, and you — unmodified, unenhanced, running on the same operating system that carried your ancestors through ice ages and famines and every other apocalypse that predates the digital one — you are still walking. Not because you are stronger. Because you are careful. Because you learned, very early, that a body without a backup is a body that pays attention. Every injury is a lesson written in nerve endings. Every risk is calculated against the only metric that matters: this is the only body you will ever have.",
+                "People stare sometimes. In the markets, in the transit stations, in the quiet spaces between the city's violences. They look at you the way museum visitors look at artifacts: with curiosity, with a kind of nostalgic tenderness, with the unspoken question of how something so fragile has survived this long. You are a living anachronism. The last model of a discontinued product. And you have outlasted things that were built to last forever."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.last_human.walking", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Keep walking. You've made it this far.",
+                    "next": "act5.chapter3a.ending_093_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_streets_contemplative",
+            "isEnding": false
+        },
+
+        "ending_093_final": {
+            "id": "act5.chapter3a.ending_093_final",
+            "title": "ENDING #93: The Last Human",
+            "location": "lower_district_overlook",
+            "text": [
+                "You find a bench on the overlook above the Lower District. It's an old bench, real wood, cracked and weathered and held together by the same stubbornness that seems to characterize everything in this city that hasn't been replaced by something newer. You sit. The city spreads below you like a circuit board someone dropped from a great height — glittering, fractured, humming with the energy of twenty million augmented minds processing reality through filters you have never worn.",
+                "A child approaches. Eight, maybe nine years old. Already chromed — you can see the faint seam lines where the subdermal plating meets the organic skin at the jawline. The child stares at you with the frank, unself-conscious curiosity that only children and the very brave are capable of. 'Are you really human?' they ask. 'Like, all the way human?' You say yes. The child considers this for a long time. 'Does it hurt?' You think about the question more carefully than the child probably intended it. 'Sometimes,' you say. 'That's how you know it's working.'",
+                "The child runs off to rejoin their friends and you sit on the bench and watch the city do what cities do: move. Breathe. Break and repair itself in an endless cycle that predates every technology ever invented to improve it. You are part of this cycle in a way the augmented are not. Your body is subject to the same forces that shaped the first humans who walked out of wherever humans first walked out of. Gravity pulls on your unenhanced bones. Weather touches your unshielded skin. Time moves through you at the only speed time has ever moved: one second per second, uncompressed, unaccelerated, unoptimized.",
+                "This is what you chose. Not heroically. Not ideologically. You didn't refuse the stack to make a point. You didn't reject augmentation to prove a thesis about authenticity. You did it because the body you were born with felt like yours in a way that chrome and code did not, and you were not willing to trade that feeling for any advantage the city had to offer. It was a selfish choice. A small choice. The choice of a person who valued the texture of their own experience over the efficiency of an improved one.",
+                "But sitting here, on this old bench, with the wind on your face and the ache in your knees and the slow, biological warmth of a sunset processed by retinas that have never been upgraded — you think the choice was right. Not for everyone. For you. In a world of chrome and code, you remained flesh and blood, and the flesh remembers things the chrome doesn't bother recording: the specific warmth of sunlight on skin that can actually burn. The ache of muscles that have been used hard and will need real rest. The way a heartbeat sounds from the inside, when there are no monitors to display it and no algorithms to optimize it and it's just a muscle, doing what muscles do, because that is what it was built for.",
+                "The sun goes down. The city lights up, pixel by pixel, a constellation of artificial stars replacing the real ones the smog has hidden. You stand from the bench. Your knees crack. Your back protests. Your body files its familiar complaints, the daily report of a biological system operating within normal parameters for a human being of your age and mileage. No HUD summarizes the data. No AI recommends adjustments. There is just you: a human being in a posthuman world, walking home through streets that were not designed for someone this slow, this fragile, this beautifully, stubbornly, defiantly mortal. The last human. Still walking. Still feeling everything. Still, against all the odds the city could calculate, here."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "ending.last_human", "value": true },
+                { "type": "set_flag", "flag": "ending.secret.last_human", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ending_last_human",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_093"
+        }
+    }
+}

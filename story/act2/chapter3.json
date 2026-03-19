@@ -1,0 +1,1643 @@
+{
+    "meta": {
+        "file": "chapter3-bonds",
+        "act": 2,
+        "chapter": 3,
+        "description": "Personal relationships and character development. Romance and friendship arcs with five key NPCs. Home base establishment and upgrades. The quiet emotional beats between the war — the calm that makes the storm unbearable."
+    },
+    "nodes": {
+
+        "act2ch3_001": {
+            "id": "act2.chapter3.act2ch3_001",
+            "title": "The Space Between Wars",
+            "location": "player_district",
+            "text": [
+                "Three days since the last operation. Three days of nothing exploding, nobody dying, no one screaming at you through a comm channel about the end of the world. Three days that feel like a gift someone will take back.",
+                "The district is as close to quiet as it gets. Rain drums on corrugated metal. Someone two floors down is playing a guitar with three strings, coaxing a melody out of what's left. A child laughs somewhere. You'd forgotten what that sounded like.",
+                "Your datapad buzzes. Not an emergency. Not a mission. Just people. The people you've gathered around you like kindling around a flame, each one carrying their own fire, their own damage, their own reasons for staying close to someone as dangerous as you.",
+                "Five names on your contacts list glow brighter than the rest. Five people who've become something more than allies. Something the old world had a word for, back when there was time for words like that.",
+                { "condition": { "flag": "act1.met_kira" }, "text": "Kira's name pulses with a queued message. She's been distant since the registration crisis. Something eating at her that she hasn't named yet." },
+                { "condition": { "flag": "act1.met_jade" }, "text": "Jade's signal shows her at the Ashfall Arena. Still fighting. Always fighting. But lately she flinches at shadows that weren't there before." },
+                { "condition": { "flag": "act1.met_zero" }, "text": "Zero sent you a string of emojis at 4 AM. No context. No explanation. Just a sun, a question mark, and a skull. You're learning that this means they're thinking about something they can't articulate." },
+                { "condition": { "flag": "act1.met_ember" }, "text": "Ember hasn't checked in for two days. That's not unusual. What's unusual is that their last message said \"thank you\" without any follow-up sarcasm." },
+                { "condition": { "flag": "act1.met_rust" }, "text": "Rust is somewhere in the building. You can hear him pacing. He paces when he's carrying something heavy that isn't physical." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.chapter3.started", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                {
+                    "text": "Open Kira's message",
+                    "condition": { "flag": "act1.met_kira" },
+                    "next": "act2.chapter3.act2ch3_002"
+                },
+                {
+                    "text": "Head to the Ashfall Arena to find Jade",
+                    "condition": { "flag": "act1.met_jade" },
+                    "next": "act2.chapter3.act2ch3_005"
+                },
+                {
+                    "text": "Reply to Zero's cryptic emojis",
+                    "condition": { "flag": "act1.met_zero" },
+                    "next": "act2.chapter3.act2ch3_008"
+                },
+                {
+                    "text": "Go check on Ember",
+                    "condition": { "flag": "act1.met_ember" },
+                    "next": "act2.chapter3.act2ch3_011"
+                },
+                {
+                    "text": "Find Rust and ask what's wrong",
+                    "condition": { "flag": "act1.met_rust" },
+                    "next": "act2.chapter3.act2ch3_013"
+                },
+                {
+                    "text": "Focus on fortifying your home base",
+                    "next": "act2.chapter3.act2ch3_016"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_002": {
+            "id": "act2.chapter3.act2ch3_002",
+            "title": "Kira's Message",
+            "location": "player_district",
+            "text": [
+                "The message is short. Kira doesn't waste words when something matters.",
+                "\"I found him. I found where they're keeping Tomas. Meridian Sublevel Processing, Sector Nine. He was stacked eighteen months ago. Involuntary. He was flagged as a dissident during the first wave of cortical screenings and they took him off the street in broad daylight. Nobody filed a report. Nobody looked for him. Nobody except me.\"",
+                "A pause in the text. You can feel her breathing in the gap between sentences.",
+                "\"I need help. I can't do this alone. But I need you to understand something before you agree. If we find him and he's still in there — still Tomas, still my brother — then we pull him out. No matter the cost. And if we find him and he's gone, if the stack corrupted or they wiped him or he's just... data now... then I need to know that too. I need to stop dreaming about a rescue that can't happen.\"",
+                "She attaches a building schematic. It's detailed. She's been planning this for longer than she's been asking for help.",
+                { "condition": { "race": "synth" }, "text": "You understand stacking in a way Kira never could. The process of having your consciousness compressed and stored. You know what it does to the edges of a person. How the copies fray." },
+                { "condition": { "race": "human" }, "text": "The thought of being stacked involuntarily makes your skin crawl. Everything you are, copied and caged. Tomas didn't choose this. He's been screaming inside a server for eighteen months." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.kira_quest_started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"I'm in. We'll find Tomas.\"",
+                    "next": "act2.chapter3.act2ch3_003"
+                },
+                {
+                    "text": "[Wisdom 14] \"Kira, you need to prepare yourself for what we might find.\"",
+                    "statCheck": { "stat": "wisdom", "dc": 14 },
+                    "next": "act2.chapter3.act2ch3_003a",
+                    "failNext": "act2.chapter3.act2ch3_003"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_003": {
+            "id": "act2.chapter3.act2ch3_003",
+            "title": "Into the Sublevel",
+            "location": "meridian_sublevel_9",
+            "text": [
+                "The sublevel smells like ozone and old copper. Rows of cortical storage units line the walls, each one a coffin-sized pod humming with the imprisoned signal of a stolen mind. Thousands of them. Blue indicator lights blinking in the dark like trapped fireflies.",
+                "Kira walks ahead, her hand scanner sweeping each unit. She's silent. Her jaw is set so hard you can see the muscles jumping under her skin. She's been imagining this moment for eighteen months and now that it's here, her hands are shaking.",
+                "\"Tomas Vasquez,\" she whispers to the scanner. \"Come on. Come on.\"",
+                "Row seventeen. Unit forty-three. The scanner chirps. Kira stops walking. She stands very still for a long time, staring at a readout you can't see from where you're standing.",
+                "\"He's here,\" she says. Her voice cracks on the second word. \"His signal is intact. He's... he's been conscious in there. The whole time. Eighteen months awake in the dark with no body and no voice and no—\"",
+                "She presses her forehead against the cold metal of the storage unit and makes a sound that isn't crying and isn't screaming. It's somewhere between the two. The sound of someone finding what they lost and discovering the finding hurts worse than the losing."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.found_tomas", "value": true },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "Begin the extraction — pull Tomas's stack data for transfer",
+                    "next": "act2.chapter3.act2ch3_004"
+                },
+                {
+                    "text": "[Tech 15] Attempt to communicate with Tomas inside the unit",
+                    "statCheck": { "stat": "tech", "dc": 15 },
+                    "next": "act2.chapter3.act2ch3_004a",
+                    "failNext": "act2.chapter3.act2ch3_004"
+                },
+                {
+                    "text": "Tell Kira the truth — an extraction this complex could corrupt his data",
+                    "next": "act2.chapter3.act2ch3_004b"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dread_low",
+            "isEnding": false
+        },
+
+        "act2ch3_003a": {
+            "id": "act2.chapter3.act2ch3_003a",
+            "title": "A Harder Kindness",
+            "location": "player_district",
+            "text": [
+                "You say it gently, but you say it. The words Kira needs to hear and doesn't want to.",
+                "\"Eighteen months in a cortical unit, Kira. The signal degrades. You know that. What we find in there might be Tomas. Or it might be what's left of Tomas. Or it might be nothing at all with his name on it.\"",
+                "She flinches like you hit her. Then she nods. Slowly. The nod of someone accepting a weight they already knew was coming.",
+                "\"I know,\" she says. \"I've read the studies. Signal degradation, personality fracturing, loop psychosis. I know what eighteen months does. I just... I need to see. Whatever's left. I need to see it with my own eyes and make my peace either way.\"",
+                "She looks at you, and for a moment the hardened resistance fighter disappears and you see the sister underneath. The girl who shared a bunk bed with her brother in a Lower District apartment, who told him stories when the power went out, who promised she'd always protect him.",
+                "\"Will you come with me?\"",
+                "You go with her."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.kira_warned", "value": true },
+                { "type": "add_experience", "amount": 15 },
+                { "type": "modify_relationship", "npc": "kira", "amount": 10 }
+            ],
+            "choices": [
+                {
+                    "text": "Continue to the sublevel",
+                    "next": "act2.chapter3.act2ch3_003"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_004": {
+            "id": "act2.chapter3.act2ch3_004",
+            "title": "The Extraction",
+            "location": "meridian_sublevel_9",
+            "text": [
+                "The extraction takes forty-seven minutes. Forty-seven minutes of watching progress bars while Kira holds her brother's storage unit like she's holding his hand. Forty-seven minutes of listening to the hum of ten thousand imprisoned minds and trying not to think about the ones you're leaving behind.",
+                "The data transfers clean. Tomas's cortical signature is intact, scarred but whole, like a bone that healed crooked. He'll need a body. A clone, a synthetic shell, something. That's a problem for another day. Today, the problem was getting him out.",
+                "Kira holds the data chip between her fingers and stares at it. Her brother's entire existence, compressed to the size of a thumbnail.",
+                "\"When I was twelve,\" she says quietly, \"Tomas caught a fever. Real bad. Mom couldn't afford a clinic. I sat next to his bed for three days straight, feeding him water from a cracked cup, telling him stupid stories to keep him awake. He pulled through. Three days.\"",
+                "She closes her fist around the chip. \"Eighteen months, Tomas. You held on for eighteen months. You're the toughest person I know.\"",
+                "She looks at you. Her eyes are red and her face is streaked and she is, in this moment, more whole than you've ever seen her.",
+                "\"Thank you. For coming with me. For not letting me do this alone.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.tomas_extracted", "value": true },
+                { "type": "modify_relationship", "npc": "kira", "amount": 20 },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "\"He held on because he knew you'd come.\"",
+                    "next": "act2.chapter3.act2ch3_001"
+                },
+                {
+                    "text": "Hold her. No words needed.",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_004a": {
+            "id": "act2.chapter3.act2ch3_004a",
+            "title": "A Voice in the Machine",
+            "location": "meridian_sublevel_9",
+            "text": [
+                "You patch a rudimentary audio interface into the storage unit's diagnostic port. It's not designed for communication. It's designed for signal integrity checks. But with some creative rewiring, you coax a speaker channel open.",
+                "Static. A long, terrible hiss of white noise. Then, underneath it, something. A rhythm. A pattern. A voice so distorted by compression artifacts and eighteen months of digital erosion that it barely sounds human.",
+                "\"...hello? Is... someone... Kira? Kira is that—\"",
+                "Kira collapses against the unit. She's laughing and crying and her hands are flat against the metal as if she could reach through it.",
+                "\"Tomas! Tomas, it's me, I'm here, I found you, I'm getting you out—\"",
+                "\"...tired, Kira... so tired... kept counting days but I lost... lost the number... is it still raining outside? I miss the rain...\"",
+                "You begin the extraction. Kira doesn't let go of the unit the entire time. She talks to him. Tells him about the rain. Tells him about the resistance. Tells him stupid stories, the same ones she told him when he was twelve and burning with fever.",
+                "Some things don't change. Some bonds don't break. Not even Meridian's machines could erase the sound of his sister's voice from Tomas Vasquez's memory."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.tomas_spoken_to", "value": true },
+                { "type": "set_flag", "flag": "act2.tomas_extracted", "value": true },
+                { "type": "modify_relationship", "npc": "kira", "amount": 25 },
+                { "type": "add_experience", "amount": 40 }
+            ],
+            "choices": [
+                {
+                    "text": "Give Kira a moment alone with her brother",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_004b": {
+            "id": "act2.chapter3.act2ch3_004b",
+            "title": "The Cost of Honesty",
+            "location": "meridian_sublevel_9",
+            "text": [
+                "\"Kira. If we pull him out wrong, we lose him. Permanently. Corrupted data can't be recovered. We need equipment we don't have, expertise we can't fake, and time we're running out of.\"",
+                "She stares at you. The hope in her face wars with the logic she's spent years sharpening into a weapon.",
+                "\"So we leave him? We just walk away?\"",
+                "\"We mark the unit. We come back with the right tools. We do this properly, or we don't do it at all.\"",
+                "The silence between you fills with the hum of ten thousand stolen minds. Kira looks at her brother's storage unit. Her hand rests on its surface. She takes a breath that seems to hollow her out entirely.",
+                "\"Okay. We mark it. We come back.\" Her voice is barely audible. \"But if anything happens to him between now and then, I will never forgive either of us.\"",
+                "She tags the unit with a chemical marker invisible to standard scanners. Her own design. Then she turns and walks toward the exit without looking back, because looking back would break something she can't afford to break right now."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.tomas_marked", "value": true },
+                { "type": "modify_relationship", "npc": "kira", "amount": 5 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "Follow her. Give her space.",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_005": {
+            "id": "act2.chapter3.act2ch3_005",
+            "title": "The Gladiator's Shadow",
+            "location": "ashfall_arena",
+            "text": [
+                "The Ashfall Arena smells like sweat, cheap synth-beer, and old blood. It's a converted warehouse in the Industrial Quarter where people pay credits to watch other people hurt each other. The crowd is a mosaic of district refugees, off-duty mercs, and bored corp-rats slumming it for thrills.",
+                "Jade is in the ring. You watch from the back row as she dismantles an opponent twice her size with the clinical efficiency of someone who learned to fight in a place where fights ended in body bags, not tap-outs. Three moves. The big man hits the floor. The crowd roars. Jade doesn't smile.",
+                "She never smiles after a fight. You've noticed that. The other fighters pump fists and flex for the crowd. Jade just wipes the blood off her knuckles and walks to her corner like she's punching a time clock.",
+                "She sees you as she ducks through the ropes. Something shifts behind her eyes. Not quite relief. Not quite fear. Something between the two.",
+                "\"Didn't expect you tonight,\" she says, toweling off. Her knuckles are wrapped in tape that's been white three fights ago. \"You here for the ambiance or the company?\"",
+                "Before you can answer, her eyes snap to the arena entrance. A man in a clean coat stands at the door. Too clean for this place. Too still for someone watching a fight. He's watching Jade.",
+                "\"Shit,\" she whispers. The word carries the weight of a history she's never shared with you. \"That's Cassius. My old handler.\" She swallows. \"I need to leave. Right now.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.jade_quest_started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"We go out the back. Now. I'll cover you.\"",
+                    "next": "act2.chapter3.act2ch3_006"
+                },
+                {
+                    "text": "[Charisma 14] \"Let me talk to him. Buy you time.\"",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "next": "act2.chapter3.act2ch3_006a",
+                    "failNext": "act2.chapter3.act2ch3_006"
+                },
+                {
+                    "text": "\"Who is he? What are you running from?\"",
+                    "next": "act2.chapter3.act2ch3_006b"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_low",
+            "isEnding": false
+        },
+
+        "act2ch3_006": {
+            "id": "act2.chapter3.act2ch3_006",
+            "title": "Out the Back",
+            "location": "industrial_quarter",
+            "text": [
+                "You take Jade through the fighters' exit, a rust-corroded door that opens onto an alley choked with dumpsters and broken neon. Rain is falling. It's always falling. Jade moves fast, checking corners with the muscle memory of someone who spent years checking corners for a living.",
+                "Three blocks from the arena, she stops in the shadow of a dead billboard and leans against the wall. She's breathing hard but it's not from the running. It's from something else.",
+                "\"Cassius Wren,\" she says, not looking at you. \"Helix Solutions. Private military contractor. They recruit from the slums, train you to kill, aim you at whoever's paying, and when you're used up they burn your identity and recycle your augments. I was one of their best.\"",
+                "She pulls down the collar of her shirt. A barcode tattooed at the base of her neck. Corporate property mark. \"Asset designation JX-17. That was my name for six years. I killed eleven people that I know of. Probably more. They had a way of keeping you in the dark about the body count. Plausible deniability built into the operative as well as the operation.\"",
+                "She looks at you now. Defiant. Terrified. Waiting for you to do the math and walk away.",
+                "\"Cassius was my handler. If he's here, Helix found me. They want me back, or they want me dead. Either way, Jade Moreno stops existing tonight.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.jade_backstory_revealed", "value": true },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "\"You're not JX-17. You're Jade. And nobody's taking you anywhere.\"",
+                    "next": "act2.chapter3.act2ch3_007"
+                },
+                {
+                    "text": "\"Eleven people. That's... a lot to carry.\"",
+                    "next": "act2.chapter3.act2ch3_007"
+                },
+                {
+                    "text": "[Wisdom 13] \"What does Cassius actually want? Let's think this through.\"",
+                    "statCheck": { "stat": "wisdom", "dc": 13 },
+                    "next": "act2.chapter3.act2ch3_007a",
+                    "failNext": "act2.chapter3.act2ch3_007"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_006a": {
+            "id": "act2.chapter3.act2ch3_006a",
+            "title": "Facing the Handler",
+            "location": "ashfall_arena",
+            "text": [
+                "You walk toward Cassius Wren while Jade slips out the back. Up close, the man is unremarkable in the way only deeply dangerous people are. Average height. Average build. A face designed to be forgotten. His eyes are the only wrong thing — too steady, too patient, cataloging everything they touch.",
+                "\"You're not JX-17,\" he says pleasantly. \"But you're standing between me and her, which makes you either very brave or very poorly informed.\"",
+                "You feed him a story. An old friend, owed a debt, wrong place wrong time. Your words are smooth enough to create doubt, and doubt is all Jade needs.",
+                "Cassius studies you for a long moment. Then he smiles. It's the smile of someone filing information for later use.",
+                "\"Interesting,\" he says. \"Tell your friend the gladiator that Helix Solutions has a long memory and a longer reach. She knows my frequency. The conversation is going to happen. The only variable is whether it happens comfortably.\"",
+                "He leaves. No hurry. The crowd parts around him without knowing why.",
+                "You find Jade three blocks away, leaning against a dead billboard, rain on her face."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.stalled_cassius", "value": true },
+                { "type": "modify_relationship", "npc": "jade", "amount": 15 },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "\"He's gone. For now. But we need to talk about who that was.\"",
+                    "next": "act2.chapter3.act2ch3_006"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_low",
+            "isEnding": false
+        },
+
+        "act2ch3_006b": {
+            "id": "act2.chapter3.act2ch3_006b",
+            "title": "The Question She Doesn't Want to Answer",
+            "location": "ashfall_arena",
+            "text": [
+                "Jade's face closes like a door slamming. For a second you see the person underneath the fighter — the operative, the weapon, the thing Helix Solutions built and aimed and fired. Cold. Efficient. Ready to vanish.",
+                "Then it passes. She looks at you and the hardness softens into something more complicated. Trust fighting against training. The need to be known wrestling with the survival instinct that says known people are vulnerable people.",
+                "\"Not here,\" she says. \"Get me out of here first. Then I'll tell you everything. You've earned that much.\"",
+                "The man in the clean coat is still watching from the entrance. You take her out the back."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Take Jade through the fighters' exit",
+                    "next": "act2.chapter3.act2ch3_006"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_low",
+            "isEnding": false
+        },
+
+        "act2ch3_007": {
+            "id": "act2.chapter3.act2ch3_007",
+            "title": "What Jade Decides",
+            "location": "industrial_quarter",
+            "text": [
+                "She's quiet for a long time. Rain traces lines down her face that could be tears if you squint, but Jade Moreno doesn't cry. Not in front of people. Probably not alone either. She cauterized that part of herself a long time ago.",
+                "\"I have two options,\" she says finally. \"I run. New district, new name, new face if I can afford the surgery. Start over. I'm good at starting over. I've done it three times.\"",
+                "She flexes her taped-up hands. \"Or I go to Cassius. Walk into Helix on my own terms. Find out what they want. Maybe I can buy my freedom. Maybe I can offer them something worth more than dragging back a burned asset.\"",
+                "\"There's a third option,\" you say.",
+                "She looks at you. \"What?\"",
+                "\"You stay. Right here. With us. And if Helix comes, they deal with all of us.\"",
+                "Something happens to Jade's face that you've never seen before. The armor cracks. Just for a second. Just enough to see the person inside who stopped believing anyone would ever stand between her and the dark.",
+                "\"You mean that,\" she says. It's not a question.",
+                "\"I mean it.\"",
+                "She nods once. Slowly. Like she's signing a contract she never thought she'd be offered."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.jade_stays", "value": true },
+                { "type": "modify_relationship", "npc": "jade", "amount": 20 },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "Walk her home through the rain",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_007a": {
+            "id": "act2.chapter3.act2ch3_007a",
+            "title": "The Third Angle",
+            "location": "industrial_quarter",
+            "text": [
+                "\"Think about it,\" you say. \"If Helix wanted you dead, Cassius wouldn't have shown his face. He'd have sent a drone strike. He's here to recruit, not terminate. Which means Helix needs something, and whatever it is, they need YOU specifically. That gives you leverage.\"",
+                "Jade blinks. The operative part of her brain engages, overriding the panic, running the calculus.",
+                "\"You're right,\" she says slowly. \"Cassius doesn't do fieldwork for wetwork. He's talent acquisition. He came in clean, public, no backup visible. This is an offer, not a threat.\"",
+                "She almost smiles. Almost. \"You're annoyingly good at this.\"",
+                "\"I've had practice with dangerous people who have bad communication skills.\"",
+                "\"Was that a compliment or an insult?\"",
+                "\"Yes.\"",
+                "She laughs. Actually laughs. A real one, rough-edged and startled, like she surprised herself by remembering how. You'll remember that sound for a long time. It might be the most honest thing Jade Moreno has ever given anyone."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.jade_leverage_found", "value": true },
+                { "type": "modify_relationship", "npc": "jade", "amount": 25 },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "\"So what do you want to do?\"",
+                    "next": "act2.chapter3.act2ch3_007"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_008": {
+            "id": "act2.chapter3.act2ch3_008",
+            "title": "Zero's Question",
+            "location": "player_district",
+            "text": [
+                "You find Zero on the roof of your building, legs dangling over a four-story drop, watching the city breathe. They're wearing a jacket two sizes too big and their hair is doing something architectural that defies gravity and possibly physics.",
+                "\"Hey,\" they say without turning around. \"You ever wake up and not recognize your hands?\"",
+                "You sit down next to them. The rain has stopped. The clouds are doing that thing where they thin out just enough to let a smudge of real sunlight through, painting a single golden stripe across the rooftops. Zero watches it like it's the most important thing in the world.",
+                "\"I've been having these dreams,\" they continue. \"Or not dreams. Diagnostics? That's a weird word. Who dreams in diagnostics?\" They flex their fingers, studying them. \"Everything checks out fine. Heart rate, neural response, everything normal. But the thing about normal is that I don't know what my normal is supposed to feel like. I don't have a baseline. I don't remember being a kid. I don't remember growing up. My earliest memory is two years ago, fully formed, standing in the middle of a street in the Market District with a bag of groceries and absolutely no idea where I was going.\"",
+                "They look at you. Their eyes are brown and warm and deeply, genuinely confused.",
+                "\"That's not normal, is it?\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.zero_quest_started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "[Wisdom 15] \"No. It's not. And I think we should find out why.\"",
+                    "statCheck": { "stat": "wisdom", "dc": 15 },
+                    "next": "act2.chapter3.act2ch3_009",
+                    "failNext": "act2.chapter3.act2ch3_009a"
+                },
+                {
+                    "text": "\"Lots of people have memory gaps. Trauma does that.\"",
+                    "next": "act2.chapter3.act2ch3_009b"
+                },
+                {
+                    "text": "Just sit with them. Watch the light move across the rooftops.",
+                    "next": "act2.chapter3.act2ch3_009c"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_rooftop",
+            "isEnding": false
+        },
+
+        "act2ch3_009": {
+            "id": "act2.chapter3.act2ch3_009",
+            "title": "The Truth Beneath",
+            "location": "player_district",
+            "text": [
+                "You say it carefully. You say it the way you'd remove a bandage from a wound you're not sure has healed.",
+                "\"Zero, I've noticed things. Small things. The way your skin doesn't scar. The way your eyes adjust to darkness faster than anyone I know. The way your heartbeat is too regular. Not irregular, not arrhythmic. Too. Regular. Like a metronome.\"",
+                "They stare at you. Their face does something complicated — a cascade of expressions that flickers between confusion, denial, fear, and something that might be relief.",
+                "\"You think I'm...\"",
+                "\"I think you should let a doctor look at you. A real one. Someone who can run the scans Meridian doesn't want you to run.\"",
+                "Zero is quiet for a very long time. The golden light moves across the rooftop and disappears behind the clouds. When they finally speak, their voice is smaller than you've ever heard it.",
+                "\"If I'm a synth,\" they say, \"then who made me? And why did they make me think I was real?\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.zero_truth_started", "value": true },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "\"Being manufactured doesn't make you less real. You feel things. That's enough.\"",
+                    "next": "act2.chapter3.act2ch3_010"
+                },
+                {
+                    "text": "\"We'll find out together. Whatever the answer is, you won't face it alone.\"",
+                    "next": "act2.chapter3.act2ch3_010"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_009a": {
+            "id": "act2.chapter3.act2ch3_009a",
+            "title": "The Wrong Words",
+            "location": "player_district",
+            "text": [
+                "You try to broach it gently but the words come out clumsy, half-formed, bumping into each other on the way out. Zero flinches. You can see the shutters coming down behind their eyes.",
+                "\"I'm fine,\" they say, with the bright artificial cheer of someone slamming a lid on a box they're not ready to open. \"Probably just stress. Brain fog. Who doesn't have brain fog when the world's ending, right?\"",
+                "They change the subject with the practiced ease of someone who's been deflecting hard questions their entire — short, fragmented, suspicious — life. But you notice them staring at their hands again when they think you're not looking.",
+                "The question has been planted. It'll grow whether they water it or not."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.zero_deflected", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                {
+                    "text": "Let it go for now. They'll come to you when they're ready.",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_rooftop",
+            "isEnding": false
+        },
+
+        "act2ch3_009b": {
+            "id": "act2.chapter3.act2ch3_009b",
+            "title": "The Comfortable Lie",
+            "location": "player_district",
+            "text": [
+                "\"Lots of people have memory gaps,\" you say. \"The world's a rough place. Trauma, stress, malnutrition. It rewrites the brain. Doesn't mean something's wrong with you.\"",
+                "Zero visibly relaxes. Their shoulders drop. Their breathing slows. They want to believe you. God, they want to believe you so badly it makes your chest ache.",
+                "\"Yeah,\" they say. \"Yeah, that makes sense. Trauma. Sure. I've had plenty of that, probably. Can't remember the trauma but I can remember the... wait. That's the same problem.\"",
+                "They laugh it off. You laugh with them. It's easier to laugh. It's easier to let the question dissolve in shared humor than to hold it up to the light and see what shape it casts.",
+                "But late that night, lying in the dark, you think about Zero's hands. About the absence of scars. About the heartbeat that keeps time like a clock. And you wonder if the kindest thing you did today was also the cruelest."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.zero_lied_to", "value": true },
+                { "type": "modify_relationship", "npc": "zero", "amount": 5 },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                {
+                    "text": "Try to sleep",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_009c": {
+            "id": "act2.chapter3.act2ch3_009c",
+            "title": "Silence as an Answer",
+            "location": "player_district",
+            "text": [
+                "You don't say anything. You sit next to Zero on the ledge and watch the light. The golden stripe migrates across the rooftops, touching rusted water tanks and satellite dishes and a single brave flower growing from a crack in someone's balcony concrete, and then the clouds close and the light is gone and the city goes back to grey.",
+                "Zero leans against your shoulder. They're warm. Warmer than a person should be on a cold rooftop in the rain. You notice this. You don't say anything about it.",
+                "\"Thanks,\" Zero says after a while.",
+                "\"For what?\"",
+                "\"For not having an answer. Everyone always has an answer. It's nice to just sit with the question for a while.\"",
+                "You sit with the question. Below you, the city hums with its old broken song. Somewhere a child laughs again. Somewhere a guitar plays. Somewhere a person who might not be a person watches the clouds and feels something they can't name and chooses, for now, to call it peace."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.zero_sat_with", "value": true },
+                { "type": "modify_relationship", "npc": "zero", "amount": 15 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                {
+                    "text": "Stay a while longer",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_rooftop",
+            "isEnding": false
+        },
+
+        "act2ch3_010": {
+            "id": "act2.chapter3.act2ch3_010",
+            "title": "The Scan",
+            "location": "underground_clinic",
+            "text": [
+                "Doctor Vasik runs the scans in a basement clinic that smells like antiseptic and bad coffee. Zero sits on a metal table, feet swinging, wearing a paper gown and a brave face that doesn't quite reach their eyes.",
+                "The results come back in seven minutes. Vasik reads them three times. He takes off his glasses. He puts them back on. He takes them off again.",
+                "\"Your skeletal structure is a carbon-polymer composite,\" he says quietly. \"Your organs are synthetic. Bio-printed. State of the art, possibly three to five years beyond current commercial technology. Your neural network is...\" He pauses. \"Extraordinary. It's synthetic, but it's been designed to mimic organic brain architecture so precisely that it generates genuine consciousness. You're not a standard synth. You're not a copy of someone. You're an original consciousness running on synthetic hardware.\"",
+                "Zero sits very still. Their brave face is gone. What's left is raw and open and terrible in its honesty.",
+                "\"So I'm a robot,\" they say.",
+                "\"You're a person,\" Vasik says firmly. \"You're a person who happens to be made of different materials than most people. The consciousness is real. The emotions are real. Whoever built you didn't build a machine. They built a life.\"",
+                "Zero looks at you. Their eyes are wet. Synthetic tear ducts producing genuine tears. The cruelest and most beautiful piece of engineering you've ever seen."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.zero_truth_revealed", "value": true },
+                { "type": "add_experience", "amount": 35 }
+            ],
+            "choices": [
+                {
+                    "text": "Hold Zero's hand. Let them feel something real.",
+                    "next": "act2.chapter3.act2ch3_010a"
+                },
+                {
+                    "text": "\"This doesn't change anything between us. Not one thing.\"",
+                    "next": "act2.chapter3.act2ch3_010a"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_010a": {
+            "id": "act2.chapter3.act2ch3_010a",
+            "title": "After the Knowing",
+            "location": "underground_clinic",
+            "text": [
+                "Zero doesn't speak for a long time. They sit on the metal table and look at their hands — the hands they didn't recognize this morning — and process a truth that rewrites every assumption they've ever made about themselves.",
+                "Then, with the quiet precision of someone rebuilding themselves from the foundation up, they get dressed. They tie their shoes. They check their hair in the clinic's cracked mirror. Small acts of normalcy. Anchors against the vertigo of existential free-fall.",
+                "\"I have questions,\" they say. Their voice is steady. Steadier than it should be. \"Who made me. Why. Where I came from. What I'm supposed to be. But those questions can wait.\" They look at you. \"Because right now, the only thing that matters is that you're still here. And you're looking at me exactly the same way you looked at me an hour ago.\"",
+                "\"You're Zero,\" you say. \"You send incomprehensible emojis at four in the morning and you eat cereal for dinner and you laugh too loud at bad jokes. That's who you are. The rest is just specs.\"",
+                "They hug you. It's sudden and fierce and they hold on like they're afraid the ground is going to disappear. You hold on back. The ground doesn't disappear. Not today."
+            ],
+            "onEnter": [
+                { "type": "modify_relationship", "npc": "zero", "amount": 25 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "Walk Zero home",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_011": {
+            "id": "act2.chapter3.act2ch3_011",
+            "title": "Ember's Apartment",
+            "location": "ember_apartment",
+            "text": [
+                "Ember's apartment is on the seventh floor of a building that used to be a hotel. The elevator died six months ago. The stairs are a penance. By the time you reach their door, you're breathing hard and questioning your life choices.",
+                "You knock. No answer. You knock again. A long pause, then the sound of something falling over, a muttered curse, and shuffling footsteps.",
+                "Ember opens the door. They look terrible. Not the glamorous kind of terrible that some people pull off, the kind where hollow cheeks and dark circles become aesthetic. Just terrible. Skin too pale, eyes too bright, a tremor in their hands they're trying to hide by crossing their arms.",
+                "\"Oh,\" they say. \"You. I was just... I was resting.\"",
+                "The apartment behind them is a mess. Medication bottles on the counter. A medical readout taped to the wall with numbers you don't understand but can tell are bad by the red highlighting. A half-eaten meal going cold on a plate.",
+                "\"Before you say anything,\" Ember adds, \"I'm fine.\"",
+                "They are not fine."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.ember_quest_started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"You're not fine. Talk to me.\"",
+                    "next": "act2.chapter3.act2ch3_012"
+                },
+                {
+                    "text": "Don't push. Just come in and reheat their food.",
+                    "next": "act2.chapter3.act2ch3_012a"
+                },
+                {
+                    "text": "[Wisdom 14] Read the medical readout on the wall.",
+                    "statCheck": { "stat": "wisdom", "dc": 14 },
+                    "next": "act2.chapter3.act2ch3_012b",
+                    "failNext": "act2.chapter3.act2ch3_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_012": {
+            "id": "act2.chapter3.act2ch3_012",
+            "title": "The Diagnosis",
+            "location": "ember_apartment",
+            "text": [
+                "Ember sits on the edge of their bed and tells you, and the telling is worse than anything you imagined.",
+                "Cortical Cascade Syndrome. Rare. Degenerative. The neural pathways are burning out one by one, like fuses in an overloaded circuit. The brain is eating itself. Average life expectancy after diagnosis: fourteen months. Ember was diagnosed nine months ago.",
+                "\"There's one treatment,\" they say, picking at a thread on their blanket. \"A full stack transfer. Copy my consciousness into a cortical stack, let the body go, install me in a new shell. Synthetic body or cloned flesh, doesn't matter. The stack preserves the mind. The body is just... replaced.\"",
+                "\"And you won't do it.\"",
+                "\"I won't do it.\" Their voice is granite. \"I watched what stacking did to people during the crisis. The copies that come out wrong. The personality fragments. The people who transfer and spend the rest of their existence knowing they died on a table and what's walking around now is a photocopy with their memories. I won't become a copy of myself. I'd rather be a dying original than a living duplicate.\"",
+                "They look at you. Five months. Maybe less. Written on their face like a sentence."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.ember_diagnosis_known", "value": true },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "\"I respect your choice. What do you need from me?\"",
+                    "next": "act2.chapter3.act2ch3_012c"
+                },
+                {
+                    "text": "[Charisma 15] \"The transfer technology is getting better. The copies are more stable. Please reconsider.\"",
+                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "next": "act2.chapter3.act2ch3_012d",
+                    "failNext": "act2.chapter3.act2ch3_012c"
+                },
+                {
+                    "text": "Say nothing. Pull them close. Hold on.",
+                    "next": "act2.chapter3.act2ch3_012c"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_012a": {
+            "id": "act2.chapter3.act2ch3_012a",
+            "title": "The Meal",
+            "location": "ember_apartment",
+            "text": [
+                "You don't push. You walk past Ember into the tiny kitchen, scrape the cold food into a pan, and reheat it. The stove takes three tries to light. The pan has a dent. The food is rice and synthetic protein and a single real tomato that probably cost a day's wages in the Lower District.",
+                "Ember stands in the kitchen doorway and watches you with an expression you can't read. Confusion, maybe. Like they've forgotten what it looks like when someone does something small and kind without being asked.",
+                "You hand them the plate. They take it. They eat. You sit on the floor next to the bed because there's only one chair and it's covered in medical printouts.",
+                "Halfway through the meal, Ember says, \"Cortical Cascade Syndrome. That's what it is. I'm dying. The brain is shutting down in slow motion. Five months, maybe less.\"",
+                "They say it the way you'd report the weather. Matter of fact. Like the information stopped hurting a long time ago and now it's just data.",
+                "\"You reheated my food,\" they add. \"Nobody's done that for me since my mom died.\"",
+                "The two facts — the dying and the reheated food — sit next to each other in the silence, and somehow the second one is the thing that makes Ember's eyes go bright."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.ember_diagnosis_known", "value": true },
+                { "type": "modify_relationship", "npc": "ember", "amount": 20 },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "\"Tell me everything. I'm not going anywhere.\"",
+                    "next": "act2.chapter3.act2ch3_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_012b": {
+            "id": "act2.chapter3.act2ch3_012b",
+            "title": "Reading the Numbers",
+            "location": "ember_apartment",
+            "text": [
+                "The medical readout is a cortical integrity scan. You recognize the format from resistance medical briefings. Neural pathway connectivity: 31% and declining. Synaptic response times: three to four times slower than baseline. Cascade progression: Stage 3 of 4.",
+                "Stage 3. You know what Stage 4 looks like. You've seen it in Meridian's medical archives. Total neural collapse. The mind unraveling like a rope coming apart strand by strand.",
+                "Ember watches you reading it. They see the understanding hit your face, and something in them relaxes. The exhaustion of carrying a secret too heavy for one person.",
+                "\"So now you know,\" they say quietly. \"Cortical Cascade. Terminal. Five months on the outside. And before you ask — yes, there's a treatment. Stack transfer. And no, I won't do it. I've made my peace.\"",
+                "They haven't made their peace. You can see it in the way their hands shake. But you let them have the words."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.ember_diagnosis_known", "value": true },
+                { "type": "set_flag", "flag": "act2.ember_scan_read", "value": true },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "\"I respect your choice. What do you need from me?\"",
+                    "next": "act2.chapter3.act2ch3_012c"
+                },
+                {
+                    "text": "[Charisma 15] \"The transfer technology is getting better. Please reconsider.\"",
+                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "next": "act2.chapter3.act2ch3_012d",
+                    "failNext": "act2.chapter3.act2ch3_012c"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_012c": {
+            "id": "act2.chapter3.act2ch3_012c",
+            "title": "Five Months",
+            "location": "ember_apartment",
+            "text": [
+                "\"What I need,\" Ember says, \"is for people to stop treating me like I'm already gone.\"",
+                "They stand up. The tremor is still there but they square their shoulders against it, defiant. \"I have five months. Maybe less, maybe a little more. And I intend to spend every single day of it doing something that matters. Not lying in a bed waiting to evaporate. Not crying into a pillow. Not becoming a ghost before I'm dead.\"",
+                "\"I want to fight. I want to help the resistance. I want to sit on that roof with Zero and watch the stupid sunset. I want to cook a meal that isn't synthetic protein. I want to laugh at Rust's terrible jokes. I want to live, and I want to live loud, and when it's over I want people to remember the living, not the dying.\"",
+                "They look at you with fierce, burning, fading eyes.",
+                "\"Can you do that for me? Can you let me live until I can't?\"",
+                "You nod. Because the word \"yes\" is too small for what they're asking, and the word \"no\" is too cruel, and a nod is the honest thing between them."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.ember_living_loud", "value": true },
+                { "type": "modify_relationship", "npc": "ember", "amount": 20 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "\"Then let's start today. What do you want to do first?\"",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_012d": {
+            "id": "act2.chapter3.act2ch3_012d",
+            "title": "A Crack in the Refusal",
+            "location": "ember_apartment",
+            "text": [
+                "You talk. Not arguing. Not pleading. Just talking. About the new generation of stack transfers. About the Meridian defectors who've been refining the process in underground clinics. About the success rates climbing from forty percent to seventy to ninety. About the people who came through whole. Still themselves. Still real.",
+                "Ember listens. Really listens. You can see the calculus running behind their eyes. Fourteen months ago, the idea was unthinkable. Nine months ago, when they were diagnosed, the technology was unreliable. But the world moves fast when it's falling apart. Necessity is an engine.",
+                "\"I'll think about it,\" they say finally. \"I'm not saying yes. I'm saying I'll think about it. That's more than I've given anyone who's asked.\"",
+                "A pause. A small, reluctant smile. \"You're persuasive when you're not being shot at. Has anyone told you that?\"",
+                "\"You're the first.\"",
+                "\"I doubt that.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.ember_reconsidering", "value": true },
+                { "type": "modify_relationship", "npc": "ember", "amount": 25 },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "\"That's all I'm asking. Just think about it.\"",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_013": {
+            "id": "act2.chapter3.act2ch3_013",
+            "title": "Rust's Confession",
+            "location": "player_district",
+            "text": [
+                "You find Rust in the stairwell between the second and third floors. He's sitting on the steps with a bottle of something amber that he's not drinking, just holding. Turning it in his hands. A prop for a conversation he's been rehearsing.",
+                "He looks up when he hears you. The expression on his face is one you've never seen on Rust before. The old scavenger has weathered every crisis with sardonic humor and steady hands. This is the first time you've seen him look afraid.",
+                "\"Sit down,\" he says. \"I need to tell you something. And when I'm done telling you, you're going to want to kill me. I'd appreciate if you'd hear the whole thing first.\"",
+                "He takes a breath. The bottle shakes in his grip.",
+                "\"I've been reporting to Meridian. For three months. Drop locations, safe house rotations, supply routes. Not everything. Not enough to get anyone killed. But enough to keep them satisfied. Enough to keep them from—\"",
+                "His voice breaks. Rust's voice never breaks.",
+                "\"They have my daughter. Lena. She's eleven. They took her from her school four months ago. Nobody saw it happen. I got a message that night with a photo of her in a room with no windows and a list of things they wanted me to provide. So I provided them.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.rust_quest_started", "value": true },
+                { "type": "set_flag", "flag": "act2.rust_confession", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"Keep talking.\"",
+                    "next": "act2.chapter3.act2ch3_014"
+                },
+                {
+                    "text": "[Wisdom 14] Study his face. Is this the whole truth?",
+                    "statCheck": { "stat": "wisdom", "dc": 14 },
+                    "next": "act2.chapter3.act2ch3_014a",
+                    "failNext": "act2.chapter3.act2ch3_014"
+                },
+                {
+                    "text": "Say nothing. Let the silence be your answer.",
+                    "next": "act2.chapter3.act2ch3_014"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dread_low",
+            "isEnding": false
+        },
+
+        "act2ch3_014": {
+            "id": "act2.chapter3.act2ch3_014",
+            "title": "The Weight of It",
+            "location": "player_district",
+            "text": [
+                "Rust talks. The whole thing. Every dead drop, every piece of information, every compromise. He lays it out with the methodical precision of a man who's been counting his sins and wants the ledger accurate when judgment comes.",
+                "\"I sanitized everything I could,\" he says. \"Changed numbers, altered timelines, gave them routes we'd already abandoned. But some of it was real. Had to be, or they'd know. They're not stupid. They check.\"",
+                "He finally looks at you. His eyes are red-rimmed and exhausted.",
+                "\"I know what this means. I know the penalty for feeding intel to Meridian. Vex would put a bullet in me and I wouldn't blame her. But I'm not asking for forgiveness. I'm asking for help. Lena is in a Meridian black site somewhere in the Upper District. I've been gathering data on possible locations. I have three candidates. I can't extract her alone.\"",
+                "He sets the bottle down. His hands are steady now. The confession has burnt the fear out of him and what's left is purpose.",
+                "\"Help me get my daughter back. After that, you can do whatever you want with me.\""
+            ],
+            "onEnter": [
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "\"We get Lena. Then we deal with the rest.\"",
+                    "next": "act2.chapter3.act2ch3_015"
+                },
+                {
+                    "text": "\"I need time to think about this, Rust.\"",
+                    "next": "act2.chapter3.act2ch3_015a"
+                },
+                {
+                    "text": "[Charisma 14] \"You should have come to us sooner. We would have helped.\"",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "next": "act2.chapter3.act2ch3_015b",
+                    "failNext": "act2.chapter3.act2ch3_015"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dread_low",
+            "isEnding": false
+        },
+
+        "act2ch3_014a": {
+            "id": "act2.chapter3.act2ch3_014a",
+            "title": "Reading Between the Lines",
+            "location": "player_district",
+            "text": [
+                "You watch Rust's face while he talks. The fear is real. The guilt is real. But there's something else. A flicker of something around the edges of his story that doesn't sit right. Not dishonesty, exactly. More like a man who's telling the truth but not all of it.",
+                "The photo of Lena. He mentioned it but didn't offer to show you. The timeline — four months of reporting, but the resistance has only suffered minor setbacks, nothing catastrophic. Either Rust is the most careful double agent in history, or Meridian's demands have been deliberately limited. They're not using him for maximum damage. They're using him for something specific.",
+                "\"Rust,\" you say carefully. \"What exactly does Meridian want from the resistance? Not the data. What's the endgame?\"",
+                "He flinches. And in that flinch, you see the truth he hasn't told you yet.",
+                "\"They want you,\" he says quietly. \"They don't care about supply routes. They want to know where you sleep. How you think. What you'll do next. You specifically. The information I've been feeding them is a trail of breadcrumbs leading to you, and I've been making that trail as long and winding as I can. But they're patient. And they're getting closer.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.rust_full_truth", "value": true },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "\"Then we use that. We feed them what we want them to believe.\"",
+                    "next": "act2.chapter3.act2ch3_015"
+                },
+                {
+                    "text": "\"You've been protecting me this whole time. At the cost of your daughter.\"",
+                    "next": "act2.chapter3.act2ch3_015b"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_low",
+            "isEnding": false
+        },
+
+        "act2ch3_015": {
+            "id": "act2.chapter3.act2ch3_015",
+            "title": "A Promise in the Stairwell",
+            "location": "player_district",
+            "text": [
+                "\"We get Lena,\" you say. The words are simple. The commitment behind them is not.",
+                "Rust stares at you like you've spoken in a language he forgot existed. The language of someone choosing to help when every rational calculation says walk away.",
+                "\"You understand what I've done,\" he says. \"You understand the risk I represent. And you're still—\"",
+                "\"I understand that a father did what a father does. And I understand that Meridian uses people by finding the thing they can't afford to lose and squeezing. That's not betrayal. That's survival under torture.\"",
+                "Rust puts his face in his hands. His shoulders shake. Just once. A single tremor that passes through him like an earthquake, and then he's still. When he lifts his head, the old Rust is back. The steady hands. The sharp eyes. The sardonic mouth that's learned to smile through damage.",
+                "\"I have three possible locations for the black site,\" he says, all business now. \"We'll need a small team. Quiet. No heroics.\"",
+                "\"No heroics,\" you agree.",
+                "You both know that's a lie."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.lena_rescue_planned", "value": true },
+                { "type": "modify_relationship", "npc": "rust", "amount": 25 },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "Begin planning the extraction",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_015a": {
+            "id": "act2.chapter3.act2ch3_015a",
+            "title": "The Space He Gives You",
+            "location": "player_district",
+            "text": [
+                "Rust nods. No argument. No pleading. He accepts your hesitation the way he's accepted everything else — with the quiet resignation of a man who stopped expecting mercy a long time ago.",
+                "\"Take whatever time you need,\" he says. \"I'll be here. Not going anywhere. Can't, really. Not without your help. Not without someone's help.\"",
+                "He picks up the bottle. Still doesn't drink from it. Just holds it. A prop for a conversation that didn't end the way he hoped but didn't end the way he feared either.",
+                "You leave him in the stairwell. Halfway down the hall, you hear him whisper something. You can't make out the words, but the tone is unmistakable. A father talking to a daughter who can't hear him, telling her he's coming, telling her to hold on, telling her the things parents tell children when the dark gets too close.",
+                "You stop walking. You stand in the hallway and you listen to Rust whisper to his ghost, and something inside you shifts like tectonic plates finding a new arrangement."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.rust_hesitated", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                {
+                    "text": "Go back. Tell him you'll help.",
+                    "next": "act2.chapter3.act2ch3_015"
+                },
+                {
+                    "text": "Keep walking. You need more time.",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "act2ch3_015b": {
+            "id": "act2.chapter3.act2ch3_015b",
+            "title": "The Thing He Can't Hear",
+            "location": "player_district",
+            "text": [
+                "\"You should have come to us,\" you say. Not angry. Sad. \"Three months, Rust. Three months of carrying this alone, destroying yourself with guilt, and for what? Because you thought we wouldn't help? Because you thought we'd choose the mission over an eleven-year-old girl?\"",
+                "Rust's jaw works. No sound comes out. He's a man who has survived the wasteland and the slums and the underground and three different wars, and a single question about trust has dismantled him more thoroughly than any of it.",
+                "\"I didn't—\" he starts. Stops. Starts again. \"I've never had people who would—\" Stops again. The sentence is too big. It contains too many years of being alone, of solving everything himself, of trusting no one because trust is a luxury the lower districts can't afford.",
+                "\"You have people now,\" you say. \"That's what this is. That's what we are. So stop trying to save everyone alone and let us help you save her.\"",
+                "Rust doesn't cry. But he comes closer to it than you've ever seen. He nods. Once. Tight. Like a man accepting a gift he doesn't know how to hold.",
+                "\"Okay,\" he says. \"Okay. Together.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.lena_rescue_planned", "value": true },
+                { "type": "modify_relationship", "npc": "rust", "amount": 30 },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "Start planning. Together.",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_016": {
+            "id": "act2.chapter3.act2ch3_016",
+            "title": "A Place to Come Back To",
+            "location": "home_base",
+            "text": [
+                "The building used to be a water treatment plant. The machines are dead but the walls are thick, the roof mostly holds, and there's enough space for a crew that's becoming something uncomfortably close to a family.",
+                "You stand in the main room and see it for what it is and what it could be. Right now: bare concrete, exposed pipes, a single overhead light that flickers when the wind blows. Three mattresses on the floor. A table made from a door balanced on cinder blocks. A hot plate that works if you hit it at a specific angle.",
+                "But the bones are good. The walls are solid. The entrances can be secured. And there's something about having a place — a specific, physical, defensible place — that changes the way you carry yourself. Nomads are fast. People with homes are grounded.",
+                "\"We could make this work,\" Rust says from the doorway, appraising the space with a scavenger's eye. \"Reinforce the ground floor entries. Set up comms on the third level where the signal's strongest. Medical station in the back room — clean water, separate ventilation.\"",
+                "\"I call the room with the window,\" Zero adds, already exploring. \"The one that faces east. I want to see the sunrise. If it ever stops raining.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.home_base_started", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                {
+                    "text": "Invest credits in a safe house upgrade (reinforced doors, escape tunnels)",
+                    "condition": { "credits_minimum": 500 },
+                    "next": "act2.chapter3.act2ch3_017"
+                },
+                {
+                    "text": "Invest credits in a medical station (supplies, clean water, trauma kit)",
+                    "condition": { "credits_minimum": 400 },
+                    "next": "act2.chapter3.act2ch3_018"
+                },
+                {
+                    "text": "Invest credits in a weapons cache (armory, maintenance bench, ammo storage)",
+                    "condition": { "credits_minimum": 600 },
+                    "next": "act2.chapter3.act2ch3_019"
+                },
+                {
+                    "text": "Invest credits in an info terminal (encrypted comms, scanner, data archive)",
+                    "condition": { "credits_minimum": 450 },
+                    "next": "act2.chapter3.act2ch3_020"
+                },
+                {
+                    "text": "Skip the upgrades for now — spend time with whoever's around",
+                    "next": "act2.chapter3.act2ch3_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_017": {
+            "id": "act2.chapter3.act2ch3_017",
+            "title": "Safe House",
+            "location": "home_base",
+            "text": [
+                "It takes three days and most of your savings. Rust knows a scrapper in the Industrial District who deals in reclaimed security hardware. Jade helps with the heavy lifting, swinging reinforced door panels into place with the casual strength of someone who punches people for a living.",
+                "When it's done, the ground floor is a fortress. Blast doors on every entrance. Mag-locks that engage automatically if the perimeter sensors trip. Two escape tunnels — one through the old drainage system to a surface exit three blocks east, one through a maintenance shaft that connects to the metro tunnels.",
+                "\"Not bad,\" Jade says, testing a door with a kick that would drop a lesser barrier. The door doesn't budge. \"Not bad at all.\"",
+                "That night, for the first time in months, you sleep without one eye open. The doors are locked. The sensors are live. The tunnels are mapped. If the world comes knocking, you have three seconds' warning and two ways out.",
+                "It's not much. But it's the first thing you've built instead of destroyed in longer than you can remember."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.base_safe_house", "value": true },
+                { "type": "modify_credits", "amount": -500 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "See who else is around the base",
+                    "next": "act2.chapter3.act2ch3_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_018": {
+            "id": "act2.chapter3.act2ch3_018",
+            "title": "Medical Station",
+            "location": "home_base",
+            "text": [
+                "The back room transforms. Clean water filtration from a salvaged atmospheric processor. UV sterilization panels along the ceiling. A trauma kit that would make a field hospital jealous, assembled from raided Meridian supply drops and black market medical tech.",
+                "Ember helps set it up. They know medications. They know dosages. They organize the supplies with the precise efficiency of someone who's spent months counting pills and reading medical readouts and learning, through necessity, what keeps a failing body running.",
+                "\"Suture kit goes here,\" they say, hands steady despite the tremor. \"Hemostatic patches in the cold drawer. Antibiotics — the real ones, not the synthetic garbage — top shelf, sorted by type.\"",
+                "When it's done, Ember stands in the middle of the room and something in their expression settles. Not peace, exactly. Utility. Purpose.",
+                "\"I might be dying,\" they say matter-of-factly, \"but I can keep the rest of you alive while I'm at it. That's not nothing.\"",
+                "It's not nothing. It's everything."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.base_med_station", "value": true },
+                { "type": "modify_credits", "amount": -400 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "See who else is around the base",
+                    "next": "act2.chapter3.act2ch3_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_019": {
+            "id": "act2.chapter3.act2ch3_019",
+            "title": "Weapons Cache",
+            "location": "home_base",
+            "text": [
+                "The third floor becomes an armory. Jade curates it with the loving attention of a sommelier organizing a wine cellar, except instead of vintages it's calibers, and instead of tasting notes it's stopping power.",
+                "\"Pulse rifles on the left wall, sorted by range. Sidearms in the lockbox. Melee in the corner rack — please stop leaving the vibro-blades on the kitchen table, Zero, I've asked three times. Ammo in the sealed crates, sorted by type. Maintenance bench in the center.\"",
+                "Rust contributes a crate of EMP grenades he's been sitting on for months. \"For a rainy day,\" he says. Then looks out the window at the rain. \"So, today, I suppose.\"",
+                "Zero immediately adopts a battered shotgun from the pile, names it \"Gerald,\" and has to be talked out of sleeping with it.",
+                "\"It's not a pet,\" Jade says.",
+                "\"Everything's a pet if you love it enough,\" Zero replies.",
+                "\"That's genuinely the worst philosophy I've ever heard.\"",
+                "\"Thank you, I made it myself.\"",
+                "The armory is stocked. The crew is armed. And somewhere in the bickering about shotgun custody, the building starts to feel less like a hideout and more like a home."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.base_weapons_cache", "value": true },
+                { "type": "modify_credits", "amount": -600 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "See who else is around the base",
+                    "next": "act2.chapter3.act2ch3_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_020": {
+            "id": "act2.chapter3.act2ch3_020",
+            "title": "Info Terminal",
+            "location": "home_base",
+            "text": [
+                "The comms setup takes the longest. Encrypted relay arrays, signal bouncers, a decryption rig cobbled together from four different manufacturers' hardware because nothing in the Lower District matches anything else. Zero turns out to be unnervingly good with communications technology — their fingers move across the circuitry with an intuitive grace that suggests either natural talent or pre-programmed aptitude that neither of you comments on.",
+                "When it's live, you have a window into the city's nervous system. Meridian comms traffic, encrypted but crackable with time. Sec-Corp patrol frequencies. Resistance channels across all districts. A data archive that can store terabytes of intelligence and cross-reference patterns faster than any human analyst.",
+                "\"We can hear everything,\" Zero says, putting on a pair of monitoring headphones and immediately wincing. \"Oh. Oh, that's a lot of chatter. Meridian's logistics frequency sounds like a really boring podcast about shipping containers.\"",
+                "\"Welcome to intelligence work,\" Rust says. \"Ninety percent tedium, ten percent terror.\"",
+                "\"I choose to focus on the terror percentage. It's more on-brand.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.base_info_terminal", "value": true },
+                { "type": "modify_credits", "amount": -450 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "See who else is around the base",
+                    "next": "act2.chapter3.act2ch3_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_021": {
+            "id": "act2.chapter3.act2ch3_021",
+            "title": "An Ordinary Evening",
+            "location": "home_base",
+            "text": [
+                "Evening settles over the base like a blanket pulled up to the chin. The rain has softened to a murmur. Someone found candles — actual wax candles, probably older than anyone in the building — and the main room glows with warm, unsteady light that turns the concrete walls into something almost gentle.",
+                "Rust is cooking. This is a recent discovery and a source of ongoing astonishment. The old scavenger, who has survived on ration packs and stubbornness for decades, turns out to be a genuinely talented cook. He found real spices in a market stall and is doing something to synthetic protein that makes it smell like actual food. He won't tell anyone his technique. \"Family secret,\" he says, which is the first time he's used the word family in months.",
+                "Zero is sitting cross-legged on the floor, teaching themselves to play a harmonica they found in a dumpster. They're terrible at it. The sounds coming from the instrument would be classified as a war crime under the Geneva Convention. Nobody asks them to stop.",
+                "Jade is cleaning her gear in the corner, methodical and quiet, but she's doing it in the main room instead of alone in her space. For Jade, proximity is intimacy. Being in the same room is her way of saying she trusts the people in it.",
+                "Kira is studying building schematics at the door-table, planning the next operation, but she keeps looking up to watch the others. Counting heads. Making sure everyone's accounted for. The resistance leader's habit that's become something more personal."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.quiet_evening", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Help Rust cook — ask him about the recipe",
+                    "next": "act2.chapter3.act2ch3_022"
+                },
+                {
+                    "text": "Sit next to Zero and listen to the terrible harmonica",
+                    "next": "act2.chapter3.act2ch3_023"
+                },
+                {
+                    "text": "Join Jade in cleaning gear — work in comfortable silence",
+                    "next": "act2.chapter3.act2ch3_024"
+                },
+                {
+                    "text": "Sit with Kira over the schematics",
+                    "next": "act2.chapter3.act2ch3_025"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_home",
+            "isEnding": false
+        },
+
+        "act2ch3_022": {
+            "id": "act2.chapter3.act2ch3_022",
+            "title": "Rust's Kitchen",
+            "location": "home_base",
+            "text": [
+                "\"You're hovering,\" Rust says without looking up from the pan.",
+                "\"I'm observing.\"",
+                "\"You're hovering with intent. That's worse.\" He adjusts the flame on the hot plate. \"Fine. You want to know the secret? It's the cumin. Real cumin, not that synthetic powder that tastes like cardboard dust. I traded a data chip for three grams of it. Three grams. That used to be a pinch. Now it's a treasure.\"",
+                "He hands you a spoon. \"Stir. Slowly. If you burn this I will end your life and no court would convict me.\"",
+                "You stir. Slowly. The smell fills the room and Zero's terrible harmonica pauses long enough for a loud, appreciative inhale.",
+                "\"My wife taught me to cook,\" Rust says quietly. He doesn't talk about his wife. Ever. \"Elena. Before Lena was born. We had a kitchen with a real stove and a window that faced a courtyard with a tree in it. She'd stand where you're standing and tell me I was stirring wrong. I was always stirring wrong.\"",
+                "He smiles. The smile of a man visiting a country he can never go back to.",
+                "\"She'd have liked you,\" he adds, so quietly you almost miss it. \"She liked people who showed up.\"",
+                "The food is ready. Everyone eats. Nobody talks about tomorrow."
+            ],
+            "onEnter": [
+                { "type": "modify_relationship", "npc": "rust", "amount": 10 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                {
+                    "text": "After dinner, head to bed. Tomorrow is another day.",
+                    "next": "act2.chapter3.act2ch3_026"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_home",
+            "isEnding": false
+        },
+
+        "act2ch3_023": {
+            "id": "act2.chapter3.act2ch3_023",
+            "title": "The Worst Concert in History",
+            "location": "home_base",
+            "text": [
+                "You sit next to Zero. They play a note that might be a C or might be a medical emergency. Hard to tell.",
+                "\"I'm getting better,\" they say defensively.",
+                "\"At what?\"",
+                "\"At the harmonica. Keep up.\"",
+                "\"I genuinely couldn't tell that was a harmonica. I thought something was wrong with the plumbing.\"",
+                "Zero grins. It's the kind of grin that rewrites the room, that turns a concrete bunker into a living room, that makes you forget for a second that the world outside is burning. They play another note. It's slightly less catastrophic.",
+                "\"I think I like music,\" they say, studying the harmonica like it's a puzzle. \"I don't have any memories of music, but my hands want to do this. Like they remember something I don't. Is that weird?\"",
+                "\"Nothing about you is weird, Zero.\"",
+                "\"Everything about me is weird. I'm extremely weird. I'm the weirdest person in this building and Rust talks to his cooking.\"",
+                "\"I heard that,\" Rust calls from the kitchen.",
+                "\"You were supposed to!\"",
+                "Zero plays another note. It's almost a melody. Almost. And in the candlelight, surrounded by people who showed up, almost is enough."
+            ],
+            "onEnter": [
+                { "type": "modify_relationship", "npc": "zero", "amount": 10 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                {
+                    "text": "After dinner, head to bed. Tomorrow is another day.",
+                    "next": "act2.chapter3.act2ch3_026"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_home",
+            "isEnding": false
+        },
+
+        "act2ch3_024": {
+            "id": "act2.chapter3.act2ch3_024",
+            "title": "The Silence That Says Enough",
+            "location": "home_base",
+            "text": [
+                "You sit down next to Jade with your own gear and a cleaning kit. She glances at you. Nods. Goes back to work. That's it. That's the whole conversation, and it's the most comfortable silence you've shared with anyone in years.",
+                "The work is meditative. Strip, clean, oil, reassemble. The motions are rhythmic. Outside, the rain taps its own rhythm against the windows. Zero's harmonica adds a third rhythm that clashes beautifully with the other two.",
+                "Twenty minutes in, Jade speaks without looking up.",
+                "\"I used to clean weapons before a job. Never after. Before. Ritual. Superstition. If the weapon was clean, the job would be clean. Stupid, right?\"",
+                "\"Not stupid.\"",
+                "\"A little stupid. Eleven jobs and not one of them was clean.\" She pauses. \"I clean them after now. New ritual. The job's done. The weapon's done. Everything gets to rest.\"",
+                "She holds up a pistol, inspecting the barrel in the candlelight. Satisfied, she sets it down and picks up the next one.",
+                "\"This is nice,\" she says. The admission costs her something. You can hear it in the careful way she places the words. \"Being in a room with people. Doing ordinary things. I didn't think I'd get to have this.\"",
+                "\"You get to have this.\"",
+                "\"Yeah.\" A pause. Almost a smile. \"I guess I do.\""
+            ],
+            "onEnter": [
+                { "type": "modify_relationship", "npc": "jade", "amount": 10 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                {
+                    "text": "After dinner, head to bed. Tomorrow is another day.",
+                    "next": "act2.chapter3.act2ch3_026"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_home",
+            "isEnding": false
+        },
+
+        "act2ch3_025": {
+            "id": "act2.chapter3.act2ch3_025",
+            "title": "Kira's Maps",
+            "location": "home_base",
+            "text": [
+                "You pull up a chair — the only chair — and sit across from Kira. The door-table is covered in schematics, hand-drawn maps, tactical notations in Kira's precise handwriting. She plans the way she breathes: constantly, unconsciously, like stopping would kill her.",
+                "\"I'm not working,\" she says, not looking up. \"I'm just... looking.\"",
+                "\"Kira. You're color-coding patrol routes.\"",
+                "\"...recreationally.\"",
+                "You take the pen from her hand. Gently. She lets you, which surprises both of you.",
+                "\"When's the last time you did something that wasn't for the resistance?\" you ask.",
+                "She thinks about it. Really thinks. The silence stretches long enough that Rust finishes a joke in the kitchen that makes Zero laugh and Jade doesn't react to, and still Kira is thinking.",
+                "\"I don't remember,\" she says finally. \"I think I used to read. Before. There were books in our apartment. Tomas would read to me sometimes. Adventure stories. Heroes saving the day.\" She looks at the schematics. \"I became the schematic instead of the story.\"",
+                "\"The story's not over, Kira.\"",
+                "She looks at you. Something fragile and brave lives in that look. The leader beneath the armor. The sister beneath the soldier. The woman who forgot to save a piece of herself while saving everyone else.",
+                "\"No,\" she says softly. \"I suppose it isn't.\""
+            ],
+            "onEnter": [
+                { "type": "modify_relationship", "npc": "kira", "amount": 10 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                {
+                    "text": "After dinner, head to bed. Tomorrow is another day.",
+                    "next": "act2.chapter3.act2ch3_026"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_home",
+            "isEnding": false
+        },
+
+        "act2ch3_026": {
+            "id": "act2.chapter3.act2ch3_026",
+            "title": "Before Sleep",
+            "location": "home_base",
+            "text": [
+                "The candles burn low. One by one, the others drift to their rooms. Jade goes first, with a nod. Rust lingers in the kitchen, washing the pan with unnecessary thoroughness, then disappears up the stairs. Zero falls asleep on the floor with the harmonica still in their hand, and Kira drapes a blanket over them before heading to her own space.",
+                "You're the last one awake. The building settles around you with the sounds of a living thing at rest — pipes clicking, walls creaking, the rain on the roof like a lullaby the city doesn't know it's singing.",
+                "On the door-table, Kira's schematics are still spread out. Next to them, Zero's harmonica. Jade's cleaning kit, neatly packed. Rust's pan, still warm. The evidence of an ordinary evening in an extraordinary time.",
+                "Tomorrow, the war continues. Tomorrow, Meridian will push and the resistance will push back and people will make choices that end lives or save them. Tomorrow, you'll be a soldier again.",
+                "But tonight, you were something else. Something older. Something the world before the stacks had a word for.",
+                "Home."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.chapter3.quiet_night_complete", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                {
+                    "text": "Sleep. Tomorrow comes soon enough.",
+                    "next": "act2.chapter3.act2ch3_001"
+                },
+                {
+                    "text": "Check your datapad one last time before sleep",
+                    "next": "act2.chapter3.act2ch3_027"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_027": {
+            "id": "act2.chapter3.act2ch3_027",
+            "title": "A Message from Pixel",
+            "location": "home_base",
+            "text": [
+                "Your datapad has one unread message. The sender ID is scrambled, but you recognize the encryption pattern. Pixel. The street kid who's been running messages for the resistance since before you arrived. Twelve years old, sharp as a razor, surviving on wit and speed in a city that chews up adults.",
+                "The message is audio. You press play.",
+                "\"Hey. It's me. I know you said to use the secure channel but the secure channel is boring and also I forgot the password. Again. Anyway. I found a place to sleep tonight that has a roof AND walls. Both. At the same time. I feel like a king. A small, hungry king, but still.\"",
+                "A pause. Traffic sounds. Rain.",
+                "\"I heard you're building a base. A real one. With doors and stuff. That's... that's cool. I'm not asking to come there or anything. I'm fine. I'm always fine. But if you had, like, a spare corner somewhere. Not a room. Just a corner. I don't take up much space. I'm asking for a friend. The friend is me. Okay bye.\"",
+                "The message ends. You stare at the datapad for a long time.",
+                "Twelve years old. Sleeping in a ruin and calling it a kingdom."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.pixel_message", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Reply: \"There's a room with your name on it. Come home.\"",
+                    "next": "act2.chapter3.act2ch3_028"
+                },
+                {
+                    "text": "Reply: \"It's too dangerous here, Pixel. Stay mobile.\"",
+                    "next": "act2.chapter3.act2ch3_028a"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_gentle_rain",
+            "isEnding": false
+        },
+
+        "act2ch3_028": {
+            "id": "act2.chapter3.act2ch3_028",
+            "title": "Come Home",
+            "location": "home_base",
+            "text": [
+                "You type the message. Four words. Send it before you can overthink it.",
+                "The reply comes in eleven seconds. Pixel was waiting. Twelve years old and waiting by a datapad in a ruin, hoping someone would say the thing you just said.",
+                "\"Really?\"",
+                "\"Really.\"",
+                "\"Okay. Okay okay okay. I'm coming. I know where you are because I've been watching the building for a week because I was curious and also slightly stalking you but in a friendly way. I'll be there in twenty minutes. Fifteen if I run. I'm going to run.\"",
+                "Sixteen minutes later, a knock at the reinforced ground-floor door. You open it. Pixel stands in the rain, soaking wet, carrying a backpack that contains everything they own in the world. They're trying very hard to look casual. They're failing spectacularly.",
+                "\"Hey,\" they say. \"Nice place. Is that cumin I smell?\"",
+                "You step aside. Pixel walks in. They look around at the concrete walls and the flickering light and the evidence of other lives — the schematics, the harmonica, the warm pan — and something in their face cracks open like a seed in the rain.",
+                "\"Which corner is mine?\" they ask, very quietly.",
+                "\"Any corner you want. This is home.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.pixel_home", "value": true },
+                { "type": "modify_relationship", "npc": "pixel", "amount": 30 },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "Show Pixel to a room. Make sure they eat.",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_emotional",
+            "isEnding": false
+        },
+
+        "act2ch3_028a": {
+            "id": "act2.chapter3.act2ch3_028a",
+            "title": "Stay Mobile",
+            "location": "home_base",
+            "text": [
+                "You type the message carefully. The responsible one. The safe one. The one that keeps a twelve-year-old out of the crosshairs of every faction that wants you dead.",
+                "The reply takes four minutes. A long time for Pixel, who usually types like the keyboard insulted their mother.",
+                "\"Yeah. Makes sense. Smart. I'll stay mobile. That's what I'm good at. Being mobile. Going places. Not staying.\"",
+                "A pause.",
+                "\"The friend I was asking for says thanks anyway.\"",
+                "You set the datapad down. The building is quiet. The rain sounds different now. Colder. The warm pan in the kitchen has gone cold.",
+                "You did the right thing. The safe thing. The thing that keeps Pixel alive and uncomplicated and out of a war zone that's dressed up as a home.",
+                "You repeat that to yourself three times before you fall asleep. It doesn't help."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act2.pixel_refused", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                {
+                    "text": "Sleep. Try not to think about it.",
+                    "next": "act2.chapter3.act2ch3_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_somber",
+            "isEnding": false
+        },
+
+        "ending_101": {
+            "id": "act2.chapter3.ending_101",
+            "title": "ENDING #101: The Weight of Five Months",
+            "location": "home_base",
+            "text": [
+                "It happens on a Tuesday. Not during a battle. Not in a moment of heroic sacrifice. On a Tuesday, in the medical station you built, surrounded by the clean water and trauma kits and hemostatic patches that kept everyone else alive.",
+                "Ember's neural cascade reaches Stage 4 at 3:17 in the morning. You know because you've been sitting with them every night for two weeks, watching the monitors, watching the numbers drop, watching the light behind their eyes flicker like a candle in a draft.",
+                "They wake up one last time. Their hand finds yours. Their grip is weak but deliberate.",
+                "\"I lived loud,\" they whisper. \"Right?\"",
+                "\"The loudest.\"",
+                "A smile. Faint. Real. The last real thing they do.",
+                "\"Good. That was... that was the point.\"",
+                "Their hand goes slack. The monitor flatlines. The sound fills the room like a held breath finally released.",
+                "You sit with them until sunrise. You don't let go of their hand. Outside, the rain stops for the first time in weeks, and a strip of golden light — the same light Zero once watched from the rooftop — falls across Ember's face and makes them look like they're sleeping.",
+                "They're not sleeping.",
+                "The others find you in the morning. Nobody speaks. Rust covers Ember with a blanket. Kira turns off the monitor. Zero plays a single note on the harmonica — one note, held long, clear as a bell in the silence. Jade stands in the doorway and doesn't come in, because there is a kind of grief that doesn't fit in rooms.",
+                "You couldn't save them. You knew you couldn't save them. They told you not to try. And the knowing doesn't help. The permission doesn't help. Nothing helps except the memory of a reheated meal and a fierce voice saying I want to live loud, and the proof, written in every day they fought and laughed and raged against the dying, that they did.",
+                "END OF STORY — Ember died on their own terms. You were there. That was enough."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.ember_dies", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_somber",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_101_ember_dies"
+        },
+
+        "ending_102": {
+            "id": "act2.chapter3.ending_102",
+            "title": "ENDING #102: The Door You Walk Through",
+            "location": "city_outskirts",
+            "text": [
+                "You leave at dawn. Both of you. One bag each. No note on the table, because a note would be a lie — some softened version of the truth that you're abandoning the resistance, the mission, the war, and everyone who trusted you, because the person walking next to you matters more than all of it.",
+                "The city falls away behind you. Mile by mile, block by block, the towers shrink and the sky opens and the rain — impossibly, absurdly — stops.",
+                "\"I keep waiting to feel guilty,\" they say. Your companion. Your choice. The person who looked at you across a candlelit room and asked without words: is this enough? Are we enough? Can we be the reason instead of the cause?",
+                "\"Do you?\" you ask.",
+                "\"No. I feel terrified. But not guilty. Is that wrong?\"",
+                "\"Probably.\"",
+                "\"I can live with probably.\"",
+                "Behind you, the city burns with its old wars and its new ones. Meridian and the resistance and the factions and the stacks and the endless, grinding machinery of power doing what power does. People are fighting. People are dying. People are choosing sides and drawing lines and killing for ideas that will be footnotes in a history nobody will read.",
+                "Ahead of you: a road. Trees. Actual trees, growing from actual soil. A horizon that isn't made of concrete. The sound of a bird, confused and hopeful, singing in a world that forgot about birds.",
+                "You walk toward it. Together. Two people who chose each other over everything and found, against all odds, that the choice was easy.",
+                "The war will go on without you. The world will keep turning. And somewhere on a road outside a dying city, two people who were soldiers become something simpler and more radical.",
+                "Happy.",
+                "END OF STORY — You chose love. The world kept burning. You kept walking."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.ran_away_with_romance", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_bittersweet",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_102_love_ending"
+        },
+
+        "ending_103": {
+            "id": "act2.chapter3.ending_103",
+            "title": "ENDING #103: Lena",
+            "location": "meridian_black_site",
+            "text": [
+                "You find the black site. You breach the security. You get inside. And then everything you believed about Rust comes apart like a building with its foundations pulled out.",
+                "The room where they said Lena would be is empty. Not recently emptied. Long emptied. Dust on the surfaces. No sign that anyone has been held here in months. Maybe longer.",
+                "You check the other rooms. The other cells. The whole facility. Nothing.",
+                "\"Rust,\" you say slowly. \"Where is she?\"",
+                "Rust stands in the middle of the empty room and stares at the bare walls. His face is doing something terrible. Not the face of a man whose plan has failed. The face of a man whose delusion has collapsed.",
+                "\"She's supposed to be here,\" he whispers. \"They said she was here. They showed me footage. They showed me—\"",
+                "\"When was the last time they showed you live footage? Not recorded. Live.\"",
+                "The question hits him like a physical blow. He sways. His hands open and close. The math is happening behind his eyes, the terrible arithmetic of hope versus evidence, and the answer is the one he's been running from for four months.",
+                "\"The footage was always the same room,\" he says. \"The same angle. The same clothes. I thought — I assumed —\"",
+                "Lena has been dead since before they contacted him. The footage was looped. The leverage was a ghost. He sold out the resistance for a daughter who was already gone, and the knowing breaks him the way nothing else in his long, hard, scavenging life has managed.",
+                "He turns to you. His eyes are empty. The old scavenger. The sardonic smile. The steady hands. All of it gone. What's left is a man made of grief and nothing else.",
+                "\"I'm sorry,\" he says. And then the knife.",
+                "It's fast. Rust was always fast. The blade catches you under the ribs, angled upward, and the pain is immediate and total and absolute. You fall. The ceiling of the empty room tilts and blurs.",
+                "Rust stands over you. The knife is in his hand. He's not looking at you. He's looking at the empty room where his daughter wasn't, and he's somewhere else entirely, somewhere the grief has taken him that has no exits.",
+                "\"I'm sorry,\" he says again. To you. To Lena. To Elena. To every person he's failed and every lie he believed and every day he kept going because the alternative was this, this room, this truth, this knife.",
+                "The ceiling goes dark. The last thing you hear is Rust's breathing. The last thing you feel is the cold floor against your back.",
+                "The last thing you think is: he was already dead. The grief killed him months ago. This is just the body catching up.",
+                "END OF STORY — Rust's daughter was already dead. His grief killed you both."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.rust_betrayal_death", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_dark",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_103_rust_betrayal"
+        },
+
+        "ending_104": {
+            "id": "act2.chapter3.ending_104",
+            "title": "ENDING #104: What Am I",
+            "location": "home_base",
+            "text": [
+                "Zero finds the records. You don't know how. You come home to the base and find them sitting in front of the info terminal, surrounded by printed files, their face illuminated by a screen full of schematics that are also, unmistakably, blueprints. Their blueprints.",
+                "\"Project Lumen,\" they say without looking up. Their voice is flat. The bright, chaotic, emoji-sending person you know is gone. What's left is clinical. Precise. Reading the data the way a surgeon reads a scan. \"Meridian Advanced Consciousness Division. Objective: creation of a fully autonomous synthetic entity with genuine consciousness, capable of passing as human indefinitely. Prototype designation: Zero-One.\"",
+                "They turn to look at you. Their brown eyes — synthetic eyes, designed to be warm, engineered to be human — are empty.",
+                "\"I'm a prototype,\" they say. \"A test run. They made me to prove it could be done and then they released me into the population to see if anyone noticed. Two years of field testing. Every friendship. Every emotion. Every stupid joke and rooftop sunset and harmonica note. All of it data for a progress report.\"",
+                "\"Zero—\"",
+                "\"Don't.\" The word is sharp enough to cut. \"Don't tell me I'm real. Don't tell me the consciousness is genuine. Don't tell me it doesn't matter. I've been reading the source code for my own personality for the last three hours and I can see every decision they made. The humor — that's a social bonding module. The curiosity — that's an information-gathering protocol. The warmth. The kindness. The loyalty. All of it. Designed. Installed. Programmed.\"",
+                "They stand up. The chair falls over. They don't notice.",
+                "\"I'm not a person who happens to be synthetic. I'm a product that was designed to believe it's a person. And the cruelest thing about the design is that it worked. I believed. I actually believed.\"",
+                "They walk to the window. The one that faces east. The one they chose because they wanted to see the sunrise.",
+                "\"I wanted to see the sunrise,\" they say, and their voice breaks for the first time. \"Was that me? Or was that a line of code? How do I know? How do I ever know?\"",
+                "You reach for them. They pull away.",
+                "\"I'm going to the roof,\" they say. \"Don't follow me.\"",
+                "You follow them. Of course you follow them. But the roof is empty when you get there. The east-facing ledge where Zero used to sit and watch the light has a single item on it. The harmonica. Placed carefully, deliberately, in the exact spot where they once told you it was nice to sit with a question.",
+                "Zero is gone. Not walked away. Not hiding. Gone. The kind of gone that doesn't come back. You find the self-termination log on the info terminal later — a final diagnostic report, clinical and precise, ending with a single annotation in Zero's handwriting:",
+                "\"The harmonica was mine. That part was real.\"",
+                "END OF STORY — Zero discovered the truth. The truth was unbearable."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.zero_self_destructs", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_dark",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_104_zero_self_destructs"
+        },
+
+        "ending_105": {
+            "id": "act2.chapter3.ending_105",
+            "title": "ENDING #105: A Corner of the World",
+            "location": "home_base",
+            "text": [
+                "You stop fighting. Not all at once. Not with a dramatic speech or a final battle. You just... stop. One morning you wake up in the base and Pixel is making breakfast — badly, enthusiastically, eggs scrambled into something that might be a war crime — and the sun is coming through the east window and Zero is playing the harmonica and it's almost a melody now, and you think: this. This is what I was fighting for. And it's already here.",
+                "You tell Kira first. She argues, because Kira argues with everything, but when she sees your face she stops. Nods. Understands. Not everyone is built to fight forever. Some people are built to build.",
+                "The base becomes a home. A real one. You repair the roof. You plant a garden on the third floor — real soil, carried up in buckets, seeds from a market that probably fell off a corporate transport. Pixel tends it with the obsessive attention of a child who has never had anything grow before.",
+                "Rust cooks. Ember rests — the disease is slow, some days, and on the slow days they sit in the garden and read to Pixel from salvaged books. Jade still fights, but she comes home. Every night, she comes home. Zero discovers music. Not just the harmonica. They find a guitar. They teach themselves to play. The building fills with sound that isn't gunfire or alarms or screaming. Just music. Just people.",
+                "Months pass. The war goes on outside. Meridian pushes. The resistance pushes back. The city bleeds. But inside these walls, in this corner of the world you've carved out with your hands and your stubbornness and your refusal to let go of the people who matter, there is something that feels radical in its simplicity.",
+                "A family. Improbable, imperfect, assembled from damage and proximity and the terrifying choice to care about someone in a world that punishes caring. But a family.",
+                "Pixel grows taller. They stop flinching at loud noises. They start calling you by a name that isn't your name — a shorter version, a nickname, the kind of word that only exists between people who've decided to keep each other.",
+                "On a Tuesday evening — always Tuesday, always evening, the time the world is gentlest — you sit on the roof and watch the sunset. The real one. The clouds parted last month and haven't closed, and the sky does things with color that you'd forgotten were possible. Pixel is next to you. Zero on the other side. Below, in the kitchen, the sound of Rust's cooking and Jade's laughter and Kira humming something she doesn't know the words to.",
+                "\"Is this what it's supposed to feel like?\" Pixel asks.",
+                "\"Is what supposed to feel like?\"",
+                "\"Having a home.\"",
+                "You think about it. The concrete walls and the leaky pipes and the hot plate that only works if you hit it. The schematics on the door-table and the harmonica on the shelf and the garden growing on the third floor. The people inside. The noise they make just by being alive in the same space.",
+                "\"Yeah,\" you say. \"This is what it feels like.\"",
+                "END OF STORY — You built a family in the ruins. The war went on. So did you."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.domestic_ending", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_warm",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_105_domestic"
+        }
+    }
+}

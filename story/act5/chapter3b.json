@@ -1,0 +1,649 @@
+{
+    "meta": {
+        "file": "act5-chapter3b-secret-endings",
+        "act": 5,
+        "chapter": "3b",
+        "description": "Act 5 Part 3B — Secret Endings (#94-#100). The most hidden endings in LATENCY, requiring obscure flag combinations accumulated across the entire game. Includes the True Ending (#100: LATENCY).",
+        "endingRange": "94-100",
+        "designNotes": "These endings are virtually impossible to reach on a blind playthrough. They reward exhaustive exploration, specific relationship tracking, and game-spanning flag accumulation. Ending #100 is the canonical True Ending and should be the most emotionally devastating piece of writing in the game."
+    },
+    "nodes": {
+
+        "secret_094_approach": {
+            "id": "act5.chapter3b.secret_094_approach",
+            "title": "Fragments",
+            "location": "player_quarters",
+            "text": [
+                "You wake up and you don't know whose dream you were having.",
+                "It's been happening more and more. The stack memories you absorbed throughout your journey — five, six, maybe more — have stopped being discrete files you can access and close. They've started bleeding. A woman's laugh that isn't yours. The taste of a cigarette brand that was discontinued forty years ago. The bone-deep certainty that you once had a daughter, even though you know you never did.",
+                "You stand in front of the mirror. Your face looks back. But behind your eyes, a crowd stares out.",
+                "The memories are arranging themselves. Not randomly — deliberately. Like they've been waiting for a critical mass, a quorum of ghosts, and now that enough of them have gathered in one skull, they want to show you something."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.memory_lane.started", "value": true }
+            ],
+            "conditions": {
+                "all": [
+                    { "flag": "stack_memory_count", "operator": ">=", "value": 5 },
+                    { "flag": "act4.completed", "value": true }
+                ]
+            },
+            "choices": [
+                {
+                    "text": "Close your eyes. Let them show you.",
+                    "next": "act5.chapter3b.secret_094_revelation"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_memory_drift",
+            "isEnding": false
+        },
+
+        "secret_094_revelation": {
+            "id": "act5.chapter3b.secret_094_revelation",
+            "title": "A Hundred Lives",
+            "location": "memory_montage",
+            "text": [
+                "The montage begins.",
+                "A dock worker in the Harbor District, fifty years ago, watching the last natural sunset before the smog layer sealed the sky permanently. He's holding a sandwich his wife made. He's thinking about how the mustard is wrong but he'll never tell her. He dies in a crane collapse four months later. You have his last meal in your mouth right now.",
+                "A Meridian programmer who discovered the consciousness-transfer prototype and understood, with the quiet horror of someone who reads the fine print, what it would mean for the world. She tried to sabotage it. She got as far as the server room door. Her stack was harvested while her body was still warm. You carry her unfinished act of courage like a stone in your chest.",
+                "A child from the Ashfields. No older than nine. He collected bottle caps and believed, with absolute sincerity, that if he gathered enough of them he could buy his mother out of her factory contract. His memory is the brightest thing inside you. It is also the thing most likely to make you sit down on the floor and not get up for a while.",
+                "They cascade. Faster. A street preacher. A bouncer. A woman who sang in a language no one else spoke. A soldier who surrendered. A thief who returned what he stole. Lives layered over lives, memories soaking into memories, until the boundaries dissolve and you are standing in a cathedral built from lived experience, every pew filled with someone you used to be.",
+                "And at the altar of that cathedral, you see yourself. Not any of the borrowed selves. You. The original. Small and terrified and trying to remember which thoughts belong to which person.",
+                "The answer, you realize, is that the question doesn't matter anymore."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.memory_lane.revelation", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Accept them. All of them. You are everyone you've carried.",
+                    "next": "act5.chapter3b.secret_094_conclusion"
+                }
+            ],
+            "ascii": null,
+            "music": "emotional_montage_swell",
+            "isEnding": false
+        },
+
+        "secret_094_conclusion": {
+            "id": "act5.chapter3b.secret_094_conclusion",
+            "title": "ENDING #94: Memory Lane",
+            "location": "player_quarters",
+            "text": [
+                "You open your eyes. The mirror is still there. Your face is still there.",
+                "But you're not alone in it anymore, and you never will be again. Every stack memory you absorbed is a permanent resident now. Not a haunting — a communion. The dock worker steadies your hands. The programmer sharpens your focus. The child reminds you that bottle caps can buy freedom if you believe hard enough.",
+                "You walk out into the city. The neon reflects off wet pavement and for a moment, just a moment, you see it through a hundred pairs of eyes simultaneously. The dock worker sees the sunrise he never got. The programmer sees the server room she never reached. The child sees a world made of shining things.",
+                "It is beautiful. It is terrifying. It is the most human thing that has ever happened to someone who isn't sure they're one person anymore.",
+                "You keep walking. A hundred ghosts walk with you. Their footsteps don't make sound, but yours are heavy enough for all of them."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.memory_lane.completed", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "trigger_event", "event": "credits_roll", "params": { "variant": "memory_montage" } }
+            ],
+            "ending": true,
+            "endingId": "ending_094",
+            "endingTitle": "Memory Lane",
+            "endingCategory": "secret",
+            "endingDescription": "You carried a hundred lives inside you. They became you. You became them.",
+            "choices": [],
+            "ascii": null,
+            "music": "ending_memory_lane",
+            "isEnding": true
+        },
+
+        "secret_095_approach": {
+            "id": "act5.chapter3b.secret_095_approach",
+            "title": "The Final Meeting",
+            "location": "ghost_syndicate_nexus",
+            "text": [
+                "The Broker's invitation arrives as a ghost-encrypted packet hidden inside a spam advertisement for synthetic coffee. It takes your best decryption tools three hours to find the message inside the message inside the message. When you finally extract it, the text is two words: COME HOME.",
+                "The Nexus is different this time. The holographic data streams aren't cascading — they're organized. Sorted. Every stream is labeled, and as you walk between them, you start to recognize names. Contacts you've made. Deals you've brokered. People you've blackmailed. Every thread leads to the same central node: you.",
+                "The Broker is waiting at the center. They aren't sitting. They're standing, and the mask is already off. Beneath it is a face you've never seen — unaugmented, ageless in the way that people who never go outside are ageless — and they're smiling. Not the Broker's smile. Something genuine. Something that knows a punchline you haven't heard yet.",
+                "\"You've done beautifully,\" the Broker says. \"Senator Voss folded exactly when we needed them to. The syndicate's reputation has never been higher. And you — you've been the most spectacular instrument I've ever tuned.\"",
+                "The word instrument hangs in the recycled air."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.broker_wins.started", "value": true }
+            ],
+            "conditions": {
+                "all": [
+                    { "flag": "faction.ghostSyndicate.reputation", "operator": "highest_of_all" },
+                    { "flag": "blackmailed_senator", "value": true },
+                    { "flag": "act4.completed", "value": true }
+                ]
+            },
+            "choices": [
+                {
+                    "text": "\"What do you mean, instrument?\"",
+                    "next": "act5.chapter3b.secret_095_revelation"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_ghost_reveal",
+            "isEnding": false
+        },
+
+        "secret_095_revelation": {
+            "id": "act5.chapter3b.secret_095_revelation",
+            "title": "The Product",
+            "location": "ghost_syndicate_nexus",
+            "text": [
+                "The data streams rearrange. The Broker waves a hand and your entire journey materializes in holographic light — a timeline, branching and forking and converging, every decision point illuminated, every choice you made highlighted in gold. It looks like a circuit diagram. It looks like a nervous system. It looks like a script.",
+                "\"Every choice you made was predicted within a 94.7% confidence interval,\" the Broker says. They aren't gloating. They're presenting. This is a product demonstration. \"Your personality profile, your trauma responses, your moral architecture — we mapped them before you ever left the Ashfields. We didn't need to control you. We just needed to know you.\"",
+                "The blackmail on the senator. The alliances you built. The enemies you made. Every move that felt like agency, like free will exercising itself in a hostile world — each one traced back to a probability node in the Broker's model. They didn't pull strings. They arranged the stage so perfectly that you'd pull your own.",
+                "\"The dataset you generated is priceless. A complete map of human decision-making under extreme stress, with full emotional telemetry. Meridian will pay a fortune for it. The Iron Collective already has. And the beautiful part?\" The Broker leans forward. \"You did it freely. Every choice was genuinely yours. That's what makes the data valid. Coerced behavior is worthless. Authentic behavior, from a subject who truly believes they're in control?\"",
+                "The Broker's smile widens. \"That's the most valuable commodity in the city.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.broker_wins.revelation", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Stare at your own decision tree. Look for the branch where you could have escaped.",
+                    "next": "act5.chapter3b.secret_095_conclusion"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_ghost_reveal",
+            "isEnding": false
+        },
+
+        "secret_095_conclusion": {
+            "id": "act5.chapter3b.secret_095_conclusion",
+            "title": "ENDING #95: The Broker Wins",
+            "location": "ghost_syndicate_nexus",
+            "text": [
+                "You search the holographic timeline. Every branch, every fork, every moment where you thought you saw a way out. The Broker waits patiently. They've watched other people do this. They know how long it takes.",
+                "There is no branch. There was never a branch. Not because your choices didn't matter — they did, every single one — but because the Broker never needed you to choose a specific path. They needed you to choose at all. The act of choosing was the product. The content of the choice was irrelevant.",
+                "\"You can leave,\" the Broker says. \"I won't stop you. You can walk out of here and do anything you want. The data's already been sold. Your value as a subject has been fully extracted. Whatever you do next is on your own time.\" A pause. \"Though I should mention — we'll still be watching. The model gets better with more data points.\"",
+                "You walk out of the Nexus. The city wraps around you with its neon and its noise and its infinite, branching, perfectly predicted possibilities. Every step you take is free. Every step you take is data. The Broker was right about one thing: the difference between those two facts is the most terrifying gap in the world.",
+                "Somewhere in the Nexus, a probability model updates. Your exit trajectory: predicted."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.broker_wins.completed", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "trigger_event", "event": "credits_roll", "params": { "variant": "broker_predicted" } }
+            ],
+            "ending": true,
+            "endingId": "ending_095",
+            "endingTitle": "The Broker Wins",
+            "endingCategory": "secret",
+            "endingDescription": "Your free will was the most valuable dataset in the city. Every choice you made was the product.",
+            "choices": [],
+            "ascii": null,
+            "music": "ending_broker_wins",
+            "isEnding": true
+        },
+
+        "secret_096_approach": {
+            "id": "act5.chapter3b.secret_096_approach",
+            "title": "Mako's Blueprint",
+            "location": "lower_district_safehouse",
+            "text": [
+                "Mako is alive, which is itself a small miracle in a city that eats miracles for breakfast. She's also awake, which is worse, because Mako awake is Mako planning, and Mako planning has historically been a precursor to events that make the evening news.",
+                "She's spread a holographic schematic across the safehouse table. It shows a building — four stories, reinforced foundation, what looks like a rooftop garden. Around it, concentric circles of defense: Ghost Network encryption relays, Iron Collective-grade blast doors, and a perimeter system that would make Meridian's own security division take notes.",
+                "\"A clinic,\" she says, before you can ask. \"A real one. Not a chop shop. Not a back-alley organ market with a stethoscope nailed to the wall. A place where someone can walk in sick and walk out better and nobody puts them on a list for it.\"",
+                "She pulls up supply manifests. Black market pharmaceuticals laundered through three shell companies. Surgical equipment decommissioned from Meridian hospitals and rerouted before it reached the scrapyard. Ghost Network data security protecting patient records. Iron Collective enforcers volunteering — actually volunteering — for perimeter duty.",
+                "\"The Ghost Network chip from the prologue,\" she says, tapping the preserved data module on the table. \"This is the key. The encryption architecture is twenty years ahead of anything else on the market. I can build a patient database that nobody — not Meridian, not the Senate, not God — can crack.\""
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.makos_dream.started", "value": true }
+            ],
+            "conditions": {
+                "all": [
+                    { "flag": "mako.alive", "value": true },
+                    { "flag": "prologue.ghost_network_chip", "value": "preserved" },
+                    { "flag": "act4.completed", "value": true }
+                ]
+            },
+            "choices": [
+                {
+                    "text": "\"Show me the rest. All of it.\"",
+                    "next": "act5.chapter3b.secret_096_revelation"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_hope_fragile",
+            "isEnding": false
+        },
+
+        "secret_096_revelation": {
+            "id": "act5.chapter3b.secret_096_revelation",
+            "title": "The Impossible Clinic",
+            "location": "free_clinic_construction",
+            "text": [
+                "It takes four months. Four months of favors called in, threats deflected, supply chains jury-rigged from the kind of components that don't have serial numbers. Four months of Mako sleeping three hours a night and operating on the kind of caffeine intake that would qualify as a medical emergency in the building she's constructing.",
+                "The clinic rises in the gap between three faction territories — a no-man's-land that everyone claims and nobody patrols. The Ghost Syndicate provides data security so tight that patient records exist in a quantum-encrypted state: literally unknowable without the key. The Iron Collective sends four enforcers who stand at the doors and look like the kind of problem that solves itself. The Neon Court, inexplicably, donates aesthetic consulting. The waiting room has murals.",
+                "On opening day, a woman walks in carrying a child with a fever. She's shaking. Not from the cold. From the expectation that this is a trick, that the price will come later, that nothing in this city is free because the city doesn't know that word.",
+                "Mako takes the child's temperature. Administers a basic antipyretic from supplies that fell off a Meridian transport. Hands the child back with a lollipop that the Neon Court sourced from somewhere that still makes real sugar.",
+                "\"No charge,\" Mako says. \"No list. No strings. Come back if the fever doesn't break.\"",
+                "The woman stares at her like she's speaking a foreign language. Then she cries. Then she leaves. Then she comes back the next day with four neighbors."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.makos_dream.revelation", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Watch it work. Watch the impossible thing be real.",
+                    "next": "act5.chapter3b.secret_096_conclusion"
+                }
+            ],
+            "ascii": null,
+            "music": "emotional_hope_building",
+            "isEnding": false
+        },
+
+        "secret_096_conclusion": {
+            "id": "act5.chapter3b.secret_096_conclusion",
+            "title": "ENDING #96: Mako's Dream",
+            "location": "free_clinic",
+            "text": [
+                "It works. Against every statistical model, every cynical prediction, every historical precedent that says nothing good survives in this city — it works. The clinic treats forty patients in its first week. Eighty in its second. By the end of the first month, there's a line around the block, and Mako has hired two more doctors from the underground medical community and an ex-Meridian surgeon who quit when they found out where the organs were really coming from.",
+                "The factions test it, of course. The Ghost Syndicate tries to install monitoring equipment. Mako finds it and sends it back in pieces with a note that reads: NOT HERE. The Iron Collective suggests the clinic could be a useful recruitment center. Mako suggests the Iron Collective could be a useful source of blood donations if they keep talking. Meridian sends an inspector. The inspector gets a free checkup, a diagnosis for the chronic back pain he's been ignoring for six years, and a referral to a physical therapist. He files a report that the clinic is not worth the political cost of shutting down.",
+                "You stand on the rooftop garden — actual plants, actual soil, actual photosynthesis happening in a city that forgot what chlorophyll looks like — and you watch Mako move through the floors below. She's limping. She hasn't slept. Her hands shake from stimulant overuse. She is the happiest you have ever seen a human being.",
+                "It won't last forever. Nothing does, in this city or any other. But the clinic is here now, and every day it stands is a day that someone's fever breaks, someone's wound closes, someone's child gets a lollipop and learns that not every door in the world opens onto a trap.",
+                "Mako's dream. Alive and stubborn and improbable as the woman who built it."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.makos_dream.completed", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "trigger_event", "event": "credits_roll", "params": { "variant": "makos_clinic" } }
+            ],
+            "ending": true,
+            "endingId": "ending_096",
+            "endingTitle": "Mako's Dream",
+            "endingCategory": "secret",
+            "endingDescription": "She built the impossible: a free clinic that actually works. Ghost tech. Iron muscle. Real medicine. Real hope.",
+            "choices": [],
+            "ascii": null,
+            "music": "ending_makos_dream",
+            "isEnding": true
+        },
+
+        "secret_097_approach": {
+            "id": "act5.chapter3b.secret_097_approach",
+            "title": "The Rift Resonance",
+            "location": "dimensional_rift_site",
+            "text": [
+                "The dimensional rift has been whispering for weeks. Not in words — in frequencies. Subsonic vibrations that rattle your teeth and make the lights flicker in patterns that almost, almost resolve into meaning. The scientists who study it have given up. Their instruments read noise. Their models predict chaos. They've published papers concluding that the rift is a random quantum phenomenon with no informational content.",
+                "They're wrong. You know they're wrong because you can feel it. The whispers have texture. They have rhythm. They have the unmistakable cadence of something that is trying, desperately, to communicate through a medium that was never designed to carry messages.",
+                { "condition": { "race": "shadowkin" }, "text": "Your shadowkin heritage makes the rift feel less like a wound in reality and more like a window with dirty glass. The void-touched part of your blood resonates with whatever frequency the rift is broadcasting on. It's not comfortable. It's like hearing a voice through a wall — you can tell it's speech, you can tell it's urgent, but the consonants are missing." },
+                { "condition": { "race": "voidborn" }, "text": "Your voidborn psyche has been tuning itself to the rift since you first encountered it. The dimensional frequency matches something in your neural architecture so precisely that it can't be coincidence. You were built for this — or rather, whatever made the voidborn was using the same blueprint as whatever opened the rift." },
+                "You stand before it now. The air shimmers. Reality thins. Your wisdom — hard-won, battle-tested, accumulated through every impossible choice this city forced on you — tells you that the rift isn't dangerous. It's lonely."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.void_speaks.started", "value": true }
+            ],
+            "conditions": {
+                "all": [
+                    {
+                        "any": [
+                            { "flag": "player.race", "value": "shadowkin" },
+                            { "flag": "player.race", "value": "voidborn" }
+                        ]
+                    },
+                    { "flag": "player.stats.wisdom", "operator": ">=", "value": 18 },
+                    { "flag": "act4.completed", "value": true }
+                ]
+            },
+            "choices": [
+                {
+                    "text": "Reach out. Not with your hand — with your mind.",
+                    "next": "act5.chapter3b.secret_097_revelation"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_rift_harmonic",
+            "isEnding": false
+        },
+
+        "secret_097_revelation": {
+            "id": "act5.chapter3b.secret_097_revelation",
+            "title": "The Message",
+            "location": "dimensional_rift_interior",
+            "text": [
+                "The message isn't words. The beings on the other side don't have words. They don't have mouths or languages or the concept of sequential information. What they have is feeling — vast, ancient, unbounded feeling that presses against the membrane of the rift like a hand pressing against glass.",
+                "It hits you all at once. Not a sentence. An emotion. A single, enormous, complex emotional state that takes your human brain several seconds to decompose into something it can process, like a prism splitting white light into a spectrum.",
+                "Loneliness. But not the human kind — not the Saturday-night-alone kind or the lost-in-a-crowd kind. This is cosmological loneliness. The loneliness of a species that evolved in a universe with different physical constants, where the very fabric of spacetime curves in ways that make proximity meaningless. They have always been alone. Every member of their kind exists in its own dimensional pocket, screaming across the void, never quite sure if the echo they hear is another being or their own signal bouncing back.",
+                "A thousand years. They've been trying to say hello for a thousand years. The rift wasn't an accident or a weapon or an experiment. It was a letter. A cosmic message in a bottle, thrown by beings who have never touched another living thing and aren't sure the concept of 'another' applies to anything but them.",
+                "They felt you. Through the rift. A mind. A real, separate, unmistakably other mind. And the emotion that surged through them when they realized they weren't alone — that there was an 'out there,' that the echo was real — it nearly tore the rift wide open.",
+                "They're not hostile. They never were. They've been shouting hello so hard it registered as a dimensional catastrophe."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.void_speaks.revelation", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Send the feeling back. Let them know you heard.",
+                    "next": "act5.chapter3b.secret_097_conclusion"
+                }
+            ],
+            "ascii": null,
+            "music": "cosmic_communion",
+            "isEnding": false
+        },
+
+        "secret_097_conclusion": {
+            "id": "act5.chapter3b.secret_097_conclusion",
+            "title": "ENDING #97: The Void Speaks",
+            "location": "dimensional_rift_site",
+            "text": [
+                "You send it back. Not words. Not language. Just the feeling. The human version of it — smaller, warmer, shaped by biology and experience and the specific texture of being a creature that can hold another creature's hand.",
+                "Hello. I'm here. You're not alone.",
+                "The rift pulses. The subsonic vibration changes pitch. The scientists' instruments, for the first time in recorded history, display a coherent pattern. Across the city, every piece of technology connected to the rift monitoring network registers the same anomaly: the noise has become music. A simple pattern. A call. A response. A call.",
+                { "condition": { "race": "shadowkin" }, "text": "Your shadowkin blood sings in harmony with the rift. For the first time, the void inside you doesn't feel like an absence. It feels like a bridge. You were always half of a conversation. Now the other half is talking back." },
+                { "condition": { "race": "voidborn" }, "text": "Your psychic architecture locks into resonance with the beings on the other side and for one transcendent moment, you understand them completely. Not their thoughts — their existence. What it is to be vast, solitary, eternal, and so desperately hopeful that the universe contains someone else." },
+                "The rift doesn't close. It stabilizes. The dimensional catastrophe becomes a dimensional handshake. Somewhere on the other side, something that has been alone since before your species discovered fire finally, finally, knows the answer to the only question it ever had.",
+                "Is anyone there?",
+                "Yes."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.void_speaks.completed", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "trigger_event", "event": "credits_roll", "params": { "variant": "void_communion" } }
+            ],
+            "ending": true,
+            "endingId": "ending_097",
+            "endingTitle": "The Void Speaks",
+            "endingCategory": "secret",
+            "endingDescription": "The beings on the other side weren't hostile. They were lonely. You answered a thousand-year hello.",
+            "choices": [],
+            "ascii": null,
+            "music": "ending_void_speaks",
+            "isEnding": true
+        },
+
+        "secret_098_approach": {
+            "id": "act5.chapter3b.secret_098_approach",
+            "title": "The Transfer",
+            "location": "meridian_upload_facility",
+            "text": [
+                "The upload chamber is quieter than you expected. In the movies — the old ones, the pre-Collapse ones that people still watch on bootleg data chips — consciousness transfer happens in lightning and screaming. The reality is a chair, a headset, and a progress bar.",
+                "You've collected enough memory stacks to understand what you're doing. Three complete consciousness records, each one a map of a human mind preserved in crystalline data. You've studied them. Lived inside them. You know, with the certainty of someone who has worn other people's lives like borrowed coats, that the transfer works. Consciousness is portable. Identity is a file format.",
+                "The facility technician — bribed, blackmailed, or simply convinced that rules are for people who plan to die someday — prepares the new body. It's vat-grown, healthy, young in the way that only something that has never experienced stress can be young. A blank page in the shape of a person.",
+                "\"Once we start,\" the technician says, \"your current body's neural architecture will be destructively scanned. The original is erased in the process. There's no going back to what you are now.\"",
+                "Three memory stacks pulse in your pack. Three proof-of-concepts. Three people who did this, or had it done to them, and survived in the only way that matters: their minds continued."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.immortal.started", "value": true }
+            ],
+            "conditions": {
+                "all": [
+                    { "flag": "memory_stacks_collected", "operator": ">=", "value": 3 },
+                    { "flag": "act4.completed", "value": true }
+                ]
+            },
+            "choices": [
+                {
+                    "text": "Sit in the chair. Begin the upload.",
+                    "next": "act5.chapter3b.secret_098_revelation"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_clinical_tension",
+            "isEnding": false
+        },
+
+        "secret_098_revelation": {
+            "id": "act5.chapter3b.secret_098_revelation",
+            "title": "Centuries",
+            "location": "temporal_montage",
+            "text": [
+                "The first transfer is the hardest. Your old body goes limp in the chair and your new body gasps awake on the table and for eleven seconds — the longest eleven seconds of your existence — you are nowhere. Not asleep. Not unconscious. Nowhere. A gap in being. When you come back, you spend six hours touching your own face because the cheekbones are wrong.",
+                "You get used to it. That's the horrifying part. By the third body, the transfer is routine. By the fifth, you don't bother learning the new face before you go outside. By the tenth, you've stopped naming them. Bodies are vehicles. You are the driver. The driver persists.",
+                "Decades pass. The city changes. The factions rise and fall and rise again under different names. Meridian becomes something else, which becomes something else. The Iron Collective fractures and reforms seven times. The Neon Court evolves into something unrecognizable — beautiful, alien, post-human in ways that make your stored memories of the original Court feel quaint.",
+                "You watch. You transfer. You continue.",
+                "The people you loved in your first life grow old. You attend their funerals in unfamiliar faces. Mako dies at eighty-three, in the clinic she built, surrounded by two generations of patients who owe her their lives. You're there, wearing a body she's never seen, and you don't tell her who you are because the person she knew is a face and a voice that no longer exist. You hold her hand as a stranger and she smiles at you the way she smiles at all strangers, which is to say: suspiciously, but with warmth underneath.",
+                "A century passes. Two. The city you knew is archaeology now. Someone builds a museum over the Ashfields. The dimensional rift becomes a tourist attraction. Children are born who have never seen natural darkness because the light pollution has become a cultural heritage item.",
+                "You are still here. You are the oldest thing in the city that isn't a building."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.immortal.revelation", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Keep going. There is always another body.",
+                    "next": "act5.chapter3b.secret_098_conclusion"
+                }
+            ],
+            "ascii": null,
+            "music": "temporal_passage_melancholy",
+            "isEnding": false
+        },
+
+        "secret_098_conclusion": {
+            "id": "act5.chapter3b.secret_098_conclusion",
+            "title": "ENDING #98: Immortal",
+            "location": "far_future_city",
+            "text": [
+                "Three hundred years after your first transfer, you sit on a bench in a park that was built over a graveyard that was built over a slum that was built over a river. Every layer of the city is a layer of your memory. You remember the river. Nobody else does.",
+                "A child sits next to you. They're eating something that might be fruit. They look at you with the uncomplicated curiosity of someone who hasn't learned to be afraid of strangers yet.",
+                "\"How old are you?\" the child asks.",
+                "You consider the question. Your current body is four years old. Your mind is older than the child's entire family tree. You have outlived languages. You have watched the word for 'love' change meaning six times and you remember all of them.",
+                "\"Old enough,\" you say.",
+                "Was it worth it? The question surfaces every few decades, usually in the gap between bodies, in those eleven seconds of nowhere. You have lived long enough to see the city become kind, and then cruel, and then kind again, and then something that doesn't have a word yet. You have outlived every person who ever mattered to you and replaced them with people who will also die while you continue.",
+                "You are immortal. You are a monument with a heartbeat. You are the loneliest thing in a city of ten million people, and you will be the loneliest thing in whatever the city becomes next, and next, and next.",
+                "The child finishes their fruit and leaves. You stay on the bench. You have time."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.immortal.completed", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "trigger_event", "event": "credits_roll", "params": { "variant": "immortal_centuries" } }
+            ],
+            "ending": true,
+            "endingId": "ending_098",
+            "endingTitle": "Immortal",
+            "endingCategory": "secret",
+            "endingDescription": "You can live forever. You watched everyone you loved turn to dust. You have time.",
+            "choices": [],
+            "ascii": null,
+            "music": "ending_immortal",
+            "isEnding": true
+        },
+
+        "secret_099_approach": {
+            "id": "act5.chapter3b.secret_099_approach",
+            "title": "The Impossible Accord",
+            "location": "neutral_ground_summit",
+            "text": [
+                "It shouldn't be possible. The game theory doesn't support it. The cascading rivalry system that governs faction relations in this city is designed — engineered, deliberately — to ensure that pleasing one faction offends another. Meridian and the Iron Collective share a mutual contempt that predates the Collapse. The Neon Court considers the Ghost Syndicate to be aesthetically offensive. The Ashen Circle considers everyone to be spiritually compromised. The math doesn't work. The alliances can't align.",
+                "And yet here you are, standing in a room with representatives from all five factions, and none of them are reaching for weapons.",
+                "It took everything. Every favor. Every relationship. Every conversation where you said exactly the right thing to exactly the right person at exactly the right moment. A political performance so intricate that no one will ever believe it happened, because the statistical probability of one person holding all five faction relationships above hostile is roughly equivalent to the probability of a coin landing on its edge five times in succession.",
+                "The Meridian delegate stares at the Iron Collective representative with barely concealed contempt. The Ghost Syndicate operative keeps flickering into and out of visibility. The Neon Court ambassador's outfit is so aggressively beautiful that the Ashen Circle envoy has to keep looking away to maintain spiritual equilibrium.",
+                "But they're all here. And they're listening. To you."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.perfect_run.started", "value": true }
+            ],
+            "conditions": {
+                "all": [
+                    { "flag": "faction.meridian.reputation", "operator": ">=", "value": "friendly" },
+                    { "flag": "faction.ironCollective.reputation", "operator": ">=", "value": "friendly" },
+                    { "flag": "faction.neonCourt.reputation", "operator": ">=", "value": "friendly" },
+                    { "flag": "faction.ghostSyndicate.reputation", "operator": ">=", "value": "friendly" },
+                    { "flag": "faction.ashenCircle.reputation", "operator": ">=", "value": "friendly" },
+                    { "flag": "act4.completed", "value": true }
+                ]
+            },
+            "choices": [
+                {
+                    "text": "\"One block. That's all I'm asking. One block of the slums. Together.\"",
+                    "next": "act5.chapter3b.secret_099_revelation"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_diplomatic_summit",
+            "isEnding": false
+        },
+
+        "secret_099_revelation": {
+            "id": "act5.chapter3b.secret_099_revelation",
+            "title": "72 Hours",
+            "location": "reconstruction_zone",
+            "text": [
+                "They agree. Not because they want to. Not because they believe it will work. They agree because you asked, and you're the only person in the city who has earned the right to ask all five of them for anything.",
+                "The Meridian Corporation contributes water purification technology — military grade, the kind they use in the executive towers. The Iron Collective sends construction crews who work with a precision and speed that suggests they've been waiting for someone to point them at something worth building. The Ghost Syndicate encrypts the new infrastructure against sabotage. The Neon Court sends artists — actual artists, not propagandists — who paint the new walls with something that isn't an advertisement. The Ashen Circle blesses the ground, which everyone pretends is symbolic but which somehow makes the concrete set faster.",
+                "One block of the slums. Twelve buildings. Clean water. Working lights. Medical supplies. Doors that lock from the inside. A playground, because someone in the Neon Court delegation remembered that children exist and need places to be children.",
+                "No drones overhead. The Meridian delegate ordered them rerouted personally, with a facial expression that suggested she was physically uncomfortable with the concept of airspace without surveillance.",
+                "For 72 hours, one block of the worst neighborhood in the city looks like a place where human beings were meant to live.",
+                "People come out of their apartments and stare. Some of them touch the clean walls like they're making sure they're real. A man fills a glass from a tap and holds it up to the light and watches the water not be brown. A girl turns on a light switch and it works on the first try, and she flips it on and off six times because she's never seen that happen before."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.perfect_run.revelation", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Watch. Remember this. All of it.",
+                    "next": "act5.chapter3b.secret_099_conclusion"
+                }
+            ],
+            "ascii": null,
+            "music": "emotional_hope_crescendo",
+            "isEnding": false
+        },
+
+        "secret_099_conclusion": {
+            "id": "act5.chapter3b.secret_099_conclusion",
+            "title": "ENDING #99: The Perfect Run",
+            "location": "reconstruction_zone",
+            "text": [
+                "It lasts 72 hours.",
+                "On the morning of the fourth day, the Meridian delegate gets a call from corporate. The water purification unit is needed elsewhere. On the afternoon of the fourth day, the Iron Collective crews receive new orders — there's a labor dispute in Sector 7 that requires their particular brand of conflict resolution. By evening, the Ghost Syndicate's encryption is being repurposed for an intelligence operation. The Neon Court artists are recalled for a gala. The Ashen Circle envoy meditates on impermanence and takes a transport home.",
+                "The drones come back. The lights start flickering. The water pressure drops. Politics, like gravity, is patient and inevitable.",
+                "But here's the thing about 72 hours: they happened. They're in the record. They're in the memory of every person who filled a clean glass or flipped a working light switch or let their child play on a playground that wasn't built over a sewer grate. You can dismantle the infrastructure but you can't dismantle the knowledge that it's possible. That's the most dangerous thing in any city: proof that things could be better.",
+                "You stand on the block as the last faction transport pulls away. The playground is already missing two bolts. A light has gone out. Somewhere, a pipe is starting to make the old familiar groaning sound.",
+                "But a man across the street is still holding his glass of clean water. He drank it hours ago. He's holding the empty glass like a relic. Like proof.",
+                "Seventy-two hours. You saw what the city could be. So did everyone else. That memory doesn't have an expiration date."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.perfect_run.completed", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "trigger_event", "event": "credits_roll", "params": { "variant": "perfect_run" } }
+            ],
+            "ending": true,
+            "endingId": "ending_099",
+            "endingTitle": "The Perfect Run",
+            "endingCategory": "secret",
+            "endingDescription": "Every faction worked together for 72 hours. One block of the slums became livable. Proof that things could be better.",
+            "choices": [],
+            "ascii": null,
+            "music": "ending_perfect_run",
+            "isEnding": true
+        },
+
+        "secret_100_approach": {
+            "id": "act5.chapter3b.secret_100_approach",
+            "title": "The Cracked Mirror",
+            "location": "player_quarters",
+            "text": [
+                "It starts with the mirror.",
+                "The same mirror. The one from the beginning — the cracked one in the safehouse where you woke up with no memory and an anonymous message telling you to run. You've passed it a thousand times since then. You've gotten dressed in front of it. You've stitched wounds in its reflection. You never looked closely. You never needed to. You knew your face.",
+                "But tonight, after everything — after Chen survived, after the summit, after Volkov's cryptic warnings, after the surgery or the walk-away, after four acts of a life you built from nothing — tonight you look closely. And the crack in the mirror isn't random. It's a pattern. A data pattern. A crystalline fracture that follows the exact topography of a neural upload scar.",
+                "Your hands are cold. Your hands are cold and you're looking at the mirror and the anonymous message is still in your pocket because you never threw it away. You pull it out. The handwriting is yours.",
+                "Not similar. Not close. Yours. The specific way you cross your T's, the pressure variation on your downstrokes, the micro-tremor in your capital letters that a graphologist once told you was a sign of emotional suppression. Every stroke was written by your hand. But you don't remember writing it."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.true_ending.started", "value": true },
+                { "type": "trigger_event", "event": "disable_ui_elements", "params": { "elements": ["save_button", "menu_button"] } }
+            ],
+            "conditions": {
+                "all": [
+                    { "flag": "act1.completed", "value": true },
+                    { "flag": "act2.completed", "value": true },
+                    { "flag": "act3.completed", "value": true },
+                    { "flag": "act4.completed", "value": true },
+                    { "flag": "chen_survived", "value": true },
+                    { "flag": "volkov_met", "value": true },
+                    {
+                        "any": [
+                            { "flag": "surgical_success", "value": true },
+                            { "flag": "walked_away", "value": true }
+                        ]
+                    },
+                    { "flag": "summit_attended", "value": true },
+                    { "flag": "game.completed", "value": false }
+                ]
+            },
+            "choices": [
+                {
+                    "text": "Turn the message over.",
+                    "next": "act5.chapter3b.secret_100_revelation"
+                }
+            ],
+            "ascii": null,
+            "music": "silence",
+            "isEnding": false
+        },
+
+        "secret_100_revelation": {
+            "id": "act5.chapter3b.secret_100_revelation",
+            "title": "Stack",
+            "location": "player_quarters",
+            "text": [
+                "On the back of the message, in the same handwriting, is a single line: I'M SORRY. I COULDN'T DO IT ALONE. SO I MADE YOU.",
+                "The room tilts. Not physically — ontologically. The foundations of everything you understand about yourself shift by one degree and the entire structure comes down.",
+                "You are a memory stack.",
+                "Your 'original' — the person whose face you wear, whose body you inhabit, whose handwriting you inherited — died in the prologue. Not metaphorically. Not dramatically. Quietly. A neural hemorrhage caused by an upload that shouldn't have been attempted outside a medical facility. They sat in this room, in front of this mirror, and they felt the bleeding start, and they had maybe four minutes before higher brain function ceased, and they used those four minutes to write a message to the version of themselves that would wake up in this body with no memory and no context and no idea that they were a copy.",
+                "The cracked mirror. The amnesia. The anonymous message. The strange sense, persistent throughout your entire journey, that the world was both familiar and foreign. Not the disorientation of memory loss. The disorientation of a consciousness that was installed, not born. A mind poured into a brain like water into a vessel that's almost but not quite the right shape.",
+                "Every memory you formed — every friendship, every betrayal, every choice that felt like the core of who you are — was a stack learning to be human. Your personality wasn't remembered. It was constructed, decision by decision, from the raw material of a dead person's neural architecture and the pressures of a world that demanded you become someone. You answered that demand. You became someone. Just not the someone who started the journey.",
+                "Your name isn't what you chose at the character select screen. It's what you became across five acts of a life built on a foundation of borrowed neurons and original will. The name belongs to you now. Not because it was given to you, but because you earned it in every conversation, every fight, every moment where you chose compassion or cruelty or cowardice or courage. The choices were real. The person making them was real. The origin was a lie, but everything that grew from it was true."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.true_ending.revelation", "value": true },
+                { "type": "trigger_event", "event": "screen_effect", "params": { "effect": "subtle_glitch", "duration": "persistent" } }
+            ],
+            "choices": [
+                {
+                    "text": "Look in the mirror. See yourself. The real you. The one you built.",
+                    "next": "act5.chapter3b.secret_100_conclusion"
+                }
+            ],
+            "ascii": null,
+            "music": "silence",
+            "isEnding": false
+        },
+
+        "secret_100_conclusion": {
+            "id": "act5.chapter3b.secret_100_conclusion",
+            "title": "ENDING #100: LATENCY",
+            "location": "player_quarters",
+            "text": [
+                "You look in the mirror. The crack is still there — the neural upload scar fossilized in glass, a permanent record of the moment a dying person made a desperate bet on a copy of themselves. On you.",
+                "The face looking back is yours. It was always yours. Not because you were born with it, but because you lived with it. You took this face into every room in this city. You made it smile and flinch and bleed and laugh. You gave it expressions that the original never wore. You wrote new lines into it. The crease between your eyebrows when you concentrate — that's yours. The original didn't have it. You earned it in Act 2, during a negotiation that went sideways, and it never went away.",
+                "Here is the truth about consciousness: it doesn't care where it came from. A memory stack uploaded into a dying body and given no instructions except RUN is, for all practical and philosophical purposes, a person. Not a copy. Not a simulation. Not a ghost in borrowed flesh. A person. Because personhood isn't about origin. It's about continuity. It's about the unbroken thread of experience that connects the moment you woke up in front of this mirror to the moment you're standing in front of it now, and every single choice you made in between.",
+                "The original is gone. They died afraid and alone and hoping that the thing they left behind would be strong enough to survive what they couldn't. They didn't know you would befriend Chen. They didn't know you would attend the summit, or meet Volkov, or make the choice about the surgery. They didn't know any of it. They only knew that they were out of time and that the stack technology worked and that if there was even a small chance that a copy could carry on what the original couldn't finish, it was worth the four minutes they had left.",
+                "You are that small chance. You are the long shot that paid off. You are a dead person's last act of faith, and you have spent the entire game proving that their faith was not misplaced.",
+                "The title screen is changing. You can feel it — a shift in the architecture of the world, the game itself acknowledging what has been revealed. The word LATENCY fades. In its place, letter by letter, your name appears. Not the original's name. Yours. The one you chose, the one you earned, the one that belongs to the person who was built from scratch in a city that builds everything from scratch.",
+                "The credits roll. But they're not the usual credits. Every NPC you met is listed. Every choice you made is catalogued — not as a gameplay statistic, but as a biography. The story of a person who didn't exist until the prologue ended and who became, through nothing but stubbornness and will and the irreducible human need to matter, the most real thing in a city full of people who were born with the advantage of being original.",
+                "The tagline at the bottom of the screen changes. It used to say CHOOSE YOUR DESTINY.",
+                "It now says: YOU ALREADY DID."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.true_ending.completed", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "set_flag", "flag": "true_ending_seen", "value": true },
+                { "type": "trigger_event", "event": "title_screen_override", "params": { "replace_title_with": "player_name", "permanent": true } },
+                { "type": "trigger_event", "event": "credits_roll", "params": {
+                    "variant": "true_ending",
+                    "include_npc_registry": true,
+                    "include_choice_biography": true,
+                    "tagline_override": "You Already Did.",
+                    "original_tagline": "Choose Your Destiny"
+                }},
+                { "type": "trigger_event", "event": "unlock_new_game_plus", "params": { "true_ending": true } }
+            ],
+            "ending": true,
+            "endingId": "ending_100",
+            "endingTitle": "LATENCY",
+            "endingCategory": "true_ending",
+            "endingDescription": "You are a memory stack. Your original died in the prologue. The entire game was a consciousness learning to be human. Your name isn't what you chose — it's what you became.",
+            "choices": [],
+            "ascii": null,
+            "music": "silence_then_ending_latency",
+            "isEnding": true
+        }
+
+    }
+}

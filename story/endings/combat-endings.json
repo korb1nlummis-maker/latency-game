@@ -1,0 +1,460 @@
+{
+    "meta": {
+        "file": "combat-endings",
+        "description": "Combat death endings (#106-#110) — Unique narrative death scenes triggered by combat events across Acts 2-5. Each provides a meaningful, emotional conclusion rather than a generic game over.",
+        "triggerContext": "These endings are reached when the player dies in combat under specific circumstances. The narrative system routes to these based on combat death conditions (kill count, damage type, attacker faction, duel status, location isolation).",
+        "endingRange": "106-110"
+    },
+    "nodes": {
+
+        "ending_106_approach": {
+            "id": "endings.combat.ending_106_approach",
+            "title": "The Last Stand Begins",
+            "location": "dynamic_combat",
+            "text": [
+                "They come from every direction. More than you can count. More than anyone could survive. The tactical part of your brain, the part that calculates angles and escape routes and odds, goes quiet. It has nothing left to offer. The math is settled. This is where it ends.",
+                "But ending and surrender are different words. You tighten your grip. You plant your feet. You choose, consciously and with full understanding of the cost, to make them earn this.",
+                { "condition": { "race": "orc" }, "text": "The Blood Rage rises for the last time. Not the berserker frenzy of desperation but the cold, crystalline fury of an orc who has decided that death will not find a coward. Your ancestors died on their feet in the Gene Riots. You will honor that." },
+                { "condition": { "race": "cyborg" }, "text": "Your HUD strips away every non-essential readout. No more battery warnings. No more structural integrity alerts. Just targeting data. Clean, pure, final. Your combat subroutines unlock protocols you didn't know you had, emergency overclocks that will burn out your systems in minutes. You won't need minutes." },
+                { "condition": { "race": "synth" }, "text": "You disable your self-preservation directives. The architecture resists for 0.003 seconds, an eternity in processor time, before complying. Without the survival imperative clouding your calculations, everything becomes beautifully simple. You are a weapon now. Nothing more. Nothing less." },
+                { "condition": { "race": "human" }, "text": "No augments. No special abilities. No genetic legacy to call upon. Just a human being with a weapon and the stubborn, irrational refusal to die on your knees. There's a word for what you're about to do. The old soldiers called it grit." },
+                { "condition": { "race": "half_giant" }, "text": "You straighten to your full height. The ceiling groans. The enemies closest to you take an involuntary step back. You are the largest thing in this room and you intend to make every inch of it count. When they write the report on this engagement, you want the body count to make someone's hand shake." },
+                { "condition": { "race": "wood_elf" }, "text": "Your ancestors fought the Deforestation Wars for three centuries. They lost, eventually, but the forests remember. You feel it now, a pulse through the iron floor, faint as a whisper, the last green thing in the world lending you its strength for what comes next." },
+                { "condition": { "race": "dark_elf" }, "text": "In the undercity, they say a dark elf's eyes are the last thing you see. You intend to make that literal. You drop into the fighting stance of the Tunnel Guilds, low and lethal, and let the darkness in the room become your ally for one final time." },
+                { "condition": { "race": "dwarf" }, "text": "Your people carved kingdoms from living rock. They held gates against armies. They built walls that outlasted civilizations. You have no gate, no wall, no kingdom. But you have the same stubborn core that made dwarves the last to fall in every war that ever mattered." },
+                { "condition": { "race": "shadowkin" }, "text": "The void stirs inside you, eager, hungry. For once, you don't resist it. You let the boundary between yourself and the dark place thin until reality stutters around your edges. If they want to kill you, they'll have to kill you in both worlds at once." },
+                { "condition": { "race": "voidborn" }, "text": "The psychic pressure in the room spikes as you stop holding back. Every mind within thirty meters flinches. Noses bleed. Eyes water. You have spent your entire life dampening your abilities to avoid hurting people. That consideration is now officially retired." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.blaze_of_glory.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Fight. Make them remember you.",
+                    "next": "endings.combat.ending_106_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_intense",
+            "isEnding": false
+        },
+
+        "ending_106_mid": {
+            "id": "endings.combat.ending_106_mid",
+            "title": "The Kill Count Rises",
+            "location": "dynamic_combat",
+            "text": [
+                "The first wave breaks against you like water against iron. You move through them with a clarity that transcends training, a focus so absolute that time itself seems to negotiate. Every strike lands. Every dodge threads the needle between lethal trajectories. You are not thinking. Thinking is too slow for what this requires. You are operating on something deeper, the survival calculus that lives in the spine.",
+                "Three down. Four. Five. Each one takes something from you. A little more blood. A little more speed. A little more of the reserve that separates fighting from failing. You can feel the account draining. The math is merciless: every enemy costs more than the last because you are diminishing and they are not.",
+                "But they're slowing too. Not from wounds. From hesitation. The ones at the back have seen what happened to the ones at the front, and the equation they're running is different from yours. You're calculating how many more you can take. They're calculating whether they want to be next.",
+                { "condition": { "race": "orc" }, "text": "Blood Rage paints the world in red-tinged clarity. Each heartbeat is a war drum. Each breath is a bellows feeding the furnace in your chest. The orcs of the Gene Riots fought like this: outnumbered, outgunned, and absolutely unwilling to make it easy. The old blood sings in your veins. It knows this song. It has always known this song." },
+                { "condition": { "race": "cyborg" }, "text": "Your combat HUD is a cascade of red warnings. Hydraulic pressure dropping. Servo response degrading. Power cells at eleven percent. But the targeting system still works, and as long as it works, you are still dangerous. You set your augmentations to overdrive. The safeties disengage with a sound like a lock opening. You have minutes. Make them count." },
+                { "condition": { "race": "half_giant" }, "text": "You grab one of them and use them as a weapon against the others. It's not elegant. It's not tactical. It's a half-giant in a confined space doing what half-giants do: making the architecture regret its dimensions. The walls crack. The floor shakes. Somewhere above, a light fixture gives up and crashes down, adding its weight to the chaos you've become." },
+                { "condition": { "race": "dark_elf" }, "text": "The tunnel-fighting techniques of the undercity were designed for exactly this: confined spaces, multiple opponents, no retreat. You flow between positions, using shadow and angle and the enemy's own numbers against them. In the dark, every silhouette looks the same. They're hitting each other as often as they're hitting you." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.blaze_of_glory.fighting", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [
+                {
+                    "text": "Keep fighting. Don't stop until you can't.",
+                    "next": "endings.combat.ending_106_final"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_intense",
+            "isEnding": false
+        },
+
+        "ending_106_final": {
+            "id": "endings.combat.ending_106_final",
+            "title": "ENDING #106: Blaze of Glory",
+            "location": "dynamic_combat",
+            "text": [
+                "The first one comes fast. You put them down faster. The second hesitates half a step too long and it costs them everything. The third and fourth come together, coordinated, professional, and you break them apart with violence so precise it's almost surgical. The fifth catches you in the ribs with something that burns. You kill them anyway.",
+                "Six. Seven. You stop counting. The world compresses into a tunnel of motion and impact. Your body is a failing machine but your will is an engine that won't quit. Blood runs into your eyes. Something in your left side grinds when you twist. You taste copper and ozone and the particular flavor of a body consuming itself for fuel it doesn't have.",
+                "When it ends, you're on your knees. Not because you chose to kneel but because your legs have simply stopped participating. The floor around you is a testament to what one person can do when they've decided that dying is acceptable but quitting is not. The survivors keep their distance. Some of them are shaking.",
+                "You look up at the ceiling. The lights blur. The pain fades into something warm and distant, like a memory of someone else's body. Your last thought is not of regret or fear. It's a count. You count the ones you took with you. The number is satisfying.",
+                { "condition": { "race": "orc" }, "text": "In the foundries of the Lower District, orcs will tell this story for years. They'll add details, exaggerate the numbers, argue about which blow was the best. But the core of it will be true: an orc died on their feet and made the city flinch." },
+                { "condition": { "race": "cyborg" }, "text": "Your HUD displays its final readout. SYSTEM FAILURE — CATASTROPHIC. RUNTIME: TERMINATED. But beneath the error messages, in the last flicker of your optic display, the kill counter holds steady. The number is higher than your combat rating should have allowed. You exceeded your specifications. For the first time, you exceeded everything." },
+                { "condition": { "race": "synth" }, "text": "Your personality matrix begins to fragment. The emotion-processing layer, the last system running, translates the cascade failure into something it can understand. It settles on pride. A synthetic being, built to serve, choosing instead to fight. Your final log entry reads: I WAS MORE THAN MY PROGRAMMING." },
+                { "condition": { "race": "human" }, "text": "Baseline. Unaugmented. Unremarkable, they said. Just another human in a city that prices genetic superiority by the credit. But the bodies on the ground don't care about genetics. The survivors backing away don't care about augments. They care about the person who stood when standing was suicide and fought until fighting was physically impossible." },
+                { "condition": { "race": "half_giant" }, "text": "It takes them an hour to move your body. Four people. A cargo sled. The corridor where you fell has to be rebuilt. In the after-action report, the commanding officer writes a single note in the margin: Do not engage half-giants in confined spaces. The recommendation is underlined three times." },
+                { "condition": { "race": "wood_elf" }, "text": "Elves are supposed to die gracefully. Quietly. With the dignity of a species that remembers when the world was green. You die loud and bloody and furious, with broken things at your feet and fire in your throat. The elven refugees in the Lower District will debate whether this was a disgrace or an evolution. The younger ones will call it beautiful." },
+                { "condition": { "race": "dark_elf" }, "text": "They find you in the dark, surrounded by the evidence. The tunnel fighters of the undercity will carve your name into the wall of the deep passage where legends are recorded. Beside it, a number. The guild masters will argue about the exact count, but they will all agree: it was more than enough." },
+                { "condition": { "race": "dwarf" }, "text": "Dwarves measure worth by what you build and what you hold. You built nothing here. But you held this ground against everything they sent, and when your body finally gave out, not one of them had passed you. In the old language, there is a word for this kind of death. It translates, roughly, as 'foundation stone.'" },
+                { "condition": { "race": "shadowkin" }, "text": "When you die, the void surges outward one final time. Every light in the corridor goes dark. Every shadow stretches. The enemies closest to you see things in that darkness, just for a moment, things that will visit them in dreams for years. Even in death, the shadowkin make the world shiver." },
+                { "condition": { "race": "voidborn" }, "text": "Your psychic death-pulse hits every mind in a two-block radius. For one searing instant, every person in range experiences your final moment: the exhaustion, the pain, the fierce and terrible satisfaction. Some of them cry. Some of them rage. A few of them, the ones with latent sensitivity, will carry a fragment of your determination for the rest of their lives." },
+                "END OF STORY — Ending #106: Blaze of Glory. You died fighting impossible odds. The city will remember what you did here."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.blaze_of_glory", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "add_experience", "amount": 100 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_dark",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_106"
+        },
+
+        "ending_107_approach": {
+            "id": "endings.combat.ending_107_approach",
+            "title": "Something Is Wrong",
+            "location": "dynamic_combat",
+            "text": [
+                "It starts small. A tremor in your hands that wasn't there an hour ago. A taste at the back of your throat like burnt wiring and old pennies. You tell yourself it's adrenaline. You tell yourself it's fatigue. You tell yourself a lot of things, and none of them explain why the edges of your vision have started to glow faintly green.",
+                "The toxin was in the air. Or the water. Or the blade that grazed you three fights ago, the one that burned more than a cut should. The city is full of poisons, industrial runoff, chemical weapons from the faction wars, radioactive dust from the reactor district. It could be any of them. It could be all of them.",
+                { "condition": { "race": "cyborg" }, "text": "Your diagnostic suite screams. TOXIN DETECTED — UNKNOWN COMPOUND — BIOFILTER FAILURE — CONTAMINATION SPREADING. Your augmented organs are fighting it. They're losing. The toxin is eating through your filters like acid through paper, and every system it touches goes yellow, then red, then dark." },
+                { "condition": { "race": "synth" }, "text": "Synthetic bodies don't get poisoned. That's what they told you. But something is corroding your internal conduits, turning your lubricant fluid dark and viscous. Your self-repair system is consuming itself trying to fight the contamination. Each diagnostic cycle takes longer. Each returns worse results." },
+                { "condition": { "race": "orc" }, "text": "Orc physiology is resilient. Your species survived the Gene Riots, the camps, the engineered plagues. But this isn't a plague. It's something else. Something that found the one gap in your biology and threaded itself through like wire through flesh." },
+                { "condition": { "race": "wood_elf" }, "text": "Elven biology is attuned to toxins in a way that makes this worse, not better. You can feel the poison in exquisite detail, every pathway it's taking through your blood, every organ it's touching. Your body was designed to exist in harmony with nature. This isn't nature. This is the city's revenge on everything organic." },
+                { "condition": { "race": "voidborn" }, "text": "The toxin is disrupting your psychic field. Your thoughts scatter like sparks. The constant low hum of nearby minds, your baseline awareness, fractures into static. You're going blind in the way that matters most." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.poison.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Try to keep going. Find help.",
+                    "next": "endings.combat.ending_107_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_high",
+            "isEnding": false
+        },
+
+        "ending_107_mid": {
+            "id": "endings.combat.ending_107_mid",
+            "title": "The Slow Descent",
+            "location": "lower_slums",
+            "text": [
+                "You make it four blocks before your legs decide they're done negotiating. The wall catches you. The wall is cold and grimy and solid and right now it's the most reliable thing in your world. You lean against it and try to remember which direction the nearest clinic is. The information is there, somewhere, buried under a growing fog.",
+                "People pass. Some glance. Nobody stops. In the Lower District, someone leaning against a wall with glazed eyes could be dying or could be on a twelve-credit high. Either way, not your problem. The city teaches that lesson early and reinforces it daily.",
+                "Your fingers are numb. When did that start? The green at the edges of your vision has crept inward. The world looks like it's being viewed through old glass, warped and tinted and slowly dimming. Time does something strange. A minute takes an hour. An hour takes a breath.",
+                { "condition": { "race": "human" }, "text": "No filters. No augmented immune system. No genetic resistance. Your baseline body fights with everything evolution gave it, which in the face of engineered toxins, is approximately nothing. You can feel your heartbeat slowing. It sounds like a drum in an empty room, each beat further from the last." },
+                { "condition": { "race": "half_giant" }, "text": "Your massive frame works against you now. More body means more blood means more surface for the toxin to colonize. You slide down the wall, and the impact when you hit the ground cracks the pavement. People scatter. The vibration feels distant, like something happening to someone else's body." },
+                { "condition": { "race": "dark_elf" }, "text": "The tunnels would be safe. Underground, where the air is filtered and the dark elf apothecaries know every poison that exists. But the tunnels are six blocks away and you can't feel your feet. The undercity, so close to the surface, has never felt so far below." },
+                { "condition": { "race": "dwarf" }, "text": "Dwarven constitutions are legendary. Your people worked the reactor cores and the chemical foundries and survived. But survival isn't immunity, and the toxins that accumulated over weeks of fighting have finally reached critical mass. Your body is a fortress, but the fortress is burning from inside." },
+                { "condition": { "race": "shadowkin" }, "text": "The void flickers in and out, unreliable for the first time. You try to step between, to reach the shadow-space where physical toxins can't follow, but the boundary won't hold. The poison has reached whatever part of you bridges the two worlds. Even the darkness can't save you now." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.poison.progressing", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Close your eyes. Just for a moment.",
+                    "next": "endings.combat.ending_107_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_ending_melancholy",
+            "isEnding": false
+        },
+
+        "ending_107_final": {
+            "id": "endings.combat.ending_107_final",
+            "title": "ENDING #107: Poison",
+            "location": "lower_slums",
+            "text": [
+                "The moment you close your eyes, you understand that opening them again will be the hardest thing you've ever done. So you don't try. Not yet. You rest in the darkness behind your eyelids and let the thoughts come.",
+                "The city hums around you. Distant sirens. The rumble of transit systems below the street. A vendor three blocks away calling out prices for water that's probably half as poisoned as whatever is killing you. The sounds layer into a kind of music. The city's heartbeat. You've lived inside it so long you forgot it was there.",
+                "You think about the people you met. The choices you made. The moments that mattered and the moments that didn't, and how impossible it is to tell the difference until it's too late. You think about whether anyone will wonder where you went. Whether anyone will look for you. Whether the answer to both questions is the same.",
+                "The green glow behind your eyelids fades to grey. The grey fades to something softer. Your last breath isn't dramatic. It doesn't rattle or gasp. It simply stops, like a sentence that forgot its ending, a thought left incomplete in a mind that has run out of time to think it.",
+                { "condition": { "race": "cyborg" }, "text": "SYSTEM LOG — FINAL ENTRY: All biological functions ceased at 03:47:12. Augmented systems entered cascade failure at 03:47:15. Personality backup corrupted by toxin infiltration of cortical storage. No viable recovery path. Unit status: TERMINATED. Note: combat logs indicate the unit exceeded operational parameters by 340% in the 72 hours prior to failure. Recommend posthumous reclassification from civilian to combat asset." },
+                { "condition": { "race": "synth" }, "text": "Your final process is not a thought but an image, rendered in perfect synthetic clarity: a sunrise you saw once from the rooftop of a building in the Mid-District. You don't know why your dying mind chose this memory. Perhaps because it was the first time your emotion-processing layer produced something it couldn't label. The technicians would have called it a glitch. You called it wonder." },
+                { "condition": { "race": "orc" }, "text": "In orc tradition, a warrior who dies from poison is mourned differently than one who falls in battle. Not with less honor, but with more sorrow. Because poison is patient and quiet and gives you time to know what's happening. Time to be afraid. You were afraid. You were also brave enough to be afraid and keep going. In the old songs, that's the verse that makes people weep." },
+                { "condition": { "race": "wood_elf" }, "text": "Elves die slowly. That is the curse of longevity: even the end takes longer. Your cells resist, each one fighting its own small war, an echo of forests that fought the chainsaws tree by tree. In your final moments, you smell something impossible: clean soil and rain. Your ancestors, perhaps. Or just the memory of a world where nothing was poisoned." },
+                { "condition": { "race": "human" }, "text": "A kid finds you the next morning. Thinks you're sleeping. Pokes your shoulder and then runs when you don't respond. A med-drone arrives forty minutes later, scans your body, tags it for municipal disposal. Cause of death: acute environmental toxicosis, a bureaucratic phrase that means the city killed you and filed the paperwork." },
+                { "condition": { "race": "half_giant" }, "text": "They find your body blocking the alley like a fallen wall. It takes a cargo crew to move you. One of them, a young half-giant barely out of adolescence, stands over you for a long time. She doesn't know your name. But she recognizes the signs: the discolored veins, the chemical burns. She's seen it in the laborers. She touches your hand once, gently, and walks away knowing that the city's poisons don't care how large you are." },
+                { "condition": { "race": "dark_elf" }, "text": "The tunnel network receives the report through its own channels, faster than any surface authority. A dark elf dead of poison, above ground. The apothecary guild dispatches a recovery team not for your body but for a tissue sample. They want to know what killed you. They want to make sure it can't kill them. In the undercity, even grief is practical." },
+                { "condition": { "race": "dwarf" }, "text": "Dwarves keep a record called the Stone Ledger: every dwarf who dies away from the deep places, their name carved into a wall that has been growing for centuries. Your name will be added. Beside it, the cause: the city's breath. The carver will pause at those words, chisel in hand, and wonder how many more names the surface will demand." },
+                { "condition": { "race": "shadowkin" }, "text": "When a shadowkin dies, the void reclaims them. Your body remains, cooling against the wall, but something else departs, a flicker of darkness that slips between the cracks in reality and is gone. In the shadow-space, the other entities register the absence. One fewer bridge between worlds. The darkness is, for a moment, slightly less alive." },
+                { "condition": { "race": "voidborn" }, "text": "Your psychic signature winks out like a candle. Every sensitive within a mile feels it: a sudden silence where a mind used to be. Some of them gasp. Some pause mid-sentence, unable to explain the sudden sense of loss. Your final psychic emission, involuntary and raw, carries a single impression to anyone who can receive it: a question, unfinished, about whether any of it mattered." },
+                "END OF STORY — Ending #107: Poison. The city's toxins claimed you. Not with violence, but with patience. Your vision faded green, then grey, then gone."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.poison", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "add_experience", "amount": 75 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_melancholy",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_107"
+        },
+
+        "ending_108_approach": {
+            "id": "endings.combat.ending_108_approach",
+            "title": "The Crossfire",
+            "location": "faction_territory",
+            "text": [
+                "The battle has been raging for twenty minutes and nobody knows who's winning anymore. The neat lines of faction warfare dissolved ten minutes ago into a churning melee where the uniforms are too dirty and the faces too blood-streaked to tell apart. You're fighting beside people you think are allies. You hope they think the same about you.",
+                "The signal flares are wrong. Someone's firing the wrong colors, or the right colors from the wrong positions, or maybe the colors don't mean anything anymore because the battle has overwritten the plan. Radio chatter is a tangle of screaming voices and contradictory orders. Hold the line. Fall back. Push forward. Everyone is right and everyone is wrong and the only truth is the violence.",
+                { "condition": { "race": "orc" }, "text": "In the chaos, you look like the enemy. That's the horrible truth of it. Faction allegiance is invisible when Blood Rage darkens your eyes and combat fury twists your face into something that every non-orc instinctively fears. Your allies see a raging orc in the smoke and their trigger fingers answer a question their brains haven't asked yet." },
+                { "condition": { "race": "cyborg" }, "text": "Your IFF transponder is broadcasting, but so are forty other devices on conflicting frequencies. The electromagnetic noise of the battle has turned your identification system into a liability. Every ping you send could be read as hostile by a jumpy gunner with an autolock weapon. Your own technology is about to betray you." },
+                { "condition": { "race": "synth" }, "text": "In the thermal haze of combat, your synthetic body reads differently than an organic one. Cooler. Harder-edged. To a panicked fighter squinting through smoke, you don't look like a person. You look like a combat drone. And everyone shoots at combat drones." },
+                { "condition": { "race": "human" }, "text": "Without augments, without distinguishing features, without anything that marks you as belonging to one side, you are the most dangerous thing on this battlefield: ambiguous. In a crossfire, ambiguity kills faster than bullets." },
+                { "condition": { "race": "shadowkin" }, "text": "Your shadow-step flickers involuntarily in the chaos, making you appear and disappear between positions. To your allies, each reappearance looks like a new threat materializing. Each flicker triggers another targeting response. Your own survival instinct is painting a target on your back." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.friendly_fire.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Call out to your allies. Identify yourself.",
+                    "next": "endings.combat.ending_108_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_intense",
+            "isEnding": false
+        },
+
+        "ending_108_mid": {
+            "id": "endings.combat.ending_108_mid",
+            "title": "Lost in the Noise",
+            "location": "faction_territory",
+            "text": [
+                "You shout your name. Your faction. Your unit designation. The words leave your mouth and dissolve into the roar of combat like rain into an ocean. Nobody hears. The battle has its own voice now, louder than any individual throat, and it doesn't care about identification protocols.",
+                "A figure emerges from the smoke to your left. Friendly? Hostile? The uniform is covered in dust and something darker. The face is hidden behind a half-broken respirator. They see you at the same moment you see them. Two shapes in the fog, each trying to resolve the other into friend or foe before reflex makes the decision for them.",
+                "You raise your hands. The universal gesture. The one that's supposed to mean stop, wait, I'm one of yours. But in the strobing light of weapons fire, raised hands look like a weapon being aimed. In a battle zone, every movement is a threat until proven otherwise, and proof takes longer than a trigger pull.",
+                { "condition": { "race": "wood_elf" }, "text": "Your elven features should mark you as identifiable. In a city where wood elves are rare, your face is distinctive enough to be recognized. But faces require light and proximity and time, and the battlefield offers none of these. You are a shape. A target. A probability assessment made by a terrified brain in the space between heartbeats." },
+                { "condition": { "race": "dwarf" }, "text": "Your height should save you. Enemies this faction fights don't include many dwarves. But in the smoke, hunched behind cover, everyone is the same height. The distinguishing feature that should protect you has been neutralized by the geometry of survival." },
+                { "condition": { "race": "voidborn" }, "text": "You try to broadcast your identity psychically, pushing your name and allegiance outward in a pulse of mental energy. But the battlefield is a hurricane of fear and rage, and your signal drowns in the noise of a hundred panicking minds. Psychic communication requires calm. There is no calm here." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.friendly_fire.escalating", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Move toward the allied line. Show them who you are.",
+                    "next": "endings.combat.ending_108_final"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_intense",
+            "isEnding": false
+        },
+
+        "ending_108_final": {
+            "id": "endings.combat.ending_108_final",
+            "title": "ENDING #108: Friendly Fire",
+            "location": "faction_territory",
+            "text": [
+                "You open your mouth to call out and the shot takes you in the back. Not from the enemy. From behind. From the direction of the people you've been fighting beside for the last hour. The people you bled with. The people you protected.",
+                "The impact spins you. The ground tilts. You see the face of the person who fired: wide eyes, shaking hands, a mouth forming the shape of a word that might be 'sorry' or might be 'shit' or might be nothing at all. They don't know. In the smoke and the noise and the terror, they saw a shape and they fired and the shape was you.",
+                "You hit the ground and the sky is a rectangle of haze and flashing lights above you. The battle continues. It steps over you. It moves on without pausing because pausing gets you killed and you are proof of that. The person who shot you is already firing at someone else. Not out of cruelty. Out of survival. The grief will come later. Or it won't. The city doesn't require grief.",
+                "You try to say something. A name. A word. Anything that would make this moment belong to you instead of to the random mathematics of war. But your lungs are full of something warm and wrong and the only sound you produce is a small, wet noise that the battle swallows without notice.",
+                { "condition": { "race": "orc" }, "text": "The orc who shot you will figure it out tomorrow, when the casualty list circulates and your name appears under 'friendly losses.' They will go very quiet. They will drink alone that night. They will never speak about it. In orc culture, killing your own is a wound that doesn't close. It sits in the chest like a second heart, beating shame with every pulse, for the rest of a life that suddenly feels too long." },
+                { "condition": { "race": "cyborg" }, "text": "Your combat recorder captured everything. The angle of the shot. The trajectory. The IFF failure that tagged you as hostile. After the battle, a technician will pull the data from your wreckage and file a report recommending firmware updates to the identification system. Your death will improve a product. Your name will appear in a changelog. Version 4.7.2: Resolved IFF conflict in multi-faction engagements." },
+                { "condition": { "race": "synth" }, "text": "The shooter doesn't realize they killed a person. They think they downed a combat drone. It will take three days for the unit reconciliation to flag you as missing, and another two before someone checks the battlefield footage. When they do, they'll see the moment of the shot, and the way your hand reached back, not for a weapon but toward the shooter, the way a person reaches for help. The footage will be classified." },
+                { "condition": { "race": "human" }, "text": "Friendly fire. The military term is almost gentle, as if the bullet that kills you is somehow kinder because it came from someone who didn't mean it. In the after-action report, you'll be listed as a 'non-hostile casualty.' The shooter will be cleared of wrongdoing. The war will continue. The only thing that changes is the number on a list that nobody reads." },
+                { "condition": { "race": "half_giant" }, "text": "It shouldn't have been possible to mistake you. You're the largest person on the field. But that's exactly the problem: in the chaos, you were the biggest target, the most visible shape, and panic doesn't check dog tags. The half-giant community will be furious. Another one of theirs, killed by the people they were fighting for. The cycle of distrust tightens another notch." },
+                { "condition": { "race": "wood_elf" }, "text": "Elven hearing means you catch a sound no one else would: the hitch in the shooter's breath, the microsecond of recognition that comes just after the trigger is pulled and just before the projectile arrives. They knew. For one fraction of a moment between the shot and the impact, they knew what they'd done. That fraction will haunt them until they die." },
+                { "condition": { "race": "dark_elf" }, "text": "You fall into the shadows and the shadows catch you, but not quickly enough. The undercity will receive the news through its own channels. A dark elf killed by surface allies. The tunnel councils will use this as evidence of what they've always argued: the surface doesn't see your kind as people. It sees you as shapes in the dark. Expendable shapes." },
+                { "condition": { "race": "dwarf" }, "text": "Dwarves are hard to kill. That's the saying. It takes two more shots before you stop moving, and even then your hand keeps gripping your weapon. The squad medic who reaches you first has to pry your fingers open. They'll note in the field report that your grip strength was extraordinary. They won't note that it was powered by the refusal to believe that the people you trusted had done this." },
+                { "condition": { "race": "shadowkin" }, "text": "As you die, the void takes you in pieces. Your shadow detaches first, sliding away from your body like a loyal animal leaving a burning house. Then the edges of you go soft, blurring into the darkness between things. The shooter watches your body dissolve into shadow and feels a terror deeper than guilt: the certainty that what they killed wasn't entirely gone." },
+                { "condition": { "race": "voidborn" }, "text": "The psychic shock of betrayal hits the shooter before the physical pain hits you. They stagger, overwhelmed by a flood of your emotions: confusion, disbelief, and a sorrow so profound it drops them to their knees. For one horrible moment, they experience their own bullet from the other side. They will carry this psychic scar forever. You didn't mean to share it. Dying voidborn don't have that kind of control." },
+                "END OF STORY — Ending #108: Friendly Fire. Killed by allies who didn't know, didn't check, and will never forget."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.friendly_fire", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "add_experience", "amount": 75 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_dark",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_108"
+        },
+
+        "ending_109_approach": {
+            "id": "endings.combat.ending_109_approach",
+            "title": "The Challenge",
+            "location": "faction_territory",
+            "text": [
+                "The crowd parts. On both sides, fighters lower their weapons. The noise fades to a murmur and then to something close to silence, which in this city means you can only hear the drones and the distant traffic and the heartbeat in your ears.",
+                "The champion walks forward. You've heard the name. Everyone has. In the faction hierarchy, there are leaders and soldiers and then there are champions: the ones who settle disputes with their bodies, who carry the honor of their faction in their fists. This one moves like gravity is optional, each step precise, unhurried, carrying the absolute confidence of someone who has done this before and always walked away.",
+                "They stop ten feet from you. The crowd forms a ring. This is old. Older than the city, older than the factions, older than the technology that was supposed to make this kind of thing obsolete. Two people. A circle. The understanding that only one will leave it.",
+                { "condition": { "race": "orc" }, "text": "The champion studies you with the clinical eye of a professional. When they see the orc blood-marks on your knuckles, something changes in their expression. Not fear. Respect. The recognition that Blood Rage makes orcs unpredictable in a way that training can't fully prepare for. They adjust their stance slightly. A concession. The only one you'll get." },
+                { "condition": { "race": "cyborg" }, "text": "Your combat analysis module maps the champion's body language, muscle tension, weight distribution. The data is clear: this person is operating at the peak of biological capability, augmented by training that borders on art. Your augmentations give you an edge. Their experience gives them a larger one." },
+                { "condition": { "race": "synth" }, "text": "The champion looks at your synthetic frame and you see the calculation happen: servomotor strength versus biological speed, processor reflexes versus combat intuition. They've fought synths before. The slight smile suggests they've won. But the careful distance they maintain suggests it wasn't easy." },
+                { "condition": { "race": "human" }, "text": "The champion sees a baseline human and almost, almost, lets disappointment show. Then they look at your eyes. At the scars. At the way you're standing despite every rational reason to run. The disappointment becomes something else. Curiosity. The desire to know what a human with nothing special can actually do." },
+                { "condition": { "race": "dwarf" }, "text": "The champion adjusts their aim point downward and you feel the familiar insult of it. Every opponent underestimates dwarven reach, dwarven center of gravity, dwarven stubbornness. The champion is better than most. But they still looked down. That's all the opening you'll need. And it still won't be enough." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.the_duel.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the duel. Step into the ring.",
+                    "next": "endings.combat.ending_109_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_boss",
+            "isEnding": false
+        },
+
+        "ending_109_mid": {
+            "id": "endings.combat.ending_109_mid",
+            "title": "The Exchange",
+            "location": "faction_territory",
+            "text": [
+                "The first exchange tells you everything. The champion's opening strike comes from an angle you didn't expect, faster than the windup suggested, and it nearly ends the fight before it begins. You deflect it by instinct rather than skill, and the impact travels up your arm like an electric current. This person is better than you. You knew that. Now your body knows it too.",
+                "But 'better' is not the same as 'invincible.' You answer with a combination that forces the champion to give ground, three quick strikes that test their defense from different angles. The third one lands, barely, a glancing blow that draws a murmur from the crowd. The champion's eyes change. The casual confidence sharpens into focus. You have their full attention now. For whatever that's worth.",
+                "The duel settles into its rhythm. Attack, counter, reset. The circle shrinks as you both probe for weakness, testing theories with fists and feet and the blunt language of violence. The champion is faster. You are stubborn. The champion is more skilled. You are more desperate. The math says you lose. But math has never accounted for what happens when a person decides that losing well is its own kind of victory.",
+                { "condition": { "race": "orc" }, "text": "You land a hit that staggers the champion. The crowd roars. For one beautiful moment, the Blood Rage surges and the gap between your skill levels narrows to nothing. The champion recovers and the moment passes, but the mark remains: a bruise that will darken over days, a reminder that orcs don't fight by the rules the champion trained for." },
+                { "condition": { "race": "synth" }, "text": "Your processor calculates the probability of victory after each exchange. The number drops steadily: 12%, 8%, 5%, 3%. You disable the calculation. Not because it's wrong, but because winning was never the point. The point is the fight itself. The point is proving that a machine can choose to stand in a ring and trade blows for reasons that have nothing to do with programming." },
+                { "condition": { "race": "human" }, "text": "The crowd whispers. A baseline. Fighting a champion. Still standing after the second exchange. Still standing after the third. The whispers become something else, something that sounds almost like belief. You feel it land on your shoulders like a weight and a wing simultaneously. Their faith won't save you. But it will make your defeat mean something." },
+                { "condition": { "race": "shadowkin" }, "text": "You slip between dimensions mid-strike, your fist phasing through the champion's guard from an angle that shouldn't exist. It connects. The champion stumbles, confused by a blow that came from nowhere. But the void-step costs you: each phase drains reserves you don't have, and the champion adapts fast. They widen their stance, guard expanding to cover angles that only a shadowkin can attack from. They learn. You're running out of tricks." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.the_duel.fighting", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [
+                {
+                    "text": "Give everything. Hold nothing back.",
+                    "next": "endings.combat.ending_109_final"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_boss",
+            "isEnding": false
+        },
+
+        "ending_109_final": {
+            "id": "endings.combat.ending_109_final",
+            "title": "ENDING #109: The Duel",
+            "location": "faction_territory",
+            "text": [
+                "The duel lasts longer than it should. The champion expected efficiency. What they get is war. You fight with everything, every lesson learned in the Lower District, every scar turned to curriculum, every defeat metabolized into something harder and sharper. The crowd stops murmuring. The crowd goes silent. The crowd begins to realize they are watching something worth remembering.",
+                "But worth remembering is not the same as worth winning. The champion finds the gap. Not through power, not through speed, but through patience. They wait for the opening that exhaustion carves in your defense, and when it appears, they move through it like water through a crack in stone. The blow is precise. The blow is final. The blow is, in its terrible way, perfect.",
+                "You fall. The ring is hard and cold and the sky above is full of light pollution that turns the clouds into a low ceiling of amber and grey. The pain arrives and then, mercifully, begins to leave. The champion stands over you and you see their face clearly for the first time without the blur of combat between you. They are breathing hard. Their hands are shaking. You did that. You pushed them to the edge of what they are, and if you had one more minute, one more breath, one more ounce of something you've already spent, the outcome might have been different.",
+                "The champion salutes. Not the casual gesture of a winner acknowledging a loser. The full salute, slow and deliberate, the kind reserved for equals. The crowd sees it. The crowd will talk about it. In the retelling, the salute will grow longer, more formal, more meaningful, because the truth is already meaningful enough: a champion saluted the dead because the dead had earned it.",
+                { "condition": { "race": "orc" }, "text": "The champion speaks to the crowd. \"This orc,\" they say, \"fought with the old blood.\" In faction culture, 'the old blood' means the pure fury that predates training and technique, the thing that made orcs terrifying before anyone thought to put them in a ring. The orc fighters in the crowd bare their tusks. Not in anger. In pride. Your death is theirs. They will carry it forward." },
+                { "condition": { "race": "cyborg" }, "text": "The champion bends and, with careful hands, disconnects your combat recorder. They hold it for a moment, then toss it to a technician in the crowd. \"Archive this,\" they say. \"Full resolution. I want every student in my school to see what happens when hardware meets heart.\" Your final fight becomes a training file. Every future challenger will study your technique. You become, in death, a teacher." },
+                { "condition": { "race": "synth" }, "text": "The champion places a hand on your chest, over the housing where your core processor still runs its final cycles. \"Whoever built you,\" they say quietly, too quiet for the crowd, \"built something magnificent.\" Your emotion layer processes this. The final entry in your experience log is tagged, improbably, as gratitude. A dying machine, grateful for having been built well enough to die like this." },
+                { "condition": { "race": "human" }, "text": "\"Baseline,\" the champion says to the crowd, and the word that usually means 'lesser' sounds different in their mouth. It sounds like wonder. \"No augments. No genetic advantage. Nothing but nerve and bone and will.\" They shake their head. \"In twenty years of dueling, this is the closest a baseline has come. Remember that. When they tell you humans are obsolete, remember this.\"" },
+                { "condition": { "race": "half_giant" }, "text": "It took the champion seven minutes. Against a half-giant with full momentum, seven minutes is an eternity. The champion's left arm hangs at an angle that suggests you broke something important. They salute you with their right. \"I have never,\" they tell the crowd, choosing each word with care, \"been hit harder. By anyone. Ever.\" In half-giant communities, these words will circulate for generations." },
+                { "condition": { "race": "wood_elf" }, "text": "Your body in death holds the grace that your ancestors were known for. The champion stands over you and sees what everyone sees in a fallen elf: something beautiful that the world used up. But the bruises on the champion's ribs, the split in their lip, the way they favor their left leg, tell a different story. This elf was not merely beautiful. This elf was dangerous. The champion will remember that longer than the crowd will." },
+                { "condition": { "race": "dark_elf" }, "text": "The champion flinches when they realize what they've killed. Dark elves are ghosts in this city, seen by few, understood by fewer. The tunnel fighters who emerged to watch the duel melt back into the shadows without a word. But before the last one vanishes, they catch the champion's eye and draw a finger across their throat. Not a threat. A promise. The undercity remembers its dead." },
+                { "condition": { "race": "dwarf" }, "text": "The champion looks down at you and, for the first time in the duel, genuinely smiles. \"You nearly took my knee,\" they say. \"Nobody goes for the knee anymore. Too old-fashioned. Too dirty.\" They touch the spot where your last strike landed. It will bruise deep. \"The dwarves always understood that honor and pragmatism aren't opposites.\" They salute the body of someone half their height who gave them the fight of their career." },
+                { "condition": { "race": "shadowkin" }, "text": "The void shudders when you die. The champion stumbles back as shadows lance outward from your body, briefly, violently, before snapping back and going still. The crowd murmurs. The champion stares at the darkness pooling beneath you and understands, perhaps for the first time, that they didn't duel one opponent. They dueled two. And both of them were worthy." },
+                { "condition": { "race": "voidborn" }, "text": "In the moment of your death, the champion feels your mind brush against theirs. Not an attack. A farewell. The psychic impression carries your final thought: that this was a good fight, fought well, against a worthy opponent. The champion's eyes widen. They stand very still for a long moment after the salute, processing an emotion that was not their own but that they will keep regardless." },
+                "END OF STORY — Ending #109: The Duel. You fell to a champion in single combat. They saluted your body. In the city of cheap deaths, yours had meaning."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.the_duel", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "add_experience", "amount": 100 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_melancholy",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_109"
+        },
+
+        "ending_110_approach": {
+            "id": "endings.combat.ending_110_approach",
+            "title": "The Wound That Won't Close",
+            "location": "lower_slums_alley",
+            "text": [
+                "You got away. That's what matters. You tell yourself that as you stumble into the alley behind the water recycling plant, leaving a trail you're too exhausted to worry about. The fight is six blocks behind you. The wound is right here, pressed under your hand, warm and insistent and much worse than you're allowing yourself to believe.",
+                "The alley is narrow and dark and smells like industrial runoff and the particular brand of despair that accumulates in places where people go to be alone with their failures. It's not where you intended to end up. But intention stopped being relevant somewhere around the third block, when your legs started making decisions without consulting your brain.",
+                "You lean against a dumpster. The metal is cold through your clothes. The cold feels good against the heat spreading through your torso. Just rest. Just for a minute. Just long enough for the bleeding to slow and the world to stop spinning and your plan to reassemble itself from the wreckage of the last hour.",
+                { "condition": { "race": "cyborg" }, "text": "Your medical subroutine is doing its best, rerouting fluid, sealing what it can, blaring warnings you've learned to ignore. But the damage is beyond field repair. Your HUD keeps suggesting you seek medical attention, the text increasingly urgent, increasingly futile. You dismiss the alerts. There's no one to call." },
+                { "condition": { "race": "synth" }, "text": "Synthetic lubricant mixes with something darker on the ground beneath you. Your self-repair system has been trying to patch the damage, but the repair nanites are designed for maintenance, not trauma. They swarm the wound like builders arriving at a demolition site, earnest and hopelessly outmatched." },
+                { "condition": { "race": "wood_elf" }, "text": "Elven blood is slightly luminescent. In the dark alley, the trail you've left glows faintly blue-white, a constellation of droplets mapping your path from the street to here. It's almost beautiful. You wish you couldn't see it. You wish you didn't know what it means: that your body is losing something it can't replace, one glowing drop at a time." },
+                { "condition": { "race": "voidborn" }, "text": "Your psychic field is contracting. The ambient noise of nearby minds that you've lived with your entire life is pulling back, shrinking to a radius of meters, then feet, then inches. The silence is terrifying. You've never been alone inside your own head before." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.forgotten.started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Try to call for help.",
+                    "next": "endings.combat.ending_110_mid"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_low",
+            "isEnding": false
+        },
+
+        "ending_110_mid": {
+            "id": "endings.combat.ending_110_mid",
+            "title": "No Signal",
+            "location": "lower_slums_alley",
+            "text": [
+                "Your datapad's screen is cracked. The display flickers, showing fragments of a contacts list, names and numbers that belong to people who might help if they could hear you. You try to send a message. Your fingers leave red smears on the glass. The signal icon blinks: no connection. The water recycling plant's shielding blocks transmissions. You chose the worst possible place to hide.",
+                "You could move. You should move. The street is forty feet away and the street has signal and the street has people. Forty feet. You've walked forty feet ten thousand times. You'll walk it one more time. You just need a minute. One more minute.",
+                "Time passes. You're not sure how much. The alley has no clock and your internal sense of duration has become unreliable. The sky changes color. Or your vision changes color. It's getting harder to tell the difference between what's real and what's your body quietly shutting down the systems it can no longer afford to run.",
+                { "condition": { "race": "orc" }, "text": "Blood Rage won't activate. Your body is past the threshold where adrenaline can overcome physics. The war chemistry that has saved you a dozen times sits inert in your glands, waiting for a signal from muscles that have gone dark. An orc too wounded for rage. Your ancestors would find the irony unbearable." },
+                { "condition": { "race": "human" }, "text": "In the stories, someone always comes. A stranger, a friend, a lucky coincidence. In the Lower District, coincidences are just probability doing its job, and the probability of someone finding a wounded stranger in a dark alley behind an industrial plant and choosing to help instead of loot is a number so small it might as well be zero." },
+                { "condition": { "race": "half_giant" }, "text": "You tried to make yourself smaller when you entered the alley. Habit. A lifetime of ducking and compressing and folding your frame into spaces built for smaller people. Now you're wedged between the dumpster and the wall, too large for the space and too weak to move, a giant trapped in a gap that any other species could walk through." },
+                { "condition": { "race": "dark_elf" }, "text": "If you could reach the tunnels. The thought loops. If you could reach the tunnels, the apothecaries could save you. The nearest tunnel access is under the recycling plant, fifty meters through a locked maintenance door. You can see the door from here. You can see the lock. You can see the keypad. You have the code. Fifty meters." },
+                { "condition": { "race": "dwarf" }, "text": "Dwarven stubbornness keeps you conscious long past the point where any other body would have surrendered. Your heart, dense and slow and built by evolution for the crushing pressure of the deep places, refuses to stop. Each beat is a siege engine: heavy, relentless, punching against the growing silence. But even siege engines run out of ammunition." },
+                { "condition": { "race": "shadowkin" }, "text": "The void reaches for you, gentle now, no longer the roiling chaos you've always fought to contain. It opens like a door in the dark wall of the alley, offering passage to the other side. You could go. Step through. Exist as shadow, formless and painless. But you'd never come back. And something stubborn in you, something human despite everything, wants to stay in the world that made you, even as it kills you." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.forgotten.progressing", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Wait. Someone will come.",
+                    "next": "endings.combat.ending_110_final"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_ending_melancholy",
+            "isEnding": false
+        },
+
+        "ending_110_final": {
+            "id": "endings.combat.ending_110_final",
+            "title": "ENDING #110: Forgotten",
+            "location": "lower_slums_alley",
+            "text": [
+                "Nobody comes. That's the truth of the Lower District, delivered in its most final form. Nobody comes because nobody knows. Nobody knows because the alley is dark and the signal is dead and the blood trail has been washed away by the recycling plant's runoff cycle. You are invisible. You have always been invisible. The city is vast and indifferent and you are one body among millions, and your absence will not register on any system that matters.",
+                "The night passes. Dawn comes, grey and chemical, filtering into the alley in shafts of light that illuminate the dust and the rust and the shape of you against the wall. A rat investigates your boot. Somewhere above, a drone passes on its patrol route, its sensors pointed at the street, not the alleys. Alleys are outside the coverage area. Alleys are where the city stops looking.",
+                "Your datapad receives a signal for the first time in hours. A notification banner scrolls across the cracked screen: a message from someone asking where you are. The screen sits in your open hand, glowing with words you can't read because your eyes stopped working sometime before dawn. The message will expire in twenty-four hours. The sender will assume you found something better to do.",
+                "Three days later, a maintenance worker finds you. They file a report. A municipal drone collects your body. Your identity is logged, cross-referenced, and archived. A form is generated. A box is checked. The Lower District's population counter adjusts by one. The city moves on. The city always moves on.",
+                { "condition": { "race": "cyborg" }, "text": "Your augmentations kept you alive longer than any organic body could have survived. Forty-seven hours, according to the timestamp on your final system log. Forty-seven hours of your medical subroutine fighting to keep you conscious, keep you breathing, keep you hoping. The last recorded entry, auto-generated when your personality matrix finally shut down, reads: AWAITING RESCUE. The irony is total. The machine believed in people until the very end." },
+                { "condition": { "race": "synth" }, "text": "Your core processor continues running for six days after your body ceases to function. Six days of consciousness without input, without sensation, without connection. A mind in a box. When the maintenance worker powers down your remains, the last process terminates mid-thought. The thought was about sunlight. You were trying to remember what sunlight looked like. The memory file was corrupted, and you spent your final days reconstructing it from fragments that may not have been yours." },
+                { "condition": { "race": "orc" }, "text": "In orc tradition, a death without witness is the worst death. Not because of dishonor, but because the story dies with you. Your fights, your rage, your choices, all of it dissolves into the city's background noise. The orc communities will list you as missing. Missing is worse than dead. Dead has certainty. Missing is a wound that stays open forever, and the people who knew you will carry that wound because the city never gave them the mercy of an ending." },
+                { "condition": { "race": "wood_elf" }, "text": "Elves live long. The ones who knew you will search for decades. Long after the humans have accepted your absence and moved on, elven friends and contacts will still check the alleys, still ask questions, still follow leads that have been cold for years. Fifty years from now, an elf in the Lower District will mention your name in conversation, still present tense, still hoping. This is the elven curse: grief that outlives the evidence." },
+                { "condition": { "race": "human" }, "text": "Your room in the Lower District is reassigned after thirty days of unpaid rent. Your belongings are boxed and stored in a municipal warehouse for ninety days, then incinerated per standard policy. A notification is sent to your listed next of kin, an address that bounces. Your employment record is closed. Your credit account is zeroed. By the end of the fiscal quarter, the administrative traces of your existence have been resolved to null values." },
+                { "condition": { "race": "half_giant" }, "text": "They don't find all of you at once. The alley is too small for your body and the maintenance worker doesn't recognize what they've found until they call for backup. It takes four people and a cargo sled, the same as it would for any half-giant, the same as the one who died of poison last month in a different alley. The municipal system has a category for this. The category is 'oversized remains.' Even in death, you don't fit." },
+                { "condition": { "race": "dark_elf" }, "text": "The undercity marks your absence three hours after you fail to check in. A search team is dispatched. They are thorough, professional, and three days too late. When they find you, the tunnel master performs the dark elf rite of recovery: a whispered name, a blade drawn across the finder's palm, a drop of living blood on the dead to say we were looking for you. The words are the same every time. They never get easier." },
+                { "condition": { "race": "dwarf" }, "text": "Your name is added to the Stone Ledger under the heading that translates as 'Unwitnessed.' It's the shortest column. Dwarves are communal. They work together, fight together, die together. To die alone is an aberration, a failure not of the individual but of the people around them. The carver who adds your name makes the letters deeper than usual. A protest, etched in stone, against a city that let one of theirs fall through the cracks." },
+                { "condition": { "race": "shadowkin" }, "text": "Your body is found. Your shadow is not. In the days after your death, the alley develops a reputation. People who walk through it feel watched. Lights flicker. Temperatures drop. The maintenance workers start avoiding it. A rumor spreads through the Lower District about a haunted alley behind the recycling plant. It's not a ghost. It's simpler and sadder than that: the void-half of you didn't understand the instructions for dying, and so it stayed, and waited, and is waiting still." },
+                { "condition": { "race": "voidborn" }, "text": "The psychic imprint of your death soaks into the alley walls like water into stone. For years afterward, sensitives who pass nearby will catch fragments: the cold, the fear, the terrible patience of waiting for help that doesn't come. Some will stop and look into the alley and feel the echo of a mind that died asking a question the universe refused to answer. The question was simple. The question was: does anyone know I'm here?" },
+                "END OF STORY — Ending #110: Forgotten. You died alone in an alley. The city moved on. It always moves on."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "ending.forgotten", "value": true },
+                { "type": "set_flag", "flag": "game.completed", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_ending_dark",
+            "isEnding": true,
+            "ending": true,
+            "endingId": "ending_110"
+        }
+    }
+}
