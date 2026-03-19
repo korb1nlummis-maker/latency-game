@@ -382,6 +382,11 @@
                     "text": "Push toward Commander Vex to offer your help",
                     "condition": { "flag": "act1.faction_ironCollective" },
                     "next": "act1.chapter4.climax_015"
+                },
+                {
+                    "text": "Find the Circuit Saints — Ezra-7 will need help protecting the network",
+                    "condition": { "flag": "act1.faction_circuitSaints" },
+                    "next": "act1.chapter4.climax_031"
                 }
             ],
             "ascii": null,
@@ -493,6 +498,11 @@
                 {
                     "text": "Look for cover — this is about to get ugly",
                     "next": "act1.chapter4.climax_036"
+                },
+                {
+                    "text": "Use the chaos to complete Luminara's intelligence mission",
+                    "condition": { "flag": "act1.neon_spy_mission" },
+                    "next": "act1.chapter4.climax_034"
                 }
             ],
             "ascii": null,
@@ -1039,6 +1049,10 @@
                 {
                     "text": "Stay in the center. Whatever happens, you need to see it.",
                     "next": "act1.chapter4.climax_036"
+                },
+                {
+                    "text": "Try to sell the harvested data to multiple factions simultaneously",
+                    "next": "act1.chapter4.ending_act1_007"
                 }
             ],
             "ascii": null,
@@ -1102,6 +1116,11 @@
                 {
                     "text": "Take the void anchor and return to the Transit Hub",
                     "next": "act1.chapter4.climax_036"
+                },
+                {
+                    "text": "Refuse the anchor. Step into the void willingly.",
+                    "condition": { "race": ["shadowkin", "voidborn"] },
+                    "next": "act1.chapter4.ending_act1_010"
                 }
             ],
             "ascii": null,
@@ -1559,6 +1578,10 @@
                 {
                     "text": "Use the chaos to slip away. You've done enough.",
                     "next": "act1.chapter4.climax_046"
+                },
+                {
+                    "text": "[Betrayal] Contact Meridian. Sell out the resistance for your own survival.",
+                    "next": "act1.chapter4.ending_act1_004"
                 }
             ],
             "ascii": null,
@@ -1721,6 +1744,34 @@
             "choices": [],
             "ascii": null,
             "music": "combat_active",
+            "isEnding": false
+        },
+
+        "climax_046": {
+            "id": "act1.chapter4.climax_046",
+            "title": "Dawn After the Storm",
+            "location": "lower_district_rooftop",
+            "text": [
+                "You emerge from the tunnels into the grey half-light of a city that has changed. Smoke still rises from the Transit Hub. Emergency drones sweep the streets in widening patterns, their searchlights cutting through the pre-dawn fog. Somewhere distant, a siren wails and dies.",
+                "You climb to a rooftop because you need to see it. All of it. The Lower District stretches below you, battered and bruised but breathing. Lights flicker in apartment windows where people who survived the night are checking on each other, counting heads, patching wounds, whispering about what comes next.",
+                "The registration centers did not open on schedule. The riot, the data corruption, the dimensional revelation, the sheer stubborn fury of thousands of people refusing to be cataloged, it was enough. Not to win. Not yet. But enough to buy time. Enough to prove that the city is not as obedient as Meridian assumed.",
+                "Mako's voice crackles through your comm. \"You alive?\"",
+                "\"Alive,\" you say. The word feels heavier than it used to.",
+                "\"Good. Because this isn't over. Meridian is regrouping. The factions are fracturing. And whatever that thing was that the Ashen Circle did at the Hub, people are talking about it. People saw something. People are asking questions that Meridian can't answer with drones and registration forms.\"",
+                "She pauses. \"Get some rest. Tomorrow the real war starts.\"",
+                "You stand on the rooftop and watch the sun try to break through the cloud layer. It fails, as it always does. But for a moment, just a moment, the light is there. You saw it. And so did the city.",
+                { "condition": { "flag": "act1.faction_joined" }, "text": "Your faction will regroup. They will plan. They will remember what happened tonight and use it as fuel for everything that comes next. And you will be there, because you chose a side and held it when the fire came." },
+                { "condition": { "not_flag": "act1.faction_joined" }, "text": "You chose no banner. No faction. You survived on your own terms and the city noticed. In the days to come, every faction in the district will remember that you were there, unaligned and unbroken. That makes you dangerous. That makes you valuable. That makes you free." }
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "act1.completed", "value": true },
+                { "type": "set_flag", "flag": "act2.unlocked", "value": true },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "autoNext": "act2.chapter1.start",
+            "ascii": null,
+            "music": "chapter_end",
             "isEnding": false
         },
 

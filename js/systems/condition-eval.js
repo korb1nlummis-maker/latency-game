@@ -63,10 +63,11 @@ window.Latency.ConditionEval = (function () {
             }
         }
 
-        // ── notFlag (character does NOT have this flag) ──────────────────
-        if (cond.notFlag !== undefined) {
+        // ── notFlag / not_flag (character does NOT have this flag) ─────
+        if (cond.notFlag !== undefined || cond.not_flag !== undefined) {
+            var nf = cond.notFlag || cond.not_flag;
             var flagsNot = character.flags || [];
-            if (flagsNot.indexOf(cond.notFlag) !== -1) {
+            if (flagsNot.indexOf(nf) >= 0) {
                 return false;
             }
         }

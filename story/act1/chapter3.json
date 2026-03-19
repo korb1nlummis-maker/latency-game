@@ -1157,13 +1157,13 @@
                 {
                     "text": "[Tech 15] Hack the stack remotely — erase the dangerous data",
                     "next": "act1.chapter3.stack_045",
-                    "condition": { "stat": "tech", "minimum": 15 },
+                    "statCheck": { "stat": "tech", "dc": 15 },
                     "failNext": "act1.chapter3.stack_042"
                 },
                 {
                     "text": "[Dex 14] You mapped escape routes. Use them.",
                     "next": "act1.chapter3.stack_047",
-                    "condition": { "stat": "dex", "minimum": 14 },
+                    "statCheck": { "stat": "dex", "dc": 14 },
                     "failNext": "act1.chapter3.stack_042"
                 }
             ],
@@ -1222,7 +1222,7 @@
                 {
                     "text": "[Cha 16] \"Walk away. This is over.\"",
                     "next": "act1.chapter3.stack_046",
-                    "condition": { "stat": "cha", "minimum": 16 },
+                    "statCheck": { "stat": "cha", "dc": 16 },
                     "failNext": "act1.chapter3.stack_043a"
                 },
                 {
@@ -1613,7 +1613,7 @@
             "choices": [
                 {
                     "text": "Continue to Act 1, Chapter 4",
-                    "next": "act1.chapter4.start"
+                    "next": "act1.chapter4.climax_001"
                 }
             ],
             "ascii": null,
