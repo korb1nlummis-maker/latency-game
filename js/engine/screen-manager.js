@@ -199,6 +199,13 @@ window.Latency.ScreenManager = (function () {
         }
 
         _screens[name] = screenObject;
+
+        // If the StateMachine is stuck waiting for this screen, show it now
+        var EB = window.Latency && window.Latency.EventBus;
+        var SM = window.Latency && window.Latency.StateMachine;
+        if (SM && SM.getCurrentState && SM.getCurrentState() === name && _currentScreen !== name) {
+            show(name);
+        }
     }
 
     /**
@@ -252,10 +259,15 @@ window.Latency.ScreenManager = (function () {
 
         var screen = _screens[screenName];
         if (!screen) {
-            console.error(
-                '[ScreenManager] No screen registered as "' + screenName + '".'
-            );
-            return;
+            // Screen may not be registered yet — retry once after a tick
+            await new Promise(function (resolve) { setTimeout(resolve, 50); });
+            screen = _screens[screenName];
+            if (!screen) {
+                console.error(
+                    '[ScreenManager] No screen registered as "' + screenName + '".'
+                );
+                return;
+            }
         }
 
         // ------------------------------------------------------------------

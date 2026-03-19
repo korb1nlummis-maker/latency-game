@@ -50,45 +50,36 @@ document.addEventListener('DOMContentLoaded', function () {
     L.ScreenManager.init(container);
 
     // ── 4. Register ALL screens ──
-    if (L.Screens.MainMenu) {
-        L.ScreenManager.register('menu', L.Screens.MainMenu);
-    }
-    if (L.Screens.CharacterCreation) {
-        L.ScreenManager.register('creation', L.Screens.CharacterCreation);
-    }
-    if (L.Screens.Gameplay) {
-        L.ScreenManager.register('gameplay', L.Screens.Gameplay);
-    }
-    if (L.Screens.SaveLoad) {
-        L.ScreenManager.register('saveload', L.Screens.SaveLoad);
-    }
-    if (L.Screens.CombatScreen) L.ScreenManager.register('combat', L.Screens.CombatScreen);
-    if (L.Screens.InventoryScreen) L.ScreenManager.register('inventory', L.Screens.InventoryScreen);
-    if (L.Screens.SkillsScreen) L.ScreenManager.register('skills', L.Screens.SkillsScreen);
-    if (L.Screens.AchievementsScreen) L.ScreenManager.register('achievements', L.Screens.AchievementsScreen);
-    if (L.Screens.MapScreen) L.ScreenManager.register('map', L.Screens.MapScreen);
-    if (L.Screens.CutsceneScreen) L.ScreenManager.register('cutscene', L.Screens.CutsceneScreen);
-    if (L.Screens.SettingsScreen) L.ScreenManager.register('settings', L.Screens.SettingsScreen);
-    if (L.Screens.EndingScreen) L.ScreenManager.register('ending', L.Screens.EndingScreen);
-    if (L.Screens.HowToPlayScreen) L.ScreenManager.register('howtoplay', L.Screens.HowToPlayScreen);
-    if (L.Screens.JournalScreen) L.ScreenManager.register('journal', L.Screens.JournalScreen);
-    if (L.Screens.LoadingScreen) L.ScreenManager.register('loading', L.Screens.LoadingScreen);
+    // Map screen class names to registration keys
+    var SCREEN_MAP = {
+        MainMenu: 'menu',
+        CharacterCreation: 'creation',
+        Gameplay: 'gameplay',
+        SaveLoad: 'saveload',
+        CombatScreen: 'combat',
+        InventoryScreen: 'inventory',
+        SkillsScreen: 'skills',
+        AchievementsScreen: 'achievements',
+        MapScreen: 'map',
+        CutsceneScreen: 'cutscene',
+        SettingsScreen: 'settings',
+        EndingScreen: 'ending',
+        HowToPlayScreen: 'howtoplay',
+        JournalScreen: 'journal',
+        LoadingScreen: 'loading'
+    };
 
-    // ── 4b. Late-register any screens that may have been missed ──
-    setTimeout(function () {
-        var lateScreens = {
-            settings: L.Screens.SettingsScreen,
-            ending: L.Screens.EndingScreen,
-            howtoplay: L.Screens.HowToPlayScreen,
-            loading: L.Screens.LoadingScreen,
-            journal: L.Screens.JournalScreen
-        };
-        for (var name in lateScreens) {
-            if (lateScreens[name]) {
-                L.ScreenManager.register(name, lateScreens[name]);
+    function _registerAllScreens() {
+        for (var className in SCREEN_MAP) {
+            if (L.Screens[className]) {
+                L.ScreenManager.register(SCREEN_MAP[className], L.Screens[className]);
             }
         }
-    }, 0);
+    }
+
+    // Register now, and again after a tick to catch any late-loaded screens
+    _registerAllScreens();
+    setTimeout(_registerAllScreens, 0);
 
     // ── 5. State Machine ──
     if (L.StateMachine && L.StateMachine.init) {
