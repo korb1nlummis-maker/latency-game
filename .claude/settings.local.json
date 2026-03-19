@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python3 tools/generate-placeholder-audio.py)",
+      "WebSearch",
+      "WebFetch(domain:pixabay.com)",
+      "WebFetch(domain:soundimage.org)",
+      "WebFetch(domain:www.chosic.com)",
+      "WebFetch(domain:freepd.com)",
+      "WebFetch(domain:www.free-stock-music.com)",
+      "WebFetch(domain:www.silvermansound.com)",
+      "Bash(curl -L -o \"track-01-dark-flashes.mp3\" \"https://www.silvermansound.com/wp-content/uploads/dark-flashes.mp3\" -s -w \"track-01: %{http_code} %{size_download} bytes\\\\n\")",
+      "Bash(ls -la \"D:/Latency/assets/music/\"*.mp3)",
+      "Bash(curl -s -I -L \"https://cdn.pixabay.com/download/audio/2024/11/29/audio_d12b7796ee.mp3?filename=alexgrohl-epic-cinematic-500408.mp3\")",
+      "Bash(ls \"D:/Latency/assets/music/\"*.mp3)",
+      "Bash(rm -f track-01-dark-flashes.mp3 track-01-slum-rain.wav track-02-corrupted.mp3 track-02-neon-haze.wav track-03-dark-streets.wav track-04-haunted-harpsichord.mp3 track-05-the-88.mp3 track-06-synapse.mp3 track-13-piano-singularity.mp3 track-14-dank-halloween.mp3 track-15-acid-trance.mp3 track-16-pulsar.mp3 track-17-floppy-disks.mp3 track-18-robotertanz.mp3)",
+      "Bash(ls *.mp3)",
+      "Bash(grep -oP \"src: ''''\\([^'''']+\\)''''\" js/engine/music-manager.js)",
+      "Bash(ls -la \"D:/Latency/assets/music/track-02\"* \"D:/Latency/assets/music/track-04\"* \"D:/Latency/assets/music/track-06\"* \"D:/Latency/assets/music/track-14\"* \"D:/Latency/assets/music/track-15\"* \"D:/Latency/assets/music/track-16\"* \"D:/Latency/assets/music/track-17\"* \"D:/Latency/assets/music/track-18\"*)",
+      "Bash(curl -L -s -o \"track-03-against-time.mp3\" \"https://www.silvermansound.com/wp-content/uploads/against-time.mp3\" -w \"03: %{http_code}\\\\n\")",
+      "Bash(curl -L -s -o \"track-04-neon-noir.mp3\" \"https://www.silvermansound.com/wp-content/uploads/neon-noir.mp3\" -w \"04: %{http_code}\\\\n\")",
+      "Bash(curl -L -s -o \"track-06-amunet-prime.mp3\" \"https://www.silvermansound.com/wp-content/uploads/amunet-prime.mp3\" -w \"06: %{http_code}\\\\n\")",
+      "Bash(curl -L -s -o \"track-14-observe.mp3\" \"https://www.silvermansound.com/wp-content/uploads/observe.mp3\" -w \"14: %{http_code}\\\\n\")",
+      "Bash(curl -L -s -o \"track-15-corrupted-v2.mp3\" \"https://www.silvermansound.com/wp-content/uploads/corrupted.mp3\" -w \"15: %{http_code}\\\\n\")",
+      "Bash(curl -L -s -o \"track-16-dire-space-emergency.mp3\" \"https://www.silvermansound.com/wp-content/uploads/dire-space-emergency.mp3\" -w \"16: %{http_code}\\\\n\")",
+      "Bash(curl -L -s -o \"track-17-diaphanous.mp3\" \"https://www.silvermansound.com/wp-content/uploads/diaphanous.mp3\" -w \"17: %{http_code}\\\\n\")",
+      "Bash(curl -L -s -o \"track-18-nightchaser.mp3\" \"https://www.silvermansound.com/wp-content/uploads/nightchaser.mp3\" -w \"18: %{http_code}\\\\n\")",
+      "Bash(MISSING=0)"
+    ]
+  }
+}

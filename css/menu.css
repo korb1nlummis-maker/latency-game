@@ -1,0 +1,385 @@
+/* ============================================================
+ * LATENCY - Main Menu Styles
+ * ============================================================
+ * Terminal-aesthetic menu with CRT glitch effects, scanlines,
+ * glowing text, and atmospheric dystopian styling.
+ *
+ * Consumes design tokens from variables.css.
+ * ============================================================ */
+
+/* ------------------------------------------------------------
+ * 1. Menu Screen Layout
+ * Full-viewport centered flex container
+ * ------------------------------------------------------------ */
+.menu-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: var(--space-8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Scanline overlay effect */
+.menu-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent var(--scanline-size, 2px),
+        rgba(0, 0, 0, var(--scanline-opacity, 0.04)) var(--scanline-size, 2px),
+        rgba(0, 0, 0, var(--scanline-opacity, 0.04)) calc(var(--scanline-size, 2px) * 2)
+    );
+    pointer-events: none;
+    z-index: var(--z-overlay);
+}
+
+/* Subtle CRT vignette */
+.menu-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    pointer-events: none;
+    z-index: var(--z-overlay);
+}
+
+/* ------------------------------------------------------------
+ * 2. ASCII Title
+ * Large monospace block with neon glow
+ * ------------------------------------------------------------ */
+.menu-title-block {
+    margin-bottom: var(--space-2);
+    text-align: center;
+    position: relative;
+    z-index: var(--z-content);
+}
+
+.menu-title-ascii {
+    font-family: var(--font-mono);
+    font-size: clamp(0.35rem, 1.1vw, 0.85rem);
+    line-height: var(--leading-tight);
+    color: var(--text-primary);
+    text-shadow:
+        0 0 5px var(--text-primary),
+        0 0 20px rgba(0, 255, 136, 0.5),
+        0 0 40px rgba(0, 255, 136, 0.25),
+        0 0 80px rgba(0, 255, 136, 0.1);
+    white-space: pre;
+    letter-spacing: var(--tracking-wide);
+    animation: titlePulse 4s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+
+/* ------------------------------------------------------------
+ * 3. Glitch Effect
+ * Subtle CRT-style flicker and displacement on title
+ * ------------------------------------------------------------ */
+.glitch {
+    position: relative;
+    animation: glitchFlicker 8s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-mono);
+    font-size: clamp(0.35rem, 1.1vw, 0.85rem);
+    line-height: var(--leading-tight);
+    white-space: pre;
+    letter-spacing: var(--tracking-wide);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.glitch::before {
+    color: var(--accent-3);
+    text-shadow: none;
+    animation: glitchLeft 3s infinite linear alternate-reverse;
+    clip-path: inset(0 0 65% 0);
+    opacity: 0.6;
+}
+
+.glitch::after {
+    color: var(--accent-2);
+    text-shadow: none;
+    animation: glitchRight 2.5s infinite linear alternate-reverse;
+    clip-path: inset(60% 0 0 0);
+    opacity: 0.6;
+}
+
+@keyframes glitchFlicker {
+    0%, 94%, 100% { opacity: 1; }
+    95% { opacity: 0.8; }
+    96% { opacity: 1; }
+    97% { opacity: 0.9; transform: translate(0); }
+    97.5% { transform: translate(-2px, 0); }
+    98% { transform: translate(2px, 0); }
+    98.5% { transform: translate(0); }
+}
+
+@keyframes glitchLeft {
+    0%, 90% { transform: translate(0); }
+    91% { transform: translate(-3px, 1px); }
+    92% { transform: translate(2px, -1px); }
+    93% { transform: translate(-1px, 0); }
+    94%, 100% { transform: translate(0); }
+}
+
+@keyframes glitchRight {
+    0%, 88% { transform: translate(0); }
+    89% { transform: translate(2px, 1px); }
+    90% { transform: translate(-3px, -1px); }
+    91% { transform: translate(1px, 0); }
+    92%, 100% { transform: translate(0); }
+}
+
+/* ------------------------------------------------------------
+ * 4. Subtitle & Tagline
+ * ------------------------------------------------------------ */
+.menu-subtitle {
+    font-family: var(--font-mono);
+    font-size: clamp(0.7rem, 1.8vw, 1.3rem);
+    color: var(--text-primary);
+    text-shadow: var(--text-glow-subtle);
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-6);
+    text-align: center;
+    z-index: var(--z-content);
+    position: relative;
+}
+
+.menu-tagline {
+    font-family: var(--font-mono);
+    font-size: clamp(0.6rem, 1.2vw, 0.9rem);
+    color: var(--text-dim);
+    font-style: italic;
+    margin-bottom: var(--space-12);
+    text-align: center;
+    z-index: var(--z-content);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--text-primary);
+    animation:
+        typewriter 3s steps(65) 0.5s forwards,
+        blinkCursor 0.8s step-end infinite;
+    width: 0;
+    max-width: 100%;
+}
+
+@keyframes typewriter {
+    to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+    0%, 100% { border-color: var(--text-primary); }
+    50% { border-color: transparent; }
+}
+
+/* ------------------------------------------------------------
+ * 5. Menu Buttons
+ * Terminal-command style with hover glow
+ * ------------------------------------------------------------ */
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-12);
+    z-index: var(--z-content);
+    position: relative;
+}
+
+.menu-btn {
+    font-family: var(--font-mono);
+    font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+    color: var(--text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2) var(--space-8);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    transition:
+        color var(--transition-normal),
+        text-shadow var(--transition-smooth),
+        transform var(--transition-fast);
+    position: relative;
+    width: 280px;
+    text-align: left;
+}
+
+.menu-btn::before {
+    content: '>';
+    position: absolute;
+    left: var(--space-2);
+    color: var(--text-primary);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition:
+        opacity var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+.menu-btn:hover {
+    color: var(--text-primary);
+    text-shadow: var(--text-glow);
+    transform: translateX(5px);
+}
+
+.menu-btn:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.menu-btn:active {
+    transform: translateX(5px) scale(0.98);
+}
+
+/* Focus visible for keyboard navigation */
+.menu-btn:focus-visible {
+    color: var(--text-primary);
+    text-shadow: var(--text-glow);
+    outline: 1px solid var(--border-color-focus);
+    outline-offset: 4px;
+    box-shadow: var(--border-glow);
+}
+
+.menu-btn:focus-visible::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Disabled state */
+.menu-btn:disabled,
+.menu-btn.disabled {
+    color: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.menu-btn:disabled:hover,
+.menu-btn.disabled:hover {
+    color: var(--text-muted);
+    text-shadow: none;
+    transform: none;
+}
+
+.menu-btn:disabled:hover::before,
+.menu-btn.disabled:hover::before {
+    opacity: 0;
+}
+
+/* ------------------------------------------------------------
+ * 6. Version Text
+ * ------------------------------------------------------------ */
+.menu-version {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    letter-spacing: var(--tracking-wide);
+    z-index: var(--z-content);
+    position: relative;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------
+ * 7. Decorative Separator
+ * ------------------------------------------------------------ */
+.menu-separator {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    letter-spacing: var(--tracking-widest);
+    margin-bottom: var(--space-8);
+    text-align: center;
+    z-index: var(--z-content);
+    position: relative;
+    opacity: 0.6;
+}
+
+/* ------------------------------------------------------------
+ * 8. Responsive Adjustments
+ * ------------------------------------------------------------ */
+@media (max-width: 600px) {
+    .menu-screen {
+        padding: var(--space-4);
+    }
+
+    .menu-title-ascii {
+        font-size: clamp(0.22rem, 1.6vw, 0.5rem);
+    }
+
+    .glitch::before,
+    .glitch::after {
+        font-size: clamp(0.22rem, 1.6vw, 0.5rem);
+    }
+
+    .menu-subtitle {
+        letter-spacing: 0.3em;
+    }
+
+    .menu-tagline {
+        font-size: clamp(0.5rem, 2.5vw, 0.8rem);
+        white-space: normal;
+        border-right: none;
+        animation: fadeInTagline 2s ease forwards;
+        width: auto;
+    }
+
+    @keyframes fadeInTagline {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .menu-btn {
+        width: 240px;
+        font-size: clamp(0.75rem, 3vw, 1rem);
+    }
+}
+
+@media (max-height: 600px) {
+    .menu-screen {
+        justify-content: flex-start;
+        padding-top: var(--space-4);
+    }
+
+    .menu-tagline {
+        margin-bottom: var(--space-6);
+    }
+
+    .menu-nav {
+        gap: 0;
+        margin-bottom: var(--space-6);
+    }
+
+    .menu-btn {
+        padding: var(--space-1) var(--space-8);
+    }
+}

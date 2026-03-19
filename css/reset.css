@@ -1,0 +1,303 @@
+/* ============================================================
+ * LATENCY - CSS Reset / Normalize
+ * ============================================================
+ * A comprehensive reset that strips browser defaults to create
+ * a clean slate for the game's terminal-aesthetic UI.
+ *
+ * Based on modern reset principles with game-specific additions
+ * for canvas elements, media layers, and interactive components.
+ * ============================================================ */
+
+/* ------------------------------------------------------------
+ * 1. Box Model Reset
+ * Force border-box on everything so padding and borders
+ * are included in declared widths/heights. Critical for
+ * precise layout in a fixed-viewport game UI.
+ * ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------
+ * 2. Document & Root Defaults
+ * Establish baseline rendering behavior. Smooth scrolling
+ * is set but the game itself uses overflow: hidden on body.
+ * ------------------------------------------------------------ */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------
+ * 3. Body Reset
+ * Remove default margin and set minimum dimensions.
+ * ------------------------------------------------------------ */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+/* ------------------------------------------------------------
+ * 4. Sectioning & Structural Elements
+ * Ensure all HTML5 structural elements render as block
+ * for older browser compatibility.
+ * ------------------------------------------------------------ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* ------------------------------------------------------------
+ * 5. Typography Reset
+ * Strip default heading sizes, list styles, and ensure
+ * consistent font inheritance throughout the game UI.
+ * ------------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+p, blockquote, pre {
+  margin: 0;
+}
+
+ol, ul, menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------
+ * 6. Anchor / Link Reset
+ * Remove default underline and color. Game links will be
+ * styled with glowing terminal-style treatments.
+ * ------------------------------------------------------------ */
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ------------------------------------------------------------
+ * 7. Media Elements
+ * Make images, canvases, and media elements behave
+ * predictably within game layout containers.
+ * ------------------------------------------------------------ */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+}
+
+img, video, canvas {
+  height: auto;
+}
+
+audio {
+  display: none;
+}
+
+audio[controls] {
+  display: block;
+}
+
+/* ------------------------------------------------------------
+ * 8. Form Element Reset
+ * Normalize form controls for in-game input fields,
+ * terminal commands, and interactive UI elements.
+ * ------------------------------------------------------------ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* ------------------------------------------------------------
+ * 9. Table Reset
+ * Collapse borders and remove spacing for any data tables
+ * used in inventory, stats, or log displays.
+ * ------------------------------------------------------------ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th, td {
+  padding: 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* ------------------------------------------------------------
+ * 10. Interactive Element Reset
+ * Normalize interactive elements like details/summary
+ * which may be used for expandable game menus.
+ * ------------------------------------------------------------ */
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+/* Remove default summary marker */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::marker {
+  content: '';
+}
+
+/* ------------------------------------------------------------
+ * 11. Misc Resets
+ * Catch-all for remaining elements: horizontal rules,
+ * abbreviations, code blocks, and hidden elements.
+ * ------------------------------------------------------------ */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  border: none;
+  overflow: visible;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp, pre {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Hidden attribute support */
+[hidden] {
+  display: none !important;
+}
+
+/* Remove default focus outlines globally;
+ * custom focus indicators are defined in base.css */
+:focus {
+  outline: none;
+}
+
+/* Disable user-select on game UI by default.
+ * Selectable areas (e.g., logs) opt back in explicitly. */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}

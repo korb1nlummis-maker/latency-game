@@ -1,0 +1,423 @@
+/* ============================================================
+ * LATENCY - Map Screen Styles
+ * ============================================================
+ * District color coding, location nodes, connection indicators,
+ * current-location pulse effect, and responsive layout for the
+ * ASCII world map.
+ * ============================================================ */
+
+/* ── Screen container ──────────────────────────────────────── */
+
+.map-screen {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: var(--space-4);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    background: var(--bg-primary);
+    overflow-y: auto;
+}
+
+/* ── Map header / title ────────────────────────────────────── */
+
+.map-header {
+    text-align: center;
+    margin-bottom: var(--space-4);
+}
+
+.map-title {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    text-shadow: var(--text-glow);
+    line-height: var(--leading-tight);
+    margin: 0 0 var(--space-3) 0;
+    white-space: pre;
+}
+
+/* ── Legend ─────────────────────────────────────────────────── */
+
+.map-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.map-legend-item {
+    padding: var(--space-1) var(--space-2);
+}
+
+.map-legend-current {
+    color: var(--text-primary);
+    text-shadow: var(--text-glow);
+    animation: map-pulse 1.5s ease-in-out infinite;
+}
+
+.map-legend-reachable {
+    color: var(--accent-2);
+}
+
+.map-legend-locked {
+    color: var(--accent-3);
+}
+
+.map-legend-services {
+    color: var(--accent-4);
+}
+
+.map-legend-faction {
+    color: var(--accent-1);
+}
+
+/* ── Map area (district container) ─────────────────────────── */
+
+.map-area {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: var(--game-max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ── District sections ─────────────────────────────────────── */
+
+.map-district {
+    border: var(--border-default);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3);
+    background: var(--bg-secondary);
+    transition: border-color var(--transition-normal);
+}
+
+.map-district:hover {
+    border-color: var(--border-color-hover);
+}
+
+/* District-specific border colors */
+.map-district-highcity {
+    border-color: rgba(255, 215, 0, 0.2);
+}
+
+.map-district-highcity:hover {
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+.map-district-midcity {
+    border-color: rgba(0, 212, 255, 0.2);
+}
+
+.map-district-midcity:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
+.map-district-undercity {
+    border-color: rgba(255, 107, 53, 0.2);
+}
+
+.map-district-undercity:hover {
+    border-color: rgba(255, 107, 53, 0.4);
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.1);
+}
+
+.map-district-underground {
+    border-color: rgba(255, 45, 117, 0.2);
+}
+
+.map-district-underground:hover {
+    border-color: rgba(255, 45, 117, 0.4);
+    box-shadow: 0 0 15px rgba(255, 45, 117, 0.1);
+}
+
+/* ── District headers ──────────────────────────────────────── */
+
+.map-district-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.map-district-label {
+    font-size: var(--text-md);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-wider);
+    white-space: nowrap;
+}
+
+/* District label colors */
+.map-district-highcity .map-district-label {
+    color: var(--accent-4);
+    text-shadow: var(--glow-accent-4);
+}
+
+.map-district-midcity .map-district-label {
+    color: var(--accent-2);
+    text-shadow: var(--glow-accent-2);
+}
+
+.map-district-undercity .map-district-label {
+    color: var(--accent-1);
+    text-shadow: var(--glow-accent-1);
+}
+
+.map-district-underground .map-district-label {
+    color: var(--accent-3);
+    text-shadow: var(--glow-accent-3);
+}
+
+.map-district-line {
+    color: var(--text-dim);
+    overflow: hidden;
+    flex: 1;
+    font-size: var(--text-sm);
+}
+
+/* ── Location nodes ────────────────────────────────────────── */
+
+.map-nodes-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-left: var(--space-3);
+}
+
+.map-node {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    cursor: default;
+    transition: background-color var(--transition-fast),
+                color var(--transition-fast),
+                text-shadow var(--transition-fast);
+    position: relative;
+    line-height: var(--leading-normal);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Current location - pulsing glow */
+.map-node-current {
+    color: var(--text-primary);
+    background: rgba(0, 255, 136, 0.08);
+    text-shadow: var(--text-glow);
+    font-weight: var(--weight-bold);
+    animation: map-pulse 1.5s ease-in-out infinite;
+    border-left: 2px solid var(--text-primary);
+}
+
+/* Reachable locations - clickable */
+.map-node-reachable {
+    color: var(--accent-2);
+    cursor: pointer;
+    border-left: 2px solid transparent;
+}
+
+.map-node-reachable:hover {
+    background: rgba(0, 212, 255, 0.12);
+    text-shadow: var(--glow-accent-2);
+    border-left-color: var(--accent-2);
+}
+
+.map-node-reachable:active {
+    background: rgba(0, 212, 255, 0.2);
+}
+
+/* Locked locations */
+.map-node-locked {
+    color: var(--accent-3);
+    opacity: 0.6;
+    border-left: 2px solid transparent;
+}
+
+.map-node-locked::after {
+    content: ' [LOCKED]';
+    font-size: var(--text-xs);
+    color: var(--accent-3);
+}
+
+/* Distant (not directly reachable) */
+.map-node-distant {
+    color: var(--text-dim);
+    border-left: 2px solid transparent;
+}
+
+/* Undiscovered locations */
+.map-node-undiscovered {
+    color: var(--text-muted);
+    font-style: italic;
+    border-left: 2px solid transparent;
+}
+
+/* ── Node metadata indicators ──────────────────────────────── */
+
+.map-node-connections {
+    font-size: var(--text-xs);
+    color: var(--text-dim);
+    display: block;
+    padding-left: var(--space-4);
+    white-space: normal;
+}
+
+.map-node-services {
+    color: var(--accent-4);
+    font-size: var(--text-xs);
+    margin-left: var(--space-1);
+}
+
+.map-node-faction {
+    color: var(--accent-1);
+    font-size: var(--text-xs);
+    margin-left: var(--space-1);
+}
+
+/* ── Separator ─────────────────────────────────────────────── */
+
+.map-separator {
+    text-align: center;
+    color: var(--text-dim);
+    margin: var(--space-4) 0;
+    overflow: hidden;
+    font-size: var(--text-sm);
+}
+
+/* ── Current location info panel ───────────────────────────── */
+
+.map-location-info {
+    border: var(--border-default);
+    border-radius: var(--radius-sm);
+    padding: var(--space-3);
+    background: var(--bg-panel);
+    max-width: var(--game-max-width);
+    margin: 0 auto var(--space-4) auto;
+    width: 100%;
+}
+
+.map-info-name {
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+    text-shadow: var(--text-glow-subtle);
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--space-2);
+}
+
+.map-info-desc {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-2);
+}
+
+.map-info-detail {
+    font-size: var(--text-sm);
+    color: var(--text-dim);
+    margin-bottom: var(--space-1);
+}
+
+.map-info-vendors {
+    color: var(--accent-4);
+}
+
+.map-info-faction {
+    color: var(--accent-1);
+}
+
+/* ── Footer / Back button ──────────────────────────────────── */
+
+.map-footer {
+    text-align: center;
+    padding: var(--space-3) 0;
+    max-width: var(--game-max-width);
+    margin: 0 auto;
+}
+
+.map-back-btn {
+    font-family: var(--font-mono);
+    font-size: var(--text-md);
+    color: var(--text-primary);
+    background: transparent;
+    border: var(--border-default);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-6);
+    cursor: pointer;
+    letter-spacing: var(--tracking-wide);
+    transition: background-color var(--transition-fast),
+                border-color var(--transition-fast),
+                box-shadow var(--transition-smooth),
+                text-shadow var(--transition-smooth);
+}
+
+.map-back-btn:hover {
+    background: rgba(0, 255, 136, 0.08);
+    border-color: var(--border-color-hover);
+    box-shadow: var(--border-glow);
+    text-shadow: var(--text-glow);
+}
+
+.map-back-btn:active {
+    background: rgba(0, 255, 136, 0.15);
+}
+
+.map-back-btn:focus-visible {
+    outline: none;
+    border-color: var(--border-color-focus);
+    box-shadow: var(--border-glow-strong);
+}
+
+/* ── Pulse animation for current location ──────────────────── */
+
+@keyframes map-pulse {
+    0%, 100% {
+        text-shadow: 0 0 4px rgba(0, 255, 136, 0.3);
+        background-color: rgba(0, 255, 136, 0.05);
+    }
+    50% {
+        text-shadow: 0 0 12px rgba(0, 255, 136, 0.7),
+                     0 0 20px rgba(0, 255, 136, 0.3);
+        background-color: rgba(0, 255, 136, 0.12);
+    }
+}
+
+/* ── Responsive adjustments ────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .map-screen {
+        padding: var(--space-2);
+    }
+
+    .map-title {
+        font-size: var(--text-sm);
+    }
+
+    .map-legend {
+        font-size: var(--text-xs);
+        gap: var(--space-1);
+    }
+
+    .map-district {
+        padding: var(--space-2);
+    }
+
+    .map-nodes-container {
+        padding-left: var(--space-1);
+    }
+
+    .map-node {
+        font-size: var(--text-sm);
+        padding: var(--space-1);
+    }
+
+    .map-node-connections {
+        display: none;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LATENCY - Choose Your Destiny</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/creation.css">
+    <link rel="stylesheet" href="css/gameplay.css">
+    <link rel="stylesheet" href="css/combat.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <link rel="stylesheet" href="css/achievements.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/cutscene.css">
+</head>
+<body>
+    <!-- Music layer: NEVER modified by screen transitions -->
+    <div id="music-layer">
+        <audio id="music-player" preload="auto"></audio>
+    </div>
+
+    <!-- Particle overlay: persists across screens -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Screen container: ONLY thing screens touch -->
+    <div id="screen-container"></div>
+
+    <!-- Persistent music controls: NEVER touched by screen transitions -->
+    <div id="music-controls">
+        <button id="music-mute-btn" title="Toggle Mute">🔊</button>
+        <button id="music-vol-down" title="Volume Down">−</button>
+        <button id="music-vol-up" title="Volume Up">+</button>
+        <button id="voice-toggle-btn" title="Toggle Voice">&#x1f50a;V</button>
+        <span id="music-track-name"></span>
+    </div>
+
+    <!-- Notification toasts -->
+    <div id="notification-layer"></div>
+
+    <!-- Scripts in dependency order -->
+
+    <!-- Engine (no dependencies except EventBus) -->
+    <script src="js/engine/event-bus.js"></script>
+    <script src="js/engine/dice.js"></script>
+    <script src="js/engine/state-machine.js"></script>
+    <script src="js/engine/music-manager.js"></script>
+    <script src="js/engine/voice-manager.js"></script>
+    <script src="js/engine/screen-manager.js"></script>
+    <script src="js/engine/save-manager.js"></script>
+    <script src="js/engine/asset-loader.js"></script>
+
+    <!-- Data (no dependencies) -->
+    <script src="js/data/races.js"></script>
+    <script src="js/data/traits.js"></script>
+    <script src="js/data/items.js"></script>
+    <script src="js/data/enemies.js"></script>
+    <script src="js/data/factions.js"></script>
+    <script src="js/data/skills.js"></script>
+    <script src="js/data/buffs.js"></script>
+    <script src="js/data/jobs.js"></script>
+    <script src="js/data/locations.js"></script>
+    <script src="js/data/npcs.js"></script>
+    <script src="js/data/achievements.js"></script>
+    <script src="js/data/cutscenes-origins-1.js"></script>
+    <script src="js/data/cutscenes-origins-2.js"></script>
+
+    <!-- Systems (depend on engine + data) -->
+    <script src="js/systems/condition-eval.js"></script>
+    <script src="js/systems/character.js"></script>
+    <script src="js/systems/narrative.js"></script>
+    <script src="js/systems/inventory.js"></script>
+    <script src="js/systems/combat.js"></script>
+    <script src="js/systems/skills.js"></script>
+    <script src="js/systems/buffs.js"></script>
+    <script src="js/systems/faction.js"></script>
+    <script src="js/systems/job.js"></script>
+    <script src="js/systems/economy.js"></script>
+    <script src="js/systems/npc.js"></script>
+    <script src="js/systems/achievements.js"></script>
+
+    <!-- UI Components -->
+    <script src="js/ui/typewriter.js"></script>
+    <script src="js/ui/ascii-renderer.js"></script>
+    <script src="js/ui/dice-animator.js"></script>
+    <script src="js/ui/notification.js"></script>
+
+    <!-- Screens -->
+    <script src="js/screens/main-menu.js"></script>
+    <script src="js/screens/character-creation.js"></script>
+    <script src="js/screens/gameplay.js"></script>
+    <script src="js/screens/save-load-screen.js"></script>
+    <script src="js/screens/combat-screen.js"></script>
+    <script src="js/screens/inventory-screen.js"></script>
+    <script src="js/screens/skills-screen.js"></script>
+    <script src="js/screens/achievements-screen.js"></script>
+    <script src="js/screens/map-screen.js"></script>
+    <script src="js/screens/cutscene-screen.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="js/main.js"></script>
+</body>
+</html>

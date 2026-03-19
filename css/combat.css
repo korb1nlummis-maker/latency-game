@@ -1,0 +1,770 @@
+/* ============================================================
+ * LATENCY - Combat Screen Styles
+ * ============================================================
+ * Terminal-aesthetic combat UI with split player/enemy layout,
+ * color-coded HP bars, monospace combat log, action buttons,
+ * dice animation area, and dramatic victory/defeat overlays.
+ * ============================================================ */
+
+/* ----------------------------------------------------------
+ * Screen container
+ * ---------------------------------------------------------- */
+
+.combat-screen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: var(--game-max-width, 1200px);
+    margin: 0 auto;
+    padding: var(--space-2, 0.5rem);
+    box-sizing: border-box;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    color: var(--text-primary, #00ff88);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ----------------------------------------------------------
+ * Header
+ * ---------------------------------------------------------- */
+
+.cb-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+    border: var(--border-default, 1px solid rgba(0, 255, 136, 0.12));
+    border-bottom: none;
+    background: var(--bg-panel, #1a1a2e);
+}
+
+.cb-title {
+    font-size: var(--text-lg, 1.125rem);
+    font-weight: var(--weight-bold, 700);
+    letter-spacing: var(--tracking-wider, 0.1em);
+    text-shadow: var(--text-glow, 0 0 8px rgba(0, 255, 136, 0.6));
+    color: var(--text-primary, #00ff88);
+}
+
+.cb-turn-info {
+    font-size: var(--text-sm, 0.75rem);
+    color: var(--text-secondary, #8899aa);
+    letter-spacing: var(--tracking-wide, 0.05em);
+}
+
+/* ----------------------------------------------------------
+ * Combatant panels (player vs enemy split)
+ * ---------------------------------------------------------- */
+
+.cb-combatants {
+    display: flex;
+    align-items: stretch;
+    border: var(--border-default, 1px solid rgba(0, 255, 136, 0.12));
+    background: var(--bg-secondary, #12121a);
+    min-height: 140px;
+}
+
+.cb-combatant {
+    flex: 1;
+    padding: var(--space-3, 0.75rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1, 0.25rem);
+}
+
+.cb-player-panel {
+    border-right: 1px solid var(--border-color, rgba(0, 255, 136, 0.12));
+}
+
+.cb-vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    flex-shrink: 0;
+    font-size: var(--text-xl, 1.5rem);
+    font-weight: var(--weight-bold, 700);
+    color: var(--accent-1, #ff6b35);
+    text-shadow: var(--glow-accent-1, 0 0 10px rgba(255, 107, 53, 0.4));
+    letter-spacing: var(--tracking-widest, 0.2em);
+    background: var(--bg-primary, #0a0a0f);
+    border-left: 1px solid var(--border-color, rgba(0, 255, 136, 0.12));
+    border-right: 1px solid var(--border-color, rgba(0, 255, 136, 0.12));
+}
+
+.cb-combatant-label {
+    font-size: var(--text-xs, 0.625rem);
+    color: var(--text-dim, #445566);
+    letter-spacing: var(--tracking-widest, 0.2em);
+    text-transform: uppercase;
+    margin-bottom: var(--space-1, 0.25rem);
+}
+
+.cb-combatant-name {
+    font-size: var(--text-md, 1rem);
+    font-weight: var(--weight-bold, 700);
+    color: var(--text-primary, #00ff88);
+    text-shadow: var(--text-glow-subtle, 0 0 4px rgba(0, 255, 136, 0.3));
+    margin-bottom: var(--space-1, 0.25rem);
+}
+
+.cb-enemy-name {
+    color: var(--accent-3, #ff2d75);
+    text-shadow: var(--glow-accent-3, 0 0 10px rgba(255, 45, 117, 0.4));
+}
+
+/* ----------------------------------------------------------
+ * HP / Stamina bars
+ * ---------------------------------------------------------- */
+
+.cb-bar-block {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2, 0.5rem);
+    font-size: var(--text-sm, 0.75rem);
+    margin: 2px 0;
+}
+
+.cb-bar-label {
+    color: var(--text-secondary, #8899aa);
+    min-width: 30px;
+    font-weight: var(--weight-bold, 700);
+}
+
+.cb-bar {
+    font-family: var(--font-mono, 'Courier New', monospace);
+    letter-spacing: 1px;
+    font-size: var(--text-sm, 0.75rem);
+    transition: color var(--transition-normal, 200ms ease);
+}
+
+.cb-hp-bar {
+    color: var(--text-primary, #00ff88);
+}
+
+.cb-bar-high {
+    color: var(--text-primary, #00ff88);
+    text-shadow: 0 0 4px rgba(0, 255, 136, 0.4);
+}
+
+.cb-bar-mid {
+    color: var(--accent-1, #ff6b35);
+    text-shadow: 0 0 4px rgba(255, 107, 53, 0.4);
+}
+
+.cb-bar-low {
+    color: var(--accent-3, #ff2d75);
+    text-shadow: 0 0 6px rgba(255, 45, 117, 0.5);
+    animation: cbBarPulse 1s ease-in-out infinite;
+}
+
+@keyframes cbBarPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.cb-sta-bar {
+    color: var(--accent-2, #00d4ff);
+    text-shadow: 0 0 4px rgba(0, 212, 255, 0.3);
+}
+
+.cb-bar-numbers {
+    color: var(--text-secondary, #8899aa);
+    font-size: var(--text-xs, 0.625rem);
+    min-width: 50px;
+}
+
+/* Enemy info line */
+.cb-enemy-info {
+    display: flex;
+    gap: var(--space-3, 0.75rem);
+    font-size: var(--text-xs, 0.625rem);
+    color: var(--text-dim, #445566);
+    margin-top: var(--space-1, 0.25rem);
+}
+
+.cb-enemy-detail {
+    letter-spacing: var(--tracking-wide, 0.05em);
+}
+
+/* ----------------------------------------------------------
+ * Status effects
+ * ---------------------------------------------------------- */
+
+.cb-status-effects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: var(--space-1, 0.25rem);
+    min-height: 20px;
+}
+
+.cb-effect-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    font-size: var(--text-xs, 0.625rem);
+    border-radius: var(--radius-sm, 2px);
+    letter-spacing: var(--tracking-wide, 0.05em);
+    font-weight: var(--weight-bold, 700);
+}
+
+.cb-effect-buff {
+    background: rgba(0, 255, 136, 0.15);
+    color: var(--color-success, #00ff88);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.cb-effect-debuff {
+    background: rgba(255, 45, 117, 0.15);
+    color: var(--color-danger, #ff2d75);
+    border: 1px solid rgba(255, 45, 117, 0.3);
+}
+
+.cb-effect-regen {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--accent-2, #00d4ff);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.cb-effect-poison,
+.cb-effect-dot {
+    background: rgba(136, 0, 255, 0.15);
+    color: #aa66ff;
+    border: 1px solid rgba(136, 0, 255, 0.3);
+}
+
+/* ----------------------------------------------------------
+ * Dice animation area
+ * ---------------------------------------------------------- */
+
+.cb-dice-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    padding: var(--space-2, 0.5rem);
+    border: var(--border-default, 1px solid rgba(0, 255, 136, 0.12));
+    border-top: none;
+    border-bottom: none;
+    background: var(--bg-primary, #0a0a0f);
+}
+
+/* ----------------------------------------------------------
+ * Combat log
+ * ---------------------------------------------------------- */
+
+.cb-log-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: var(--border-default, 1px solid rgba(0, 255, 136, 0.12));
+    background: var(--bg-panel, #1a1a2e);
+    min-height: 120px;
+    max-height: 200px;
+}
+
+.cb-log-header {
+    padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+    font-size: var(--text-xs, 0.625rem);
+    color: var(--text-dim, #445566);
+    letter-spacing: var(--tracking-wider, 0.1em);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-subtle, rgba(136, 153, 170, 0.1));
+    flex-shrink: 0;
+}
+
+.cb-log-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-2, 0.5rem);
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-sm, 0.75rem);
+    line-height: var(--leading-relaxed, 1.625);
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for combat log */
+.cb-log-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cb-log-container::-webkit-scrollbar-track {
+    background: var(--bg-primary, #0a0a0f);
+}
+
+.cb-log-container::-webkit-scrollbar-thumb {
+    background: var(--border-color, rgba(0, 255, 136, 0.12));
+    border-radius: 2px;
+}
+
+.cb-log-container::-webkit-scrollbar-thumb:hover {
+    background: var(--border-color-hover, rgba(0, 255, 136, 0.3));
+}
+
+/* Log entry types */
+.cb-log-entry {
+    padding: 1px 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.cb-log-info {
+    color: var(--text-secondary, #8899aa);
+}
+
+.cb-log-hit {
+    color: var(--color-success, #00ff88);
+    text-shadow: 0 0 3px rgba(0, 255, 136, 0.3);
+}
+
+.cb-log-miss {
+    color: var(--color-danger, #ff2d75);
+}
+
+.cb-log-crit {
+    color: var(--accent-4, #ffd700);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    font-weight: var(--weight-bold, 700);
+}
+
+.cb-log-heal {
+    color: var(--accent-2, #00d4ff);
+    text-shadow: 0 0 3px rgba(0, 212, 255, 0.3);
+}
+
+.cb-log-status {
+    color: #aa66ff;
+    text-shadow: 0 0 3px rgba(136, 0, 255, 0.3);
+}
+
+/* ----------------------------------------------------------
+ * Action bar
+ * ---------------------------------------------------------- */
+
+.cb-action-bar {
+    display: flex;
+    gap: var(--space-2, 0.5rem);
+    padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+    border: var(--border-default, 1px solid rgba(0, 255, 136, 0.12));
+    border-top: none;
+    background: var(--bg-secondary, #12121a);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cb-action-wrapper {
+    position: relative;
+}
+
+.cb-action-btn {
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-sm, 0.75rem);
+    font-weight: var(--weight-bold, 700);
+    letter-spacing: var(--tracking-wider, 0.1em);
+    padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
+    border: 1px solid var(--text-primary, #00ff88);
+    background: transparent;
+    color: var(--text-primary, #00ff88);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all var(--transition-fast, 120ms ease);
+    min-width: 80px;
+    text-align: center;
+    position: relative;
+}
+
+.cb-action-btn:hover:not(:disabled) {
+    background: rgba(0, 255, 136, 0.1);
+    box-shadow: var(--border-glow, 0 0 10px rgba(0, 255, 136, 0.3));
+    text-shadow: var(--text-glow, 0 0 8px rgba(0, 255, 136, 0.6));
+}
+
+.cb-action-btn:active:not(:disabled) {
+    background: rgba(0, 255, 136, 0.2);
+    transform: scale(0.97);
+}
+
+.cb-action-btn:disabled,
+.cb-btn-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: var(--text-dim, #445566);
+    color: var(--text-dim, #445566);
+}
+
+/* Individual button accent colors */
+.cb-btn-attack {
+    border-color: var(--accent-1, #ff6b35);
+    color: var(--accent-1, #ff6b35);
+}
+
+.cb-btn-attack:hover:not(:disabled) {
+    background: var(--accent-1-dim, rgba(255, 107, 53, 0.15));
+    box-shadow: var(--glow-accent-1, 0 0 10px rgba(255, 107, 53, 0.4));
+    text-shadow: 0 0 8px rgba(255, 107, 53, 0.6);
+}
+
+.cb-btn-defend {
+    border-color: var(--accent-2, #00d4ff);
+    color: var(--accent-2, #00d4ff);
+}
+
+.cb-btn-defend:hover:not(:disabled) {
+    background: var(--accent-2-dim, rgba(0, 212, 255, 0.15));
+    box-shadow: var(--glow-accent-2, 0 0 10px rgba(0, 212, 255, 0.4));
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+}
+
+.cb-btn-ability {
+    border-color: var(--accent-4, #ffd700);
+    color: var(--accent-4, #ffd700);
+}
+
+.cb-btn-ability:hover:not(:disabled) {
+    background: var(--accent-4-dim, rgba(255, 215, 0, 0.15));
+    box-shadow: var(--glow-accent-4, 0 0 10px rgba(255, 215, 0, 0.4));
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+.cb-btn-item {
+    border-color: var(--color-success, #00ff88);
+    color: var(--color-success, #00ff88);
+}
+
+.cb-btn-flee {
+    border-color: var(--text-secondary, #8899aa);
+    color: var(--text-secondary, #8899aa);
+}
+
+.cb-btn-flee:hover:not(:disabled) {
+    background: rgba(136, 153, 170, 0.1);
+    box-shadow: 0 0 10px rgba(136, 153, 170, 0.3);
+}
+
+/* ----------------------------------------------------------
+ * Submenus (ability / item popups)
+ * ---------------------------------------------------------- */
+
+.cb-submenu {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    max-height: 250px;
+    overflow-y: auto;
+    background: var(--bg-panel, #1a1a2e);
+    border: 1px solid var(--border-color, rgba(0, 255, 136, 0.12));
+    box-shadow: var(--shadow-dropdown, 0 12px 40px rgba(0, 0, 0, 0.7));
+    z-index: var(--z-overlay, 50);
+    margin-bottom: 4px;
+}
+
+.cb-submenu-item {
+    display: block;
+    width: 100%;
+    padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-sm, 0.75rem);
+    color: var(--text-primary, #00ff88);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-subtle, rgba(136, 153, 170, 0.1));
+    text-align: left;
+    cursor: pointer;
+    transition: background var(--transition-fast, 120ms ease);
+}
+
+.cb-submenu-item:last-child {
+    border-bottom: none;
+}
+
+.cb-submenu-item:hover:not(:disabled) {
+    background: rgba(0, 255, 136, 0.1);
+}
+
+.cb-submenu-item:disabled,
+.cb-submenu-disabled {
+    color: var(--text-dim, #445566);
+    cursor: not-allowed;
+}
+
+.cb-submenu-empty {
+    color: var(--text-dim, #445566);
+    font-style: italic;
+    cursor: default;
+}
+
+/* ----------------------------------------------------------
+ * Victory / Defeat overlays
+ * ---------------------------------------------------------- */
+
+.cb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-overlay, rgba(10, 10, 15, 0.85));
+    z-index: var(--z-modal, 80);
+    opacity: 0;
+    transition: opacity var(--transition-smooth, 300ms ease-in-out);
+    gap: var(--space-6, 1.5rem);
+    padding: var(--space-8, 2rem);
+}
+
+.cb-overlay-visible {
+    opacity: 1;
+}
+
+.cb-overlay-title {
+    font-size: var(--text-3xl, 2.5rem);
+    font-weight: var(--weight-bold, 700);
+    letter-spacing: var(--tracking-widest, 0.2em);
+    text-transform: uppercase;
+}
+
+.cb-victory-title {
+    color: var(--accent-4, #ffd700);
+    text-shadow:
+        0 0 20px rgba(255, 215, 0, 0.6),
+        0 0 40px rgba(255, 215, 0, 0.3),
+        0 0 80px rgba(255, 215, 0, 0.15);
+    animation: cbVictoryGlow 2s ease-in-out infinite;
+}
+
+@keyframes cbVictoryGlow {
+    0%, 100% {
+        text-shadow:
+            0 0 20px rgba(255, 215, 0, 0.6),
+            0 0 40px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow:
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 60px rgba(255, 215, 0, 0.4),
+            0 0 100px rgba(255, 215, 0, 0.2);
+    }
+}
+
+.cb-defeat-title {
+    color: var(--color-danger, #ff2d75);
+    text-shadow:
+        0 0 20px rgba(255, 45, 117, 0.6),
+        0 0 40px rgba(255, 45, 117, 0.3);
+    animation: cbDefeatFlicker 0.15s infinite;
+}
+
+@keyframes cbDefeatFlicker {
+    0% { opacity: 1; }
+    25% { opacity: 0.9; }
+    50% { opacity: 1; }
+    75% { opacity: 0.85; }
+    100% { opacity: 1; }
+}
+
+.cb-overlay-subtitle {
+    font-size: var(--text-md, 1rem);
+    color: var(--text-secondary, #8899aa);
+    letter-spacing: var(--tracking-wide, 0.05em);
+}
+
+.cb-overlay-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2, 0.5rem);
+    text-align: center;
+}
+
+.cb-overlay-line {
+    font-size: var(--text-base, 0.875rem);
+    color: var(--text-secondary, #8899aa);
+}
+
+.cb-xp-line {
+    color: var(--accent-4, #ffd700);
+    font-weight: var(--weight-bold, 700);
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+}
+
+.cb-credits-line {
+    color: var(--color-success, #00ff88);
+}
+
+.cb-overlay-loot-item {
+    font-size: var(--text-sm, 0.75rem);
+    color: var(--accent-2, #00d4ff);
+    text-shadow: 0 0 4px rgba(0, 212, 255, 0.3);
+}
+
+.cb-overlay-buttons {
+    display: flex;
+    gap: var(--space-4, 1rem);
+    margin-top: var(--space-4, 1rem);
+}
+
+.cb-btn-continue {
+    border-color: var(--accent-4, #ffd700);
+    color: var(--accent-4, #ffd700);
+    font-size: var(--text-md, 1rem);
+    padding: var(--space-3, 0.75rem) var(--space-8, 2rem);
+}
+
+.cb-btn-continue:hover {
+    background: var(--accent-4-dim, rgba(255, 215, 0, 0.15));
+    box-shadow: var(--glow-accent-4, 0 0 10px rgba(255, 215, 0, 0.4));
+}
+
+.cb-btn-load,
+.cb-btn-menu {
+    font-size: var(--text-md, 1rem);
+    padding: var(--space-3, 0.75rem) var(--space-6, 1.5rem);
+}
+
+.cb-btn-load {
+    border-color: var(--accent-2, #00d4ff);
+    color: var(--accent-2, #00d4ff);
+}
+
+.cb-btn-load:hover {
+    background: var(--accent-2-dim, rgba(0, 212, 255, 0.15));
+    box-shadow: var(--glow-accent-2, 0 0 10px rgba(0, 212, 255, 0.4));
+}
+
+.cb-btn-menu {
+    border-color: var(--text-secondary, #8899aa);
+    color: var(--text-secondary, #8899aa);
+}
+
+.cb-btn-menu:hover {
+    background: rgba(136, 153, 170, 0.1);
+}
+
+/* ----------------------------------------------------------
+ * Critical hit shake effect
+ * ---------------------------------------------------------- */
+
+@keyframes cbCritShake {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-4px, -2px); }
+    20% { transform: translate(4px, 2px); }
+    30% { transform: translate(-3px, 3px); }
+    40% { transform: translate(3px, -3px); }
+    50% { transform: translate(-2px, 2px); }
+    60% { transform: translate(2px, -2px); }
+    70% { transform: translate(-3px, 1px); }
+    80% { transform: translate(3px, -1px); }
+    90% { transform: translate(-1px, 2px); }
+}
+
+.cb-crit-shake {
+    animation: cbCritShake 0.4s ease-out;
+}
+
+/* Glitch effect for critical moments */
+@keyframes cbGlitch {
+    0% {
+        clip-path: inset(40% 0 61% 0);
+        transform: translate(-2px, 0);
+    }
+    20% {
+        clip-path: inset(92% 0 1% 0);
+        transform: translate(2px, 0);
+    }
+    40% {
+        clip-path: inset(43% 0 1% 0);
+        transform: translate(-1px, 0);
+    }
+    60% {
+        clip-path: inset(25% 0 58% 0);
+        transform: translate(3px, 0);
+    }
+    80% {
+        clip-path: inset(54% 0 7% 0);
+        transform: translate(-2px, 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0, 0);
+    }
+}
+
+.cb-glitch {
+    animation: cbGlitch 0.3s steps(2, end);
+}
+
+/* Damage flash on HP bar */
+@keyframes cbDamageFlash {
+    0% { background: rgba(255, 45, 117, 0.3); }
+    100% { background: transparent; }
+}
+
+.cb-damage-flash {
+    animation: cbDamageFlash 0.3s ease-out;
+}
+
+/* ----------------------------------------------------------
+ * Responsive adjustments
+ * ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .cb-combatants {
+        flex-direction: column;
+    }
+
+    .cb-player-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color, rgba(0, 255, 136, 0.12));
+    }
+
+    .cb-vs-divider {
+        width: 100%;
+        height: 30px;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid var(--border-color, rgba(0, 255, 136, 0.12));
+        border-bottom: 1px solid var(--border-color, rgba(0, 255, 136, 0.12));
+    }
+
+    .cb-action-bar {
+        flex-wrap: wrap;
+    }
+
+    .cb-action-btn {
+        flex: 1;
+        min-width: 60px;
+        padding: var(--space-2, 0.5rem) var(--space-2, 0.5rem);
+        font-size: var(--text-xs, 0.625rem);
+    }
+
+    .cb-overlay-title {
+        font-size: var(--text-2xl, 2rem);
+    }
+
+    .cb-submenu {
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cb-header {
+        flex-direction: column;
+        gap: var(--space-1, 0.25rem);
+        text-align: center;
+    }
+
+    .cb-action-btn {
+        min-width: 50px;
+        font-size: var(--text-xs, 0.625rem);
+        padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+    }
+
+    .cb-log-section {
+        max-height: 150px;
+    }
+}

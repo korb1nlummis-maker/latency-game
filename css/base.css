@@ -1,0 +1,349 @@
+/* ============================================================
+ * LATENCY - Base Styles
+ * ============================================================
+ * Foundation typography, body styling, scrollbar theming,
+ * selection colors, links, and heading hierarchy.
+ *
+ * These styles build on reset.css and consume tokens from
+ * variables.css. They establish the core visual language
+ * before any component or layout styles are applied.
+ * ============================================================ */
+
+/* ------------------------------------------------------------
+ * 1. Root & Body
+ * Set the terminal font stack, dark background, and
+ * green-on-black color scheme that defines the game.
+ * ------------------------------------------------------------ */
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  height: 100%;
+
+  /* Subtle CRT-like text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------
+ * 2. Text Selection
+ * Glowing green selection to maintain the terminal fantasy
+ * even when users highlight text in narrative panels.
+ * ------------------------------------------------------------ */
+::selection {
+  background-color: rgba(0, 255, 136, 0.25);
+  color: #00ff88;
+  text-shadow: var(--text-glow);
+}
+
+::-moz-selection {
+  background-color: rgba(0, 255, 136, 0.25);
+  color: #00ff88;
+  text-shadow: var(--text-glow);
+}
+
+/* ------------------------------------------------------------
+ * 3. Custom Scrollbars
+ * Dark-themed scrollbars that blend into the terminal UI.
+ * Webkit (Chrome/Edge/Safari) and Firefox variants.
+ * ------------------------------------------------------------ */
+
+/* --- Webkit Scrollbars (Chrome, Edge, Safari) --- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border-left: var(--border-default);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-panel);
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background var(--transition-normal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 136, 0.3);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 255, 136, 0.5);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg-primary);
+}
+
+/* --- Firefox Scrollbars --- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-panel) var(--bg-primary);
+}
+
+/* ------------------------------------------------------------
+ * 4. Focus Indicators
+ * Custom focus styles that use the terminal glow effect
+ * instead of browser-default outlines. Important for
+ * keyboard navigation / accessibility.
+ * ------------------------------------------------------------ */
+:focus-visible {
+  outline: 1px solid var(--text-primary);
+  outline-offset: 2px;
+  box-shadow: var(--border-glow);
+}
+
+/* Buttons and interactive elements get a more pronounced glow */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible {
+  outline: 1px solid var(--text-primary);
+  outline-offset: 2px;
+  box-shadow: var(--border-glow-strong);
+}
+
+/* ------------------------------------------------------------
+ * 5. Headings
+ * Terminal-style heading hierarchy. All headings share
+ * the monospace font and green palette, differentiated
+ * by size and glow intensity.
+ * ------------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+/* H1 - Screen titles, major section headers
+ * Full glow treatment, largest size */
+h1 {
+  font-size: var(--text-2xl);
+  text-shadow: var(--text-glow);
+  margin-bottom: var(--space-6);
+}
+
+/* H2 - Panel titles, subsection headers */
+h2 {
+  font-size: var(--text-xl);
+  text-shadow: var(--text-glow-subtle);
+  margin-bottom: var(--space-4);
+}
+
+/* H3 - Card titles, list group headers */
+h3 {
+  font-size: var(--text-lg);
+  text-shadow: var(--text-glow-subtle);
+  margin-bottom: var(--space-3);
+}
+
+/* H4 - Minor labels, stat group titles */
+h4 {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  text-shadow: none;
+  margin-bottom: var(--space-2);
+}
+
+/* H5 - Small labels */
+h5 {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-widest);
+  margin-bottom: var(--space-2);
+}
+
+/* H6 - Micro labels, captions */
+h6 {
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+  letter-spacing: var(--tracking-widest);
+  margin-bottom: var(--space-1);
+}
+
+/* ------------------------------------------------------------
+ * 6. Paragraph & Body Text
+ * Standard text styling for narrative content, dialogue,
+ * descriptions, and general game text.
+ * ------------------------------------------------------------ */
+p {
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Emphasized narrative text */
+em, i {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Strong / bold text - used for keywords and emphasis */
+strong, b {
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+}
+
+/* Small / fine print */
+small {
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ------------------------------------------------------------
+ * 7. Links
+ * Terminal-style links with glow hover effects.
+ * Links glow brighter on hover, simulating a cursor
+ * landing on a highlighted terminal option.
+ * ------------------------------------------------------------ */
+a {
+  color: var(--accent-2);
+  text-decoration: none;
+  transition: color var(--transition-normal),
+              text-shadow var(--transition-smooth);
+  cursor: pointer;
+  position: relative;
+}
+
+a:hover {
+  color: var(--accent-2-bright);
+  text-shadow: var(--glow-accent-2);
+}
+
+a:active {
+  color: var(--text-primary);
+}
+
+/* Underline variant for inline text links */
+a.link-underline {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 212, 255, 0.3);
+  text-underline-offset: 3px;
+}
+
+a.link-underline:hover {
+  text-decoration-color: var(--accent-2);
+}
+
+/* ------------------------------------------------------------
+ * 8. Code & Preformatted Text
+ * In-game terminal output, system logs, and code-like
+ * data readouts use these styles.
+ * ------------------------------------------------------------ */
+code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent-2);
+  background-color: var(--bg-input);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  background-color: var(--bg-input);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: var(--border-default);
+  overflow-x: auto;
+  line-height: var(--leading-relaxed);
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+kbd {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-primary);
+  background-color: var(--bg-panel);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color-hover);
+  box-shadow: 0 2px 0 var(--bg-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ------------------------------------------------------------
+ * 9. Horizontal Rules
+ * Subtle dividers styled as dim terminal separators.
+ * ------------------------------------------------------------ */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-color) 20%,
+    var(--border-color-hover) 50%,
+    var(--border-color) 80%,
+    transparent 100%
+  );
+  margin: var(--space-6) 0;
+}
+
+/* ------------------------------------------------------------
+ * 10. Blockquotes
+ * Used for NPC dialogue, system messages, or lore
+ * excerpts within the game narrative.
+ * ------------------------------------------------------------ */
+blockquote {
+  border-left: 2px solid var(--accent-2);
+  padding-left: var(--space-4);
+  margin: var(--space-4) 0;
+  color: var(--text-secondary);
+  font-style: italic;
+  position: relative;
+}
+
+blockquote::before {
+  content: '>';
+  position: absolute;
+  left: var(--space-2);
+  top: 0;
+  color: var(--accent-2);
+  font-style: normal;
+  opacity: 0.5;
+}
+
+/* ------------------------------------------------------------
+ * 11. Utility: Selectable Text
+ * By default, user-select is disabled (see reset.css).
+ * This class opts text back in for narrative panels,
+ * logs, and other readable content areas.
+ * ------------------------------------------------------------ */
+.selectable,
+.selectable * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

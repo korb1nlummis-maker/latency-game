@@ -1,0 +1,349 @@
+/* ============================================================
+ * LATENCY - Layout System
+ * ============================================================
+ * Structural layout for the game's main layers and containers.
+ * The game runs in a fixed viewport with no page scrolling.
+ * Layers are stacked via z-index to composite the final view:
+ *
+ *   z-1    Particle canvas (ambient FX behind everything)
+ *   z-2    Screen container (main game UI)
+ *   z-100  Notification layer (toasts, alerts)
+ *
+ * Additional hidden layers (audio) have no visual presence.
+ * ============================================================ */
+
+/* ------------------------------------------------------------
+ * 1. Body - Viewport Lock
+ * The game fills the entire browser window. Scrolling is
+ * disabled; all content fits within the viewport or scrolls
+ * inside its own panel.
+ * ------------------------------------------------------------ */
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* ------------------------------------------------------------
+ * 2. Music / Audio Layer
+ * Hidden audio element(s) for background music and SFX.
+ * No visual footprint whatsoever.
+ * ------------------------------------------------------------ */
+#music-layer {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#music-layer audio {
+  display: none;
+}
+
+/* ------------------------------------------------------------
+ * 3. Particle Canvas
+ * Full-screen canvas for ambient particle effects (floating
+ * data streams, glitch sparks, etc.). Sits behind all UI
+ * but above the body background.
+ * ------------------------------------------------------------ */
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-particle, 1);
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+ * 4. Screen Container
+ * The primary game UI wrapper. Centered horizontally,
+ * capped at max-width, fills the viewport height.
+ * All game screens (title, combat, dialogue, etc.) render
+ * inside this container.
+ * ------------------------------------------------------------ */
+#screen-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--game-max-width, 1200px);
+  height: 100vh;
+  z-index: var(--z-content, 2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  /* Subtle side borders to frame the game area */
+  border-left: var(--border-default);
+  border-right: var(--border-default);
+  background-color: var(--bg-primary);
+}
+
+/* Individual screens within the container.
+ * Each .screen takes up the full container space;
+ * only one is visible at a time. */
+#screen-container > .screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Active screen is visible */
+#screen-container > .screen.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Inactive screens are hidden */
+#screen-container > .screen:not(.active) {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+ * 5. Notification Layer
+ * Fixed-position container for toast notifications,
+ * system alerts, and achievement popups. Anchored to
+ * the top-right corner of the viewport.
+ * ------------------------------------------------------------ */
+#notification-layer {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: var(--z-notification, 100);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: var(--notification-width, 360px);
+  max-height: calc(100vh - var(--space-8));
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Individual notifications receive pointer events
+ * so users can interact with them (dismiss, click) */
+#notification-layer > * {
+  pointer-events: auto;
+}
+
+/* ------------------------------------------------------------
+ * 5b. Persistent Music Controls
+ * Fixed bottom-right controls that persist across ALL screens.
+ * Lives outside #screen-container — never affected by transitions.
+ * ------------------------------------------------------------ */
+#music-controls {
+  position: fixed;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.625rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+#music-controls:hover {
+  opacity: 1;
+}
+
+#music-controls button {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+#music-controls button:hover {
+  border-color: rgba(0, 255, 136, 0.5);
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+#music-track-name {
+  color: #445566;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================================
+ * 6. Screen Transition Animations
+ * Fade-in and fade-out classes applied by the game engine
+ * when transitioning between screens (e.g., title -> gameplay,
+ * combat -> dialogue, etc.).
+ * ============================================================ */
+
+/* --- Fade In --- */
+.fade-in {
+  animation: screenFadeIn var(--transition-cinematic, 800ms) ease-out forwards;
+}
+
+@keyframes screenFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Fade Out --- */
+.fade-out {
+  animation: screenFadeOut var(--transition-slow, 500ms) ease-in forwards;
+}
+
+@keyframes screenFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* --- Glitch In (alternative entrance for combat/hacking) --- */
+.glitch-in {
+  animation: screenGlitchIn 400ms steps(8) forwards;
+}
+
+@keyframes screenGlitchIn {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+  25% {
+    opacity: 0.5;
+    clip-path: inset(40% 0 30% 0);
+  }
+  50% {
+    opacity: 0.7;
+    clip-path: inset(10% 0 60% 0);
+  }
+  75% {
+    opacity: 0.9;
+    clip-path: inset(50% 0 5% 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* --- Slide In from Right --- */
+.slide-in-right {
+  animation: screenSlideInRight var(--transition-smooth, 300ms) ease-out forwards;
+}
+
+@keyframes screenSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Slide Out to Left --- */
+.slide-out-left {
+  animation: screenSlideOutLeft var(--transition-smooth, 300ms) ease-in forwards;
+}
+
+@keyframes screenSlideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+}
+
+/* ============================================================
+ * 7. Overlay Layer
+ * Full-screen overlay for modals, menus, and confirmation
+ * dialogs. Darkens the background and blocks interaction
+ * with the content beneath.
+ * ============================================================ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-overlay);
+  z-index: var(--z-overlay, 50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-smooth),
+              visibility var(--transition-smooth);
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================================
+ * 8. Responsive Adjustments
+ * Slight tweaks for smaller viewports. The game is designed
+ * for desktop/laptop but should remain usable on tablets.
+ * ============================================================ */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+  #screen-container {
+    max-width: 100%;
+    border-left: none;
+    border-right: none;
+  }
+
+  #notification-layer {
+    width: 300px;
+    right: var(--space-3);
+    top: var(--space-3);
+  }
+}
+
+/* Large phones / small tablets (limited support) */
+@media (max-width: 768px) {
+  #notification-layer {
+    width: calc(100vw - var(--space-6));
+    right: var(--space-3);
+    left: var(--space-3);
+  }
+}

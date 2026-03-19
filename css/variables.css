@@ -1,0 +1,235 @@
+/* ============================================================
+ * LATENCY - CSS Custom Properties (Design Tokens)
+ * ============================================================
+ * Central design system for the LATENCY terminal aesthetic.
+ * All visual values are tokenized here so the entire look
+ * can be tuned from a single file.
+ *
+ * Palette philosophy:
+ *   - Deep blue-blacks for backgrounds (cold, digital void)
+ *   - Matrix green as the primary "online" color
+ *   - Warm accents (orange, pink, gold) for danger/reward
+ *   - Cool cyan for tech/hacking/system operations
+ * ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+   * COLOR SYSTEM - Backgrounds
+   * Three tiers of darkness for depth layering:
+   *   primary  -> deepest, the void behind everything
+   *   secondary -> panels that sit on the void
+   *   panel    -> raised containers, modals, cards
+   * ---------------------------------------------------------- */
+  --bg-primary:   #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-panel:     #1a1a2e;
+  --bg-elevated:  #22223a;
+  --bg-input:     #0e0e18;
+  --bg-overlay:   rgba(10, 10, 15, 0.85);
+  --bg-tooltip:   rgba(26, 26, 46, 0.95);
+
+  /* ----------------------------------------------------------
+   * COLOR SYSTEM - Text
+   * Primary green evokes CRT phosphor terminals.
+   * Secondary and dim grays for less critical info.
+   * ---------------------------------------------------------- */
+  --text-primary:   #00ff88;
+  --text-secondary: #8899aa;
+  --text-dim:       #445566;
+  --text-muted:     #334455;
+  --text-inverse:   #0a0a0f;
+
+  /* ----------------------------------------------------------
+   * COLOR SYSTEM - Accents
+   * Each accent serves a distinct gameplay role:
+   *   accent-1 (orange)  -> warnings, combat actions
+   *   accent-2 (cyan)    -> tech, hacking, system ops
+   *   accent-3 (magenta) -> danger, health, critical
+   *   accent-4 (gold)    -> loot, rewards, critical hits
+   * ---------------------------------------------------------- */
+  --accent-1: #ff6b35;
+  --accent-2: #00d4ff;
+  --accent-3: #ff2d75;
+  --accent-4: #ffd700;
+
+  /* Dimmed accent variants for backgrounds & subtle highlights */
+  --accent-1-dim: rgba(255, 107, 53, 0.15);
+  --accent-2-dim: rgba(0, 212, 255, 0.15);
+  --accent-3-dim: rgba(255, 45, 117, 0.15);
+  --accent-4-dim: rgba(255, 215, 0, 0.15);
+
+  /* Bright accent variants for hover states & emphasis */
+  --accent-1-bright: #ff8c5a;
+  --accent-2-bright: #33e0ff;
+  --accent-3-bright: #ff5a93;
+  --accent-4-bright: #ffe44d;
+
+  /* ----------------------------------------------------------
+   * COLOR SYSTEM - Semantic
+   * Mapped to gameplay states for clarity in code.
+   * ---------------------------------------------------------- */
+  --color-success:  #00ff88;
+  --color-warning:  #ff6b35;
+  --color-danger:   #ff2d75;
+  --color-info:     #00d4ff;
+  --color-xp:       #ffd700;
+  --color-health:   #ff2d75;
+  --color-shield:   #00d4ff;
+  --color-stamina:  #00ff88;
+
+  /* ----------------------------------------------------------
+   * BORDERS & DIVIDERS
+   * Thin subtle borders that hint at structure without
+   * breaking the dark immersion.
+   * ---------------------------------------------------------- */
+  --border-color:       rgba(0, 255, 136, 0.12);
+  --border-color-hover: rgba(0, 255, 136, 0.3);
+  --border-color-focus: rgba(0, 255, 136, 0.5);
+  --border-subtle:      rgba(136, 153, 170, 0.1);
+  --border-width:       1px;
+  --border-default:     var(--border-width) solid var(--border-color);
+
+  /* ----------------------------------------------------------
+   * GLOW & SHADOW EFFECTS
+   * The signature terminal glow. Used on borders, text,
+   * and interactive elements to sell the CRT feel.
+   * ---------------------------------------------------------- */
+  --border-glow:      0 0 10px rgba(0, 255, 136, 0.3);
+  --border-glow-strong: 0 0 20px rgba(0, 255, 136, 0.5),
+                        0 0 40px rgba(0, 255, 136, 0.15);
+  --text-glow:        0 0 8px rgba(0, 255, 136, 0.6);
+  --text-glow-subtle: 0 0 4px rgba(0, 255, 136, 0.3);
+
+  --glow-accent-1:    0 0 10px rgba(255, 107, 53, 0.4);
+  --glow-accent-2:    0 0 10px rgba(0, 212, 255, 0.4);
+  --glow-accent-3:    0 0 10px rgba(255, 45, 117, 0.4);
+  --glow-accent-4:    0 0 10px rgba(255, 215, 0, 0.4);
+
+  --shadow-panel:     0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-elevated:  0 8px 32px rgba(0, 0, 0, 0.6),
+                      0 0 1px rgba(0, 255, 136, 0.1);
+  --shadow-dropdown:  0 12px 40px rgba(0, 0, 0, 0.7);
+
+  /* ----------------------------------------------------------
+   * TYPOGRAPHY
+   * Monospace stack for the terminal look.
+   * Courier New is the workhorse; Consolas for Windows.
+   * ---------------------------------------------------------- */
+  --font-mono:    'Courier New', 'Consolas', 'Liberation Mono', 'Fira Mono', monospace;
+  --font-display: 'Courier New', 'Consolas', monospace;
+  --font-ui:      'Courier New', 'Consolas', monospace;
+
+  /* Font sizes - scaled for readability on terminal UI */
+  --text-xs:   0.625rem;   /* 10px - micro labels          */
+  --text-sm:   0.75rem;    /* 12px - secondary info, stats  */
+  --text-base: 0.875rem;   /* 14px - body text, narratives  */
+  --text-md:   1rem;       /* 16px - prominent UI text      */
+  --text-lg:   1.125rem;   /* 18px - sub-headings           */
+  --text-xl:   1.5rem;     /* 24px - section titles         */
+  --text-2xl:  2rem;       /* 32px - screen headers         */
+  --text-3xl:  2.5rem;     /* 40px - splash/title text      */
+
+  /* Line heights */
+  --leading-none:    1;
+  --leading-tight:   1.25;
+  --leading-snug:    1.375;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose:   1.8;
+
+  /* Font weights */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold:   700;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.025em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.1em;
+  --tracking-widest:  0.2em;
+
+  /* ----------------------------------------------------------
+   * SPACING SCALE
+   * Consistent spacing for padding, margins, and gaps.
+   * Based on a 4px grid for pixel-perfect alignment.
+   * ---------------------------------------------------------- */
+  --space-0:   0;
+  --space-1:   0.25rem;    /*  4px  */
+  --space-2:   0.5rem;     /*  8px  */
+  --space-3:   0.75rem;    /* 12px  */
+  --space-4:   1rem;       /* 16px  */
+  --space-5:   1.25rem;    /* 20px  */
+  --space-6:   1.5rem;     /* 24px  */
+  --space-8:   2rem;       /* 32px  */
+  --space-10:  2.5rem;     /* 40px  */
+  --space-12:  3rem;       /* 48px  */
+  --space-16:  4rem;       /* 64px  */
+
+  /* ----------------------------------------------------------
+   * BORDER RADIUS
+   * Minimal rounding - terminals are boxy. Only buttons
+   * and badges get slight rounding.
+   * ---------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-full: 9999px;
+
+  /* ----------------------------------------------------------
+   * TRANSITIONS & ANIMATION
+   * Snappy transitions for the responsive terminal feel.
+   * Longer durations reserved for screen transitions.
+   * ---------------------------------------------------------- */
+  --transition-instant:  50ms ease;
+  --transition-fast:     120ms ease;
+  --transition-normal:   200ms ease;
+  --transition-smooth:   300ms ease-in-out;
+  --transition-slow:     500ms ease-in-out;
+  --transition-cinematic: 800ms ease-in-out;
+
+  /* Specific transition presets */
+  --transition-color:     color var(--transition-normal),
+                          background-color var(--transition-normal);
+  --transition-opacity:   opacity var(--transition-smooth);
+  --transition-transform: transform var(--transition-normal);
+  --transition-glow:      box-shadow var(--transition-smooth),
+                          text-shadow var(--transition-smooth);
+
+  /* ----------------------------------------------------------
+   * Z-INDEX SCALE
+   * Layering system for the game's stacked UI.
+   * ---------------------------------------------------------- */
+  --z-base:         1;
+  --z-particle:     1;
+  --z-content:      2;
+  --z-panel:        10;
+  --z-overlay:      50;
+  --z-modal:        80;
+  --z-notification: 100;
+  --z-tooltip:      110;
+  --z-max:          999;
+
+  /* ----------------------------------------------------------
+   * LAYOUT DIMENSIONS
+   * Fixed measurements for the game container and panels.
+   * ---------------------------------------------------------- */
+  --game-max-width:    1200px;
+  --sidebar-width:     280px;
+  --header-height:     48px;
+  --footer-height:     36px;
+  --panel-padding:     var(--space-4);
+  --panel-gap:         var(--space-3);
+  --notification-width: 360px;
+
+  /* ----------------------------------------------------------
+   * SCANLINE / CRT EFFECTS
+   * Optional overlay parameters for the retro CRT look.
+   * ---------------------------------------------------------- */
+  --scanline-opacity: 0.04;
+  --scanline-size:    2px;
+  --crt-flicker:      0.03;
+  --noise-opacity:    0.02;
+}

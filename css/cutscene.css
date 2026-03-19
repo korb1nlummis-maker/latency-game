@@ -1,0 +1,206 @@
+/* ============================================================
+ * LATENCY - Cutscene Screen Styles
+ * ============================================================
+ * Terminal-aesthetic cinematic text sequences with ASCII art,
+ * mood backgrounds, typewriter narration, CRT scanline overlay,
+ * and fade transitions between slides.
+ * ============================================================ */
+
+/* ----------------------------------------------------------
+ * Screen container
+ * ---------------------------------------------------------- */
+
+.cutscene-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    color: var(--text-primary, #00ff88);
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-8, 2rem) var(--space-4, 1rem);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color var(--transition-cinematic, 800ms ease-in-out);
+}
+
+/* ----------------------------------------------------------
+ * Mood backgrounds
+ * ---------------------------------------------------------- */
+
+.cs-mood-dark {
+    background-color: #000000;
+}
+
+.cs-mood-red {
+    background-color: #0f0404;
+}
+
+.cs-mood-blue {
+    background-color: #040408;
+}
+
+/* ----------------------------------------------------------
+ * CRT scanline overlay
+ * ---------------------------------------------------------- */
+
+.cs-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: var(--z-overlay, 50);
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent var(--scanline-size, 2px),
+        rgba(0, 0, 0, var(--scanline-opacity, 0.04)) var(--scanline-size, 2px),
+        rgba(0, 0, 0, var(--scanline-opacity, 0.04)) calc(var(--scanline-size, 2px) * 2)
+    );
+}
+
+/* ----------------------------------------------------------
+ * Slide counter (top-right, dim)
+ * ---------------------------------------------------------- */
+
+.cs-slide-counter {
+    position: absolute;
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    font-size: var(--text-sm, 0.75rem);
+    color: var(--text-dim, #445566);
+    letter-spacing: var(--tracking-wide, 0.05em);
+    z-index: var(--z-content, 2);
+    font-family: var(--font-mono, 'Courier New', monospace);
+}
+
+/* ----------------------------------------------------------
+ * Slide container (holds art, speaker, text)
+ * ---------------------------------------------------------- */
+
+.cs-slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    width: 100%;
+    z-index: var(--z-content, 2);
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+}
+
+.cs-slide-container.cs-fade-out {
+    opacity: 0;
+}
+
+.cs-slide-container.cs-fade-in {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------
+ * ASCII art area
+ * ---------------------------------------------------------- */
+
+.cs-ascii-area {
+    display: none;
+    width: 100%;
+    margin-bottom: var(--space-6, 1.5rem);
+    text-align: center;
+    overflow: hidden;
+}
+
+.cs-ascii-area pre,
+.cs-ascii-area .ascii-art {
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-sm, 0.75rem);
+    line-height: 1.2;
+    color: #00ff41;
+    text-shadow:
+        0 0 4px #00ff41,
+        0 0 8px #00ff41,
+        0 0 16px #00ff41;
+    white-space: pre;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ----------------------------------------------------------
+ * Speaker name (cyan with "> " prefix)
+ * ---------------------------------------------------------- */
+
+.cs-speaker {
+    display: none;
+    font-size: var(--text-md, 1rem);
+    font-weight: var(--weight-bold, 700);
+    color: var(--accent-2, #00d4ff);
+    text-shadow: var(--glow-accent-2, 0 0 10px rgba(0, 212, 255, 0.4));
+    letter-spacing: var(--tracking-wider, 0.1em);
+    margin-bottom: var(--space-3, 0.75rem);
+    font-family: var(--font-mono, 'Courier New', monospace);
+    text-align: left;
+    width: 100%;
+}
+
+/* ----------------------------------------------------------
+ * Narrative text
+ * ---------------------------------------------------------- */
+
+.cs-narrative-text {
+    font-size: var(--text-base, 0.875rem);
+    line-height: var(--leading-relaxed, 1.625);
+    color: var(--text-primary, #00ff88);
+    text-shadow: var(--text-glow-subtle, 0 0 4px rgba(0, 255, 136, 0.3));
+    font-family: var(--font-mono, 'Courier New', monospace);
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+    min-height: 3em;
+}
+
+/* ----------------------------------------------------------
+ * "CLICK TO CONTINUE" prompt (bottom, pulsing)
+ * ---------------------------------------------------------- */
+
+.cs-continue-prompt {
+    position: absolute;
+    bottom: var(--space-8, 2rem);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--text-sm, 0.75rem);
+    color: var(--text-dim, #445566);
+    letter-spacing: var(--tracking-wider, 0.1em);
+    font-family: var(--font-mono, 'Courier New', monospace);
+    z-index: var(--z-content, 2);
+    animation: cs-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes cs-pulse {
+    0%, 100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------------------------------
+ * Fade animations for screen-level transitions
+ * ---------------------------------------------------------- */
+
+@keyframes cs-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes cs-fade-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}

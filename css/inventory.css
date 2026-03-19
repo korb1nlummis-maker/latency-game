@@ -1,0 +1,651 @@
+/* ============================================================
+ * LATENCY - Inventory Screen Styles
+ * ============================================================
+ * Two-column layout: equipped/stats/traits left, backpack/
+ * details right. Terminal aesthetic with CRT glow, monospace
+ * text, and color-coded item types.
+ *
+ * Item type colors:
+ *   weapon     = red/orange  (accent-1 / accent-3)
+ *   armor      = blue/cyan   (accent-2)
+ *   consumable = green       (text-primary)
+ *   key_item   = gold        (accent-4)
+ *   accessory  = magenta     (accent-3)
+ *   misc       = dim gray    (text-secondary)
+ *
+ * Consumes design tokens from variables.css.
+ * ============================================================ */
+
+/* ------------------------------------------------------------
+ * 1. Screen Container
+ * ------------------------------------------------------------ */
+.inv-screen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    font-family: var(--font-mono);
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------------------
+ * 2. Header
+ * ------------------------------------------------------------ */
+.inv-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--bg-secondary);
+    border-bottom: var(--border-default);
+    min-height: var(--header-height, 48px);
+}
+
+.inv-header-title {
+    font-size: var(--text-xl);
+    letter-spacing: var(--tracking-widest);
+    text-shadow: var(--text-glow);
+    text-transform: uppercase;
+}
+
+.inv-close-btn {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wider);
+    color: var(--text-secondary);
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: var(--space-1) var(--space-3);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: color var(--transition-fast),
+                border-color var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.inv-close-btn:hover {
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+    box-shadow: 0 0 8px rgba(255, 45, 117, 0.3);
+}
+
+/* ------------------------------------------------------------
+ * 3. Separator
+ * ------------------------------------------------------------ */
+.inv-separator {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: var(--text-xs);
+    padding: var(--space-1) 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* ------------------------------------------------------------
+ * 4. Body - Two-column layout
+ * ------------------------------------------------------------ */
+.inv-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+}
+
+.inv-col-left {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    min-width: 280px;
+    gap: var(--space-3);
+    overflow-y: auto;
+}
+
+.inv-col-right {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    gap: var(--space-3);
+    overflow-y: auto;
+}
+
+/* ------------------------------------------------------------
+ * 5. Generic Panel
+ * ------------------------------------------------------------ */
+.inv-panel {
+    border: 1px solid var(--border-color);
+    background: var(--bg-panel);
+    padding: var(--space-3);
+}
+
+.inv-panel-title {
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wider);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+    padding-bottom: var(--space-1);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ------------------------------------------------------------
+ * 6. Equipped Panel
+ * ------------------------------------------------------------ */
+.inv-equipped-slots {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.inv-equip-slot {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid transparent;
+    transition: border-color var(--transition-fast),
+                background-color var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.inv-equip-slot--filled {
+    cursor: pointer;
+    border-color: var(--border-color);
+}
+
+.inv-equip-slot--filled:hover {
+    border-color: var(--border-color-hover);
+    background-color: var(--bg-elevated);
+    box-shadow: var(--border-glow);
+}
+
+.inv-equip-label {
+    color: var(--text-dim);
+    font-size: var(--text-sm);
+    min-width: 70px;
+    letter-spacing: var(--tracking-wide);
+}
+
+.inv-equip-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex: 1;
+}
+
+.inv-equip-name {
+    font-size: var(--text-base);
+    font-weight: var(--weight-bold);
+}
+
+.inv-equip-stat {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+}
+
+.inv-equip-empty {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+
+/* ------------------------------------------------------------
+ * 7. Stats Panel
+ * ------------------------------------------------------------ */
+.inv-stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.inv-stat-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    padding: 1px 0;
+}
+
+.inv-stat-abbr {
+    color: var(--text-secondary);
+    min-width: 55px;
+    letter-spacing: var(--tracking-wide);
+    font-weight: var(--weight-bold);
+}
+
+.inv-stat-val {
+    color: var(--text-primary);
+    min-width: 28px;
+    text-align: right;
+}
+
+.inv-stat-mod {
+    color: var(--text-dim);
+    font-size: var(--text-xs);
+}
+
+.inv-stat-derived {
+    color: var(--accent-2);
+}
+
+.inv-stat-divider {
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    padding: var(--space-1) 0;
+}
+
+/* ------------------------------------------------------------
+ * 8. Traits Panel
+ * ------------------------------------------------------------ */
+.inv-traits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.inv-trait-row {
+    font-size: var(--text-sm);
+    color: var(--accent-2);
+    padding: 1px 0;
+}
+
+.inv-trait-none {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ------------------------------------------------------------
+ * 9. Backpack Panel
+ * ------------------------------------------------------------ */
+.inv-backpack-panel {
+    flex: 1;
+    min-height: 180px;
+}
+
+.inv-backpack-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+    padding-bottom: var(--space-1);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.inv-backpack-header .inv-panel-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.inv-backpack-count {
+    font-size: var(--text-xs);
+    color: var(--text-dim);
+    letter-spacing: var(--tracking-wide);
+}
+
+.inv-backpack-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.inv-backpack-item {
+    font-size: var(--text-sm);
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border-color var(--transition-fast),
+                background-color var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.inv-backpack-item:hover {
+    border-color: var(--border-color-hover);
+    background-color: var(--bg-elevated);
+}
+
+.inv-backpack-item.inv-item-selected {
+    border-color: var(--border-color-focus);
+    background-color: var(--bg-elevated);
+    box-shadow: var(--border-glow);
+}
+
+.inv-backpack-empty {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    font-style: italic;
+    padding: var(--space-2);
+}
+
+/* ------------------------------------------------------------
+ * 10. Item Type Color Coding
+ * ------------------------------------------------------------ */
+
+/* Weapon = orange-red */
+.inv-type-weapon {
+    color: var(--accent-1) !important;
+}
+
+.inv-backpack-item.inv-type-weapon {
+    border-left: 2px solid var(--accent-1);
+}
+
+.inv-backpack-item.inv-type-weapon.inv-item-selected {
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+    border-color: var(--accent-1);
+}
+
+/* Armor = cyan/blue */
+.inv-type-armor {
+    color: var(--accent-2) !important;
+}
+
+.inv-backpack-item.inv-type-armor {
+    border-left: 2px solid var(--accent-2);
+}
+
+.inv-backpack-item.inv-type-armor.inv-item-selected {
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    border-color: var(--accent-2);
+}
+
+/* Consumable = green */
+.inv-type-consumable {
+    color: var(--text-primary) !important;
+}
+
+.inv-backpack-item.inv-type-consumable {
+    border-left: 2px solid var(--color-success);
+}
+
+.inv-backpack-item.inv-type-consumable.inv-item-selected {
+    box-shadow: var(--border-glow);
+}
+
+/* Key item = gold */
+.inv-type-key {
+    color: var(--accent-4) !important;
+}
+
+.inv-backpack-item.inv-type-key {
+    border-left: 2px solid var(--accent-4);
+}
+
+.inv-backpack-item.inv-type-key.inv-item-selected {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    border-color: var(--accent-4);
+}
+
+/* Accessory = magenta */
+.inv-type-accessory {
+    color: var(--accent-3) !important;
+}
+
+.inv-backpack-item.inv-type-accessory {
+    border-left: 2px solid var(--accent-3);
+}
+
+.inv-backpack-item.inv-type-accessory.inv-item-selected {
+    box-shadow: 0 0 10px rgba(255, 45, 117, 0.3);
+    border-color: var(--accent-3);
+}
+
+/* Misc = dim */
+.inv-type-misc {
+    color: var(--text-secondary) !important;
+}
+
+.inv-backpack-item.inv-type-misc {
+    border-left: 2px solid var(--text-dim);
+}
+
+/* ------------------------------------------------------------
+ * 11. Credits Row
+ * ------------------------------------------------------------ */
+.inv-credits-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-base);
+}
+
+.inv-credits-label {
+    color: var(--text-secondary);
+    letter-spacing: var(--tracking-wide);
+}
+
+.inv-credits-value {
+    color: var(--accent-4);
+    font-weight: var(--weight-bold);
+    text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+}
+
+/* ------------------------------------------------------------
+ * 12. Action Buttons
+ * ------------------------------------------------------------ */
+.inv-action-bar {
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+    justify-content: center;
+}
+
+.inv-action-btn {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wider);
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background var(--transition-fast),
+                border-color var(--transition-fast),
+                color var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.inv-action-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* USE button - green */
+.inv-btn-use {
+    color: var(--color-success);
+    border-color: rgba(0, 255, 136, 0.2);
+}
+
+.inv-btn-use:hover:not(:disabled) {
+    background: rgba(0, 255, 136, 0.1);
+    border-color: var(--color-success);
+    box-shadow: var(--border-glow);
+}
+
+/* EQUIP button - cyan */
+.inv-btn-equip {
+    color: var(--accent-2);
+    border-color: rgba(0, 212, 255, 0.2);
+}
+
+.inv-btn-equip:hover:not(:disabled) {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: var(--accent-2);
+    box-shadow: var(--glow-accent-2);
+}
+
+/* DROP button - red/danger */
+.inv-btn-drop {
+    color: var(--color-danger);
+    border-color: rgba(255, 45, 117, 0.2);
+}
+
+.inv-btn-drop:hover:not(:disabled) {
+    background: rgba(255, 45, 117, 0.1);
+    border-color: var(--color-danger);
+    box-shadow: var(--glow-accent-3);
+}
+
+/* ------------------------------------------------------------
+ * 13. Detail Panel
+ * ------------------------------------------------------------ */
+.inv-detail-panel {
+    min-height: 140px;
+}
+
+.inv-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.inv-detail-empty {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-style: italic;
+}
+
+.inv-detail-name {
+    font-size: var(--text-md);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-wide);
+}
+
+.inv-detail-type {
+    font-size: var(--text-xs);
+    color: var(--text-dim);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+}
+
+.inv-detail-sep {
+    color: var(--text-muted);
+    font-size: var(--text-xs);
+    padding: 2px 0;
+}
+
+.inv-detail-stat {
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+}
+
+.inv-detail-effect {
+    color: var(--color-success);
+}
+
+.inv-detail-props {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    padding-top: 2px;
+}
+
+.inv-detail-reqs {
+    font-size: var(--text-xs);
+    color: var(--accent-2);
+    padding-top: 2px;
+}
+
+.inv-detail-reqs.inv-req-unmet {
+    color: var(--color-danger);
+}
+
+.inv-detail-value {
+    font-size: var(--text-xs);
+    color: var(--accent-4);
+    padding-top: 2px;
+}
+
+.inv-detail-desc {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: var(--leading-relaxed);
+    padding-top: var(--space-1);
+}
+
+/* ------------------------------------------------------------
+ * 14. Back Button
+ * ------------------------------------------------------------ */
+.inv-back-btn {
+    display: block;
+    margin: var(--space-2) auto var(--space-3);
+    padding: var(--space-2) var(--space-8);
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    letter-spacing: var(--tracking-wider);
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background var(--transition-fast),
+                border-color var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.inv-back-btn:hover {
+    background: var(--bg-elevated);
+    border-color: var(--text-primary);
+    box-shadow: var(--border-glow);
+}
+
+/* ------------------------------------------------------------
+ * 15. Scrollbar Styling (Webkit)
+ * ------------------------------------------------------------ */
+.inv-backpack-list::-webkit-scrollbar,
+.inv-traits-list::-webkit-scrollbar,
+.inv-col-left::-webkit-scrollbar,
+.inv-col-right::-webkit-scrollbar {
+    width: 4px;
+}
+
+.inv-backpack-list::-webkit-scrollbar-track,
+.inv-traits-list::-webkit-scrollbar-track,
+.inv-col-left::-webkit-scrollbar-track,
+.inv-col-right::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.inv-backpack-list::-webkit-scrollbar-thumb,
+.inv-traits-list::-webkit-scrollbar-thumb,
+.inv-col-left::-webkit-scrollbar-thumb,
+.inv-col-right::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+.inv-backpack-list::-webkit-scrollbar-thumb:hover,
+.inv-traits-list::-webkit-scrollbar-thumb:hover,
+.inv-col-left::-webkit-scrollbar-thumb:hover,
+.inv-col-right::-webkit-scrollbar-thumb:hover {
+    background: var(--border-color-hover);
+}
+
+/* ------------------------------------------------------------
+ * 16. Responsive / Narrow Screens
+ * ------------------------------------------------------------ */
+@media (max-width: 768px) {
+    .inv-body {
+        flex-direction: column;
+    }
+
+    .inv-col-left,
+    .inv-col-right {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .inv-col-left {
+        max-height: 40vh;
+    }
+}
