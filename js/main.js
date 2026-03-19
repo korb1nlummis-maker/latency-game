@@ -24,10 +24,21 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('[LATENCY] VoiceManager initialized.');
     }
 
+    // ── 1c. SFX Manager (Web Audio API generated sounds) ──
+    if (L.SfxManager && L.SfxManager.init) {
+        L.SfxManager.init();
+        console.log('[LATENCY] SfxManager initialized.');
+    }
+
     // ── 2. Notification system ──
     if (L.Notification && L.Notification.init) {
         L.Notification.init();
         console.log('[LATENCY] Notification system initialized.');
+    }
+
+    // ── 2b. Tooltip system ──
+    if (L.Tooltip && L.Tooltip.init) {
+        L.Tooltip.init();
     }
 
     // ── 3. Screen Manager ──
@@ -57,6 +68,27 @@ document.addEventListener('DOMContentLoaded', function () {
     if (L.Screens.AchievementsScreen) L.ScreenManager.register('achievements', L.Screens.AchievementsScreen);
     if (L.Screens.MapScreen) L.ScreenManager.register('map', L.Screens.MapScreen);
     if (L.Screens.CutsceneScreen) L.ScreenManager.register('cutscene', L.Screens.CutsceneScreen);
+    if (L.Screens.SettingsScreen) L.ScreenManager.register('settings', L.Screens.SettingsScreen);
+    if (L.Screens.EndingScreen) L.ScreenManager.register('ending', L.Screens.EndingScreen);
+    if (L.Screens.HowToPlayScreen) L.ScreenManager.register('howtoplay', L.Screens.HowToPlayScreen);
+    if (L.Screens.JournalScreen) L.ScreenManager.register('journal', L.Screens.JournalScreen);
+    if (L.Screens.LoadingScreen) L.ScreenManager.register('loading', L.Screens.LoadingScreen);
+
+    // ── 4b. Late-register any screens that may have been missed ──
+    setTimeout(function () {
+        var lateScreens = {
+            settings: L.Screens.SettingsScreen,
+            ending: L.Screens.EndingScreen,
+            howtoplay: L.Screens.HowToPlayScreen,
+            loading: L.Screens.LoadingScreen,
+            journal: L.Screens.JournalScreen
+        };
+        for (var name in lateScreens) {
+            if (lateScreens[name]) {
+                L.ScreenManager.register(name, lateScreens[name]);
+            }
+        }
+    }, 0);
 
     // ── 5. State Machine ──
     if (L.StateMachine && L.StateMachine.init) {
@@ -127,6 +159,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 voiceBtn.textContent = nowEnabled ? '\u{1F50A}V' : '\u{1F507}V';
             });
         }
+
+        // SFX toggle
+        var sfxBtn = document.getElementById('sfx-toggle-btn');
+        if (sfxBtn && L.SfxManager) {
+            // Set initial state from persisted settings
+            sfxBtn.textContent = L.SfxManager.isMuted() ? '\u{1F507}FX' : '\u{1F50A}FX';
+            sfxBtn.addEventListener('click', function () {
+                L.SfxManager.toggleMute();
+                sfxBtn.textContent = L.SfxManager.isMuted() ? '\u{1F507}FX' : '\u{1F50A}FX';
+            });
+        }
     })();
 
     // ── 8. Achievement System ──
@@ -135,7 +178,31 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('[LATENCY] AchievementSystem initialized.');
     }
 
-    // ── 9. Show main menu ──
+    // ── 8b. Journal System ──
+    if (L.Journal && L.Journal.init) {
+        L.Journal.init();
+        console.log('[LATENCY] Journal initialized.');
+    }
+
+    // ── 8c. New Game Plus ──
+    if (L.NewGamePlus && L.NewGamePlus.init) {
+        L.NewGamePlus.init();
+        console.log('[LATENCY] NewGamePlus initialized.');
+    }
+
+    // ── 9. Particle effects ──
+    if (L.Particles && L.Particles.init) {
+        L.Particles.init();
+        console.log('[LATENCY] Particles initialized.');
+    }
+
+    // ── 10. Apply persisted settings (from previous session) ──
+    if (L.Screens.SettingsScreen && L.Screens.SettingsScreen.applyPersistedSettings) {
+        L.Screens.SettingsScreen.applyPersistedSettings();
+        console.log('[LATENCY] Persisted settings applied.');
+    }
+
+    // ── 11. Show main menu ──
     L.ScreenManager.show('menu');
 
     console.log('[LATENCY] Game initialized. Phases 3-10 — All systems loaded.');

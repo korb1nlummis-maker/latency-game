@@ -434,6 +434,136 @@ window.Latency.Screens.CombatScreen = (function () {
     }
 
     // --------------------------------------------------------
+    // Visual Feedback: Screen Shake
+    // --------------------------------------------------------
+    function _triggerShake() {
+        var screen = _container ? _container.querySelector('.combat-screen') : null;
+        if (!screen) return;
+        screen.classList.remove('cb-shake');
+        // Force reflow so re-adding the class restarts the animation
+        void screen.offsetWidth;
+        screen.classList.add('cb-shake');
+        _pendingTimers.push(setTimeout(function () {
+            screen.classList.remove('cb-shake');
+        }, 350));
+    }
+
+    // --------------------------------------------------------
+    // Visual Feedback: Floating Damage Numbers
+    // --------------------------------------------------------
+    /**
+     * Show a floating damage number above a target panel.
+     * @param {'player'|'enemy'} target - which panel to attach to
+     * @param {number} amount - damage or heal value
+     * @param {boolean} isCrit - whether this was a critical hit
+     * @param {'damage'|'heal'} [kind='damage'] - type of number
+     */
+    function _showDamageNumber(target, amount, isCrit, kind) {
+        var panel = null;
+        var colorClass = '';
+
+        if (target === 'enemy') {
+            panel = _container ? _container.querySelector('.cb-enemy-panel') : null;
+            colorClass = isCrit ? 'cb-dmg-crit' : 'cb-dmg-dealt';
+        } else {
+            panel = _container ? _container.querySelector('.cb-player-panel') : null;
+            colorClass = (kind === 'heal') ? 'cb-dmg-heal' : 'cb-dmg-taken';
+        }
+        if (isCrit && target === 'enemy') colorClass = 'cb-dmg-crit';
+
+        if (!panel) return;
+
+        // Ensure the panel has relative positioning for absolute child
+        if (getComputedStyle(panel).position === 'static') {
+            panel.style.position = 'relative';
+        }
+
+        var numEl = _el('div', 'cb-dmg-number ' + colorClass);
+        var prefix = (kind === 'heal') ? '+' : '-';
+        numEl.textContent = prefix + amount;
+        if (isCrit) numEl.textContent += ' CRIT!';
+
+        // Position randomly within the panel's upper area
+        numEl.style.top = (10 + Math.random() * 20) + 'px';
+        numEl.style.left = (20 + Math.random() * 40) + '%';
+
+        panel.appendChild(numEl);
+
+        // Remove after animation completes
+        _pendingTimers.push(setTimeout(function () {
+            if (numEl.parentNode) numEl.parentNode.removeChild(numEl);
+        }, 850));
+    }
+
+    // --------------------------------------------------------
+    // Visual Feedback: HP Bar Flash on Big Hits
+    // --------------------------------------------------------
+    function _flashHpBar(target) {
+        var bar = (target === 'player') ? _els.playerHpBar : _els.enemyHpBar;
+        if (!bar) return;
+        bar.classList.remove('cb-bar-flash');
+        void bar.offsetWidth;
+        bar.classList.add('cb-bar-flash');
+        _pendingTimers.push(setTimeout(function () {
+            bar.classList.remove('cb-bar-flash');
+        }, 550));
+    }
+
+    // --------------------------------------------------------
+    // Visual Feedback: Turn Indicator Banner
+    // --------------------------------------------------------
+    function _showTurnBanner(phase) {
+        var screen = _container ? _container.querySelector('.combat-screen') : null;
+        if (!screen) return;
+
+        // Remove any existing banner
+        var existing = screen.querySelector('.cb-turn-banner');
+        if (existing) existing.parentNode.removeChild(existing);
+
+        var isPlayer = (phase === 'player');
+        var banner = _el('div', 'cb-turn-banner ' +
+            (isPlayer ? 'cb-turn-banner-player' : 'cb-turn-banner-enemy'));
+        banner.textContent = isPlayer ? '>>> YOUR TURN <<<' : '>>> ENEMY TURN <<<';
+
+        screen.appendChild(banner);
+
+        // Auto-remove after animation
+        _pendingTimers.push(setTimeout(function () {
+            if (banner.parentNode) banner.parentNode.removeChild(banner);
+        }, 1300));
+    }
+
+    // --------------------------------------------------------
+    // Visual Feedback: combat:action handler
+    // --------------------------------------------------------
+    function _onCombatAction(data) {
+        if (!data) return;
+
+        var result = data.result;
+        var actor = data.actor;
+        var damage = data.damage || 0;
+
+        // Screen shake on crits
+        if (result === 'crit') {
+            _triggerShake();
+        }
+
+        // Floating damage numbers
+        if ((result === 'hit' || result === 'crit') && damage > 0) {
+            if (actor === 'player') {
+                // Player dealt damage to enemy
+                _showDamageNumber('enemy', damage, result === 'crit');
+                _flashHpBar('enemy');
+            } else if (actor === 'enemy') {
+                // Enemy dealt damage to player
+                _showDamageNumber('player', damage, result === 'crit');
+                _flashHpBar('player');
+                if (result === 'crit') _triggerShake();
+            }
+        }
+    }
+
+    // --------------------------------------------------------
     // Build: Victory overlay
     // --------------------------------------------------------
     function _buildVictoryOverlay(data) {
@@ -444,26 +574,55 @@ window.Latency.Screens.CombatScreen = (function () {
 
         var details = _el('div', 'cb-overlay-details');
 
+        // XP counter that ticks up
         if (data.xp > 0) {
-            var xpLine = _el('div', 'cb-overlay-line cb-xp-line', 'XP Gained: +' + data.xp);
+            var xpLine = _el('div', 'cb-overlay-line cb-xp-line cb-xp-tick', 'XP Gained: +0');
             details.appendChild(xpLine);
+            // Animate the XP counter ticking up
+            _pendingTimers.push(setTimeout(function () {
+                _animateCounter(xpLine, 'XP Gained: +', 0, data.xp, 600);
+            }, 300));
         }
 
         if (data.credits > 0) {
-            var creditsLine = _el('div', 'cb-overlay-line cb-credits-line', 'Credits: +' + data.credits);
+            var creditsLine = _el('div', 'cb-overlay-line cb-credits-line cb-xp-tick', 'Credits: +0');
             details.appendChild(creditsLine);
+            _pendingTimers.push(setTimeout(function () {
+                _animateCounter(creditsLine, 'Credits: +', 0, data.credits, 400);
+            }, 600));
         }
 
+        // Loot items appearing one by one
         if (data.loot && data.loot.length > 0) {
             var lootHeader = _el('div', 'cb-overlay-line', 'Loot Found:');
+            lootHeader.style.opacity = '0';
             details.appendChild(lootHeader);
 
             var Items = window.Latency.Items || {};
+            var lootItems = [];
             for (var i = 0; i < data.loot.length; i++) {
                 var itemData = Items[data.loot[i]];
                 var itemName = itemData ? itemData.name : data.loot[i];
-                var lootLine = _el('div', 'cb-overlay-loot-item', '  > ' + itemName);
+                var lootLine = _el('div', 'cb-overlay-loot-item cb-loot-reveal', '  > ' + itemName);
+                lootLine.style.opacity = '0';
+                lootLine.style.animationPlayState = 'paused';
                 details.appendChild(lootLine);
+                lootItems.push(lootLine);
+            }
+
+            // Stagger loot reveals
+            var lootBaseDelay = data.xp > 0 ? 900 : 300;
+            _pendingTimers.push(setTimeout(function () {
+                lootHeader.style.opacity = '1';
+            }, lootBaseDelay));
+
+            for (var li = 0; li < lootItems.length; li++) {
+                (function (idx) {
+                    _pendingTimers.push(setTimeout(function () {
+                        lootItems[idx].style.opacity = '1';
+                        lootItems[idx].style.animationPlayState = 'running';
+                    }, lootBaseDelay + 200 + (idx * 200)));
+                })(li);
             }
         }
 
@@ -480,11 +639,41 @@ window.Latency.Screens.CombatScreen = (function () {
         return overlay;
     }
 
+    /**
+     * Animate a numeric counter from start to end inside an element.
+     */
+    function _animateCounter(el, prefix, start, end, durationMs) {
+        var startTime = null;
+        var diff = end - start;
+
+        function step(ts) {
+            if (!startTime) startTime = ts;
+            var elapsed = ts - startTime;
+            var progress = Math.min(elapsed / durationMs, 1);
+            // Ease-out quad
+            var eased = 1 - (1 - progress) * (1 - progress);
+            var current = Math.round(start + diff * eased);
+            el.textContent = prefix + current;
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        }
+        requestAnimationFrame(step);
+    }
+
     // --------------------------------------------------------
     // Build: Defeat overlay
     // --------------------------------------------------------
     function _buildDefeatOverlay() {
         var overlay = _el('div', 'cb-overlay cb-defeat-overlay');
+
+        // CRT static noise layer
+        var staticLayer = _el('div', 'cb-defeat-static');
+        overlay.appendChild(staticLayer);
+
+        // SIGNAL LOST text
+        var signalLost = _el('div', 'cb-signal-lost', 'SIGNAL LOST');
+        overlay.appendChild(signalLost);
 
         var title = _el('div', 'cb-overlay-title cb-defeat-title', 'GAME OVER');
         overlay.appendChild(title);
@@ -731,6 +920,10 @@ window.Latency.Screens.CombatScreen = (function () {
 
     function _onCombatTurn(data) {
         _refreshCombatants();
+        // Show turn indicator banner
+        if (data && data.phase) {
+            _showTurnBanner(data.phase);
+        }
     }
 
     function _onCombatEnd(data) {
@@ -802,6 +995,7 @@ window.Latency.Screens.CombatScreen = (function () {
             _subscribe('combat:log', _onCombatLog);
             _subscribe('combat:turn', _onCombatTurn);
             _subscribe('combat:end', _onCombatEnd);
+            _subscribe('combat:action', _onCombatAction);
             _subscribe('dice:roll', _onDiceRoll);
 
             // If combat is already in progress, populate immediately

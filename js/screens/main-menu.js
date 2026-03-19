@@ -44,8 +44,10 @@ window.Latency.Screens.MainMenu = (function () {
     // --------------------------------------------------------
     var MENU_ITEMS = [
         { id: 'new-game',     label: 'NEW GAME',     state: 'creation',     alwaysEnabled: true  },
+        { id: 'new-game-plus',label: 'NEW GAME+',    state: null,           alwaysEnabled: true, ngPlusOnly: true },
         { id: 'continue',     label: 'CONTINUE',     state: null,           alwaysEnabled: false },
         { id: 'load-game',    label: 'LOAD GAME',    state: 'saveload',     alwaysEnabled: true  },
+        { id: 'how-to-play',  label: 'HOW TO PLAY',  state: 'howtoplay',    alwaysEnabled: true  },
         { id: 'achievements', label: 'ACHIEVEMENTS', state: 'achievements', alwaysEnabled: true  },
         { id: 'settings',     label: 'SETTINGS',     state: 'settings',     alwaysEnabled: true  }
     ];
@@ -117,12 +119,30 @@ window.Latency.Screens.MainMenu = (function () {
         nav.setAttribute('aria-label', 'Main menu');
 
         var hasSave = _hasSaveData();
+        var ngPlusUnlocked = window.Latency.NewGamePlus && window.Latency.NewGamePlus.isUnlocked();
 
         for (var i = 0; i < MENU_ITEMS.length; i++) {
             var item = MENU_ITEMS[i];
+
+            // Skip NG+ button entirely if not unlocked
+            if (item.ngPlusOnly && !ngPlusUnlocked) {
+                continue;
+            }
+
             var btn = _el('button', 'menu-btn', item.label);
             btn.setAttribute('data-menu-id', item.id);
             btn.setAttribute('type', 'button');
+
+            // Style NG+ button with gold color and badge
+            if (item.id === 'new-game-plus') {
+                btn.classList.add('menu-btn--ngplus');
+                btn.style.color = '#FFD700';
+                btn.style.textShadow = '0 0 8px rgba(255, 215, 0, 0.6)';
+                var ngLabel = window.Latency.NewGamePlus.getLabel();
+                if (ngLabel) {
+                    btn.textContent = ngLabel.toUpperCase() + ' — NEW GAME';
+                }
+            }
 
             // Disable CONTINUE if no save data
             if (item.id === 'continue' && !hasSave) {
@@ -132,7 +152,12 @@ window.Latency.Screens.MainMenu = (function () {
             }
 
             // Attach click handler
-            if (item.state) {
+            if (item.id === 'new-game-plus') {
+                _bind(btn, 'click', function () {
+                    if (this.disabled) return;
+                    window.Latency.NewGamePlus.startNewGamePlus();
+                });
+            } else if (item.state) {
                 (function (targetState) {
                     _bind(btn, 'click', function () {
                         if (this.disabled) return;

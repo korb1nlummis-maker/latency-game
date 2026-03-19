@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="css/achievements.css">
     <link rel="stylesheet" href="css/map.css">
     <link rel="stylesheet" href="css/cutscene.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/ending.css">
+    <link rel="stylesheet" href="css/howtoplay.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/journal.css">
+    <link rel="stylesheet" href="css/tooltip.css">
 </head>
 <body>
     <!-- Music layer: NEVER modified by screen transitions -->
@@ -36,6 +42,7 @@
         <button id="music-vol-down" title="Volume Down">−</button>
         <button id="music-vol-up" title="Volume Up">+</button>
         <button id="voice-toggle-btn" title="Toggle Voice">&#x1f50a;V</button>
+        <button id="sfx-toggle-btn" title="Toggle SFX">&#x1f50a;FX</button>
         <span id="music-track-name"></span>
     </div>
 
@@ -50,9 +57,11 @@
     <script src="js/engine/state-machine.js"></script>
     <script src="js/engine/music-manager.js"></script>
     <script src="js/engine/voice-manager.js"></script>
+    <script src="js/engine/sfx-manager.js"></script>
     <script src="js/engine/screen-manager.js"></script>
     <script src="js/engine/save-manager.js"></script>
     <script src="js/engine/asset-loader.js"></script>
+    <script src="js/engine/particles.js"></script>
 
     <!-- Data (no dependencies) -->
     <script src="js/data/races.js"></script>
@@ -66,8 +75,10 @@
     <script src="js/data/locations.js"></script>
     <script src="js/data/npcs.js"></script>
     <script src="js/data/achievements.js"></script>
+    <script src="js/data/side-quests.js"></script>
     <script src="js/data/cutscenes-origins-1.js"></script>
     <script src="js/data/cutscenes-origins-2.js"></script>
+    <script src="js/data/random-events.js"></script>
 
     <!-- Systems (depend on engine + data) -->
     <script src="js/systems/condition-eval.js"></script>
@@ -82,12 +93,16 @@
     <script src="js/systems/economy.js"></script>
     <script src="js/systems/npc.js"></script>
     <script src="js/systems/achievements.js"></script>
+    <script src="js/systems/journal.js"></script>
+    <script src="js/systems/encounters.js"></script>
+    <script src="js/systems/newgameplus.js"></script>
 
     <!-- UI Components -->
     <script src="js/ui/typewriter.js"></script>
     <script src="js/ui/ascii-renderer.js"></script>
     <script src="js/ui/dice-animator.js"></script>
     <script src="js/ui/notification.js"></script>
+    <script src="js/ui/tooltip.js"></script>
 
     <!-- Screens -->
     <script src="js/screens/main-menu.js"></script>
@@ -100,6 +115,11 @@
     <script src="js/screens/achievements-screen.js"></script>
     <script src="js/screens/map-screen.js"></script>
     <script src="js/screens/cutscene-screen.js"></script>
+    <script src="js/screens/settings-screen.js"></script>
+    <script src="js/screens/ending-screen.js"></script>
+    <script src="js/screens/howtoplay-screen.js"></script>
+    <script src="js/screens/journal-screen.js"></script>
+    <script src="js/screens/loading-screen.js"></script>
 
     <!-- Bootstrap -->
     <script src="js/main.js"></script>

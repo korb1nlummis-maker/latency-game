@@ -1,0 +1,300 @@
+/* ============================================================
+ * LATENCY - Settings Screen Styles
+ * ============================================================
+ * Terminal-style settings panel with sliders, toggles, and
+ * a delete-all-saves danger button. Matches save-load pattern.
+ * ============================================================ */
+
+/* --- Screen layout --- */
+.settings-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    color: var(--text-primary, #00ff88);
+    position: relative;
+}
+
+.settings-title {
+    text-align: center;
+    font-size: var(--text-2xl, 2rem);
+    letter-spacing: var(--tracking-widest, 0.2em);
+    margin-bottom: 0.5rem;
+    text-shadow: var(--text-glow, 0 0 8px rgba(0,255,136,0.6));
+}
+
+.settings-separator {
+    text-align: center;
+    color: var(--text-dim, #445566);
+    margin-bottom: 1.5rem;
+    font-size: var(--text-sm, 0.75rem);
+}
+
+/* --- Settings rows container --- */
+.settings-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* --- Section headers --- */
+.settings-section-header {
+    font-size: var(--text-sm, 0.75rem);
+    color: var(--accent-2, #00d4ff);
+    letter-spacing: var(--tracking-wider, 0.1em);
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+    padding-bottom: 0.25rem;
+}
+
+.settings-section-header:first-child {
+    margin-top: 0;
+}
+
+/* --- Individual setting row --- */
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-color, rgba(0,255,136,0.12));
+    background: var(--bg-panel, #1a1a2e);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 40px;
+}
+
+.settings-row:hover {
+    border-color: var(--border-color-hover, rgba(0,255,136,0.3));
+    box-shadow: var(--border-glow, 0 0 10px rgba(0,255,136,0.3));
+}
+
+.settings-row-label {
+    font-size: var(--text-base, 0.875rem);
+    color: var(--text-primary, #00ff88);
+    letter-spacing: var(--tracking-wide, 0.05em);
+    min-width: 160px;
+    flex-shrink: 0;
+}
+
+.settings-row-control {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* --- Toggle controls [ON] / [OFF] --- */
+.settings-toggle {
+    padding: 0.3rem 0.75rem;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-sm, 0.75rem);
+    letter-spacing: var(--tracking-wide, 0.05em);
+    border: 1px solid var(--border-color, rgba(0,255,136,0.12));
+    background: var(--bg-secondary, #12121a);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    min-width: 60px;
+    text-align: center;
+}
+
+.settings-toggle:hover {
+    background: var(--bg-elevated, #22223a);
+}
+
+.settings-toggle.toggle-on {
+    color: var(--color-success, #00ff88);
+    border-color: rgba(0, 255, 136, 0.3);
+    text-shadow: var(--text-glow-subtle, 0 0 4px rgba(0,255,136,0.3));
+}
+
+.settings-toggle.toggle-off {
+    color: var(--accent-3, #ff2d75);
+    border-color: rgba(255, 45, 117, 0.2);
+}
+
+/* --- Slider controls --- */
+.settings-slider-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.settings-slider-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.settings-slider-block {
+    font-size: var(--text-base, 0.875rem);
+    line-height: 1;
+    transition: color 0.1s;
+}
+
+.settings-slider-block.filled {
+    color: var(--text-primary, #00ff88);
+    text-shadow: var(--text-glow-subtle, 0 0 4px rgba(0,255,136,0.3));
+}
+
+.settings-slider-block.empty {
+    color: var(--text-dim, #445566);
+}
+
+.settings-slider-value {
+    font-size: var(--text-xs, 0.625rem);
+    color: var(--text-secondary, #8899aa);
+    min-width: 36px;
+    text-align: right;
+}
+
+.settings-slider-btn {
+    padding: 0.15rem 0.4rem;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-sm, 0.75rem);
+    border: 1px solid var(--border-color, rgba(0,255,136,0.12));
+    background: var(--bg-secondary, #12121a);
+    color: var(--text-primary, #00ff88);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    line-height: 1;
+}
+
+.settings-slider-btn:hover {
+    background: var(--bg-elevated, #22223a);
+    border-color: var(--text-primary, #00ff88);
+}
+
+/* --- Danger zone --- */
+.settings-danger-zone {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 45, 117, 0.2);
+}
+
+.settings-danger-label {
+    font-size: var(--text-xs, 0.625rem);
+    color: var(--accent-3, #ff2d75);
+    letter-spacing: var(--tracking-wider, 0.1em);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.settings-delete-btn {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-base, 0.875rem);
+    letter-spacing: var(--tracking-wider, 0.1em);
+    border: 1px solid rgba(255, 45, 117, 0.3);
+    background: var(--bg-secondary, #12121a);
+    color: var(--accent-3, #ff2d75);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.settings-delete-btn:hover {
+    background: rgba(255, 45, 117, 0.1);
+    border-color: var(--accent-3, #ff2d75);
+    box-shadow: 0 0 10px rgba(255, 45, 117, 0.3);
+}
+
+/* --- Back button --- */
+.settings-back {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.5rem 2rem;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-base, 0.875rem);
+    letter-spacing: var(--tracking-wider, 0.1em);
+    border: 1px solid var(--border-color, rgba(0,255,136,0.12));
+    background: var(--bg-secondary, #12121a);
+    color: var(--text-primary, #00ff88);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.settings-back:hover {
+    background: var(--bg-elevated, #22223a);
+    border-color: var(--text-primary, #00ff88);
+    box-shadow: var(--border-glow, 0 0 10px rgba(0,255,136,0.3));
+}
+
+/* --- Confirmation overlay (reuses save-load pattern) --- */
+.settings-confirm-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--bg-overlay, rgba(10,10,15,0.85));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.settings-confirm-dialog {
+    background: var(--bg-panel, #1a1a2e);
+    border: 1px solid var(--border-color-focus, rgba(0,255,136,0.5));
+    box-shadow: var(--shadow-elevated, 0 8px 32px rgba(0,0,0,0.6));
+    padding: 1.5rem 2rem;
+    max-width: 400px;
+    text-align: center;
+    font-family: var(--font-mono, 'Courier New', monospace);
+}
+
+.settings-confirm-message {
+    color: var(--accent-3, #ff2d75);
+    font-size: var(--text-base, 0.875rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.settings-confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.settings-confirm-btn {
+    padding: 0.4rem 1.5rem;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-sm, 0.75rem);
+    letter-spacing: var(--tracking-wide, 0.05em);
+    border: 1px solid var(--border-color, rgba(0,255,136,0.12));
+    background: var(--bg-secondary, #12121a);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.settings-confirm-btn.btn-yes {
+    color: var(--accent-3, #ff2d75);
+    border-color: rgba(255, 45, 117, 0.3);
+}
+
+.settings-confirm-btn.btn-yes:hover {
+    background: rgba(255, 45, 117, 0.15);
+    border-color: var(--accent-3, #ff2d75);
+}
+
+.settings-confirm-btn.btn-no {
+    color: var(--text-secondary, #8899aa);
+    border-color: rgba(136, 153, 170, 0.2);
+}
+
+.settings-confirm-btn.btn-no:hover {
+    background: var(--bg-elevated, #22223a);
+    border-color: var(--text-secondary, #8899aa);
+}

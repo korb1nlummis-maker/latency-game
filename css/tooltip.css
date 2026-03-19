@@ -1,0 +1,96 @@
+/* ============================================================
+ * LATENCY - Tooltip System Styles
+ * ============================================================
+ * Floating tooltip with terminal aesthetic. Positioned via JS.
+ * Uses CSS variables from variables.css for consistent theming.
+ * ============================================================ */
+
+/* ── Tooltip Container ─────────────────────────────────────── */
+.lt-tooltip {
+  position: fixed;
+  z-index: 200;
+  pointer-events: none;
+
+  max-width: 280px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+
+  background: var(--bg-elevated);
+  border: 1px solid var(--text-primary);
+  box-shadow: var(--border-glow), var(--shadow-elevated);
+
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-wide);
+
+  /* Fade in/out via opacity + visibility */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 150ms ease, visibility 150ms ease;
+
+  /* Prevent text selection bleed */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Visible state (toggled by JS) */
+.lt-tooltip--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Stat Tooltip Layout ───────────────────────────────────── */
+.lt-tooltip__stat-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.lt-tooltip__stat-name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  text-shadow: var(--text-glow-subtle);
+  text-transform: uppercase;
+}
+
+.lt-tooltip__stat-value {
+  font-size: var(--text-base);
+  color: var(--accent-2);
+  text-shadow: 0 0 4px rgba(0, 212, 255, 0.4);
+}
+
+.lt-tooltip__stat-mod {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.lt-tooltip__description {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Scanline overlay on tooltip (subtle CRT feel) ─────────── */
+.lt-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 136, 0.02) 2px,
+    rgba(0, 255, 136, 0.02) 4px
+  );
+  border-radius: var(--radius-md);
+}

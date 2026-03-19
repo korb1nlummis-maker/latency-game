@@ -1,0 +1,251 @@
+/* ============================================================
+ * LATENCY - How To Play Screen Styles
+ * ============================================================
+ * Terminal manual aesthetic: green phosphor text, box-drawing
+ * decorations, scanline overlay, monospace throughout.
+ *
+ * Consumes design tokens from variables.css.
+ * ============================================================ */
+
+/* ------------------------------------------------------------
+ * 1. Screen Layout
+ * Full-viewport scrollable container
+ * ------------------------------------------------------------ */
+.htp-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: var(--space-6) var(--space-4);
+    position: relative;
+    overflow-y: auto;
+    z-index: var(--z-content);
+}
+
+/* Scanline overlay */
+.htp-screen::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent var(--scanline-size, 2px),
+        rgba(0, 0, 0, var(--scanline-opacity, 0.04)) var(--scanline-size, 2px),
+        rgba(0, 0, 0, var(--scanline-opacity, 0.04)) calc(var(--scanline-size, 2px) * 2)
+    );
+    pointer-events: none;
+    z-index: var(--z-overlay);
+}
+
+/* ------------------------------------------------------------
+ * 2. Header ASCII Art
+ * ------------------------------------------------------------ */
+.htp-header {
+    font-family: var(--font-mono);
+    font-size: clamp(0.5rem, 1.2vw, 0.8rem);
+    line-height: var(--leading-tight);
+    color: var(--text-primary);
+    text-shadow: var(--text-glow-subtle);
+    white-space: pre;
+    text-align: center;
+    margin-bottom: var(--space-6);
+    animation: htpHeaderPulse 4s ease-in-out infinite;
+}
+
+@keyframes htpHeaderPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* ------------------------------------------------------------
+ * 3. Tab Bar
+ * Horizontal row of section selectors
+ * ------------------------------------------------------------ */
+.htp-tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-4);
+    width: 100%;
+    max-width: 800px;
+}
+
+.htp-tab-btn {
+    font-family: var(--font-mono);
+    font-size: clamp(0.6rem, 1.1vw, 0.75rem);
+    color: var(--text-dim);
+    background: transparent;
+    border: var(--border-default);
+    cursor: pointer;
+    padding: var(--space-1) var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    transition:
+        color var(--transition-normal),
+        border-color var(--transition-normal),
+        text-shadow var(--transition-smooth),
+        background-color var(--transition-normal);
+    white-space: nowrap;
+}
+
+.htp-tab-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-color-hover);
+    text-shadow: var(--text-glow-subtle);
+}
+
+.htp-tab-btn--active {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    text-shadow: var(--text-glow);
+    background: rgba(0, 255, 136, 0.06);
+}
+
+.htp-tab-btn:focus-visible {
+    outline: 1px solid var(--border-color-focus);
+    outline-offset: 2px;
+    box-shadow: var(--border-glow);
+}
+
+/* ------------------------------------------------------------
+ * 4. Content Area
+ * Scrollable panel for the active section
+ * ------------------------------------------------------------ */
+.htp-content {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(10, 10, 15, 0.6);
+    border: var(--border-default);
+    border-radius: var(--radius-sm);
+    padding: var(--space-4);
+    margin-bottom: var(--space-6);
+    max-height: 55vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-panel);
+}
+
+/* Custom scrollbar for the content panel */
+.htp-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.htp-content::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.htp-content::-webkit-scrollbar-thumb {
+    background: var(--border-color-hover);
+    border-radius: var(--radius-full);
+}
+
+.htp-content::-webkit-scrollbar-thumb:hover {
+    background: var(--text-primary);
+}
+
+.htp-content-body {
+    font-family: var(--font-mono);
+    font-size: clamp(0.65rem, 1.1vw, 0.8rem);
+    line-height: var(--leading-relaxed);
+    color: var(--text-primary);
+    text-shadow: var(--text-glow-subtle);
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+}
+
+/* ------------------------------------------------------------
+ * 5. Back Button
+ * ------------------------------------------------------------ */
+.htp-back-bar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.htp-back-btn {
+    font-family: var(--font-mono);
+    font-size: clamp(0.8rem, 1.4vw, 1rem);
+    color: var(--text-secondary);
+    background: transparent;
+    border: var(--border-default);
+    cursor: pointer;
+    padding: var(--space-2) var(--space-8);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    transition:
+        color var(--transition-normal),
+        border-color var(--transition-normal),
+        text-shadow var(--transition-smooth),
+        transform var(--transition-fast);
+}
+
+.htp-back-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    text-shadow: var(--text-glow);
+    transform: translateY(-1px);
+}
+
+.htp-back-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.htp-back-btn:focus-visible {
+    outline: 1px solid var(--border-color-focus);
+    outline-offset: 4px;
+    box-shadow: var(--border-glow);
+    color: var(--text-primary);
+    text-shadow: var(--text-glow);
+}
+
+/* ------------------------------------------------------------
+ * 6. Responsive Adjustments
+ * ------------------------------------------------------------ */
+@media (max-width: 600px) {
+    .htp-screen {
+        padding: var(--space-3) var(--space-2);
+    }
+
+    .htp-header {
+        font-size: clamp(0.35rem, 2vw, 0.55rem);
+    }
+
+    .htp-tab-bar {
+        gap: var(--space-1);
+    }
+
+    .htp-tab-btn {
+        font-size: 0.55rem;
+        padding: var(--space-1) var(--space-2);
+    }
+
+    .htp-content {
+        padding: var(--space-2);
+        max-height: 60vh;
+    }
+
+    .htp-content-body {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-height: 600px) {
+    .htp-screen {
+        padding: var(--space-2) var(--space-2);
+    }
+
+    .htp-header {
+        margin-bottom: var(--space-2);
+    }
+
+    .htp-content {
+        max-height: 45vh;
+    }
+}

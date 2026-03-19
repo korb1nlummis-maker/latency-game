@@ -159,6 +159,7 @@ window.Latency.SaveManager = (function () {
         state.factions = window.Latency.FactionSystem && window.Latency.FactionSystem.serialize ? window.Latency.FactionSystem.serialize() : null;
         state.job = window.Latency.JobSystem && window.Latency.JobSystem.serialize ? window.Latency.JobSystem.serialize() : null;
         state.npc = window.Latency.NpcSystem && window.Latency.NpcSystem.serialize ? window.Latency.NpcSystem.serialize() : null;
+        state.journal = window.Latency.Journal && window.Latency.Journal.serialize ? window.Latency.Journal.serialize() : null;
 
         return state;
     }
@@ -357,6 +358,9 @@ window.Latency.SaveManager = (function () {
         }
         if (state.npc && window.Latency.NpcSystem && typeof window.Latency.NpcSystem.deserialize === 'function') {
             window.Latency.NpcSystem.deserialize(state.npc);
+        }
+        if (state.journal && window.Latency.Journal && typeof window.Latency.Journal.deserialize === 'function') {
+            window.Latency.Journal.deserialize(state.journal);
         }
 
         // Restore music state

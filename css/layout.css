@@ -258,6 +258,66 @@ body {
   }
 }
 
+/* --- Glitch Out (reverse of glitch-in, for combat exits etc.) --- */
+.glitch-out {
+  animation: screenGlitchOut 400ms steps(8) forwards;
+}
+
+@keyframes screenGlitchOut {
+  0% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  25% {
+    opacity: 0.9;
+    clip-path: inset(50% 0 5% 0);
+  }
+  50% {
+    opacity: 0.7;
+    clip-path: inset(10% 0 60% 0);
+  }
+  75% {
+    opacity: 0.5;
+    clip-path: inset(40% 0 30% 0);
+  }
+  100% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+/* --- Slide Out to Right --- */
+.slide-out-right {
+  animation: screenSlideOutRight var(--transition-smooth, 300ms) ease-in forwards;
+}
+
+@keyframes screenSlideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+
+/* --- Slide In from Left --- */
+.slide-in-left {
+  animation: screenSlideInLeft var(--transition-smooth, 300ms) ease-out forwards;
+}
+
+@keyframes screenSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* --- Slide In from Right --- */
 .slide-in-right {
   animation: screenSlideInRight var(--transition-smooth, 300ms) ease-out forwards;

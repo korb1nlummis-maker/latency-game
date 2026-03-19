@@ -1,7 +1,10 @@
 /**
  * LATENCY - ScreenManager
  * Manages the DOM lifecycle of screen objects: mounting, unmounting, and
- * CSS fade transitions between them.
+ * CSS transitions between them.  Supports multiple transition types:
+ *   'fade'   - Smooth opacity fade (default for normal navigation)
+ *   'glitch' - Stepped clip-path glitch effect (for combat entries)
+ *   'slide'  - Horizontal slide (for overlay panels like inventory/map)
  *
  * Depends on: Latency.EventBus
  *
@@ -19,6 +22,8 @@
  *   // Transition is triggered automatically via EventBus 'screen:change',
  *   // or can be called directly:
  *   await Latency.ScreenManager.show('menu');
+ *   await Latency.ScreenManager.show('combat', data, 'glitch');
+ *   await Latency.ScreenManager.show('inventory', null, 'slide');
  */
 
 window.Latency = window.Latency || {};
@@ -32,6 +37,35 @@ window.Latency.ScreenManager = (function () {
 
     /** Duration in ms that matches the CSS fade-out / fade-in transitions. */
     var TRANSITION_DURATION = 300;
+
+    /**
+     * Supported transition types and their CSS class pairs.
+     * Each type maps to { out: 'class-name', in: 'class-name', duration: ms }.
+     *
+     * 'fade'   - Default smooth fade, good for normal navigation.
+     * 'glitch' - Stepped clip-path glitch, ideal for combat entries.
+     * 'slide'  - Horizontal slide, suited for overlay panels (inventory, map).
+     */
+    var TRANSITIONS = {
+        fade: {
+            out: 'fade-out',
+            inClass: 'fade-in',
+            duration: 300
+        },
+        glitch: {
+            out: 'glitch-out',
+            inClass: 'glitch-in',
+            duration: 400
+        },
+        slide: {
+            out: 'slide-out-left',
+            inClass: 'slide-in-right',
+            duration: 300
+        }
+    };
+
+    /** Default transition when none is specified. */
+    var DEFAULT_TRANSITION = 'fade';
 
     // -----------------------------------------------------------------------
     // Internal state
@@ -129,10 +163,11 @@ window.Latency.ScreenManager = (function () {
         _transitioning = false;
         _queued = null;
 
-        // Listen for state-machine driven screen changes
+        // Listen for state-machine driven screen changes.
+        // data.transition is optional: 'fade' | 'glitch' | 'slide'
         window.Latency.EventBus.on('screen:change', function (data) {
             if (data && data.to) {
-                show(data.to, data.params);
+                show(data.to, data.params, data.transition);
             }
         });
     }
@@ -167,7 +202,22 @@ window.Latency.ScreenManager = (function () {
     }
 
     /**
-     * Transition to a new screen with a fade-out / fade-in cycle.
+     * Remove all known transition CSS classes from the container.
+     * Prevents stale animation classes from leaking between transitions.
+     */
+    function clearTransitionClasses() {
+        var key, t;
+        for (key in TRANSITIONS) {
+            if (TRANSITIONS.hasOwnProperty(key)) {
+                t = TRANSITIONS[key];
+                _container.classList.remove(t.out);
+                _container.classList.remove(t.inClass);
+            }
+        }
+    }
+
+    /**
+     * Transition to a new screen with a configurable animation.
      *
      * CRITICAL: This method ONLY touches _container (#screen-container).
      * It NEVER touches #music-layer or #particle-canvas.
@@ -176,16 +226,17 @@ window.Latency.ScreenManager = (function () {
      * most recent queued request will be executed once the current transition
      * completes.
      *
-     * @param {string} screenName - Name of a previously registered screen.
-     * @param {*} [params] - Data forwarded to the screen's mount() method.
+     * @param {string}  screenName      - Name of a previously registered screen.
+     * @param {*}       [params]        - Data forwarded to the screen's mount() method.
+     * @param {string}  [transitionType] - 'fade' (default), 'glitch', or 'slide'.
      * @returns {Promise<void>}
      */
-    async function show(screenName, params) {
+    async function show(screenName, params, transitionType) {
         // ------------------------------------------------------------------
         // 1. If already mid-transition, queue this request and bail out.
         // ------------------------------------------------------------------
         if (_transitioning) {
-            _queued = { name: screenName, params: params };
+            _queued = { name: screenName, params: params, transition: transitionType };
             return;
         }
 
@@ -208,14 +259,28 @@ window.Latency.ScreenManager = (function () {
         }
 
         // ------------------------------------------------------------------
-        // 3. Begin transition
+        // 3. Resolve transition type
+        // ------------------------------------------------------------------
+        var tType = transitionType || DEFAULT_TRANSITION;
+        var trans = TRANSITIONS[tType];
+        if (!trans) {
+            console.warn(
+                '[ScreenManager] Unknown transition "' + tType +
+                '", falling back to "' + DEFAULT_TRANSITION + '".'
+            );
+            trans = TRANSITIONS[DEFAULT_TRANSITION];
+        }
+
+        // ------------------------------------------------------------------
+        // 4. Begin transition
         // ------------------------------------------------------------------
         _transitioning = true;
 
         try {
-            // ---- Fade out ------------------------------------------------
-            _container.classList.add('fade-out');
-            await wait(TRANSITION_DURATION);
+            // ---- Out animation -------------------------------------------
+            clearTransitionClasses();
+            _container.classList.add(trans.out);
+            await wait(trans.duration);
 
             // ---- Unmount active screen -----------------------------------
             if (_activeScreen) {
@@ -246,12 +311,12 @@ window.Latency.ScreenManager = (function () {
             _activeScreen = screen;
             _activeScreenName = screenName;
 
-            // ---- Fade in -------------------------------------------------
-            _container.classList.remove('fade-out');
-            _container.classList.add('fade-in');
-            await wait(TRANSITION_DURATION);
+            // ---- In animation --------------------------------------------
+            clearTransitionClasses();
+            _container.classList.add(trans.inClass);
+            await wait(trans.duration);
 
-            _container.classList.remove('fade-in');
+            clearTransitionClasses();
 
             // ---- Signal completion ---------------------------------------
             window.Latency.EventBus.emit('screen:ready', {
@@ -269,7 +334,7 @@ window.Latency.ScreenManager = (function () {
         if (_queued) {
             var next = _queued;
             _queued = null;
-            await show(next.name, next.params);
+            await show(next.name, next.params, next.transition);
         }
     }
 

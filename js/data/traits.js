@@ -885,6 +885,23 @@ window.Latency.Traits = {
     },
 
     // =========================================================================
+    //  NEW GAME PLUS TRAITS
+    // =========================================================================
+
+    ng_plus_veteran: {
+        id: 'ng_plus_veteran',
+        name: 'NG+ Veteran',
+        category: 'special',
+        description: 'You have conquered this world before. The echoes of past lives grant you +10% XP from all sources.',
+        effects: [
+            { type: 'xp_modifier', value: 0.1 }
+        ],
+        prerequisites: null,
+        exclusive: null,
+        raceRestriction: null
+    },
+
+    // =========================================================================
     //  HELPER METHODS
     // =========================================================================
 

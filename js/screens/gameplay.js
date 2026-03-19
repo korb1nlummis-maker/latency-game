@@ -21,6 +21,8 @@
  *   levelup         -> refresh level, HP, stamina displays
  *   trait:add       -> refresh sidebar
  *   trait:remove    -> refresh sidebar
+ *   npc:relationship -> refresh contacts panel
+ *   npc:tier_change  -> refresh contacts panel
  * ============================================================
  */
 
@@ -80,6 +82,7 @@ window.Latency.Screens.Gameplay = (function () {
 
     var MENU_ICONS = [
         { id: 'inventory', label: 'INV',  title: 'Inventory', state: 'inventory' },
+        { id: 'journal',   label: 'JNL',  title: 'Journal',   state: 'journal' },
         { id: 'map',       label: 'MAP',  title: 'Map',       state: 'map' },
         { id: 'skills',    label: 'SKL',  title: 'Skills',    state: 'skills' },
         { id: 'settings',  label: 'SET',  title: 'Settings',  state: 'settings' },
@@ -87,6 +90,47 @@ window.Latency.Screens.Gameplay = (function () {
     ];
 
     var TYPEWRITER_SPEED = 25; // ms per character
+
+    var CONTACTS_MAX_VISIBLE = 8;
+
+    var TIER_DISPLAY = {
+        hostile:    { label: 'HOSTILE',    color: 'var(--accent-3)' },
+        unfriendly: { label: 'UNFRIENDLY', color: 'var(--accent-1)' },
+        neutral:    { label: 'NEUTRAL',    color: 'var(--text-dim)' },
+        friendly:   { label: 'FRIENDLY',   color: 'var(--text-primary)' },
+        romantic:   { label: 'ROMANTIC',   color: 'var(--accent-2)' }
+    };
+
+    var LOCATION_LABELS = {
+        lower_slums:        'Lower Slums',
+        the_foundry:        'The Foundry',
+        the_spire:          'The Spire',
+        deep_net_cafe:      'Deep Net Cafe',
+        the_ossuary:        'The Ossuary',
+        observatory:        'Observatory',
+        upper_slums:        'Upper Slums',
+        scrap_yards:        'Scrap Yards',
+        arena_district:     'Arena District',
+        neon_strip:         'Neon Strip',
+        corporate_spires:   'Corporate Spires',
+        black_market_bazaar:'Black Market',
+        stack_clinic:       'Stack Clinic',
+        transit_hub:        'Transit Hub',
+        sewer_network:      'Sewer Network',
+        senate_hall:        'Senate Hall'
+    };
+
+    // District color coding for minimap
+    var DISTRICT_COLORS = {
+        highcity:    '#ffd700',  // gold
+        midcity:     '#00e5ff',  // cyan
+        undercity:   '#ff9100',  // orange
+        underground: '#e040fb'   // magenta
+    };
+
+    var MINIMAP_W = 200;
+    var MINIMAP_H = 150;
+    var _minimapAnimFrame = null;
 
     // --------------------------------------------------------
     // Helper: create a DOM element
@@ -186,6 +230,279 @@ window.Latency.Screens.Gameplay = (function () {
     }
 
     // --------------------------------------------------------
+    // Minimap: helpers
+    // --------------------------------------------------------
+
+    function _getMinimapCurrentId() {
+        var ch = _getChar();
+        return ch ? ch.currentNodeId : null;
+    }
+
+    function _isMinimapDiscovered(locId) {
+        var ch = _getChar();
+        if (!ch) return false;
+        var loc = window.Latency.Locations[locId];
+        if (!loc) return false;
+        if (!loc.discoverable) return true;
+        return ch.visitedNodes && ch.visitedNodes.indexOf(locId) !== -1;
+    }
+
+    function _gatherMinimapNodes() {
+        var locs = window.Latency.Locations;
+        if (!locs) return { nodes: {}, edges: [] };
+        var currentId = _getMinimapCurrentId();
+        if (!currentId || !locs[currentId]) return { nodes: {}, edges: [] };
+
+        var nodes = {};
+        var edges = [];
+        var edgeSet = {};
+
+        function addEdge(a, b) {
+            var key = a < b ? a + '|' + b : b + '|' + a;
+            if (!edgeSet[key]) { edgeSet[key] = true; edges.push([a, b]); }
+        }
+
+        nodes[currentId] = { loc: locs[currentId], depth: 0 };
+        var conns1 = locs[currentId].connections || [];
+        for (var i = 0; i < conns1.length; i++) {
+            var id1 = conns1[i];
+            if (!locs[id1]) continue;
+            if (!nodes[id1]) nodes[id1] = { loc: locs[id1], depth: 1 };
+            addEdge(currentId, id1);
+        }
+        for (var j = 0; j < conns1.length; j++) {
+            var mid = conns1[j];
+            if (!locs[mid]) continue;
+            var conns2 = locs[mid].connections || [];
+            for (var k = 0; k < conns2.length; k++) {
+                var id2 = conns2[k];
+                if (!locs[id2]) continue;
+                if (!nodes[id2]) nodes[id2] = { loc: locs[id2], depth: 2 };
+                addEdge(mid, id2);
+            }
+        }
+        return { nodes: nodes, edges: edges };
+    }
+
+    function _layoutMinimapNodes(data) {
+        var positions = {};
+        var nodeIds = Object.keys(data.nodes);
+        if (nodeIds.length === 0) return positions;
+        var cx = MINIMAP_W / 2;
+        var cy = MINIMAP_H / 2;
+        var byDepth = { 0: [], 1: [], 2: [] };
+        for (var i = 0; i < nodeIds.length; i++) {
+            var d = data.nodes[nodeIds[i]].depth;
+            if (!byDepth[d]) byDepth[d] = [];
+            byDepth[d].push(nodeIds[i]);
+        }
+        for (var c = 0; c < byDepth[0].length; c++) {
+            positions[byDepth[0][c]] = { x: cx, y: cy };
+        }
+        function placeRing(ids, radius) {
+            var count = ids.length;
+            if (count === 0) return;
+            var step = (2 * Math.PI) / count;
+            var start = -Math.PI / 2;
+            for (var r = 0; r < count; r++) {
+                var angle = start + r * step;
+                positions[ids[r]] = {
+                    x: cx + Math.cos(angle) * radius,
+                    y: cy + Math.sin(angle) * radius
+                };
+            }
+        }
+        placeRing(byDepth[1] || [], 45);
+        placeRing(byDepth[2] || [], 68);
+        return positions;
+    }
+
+    function _hexToRgba(hex, alpha) {
+        hex = hex.replace('#', '');
+        if (hex.length === 3) hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        var rv = parseInt(hex.substring(0, 2), 16);
+        var gv = parseInt(hex.substring(2, 4), 16);
+        var bv = parseInt(hex.substring(4, 6), 16);
+        return 'rgba(' + rv + ', ' + gv + ', ' + bv + ', ' + alpha + ')';
+    }
+
+    function _drawMinimap(time) {
+        var canvas = _els.minimapCanvas;
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        var w = MINIMAP_W;
+        var h = MINIMAP_H;
+        ctx.clearRect(0, 0, w, h);
+
+        ctx.fillStyle = 'rgba(8, 12, 18, 0.95)';
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.strokeStyle = 'rgba(0, 255, 136, 0.04)';
+        ctx.lineWidth = 0.5;
+        for (var gx = 0; gx < w; gx += 20) {
+            ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, h); ctx.stroke();
+        }
+        for (var gy = 0; gy < h; gy += 20) {
+            ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(w, gy); ctx.stroke();
+        }
+
+        var data = _gatherMinimapNodes();
+        var positions = _layoutMinimapNodes(data);
+        var nodeIds = Object.keys(data.nodes);
+        if (nodeIds.length === 0) return;
+        var currentId = _getMinimapCurrentId();
+
+        for (var e = 0; e < data.edges.length; e++) {
+            var edge = data.edges[e];
+            var pA = positions[edge[0]];
+            var pB = positions[edge[1]];
+            if (!pA || !pB) continue;
+            var dA = data.nodes[edge[0]] ? data.nodes[edge[0]].depth : 2;
+            var dB = data.nodes[edge[1]] ? data.nodes[edge[1]].depth : 2;
+            var maxDepth = Math.max(dA, dB);
+            ctx.beginPath();
+            ctx.moveTo(pA.x, pA.y);
+            ctx.lineTo(pB.x, pB.y);
+            ctx.strokeStyle = maxDepth >= 2 ? 'rgba(255,255,255,0.08)' : 'rgba(0,255,136,0.25)';
+            ctx.lineWidth = maxDepth >= 2 ? 0.5 : 1;
+            ctx.stroke();
+        }
+
+        var pulse = (Math.sin((time || 0) / 400) + 1) / 2;
+        for (var n = 0; n < nodeIds.length; n++) {
+            var id = nodeIds[n];
+            var info = data.nodes[id];
+            var pos = positions[id];
+            if (!pos) continue;
+            var discovered = _isMinimapDiscovered(id);
+            var district = info.loc.district || 'midcity';
+            var color = DISTRICT_COLORS[district] || '#00e5ff';
+            var depth = info.depth;
+
+            ctx.beginPath();
+            if (id === currentId) {
+                var nodeRadius = 5 + pulse * 2;
+                ctx.arc(pos.x, pos.y, nodeRadius, 0, Math.PI * 2);
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(pos.x, pos.y, nodeRadius + 3 + pulse * 2, 0, Math.PI * 2);
+                ctx.strokeStyle = _hexToRgba(color, 0.3 + pulse * 0.3);
+                ctx.lineWidth = 1;
+                ctx.stroke();
+            } else if (depth === 1) {
+                var r1 = discovered ? 3.5 : 2.5;
+                ctx.arc(pos.x, pos.y, r1, 0, Math.PI * 2);
+                ctx.fillStyle = discovered ? color : _hexToRgba(color, 0.25);
+                ctx.fill();
+            } else {
+                var r2 = discovered ? 2 : 1.5;
+                ctx.arc(pos.x, pos.y, r2, 0, Math.PI * 2);
+                ctx.fillStyle = discovered ? _hexToRgba(color, 0.4) : _hexToRgba(color, 0.12);
+                ctx.fill();
+            }
+
+            if ((id === currentId || depth === 1) && discovered) {
+                var locName = info.loc.name || id;
+                if (locName.length > 12) locName = locName.substring(0, 11) + '\u2026';
+                ctx.font = id === currentId ? 'bold 7px monospace' : '6px monospace';
+                ctx.fillStyle = id === currentId ? 'rgba(255,255,255,0.9)' : 'rgba(200,200,200,0.6)';
+                ctx.textAlign = 'center';
+                ctx.fillText(locName, pos.x, pos.y + (id === currentId ? 14 : 10));
+            }
+        }
+    }
+
+    function _animateMinimap(time) {
+        _drawMinimap(time);
+        _minimapAnimFrame = requestAnimationFrame(_animateMinimap);
+    }
+
+    function _startMinimapAnimation() {
+        if (_minimapAnimFrame) return;
+        _minimapAnimFrame = requestAnimationFrame(_animateMinimap);
+    }
+
+    function _stopMinimapAnimation() {
+        if (_minimapAnimFrame) {
+            cancelAnimationFrame(_minimapAnimFrame);
+            _minimapAnimFrame = null;
+        }
+    }
+
+    function _onMinimapClick(e) {
+        var canvas = _els.minimapCanvas;
+        if (!canvas) return;
+        var rect = canvas.getBoundingClientRect();
+        var scaleX = MINIMAP_W / rect.width;
+        var scaleY = MINIMAP_H / rect.height;
+        var clickX = (e.clientX - rect.left) * scaleX;
+        var clickY = (e.clientY - rect.top) * scaleY;
+
+        var data = _gatherMinimapNodes();
+        var positions = _layoutMinimapNodes(data);
+        var currentId = _getMinimapCurrentId();
+        var bestId = null;
+        var bestDist = 15;
+
+        var ids = Object.keys(data.nodes);
+        for (var i = 0; i < ids.length; i++) {
+            var nid = ids[i];
+            if (nid === currentId) continue;
+            if (data.nodes[nid].depth !== 1) continue;
+            if (!_isMinimapDiscovered(nid)) continue;
+            var npos = positions[nid];
+            if (!npos) continue;
+            var dx = clickX - npos.x;
+            var dy = clickY - npos.y;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < bestDist) { bestDist = dist; bestId = nid; }
+        }
+
+        if (bestId) {
+            var locs = window.Latency.Locations;
+            var locData = locs[bestId];
+            var ch = _getChar();
+            if (locData && locData.requiredReputation && ch && ch.reputation) {
+                var fKeys = Object.keys(locData.requiredReputation);
+                for (var fi = 0; fi < fKeys.length; fi++) {
+                    var fId = fKeys[fi];
+                    if ((ch.reputation[fId] || 0) < locData.requiredReputation[fId]) return;
+                }
+            }
+            if (ch) {
+                var fromId = ch.currentNodeId;
+                ch.currentNodeId = bestId;
+                if (ch.visitedNodes && ch.visitedNodes.indexOf(bestId) === -1) {
+                    ch.visitedNodes.push(bestId);
+                }
+                window.Latency.EventBus.emit('map:travel', {
+                    from: fromId, to: bestId, location: locData
+                });
+                if (window.Latency.MusicManager && locData && typeof locData.ambientTrack === 'number') {
+                    window.Latency.MusicManager.skipTo(locData.ambientTrack);
+                }
+                _drawMinimap(performance.now());
+            }
+        }
+    }
+
+    function _buildMinimap() {
+        var wrapper = _el('div', 'gp-minimap-container');
+        var mmLabel = _el('div', 'gp-minimap-label', '[ AREA MAP ]');
+        wrapper.appendChild(mmLabel);
+        var canvas = document.createElement('canvas');
+        canvas.className = 'gp-minimap-canvas';
+        canvas.width = MINIMAP_W;
+        canvas.height = MINIMAP_H;
+        _els.minimapCanvas = canvas;
+        _bind(canvas, 'click', _onMinimapClick);
+        wrapper.appendChild(canvas);
+        return wrapper;
+    }
+
+    // --------------------------------------------------------
     // Build: Header bar
     // --------------------------------------------------------
     function _buildHeader() {
@@ -266,6 +583,7 @@ window.Latency.Screens.Gameplay = (function () {
 
         // HP bar
         var hpBlock = _el('div', 'gp-bar-block gp-hp-block');
+        hpBlock.setAttribute('data-tooltip', 'Hit Points. Reach zero and you die. Restored by resting and healing items.');
         hpBlock.innerHTML = '<span class="gp-label">HP:</span> <span class="gp-bar gp-hp-bar">██████░░</span> <span class="gp-bar-numbers gp-hp-numbers">0/0</span>';
         _els.hpBar = hpBlock.querySelector('.gp-hp-bar');
         _els.hpNumbers = hpBlock.querySelector('.gp-hp-numbers');
@@ -273,6 +591,7 @@ window.Latency.Screens.Gameplay = (function () {
 
         // Stamina bar
         var staBlock = _el('div', 'gp-bar-block gp-sta-block');
+        staBlock.setAttribute('data-tooltip', 'Stamina. Used for special actions and abilities. Regenerates over time.');
         staBlock.innerHTML = '<span class="gp-label">STA:</span> <span class="gp-bar gp-sta-bar">██████░░</span> <span class="gp-bar-numbers gp-sta-numbers">0/0</span>';
         _els.staBar = staBlock.querySelector('.gp-sta-bar');
         _els.staNumbers = staBlock.querySelector('.gp-sta-numbers');
@@ -288,6 +607,7 @@ window.Latency.Screens.Gameplay = (function () {
             var key = STAT_ORDER[i];
             var label = STAT_LABELS[key];
             var row = _el('div', 'gp-stat-row');
+            row.setAttribute('data-tooltip-stat', key);
             row.innerHTML = '<span class="gp-stat-label">' + label.short + ':</span> <span class="gp-stat-value">10</span> <span class="gp-stat-mod">(+0)</span>';
             _els.statRows[key] = {
                 value: row.querySelector('.gp-stat-value'),
@@ -332,7 +652,168 @@ window.Latency.Screens.Gameplay = (function () {
         }
         sidebar.appendChild(factionsBlock);
 
+        // Separator before contacts
+        sidebar.appendChild(_el('div', 'gp-sidebar-sep', '────────────────'));
+
+        // NPC Contacts panel
+        sidebar.appendChild(_buildContactsPanel());
+
+        // Separator before minimap
+        sidebar.appendChild(_el('div', 'gp-sidebar-sep', '────────────────'));
+
+        // Minimap widget
+        sidebar.appendChild(_buildMinimap());
+
         return sidebar;
+    }
+
+    // --------------------------------------------------------
+    // Build: Contacts panel (NPC relationship tracker)
+    // --------------------------------------------------------
+    function _buildContactsPanel() {
+        var wrapper = _el('div', 'gp-contacts-panel');
+
+        // Collapsible header
+        var header = _el('div', 'gp-contacts-header');
+        var toggle = _el('span', 'gp-contacts-toggle', '[-]');
+        var title  = _el('span', 'gp-contacts-title', ' CONTACTS');
+        header.appendChild(toggle);
+        header.appendChild(title);
+        wrapper.appendChild(header);
+
+        // Contact list container (scrollable)
+        var list = _el('div', 'gp-contacts-list');
+        _els.contactsList = list;
+        wrapper.appendChild(list);
+
+        // Tooltip element for location info
+        var tooltip = _el('div', 'gp-contacts-tooltip');
+        tooltip.style.display = 'none';
+        _els.contactsTooltip = tooltip;
+        wrapper.appendChild(tooltip);
+
+        // Track collapsed state
+        var collapsed = false;
+        _bind(header, 'click', function () {
+            collapsed = !collapsed;
+            toggle.textContent = collapsed ? '[+]' : '[-]';
+            list.style.display = collapsed ? 'none' : '';
+        });
+
+        _els.contactsPanel = wrapper;
+        return wrapper;
+    }
+
+    // --------------------------------------------------------
+    // Refresh: contacts panel from NPC relationship data
+    // --------------------------------------------------------
+    function _refreshContacts() {
+        var list = _els.contactsList;
+        if (!list) return;
+
+        var NpcSys = window.Latency.NpcSystem;
+        var NpcsData = window.Latency.NpcsData;
+        if (!NpcSys || !NpcsData) return;
+
+        // Clean old listeners from previous contact rows
+        _cleanDetachedListeners();
+
+        list.innerHTML = '';
+
+        // Gather NPCs with non-zero relationship values
+        var contacts = [];
+        var npcIds = Object.keys(NpcsData);
+        for (var i = 0; i < npcIds.length; i++) {
+            var npcId = npcIds[i];
+            var val = NpcSys.getRelationship(npcId);
+            if (val !== 0) {
+                contacts.push({
+                    id: npcId,
+                    npc: NpcsData[npcId],
+                    value: val,
+                    tier: NpcSys.getRelationshipTier(npcId)
+                });
+            }
+        }
+
+        // Sort by absolute relationship value descending (strongest bonds first)
+        contacts.sort(function (a, b) {
+            return Math.abs(b.value) - Math.abs(a.value);
+        });
+
+        if (contacts.length === 0) {
+            var emptyMsg = _el('div', 'gp-contacts-empty', 'No contacts yet.');
+            list.appendChild(emptyMsg);
+            return;
+        }
+
+        for (var c = 0; c < contacts.length; c++) {
+            var contact = contacts[c];
+            var npc = contact.npc;
+            var tierInfo = TIER_DISPLAY[contact.tier] || TIER_DISPLAY.neutral;
+
+            var row = _el('div', 'gp-contact-row');
+            row.setAttribute('data-npc-id', contact.id);
+
+            // Faction color dot
+            var factionColor = 'var(--text-dim)';
+            if (npc.faction && FACTION_DISPLAY[npc.faction]) {
+                factionColor = FACTION_DISPLAY[npc.faction].color;
+            }
+            var dot = _el('span', 'gp-contact-faction-dot');
+            dot.style.color = factionColor;
+            dot.textContent = '\u25CF'; // filled circle
+            row.appendChild(dot);
+
+            // NPC name (green terminal style)
+            var nameEl = _el('span', 'gp-contact-name', npc.name || contact.id);
+            row.appendChild(nameEl);
+
+            // Tier label (color-coded)
+            var tierEl = _el('span', 'gp-contact-tier', tierInfo.label);
+            tierEl.style.color = tierInfo.color;
+            row.appendChild(tierEl);
+
+            // Relationship bar: maps -100..+100 to 0..8 blocks
+            var barEl = _el('span', 'gp-contact-bar');
+            var normalized = (contact.value + 100) / 200; // 0 to 1
+            var filled = Math.round(normalized * 6);
+            if (filled < 0) filled = 0;
+            if (filled > 6) filled = 6;
+            barEl.textContent = '\u2588'.repeat(filled) + '\u2591'.repeat(6 - filled);
+
+            // Color the bar based on tier
+            barEl.style.color = tierInfo.color;
+            row.appendChild(barEl);
+
+            // Hover/click to show last known location
+            (function (npcData, rowEl) {
+                var locLabel = LOCATION_LABELS[npcData.location] || npcData.location || 'Unknown';
+
+                _bind(rowEl, 'mouseenter', function () {
+                    var tooltip = _els.contactsTooltip;
+                    if (tooltip) {
+                        tooltip.textContent = 'Last seen: ' + locLabel;
+                        tooltip.style.display = '';
+                    }
+                });
+                _bind(rowEl, 'mouseleave', function () {
+                    var tooltip = _els.contactsTooltip;
+                    if (tooltip) {
+                        tooltip.style.display = 'none';
+                    }
+                });
+                _bind(rowEl, 'click', function () {
+                    var tooltip = _els.contactsTooltip;
+                    if (tooltip) {
+                        tooltip.textContent = 'Last seen: ' + locLabel;
+                        tooltip.style.display = tooltip.style.display === 'none' ? '' : 'none';
+                    }
+                });
+            })(npc, row);
+
+            list.appendChild(row);
+        }
     }
 
     // --------------------------------------------------------
@@ -661,6 +1142,10 @@ window.Latency.Screens.Gameplay = (function () {
         _refreshSidebar();
     }
 
+    function _onNpcRelationshipChange() {
+        _refreshContacts();
+    }
+
     // --------------------------------------------------------
     // Public API
     // --------------------------------------------------------
@@ -712,9 +1197,18 @@ window.Latency.Screens.Gameplay = (function () {
             _subscribe('levelup', _onLevelUp);
             _subscribe('trait:add', _onTraitChange);
             _subscribe('trait:remove', _onTraitChange);
+            _subscribe('npc:relationship', _onNpcRelationshipChange);
+            _subscribe('npc:tier_change', _onNpcRelationshipChange);
 
             // Initial sidebar populate from current character data
             _refreshSidebar();
+
+            // Initial contacts populate
+            _refreshContacts();
+
+            // Start minimap animation and subscribe to travel events
+            _startMinimapAnimation();
+            _subscribe('map:travel', function () { _drawMinimap(performance.now()); });
 
             // Load the current story node
             var nodeId = null;
@@ -766,6 +1260,9 @@ window.Latency.Screens.Gameplay = (function () {
          * Unmount the gameplay screen, cleaning up event listeners and DOM.
          */
         unmount: function () {
+            // Stop minimap animation
+            _stopMinimapAnimation();
+
             // Cancel typewriter
             _cancelTypewriter();
 

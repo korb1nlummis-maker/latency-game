@@ -34,7 +34,10 @@ window.Latency.StateMachine = (function () {
         'saveload',
         'cutscene',
         'skills',
-        'achievements'
+        'achievements',
+        'journal',
+        'ending',
+        'howtoplay'
     ];
 
     /**
@@ -45,18 +48,21 @@ window.Latency.StateMachine = (function () {
      * @type {Object<string, string[]>}
      */
     var TRANSITIONS = {
-        menu:         ['creation', 'saveload', 'settings', 'achievements'],
+        menu:         ['creation', 'saveload', 'settings', 'achievements', 'howtoplay'],
         creation:     ['cutscene', 'gameplay', 'menu'],
-        cutscene:     ['gameplay', 'combat'],
+        cutscene:     ['gameplay', 'combat', 'ending'],
         gameplay:     ['combat', 'inventory', 'map', 'settings', 'saveload',
-                       'cutscene', 'gameplay', 'skills', 'achievements'],
-        combat:       ['gameplay', 'cutscene'],
+                       'cutscene', 'gameplay', 'skills', 'achievements', 'journal', 'ending'],
+        combat:       ['gameplay', 'cutscene', 'ending'],
+        ending:       ['menu', 'saveload', 'creation'],
         inventory:    ['_back'],
         map:          ['_back'],
         settings:     ['_back'],
         saveload:     ['_back'],
         skills:       ['_back'],
-        achievements: ['_back']
+        achievements: ['_back'],
+        journal:      ['_back'],
+        howtoplay:    ['_back']
     };
 
     /**
@@ -64,7 +70,7 @@ window.Latency.StateMachine = (function () {
      * @type {Set<string>}
      */
     var OVERLAY_STATES = new Set([
-        'inventory', 'map', 'settings', 'saveload', 'skills', 'achievements'
+        'inventory', 'map', 'settings', 'saveload', 'skills', 'achievements', 'journal', 'howtoplay'
     ]);
 
     // -----------------------------------------------------------------------

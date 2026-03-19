@@ -709,6 +709,314 @@
 }
 
 /* ----------------------------------------------------------
+ * Screen shake on critical hits
+ * ---------------------------------------------------------- */
+
+@keyframes cbShake {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-3px, -1px); }
+    20% { transform: translate(3px, 1px); }
+    30% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    50% { transform: translate(-1px, 1px); }
+    60% { transform: translate(1px, -1px); }
+    70% { transform: translate(-2px, 0); }
+    80% { transform: translate(2px, 0); }
+    90% { transform: translate(-1px, 1px); }
+}
+
+.cb-shake {
+    animation: cbShake 0.3s ease-out;
+}
+
+/* ----------------------------------------------------------
+ * Floating damage numbers
+ * ---------------------------------------------------------- */
+
+@keyframes cbDmgFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    15% {
+        transform: translateY(-8px) scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.8);
+    }
+}
+
+.cb-dmg-number {
+    position: absolute;
+    pointer-events: none;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-weight: var(--weight-bold, 700);
+    font-size: var(--text-lg, 1.125rem);
+    letter-spacing: var(--tracking-wide, 0.05em);
+    z-index: var(--z-overlay, 50);
+    animation: cbDmgFloat 0.8s ease-out forwards;
+    white-space: nowrap;
+}
+
+.cb-dmg-dealt {
+    color: var(--color-success, #00ff88);
+    text-shadow: 0 0 6px rgba(0, 255, 136, 0.6);
+}
+
+.cb-dmg-taken {
+    color: var(--color-danger, #ff2d75);
+    text-shadow: 0 0 6px rgba(255, 45, 117, 0.6);
+}
+
+.cb-dmg-crit {
+    color: var(--accent-4, #ffd700);
+    text-shadow:
+        0 0 8px rgba(255, 215, 0, 0.7),
+        0 0 16px rgba(255, 215, 0, 0.4);
+    font-size: var(--text-xl, 1.5rem);
+    letter-spacing: var(--tracking-wider, 0.1em);
+}
+
+.cb-dmg-heal {
+    color: var(--accent-2, #00d4ff);
+    text-shadow: 0 0 6px rgba(0, 212, 255, 0.5);
+}
+
+/* ----------------------------------------------------------
+ * HP bar smooth transition + big-hit flash
+ * ---------------------------------------------------------- */
+
+.cb-hp-bar,
+.cb-sta-bar {
+    transition: color var(--transition-normal, 200ms ease);
+}
+
+@keyframes cbBarFlash {
+    0% { text-shadow: 0 0 12px rgba(255, 45, 117, 0.9); }
+    50% { text-shadow: 0 0 4px rgba(255, 45, 117, 0.3); }
+    100% { text-shadow: none; }
+}
+
+.cb-bar-flash {
+    animation: cbBarFlash 0.5s ease-out;
+}
+
+/* ----------------------------------------------------------
+ * Status effect tag entrance
+ * ---------------------------------------------------------- */
+
+@keyframes cbTagIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-4px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.cb-effect-tag {
+    animation: cbTagIn 0.2s ease-out;
+}
+
+/* ----------------------------------------------------------
+ * Turn indicator banner
+ * ---------------------------------------------------------- */
+
+@keyframes cbBannerSlide {
+    0% {
+        transform: translateX(-105%);
+        opacity: 0;
+    }
+    15% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    85% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(105%);
+        opacity: 0;
+    }
+}
+
+.cb-turn-banner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -20px;
+    text-align: center;
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: var(--text-lg, 1.125rem);
+    font-weight: var(--weight-bold, 700);
+    letter-spacing: var(--tracking-widest, 0.2em);
+    text-transform: uppercase;
+    padding: var(--space-2, 0.5rem) 0;
+    z-index: var(--z-overlay, 50);
+    pointer-events: none;
+    animation: cbBannerSlide 1.2s ease-in-out forwards;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(10, 10, 15, 0.85) 20%,
+        rgba(10, 10, 15, 0.85) 80%,
+        transparent 100%
+    );
+}
+
+.cb-turn-banner-player {
+    color: var(--text-primary, #00ff88);
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+    border-top: 1px solid rgba(0, 255, 136, 0.3);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.cb-turn-banner-enemy {
+    color: var(--accent-3, #ff2d75);
+    text-shadow: 0 0 10px rgba(255, 45, 117, 0.6);
+    border-top: 1px solid rgba(255, 45, 117, 0.3);
+    border-bottom: 1px solid rgba(255, 45, 117, 0.3);
+}
+
+/* ----------------------------------------------------------
+ * Victory animation enhancements
+ * ---------------------------------------------------------- */
+
+@keyframes cbXpTick {
+    0% { opacity: 0; transform: scale(0.7); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.cb-xp-tick {
+    animation: cbXpTick 0.3s ease-out;
+}
+
+@keyframes cbLootReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cb-loot-reveal {
+    animation: cbLootReveal 0.3s ease-out both;
+}
+
+.cb-victory-overlay .cb-overlay-title {
+    animation: cbVictoryGlow 2s ease-in-out infinite, cbVictoryEnter 0.6s ease-out;
+}
+
+@keyframes cbVictoryEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: blur(4px);
+    }
+    60% {
+        transform: scale(1.08);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ----------------------------------------------------------
+ * Defeat animation: red wash, CRT static, SIGNAL LOST
+ * ---------------------------------------------------------- */
+
+.cb-defeat-overlay {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 0, 0, 0.03) 2px,
+            rgba(255, 0, 0, 0.03) 4px
+        ),
+        var(--bg-overlay, rgba(10, 10, 15, 0.85));
+}
+
+@keyframes cbStaticNoise {
+    0% { background-position: 0 0; }
+    25% { background-position: -10px 10px; }
+    50% { background-position: 10px -10px; }
+    75% { background-position: -5px -5px; }
+    100% { background-position: 0 0; }
+}
+
+.cb-defeat-static {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    animation: cbStaticNoise 0.15s steps(4) infinite;
+    mix-blend-mode: screen;
+    z-index: 1;
+}
+
+@keyframes cbSignalLost {
+    0% {
+        opacity: 0;
+        letter-spacing: 0.6em;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0.6;
+        letter-spacing: 0.2em;
+    }
+    70% {
+        opacity: 1;
+        letter-spacing: 0.2em;
+    }
+    100% {
+        opacity: 1;
+        letter-spacing: 0.2em;
+    }
+}
+
+.cb-signal-lost {
+    font-size: var(--text-2xl, 2rem);
+    font-weight: var(--weight-bold, 700);
+    color: var(--color-danger, #ff2d75);
+    text-shadow:
+        0 0 20px rgba(255, 45, 117, 0.6),
+        0 0 40px rgba(255, 45, 117, 0.3);
+    letter-spacing: var(--tracking-widest, 0.2em);
+    animation: cbSignalLost 1.5s ease-out forwards,
+               cbDefeatFlicker 0.15s infinite;
+    z-index: 2;
+}
+
+@keyframes cbRedWash {
+    0% { box-shadow: inset 0 0 0 rgba(255, 0, 0, 0); }
+    30% { box-shadow: inset 0 0 80px rgba(255, 0, 0, 0.3); }
+    100% { box-shadow: inset 0 0 40px rgba(255, 0, 0, 0.15); }
+}
+
+.cb-defeat-overlay.cb-overlay-visible {
+    animation: cbRedWash 1s ease-out forwards;
+}
+
+/* ----------------------------------------------------------
  * Responsive adjustments
  * ---------------------------------------------------------- */
 
