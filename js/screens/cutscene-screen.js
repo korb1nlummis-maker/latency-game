@@ -174,12 +174,11 @@ window.Latency.Screens.CutsceneScreen = (function () {
     }
 
     function _skipTypewriter() {
-        if (_typewriterRunning && _typewriterCancel) {
-            _cancelTypewriter();
-            // Instantly show full text
-            if (_els.narrativeText && _els.narrativeText.getAttribute('data-full-text')) {
-                _els.narrativeText.innerHTML = _els.narrativeText.getAttribute('data-full-text');
-            }
+        if (_typewriterRunning && window.Latency.Typewriter) {
+            // Use Typewriter's own skip — it fires onComplete which triggers _onTextComplete
+            window.Latency.Typewriter.skip();
+            _typewriterRunning = false;
+            _typewriterCancel = null;
             return true;
         }
         return false;
@@ -434,11 +433,28 @@ window.Latency.Screens.CutsceneScreen = (function () {
             _els.narrativeText.innerHTML = '';
         }
 
-        // Render ASCII art (if provided)
+        // Render art (ASCII text or image, if provided)
         if (slide.art && _els.asciiArea) {
             _els.asciiArea.style.display = 'block';
 
-            if (window.Latency.AsciiRenderer && window.Latency.AsciiRenderer.renderFromFile) {
+            // Check if art path is an image file
+            var artPath = slide.art.toLowerCase();
+            var isImage = artPath.endsWith('.png') || artPath.endsWith('.jpg') ||
+                          artPath.endsWith('.jpeg') || artPath.endsWith('.webp');
+
+            if (isImage) {
+                // Render as <img> with cyberpunk styling
+                var imgContainer = _el('div', 'cs-art-image');
+                var img = document.createElement('img');
+                img.src = slide.art;
+                img.alt = slide.speaker ? slide.speaker : 'Cutscene';
+                img.className = 'ascii-art-image';
+                img.onload = function () {
+                    img.style.opacity = '1';
+                };
+                imgContainer.appendChild(img);
+                _els.asciiArea.appendChild(imgContainer);
+            } else if (window.Latency.AsciiRenderer && window.Latency.AsciiRenderer.renderFromFile) {
                 window.Latency.AsciiRenderer.renderFromFile(
                     _els.asciiArea,
                     slide.art,

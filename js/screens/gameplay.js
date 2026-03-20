@@ -40,6 +40,7 @@ window.Latency.Screens.Gameplay = (function () {
     var _unsubs = [];          // EventBus unsubscribe functions
     var _typewriterCancel = null;  // cancel function from Latency.Typewriter
     var _typewriterRunning = false;
+    var _pendingChoices = null;    // choices waiting to render after typewriter
     var _pendingTimers = [];       // tracked setTimeout IDs for cleanup
     var _lastDisplayedNodeId = null; // Track last displayed node to avoid re-typing on remount
 
@@ -969,14 +970,9 @@ window.Latency.Screens.Gameplay = (function () {
     }
 
     function _skipTypewriter() {
-        if (_typewriterRunning && _typewriterCancel) {
-            _cancelTypewriter();
-            // Instantly show full text
-            var el = _els.narrativeText;
-            if (el && el.getAttribute('data-full-text')) {
-                el.textContent = el.getAttribute('data-full-text');
-                el.scrollTop = el.scrollHeight;
-            }
+        if (_typewriterRunning && window.Latency.Typewriter) {
+            // Use Typewriter's own skip — it fires onComplete which renders choices
+            window.Latency.Typewriter.skip();
         }
     }
 
@@ -1026,12 +1022,17 @@ window.Latency.Screens.Gameplay = (function () {
         }
 
         // Typewriter the narrative text
+        // Store choices so skip can render them immediately
+        _pendingChoices = node.choices || [];
+
         if (_els.narrativeText && textContent) {
             _els.narrativeText.setAttribute('data-full-text', textContent);
             _typewrite(_els.narrativeText, textContent, function () {
+                _pendingChoices = null;
                 _renderChoices(node.choices || []);
             });
         } else if (node.choices) {
+            _pendingChoices = null;
             _renderChoices(node.choices);
         }
     }
