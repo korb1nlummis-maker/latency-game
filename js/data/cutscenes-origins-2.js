@@ -25,6 +25,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/foundry.jpg',
                 text: 'The barracks smelled like machine oil and sweat. Forty bunks, reinforced steel frames rated for half a ton each. You slept in Row G, Bunk 12. That was your name for the first eight years of your life. G-12. The number was stenciled on your coveralls, your meal tray, and the inside of your wrist.',
                 mood: 'dark',
                 duration: 0
@@ -89,6 +90,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/memory-clinic.jpg',
                 text: 'The first replacement was medical. A shattered forearm from a factory press, bones turned to gravel in an instant. The company surgeon offered you two choices: a six-month recovery with a seventy percent functionality prognosis, or a mechanical arm installed by Thursday. You were back on the line by Friday.',
                 mood: 'dark',
                 duration: 0
@@ -158,6 +160,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/warehouse-district.jpg',
                 text: 'The warehouse is full of others like you. Rows and rows of them, standing still, eyes open, waiting for instructions. You watch one of them get activated by a technician. It smiles on command. It recites its service parameters. It walks toward the loading dock with the smooth, purposeful gait of something that knows exactly what it is. You envy it so fiercely your chassis aches.',
                 mood: 'dark',
                 duration: 0
@@ -248,6 +251,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/void-rift.jpg',
                 text: 'The void speaks in colors that do not exist. It shows you the shape of the rift — not the sealed scar in Sector 19, but the real rift, the one that lives in you, in your blood, in the space between your heartbeats. You are not contaminated. You are connected. The darkness is not a disease. It is a door, and it has been open your entire life.',
                 mood: 'dark',
                 duration: 0
@@ -291,6 +295,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/slum-street.jpg',
                 text: 'Colors taste like things here. Red is copper and urgency. Blue is distance and salt. The neon signs of the megacity are an assault — a screaming, overlapping synesthesia that makes your elongated skull throb and your luminous eyes narrow to slits. You wear dark glasses. People think it is an affectation. It is survival.',
                 mood: 'blue',
                 duration: 0

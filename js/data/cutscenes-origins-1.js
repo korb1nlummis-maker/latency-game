@@ -92,6 +92,7 @@ window.Latency.CutsceneData['origin_orc'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/foundry.jpg',
             text: 'Your earliest memory is the color orange. Not a sunset. Not a flower. The blinding, liquid orange of molten metal as it pours from the crucible into the casting mold, close enough to feel the skin on your face tighten. Your mother shields you with her body. The slag splashes. She does not flinch. She never flinches.',
             mood: 'dark',
             duration: 0
@@ -163,6 +164,7 @@ window.Latency.CutsceneData['origin_wood_elf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/forest-ruins.jpg',
             text: 'The grove is a cathedral of green light filtering through a canopy that took decades to grow. At its heart stands the Mother Tree, a mutant oak whose roots have threaded through three sublevels of abandoned infrastructure, drawing nutrients from the chemical soup beneath the city. Your elders say she is alive in ways that go beyond biology. You believe them. You have felt her pulse through the soles of your bare feet since before you could walk.',
             mood: 'peaceful',
             duration: 0
@@ -234,6 +236,7 @@ window.Latency.CutsceneData['origin_dark_elf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/tunnel-network.jpg',
             text: 'The crèche is a long, lightless hall where dark elf children learn to navigate by sound, by touch, by the faint currents of air that map the tunnel network like a circulatory system. You crawl before you walk. You listen before you speak. By the time you are three, you can identify twenty-seven different tunnel junctions by the echo pattern of a dropped stone. The dark is not empty. It is full of information for those who know how to read it.',
             mood: 'dark',
             duration: 0
@@ -305,6 +308,7 @@ window.Latency.CutsceneData['origin_dwarf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/engineering-workshop.jpg',
             text: 'The engineering commune of Deephold sits in the lower industrial sector, carved into the foundations the dwarves themselves poured a hundred years ago. Every pipe in the district bears dwarf maker\'s marks. Every junction box has a dwarf serial number stamped into its casing. Your people built the geothermal grid that powers the eastern half of the megacity. They designed the water filtration system that keeps twelve million people alive. They invented the memory stack. They have the blueprints to prove it.',
             mood: 'neutral',
             duration: 0
