@@ -8,7 +8,7 @@
     "nodes": {
 
         "fac_iron_001": {
-            "id": "act1.chapter2.fac_iron_001",
+            "id": "act1.chapter2-iron-neon.fac_iron_001",
             "title": "Summons in Rust",
             "location": "lower_slums",
             "text": [
@@ -25,11 +25,11 @@
             "choices": [
                 {
                     "text": "Go to the Foundry tonight.",
-                    "next": "act1.chapter2.fac_iron_002"
+                    "next": "act1.chapter2-iron-neon.fac_iron_002"
                 },
                 {
                     "text": "Ignore it. You have enough problems.",
-                    "next": "act1.chapter2.fac_iron_003"
+                    "next": "act1.chapter2-iron-neon.fac_iron_003"
                 }
             ],
             "ascii": null,
@@ -38,7 +38,7 @@
         },
 
         "fac_iron_002": {
-            "id": "act1.chapter2.fac_iron_002",
+            "id": "act1.chapter2-iron-neon.fac_iron_002",
             "title": "The Foundry",
             "location": "the_foundry",
             "text": [
@@ -53,7 +53,7 @@
             "choices": [
                 {
                     "text": "Meet her gaze.",
-                    "next": "act1.chapter2.fac_iron_004"
+                    "next": "act1.chapter2-iron-neon.fac_iron_004"
                 }
             ],
             "ascii": "assets/ascii/locations/foundry.txt",
@@ -62,7 +62,7 @@
         },
 
         "fac_iron_003": {
-            "id": "act1.chapter2.fac_iron_003",
+            "id": "act1.chapter2-iron-neon.fac_iron_003",
             "title": "You Can't Ignore the Iron",
             "location": "lower_slums",
             "text": [
@@ -75,11 +75,11 @@
             "choices": [
                 {
                     "text": "Fine. Go to the Foundry.",
-                    "next": "act1.chapter2.fac_iron_002"
+                    "next": "act1.chapter2-iron-neon.fac_iron_002"
                 },
                 {
                     "text": "Walk away. For real this time.",
-                    "next": "act1.chapter2.fac_iron_015",
+                    "next": "act1.chapter2-iron-neon.fac_iron_015",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.refused_iron", "value": true }
                     ]
@@ -91,7 +91,7 @@
         },
 
         "fac_iron_004": {
-            "id": "act1.chapter2.fac_iron_004",
+            "id": "act1.chapter2-iron-neon.fac_iron_004",
             "title": "Commander Vex",
             "location": "the_foundry",
             "text": [
@@ -106,11 +106,11 @@
             "choices": [
                 {
                     "text": "\"What do you need me to do?\"",
-                    "next": "act1.chapter2.fac_iron_005"
+                    "next": "act1.chapter2-iron-neon.fac_iron_005"
                 },
                 {
                     "text": "\"Convince me this isn't just another faction using people.\"",
-                    "next": "act1.chapter2.fac_iron_006"
+                    "next": "act1.chapter2-iron-neon.fac_iron_006"
                 }
             ],
             "ascii": "assets/ascii/npcs/vex.txt",
@@ -119,7 +119,7 @@
         },
 
         "fac_iron_005": {
-            "id": "act1.chapter2.fac_iron_005",
+            "id": "act1.chapter2-iron-neon.fac_iron_005",
             "title": "The Mission",
             "location": "the_foundry",
             "text": [
@@ -136,11 +136,11 @@
             "choices": [
                 {
                     "text": "\"I'm in. Tell me the plan.\"",
-                    "next": "act1.chapter2.fac_iron_007"
+                    "next": "act1.chapter2-iron-neon.fac_iron_007"
                 },
                 {
                     "text": "\"Shut it down how, exactly?\"",
-                    "next": "act1.chapter2.fac_iron_007"
+                    "next": "act1.chapter2-iron-neon.fac_iron_007"
                 }
             ],
             "ascii": null,
@@ -149,7 +149,7 @@
         },
 
         "fac_iron_006": {
-            "id": "act1.chapter2.fac_iron_006",
+            "id": "act1.chapter2-iron-neon.fac_iron_006",
             "title": "The Pitch",
             "location": "the_foundry",
             "text": [
@@ -165,7 +165,7 @@
             "choices": [
                 {
                     "text": "Listen to the mission.",
-                    "next": "act1.chapter2.fac_iron_005"
+                    "next": "act1.chapter2-iron-neon.fac_iron_005"
                 }
             ],
             "ascii": null,
@@ -174,7 +174,7 @@
         },
 
         "fac_iron_007": {
-            "id": "act1.chapter2.fac_iron_007",
+            "id": "act1.chapter2-iron-neon.fac_iron_007",
             "title": "The Complication",
             "location": "the_foundry",
             "text": [
@@ -191,11 +191,11 @@
             "choices": [
                 {
                     "text": "\"There has to be another way.\"",
-                    "next": "act1.chapter2.fac_iron_008"
+                    "next": "act1.chapter2-iron-neon.fac_iron_008"
                 },
                 {
                     "text": "\"How many civilians are we talking about?\"",
-                    "next": "act1.chapter2.fac_iron_008"
+                    "next": "act1.chapter2-iron-neon.fac_iron_008"
                 }
             ],
             "ascii": null,
@@ -204,7 +204,7 @@
         },
 
         "fac_iron_008": {
-            "id": "act1.chapter2.fac_iron_008",
+            "id": "act1.chapter2-iron-neon.fac_iron_008",
             "title": "The Weight of It",
             "location": "the_foundry",
             "text": [
@@ -218,11 +218,11 @@
             "choices": [
                 {
                     "text": "\"I'll do it. The harvesting has to stop, whatever the cost.\"",
-                    "next": "act1.chapter2.fac_iron_009"
+                    "next": "act1.chapter2-iron-neon.fac_iron_009"
                 },
                 {
                     "text": "\"I'll go in, but I want to try something different.\"",
-                    "next": "act1.chapter2.fac_iron_010"
+                    "next": "act1.chapter2-iron-neon.fac_iron_010"
                 }
             ],
             "ascii": null,
@@ -231,7 +231,7 @@
         },
 
         "fac_iron_009": {
-            "id": "act1.chapter2.fac_iron_009",
+            "id": "act1.chapter2-iron-neon.fac_iron_009",
             "title": "Into the Clinic — Full Sabotage",
             "location": "stack_clinic",
             "text": [
@@ -249,11 +249,11 @@
             "choices": [
                 {
                     "text": "Find the security room and disable cameras first.",
-                    "next": "act1.chapter2.fac_iron_011"
+                    "next": "act1.chapter2-iron-neon.fac_iron_011"
                 },
                 {
                     "text": "Head straight for the charge detonator.",
-                    "next": "act1.chapter2.fac_iron_011"
+                    "next": "act1.chapter2-iron-neon.fac_iron_011"
                 }
             ],
             "ascii": null,
@@ -262,7 +262,7 @@
         },
 
         "fac_iron_010": {
-            "id": "act1.chapter2.fac_iron_010",
+            "id": "act1.chapter2-iron-neon.fac_iron_010",
             "title": "Into the Clinic — Selective Approach",
             "location": "stack_clinic",
             "text": [
@@ -284,7 +284,7 @@
             "choices": [
                 {
                     "text": "Head for the clinic.",
-                    "next": "act1.chapter2.fac_iron_011"
+                    "next": "act1.chapter2-iron-neon.fac_iron_011"
                 }
             ],
             "ascii": null,
@@ -293,7 +293,7 @@
         },
 
         "fac_iron_011": {
-            "id": "act1.chapter2.fac_iron_011",
+            "id": "act1.chapter2-iron-neon.fac_iron_011",
             "title": "Basement Level",
             "location": "stack_clinic",
             "text": [
@@ -310,7 +310,7 @@
             "choices": [
                 {
                     "text": "Push deeper into the basement.",
-                    "next": "act1.chapter2.fac_iron_012"
+                    "next": "act1.chapter2-iron-neon.fac_iron_012"
                 }
             ],
             "ascii": null,
@@ -319,7 +319,7 @@
         },
 
         "fac_iron_012": {
-            "id": "act1.chapter2.fac_iron_012",
+            "id": "act1.chapter2-iron-neon.fac_iron_012",
             "title": "The Detonator",
             "location": "stack_clinic",
             "text": [
@@ -335,8 +335,8 @@
             "choices": [
                 {
                     "text": "Fight through the guards.",
-                    "next": "act1.chapter2.fac_iron_013",
-                    "skillCheck": { "stat": "STR", "dc": 13, "failNext": "act1.chapter2.fac_iron_013" }
+                    "next": "act1.chapter2-iron-neon.fac_iron_013",
+                    "skillCheck": { "stat": "STR", "dc": 13, "failNext": "act1.chapter2-iron-neon.fac_iron_013" }
                 }
             ],
             "ascii": null,
@@ -345,7 +345,7 @@
         },
 
         "fac_iron_013": {
-            "id": "act1.chapter2.fac_iron_013",
+            "id": "act1.chapter2-iron-neon.fac_iron_013",
             "title": "The Detonation",
             "location": "stack_clinic",
             "text": [
@@ -362,7 +362,7 @@
             "choices": [
                 {
                     "text": "Drag yourself out of the rubble.",
-                    "next": "act1.chapter2.fac_iron_014"
+                    "next": "act1.chapter2-iron-neon.fac_iron_014"
                 }
             ],
             "ascii": null,
@@ -371,7 +371,7 @@
         },
 
         "fac_iron_014": {
-            "id": "act1.chapter2.fac_iron_014",
+            "id": "act1.chapter2-iron-neon.fac_iron_014",
             "title": "Aftermath",
             "location": "the_foundry",
             "text": [
@@ -391,7 +391,7 @@
             "choices": [
                 {
                     "text": "Accept the Iron Collective's mark.",
-                    "next": "act1.chapter2.fac_iron_015",
+                    "next": "act1.chapter2-iron-neon.fac_iron_015",
                     "onSelect": [
                         { "type": "set_flag", "flag": "faction.iron_joined", "value": true },
                         { "type": "modify_reputation", "faction": "ironCollective", "amount": 10 }
@@ -399,7 +399,7 @@
                 },
                 {
                     "text": "Walk away. The mission is done. You owe them nothing more.",
-                    "next": "act1.chapter2.fac_iron_015",
+                    "next": "act1.chapter2-iron-neon.fac_iron_015",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.iron_walked_away", "value": true }
                     ]
@@ -411,7 +411,7 @@
         },
 
         "fac_iron_015": {
-            "id": "act1.chapter2.fac_iron_015",
+            "id": "act1.chapter2-iron-neon.fac_iron_015",
             "title": "Iron Ledger",
             "location": "lower_slums",
             "text": [
@@ -429,7 +429,7 @@
             "choices": [
                 {
                     "text": "Continue to the Neon Court arc.",
-                    "next": "act1.chapter2.fac_neon_001"
+                    "next": "act1.chapter2-iron-neon.fac_neon_001"
                 }
             ],
             "ascii": null,
@@ -438,7 +438,7 @@
         },
 
         "fac_neon_001": {
-            "id": "act1.chapter2.fac_neon_001",
+            "id": "act1.chapter2-iron-neon.fac_neon_001",
             "title": "The Invitation",
             "location": "neon_strip",
             "text": [
@@ -456,11 +456,11 @@
             "choices": [
                 {
                     "text": "Go to The Spire at midnight.",
-                    "next": "act1.chapter2.fac_neon_002"
+                    "next": "act1.chapter2-iron-neon.fac_neon_002"
                 },
                 {
                     "text": "Tear up the invitation.",
-                    "next": "act1.chapter2.fac_neon_003"
+                    "next": "act1.chapter2-iron-neon.fac_neon_003"
                 }
             ],
             "ascii": null,
@@ -469,7 +469,7 @@
         },
 
         "fac_neon_002": {
-            "id": "act1.chapter2.fac_neon_002",
+            "id": "act1.chapter2-iron-neon.fac_neon_002",
             "title": "The Spire",
             "location": "the_spire",
             "text": [
@@ -485,12 +485,12 @@
             "choices": [
                 {
                     "text": "Take the drink.",
-                    "next": "act1.chapter2.fac_neon_004"
+                    "next": "act1.chapter2-iron-neon.fac_neon_004"
                 },
                 {
                     "text": "Decline politely. You didn't survive the lower city by accepting drinks from strangers.",
-                    "next": "act1.chapter2.fac_neon_005",
-                    "skillCheck": { "stat": "CHA", "dc": 13, "failNext": "act1.chapter2.fac_neon_004" }
+                    "next": "act1.chapter2-iron-neon.fac_neon_005",
+                    "skillCheck": { "stat": "CHA", "dc": 13, "failNext": "act1.chapter2-iron-neon.fac_neon_004" }
                 }
             ],
             "ascii": "assets/ascii/locations/spire.txt",
@@ -499,7 +499,7 @@
         },
 
         "fac_neon_003": {
-            "id": "act1.chapter2.fac_neon_003",
+            "id": "act1.chapter2-iron-neon.fac_neon_003",
             "title": "The Invitation Persists",
             "location": "neon_strip",
             "text": [
@@ -513,11 +513,11 @@
             "choices": [
                 {
                     "text": "Go to The Spire. On your terms.",
-                    "next": "act1.chapter2.fac_neon_002"
+                    "next": "act1.chapter2-iron-neon.fac_neon_002"
                 },
                 {
                     "text": "Leave town tonight. This is above your pay grade.",
-                    "next": "act1.chapter2.fac_neon_015",
+                    "next": "act1.chapter2-iron-neon.fac_neon_015",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.refused_neon", "value": true }
                     ]
@@ -529,7 +529,7 @@
         },
 
         "fac_neon_004": {
-            "id": "act1.chapter2.fac_neon_004",
+            "id": "act1.chapter2-iron-neon.fac_neon_004",
             "title": "The Drug",
             "location": "the_spire",
             "text": [
@@ -546,7 +546,7 @@
             "choices": [
                 {
                     "text": "Darkness takes you.",
-                    "next": "act1.chapter2.fac_neon_006"
+                    "next": "act1.chapter2-iron-neon.fac_neon_006"
                 }
             ],
             "ascii": "assets/ascii/npcs/luminara.txt",
@@ -555,7 +555,7 @@
         },
 
         "fac_neon_005": {
-            "id": "act1.chapter2.fac_neon_005",
+            "id": "act1.chapter2-iron-neon.fac_neon_005",
             "title": "The Refusal — Barely",
             "location": "the_spire",
             "text": [
@@ -574,12 +574,12 @@
             "choices": [
                 {
                     "text": "\"What do you want from me?\"",
-                    "next": "act1.chapter2.fac_neon_007"
+                    "next": "act1.chapter2-iron-neon.fac_neon_007"
                 },
                 {
                     "text": "\"Flattery and poison. You sure know how to welcome a guest.\"",
-                    "next": "act1.chapter2.fac_neon_007",
-                    "skillCheck": { "stat": "CHA", "dc": 14, "failNext": "act1.chapter2.fac_neon_007" }
+                    "next": "act1.chapter2-iron-neon.fac_neon_007",
+                    "skillCheck": { "stat": "CHA", "dc": 14, "failNext": "act1.chapter2-iron-neon.fac_neon_007" }
                 }
             ],
             "ascii": "assets/ascii/npcs/luminara.txt",
@@ -588,7 +588,7 @@
         },
 
         "fac_neon_006": {
-            "id": "act1.chapter2.fac_neon_006",
+            "id": "act1.chapter2-iron-neon.fac_neon_006",
             "title": "Waking in Debt",
             "location": "the_spire",
             "text": [
@@ -607,11 +607,11 @@
             "choices": [
                 {
                     "text": "Listen. You don't have a choice.",
-                    "next": "act1.chapter2.fac_neon_008"
+                    "next": "act1.chapter2-iron-neon.fac_neon_008"
                 },
                 {
                     "text": "\"I'll hear you out. Then I'm burning that contract.\"",
-                    "next": "act1.chapter2.fac_neon_008"
+                    "next": "act1.chapter2-iron-neon.fac_neon_008"
                 }
             ],
             "ascii": null,
@@ -620,7 +620,7 @@
         },
 
         "fac_neon_007": {
-            "id": "act1.chapter2.fac_neon_007",
+            "id": "act1.chapter2-iron-neon.fac_neon_007",
             "title": "The Archon's Proposition",
             "location": "the_spire",
             "text": [
@@ -635,12 +635,12 @@
             "choices": [
                 {
                     "text": "\"Let me see the message first.\"",
-                    "next": "act1.chapter2.fac_neon_008"
+                    "next": "act1.chapter2-iron-neon.fac_neon_008"
                 },
                 {
                     "text": "\"Why can't you send your own people?\"",
-                    "next": "act1.chapter2.fac_neon_008",
-                    "skillCheck": { "stat": "CHA", "dc": 13, "failNext": "act1.chapter2.fac_neon_008" }
+                    "next": "act1.chapter2-iron-neon.fac_neon_008",
+                    "skillCheck": { "stat": "CHA", "dc": 13, "failNext": "act1.chapter2-iron-neon.fac_neon_008" }
                 }
             ],
             "ascii": null,
@@ -649,7 +649,7 @@
         },
 
         "fac_neon_008": {
-            "id": "act1.chapter2.fac_neon_008",
+            "id": "act1.chapter2-iron-neon.fac_neon_008",
             "title": "The Message",
             "location": "the_spire",
             "text": [
@@ -667,12 +667,12 @@
             "choices": [
                 {
                     "text": "Take the chip to Commander Vex. A job is a job.",
-                    "next": "act1.chapter2.fac_neon_009"
+                    "next": "act1.chapter2-iron-neon.fac_neon_009"
                 },
                 {
                     "text": "Try to crack the encryption before delivering it.",
-                    "next": "act1.chapter2.fac_neon_010",
-                    "skillCheck": { "stat": "INT", "dc": 15, "failNext": "act1.chapter2.fac_neon_009" }
+                    "next": "act1.chapter2-iron-neon.fac_neon_010",
+                    "skillCheck": { "stat": "INT", "dc": 15, "failNext": "act1.chapter2-iron-neon.fac_neon_009" }
                 }
             ],
             "ascii": null,
@@ -681,7 +681,7 @@
         },
 
         "fac_neon_009": {
-            "id": "act1.chapter2.fac_neon_009",
+            "id": "act1.chapter2-iron-neon.fac_neon_009",
             "title": "The Delivery",
             "location": "the_foundry",
             "text": [
@@ -700,12 +700,12 @@
             "choices": [
                 {
                     "text": "\"I didn't know. She told me it was a peace offer.\"",
-                    "next": "act1.chapter2.fac_neon_011"
+                    "next": "act1.chapter2-iron-neon.fac_neon_011"
                 },
                 {
                     "text": "\"I suspected. I brought it anyway so you'd know what she has on you.\"",
-                    "next": "act1.chapter2.fac_neon_011",
-                    "skillCheck": { "stat": "CHA", "dc": 15, "failNext": "act1.chapter2.fac_neon_011" }
+                    "next": "act1.chapter2-iron-neon.fac_neon_011",
+                    "skillCheck": { "stat": "CHA", "dc": 15, "failNext": "act1.chapter2-iron-neon.fac_neon_011" }
                 }
             ],
             "ascii": "assets/ascii/npcs/vex.txt",
@@ -714,7 +714,7 @@
         },
 
         "fac_neon_010": {
-            "id": "act1.chapter2.fac_neon_010",
+            "id": "act1.chapter2-iron-neon.fac_neon_010",
             "title": "The Truth Inside",
             "location": "lower_slums",
             "text": [
@@ -732,16 +732,16 @@
             "choices": [
                 {
                     "text": "Deliver the message to Vex anyway. She needs to know what Luminara has.",
-                    "next": "act1.chapter2.fac_neon_012"
+                    "next": "act1.chapter2-iron-neon.fac_neon_012"
                 },
                 {
                     "text": "Warn the Iron Collective and burn the chip.",
-                    "next": "act1.chapter2.fac_neon_012"
+                    "next": "act1.chapter2-iron-neon.fac_neon_012"
                 },
                 {
                     "text": "Play both sides. Deliver a modified version to Vex and tell Luminara you completed the job.",
-                    "next": "act1.chapter2.fac_neon_013",
-                    "skillCheck": { "stat": "DEX", "dc": 14, "failNext": "act1.chapter2.fac_neon_012" }
+                    "next": "act1.chapter2-iron-neon.fac_neon_013",
+                    "skillCheck": { "stat": "DEX", "dc": 14, "failNext": "act1.chapter2-iron-neon.fac_neon_012" }
                 }
             ],
             "ascii": null,
@@ -750,7 +750,7 @@
         },
 
         "fac_neon_011": {
-            "id": "act1.chapter2.fac_neon_011",
+            "id": "act1.chapter2-iron-neon.fac_neon_011",
             "title": "Vex's Judgment",
             "location": "the_foundry",
             "text": [
@@ -766,7 +766,7 @@
             "choices": [
                 {
                     "text": "Help the Iron Collective rebuild their network. You owe them that much.",
-                    "next": "act1.chapter2.fac_neon_014",
+                    "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
                         { "type": "modify_reputation", "faction": "ironCollective", "amount": 10 },
                         { "type": "modify_reputation", "faction": "neonCourt", "amount": -15 },
@@ -775,7 +775,7 @@
                 },
                 {
                     "text": "Return to Luminara. You delivered the message. She owes you.",
-                    "next": "act1.chapter2.fac_neon_014",
+                    "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
                         { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
                         { "type": "modify_reputation", "faction": "ironCollective", "amount": -10 },
@@ -789,7 +789,7 @@
         },
 
         "fac_neon_012": {
-            "id": "act1.chapter2.fac_neon_012",
+            "id": "act1.chapter2-iron-neon.fac_neon_012",
             "title": "Choosing Sides",
             "location": "the_foundry",
             "text": [
@@ -809,14 +809,14 @@
             "choices": [
                 {
                     "text": "Accept the Collective's protection.",
-                    "next": "act1.chapter2.fac_neon_014",
+                    "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.iron_protection", "value": true }
                     ]
                 },
                 {
                     "text": "Walk your own path. You don't need a faction to survive.",
-                    "next": "act1.chapter2.fac_neon_014"
+                    "next": "act1.chapter2-iron-neon.fac_neon_014"
                 }
             ],
             "ascii": "assets/ascii/npcs/vex.txt",
@@ -825,7 +825,7 @@
         },
 
         "fac_neon_013": {
-            "id": "act1.chapter2.fac_neon_013",
+            "id": "act1.chapter2-iron-neon.fac_neon_013",
             "title": "Playing Both Sides",
             "location": "lower_slums",
             "text": [
@@ -844,14 +844,14 @@
             "choices": [
                 {
                     "text": "Pocket the real data. It might be useful later.",
-                    "next": "act1.chapter2.fac_neon_014",
+                    "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.has_neon_intelligence", "value": true }
                     ]
                 },
                 {
                     "text": "Destroy the original data. Some leverage is too dangerous to hold.",
-                    "next": "act1.chapter2.fac_neon_014",
+                    "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.destroyed_neon_intel", "value": true }
                     ]
@@ -863,7 +863,7 @@
         },
 
         "fac_neon_014": {
-            "id": "act1.chapter2.fac_neon_014",
+            "id": "act1.chapter2-iron-neon.fac_neon_014",
             "title": "The Court Remembers",
             "location": "neon_strip",
             "text": [
@@ -880,7 +880,7 @@
             "choices": [
                 {
                     "text": "Continue.",
-                    "next": "act1.chapter2.fac_neon_015"
+                    "next": "act1.chapter2-iron-neon.fac_neon_015"
                 }
             ],
             "ascii": null,
@@ -889,7 +889,7 @@
         },
 
         "fac_neon_015": {
-            "id": "act1.chapter2.fac_neon_015",
+            "id": "act1.chapter2-iron-neon.fac_neon_015",
             "title": "Two Factions, One City",
             "location": "lower_slums",
             "text": [

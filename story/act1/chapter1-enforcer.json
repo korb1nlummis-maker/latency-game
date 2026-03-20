@@ -855,7 +855,7 @@
             "choices": [
                 {
                     "text": "Take the patch and head out. Chapter 2 awaits.",
-                    "next": "act1.chapter2.node_001"
+                    "next": "act1.chapter2-iron-neon.node_001"
                 }
             ],
             "ascii": null,

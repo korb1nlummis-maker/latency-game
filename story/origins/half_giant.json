@@ -1,0 +1,1846 @@
+{
+    "meta": {
+        "file": "origins/half_giant",
+        "act": 0,
+        "description": "Half-Giant origin story — Growing up too large for the world, finding family among outcasts"
+    },
+    "nodes": {
+        "hgnt_001": {
+            "id": "origins.half_giant.hgnt_001",
+            "title": "Too Big for This World",
+            "location": "lower_slums",
+            "text": [
+                "You wake up the way you always wake up: with your knees pressed against the wall and your head jammed against the ceiling. The cot they gave you at the shelter was built for humans. Everything in this city was built for humans. You are not human. You are nine feet and four inches of bone, muscle, and quiet desperation, folded into a space designed for someone half your size.",
+                "The shelter ceiling is seven feet high. You haven't stood fully upright indoors since you were twelve years old. That was six years ago. You've grown another two feet since then, and the world has not grown with you.",
+                "Morning sounds filter through the thin walls. The shelter is waking up: coughs, groans, the scrape of feet on concrete. Forty people crammed into a repurposed warehouse in the Lower District, sleeping on cots arranged in rows like a factory floor. You take up the space of three cots, which means two people didn't sleep last night.",
+                "They never say anything about it to your face. Nobody says anything to your face. They just look at the space you occupy, the food you consume, the doorways you can't fit through, and their silence says everything."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.started", "value": true},
+                {"type": "set_flag", "flag": "origin.race", "value": "half_giant"},
+                {"type": "set_flag", "flag": "origin.shelter_resident", "value": true}
+            ],
+            "choices": [
+                {"text": "Get up carefully. Try not to break anything.", "next": "origins.half_giant.hgnt_002"},
+                {"text": "Stay down a moment longer. Brace yourself for the day.", "next": "origins.half_giant.hgnt_003"}
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+
+        "hgnt_002": {
+            "id": "origins.half_giant.hgnt_002",
+            "title": "The Careful Giant",
+            "location": "lower_slums",
+            "text": [
+                "You swing your legs off the cot with the exaggerated care of someone defusing a bomb. Your feet find the floor. You press your palms against the ceiling and straighten your back in stages, vertebra by vertebra, until you're hunched at the maximum height the room allows.",
+                "The woman on the next cot flinches. She always flinches. It's not malice; it's reflex. You're the size of a transit vehicle and your shadow blocks out her light. You've learned to smile when people flinch, a small, closed-mouth smile that says I know, I'm sorry, I can't help what I am.",
+                "You navigate the shelter like a ship through a canal, turning sideways between cots, ducking under support beams, keeping your elbows tucked. One wrong move and you'll knock someone's possessions off their shelf, crack a support strut, step on something fragile. The fragile things in this world include almost everything and everyone.",
+                "The door to the outside is five feet wide. You have to turn sideways and duck to get through it. The doorframe has your shoulder marks worn into the wood from a thousand exits."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "dexterity", "amount": 1},
+                {"type": "set_flag", "flag": "origin.careful_nature", "value": true}
+            ],
+            "choices": [
+                {"text": "Head to the work site. They'll be expecting you.", "next": "origins.half_giant.hgnt_004"},
+                {"text": "Check the shelter's message board for new job postings.", "next": "origins.half_giant.hgnt_005"}
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+
+        "hgnt_003": {
+            "id": "origins.half_giant.hgnt_003",
+            "title": "The Weight of Morning",
+            "location": "lower_slums",
+            "text": [
+                "You lie still and stare at the ceiling that's too close and the walls that are too narrow and the world that was not built for you. There's a crack in the concrete above your head, branching like a river delta. You've memorized every branch. You see it every morning. It's the first thing you see and the last thing you see, this reminder that the structure around you is failing, slowly, the way everything in the Lower District fails.",
+                "Half-giant. That's what they call you. Not your name, which is yours and private and spoken only by people who matter. Half-giant, as if you're half of something, incomplete, defined by what you're not rather than what you are. Your mother was human. Your father was a giant, one of the last, dead before you were born, killed in the industrial collapse of Sector 12. You got his size and her heart, which means you're too big for the world and too soft for your own good.",
+                "Someone is crying three cots down. A child. You don't know whose. The crying is small and thin, the kind that expects no answer.",
+                "Your hands, each one larger than the child's entire torso, curl into fists at your sides. Not in anger. In helplessness. You could lift a car. You could punch through a wall. But you can't make a child stop crying without scaring them."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "set_flag", "flag": "origin.introspective", "value": true}
+            ],
+            "choices": [
+                {"text": "Try anyway. Go to the child. Be gentle.", "next": "origins.half_giant.hgnt_006"},
+                {"text": "Get up. Face the day. The world won't wait for you to feel ready.", "next": "origins.half_giant.hgnt_002"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_004": {
+            "id": "origins.half_giant.hgnt_004",
+            "title": "The Construction Site",
+            "location": "market_district",
+            "text": [
+                "The construction site occupies a full city block in the Market District. A new corporate tower is going up, fifty stories of glass and steel destined for mid-level executives who need an upgrade from their current mid-level tower. The irony of building luxury housing in a district where people sleep in shelters is not lost on anyone. It's just ignored.",
+                "You report to the foreman, a stout human named Greggs who looks at you the way people look at heavy machinery: with a mixture of utility and mild unease. 'You're on steel detail today,' he says, checking his datapad. 'Girders for the fourteenth floor. The crane's down, so you'll be carrying them up manually.'",
+                "Manually. That's a word that means something different when applied to you. Each girder weighs eight hundred pounds. A team of six workers with a pulley system could move one per hour. You can carry one under each arm and climb the scaffolding like a ladder.",
+                "That's why they hire you. Not for your mind. Not for your personality. For the weight you can lift. You are a body to them. A machine that eats food instead of fuel."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "strength", "amount": 1},
+                {"type": "set_flag", "flag": "origin.work_site", "value": true}
+            ],
+            "choices": [
+                {"text": "Do the work. You need the money.", "next": "origins.half_giant.hgnt_007"},
+                {"text": "'What's the pay for manual girder work? Double, right?'", "next": "origins.half_giant.hgnt_008"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_005": {
+            "id": "origins.half_giant.hgnt_005",
+            "title": "The Message Board",
+            "location": "lower_slums",
+            "text": [
+                "The shelter's message board is a piece of plywood bolted to the wall near the entrance, covered in handwritten notes, printed flyers, and the occasional threatening notice from a landlord. You have to kneel to read it, which puts your face at the same level as the notices and your knees on the cold floor.",
+                "CONSTRUCTION LABOR NEEDED — SECTOR 4. Must be able to lift 200+ lbs. It doesn't say 'half-giants preferred' but it doesn't need to.",
+                "WAREHOUSE SECURITY — NIGHT SHIFT. Must be physically imposing. There's a word for you: imposing. Not skilled. Not qualified. Imposing.",
+                "UNDERGROUND FIGHT LEAGUE — GOOD PAY, NO QUESTIONS. You've seen that flyer before. It appears every week, always fresh, always the same handwriting. You've never been tempted. But the pay is better than anything else on the board.",
+                "At the bottom, almost hidden by the other notices, a small card: MIRA'S KITCHEN — HELP WANTED. Cooking, cleaning, heavy lifting. Kind hearts welcome."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.checked_board", "value": true}
+            ],
+            "choices": [
+                {"text": "Take the construction job. It's reliable.", "next": "origins.half_giant.hgnt_004"},
+                {"text": "The kitchen job. 'Kind hearts welcome' is a phrase you've never seen on a job posting.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "The fight league. You hate the idea, but you need the money.", "next": "origins.half_giant.hgnt_010"}
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+
+        "hgnt_006": {
+            "id": "origins.half_giant.hgnt_006",
+            "title": "The Crying Child",
+            "location": "lower_slums",
+            "text": [
+                "You crawl. Not walk, crawl. On your hands and knees, slow and deliberate, making yourself as small as a nine-foot person can be. The concrete floor is cold through your clothes. Other shelter residents watch you from their cots, some curious, some alarmed.",
+                "The child is maybe four years old. Human. Sitting on a cot with no parent in sight, clutching a blanket that's more holes than fabric. Her face is wet with tears and her eyes go wide as planets when she sees you approaching.",
+                "You stop. Two meters away. Close enough to be present, far enough not to loom. You sit cross-legged on the floor, which still puts your head near the ceiling, and you pull something from your pocket: a piece of wire that you've been bending into shapes during sleepless nights. With your massive fingers, delicate as a surgeon's when you concentrate, you twist the wire into the shape of a bird.",
+                "You set it on the floor between you and the child. You don't say anything. You don't reach out. You just wait.",
+                "After a minute that feels like an hour, the child picks up the wire bird. She stops crying. She turns it over in her small hands, examining it with the gravity of a scientist studying a new element.",
+                "A woman appears, breathless. The child's mother. She sees you, sees the wire bird, and her face cycles through fear, confusion, and something that might be gratitude."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "modify_stat", "stat": "dexterity", "amount": 1},
+                {"type": "set_flag", "flag": "origin.comforted_child", "value": true}
+            ],
+            "choices": [
+                {"text": "Smile at the mother. Stand slowly. Head to work.", "next": "origins.half_giant.hgnt_004"},
+                {"text": "'She's okay. She just needed company.'", "next": "origins.half_giant.hgnt_011"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_007": {
+            "id": "origins.half_giant.hgnt_007",
+            "title": "Beast of Burden",
+            "location": "market_district",
+            "text": [
+                "Eight hundred pounds per girder. Two girders per trip. Fourteen floors of scaffolding that groans under your weight but holds, barely. Up and down, up and down, your legs burning, your shoulders screaming, your hands leaving imprints in the steel where you grip too hard.",
+                "The other workers watch from below. Some with admiration. Some with the same expression people have at the zoo, watching something large and exotic perform. One of them takes a video on his comm unit. You pretend not to see it.",
+                "By noon you've moved thirty-two girders. The equivalent of a week's work for a normal crew. Greggs marks it on his datapad with the satisfaction of a man who's getting a bargain. Your pay for today is the same as any other laborer. The fact that you do ten times the work doesn't factor into the equation.",
+                "During your break, you sit on a pile of concrete blocks and eat the protein rations that barely make a dent in your caloric needs. A nine-foot body burns fuel like a furnace. You're always hungry. Always."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "strength", "amount": 2},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "add_experience", "amount": 10}
+            ],
+            "choices": [
+                {"text": "Keep working. Finish the day.", "next": "origins.half_giant.hgnt_012"},
+                {"text": "During the break, talk to the other workers.", "next": "origins.half_giant.hgnt_013"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_008": {
+            "id": "origins.half_giant.hgnt_008",
+            "title": "Negotiation",
+            "location": "market_district",
+            "text": [
+                "Greggs looks up at you. Way up. His neck cranes back until you can see the tendons straining. It's a perspective most people aren't comfortable with, looking up at something that could crush them without effort. You've learned to use it sparingly.",
+                "'Double?' He laughs. It's the kind of laugh that pretends to find something funny but is actually calculating. 'Why would I pay double?'",
+                "'Because without me, you need a crane. The crane rental is three thousand a day. My daily rate is two hundred. You're already getting a bargain. I'm asking for four hundred, which still saves you twenty-six hundred.'",
+                "Greggs stops laughing. He does the math. His face goes through several expressions, none of them happy, all of them ending at the same conclusion: you're right.",
+                "'Three hundred,' he says. 'And you work a full day, not the half-day some of your kind try to negotiate.'",
+                "Your kind. There it is. The reminder that you're a category, not a person. But three hundred is more than two hundred, and the shelter costs sixty a night."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "intelligence", "amount": 1},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "modify_currency", "amount": 100}
+            ],
+            "choices": [
+                {"text": "Take the three hundred. Start working.", "next": "origins.half_giant.hgnt_007"},
+                {"text": "'Three-fifty. And you stop letting people film me.'", "next": "origins.half_giant.hgnt_014"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_009": {
+            "id": "origins.half_giant.hgnt_009",
+            "title": "Mira's Kitchen",
+            "location": "market_district",
+            "text": [
+                "Mira's Kitchen is a soup kitchen wedged between a pawn shop and a defunct laundromat. The sign is hand-painted, the colors fading but the letters clear. Inside, the ceiling is low (of course it is), but someone has removed the tiles in the back area, exposing the structural beams and giving an extra foot of clearance. Not enough, but more than anywhere else.",
+                "The woman behind the counter is Mira: mid-fifties, orc, broad-shouldered, with a face that has been broken and healed and broken again but still manages to look kind. She's stirring something in a pot large enough to bathe in, and the smell of actual food, not protein paste, fills the space.",
+                "She looks at you. Not up at you. At you. Her eyes find yours and stay there, and in that moment you experience something so rare you almost don't recognize it: someone seeing you as a person first and a giant second.",
+                "'You're here about the job,' she says. Not a question. 'Can you cook?'",
+                "'I can learn.'",
+                "'Good answer. Wrong answer would have been yes. Nobody who says yes on the first day can actually cook.' She hands you an apron. 'Put this on. It won't fit. Nothing ever does, does it?'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.met_mira", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Take the apron. Start working. This feels right.", "next": "origins.half_giant.hgnt_015"},
+                {"text": "'What's the pay?'", "next": "origins.half_giant.hgnt_016"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_010": {
+            "id": "origins.half_giant.hgnt_010",
+            "title": "The Fight League",
+            "location": "underground_tunnels",
+            "text": [
+                "The fight league operates in the sub-levels, in a converted water treatment plant where the pipes still drip and the air tastes like copper. You follow the directions on the flyer through tunnels that get darker and louder, until you emerge into a space filled with noise, smoke, and the sharp smell of sweat and blood.",
+                "A ring, if you can call it that, has been marked out on the concrete floor with spray paint. Around it, maybe two hundred people crowd together, shouting, waving currency, their faces lit from below by portable lights that give everyone the complexion of the damned.",
+                "A man finds you before you find him. Short, wiry, with augmented eyes that click and whir as they adjust to your size. 'You're new,' he says. 'Name's Vik. I run the fights.' He looks you up and down the way a butcher looks at livestock. 'Half-giant. Good. The crowd loves giants. You'll fight in the heavy division.'",
+                "'I've never fought before.'",
+                "Vik grins. 'You don't have to know how to fight. You just have to be willing to get hit and hit back. At your size, physics does most of the work.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.fight_league", "value": true},
+                {"type": "set_flag", "flag": "origin.met_vik", "value": true}
+            ],
+            "choices": [
+                {"text": "Step into the ring. You need the money.", "next": "origins.half_giant.hgnt_017"},
+                {"text": "This feels wrong. Leave before it starts.", "next": "origins.half_giant.hgnt_018"}
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+
+        "hgnt_011": {
+            "id": "origins.half_giant.hgnt_011",
+            "title": "The Mother's Response",
+            "location": "lower_slums",
+            "text": [
+                "The mother clutches her daughter to her chest and looks at you with an expression you've seen a thousand times: the one where someone is trying to reconcile their fear of your size with the evidence of your kindness.",
+                "'Thank you,' she says. The words cost her something. You can see the effort. 'I'm sorry. She wanders when I'm in the bathroom. I—'",
+                "'It's okay.' You keep your voice low. You've learned to speak quietly, because your natural volume can rattle windows. 'She's brave. She took the bird.'",
+                "The mother looks at the wire bird in her daughter's hands. Something softens in her face. 'Did you make that?'",
+                "'I make things at night. When I can't sleep.' You shrug, and the gesture makes the cot beside you creak alarmingly. 'Small things. It's the only time my hands feel the right size.'",
+                "She looks at you, really looks, and for a moment the fear is gone. 'My name is Sera. This is Lily.'",
+                "'My name doesn't fit in most people's mouths. Call me whatever's comfortable.'",
+                "Sera smiles. It's small and cautious and real. 'I'll call you Kind. Because that's what you are.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.knows_sera", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 2},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Head to work with something warm in your chest.", "next": "origins.half_giant.hgnt_004"},
+                {"text": "Check the message board first. Maybe today has better options.", "next": "origins.half_giant.hgnt_005"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_012": {
+            "id": "origins.half_giant.hgnt_012",
+            "title": "End of Shift",
+            "location": "market_district",
+            "text": [
+                "The sun sets behind the upper districts, painting the corporate towers in gold while the lower levels sink into premature dusk. You finish the last girder run and sit on the fourteenth floor, your legs dangling over the edge like a child on a too-tall chair. From up here, the city looks almost beautiful. Almost peaceful. The neon begins to flicker on, district by district, like a slow-motion circuit board powering up.",
+                "Greggs pays you at the gate. Cash, because half-giants don't have bank accounts, because bank accounts require ID, and ID requires a registered address, and registered addresses require documentation that your mother never filed because she was too busy dying when you were three.",
+                "You count the bills. It's enough for the shelter, food, and nothing else. The arithmetic of poverty: every number accounted for, no remainders, no savings, no margin for error.",
+                "On the walk back, you pass through the market district. The evening crowd parts around you like water around a boulder. Nobody bumps into you. Nobody gets close. You walk in a permanent buffer zone of empty space, surrounded by people, always alone."
+            ],
+            "onEnter": [
+                {"type": "modify_currency", "amount": 200},
+                {"type": "add_experience", "amount": 10}
+            ],
+            "choices": [
+                {"text": "Head back to the shelter. Rest.", "next": "origins.half_giant.hgnt_019"},
+                {"text": "Stop by the neon strip. You need something besides work and sleep.", "next": "origins.half_giant.hgnt_020"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_013": {
+            "id": "origins.half_giant.hgnt_013",
+            "title": "The Workers",
+            "location": "market_district",
+            "text": [
+                "During the break, you sit near a group of workers sharing a thermos. They make room for you, or rather, they make the amount of room that's physically necessary, which is considerable. A human woman named Falk, a welder, offers you the thermos.",
+                "'You do the work of our entire crew,' she says. 'And they pay you the same as us. That's messed up.'",
+                "You accept the thermos. The coffee inside is terrible. It tastes like belonging.",
+                "'It's just how it is,' you say. 'Half-giants don't get contracts. We get day rates.'",
+                "'Because nobody advocates for you. No union, no guild.' Falk leans back against a concrete block. 'My cousin works the docks. Says there's a woman there, Mira, runs a kitchen but also runs a kind of... network. For people who fall through the cracks. Displaced, undocumented, non-standard body types.' She glances at you. 'No offense.'",
+                "'None taken. I'm aware of my body type.'",
+                "Falk writes an address on a scrap of paper and hands it to you. 'Check it out. You deserve better than this.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.knows_mira_network", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "add_item", "item": "miras_address"}
+            ],
+            "choices": [
+                {"text": "Finish the shift, then go find this Mira.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "Thank Falk and keep working. You'll think about it.", "next": "origins.half_giant.hgnt_012"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_014": {
+            "id": "origins.half_giant.hgnt_014",
+            "title": "Dignity's Price",
+            "location": "market_district",
+            "text": [
+                "Greggs's expression hardens. 'The filming isn't something I control. Workers have personal devices. Free country, free district, whatever.'",
+                "You lean down. Not threateningly. You don't do threatening, because threatening, from your body, means something different than it does from anyone else's. But you bring your face closer to his level, and you speak quietly.",
+                "'I'm not a zoo animal, Mr. Greggs. I'm a worker doing a job. The videos end up on feeds with titles like Giant Freak Lifts Impossible Weight and Giant Almost Crushes Worker. They follow me. They affect how people treat me. They affect where I can sleep and where I can eat.' You straighten up. 'Three-fifty. And you put a no-filming policy on your site. That's the deal.'",
+                "Greggs is quiet for a long time. Then: 'Three-twenty-five. And I'll post a notice about filming. Best I can do.'",
+                "It's not everything. It never is. But it's something, and for a half-giant in the Lower District, something is everything."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "charisma", "amount": 2},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "modify_currency", "amount": 125}
+            ],
+            "choices": [
+                {"text": "Accept and start working. You've won something today.", "next": "origins.half_giant.hgnt_007"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_015": {
+            "id": "origins.half_giant.hgnt_015",
+            "title": "Kitchen Work",
+            "location": "market_district",
+            "text": [
+                "The apron doesn't fit. Nothing ever fits. You tie it around your waist where a normal person would tie it around their neck, and the result looks absurd, but Mira doesn't laugh. She hands you a knife and a cutting board and points to a mountain of root vegetables.",
+                "'Peel. Dice. Small cubes, not chunks. The people who eat here have enough ugly in their lives; their food should at least look nice.'",
+                "You peel. It's hard at first. Your fingers are the size of sausages, and the knife is a toy in your hand. But there's a precision in you that most people don't expect, the same precision that lets you twist wire into birds. You find the rhythm. Peel, turn, slice. Peel, turn, slice.",
+                "Mira watches you from the corner of her eye while she stirs the pot. After twenty minutes, she comes over and inspects your work. The cubes are even. Uniform. Professional.",
+                "'Huh,' she says. 'Didn't expect that.' She looks at your hands, then at your face. 'Gentle hands on a big body. That's rare. That's useful.'",
+                "For the first time in a long time, someone has called you useful for something other than lifting heavy objects."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "dexterity", "amount": 2},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "add_experience", "amount": 15}
+            ],
+            "choices": [
+                {"text": "Keep working. This feels like somewhere you belong.", "next": "origins.half_giant.hgnt_021"},
+                {"text": "Ask Mira about her operation. This kitchen is more than it seems.", "next": "origins.half_giant.hgnt_022"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_016": {
+            "id": "origins.half_giant.hgnt_016",
+            "title": "The Real Pay",
+            "location": "market_district",
+            "text": [
+                "Mira stops stirring. She looks at you with eyes that have seen every hustle, every angle, every way the desperate try to survive. 'The pay is meals. Three a day. Not the garbage they serve at the shelter. Real food, the kind that actually fills you up.' She pauses. 'I know what a half-giant's metabolism requires. I feed two others. You won't go hungry here.'",
+                "Two others. There are other half-giants in the Lower District. You knew that, distantly, the way you know about natural disasters in other districts: aware but disconnected.",
+                "'The job also comes with a space in the back,' she continues. 'Ceiling's been modified. Nine-foot clearance. It's not luxury, but you can stand up straight, and if you've been sleeping at the shelter, you know what that's worth.'",
+                "Standing up straight. Indoors. The idea is so foreign it takes a moment to process.",
+                "'Why?' you ask. 'Why do you do this?'",
+                "Mira shrugs. 'Because somebody has to. And because I remember what it's like to be too much for the world.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.miras_offer", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Accept. All of it. Start working.", "next": "origins.half_giant.hgnt_015"},
+                {"text": "'I need cash too. I have debts at the shelter.'", "next": "origins.half_giant.hgnt_023"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_017": {
+            "id": "origins.half_giant.hgnt_017",
+            "title": "The First Fight",
+            "location": "underground_tunnels",
+            "text": [
+                "Your opponent is a cyborg with reinforced arms and a body that's been modified for combat. He's half your size and twice your speed. The crowd roars when you step into the ring, a sound that vibrates through your bones. They're not cheering for you. They're cheering for the spectacle of you.",
+                "The cyborg comes in fast. The first punch catches you in the ribs, a piston-driven blow that would break a normal person's bones. It hurts, but your bones aren't normal. Half-giant skeleton, dense as concrete, built for a body that was designed by evolution to move mountains.",
+                "You don't want to hit back. Every instinct you've cultivated, every careful movement, every gentle touch, screams at you not to do this. Because you know what your hands can do. You've dented steel. You've cracked concrete. What they would do to a person's skull is something you've spent your whole life trying not to find out.",
+                "The cyborg hits you again. And again. The crowd screams for you to fight back. Vik is shouting from the corner: 'HIT HIM! GIVE THEM WHAT THEY WANT!'",
+                "What they want is violence. From you, who has spent every day of your life being gentle."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.first_fight", "value": true},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Fight back. One punch. Controlled. Just enough.", "next": "origins.half_giant.hgnt_024"},
+                {"text": "Refuse to hit. Take the blows. Let the crowd boo.", "next": "origins.half_giant.hgnt_025"}
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+
+        "hgnt_018": {
+            "id": "origins.half_giant.hgnt_018",
+            "title": "Walking Away",
+            "location": "underground_tunnels",
+            "text": [
+                "You turn around and walk toward the exit. The crowd noise fades behind you. Vik grabs your arm, or tries to. His hand doesn't reach halfway around your wrist.",
+                "'Hey! Where are you going? You haven't even signed in yet!'",
+                "'I changed my mind.'",
+                "'Changed your mind? Do you know how much a half-giant fight is worth? The betting alone—'",
+                "You stop. You look down at Vik. He's small, augmented, and used to people doing what he says because fear is a powerful motivator. But you're not afraid of Vik. You're afraid of yourself. Of what you might become in that ring.",
+                "'I'm not a fighter,' you say. 'Find someone else.'",
+                "Vik lets go. He's smart enough to recognize when pushing won't work. 'You'll be back,' he says to your retreating back. 'They always come back. The money's too good and the options are too bad.'",
+                "You don't answer. You walk out into the tunnel darkness and breathe air that doesn't smell like blood."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.refused_fighting", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 2}
+            ],
+            "choices": [
+                {"text": "Head back to the shelter. Try again tomorrow.", "next": "origins.half_giant.hgnt_019"},
+                {"text": "Find another way. Check out Mira's Kitchen.", "next": "origins.half_giant.hgnt_009"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_019": {
+            "id": "origins.half_giant.hgnt_019",
+            "title": "The Shelter at Night",
+            "location": "lower_slums",
+            "text": [
+                "The shelter is quieter at night. Not quiet, never quiet, because forty people breathing and coughing and shifting on cots creates a constant low hum of human existence. But quieter than the streets.",
+                "You fold yourself onto the cot, a process that involves strategic placement of limbs and the acceptance that your feet will hang off the end by two feet. The springs protest. They always protest.",
+                "In the darkness, you do what you always do: you shape wire. Your fingers, massive and clumsy-looking but secretly precise, bend and twist salvaged copper wire into shapes. Animals, mostly. Birds, dogs, cats, creatures you've never seen in real life but know from pictures in the shelter's donated books.",
+                "Tonight you make a flower. It's harder than animals. The petals need to be thin, delicate, curved just right. It takes an hour. When it's done, you hold it up to the faint light coming through the window, and for a moment it looks almost real.",
+                "Sera, three cots down, is watching. You set the flower on the floor between your cots and close your eyes."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "dexterity", "amount": 1},
+                {"type": "set_flag", "flag": "origin.wire_art", "value": true}
+            ],
+            "choices": [
+                {"text": "Sleep. Tomorrow is another day of lifting things.", "next": "origins.half_giant.hgnt_026"},
+                {"text": "You can't sleep. Go to the roof. Think.", "next": "origins.half_giant.hgnt_027"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_020": {
+            "id": "origins.half_giant.hgnt_020",
+            "title": "The Neon Strip",
+            "location": "neon_strip",
+            "text": [
+                "The neon strip is the Lower District's attempt at joy. Three blocks of bars, food stalls, entertainment venues, and shops selling things nobody needs but everybody wants. The signs blaze in colors that hurt your eyes, and the music from competing sound systems creates a wall of noise that you feel in your sternum.",
+                "You walk through it like a parade float through a crowd: conspicuous, unavoidable, observed. People point. Children stare. A drunk man stumbles into your leg and bounces off like he hit a wall, which in fairness he did.",
+                "A food stall catches your eye. The smell of grilling meat, real meat, not the protein substitute, hits you like a physical force. Your stomach, a cavernous thing that is never fully satisfied, growls with enough volume to startle the vendor.",
+                "You buy three skewers and eat them standing in the glow of a neon sign that reads LIVE TONIGHT — COME SEE THE AMAZING THUNDOK — WORLD'S TALLEST HALF-GIANT. Below the text, a promotional image shows a half-giant in a sequined costume, performing tricks for a crowd.",
+                "You lose your appetite."
+            ],
+            "onEnter": [
+                {"type": "modify_currency", "amount": -30},
+                {"type": "set_flag", "flag": "origin.neon_strip_visit", "value": true}
+            ],
+            "choices": [
+                {"text": "Go home. You've had enough of being visible.", "next": "origins.half_giant.hgnt_019"},
+                {"text": "Find the bar. The one place where nobody cares what you look like.", "next": "origins.half_giant.hgnt_028"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_021": {
+            "id": "origins.half_giant.hgnt_021",
+            "title": "Finding a Place",
+            "location": "market_district",
+            "text": [
+                "Days pass. You fall into a rhythm at Mira's Kitchen that feels like the first real rhythm your life has ever had. Morning prep: vegetables, stocks, bread dough that your enormous hands knead with a gentleness that still surprises Mira. Afternoon service: ladling soup and stew into bowls for the parade of hungry faces that files through the door. Evening cleanup: mopping floors, scrubbing pots, hauling garbage to the bins in the alley.",
+                "You meet the other half-giants. Borek, an older male, maybe fifty, quiet as stone, who lost an arm in a factory accident and now washes dishes one-handed with terrifying efficiency. And Tenna, a young woman, barely twenty, who is seven feet tall and considers herself the runt of the litter. She handles the front counter and knows every regular by name.",
+                "They don't stare at you. They don't flinch. They don't look up. For the first time in your life, you are in a room where your size is not the most interesting thing about you.",
+                "'How does it feel?' Mira asks one evening, watching you dry a pot that's smaller than your hand. 'Being normal?'",
+                "'I don't know,' you say honestly. 'I've never been normal before.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.found_community", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "add_experience", "amount": 20}
+            ],
+            "choices": [
+                {"text": "This is home now. Settle in.", "next": "origins.half_giant.hgnt_029"},
+                {"text": "Ask Mira about the other things she does. The 'network.'", "next": "origins.half_giant.hgnt_022"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_022": {
+            "id": "origins.half_giant.hgnt_022",
+            "title": "The Network",
+            "location": "market_district",
+            "text": [
+                "Mira dries her hands and sits across from you at a table that's too small for both of you but works because you've both learned to make do with spaces that don't fit.",
+                "'The kitchen feeds people,' she says. 'That's the front. The back is... bigger.' She leans forward. 'There are thousands of people in this city who don't exist on paper. Half-giants without IDs. Orcs displaced from the Gene Riots. Synths who escaped their owners. People who fell through every crack and landed here, in the dark, where nobody looks.'",
+                "'You help them.'",
+                "'I connect them. There's a woman at the transit hub, Kessa, who handles the organizational side. I handle the physical: shelter, food, medical care for people too big or too different or too undocumented for the regular system.' She looks at you with those orc eyes that have seen everything and decided to be kind anyway. 'What I need is someone who can move things. Heavy things, important things, through places where normal-sized people attract attention.'",
+                "'You want me to smuggle.'",
+                "'I want you to help people. The smuggling is just the method.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.knows_network", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "'What kind of things need moving?'", "next": "origins.half_giant.hgnt_030"},
+                {"text": "'I just want to cook. I don't want trouble.'", "next": "origins.half_giant.hgnt_031"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_023": {
+            "id": "origins.half_giant.hgnt_023",
+            "title": "Money and Meals",
+            "location": "market_district",
+            "text": [
+                "Mira nods. 'Fair enough. I can do a small daily wage on top of meals and housing. It's not much. This isn't a business that turns a profit.' She names a figure that's less than the construction site but more than nothing.",
+                "'I can also do construction work on my days off,' you say. 'To cover the difference.'",
+                "'You could. Or you could rest. Your body burns fuel at a rate that most people can't imagine. Overwork kills half-giants faster than anything except loneliness.' She says this with the matter-of-fact authority of someone who's watched it happen. 'I've buried three of your kind in the last five years. All of them worked themselves to death because they thought that was all they were good for.'",
+                "The words land like stones. You think about the construction site. The girders. The way Greggs looks at you, the way the other workers film you, the way the math of your labor reduces you to a cost-per-pound calculation.",
+                "'Maybe I'll rest,' you say."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "wisdom", "amount": 2},
+                {"type": "set_flag", "flag": "origin.accepted_miras_terms", "value": true}
+            ],
+            "choices": [
+                {"text": "Start working at the kitchen. Let yourself heal.", "next": "origins.half_giant.hgnt_015"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_024": {
+            "id": "origins.half_giant.hgnt_024",
+            "title": "The Punch",
+            "location": "underground_tunnels",
+            "text": [
+                "You hit him. One punch. An open-palmed strike to the chest, not even close to full force, the way you'd push open a heavy door. The restraint is enormous. Every muscle in your arm screams to follow through, to let the blow carry the weight that evolution built into your frame.",
+                "The cyborg flies backward three meters and hits the concrete wall. The crowd goes silent for half a second, then erupts. The cyborg slides down the wall, his reinforced chest plate cracked, his augmented eyes blinking in confusion. He's not unconscious, but he's not getting up any time soon.",
+                "Vik is beside himself. 'That's it! That's what I'm talking about! One punch! ONE PUNCH!' He grabs your arm and tries to raise it in victory, which is comical given the height difference. 'Ladies and gentlemen, your winner! The Gentle Giant!'",
+                "The crowd cheers. Money changes hands. Vik counts bills and presses a stack into your palm. More than a week's construction wages.",
+                "You look at the cyborg, still slumped against the wall. At your hand. At the money. It doesn't feel like winning. It feels like something you can never take back."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "strength", "amount": 2},
+                {"type": "modify_currency", "amount": 500},
+                {"type": "set_flag", "flag": "origin.won_fight", "value": true}
+            ],
+            "choices": [
+                {"text": "Take the money. Check on your opponent.", "next": "origins.half_giant.hgnt_032"},
+                {"text": "Drop the money. Leave. Never come back.", "next": "origins.half_giant.hgnt_033"}
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+
+        "hgnt_025": {
+            "id": "origins.half_giant.hgnt_025",
+            "title": "The Peaceful Giant",
+            "location": "underground_tunnels",
+            "text": [
+                "You don't fight. You stand there, arms at your sides, and let the cyborg hit you. Your body absorbs the blows the way rock absorbs rain: without yielding, without breaking, without caring. It hurts. Everything hurts when you're this big, because the nerve endings scale up too, and every impact registers in full detail. But you don't hit back.",
+                "The crowd turns ugly. They came for violence, for the spectacle of a giant unleashed, and instead they're watching a punching bag that won't punch back. Boos cascade from the stands. Someone throws a bottle. It shatters against your shoulder.",
+                "The cyborg, to his credit, eventually stops hitting you. He steps back, breathing hard, his augmented arms steaming from the exertion. He looks confused. 'Why won't you fight?'",
+                "'Because I don't want to hurt you,' you say. And the honesty in it, the absolute simplicity of it, shuts him up.",
+                "Vik is furious. 'You're done! Get out! You just cost me ten thousand in bets!' He shoves at your leg with both hands. You feel it the way you'd feel a stiff breeze.",
+                "You leave. The crowd's boos follow you into the tunnel. But your hands are clean."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "constitution", "amount": 2},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 2},
+                {"type": "set_flag", "flag": "origin.peaceful_stand", "value": true}
+            ],
+            "choices": [
+                {"text": "Head to the surface. Find a different way to survive.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "Go back to the shelter. Process what just happened.", "next": "origins.half_giant.hgnt_019"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_026": {
+            "id": "origins.half_giant.hgnt_026",
+            "title": "A Broken Morning",
+            "location": "lower_slums",
+            "text": [
+                "You wake to shouting. Not the usual shelter arguments about space or noise. This is different. This is the sound of authority entering a space where authority is not welcome.",
+                "Three figures in corporate security uniforms stand near the shelter entrance. One of them is reading from a datapad in a voice that carries across the room: 'By order of the Municipal Housing Authority, this facility is scheduled for demolition under Urban Renewal Code 7-12. All occupants must vacate within forty-eight hours.'",
+                "Forty-eight hours. For forty people who have nowhere else to go.",
+                "The shelter manager, a tired human named Doss, is arguing in a voice that's already lost. 'These people have been here for months. Some for years. You can't just—'",
+                "'The order is signed. Forty-eight hours.' The security team leaves the way they came: quickly, efficiently, without looking anyone in the eye.",
+                "The shelter erupts into chaos. People shouting, crying, grabbing their few possessions. Sera clutches Lily to her chest, her face white. The wire flower you made sits on the cot beside them, fragile and absurd."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.shelter_condemned", "value": true}
+            ],
+            "choices": [
+                {"text": "Find Sera and Lily. Make sure they're safe.", "next": "origins.half_giant.hgnt_034"},
+                {"text": "Go after the security team. Demand answers.", "next": "origins.half_giant.hgnt_035"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_027": {
+            "id": "origins.half_giant.hgnt_027",
+            "title": "The Roof",
+            "location": "lower_slums",
+            "text": [
+                "The shelter roof is the only place in the Lower District where you can stand at your full height under open sky. Nine feet four inches of you, stretching muscles that have been compressed and contorted all day, feeling your spine decompress like a released spring.",
+                "The city spreads below you in every direction. Neon and darkness, smoke and rain, the hum of a million lives lived in spaces too small and too expensive. Above, the upper districts glow like a separate world. The Cloud Towers pierce the storm layer, their tips catching starlight that never reaches down here.",
+                "You raise your hands above your head, stretching, and for a moment you imagine what it would be like to be this tall in a world that was built for it. To walk through doorways without ducking. To sit in chairs without breaking them. To hold someone without worrying about crushing them.",
+                "A noise behind you. Someone else is on the roof. A half-giant woman, seven feet tall, young, with dark hair and eyes that reflect the neon. She sees you and stops.",
+                "'Tenna,' she says. 'From the kitchen. Mira's place.' She comes and stands beside you, and for the first time in your memory, you're standing next to someone who doesn't seem small."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.met_tenna_roof", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "'What's it like? Working at the kitchen?'", "next": "origins.half_giant.hgnt_036"},
+                {"text": "Stand in silence together. Some things don't need words.", "next": "origins.half_giant.hgnt_037"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_028": {
+            "id": "origins.half_giant.hgnt_028",
+            "title": "The Bar",
+            "location": "sector_7_bar",
+            "text": [
+                "The Sector 7 bar has a section in the back with reinforced seating. It's not labelled, but every half-giant in the district knows about it. Two stools made from welded I-beams, bolted to the floor, with a counter at chest height for a nine-footer. Someone, at some point, decided that half-giants deserved a place to sit and drink like everyone else. You've never found out who.",
+                "The bartender, Gillis, one-armed and dwarven, pours you a drink without being asked. He knows your order: the strongest thing he has, in the largest glass, because half-giant metabolism processes alcohol the way a furnace processes coal.",
+                "'Hard day?' he asks.",
+                "You laugh. It comes out louder than intended and makes the glasses on the shelf rattle. 'Hard life.'",
+                "'Heard that.' He leans on the bar. 'Listen, I've got something that might interest you. Friend of mine, Mira, runs a kitchen in the market district. She's looking for help. The kind that can lift things and has a good heart.' He looks at you. 'You strike me as someone with a good heart.'",
+                "'How can you tell?'",
+                "'Because you're sitting in a bar looking sad instead of out there breaking things. The mean ones break things. The good ones sit here.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.bar_visit", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Ask about Mira's Kitchen. Gillis seems trustworthy.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "Finish the drink. Think about it tomorrow.", "next": "origins.half_giant.hgnt_019"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_029": {
+            "id": "origins.half_giant.hgnt_029",
+            "title": "The Community",
+            "location": "market_district",
+            "text": [
+                "Weeks pass. The kitchen becomes your anchor. For the first time in your life, you have a routine that doesn't revolve around being large. You cook. You clean. You carry supplies from the market, yes, but you also plate food with an artist's precision. You learn to make soup that Mira says is better than hers, which you know is a lie but appreciate anyway.",
+                "Borek teaches you to repair kitchen equipment one-handed, his technique a masterclass in adaptation. Tenna teaches you to talk to the regulars, the displaced and desperate who file through the kitchen's doors, treating each one as a person with a story rather than a mouth to be fed.",
+                "You learn their stories. Dax, the synth who escaped a factory and now paints murals on the alley walls. Ferret, the human teenager who pickpockets to feed her siblings and returns every stolen wallet minus the cash. Old Man Greaves, who claims to be a hundred and twelve and who might be telling the truth.",
+                "They're all broken. All displaced. All too much or too little for the world they live in. And together, in this kitchen that smells of soup and determination, they're something that none of them could be alone: a family."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.found_family", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "add_experience", "amount": 25}
+            ],
+            "choices": [
+                {"text": "This is enough. This is everything you've ever wanted.", "next": "origins.half_giant.hgnt_038"},
+                {"text": "Something's coming. You can feel it in your bones.", "next": "origins.half_giant.hgnt_039"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_030": {
+            "id": "origins.half_giant.hgnt_030",
+            "title": "The Cargo",
+            "location": "market_district",
+            "text": [
+                "'Medical supplies, mostly,' Mira says. 'The kind that clinics in the Lower District can't afford through legal channels. Antibiotics. Trauma kits. Neural repair patches. The corporations control the pharmaceutical supply chain, and the markup for lower-district clinics is four hundred percent.'",
+                "She opens a door you hadn't noticed before, behind the pantry shelves. Beyond it is a storage room, and in the storage room are crates. Dozens of them. Medical supplies, each one worth more than your yearly earnings.",
+                "'These need to move from here to three clinics in Sectors 5, 7, and 9. Through the tunnels, at night, without being seen.' She looks at you. 'A half-giant in the tunnels is invisible. Nobody looks down there. And nobody expects someone your size to be sneaking.'",
+                "'That's a lot of crates.'",
+                "'For a normal person, it would take ten trips. For you, it's three.' She crosses her arms. 'You'd be saving lives. Not metaphorically. Actually saving lives. Children who need antibiotics. Workers who need trauma care. People who will die without these supplies.'",
+                "The weight of the decision is nothing compared to the weight of those crates. And you've been carrying weight your whole life."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.smuggling_offer", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "'Show me the route. I'll start tonight.'", "next": "origins.half_giant.hgnt_040"},
+                {"text": "'What happens if I get caught?'", "next": "origins.half_giant.hgnt_041"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_031": {
+            "id": "origins.half_giant.hgnt_031",
+            "title": "Just Cooking",
+            "location": "market_district",
+            "text": [
+                "Mira studies you for a long moment. Then she nods. 'Fair enough. Not everyone's built for that kind of work.' She pauses. 'That came out wrong. I mean—'",
+                "'I know what you mean.' You smile. The small, practiced smile. 'I just want to cook. I'm tired of being the biggest thing in the room. In the kitchen, I'm just the person who peels vegetables.'",
+                "'And makes wire birds,' she says. She's seen the one you left on the counter yesterday. 'Those are beautiful, by the way. You ever think about selling them?'",
+                "You haven't. The wire shapes are a private thing, a conversation between your hands and the quiet part of your brain that doesn't care about size or weight or the endless arithmetic of being too large. Selling them would make them into something else.",
+                "'Maybe,' you say. Which means no, and Mira knows it, and she lets it go because she's good at knowing when to push and when to let things sit."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.chose_peace", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Continue working at the kitchen. Find peace in the routine.", "next": "origins.half_giant.hgnt_021"},
+                {"text": "But trouble doesn't care about your preferences.", "next": "origins.half_giant.hgnt_039"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_032": {
+            "id": "origins.half_giant.hgnt_032",
+            "title": "After the Fight",
+            "location": "underground_tunnels",
+            "text": [
+                "The cyborg's name is Kade. He sits against the wall with his cracked chest plate and his bruised pride, and he looks at you with something between respect and bewilderment.",
+                "'One hit,' he says. 'One hit and I'm done. I've fought orcs. I've fought augmented humans. Nobody's ever put me down with one hit.'",
+                "'I didn't want to hit you at all.'",
+                "He laughs, then winces. 'Yeah, I got that impression. The gentle giant thing. Is that real or is it an act?'",
+                "'Real. I spent my whole life learning not to break things. Breaking you felt...' You search for the word. 'Wrong. Like using a hammer on glass.'",
+                "Kade stands, slowly, testing his balance. 'You know, there's a woman in the market district. Runs a kitchen. She's looking for people who are strong but don't want to fight. People like you.' He spits blood. 'Tell her Kade sent you. She'll know what it means.'",
+                "He limps away, and you're left in the tunnel with a fist full of money and a feeling like a bruise that's inside your chest instead of on your skin."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.met_kade", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Find Mira's Kitchen. This fighting life isn't for you.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "Take another fight. The money is too good to walk away from.", "next": "origins.half_giant.hgnt_042"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_033": {
+            "id": "origins.half_giant.hgnt_033",
+            "title": "Dropping the Money",
+            "location": "underground_tunnels",
+            "text": [
+                "The bills scatter across the concrete floor. Vik stares at the money, then at you, with the expression of a man watching someone set fire to something valuable.",
+                "'You're crazy,' he says. 'You're actually crazy.'",
+                "Maybe. But you can still feel the impact of your palm against Kade's chest plate vibrating through your arm. The sound it made. The way his body moved through the air, weightless and breakable, propelled by a force you barely even used.",
+                "Your mother, before she died, told you one thing about your father. One thing she repeated until it was carved into your memory like words in stone: 'He was gentle. The gentlest person I ever knew. Don't let them make you into something else.'",
+                "You walk out of the tunnel. The money stays on the floor. Someone will pick it up. Someone always does. And you will go forward with clean hands and an empty wallet, which is a trade your mother would have understood."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.rejected_violence", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 2},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Find a different path. Mira's Kitchen, the job on the board.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "Go back to the shelter. Take time to think.", "next": "origins.half_giant.hgnt_019"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_034": {
+            "id": "origins.half_giant.hgnt_034",
+            "title": "Protecting the Small",
+            "location": "lower_slums",
+            "text": [
+                "You find Sera and Lily in the chaos. Sera is trying to pack their few belongings into a bag with shaking hands while Lily clutches the wire bird and stares at the shouting adults with wide, terrified eyes.",
+                "You kneel beside them. The floor groans under your weight. 'I'll help you,' you say. 'Tell me what you need.'",
+                "Sera looks at you, and the fear that's usually there when she sees you is gone, replaced by something desperate and trusting. 'We have nowhere to go. I can't afford a room. The other shelters are full. I—'",
+                "'I know a place,' you say. And you do. Mira's Kitchen, if you've been there. Or the tunnels, or the scrap yards, or anywhere, because anywhere is better than here when here is about to cease to exist.",
+                "You pick up their bag in one hand and offer your other hand to Lily. She takes your finger, the only part of your hand small enough for her grip, and holds on with the total trust that only children and the truly desperate can manage.",
+                "Together, you walk out of the shelter that was never home but was at least something."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.protecting_sera", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "modify_stat", "stat": "strength", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Take them to Mira's Kitchen. She'll know what to do.", "next": "origins.half_giant.hgnt_043"},
+                {"text": "Find temporary shelter in the tunnels. Stay together.", "next": "origins.half_giant.hgnt_044"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_035": {
+            "id": "origins.half_giant.hgnt_035",
+            "title": "Confronting Authority",
+            "location": "lower_slums",
+            "text": [
+                "You follow the security team into the street. They're walking quickly, heads down, the way people walk when they've done something ugly and want to get away from it. They don't expect to be followed. They certainly don't expect to be followed by someone who covers ground in strides that are twice the length of theirs.",
+                "You step in front of them. All three stop. Their hands go to their belts, reflexively, where their tasers hang. Looking up at nine feet four inches of upset half-giant recalibrates their threat assessment in real time.",
+                "'The people in that shelter,' you say, keeping your voice low and steady, 'have forty-eight hours to find housing in a district where there is no housing. Where are they supposed to go?'",
+                "The lead security officer swallows. 'That's not our department. We're just—'",
+                "'Just following orders. I know. Everyone's always just following orders.' You lean down, not to threaten, but to be heard. 'Who signed the demolition order?'",
+                "'Nexus-Krieg Urban Development. Director Marsh. Level thirty-something. I don't know more than that.' He's sweating. 'Can we go?'",
+                "You step aside. They hurry past, not quite running, maintaining the fiction of dignity. You have a name now. Director Marsh. Nexus-Krieg."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.confronted_security", "value": true},
+                {"type": "set_flag", "flag": "origin.knows_marsh", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "modify_stat", "stat": "strength", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Go back to the shelter. Help people prepare to leave.", "next": "origins.half_giant.hgnt_034"},
+                {"text": "Find Mira. She'll know what to do with this information.", "next": "origins.half_giant.hgnt_045"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_036": {
+            "id": "origins.half_giant.hgnt_036",
+            "title": "Tenna's Perspective",
+            "location": "lower_slums",
+            "text": [
+                "Tenna leans against the roof railing, which creaks under her weight. She's smaller than you by two feet, but the way she carries herself, straight-backed, chin up, suggests someone who decided long ago not to fold.",
+                "'The kitchen is the first place I've ever worked where nobody asked me to lift something on the first day,' she says. 'Mira put me on the counter because she said I had a good face for it. A good face.' She laughs. 'Nobody's ever said that to me before. Usually they say I have a good back. Strong shoulders. Useful hands. Like I'm a tool they're evaluating.'",
+                "You know exactly what she means. The taxonomy of being reduced: hands, shoulders, back, weight capacity. The parts of you that are useful. The rest, the mind, the heart, the person inside the body, is optional.",
+                "'Mira sees the whole thing,' Tenna continues. 'The whole person. That's why we stay. That's why Borek does dishes one-handed without complaining. That's why I smile at strangers who flinch.' She turns to look at you. 'You should come work with us. You'd fit.'",
+                "Fit. Another word that means something different to a half-giant. But the way she says it, it means something new: welcome."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.tenna_invitation", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Go to Mira's Kitchen tomorrow. See if Tenna's right.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "'I have a job at the construction site. But maybe I could visit.'", "next": "origins.half_giant.hgnt_046"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_037": {
+            "id": "origins.half_giant.hgnt_037",
+            "title": "Silent Company",
+            "location": "lower_slums",
+            "text": [
+                "You stand together on the roof without speaking. Two half-giants under a sky they can almost reach. The rain has paused, and through a rare break in the cloud layer, actual starlight filters down. Weak, diffused, barely visible through the ambient glow of the city, but real. Stars that existed before the megacity and will exist long after it crumbles.",
+                "Tenna sits on the roof edge, her legs dangling over. You sit beside her. The building groans under your combined weight, but holds.",
+                "After a long time, she says one word: 'Tomorrow.' Not a question. Not a plan. Just an acknowledgment that tomorrow exists and will need to be faced.",
+                "'Tomorrow,' you agree.",
+                "You sit together until the sky closes up again and the rain resumes, and then you go inside, back to cots that are too small, in a world that is too small, carrying the knowledge that somewhere in this city there is at least one other person who understands what it means to be too much."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "set_flag", "flag": "origin.shared_silence", "value": true}
+            ],
+            "choices": [
+                {"text": "Tomorrow comes. Face it.", "next": "origins.half_giant.hgnt_026"},
+                {"text": "Go see Mira. Tenna's presence gives you courage.", "next": "origins.half_giant.hgnt_009"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_038": {
+            "id": "origins.half_giant.hgnt_038",
+            "title": "Peace Disturbed",
+            "location": "market_district",
+            "text": [
+                "The peace lasts three weeks. Three weeks of cooking, cleaning, belonging. Three weeks of standing upright in a room that was built for you. Three weeks of being part of something without being the biggest part of it.",
+                "Then the notice arrives.",
+                "Mira reads it at the counter, her orc face going still and hard. 'Nexus-Krieg Urban Development. The building is scheduled for demolition. Commercial rezoning.' She crumples the paper with a fist that could dent steel. 'They're tearing down the whole block. The kitchen, the repair shops, everything. Making room for a new logistics hub.'",
+                "Borek sets down the dish he's washing. Tenna stops mid-sentence with a regular. The kitchen goes quiet, the kind of quiet that happens when everyone in a room simultaneously understands that the ground beneath them is about to disappear.",
+                "'Not again,' Tenna whispers. 'Not again.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.kitchen_threatened", "value": true},
+                {"type": "set_flag", "flag": "origin.nexus_threat", "value": true}
+            ],
+            "choices": [
+                {"text": "'How long do we have?'", "next": "origins.half_giant.hgnt_047"},
+                {"text": "Take the notice from Mira. Read it yourself.", "next": "origins.half_giant.hgnt_048"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_039": {
+            "id": "origins.half_giant.hgnt_039",
+            "title": "Trouble Finds You",
+            "location": "market_district",
+            "text": [
+                "It happens on a Tuesday. You're carrying a crate of vegetables from the market when three men step out of an alley. They're not corporate security. They're muscle, the independent kind, hired by someone who wants something done without paperwork.",
+                "One of them, the smallest, holds up a hand. 'Easy, big guy. We're not here for trouble. We're here with a business proposition.'",
+                "'I'm not interested.'",
+                "'You haven't heard it yet.' He smiles. It's the kind of smile that has teeth. 'Vik sends his regards. Says you left money on the floor at the fight league. Says you've got potential. Says he knows where you work and where you sleep, and he thinks you should reconsider his offer.'",
+                "The threat is clear. Not against you, your body is its own deterrent, but against the kitchen. Against Mira. Against Tenna and Borek and the fragile community you've found.",
+                "You set down the crate of vegetables carefully. Very carefully. Because the careful setting down of heavy objects is the only thing keeping your hands from doing something you'll regret."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.vik_threat", "value": true},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1}
+            ],
+            "choices": [
+                {"text": "'Tell Vik I said no. And if he threatens my people again...'", "next": "origins.half_giant.hgnt_049"},
+                {"text": "Stay calm. Don't escalate. 'I'll think about it.'", "next": "origins.half_giant.hgnt_050"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_040": {
+            "id": "origins.half_giant.hgnt_040",
+            "title": "Night Run",
+            "location": "underground_tunnels",
+            "text": [
+                "The tunnels at night are a different world. The maintenance corridors beneath the Lower District were built for access, not comfort, and their ceilings are low enough that even normal-sized people have to duck in places. For you, it's a continuous crouch, a hunched shuffle through darkness that smells like standing water and old concrete.",
+                "But Mira was right. Nobody looks down here. The surveillance drones can't fit. The corporate patrols don't bother. The tunnels belong to the rats, the displaced, and now, to you.",
+                "You carry four crates. Two hundred pounds total. A load that would require a vehicle for anyone else. You carry it the way you carry everything: with the careful, measured effort of someone who's learned that their strength is both a gift and a responsibility.",
+                "The first clinic is in Sector 5, behind a door marked MAINTENANCE - AUTHORIZED PERSONNEL ONLY. The doctor, a human woman with tired eyes, takes the crate without a word. She opens it, sees the antibiotics inside, and her shoulders sag with something that might be relief.",
+                "'Thank you,' she says. 'We ran out three days ago. There's a girl with an infection—' She stops herself. 'Thank you.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.first_delivery", "value": true},
+                {"type": "modify_stat", "stat": "strength", "amount": 1},
+                {"type": "modify_stat", "stat": "dexterity", "amount": 1},
+                {"type": "add_experience", "amount": 25}
+            ],
+            "choices": [
+                {"text": "Complete the remaining deliveries. Two more clinics.", "next": "origins.half_giant.hgnt_051"},
+                {"text": "The doctor's gratitude hits hard. Pause and process.", "next": "origins.half_giant.hgnt_052"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_041": {
+            "id": "origins.half_giant.hgnt_041",
+            "title": "The Risks",
+            "location": "market_district",
+            "text": [
+                "Mira doesn't sugarcoat it. 'If you get caught, it's smuggling charges. Unlicensed pharmaceutical distribution. They'll send you to the corporate detention facility in Sector 12.' She pauses. 'For a half-giant, detention means a special cell. Reinforced. Isolated. No company, no space, no standing room. I've heard stories.'",
+                "The thought of a cell designed to contain you, smaller than a shelter cot, with no room to stretch, no one to talk to, nothing to do with your hands, sends a chill through your oversized body that has nothing to do with temperature.",
+                "'But,' Mira continues, 'the clinics need these supplies. Without them, people die. Real people with real names and real families.' She leans back. 'I won't pressure you. This is a choice you make with your eyes open.'",
+                "Your hands, the ones that shape wire into birds, the ones that peel vegetables with surgeon's precision, the ones that could crush a human skull but have never even made a fist in anger. These hands could carry medicine to people who need it.",
+                "Or they could stay clean and safe while children die of infections that cost thirty credits to cure."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "The risk is worth it. Lives matter more than safety.", "next": "origins.half_giant.hgnt_040"},
+                {"text": "You can't. The thought of that cell... you can't.", "next": "origins.half_giant.hgnt_031"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_042": {
+            "id": "origins.half_giant.hgnt_042",
+            "title": "The Second Fight",
+            "location": "underground_tunnels",
+            "text": [
+                "The second fight is against an orc. Massive, green-skinned, augmented, a veteran of the ring with scars that tell a history of violence. The crowd is bigger this time. Word has spread about the half-giant who drops opponents with one punch.",
+                "You don't want to be here. Every fiber of your being, everything your mother taught you, everything the wire birds represent, screams at you to leave. But the money. The money buys food and shelter and the basic components of a life that's barely a life.",
+                "The orc hits hard. Harder than the cyborg. You feel it in your ribs, in your jaw, in the places where flesh meets bone and both protest. You take three hits. Four. Five. The crowd screams.",
+                "You hit back. Once. The same controlled blow, palm open, targeted at the torso. The orc staggers but doesn't fall. He's built for this. He comes back swinging.",
+                "The fight goes four rounds. By the end, you're both bleeding, both exhausted, and the crowd is in a frenzy. You win, barely, with a final push that sends the orc to the floor. He stays down. You wish you could join him.",
+                "The money in your hand smells like blood. Yours and his."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "strength", "amount": 1},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "modify_currency", "amount": 800},
+                {"type": "set_flag", "flag": "origin.second_fight", "value": true}
+            ],
+            "choices": [
+                {"text": "This has to stop. Find Mira. Find a different life.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "One more fight. You're so close to having enough saved.", "next": "origins.half_giant.hgnt_053"}
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+
+        "hgnt_043": {
+            "id": "origins.half_giant.hgnt_043",
+            "title": "Bringing Strays to Mira",
+            "location": "market_district",
+            "text": [
+                "Mira takes one look at Sera and Lily and opens the door wide. No questions. No paperwork. No calculation of cost or capacity. She just opens the door, the way she opened it for you, the way she opens it for everyone who arrives carrying everything they own and not enough hope.",
+                "'Back room,' she says. 'There's a cot behind the pantry. I'll get blankets.' She looks at Lily, who is still holding your finger, and her orc face softens. 'Hello, little one. Are you hungry? Of course you are. Everyone's hungry when they get here.'",
+                "Lily looks up at Mira, at this broad-shouldered orc woman with the broken face and the kind eyes, and instead of flinching, she reaches out with her other hand. The one holding the wire bird.",
+                "Mira takes the bird and examines it. She looks at you over Lily's head. 'Did you make this?'",
+                "You nod.",
+                "'It's beautiful.' She sets it on the counter, where the kitchen light catches the copper wire and makes it glow. 'Everything beautiful in this world is made by hands that have every reason to make ugly things instead. Remember that.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.sera_safe", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "add_experience", "amount": 15}
+            ],
+            "choices": [
+                {"text": "Stay at the kitchen. Help Mira with the overflow of displaced people.", "next": "origins.half_giant.hgnt_054"},
+                {"text": "Go back out. The shelter had forty people. They all need somewhere.", "next": "origins.half_giant.hgnt_055"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_044": {
+            "id": "origins.half_giant.hgnt_044",
+            "title": "Shelter in the Tunnels",
+            "location": "underground_tunnels",
+            "text": [
+                "The maintenance tunnels are no place for a child. They're cold, dark, and the dripping water sounds like a clock counting down to nothing. But they're also empty, which means they're safe, which is the only equation that matters right now.",
+                "You find a junction where three corridors meet, wide enough for you to sit without your shoulders touching both walls. You make a nest from your coat and the blanket from Sera's bag, creating a space that's warm if not comfortable. Lily falls asleep almost immediately, the way children do, as if consciousness is a switch they can flip.",
+                "Sera sits across from you in the dim light, her arms wrapped around herself. 'Thank you,' she says for the third time. 'You didn't have to—'",
+                "'Yes I did.' You say it simply because it's true. Leaving them behind was never an option. The geometry of compassion: there's a person who needs help, you are a person who can help, therefore you help. The calculations that most people find complicated are, to you, as obvious as the weight of a stone.",
+                "In the morning, you'll need to find real shelter. Food. Safety. But tonight, in the dark, with a sleeping child and a grateful mother and the sound of water dripping like a metronome, you have enough."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.tunnel_shelter", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1}
+            ],
+            "choices": [
+                {"text": "In the morning, take them to Mira's Kitchen.", "next": "origins.half_giant.hgnt_043"},
+                {"text": "In the morning, go find the other displaced shelter residents.", "next": "origins.half_giant.hgnt_055"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_045": {
+            "id": "origins.half_giant.hgnt_045",
+            "title": "Mira's Response",
+            "location": "market_district",
+            "text": [
+                "Mira listens to the name, Director Marsh, and her expression doesn't change. Which tells you she already knew. 'Marsh is the demolition arm of Nexus-Krieg's urban development division. He's been clearing lower-district properties for months. Shelters, workshops, markets. Anything that serves the community gets torn down and replaced with corporate infrastructure.'",
+                "'Why?'",
+                "'Control. The lower districts run on informal networks. People helping people, outside corporate systems. Every shelter, every kitchen, every independent business is a node in a network that Nexus-Krieg can't control or profit from. So they're destroying the nodes.'",
+                "She looks at you with those steady orc eyes. 'They'll come for this kitchen eventually. I've known that since I opened it. But I thought we'd have more time.'",
+                "'What do we do?'",
+                "'We do what we always do. We help people. We feed them, shelter them, connect them. And when they come for us, we make sure we've built something that can survive without walls.' She hands you a crate of supplies. 'Starting now. Take these to the tunnel camp. There are people down there who need food more than we do.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.understands_threat", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "modify_stat", "stat": "intelligence", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Take the supplies to the tunnels. People need help now.", "next": "origins.half_giant.hgnt_040"},
+                {"text": "'We should fight back. Not just survive. Fight.'", "next": "origins.half_giant.hgnt_056"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_046": {
+            "id": "origins.half_giant.hgnt_046",
+            "title": "Visiting the Kitchen",
+            "location": "market_district",
+            "text": [
+                "You visit on a Saturday. The kitchen is busier than you expected, a line of people stretching down the block, each one carrying the particular weariness of the Lower District's forgotten. Tenna spots you from behind the counter and waves.",
+                "Inside, the chaos has its own rhythm. Mira commands the kitchen like a general commands a battlefield, barking orders, tasting soups, directing traffic with the spatula she never seems to put down. Borek washes dishes in a cascade of water and efficiency. A half-dozen volunteers work stations with the focused energy of people doing something that matters.",
+                "And then Mira sees you. She does the thing, the thing Tenna described: she looks at you, not up at you. At your face, at your eyes, at the person instead of the body.",
+                "'You're Tenna's friend from the roof,' she says. 'The big one.'",
+                "'They're all big ones,' Tenna calls from the counter.",
+                "'The biggest, then. Are you here to eat or to help?'",
+                "You look at the kitchen. At the people. At the warmth that has nothing to do with the stoves.",
+                "'Both,' you say."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.kitchen_visit", "value": true}
+            ],
+            "choices": [
+                {"text": "Start helping. Grab an apron.", "next": "origins.half_giant.hgnt_015"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_047": {
+            "id": "origins.half_giant.hgnt_047",
+            "title": "The Clock",
+            "location": "market_district",
+            "text": [
+                "'Thirty days,' Mira says. 'Standard notice period for commercial demolition.' She throws the crumpled paper into the trash. 'Thirty days to find a new location, move the equipment, set up the supply chains, and make sure the two hundred people who depend on this kitchen don't starve in the transition.'",
+                "Borek sets down a pot with a clang that reverberates through the kitchen. 'Where do we go?'",
+                "'I'm working on it.' Mira's voice is steady, but you can see the cracks. She's been holding this community together for years, and the foundation is being pulled out from under her. 'Kessa at the transit hub has connections. There might be a space in Sector 9, former warehouse.'",
+                "Tenna shakes her head. 'Sector 9 has even lower ceilings than here. Borek and I won't fit.'",
+                "'Then we modify it. We build what we need.'",
+                "You look at your hands. Your enormous, capable, gentle hands. 'I can help build,' you say. 'I can lift, carry, construct. That's what I do.'",
+                "Mira meets your eyes. 'I know. That's why I'm glad you're here.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.thirty_days", "value": true},
+                {"type": "modify_stat", "stat": "strength", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Start planning the move immediately. No time to waste.", "next": "origins.half_giant.hgnt_057"},
+                {"text": "Fight the demolition order first. There might be a legal way.", "next": "origins.half_giant.hgnt_058"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_048": {
+            "id": "origins.half_giant.hgnt_048",
+            "title": "Reading the Notice",
+            "location": "market_district",
+            "text": [
+                "You take the crumpled notice from Mira and smooth it with hands that dwarf the paper. The text is standard corporate legalese, dense and deliberately opaque, designed to discourage reading. But you read it. Every word.",
+                "Buried in the third paragraph, you find something: the demolition order cites 'public safety concerns regarding structural integrity.' Below that, a footnote references an inspection report. Report number NK-7741-S, filed three days ago by a firm called ArchTech Solutions.",
+                "You've worked construction for months. You know buildings. This building is solid. The foundation is reinforced concrete, the load-bearing walls are original steel, and the roof was repaired by the community two years ago. There are no structural concerns. The report is a fabrication.",
+                "'Mira,' you say, holding up the notice. 'The inspection report they're using is fake. This building is structurally sound. I've carried eight hundred pounds across it and it didn't creak.'",
+                "Mira snatches the paper back. Reads it. Her eyes narrow. 'ArchTech Solutions. I've heard that name. They do inspections for Nexus-Krieg. Exclusively.' She looks at you. 'If we can prove the report is fraudulent, the demolition order is invalid.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.found_fraud", "value": true},
+                {"type": "modify_stat", "stat": "intelligence", "amount": 2},
+                {"type": "add_experience", "amount": 20}
+            ],
+            "choices": [
+                {"text": "'I can prove it. I know construction. Let me do a counter-inspection.'", "next": "origins.half_giant.hgnt_059"},
+                {"text": "'We need an independent inspector. Someone with credentials.'", "next": "origins.half_giant.hgnt_058"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_049": {
+            "id": "origins.half_giant.hgnt_049",
+            "title": "The Warning",
+            "location": "market_district",
+            "text": [
+                "You step forward. One step. The three men step back. Two steps. The geometry of intimidation has never been something you wanted to master, but your body makes the calculation automatic.",
+                "'Tell Vik,' you say, your voice dropping to the register that makes loose objects vibrate, 'that if anyone comes near this kitchen, or the people in it, or the people who eat here, I will find him in whatever hole he operates from, and I will have a conversation with him that he will not enjoy.'",
+                "You don't specify what the conversation would entail. You don't have to. Your body fills in the details with nine feet and four inches of specificity.",
+                "The smallest man holds up his hands. 'Hey, easy. Nobody wants trouble. Vik just thought—'",
+                "'Vik thought wrong. Go tell him.'",
+                "They leave. Quickly. You stand in the alley with your heart hammering and your hands shaking, not from fear but from the effort of restraint. You just threatened someone. You've never threatened anyone. Your mother's voice echoes in your head: gentle, gentle, gentle.",
+                "But sometimes gentle isn't enough. Sometimes the gentle ones have to show their teeth to protect the things they love."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.threatened_vik", "value": true},
+                {"type": "modify_stat", "stat": "strength", "amount": 1},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Tell Mira what happened. She needs to know.", "next": "origins.half_giant.hgnt_060"},
+                {"text": "Handle this yourself. Find Vik before he escalates.", "next": "origins.half_giant.hgnt_061"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_050": {
+            "id": "origins.half_giant.hgnt_050",
+            "title": "Buying Time",
+            "location": "market_district",
+            "text": [
+                "'I'll think about it.' The words taste like cowardice but sound like wisdom. The three men nod, satisfied with the non-answer, and disappear back into the alley.",
+                "You pick up the crate of vegetables. Your hands are steady. Your mind is not.",
+                "Inside the kitchen, Mira takes one look at your face and reads the situation. 'Who was that?'",
+                "'Vik. From the fight league. He wants me back. Made some implications about the kitchen.'",
+                "Mira sets down her ladle with the controlled deliberation of someone who's choosing not to throw it. 'Vik has been trying to recruit from my people for years. Borek. Tenna. Now you. He sees half-giants as entertainment, as spectacle.'",
+                "'He sees us as money.'",
+                "'Same thing, in this city.' She crosses her arms. 'We need to deal with this. Not with fists. With something smarter.' She looks toward the back room, where the hidden supply crates sit. 'I've been building relationships with people who can help. It's time to call in favors.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.vik_delayed", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Help Mira plan a response. Use the network.", "next": "origins.half_giant.hgnt_060"},
+                {"text": "Volunteer for the supply runs. If you're useful, you're protected.", "next": "origins.half_giant.hgnt_040"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_051": {
+            "id": "origins.half_giant.hgnt_051",
+            "title": "The Full Run",
+            "location": "underground_tunnels",
+            "text": [
+                "Three clinics. Three deliveries. Each one a small miracle wrapped in a crate and carried through darkness by hands that have finally found a purpose beyond lifting.",
+                "The Sector 7 clinic serves orcs and half-breeds. The doctor there, an orc woman with gentle hands and a vocabulary that's ninety percent profanity, takes the trauma kits with tears she pretends are from the dust.",
+                "The Sector 9 clinic is in a converted shipping container. The nurse, a synth, scans each item with mechanical precision and logs them in a database that exists entirely in his own memory, untraceable, unbreakable.",
+                "By the time you return to Mira's Kitchen, dawn is breaking over the Lower District. Your back aches. Your knees are scraped raw from the low tunnels. Your heart is full.",
+                "Mira is waiting with food. Real food. Enough for a half-giant, which is a lot. She watches you eat without speaking, and when you're done, she nods.",
+                "'Same thing next week?'",
+                "'Same thing next week.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.completed_run", "value": true},
+                {"type": "modify_stat", "stat": "strength", "amount": 1},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "add_experience", "amount": 30}
+            ],
+            "choices": [
+                {"text": "Continue the supply runs. Become the lifeline.", "next": "origins.half_giant.hgnt_062"},
+                {"text": "Something's changing in the district. Talk to Mira about what's coming.", "next": "origins.half_giant.hgnt_063"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_052": {
+            "id": "origins.half_giant.hgnt_052",
+            "title": "The Weight of Good",
+            "location": "underground_tunnels",
+            "text": [
+                "You lean against the tunnel wall outside the clinic and breathe. The doctor's words, the way she said thank you, the way her voice cracked on the name of the girl with the infection, these things settle into you like stones in still water.",
+                "You've spent your whole life being useful. Being the thing that lifts, that carries, that moves heavy objects from one place to another. A body. A machine. But this, this is different. This is your body doing something that matters. Not because someone is paying you to do it, not because your size makes you convenient, but because someone's child is going to survive the night because of what your hands carried through the dark.",
+                "Your mother said your father was gentle. She never said he was useless. Gentle and strong. Kind and capable. These things are not contradictions. They are the same thing, viewed from different angles.",
+                "You push off the wall. Two more clinics are waiting."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "wisdom", "amount": 2},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Complete the deliveries.", "next": "origins.half_giant.hgnt_051"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_053": {
+            "id": "origins.half_giant.hgnt_053",
+            "title": "The Breaking Point",
+            "location": "underground_tunnels",
+            "text": [
+                "The third fight is against another half-giant. Smaller than you, seven and a half feet, but fast. Faster than anything that size should be. The crowd is the biggest yet, hundreds crammed into the underground space, their faces lit by the harsh work lights.",
+                "The fight is brutal. Not the one-punch affairs of before. This one goes the distance. Your opponent knows how to use their size the way you know how to restrain yours, and the result is a collision of bodies that shakes the floor and sends cracks through the concrete walls.",
+                "You win. But the cost. Oh, the cost.",
+                "Your opponent lies on the floor, breathing but not moving. Blood, theirs and yours, pools on the concrete. The crowd screams its approval. Vik counts money with trembling, excited hands. And you stand in the ring with your fists clenched and your mother's voice so quiet now that you can barely hear it.",
+                "This is what they want you to be. A weapon. A spectacle. A body that breaks other bodies for entertainment. This is the future, night after night, fight after fight, until the gentleness is beaten out of you and there's nothing left but the violence.",
+                "No. Not this. Never this."
+            ],
+            "onEnter": [
+                {"type": "modify_stat", "stat": "strength", "amount": 1},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "modify_currency", "amount": 1000},
+                {"type": "set_flag", "flag": "origin.breaking_point", "value": true}
+            ],
+            "choices": [
+                {"text": "Walk away. For the last time. Find Mira. Find a different life.", "next": "origins.half_giant.hgnt_009"},
+                {"text": "Use the fight money for something good. Give it to the shelter.", "next": "origins.half_giant.hgnt_064"}
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+
+        "hgnt_054": {
+            "id": "origins.half_giant.hgnt_054",
+            "title": "The Overflow",
+            "location": "market_district",
+            "text": [
+                "The kitchen fills with displaced shelter residents. Sera and Lily. Old Doss the shelter manager. A dozen others with bags and bundles and the shell-shocked expressions of people whose small stability has been shattered.",
+                "You do what you can. You carry cots from the storage room, set up dividers for privacy, haul mattresses that Mira produces from sources she doesn't explain. The kitchen's back area transforms into a makeshift dormitory, tight and impromptu but warm.",
+                "Tenna handles the people. She knows how to talk to the frightened, the angry, the exhausted. She knows because she's been all of those things. She moves through the crowd with a grace that belies her seven-foot frame, touching shoulders, speaking quietly, making each person feel seen.",
+                "Borek cooks. One-armed, focused, producing an impossible volume of food from a kitchen that was never designed for this scale of crisis. The smell of his stew fills the building and does something that no words can: it makes people feel safe.",
+                "You watch your strange, mismatched family absorb the damage and keep functioning, and you realize that this is what strength looks like. Not one giant lifting a girder. Many broken people holding each other up."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.kitchen_expanded", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "add_experience", "amount": 20}
+            ],
+            "choices": [
+                {"text": "This can't last. The kitchen needs more resources. Go find them.", "next": "origins.half_giant.hgnt_063"},
+                {"text": "Stay and help. The people here need presence, not logistics.", "next": "origins.half_giant.hgnt_062"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_055": {
+            "id": "origins.half_giant.hgnt_055",
+            "title": "Gathering the Lost",
+            "location": "lower_slums",
+            "text": [
+                "You go back out into the streets of the Lower District, looking for the forty people who just lost their shelter. You find them in alleys, under awnings, huddled in doorways. Some have found temporary spots with friends or neighbors. Others have nowhere at all.",
+                "You are the most visible search-and-rescue operation in the history of the Lower District. Nine feet four inches of half-giant, walking the streets, knocking on doors, checking tunnels. People see you coming from three blocks away. Some run. Most don't, because word has spread: the big one from the shelter is looking for people, and he's not looking to hurt them.",
+                "By afternoon, you've found twenty-three of the forty. You lead them through the streets in a procession that draws stares and whispers and, in one case, a slow clap from a vendor who's never liked the corporations.",
+                "You take them to Mira. She opens the door. She always opens the door."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.gathered_displaced", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 2},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "add_experience", "amount": 25}
+            ],
+            "choices": [
+                {"text": "Help settle everyone at the kitchen.", "next": "origins.half_giant.hgnt_054"},
+                {"text": "Keep searching. Seventeen people are still missing.", "next": "origins.half_giant.hgnt_065"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_056": {
+            "id": "origins.half_giant.hgnt_056",
+            "title": "Fighting Back",
+            "location": "market_district",
+            "text": [
+                "'Fight?' Mira looks at you with surprise. Not because you said it, but because you said it quietly. Gently. The way a half-giant says something they've thought about carefully.",
+                "'Not with fists,' you clarify. 'With the network. With information. With the fact that they're destroying shelters and kitchens and communities and nobody in the upper districts knows or cares.' You gesture at the kitchen around you. 'This place feeds two hundred people a day. When they tear it down, two hundred people go hungry. That's a story. That's something people might care about, if anyone told them.'",
+                "Mira considers this. 'Kessa has contacts in independent media. A journalist named Dara who's been looking for a story about lower-district displacement.' She pauses. 'But making noise means making ourselves visible. And visible targets get hit.'",
+                "'We're already targets. The demolition notice proves that. At least if we're visible, they can't disappear us quietly.'",
+                "She nods slowly. 'You're smarter than they think you are.'",
+                "'Everyone's smarter than they think I am. That's one of the advantages of being this big. They never look past the body.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.chose_fight", "value": true},
+                {"type": "modify_stat", "stat": "intelligence", "amount": 1},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Contact Kessa's journalist. Tell the story.", "next": "origins.half_giant.hgnt_066"},
+                {"text": "Organize the community first. A united voice is louder.", "next": "origins.half_giant.hgnt_067"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_057": {
+            "id": "origins.half_giant.hgnt_057",
+            "title": "Building the New Place",
+            "location": "scrap_yards",
+            "text": [
+                "The warehouse in Sector 9 is a shell. Four walls, a roof, and nothing else. But four walls and a roof are a start, and you've built things from less.",
+                "You spend three days doing the work of a construction crew. Ripping out old fixtures with your bare hands. Carrying steel beams from the scrap yards across the district, each one balanced on your shoulders like a toothpick. You raise the ceiling in the main area by removing the false panels and reinforcing the original supports, giving eleven feet of clearance. Not perfect, but enough for a half-giant to stand without hunching.",
+                "Borek works beside you, one-handed, welding brackets and mounting shelving with an efficiency that makes you feel clumsy. Tenna runs supply coordination from a folding table outside, her voice carrying across the construction noise with natural authority.",
+                "By the end of the third day, the warehouse has a kitchen area, a dining space, storage rooms, and a dormitory section with cots for twenty. It's rough, unfinished, but functional. Mira walks through it for the first time and runs her hand along a wall you smoothed yourself.",
+                "'It'll do,' she says. From Mira, that's a medal of honor."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.new_kitchen_built", "value": true},
+                {"type": "modify_stat", "stat": "strength", "amount": 2},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "add_experience", "amount": 30}
+            ],
+            "choices": [
+                {"text": "Help move the equipment from the old kitchen.", "next": "origins.half_giant.hgnt_062"},
+                {"text": "The new place needs protection. Set up security.", "next": "origins.half_giant.hgnt_068"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_058": {
+            "id": "origins.half_giant.hgnt_058",
+            "title": "The Legal Fight",
+            "location": "transit_hub",
+            "text": [
+                "Mira's network reaches further than the tunnels. Through Kessa at the transit hub, you find a lawyer. Not a corporate one. An independent, half-elven woman named Vex who operates out of a converted storage unit and takes payment in meals because her principles won't let her work for the people who can pay.",
+                "Vex reads the demolition order, the inspection report, and the fine print. Her silver eyes move across the text with the speed of someone who's spent years finding cracks in corporate armor.",
+                "'The inspection report is suspicious,' she says. 'ArchTech Solutions has performed forty-seven inspections for Nexus-Krieg in the last year. Forty-seven buildings, all recommended for demolition. That's a hundred percent failure rate. Statistically impossible unless the inspections are predetermined.'",
+                "'Can you challenge it?'",
+                "'I can file an injunction based on conflict of interest. It won't stop the demolition permanently, but it can buy time. Months, maybe.' She looks at you. 'I'll need a counter-inspection from an independent firm. Know anyone in construction?'",
+                "You raise your hand. Your very large hand."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.legal_fight", "value": true},
+                {"type": "modify_stat", "stat": "intelligence", "amount": 1},
+                {"type": "add_experience", "amount": 20}
+            ],
+            "choices": [
+                {"text": "Do the counter-inspection yourself. You know this building inside out.", "next": "origins.half_giant.hgnt_059"},
+                {"text": "Help Vex gather evidence against ArchTech Solutions.", "next": "origins.half_giant.hgnt_066"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_059": {
+            "id": "origins.half_giant.hgnt_059",
+            "title": "The Counter-Inspection",
+            "location": "market_district",
+            "text": [
+                "You inspect the building the way you inspect everything: carefully, thoroughly, with the attention to detail that most people don't expect from someone your size. You check the foundations by pressing your hands against the walls and feeling for vibration, cracks, shifting. Your sensitivity to structural stress comes from years of being the heaviest thing in any building you enter. You've learned to read a structure's limits because exceeding them means the floor gives way beneath you.",
+                "The building is sound. The foundation shows no signs of settling. The load-bearing walls are original steel reinforced with concrete, a construction method that lasts centuries. The roof has been patched but is structurally intact.",
+                "You document everything. Photos, measurements, observations. Vex helps you format it into a legal report that reads like a textbook rebuttal of every claim ArchTech made.",
+                "'Nexus-Krieg's report says the foundation is compromised,' you read from their inspection. 'I've carried eight hundred pounds across every section of this foundation and it didn't flex. If this foundation is compromised, I'd be in the basement right now.'",
+                "Vex grins. 'That might be the most compelling structural analysis I've ever read.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.counter_inspection", "value": true},
+                {"type": "modify_stat", "stat": "intelligence", "amount": 2},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "add_experience", "amount": 25}
+            ],
+            "choices": [
+                {"text": "File the report. Challenge the demolition order.", "next": "origins.half_giant.hgnt_062"},
+                {"text": "The report is good, but we need public pressure too.", "next": "origins.half_giant.hgnt_066"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_060": {
+            "id": "origins.half_giant.hgnt_060",
+            "title": "Mira's Strategy",
+            "location": "market_district",
+            "text": [
+                "Mira listens to the Vik situation with the calm of a general receiving a field report. 'Vik's been a problem for years. He profits from the desperation of people who have no options. Half-giants, orcs, anyone too big and too broke to say no to the ring.'",
+                "'He threatened the kitchen.'",
+                "'He threatens everyone. It's his business model.' She sits back. 'But threats only work when the target is isolated. We're not isolated. We have the clinics, Kessa's network, the tunnel communities. We have allies Vik doesn't know about.'",
+                "She pulls out a comm unit. 'I'm going to make some calls. By tomorrow, Vik is going to discover that the half-giant he tried to recruit has friends. The kind of friends that make the fight league's security look like children with sticks.'",
+                "She pauses. 'But there's something else. Something bigger than Vik.' She looks toward the window. 'Nexus-Krieg is clearing the district. Shelters, shops, everything. The demolition orders are coming faster. Vik is a symptom. The corporation is the disease.'",
+                "'Then we treat the disease.'",
+                "'Now you're thinking like a giant. A real one.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.mira_strategy", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Help Mira make the calls. Mobilize the network.", "next": "origins.half_giant.hgnt_062"},
+                {"text": "Deal with Vik personally. Remove the immediate threat.", "next": "origins.half_giant.hgnt_061"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_061": {
+            "id": "origins.half_giant.hgnt_061",
+            "title": "Finding Vik",
+            "location": "underground_tunnels",
+            "text": [
+                "You find the fight league's headquarters: a converted maintenance room deep in the tunnels, furnished with mismatched chairs and a desk covered in betting slips. Vik sits behind the desk, his augmented eyes widening when you duck through the doorway.",
+                "You don't hit him. You don't threaten him. You do something worse: you sit down across from him, and the chair screams under your weight, and you look at him with the calm, patient expression of someone who has infinite time and nothing to lose.",
+                "'I'm not going to fight for you,' you say. 'I'm not going to let you recruit from Mira's Kitchen. And if you send anyone near my people again, I won't come talk to you. I'll come take your ring apart. With my hands. Piece by piece.'",
+                "Vik's augmented eyes click and whir, calculating odds, outcomes, probabilities. 'You're making a mistake. I have connections. I have resources. I can make your life very—'",
+                "'My life is already difficult. You can't threaten someone who sleeps in spaces built for people half their size and eats protein paste for three meals a day.' You stand. The ceiling creaks. 'We're done here, Vik. Permanently.'",
+                "You leave without looking back. Your hands are shaking. But they're clean."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.confronted_vik", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 2},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "add_experience", "amount": 20}
+            ],
+            "choices": [
+                {"text": "Return to the kitchen. Focus on what matters.", "next": "origins.half_giant.hgnt_062"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_062": {
+            "id": "origins.half_giant.hgnt_062",
+            "title": "The Work That Matters",
+            "location": "market_district",
+            "text": [
+                "Days blur into weeks. The kitchen operates, the supply runs continue, the community grows. You become a fixed point in the constellation of the Lower District, known not as 'the half-giant' but by name, which people have started to learn and use and speak without flinching.",
+                "You carry supplies through the tunnels. You build shelving and repair equipment. You cook soups that Mira grudgingly admits are better than hers. You make wire sculptures that Lily collects and arranges on her windowsill like a tiny museum of hope.",
+                "Borek teaches you to weld one-handed, 'for when you lose one,' he says with dark humor that makes Tenna groan. Tenna teaches you to smile at strangers without scaring them, which is harder than any construction job. Mira teaches you that leadership isn't about being the biggest person in the room. It's about making the room bigger.",
+                "And through it all, something is building. Not just the community, not just the network, but something inside you. A sense that your size, your strength, your impossible body that breaks every chair and scrapes every ceiling, might have a purpose beyond labor and spectacle.",
+                "You were built for more than lifting. You just had to find a world worth lifting up."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.community_growing", "value": true},
+                {"type": "add_experience", "amount": 30},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1}
+            ],
+            "choices": [
+                {"text": "But the peace can't last. Nexus-Krieg is still coming.", "next": "origins.half_giant.hgnt_069"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_063": {
+            "id": "origins.half_giant.hgnt_063",
+            "title": "What's Coming",
+            "location": "market_district",
+            "text": [
+                "Mira sits you down after closing. The kitchen is empty, the last dishes washed, the last regulars gone home to wherever home is. She pours two cups of tea, one in a normal cup, one in a mixing bowl because normal cups don't fit your hands.",
+                "'I've been getting reports from Kessa,' she says. 'Nexus-Krieg is accelerating the clearances. Not just shelters. Clinics, workshops, markets. Everything that serves the lower districts independently. They call it Urban Renewal. We call it ethnic cleansing by demolition order.'",
+                "'What do they want the space for?'",
+                "'Automated logistics. Drone warehouses. Server farms. Things that don't need people.' She takes a drink. 'The lower districts are being converted from a place where undesirables live to a place where machines work. The undesirables, us, are expected to simply... evaporate.'",
+                "The word hits like a fist. Evaporate. As if you're water, not people. As if you can simply be heated until you're gone.",
+                "'What do we do?'",
+                "'We stop evaporating. We become solid. We become so real, so visible, so undeniable that they can't pretend we don't exist.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.knows_plan", "value": true},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1},
+                {"type": "modify_stat", "stat": "intelligence", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Make noise. Public. Visible. Undeniable.", "next": "origins.half_giant.hgnt_066"},
+                {"text": "Build underground. If they take the surface, go deeper.", "next": "origins.half_giant.hgnt_068"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_064": {
+            "id": "origins.half_giant.hgnt_064",
+            "title": "The Gift",
+            "location": "lower_slums",
+            "text": [
+                "You take the fight money, all of it, and give it to the shelter. Doss takes the bills with trembling hands and stares at the amount.",
+                "'This is... this is two months of operating costs. Where did you—'",
+                "'Doesn't matter where. Use it for the people here.'",
+                "Doss looks at you with an expression that's part gratitude, part concern. 'You didn't do anything dangerous, did you?'",
+                "You think about the ring. The blood. The sound a body makes when it hits concrete. 'Nothing I'll do again.'",
+                "The money goes into the shelter's safe. Two months of safety, bought with violence you never wanted to commit. The equation doesn't balance. It never will. But the people in this shelter will eat tomorrow and sleep with a roof over their heads, and that has to be enough.",
+                "You leave the shelter and walk into the rain, looking for a different kind of future."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.donated_winnings", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 2},
+                {"type": "modify_currency", "amount": -1000}
+            ],
+            "choices": [
+                {"text": "Find Mira's Kitchen. Start a new life.", "next": "origins.half_giant.hgnt_009"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_065": {
+            "id": "origins.half_giant.hgnt_065",
+            "title": "The Last Search",
+            "location": "underground_tunnels",
+            "text": [
+                "You search until dark. Through tunnels, alleys, abandoned buildings, and the spaces between spaces where people hide when they have nothing left. You find seven more. An elderly couple who've been sitting in a doorway for hours, too proud to ask for help. A family of four, the children silent and wide-eyed. A single man who doesn't speak and follows you only because you extend your hand.",
+                "The last three you can't find. They've disappeared into the city the way the city makes people disappear: quietly, completely, without notice or memorial.",
+                "You return to the kitchen with your flock of seven, and Mira takes them in without comment, because that's what Mira does, and the kitchen is already so full that three more hardly matters, except it does, because every person matters, every single one.",
+                "That night, lying in the back room with your knees against the wall and the sound of thirty displaced people sleeping around you, you make a decision. You're done being passive. Done accepting. Done living in spaces that don't fit.",
+                "It's time to build spaces that do."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.completed_search", "value": true},
+                {"type": "modify_stat", "stat": "constitution", "amount": 1},
+                {"type": "modify_stat", "stat": "charisma", "amount": 1},
+                {"type": "add_experience", "amount": 20}
+            ],
+            "choices": [
+                {"text": "Start building. A new space, designed for everyone.", "next": "origins.half_giant.hgnt_057"},
+                {"text": "Talk to Mira about the bigger picture. This needs to stop happening.", "next": "origins.half_giant.hgnt_063"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "hgnt_066": {
+            "id": "origins.half_giant.hgnt_066",
+            "title": "Going Public",
+            "location": "market_district",
+            "text": [
+                "Dara the journalist arrives with recording equipment and eyes that miss nothing. She's human, thin, with augmented optics that capture everything in real-time broadcast quality. She takes one look at the kitchen, at the displaced people, at the half-giants who can't stand upright in their own home, and her expression shifts from professional interest to genuine anger.",
+                "'This is a story,' she says. 'This is the story. A community kitchen feeding two hundred people, staffed by half-giants and outcasts, about to be demolished for a drone warehouse.' She starts recording. 'Tell me about this place. Tell me about the people.'",
+                "You talk. Not about yourself, at first, but about Mira. About Borek and his one-handed dishwashing. About Tenna and her counter-smile. About Sera and Lily and the wire bird. About the doctor in Sector 5 who cried over antibiotics.",
+                "And then, because Dara asks, you talk about what it's like to be too big for the world. The ceilings. The chairs. The flinches. The way people look at you and see a body, a tool, a threat, but never a person. The way you've learned to make yourself small in a world that wasn't designed for you.",
+                "Dara's augmented eyes record everything. 'This goes out tonight,' she says. 'Every feed in the city.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.went_public", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 2},
+                {"type": "add_experience", "amount": 25}
+            ],
+            "choices": [
+                {"text": "Let the story do its work. Wait for the response.", "next": "origins.half_giant.hgnt_069"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_067": {
+            "id": "origins.half_giant.hgnt_067",
+            "title": "Organizing",
+            "location": "market_district",
+            "text": [
+                "You go door to door. A half-giant knocking on doors in the Lower District is not subtle, but subtlety was never your strong suit. You talk to business owners, clinic workers, shelter managers, and the ordinary people who make up the fabric of the community.",
+                "Most are scared. All are angry. Some are ready.",
+                "A dwarf forge master named Bronnik listens to your pitch with arms folded and a scowl that could curdle metal. 'You want to organize against Nexus-Krieg. A half-giant and a kitchen full of outcasts. Against a megacorp.'",
+                "'Against a demolition order. Against the lie that this community doesn't matter. Against the idea that we can be evaporated.' You kneel to meet his eye level. 'I'm not asking you to fight. I'm asking you to stand. To say we're here, we matter, and we're not leaving.'",
+                "Bronnik studies you for a long moment. 'You're either very brave or very stupid.'",
+                "'I've been told it's both.'",
+                "He almost smiles. 'Come back at six. Bring your kitchen people. I'll bring mine.'"
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.organizing", "value": true},
+                {"type": "modify_stat", "stat": "charisma", "amount": 2},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 1}
+            ],
+            "choices": [
+                {"text": "Organize the meeting. Bring everyone together.", "next": "origins.half_giant.hgnt_069"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_068": {
+            "id": "origins.half_giant.hgnt_068",
+            "title": "The Underground Haven",
+            "location": "underground_tunnels",
+            "text": [
+                "If the surface is hostile, go deeper. It's not a strategy most people would choose, but you're not most people. You're a half-giant who's spent their entire life making do with spaces that don't fit. Building underground is just the same problem, inverted.",
+                "In the tunnels beneath Sector 7, with help from the displaced dwarves who already have a makeshift forge down here, you begin constructing a haven. A space with ceilings high enough for half-giants. Walls reinforced against the weight of the city above. Rooms that are designed for the people who will use them, not for the average, not for the standard, but for the real.",
+                "It takes weeks. You carry steel beams through tunnels that barely fit them. You reinforce supports with concrete mixed by hand. You build a kitchen that Mira designs and Borek tests with the ruthless efficiency of a health inspector who actually cares about health.",
+                "When it's done, it's not beautiful. It's not comfortable. But it's yours. Built by hands that were told their only value was lifting. Designed by minds that were told they were nothing but bodies.",
+                "Mira stands in the center of the underground kitchen and turns in a slow circle. 'It fits,' she says. And she means all of it."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.underground_haven", "value": true},
+                {"type": "modify_stat", "stat": "strength", "amount": 2},
+                {"type": "modify_stat", "stat": "tech", "amount": 1},
+                {"type": "add_experience", "amount": 35}
+            ],
+            "choices": [
+                {"text": "The haven is ready. But the fight above isn't over.", "next": "origins.half_giant.hgnt_069"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "hgnt_069": {
+            "id": "origins.half_giant.hgnt_069",
+            "title": "The Storm Breaks",
+            "location": "lower_slums",
+            "text": [
+                "It happens all at once, the way storms break: sudden, overwhelming, impossible to ignore. Nexus-Krieg sends demolition teams to six locations simultaneously. The kitchen, the clinics, the shelters, the forge district. A coordinated strike designed to eliminate every independent support structure in the Lower District in a single night.",
+                "But the district is ready. Not perfectly. Not completely. But ready in the way that communities are ready when they've been pushed too far and have nothing left to lose.",
+                "The kitchen's regulars form a human chain around the building. Forge masters block their doorways with bodies and improvised barricades. Clinic staff refuse to leave their patients. And you, standing in front of Mira's Kitchen at your full height for the first time without shame, without apology, without making yourself small, become the most visible symbol of refusal the Lower District has ever seen.",
+                "The demolition teams stop. They were expecting empty buildings and scattered resistance. They got a community.",
+                "Dara's cameras capture everything. The feeds light up. By morning, the whole city is watching."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.storm_broke", "value": true},
+                {"type": "add_experience", "amount": 40}
+            ],
+            "choices": [
+                {"text": "The Gentle Giant — Stand at the front, shield the community with your body.", "next": "origins.half_giant.hgnt_097"},
+                {"text": "The Builder — Focus on getting people to safety in the underground haven.", "next": "origins.half_giant.hgnt_098"},
+                {"text": "The Voice — Speak to the cameras. Tell the city who you are.", "next": "origins.half_giant.hgnt_099"},
+                {"text": "The Fighter — When gentle isn't enough, show them what a half-giant can do.", "next": "origins.half_giant.hgnt_100"}
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+
+        "hgnt_097": {
+            "id": "origins.half_giant.hgnt_097",
+            "title": "Ending: The Gentle Giant",
+            "location": "lower_slums",
+            "text": [
+                "You stand at the front of the line and you do not move. Nine feet four inches of half-giant, planted between the demolition teams and the community like a wall made of conviction. They could tase you. They could gas you. They could call in reinforcements with the firepower to put you down. But they'd have to do it on camera, in front of the whole city, and the optics of a corporation attacking a person who's just standing there, just existing, just refusing to be moved, are worse than any demolition delay.",
+                "The standoff lasts six hours. By the end, the demolition teams withdraw. Not permanently. Nothing is permanent in the Lower District. But today, the community stands. Today, the kitchen serves dinner. Today, Lily makes a new wire bird under your patient guidance, her small hands learning the gentleness that your large ones already know.",
+                "You are the Gentle Giant. Not because they call you that, not because of the feeds and the stories and the name that spreads across the city in the days that follow. But because you chose to be. Because your mother told you about your father, and you chose to be like him: enormous, powerful, and achingly, defiantly gentle.",
+                "The city is changing. Something is building in its foundations, in its tunnels and kitchens and forges, that even the corporations can feel. And you, standing at your full height in a world that was never built for you, are part of it.",
+                "Whatever comes next, you'll face it the way you face everything: with open hands and a steady heart."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.ending", "value": "gentle_giant"},
+                {"type": "modify_stat", "stat": "constitution", "amount": 3},
+                {"type": "modify_stat", "stat": "charisma", "amount": 2}
+            ],
+            "choices": [
+                {"text": "Begin the prologue.", "next": "shared.prologue.node_001"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": true
+        },
+
+        "hgnt_098": {
+            "id": "origins.half_giant.hgnt_098",
+            "title": "Ending: The Builder",
+            "location": "underground_tunnels",
+            "text": [
+                "While the standoff plays out above, you work below. Through the tunnels, carrying people and supplies, building the underground haven into something that can shelter the entire displaced community. Your hands, the ones that shaped wire birds and peeled vegetables and carried medicine through the dark, now shape something larger: a home.",
+                "Not a shelter. Not a temporary refuge. A home. With ceilings high enough for half-giants and doorways wide enough for orcs and kitchens that can feed hundreds and medical bays stocked with supplies you carried on your own back through tunnels that didn't fit.",
+                "You build it the way you do everything: carefully, gently, with attention to the needs of every person who will live here. Mira designs the kitchen. Borek installs the plumbing. Tenna organizes the dormitories. And you, the largest person in the room, make sure the room is large enough for everyone.",
+                "The underground haven isn't hidden. It's just deep. Deep enough that the demolition orders can't reach it. Deep enough that the corporations can't easily touch it. A foundation for something new.",
+                "Your mother said your father was gentle. She didn't say he was passive. Building is an act of defiance. Every wall you raise, every ceiling you lift, every space you create for people who were told they don't deserve space, is a declaration of war against the idea that the powerless deserve nothing.",
+                "You're a builder. You've always been a builder. And what you're building now is bigger than any structure."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.ending", "value": "builder"},
+                {"type": "modify_stat", "stat": "strength", "amount": 3},
+                {"type": "modify_stat", "stat": "tech", "amount": 2}
+            ],
+            "choices": [
+                {"text": "Begin the prologue.", "next": "shared.prologue.node_001"}
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": true
+        },
+
+        "hgnt_099": {
+            "id": "origins.half_giant.hgnt_099",
+            "title": "Ending: The Voice",
+            "location": "lower_slums",
+            "text": [
+                "Dara puts a microphone in front of you and the feeds go live. Millions of eyes across the city, watching a half-giant speak.",
+                "You don't shout. You speak quietly, the way you always do, and somehow the quiet makes the words louder. You talk about the shelter that was demolished. About the forty people who lost their home. About Mira's Kitchen and the two hundred mouths it feeds. About the clinics that survive on smuggled medicine. About the half-giants who work construction for a fraction of fair wages and sleep in spaces built for people half their size.",
+                "You talk about Lily and the wire bird. About Borek's one-handed dishwashing. About Tenna's counter-smile. About the community that exists in the cracks of a city that was designed to leave no cracks for people like you.",
+                "'We are here,' you say. 'We have always been here. We are the people who build your towers and clean your streets and carry your loads. We are the ones you don't see because seeing us would mean admitting that the city works because we work. That your comfort rests on our backs. And our backs are tired.'",
+                "The feed numbers climb. The story spreads. And in the corporate towers above, people who have never thought about the Lower District are thinking about it now.",
+                "You didn't raise a fist. You raised a voice. And sometimes that's enough to shake a city to its foundations."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.ending", "value": "voice"},
+                {"type": "modify_stat", "stat": "charisma", "amount": 3},
+                {"type": "modify_stat", "stat": "wisdom", "amount": 2}
+            ],
+            "choices": [
+                {"text": "Begin the prologue.", "next": "shared.prologue.node_001"}
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": true
+        },
+
+        "hgnt_100": {
+            "id": "origins.half_giant.hgnt_100",
+            "title": "Ending: The Fighter",
+            "location": "lower_slums",
+            "text": [
+                "When the demolition team brings drones, when the tasers come out, when gentle stops being enough, you make a choice your mother would have understood even if she wouldn't have approved.",
+                "You fight. Not the way Vik wanted you to fight, not for money, not for spectacle, not for the entertainment of people who see you as a body and nothing more. You fight the way a parent fights for their children. The way a wall fights gravity. The way the ground fights the weight of everything built on top of it.",
+                "You put yourself between the drones and the kitchen. You take the taser hits, all of them, and you don't fall. Your body, this impossible, oversized, inconvenient body that breaks chairs and scrapes ceilings and doesn't fit anywhere, absorbs the punishment with the stubbornness of someone who has decided that falling is not an option.",
+                "The drones go down. Not from your fists, though you'd be lying if you said you didn't help. But because the community swarms them, dwarves with wrenches and humans with pipes and orcs with the kind of anger that's been building for generations.",
+                "When it's over, you're standing in the wreckage of the demolition team's equipment with blood on your hands and tears on your face and Lily tugging at your pants leg saying 'You okay? You okay, Kind?'",
+                "You pick her up gently, so gently, and hold her against your chest. 'I'm okay,' you say. And for the first time in your life, you mean it."
+            ],
+            "onEnter": [
+                {"type": "set_flag", "flag": "origin.ending", "value": "fighter"},
+                {"type": "modify_stat", "stat": "strength", "amount": 3},
+                {"type": "modify_stat", "stat": "constitution", "amount": 2}
+            ],
+            "choices": [
+                {"text": "Begin the prologue.", "next": "shared.prologue.node_001"}
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": true
+        }
+    }
+}

@@ -8,7 +8,7 @@
     "nodes": {
 
         "ending_106_approach": {
-            "id": "endings.combat.ending_106_approach",
+            "id": "endings.combat-endings.ending_106_approach",
             "title": "The Last Stand Begins",
             "location": "dynamic_combat",
             "text": [
@@ -31,7 +31,7 @@
             "choices": [
                 {
                     "text": "Fight. Make them remember you.",
-                    "next": "endings.combat.ending_106_mid"
+                    "next": "endings.combat-endings.ending_106_mid"
                 }
             ],
             "ascii": null,
@@ -40,7 +40,7 @@
         },
 
         "ending_106_mid": {
-            "id": "endings.combat.ending_106_mid",
+            "id": "endings.combat-endings.ending_106_mid",
             "title": "The Kill Count Rises",
             "location": "dynamic_combat",
             "text": [
@@ -59,7 +59,7 @@
             "choices": [
                 {
                     "text": "Keep fighting. Don't stop until you can't.",
-                    "next": "endings.combat.ending_106_final"
+                    "next": "endings.combat-endings.ending_106_final"
                 }
             ],
             "ascii": null,
@@ -68,7 +68,7 @@
         },
 
         "ending_106_final": {
-            "id": "endings.combat.ending_106_final",
+            "id": "endings.combat-endings.ending_106_final",
             "title": "ENDING #106: Blaze of Glory",
             "location": "dynamic_combat",
             "text": [
@@ -102,7 +102,7 @@
         },
 
         "ending_107_approach": {
-            "id": "endings.combat.ending_107_approach",
+            "id": "endings.combat-endings.ending_107_approach",
             "title": "Something Is Wrong",
             "location": "dynamic_combat",
             "text": [
@@ -120,7 +120,7 @@
             "choices": [
                 {
                     "text": "Try to keep going. Find help.",
-                    "next": "endings.combat.ending_107_mid"
+                    "next": "endings.combat-endings.ending_107_mid"
                 }
             ],
             "ascii": null,
@@ -129,7 +129,7 @@
         },
 
         "ending_107_mid": {
-            "id": "endings.combat.ending_107_mid",
+            "id": "endings.combat-endings.ending_107_mid",
             "title": "The Slow Descent",
             "location": "lower_slums",
             "text": [
@@ -148,7 +148,7 @@
             "choices": [
                 {
                     "text": "Close your eyes. Just for a moment.",
-                    "next": "endings.combat.ending_107_final"
+                    "next": "endings.combat-endings.ending_107_final"
                 }
             ],
             "ascii": null,
@@ -157,7 +157,7 @@
         },
 
         "ending_107_final": {
-            "id": "endings.combat.ending_107_final",
+            "id": "endings.combat-endings.ending_107_final",
             "title": "ENDING #107: Poison",
             "location": "lower_slums",
             "text": [
@@ -191,7 +191,7 @@
         },
 
         "ending_108_approach": {
-            "id": "endings.combat.ending_108_approach",
+            "id": "endings.combat-endings.ending_108_approach",
             "title": "The Crossfire",
             "location": "faction_territory",
             "text": [
@@ -209,7 +209,7 @@
             "choices": [
                 {
                     "text": "Call out to your allies. Identify yourself.",
-                    "next": "endings.combat.ending_108_mid"
+                    "next": "endings.combat-endings.ending_108_mid"
                 }
             ],
             "ascii": null,
@@ -218,7 +218,7 @@
         },
 
         "ending_108_mid": {
-            "id": "endings.combat.ending_108_mid",
+            "id": "endings.combat-endings.ending_108_mid",
             "title": "Lost in the Noise",
             "location": "faction_territory",
             "text": [
@@ -235,7 +235,7 @@
             "choices": [
                 {
                     "text": "Move toward the allied line. Show them who you are.",
-                    "next": "endings.combat.ending_108_final"
+                    "next": "endings.combat-endings.ending_108_final"
                 }
             ],
             "ascii": null,
@@ -244,7 +244,7 @@
         },
 
         "ending_108_final": {
-            "id": "endings.combat.ending_108_final",
+            "id": "endings.combat-endings.ending_108_final",
             "title": "ENDING #108: Friendly Fire",
             "location": "faction_territory",
             "text": [
@@ -278,7 +278,7 @@
         },
 
         "ending_109_approach": {
-            "id": "endings.combat.ending_109_approach",
+            "id": "endings.combat-endings.ending_109_approach",
             "title": "The Challenge",
             "location": "faction_territory",
             "text": [
@@ -297,7 +297,7 @@
             "choices": [
                 {
                     "text": "Accept the duel. Step into the ring.",
-                    "next": "endings.combat.ending_109_mid"
+                    "next": "endings.combat-endings.ending_109_mid"
                 }
             ],
             "ascii": null,
@@ -306,7 +306,7 @@
         },
 
         "ending_109_mid": {
-            "id": "endings.combat.ending_109_mid",
+            "id": "endings.combat-endings.ending_109_mid",
             "title": "The Exchange",
             "location": "faction_territory",
             "text": [
@@ -325,7 +325,7 @@
             "choices": [
                 {
                     "text": "Give everything. Hold nothing back.",
-                    "next": "endings.combat.ending_109_final"
+                    "next": "endings.combat-endings.ending_109_final"
                 }
             ],
             "ascii": null,
@@ -334,7 +334,7 @@
         },
 
         "ending_109_final": {
-            "id": "endings.combat.ending_109_final",
+            "id": "endings.combat-endings.ending_109_final",
             "title": "ENDING #109: The Duel",
             "location": "faction_territory",
             "text": [
@@ -368,7 +368,7 @@
         },
 
         "ending_110_approach": {
-            "id": "endings.combat.ending_110_approach",
+            "id": "endings.combat-endings.ending_110_approach",
             "title": "The Wound That Won't Close",
             "location": "lower_slums_alley",
             "text": [
@@ -386,7 +386,7 @@
             "choices": [
                 {
                     "text": "Try to call for help.",
-                    "next": "endings.combat.ending_110_mid"
+                    "next": "endings.combat-endings.ending_110_mid"
                 }
             ],
             "ascii": null,
@@ -395,7 +395,7 @@
         },
 
         "ending_110_mid": {
-            "id": "endings.combat.ending_110_mid",
+            "id": "endings.combat-endings.ending_110_mid",
             "title": "No Signal",
             "location": "lower_slums_alley",
             "text": [
@@ -415,7 +415,7 @@
             "choices": [
                 {
                     "text": "Wait. Someone will come.",
-                    "next": "endings.combat.ending_110_final"
+                    "next": "endings.combat-endings.ending_110_final"
                 }
             ],
             "ascii": null,
@@ -424,7 +424,7 @@
         },
 
         "ending_110_final": {
-            "id": "endings.combat.ending_110_final",
+            "id": "endings.combat-endings.ending_110_final",
             "title": "ENDING #110: Forgotten",
             "location": "lower_slums_alley",
             "text": [

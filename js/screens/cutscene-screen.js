@@ -358,6 +358,12 @@ window.Latency.Screens.CutsceneScreen = (function () {
 
         // Render narrative text via typewriter
         if (slide.text && _els.narrativeText) {
+            // Trigger voice narration if VoiceManager is available
+            if (window.Latency.VoiceManager && window.Latency.VoiceManager.isEnabled()) {
+                var cleanText = slide.text.replace(/<[^>]*>/g, '').replace(/&[^;]+;/g, ' ');
+                window.Latency.VoiceManager.speak(cleanText);
+            }
+
             _els.narrativeText.setAttribute('data-full-text', slide.text);
 
             _typewrite(_els.narrativeText, slide.text, function () {

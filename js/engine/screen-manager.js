@@ -203,7 +203,7 @@ window.Latency.ScreenManager = (function () {
         // If the StateMachine is stuck waiting for this screen, show it now
         var EB = window.Latency && window.Latency.EventBus;
         var SM = window.Latency && window.Latency.StateMachine;
-        if (SM && SM.getCurrentState && SM.getCurrentState() === name && _currentScreen !== name) {
+        if (SM && SM.getCurrentState && SM.getCurrentState() === name && _activeScreenName !== name) {
             show(name);
         }
     }

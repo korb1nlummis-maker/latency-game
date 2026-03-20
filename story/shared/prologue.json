@@ -1737,8 +1737,28 @@
                 { "type": "add_experience", "amount": 50 },
                 { "type": "set_flag", "flag": "prologue.48hr_clock_started", "value": true }
             ],
-            "choices": [],
-            "autoNext": "act1.chapter1.node_001",
+            "choices": [
+                {
+                    "text": "Begin your assignment.",
+                    "condition": { "job": "enforcer" },
+                    "next": "act1.chapter1-enforcer.enf_001"
+                },
+                {
+                    "text": "Begin your assignment.",
+                    "condition": { "job": "hacker" },
+                    "next": "act1.chapter1-hacker.hack_001"
+                },
+                {
+                    "text": "Begin your assignment.",
+                    "condition": { "job": "medic" },
+                    "next": "act1.chapter1-medic.med_001"
+                },
+                {
+                    "text": "Begin your assignment.",
+                    "condition": { "job": "smuggler" },
+                    "next": "act1.chapter1-smuggler.smug_001"
+                }
+            ],
             "ascii": null,
             "music": "ambient_prologue_end",
             "isEnding": false

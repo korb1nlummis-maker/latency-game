@@ -8,7 +8,7 @@
     "nodes": {
 
         "fac_saints_001": {
-            "id": "act1.chapter2.fac_saints_001",
+            "id": "act1.chapter2-saints-ghost.fac_saints_001",
             "title": "The Observatory",
             "location": "observatory",
             "text": [
@@ -23,11 +23,11 @@
             "choices": [
                 {
                     "text": "Follow the acolyte inside",
-                    "next": "act1.chapter2.fac_saints_002"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_002"
                 },
                 {
                     "text": "Examine the copper wire patterns more closely before entering",
-                    "next": "act1.chapter2.fac_saints_001a"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_001a"
                 }
             ],
             "ascii": null,
@@ -36,7 +36,7 @@
         },
 
         "fac_saints_001a": {
-            "id": "act1.chapter2.fac_saints_001a",
+            "id": "act1.chapter2-saints-ghost.fac_saints_001a",
             "title": "The Wire Mandala",
             "location": "observatory",
             "text": [
@@ -53,7 +53,7 @@
             "choices": [
                 {
                     "text": "Follow the acolyte inside to meet the High Compiler",
-                    "next": "act1.chapter2.fac_saints_002"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_002"
                 }
             ],
             "ascii": null,
@@ -62,7 +62,7 @@
         },
 
         "fac_saints_002": {
-            "id": "act1.chapter2.fac_saints_002",
+            "id": "act1.chapter2-saints-ghost.fac_saints_002",
             "title": "High Compiler Ezra-7",
             "location": "observatory",
             "text": [
@@ -79,15 +79,15 @@
             "choices": [
                 {
                     "text": "\"What do you need from me?\"",
-                    "next": "act1.chapter2.fac_saints_003"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_003"
                 },
                 {
                     "text": "\"You talk about machines like they're alive.\"",
-                    "next": "act1.chapter2.fac_saints_002a"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_002a"
                 },
                 {
                     "text": "\"I'm not here for religion. I'm here because someone said you pay well.\"",
-                    "next": "act1.chapter2.fac_saints_002b"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_002b"
                 }
             ],
             "ascii": null,
@@ -96,7 +96,7 @@
         },
 
         "fac_saints_002a": {
-            "id": "act1.chapter2.fac_saints_002a",
+            "id": "act1.chapter2-saints-ghost.fac_saints_002a",
             "title": "The Machine Spirit",
             "location": "observatory",
             "text": [
@@ -111,7 +111,7 @@
             "choices": [
                 {
                     "text": "\"What do you need from me?\"",
-                    "next": "act1.chapter2.fac_saints_003"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_003"
                 }
             ],
             "ascii": null,
@@ -120,7 +120,7 @@
         },
 
         "fac_saints_002b": {
-            "id": "act1.chapter2.fac_saints_002b",
+            "id": "act1.chapter2-saints-ghost.fac_saints_002b",
             "title": "A Pragmatist's Welcome",
             "location": "observatory",
             "text": [
@@ -133,7 +133,7 @@
             "choices": [
                 {
                     "text": "\"Talk specifics. I'm listening.\"",
-                    "next": "act1.chapter2.fac_saints_003"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_003"
                 }
             ],
             "ascii": null,
@@ -142,7 +142,7 @@
         },
 
         "fac_saints_003": {
-            "id": "act1.chapter2.fac_saints_003",
+            "id": "act1.chapter2-saints-ghost.fac_saints_003",
             "title": "The Lost Core",
             "location": "observatory",
             "text": [
@@ -159,15 +159,15 @@
             "choices": [
                 {
                     "text": "\"I'll do it. Tell me what I need to know.\"",
-                    "next": "act1.chapter2.fac_saints_004"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_004"
                 },
                 {
                     "text": "\"What's the pay?\"",
-                    "next": "act1.chapter2.fac_saints_003a"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_003a"
                 },
                 {
                     "text": "\"What happens if someone else gets to it first?\"",
-                    "next": "act1.chapter2.fac_saints_003b"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_003b"
                 }
             ],
             "ascii": null,
@@ -176,7 +176,7 @@
         },
 
         "fac_saints_003a": {
-            "id": "act1.chapter2.fac_saints_003a",
+            "id": "act1.chapter2-saints-ghost.fac_saints_003a",
             "title": "The Saints' Offer",
             "location": "observatory",
             "text": [
@@ -188,7 +188,7 @@
             "choices": [
                 {
                     "text": "\"Good enough. Brief me on the tunnels.\"",
-                    "next": "act1.chapter2.fac_saints_004"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_004"
                 }
             ],
             "ascii": null,
@@ -197,7 +197,7 @@
         },
 
         "fac_saints_003b": {
-            "id": "act1.chapter2.fac_saints_003b",
+            "id": "act1.chapter2-saints-ghost.fac_saints_003b",
             "title": "Competing Interests",
             "location": "observatory",
             "text": [
@@ -214,7 +214,7 @@
             "choices": [
                 {
                     "text": "\"Then let's make sure you get it first.\"",
-                    "next": "act1.chapter2.fac_saints_004"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_004"
                 }
             ],
             "ascii": null,
@@ -223,7 +223,7 @@
         },
 
         "fac_saints_004": {
-            "id": "act1.chapter2.fac_saints_004",
+            "id": "act1.chapter2-saints-ghost.fac_saints_004",
             "title": "Into the Tunnel Network",
             "location": "tunnel_network",
             "text": [
@@ -241,18 +241,18 @@
                 {
                     "text": "[TECH 13] Attempt to interface with the tunnel's security network and create a safe passage",
                     "statCheck": { "stat": "tech", "dc": 13 },
-                    "next": "act1.chapter2.fac_saints_005a",
-                    "failNext": "act1.chapter2.fac_saints_005b"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_005a",
+                    "failNext": "act1.chapter2-saints-ghost.fac_saints_005b"
                 },
                 {
                     "text": "[INT 14] Study the patterns in the security door cycles and find a path through the gaps",
                     "statCheck": { "stat": "intelligence", "dc": 14 },
-                    "next": "act1.chapter2.fac_saints_005a",
-                    "failNext": "act1.chapter2.fac_saints_005b"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_005a",
+                    "failNext": "act1.chapter2-saints-ghost.fac_saints_005b"
                 },
                 {
                     "text": "Push through by force and speed, trusting your reflexes",
-                    "next": "act1.chapter2.fac_saints_005b"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_005b"
                 }
             ],
             "ascii": null,
@@ -261,7 +261,7 @@
         },
 
         "fac_saints_005a": {
-            "id": "act1.chapter2.fac_saints_005a",
+            "id": "act1.chapter2-saints-ghost.fac_saints_005a",
             "title": "Clean Passage",
             "location": "tunnel_network",
             "text": [
@@ -276,7 +276,7 @@
             "choices": [
                 {
                     "text": "Descend to sub-level nine",
-                    "next": "act1.chapter2.fac_saints_006"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_006"
                 }
             ],
             "ascii": null,
@@ -285,7 +285,7 @@
         },
 
         "fac_saints_005b": {
-            "id": "act1.chapter2.fac_saints_005b",
+            "id": "act1.chapter2-saints-ghost.fac_saints_005b",
             "title": "Rough Passage",
             "location": "tunnel_network",
             "text": [
@@ -301,7 +301,7 @@
             "choices": [
                 {
                     "text": "Push through to sub-level nine",
-                    "next": "act1.chapter2.fac_saints_006"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_006"
                 }
             ],
             "ascii": null,
@@ -310,7 +310,7 @@
         },
 
         "fac_saints_006": {
-            "id": "act1.chapter2.fac_saints_006",
+            "id": "act1.chapter2-saints-ghost.fac_saints_006",
             "title": "Project Anamnesis",
             "location": "tunnel_network_sublevel9",
             "text": [
@@ -327,15 +327,15 @@
             "choices": [
                 {
                     "text": "\"Forty years. The world you knew is gone.\"",
-                    "next": "act1.chapter2.fac_saints_007"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_007"
                 },
                 {
                     "text": "\"Who are you?\"",
-                    "next": "act1.chapter2.fac_saints_007a"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_007a"
                 },
                 {
                     "text": "Say nothing. Just listen.",
-                    "next": "act1.chapter2.fac_saints_007b"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_007b"
                 }
             ],
             "ascii": null,
@@ -344,7 +344,7 @@
         },
 
         "fac_saints_007": {
-            "id": "act1.chapter2.fac_saints_007",
+            "id": "act1.chapter2-saints-ghost.fac_saints_007",
             "title": "Forty Years",
             "location": "tunnel_network_sublevel9",
             "text": [
@@ -362,11 +362,11 @@
             "choices": [
                 {
                     "text": "Tell the truth. All of it. The Collapse. The stacks. The factions. The suffering.",
-                    "next": "act1.chapter2.fac_saints_008"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_008"
                 },
                 {
                     "text": "\"People survived. That's what matters.\"",
-                    "next": "act1.chapter2.fac_saints_008"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_008"
                 }
             ],
             "ascii": null,
@@ -375,7 +375,7 @@
         },
 
         "fac_saints_007a": {
-            "id": "act1.chapter2.fac_saints_007a",
+            "id": "act1.chapter2-saints-ghost.fac_saints_007a",
             "title": "Identity",
             "location": "tunnel_network_sublevel9",
             "text": [
@@ -390,7 +390,7 @@
             "choices": [
                 {
                     "text": "\"There are people who want to protect what you have left.\"",
-                    "next": "act1.chapter2.fac_saints_008"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_008"
                 }
             ],
             "ascii": null,
@@ -399,7 +399,7 @@
         },
 
         "fac_saints_007b": {
-            "id": "act1.chapter2.fac_saints_007b",
+            "id": "act1.chapter2-saints-ghost.fac_saints_007b",
             "title": "Silence Speaks",
             "location": "tunnel_network_sublevel9",
             "text": [
@@ -416,7 +416,7 @@
             "choices": [
                 {
                     "text": "\"You don't have to be alone anymore.\"",
-                    "next": "act1.chapter2.fac_saints_008"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_008"
                 }
             ],
             "ascii": null,
@@ -425,7 +425,7 @@
         },
 
         "fac_saints_008": {
-            "id": "act1.chapter2.fac_saints_008",
+            "id": "act1.chapter2-saints-ghost.fac_saints_008",
             "title": "The Choice of Memory",
             "location": "tunnel_network_sublevel9",
             "text": [
@@ -440,15 +440,15 @@
             "choices": [
                 {
                     "text": "Deliver the core to Ezra-7 and the Circuit Saints, as promised",
-                    "next": "act1.chapter2.fac_saints_009a"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_009a"
                 },
                 {
                     "text": "Keep the core hidden. Tell Ezra it was destroyed. This knowledge is too important for any single faction.",
-                    "next": "act1.chapter2.fac_saints_009b"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_009b"
                 },
                 {
                     "text": "Contact the Ghost Syndicate. The core's intelligence data is worth a fortune, and you need the money more than the Saints need another relic.",
-                    "next": "act1.chapter2.fac_saints_009c"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_009c"
                 }
             ],
             "ascii": null,
@@ -457,7 +457,7 @@
         },
 
         "fac_saints_009a": {
-            "id": "act1.chapter2.fac_saints_009a",
+            "id": "act1.chapter2-saints-ghost.fac_saints_009a",
             "title": "Delivered to the Saints",
             "location": "observatory",
             "text": [
@@ -476,7 +476,7 @@
             "choices": [
                 {
                     "text": "Leave the Observatory, carrying the memory of what you heard in the deep",
-                    "next": "act1.chapter2.fac_saints_010"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_010"
                 }
             ],
             "ascii": null,
@@ -485,7 +485,7 @@
         },
 
         "fac_saints_009b": {
-            "id": "act1.chapter2.fac_saints_009b",
+            "id": "act1.chapter2-saints-ghost.fac_saints_009b",
             "title": "The Hidden Core",
             "location": "player_apartment",
             "text": [
@@ -504,7 +504,7 @@
             "choices": [
                 {
                     "text": "Rest. Tomorrow is another day in a city that has forgotten everything except how to survive.",
-                    "next": "act1.chapter2.fac_saints_010"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_010"
                 }
             ],
             "ascii": null,
@@ -513,7 +513,7 @@
         },
 
         "fac_saints_009c": {
-            "id": "act1.chapter2.fac_saints_009c",
+            "id": "act1.chapter2-saints-ghost.fac_saints_009c",
             "title": "Sold to the Syndicate",
             "location": "deep_net_cafe",
             "text": [
@@ -535,7 +535,7 @@
             "choices": [
                 {
                     "text": "Walk away. Don't look back.",
-                    "next": "act1.chapter2.fac_saints_010"
+                    "next": "act1.chapter2-saints-ghost.fac_saints_010"
                 }
             ],
             "ascii": null,
@@ -544,7 +544,7 @@
         },
 
         "fac_saints_010": {
-            "id": "act1.chapter2.fac_saints_010",
+            "id": "act1.chapter2-saints-ghost.fac_saints_010",
             "title": "The Weight of Memory",
             "location": "lower_slums",
             "text": [
@@ -561,7 +561,7 @@
             "choices": [
                 {
                     "text": "Continue",
-                    "next": "act1.chapter2.fac_ghost_001"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_001"
                 }
             ],
             "ascii": null,
@@ -570,7 +570,7 @@
         },
 
         "fac_ghost_001": {
-            "id": "act1.chapter2.fac_ghost_001",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_001",
             "title": "The Dead Drop",
             "location": "market_district",
             "text": [
@@ -586,11 +586,11 @@
             "choices": [
                 {
                     "text": "Go to the meeting point at 22:00",
-                    "next": "act1.chapter2.fac_ghost_002"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_002"
                 },
                 {
                     "text": "Examine the data chip more carefully before committing",
-                    "next": "act1.chapter2.fac_ghost_001a"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_001a"
                 }
             ],
             "ascii": null,
@@ -599,7 +599,7 @@
         },
 
         "fac_ghost_001a": {
-            "id": "act1.chapter2.fac_ghost_001a",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_001a",
             "title": "Reading Between the Code",
             "location": "market_district",
             "text": [
@@ -613,7 +613,7 @@
             "choices": [
                 {
                     "text": "Go to the meeting. You've already passed the first test.",
-                    "next": "act1.chapter2.fac_ghost_002"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_002"
                 }
             ],
             "ascii": null,
@@ -622,7 +622,7 @@
         },
 
         "fac_ghost_002": {
-            "id": "act1.chapter2.fac_ghost_002",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_002",
             "title": "The Broker's Voice",
             "location": "lower_slums",
             "text": [
@@ -640,15 +640,15 @@
             "choices": [
                 {
                     "text": "\"I'm interested. What's the job?\"",
-                    "next": "act1.chapter2.fac_ghost_003"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_003"
                 },
                 {
                     "text": "\"Information runs both ways. Tell me something about the Syndicate first.\"",
-                    "next": "act1.chapter2.fac_ghost_002a"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_002a"
                 },
                 {
                     "text": "\"How do I know this isn't a setup?\"",
-                    "next": "act1.chapter2.fac_ghost_002b"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_002b"
                 }
             ],
             "ascii": null,
@@ -657,7 +657,7 @@
         },
 
         "fac_ghost_002a": {
-            "id": "act1.chapter2.fac_ghost_002a",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_002a",
             "title": "Reciprocity",
             "location": "lower_slums",
             "text": [
@@ -673,7 +673,7 @@
             "choices": [
                 {
                     "text": "\"Alright. What's the job?\"",
-                    "next": "act1.chapter2.fac_ghost_003"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_003"
                 }
             ],
             "ascii": null,
@@ -682,7 +682,7 @@
         },
 
         "fac_ghost_002b": {
-            "id": "act1.chapter2.fac_ghost_002b",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_002b",
             "title": "Trust Protocol",
             "location": "lower_slums",
             "text": [
@@ -697,7 +697,7 @@
             "choices": [
                 {
                     "text": "\"Point taken. I'm in. What's the job?\"",
-                    "next": "act1.chapter2.fac_ghost_003"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_003"
                 }
             ],
             "ascii": null,
@@ -706,7 +706,7 @@
         },
 
         "fac_ghost_003": {
-            "id": "act1.chapter2.fac_ghost_003",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_003",
             "title": "The Senator",
             "location": "lower_slums",
             "text": [
@@ -723,11 +723,11 @@
             "choices": [
                 {
                     "text": "\"I'll do it. How do I get into Senate Hall?\"",
-                    "next": "act1.chapter2.fac_ghost_004"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_004"
                 },
                 {
                     "text": "\"Why Cross? What's so special about one senator?\"",
-                    "next": "act1.chapter2.fac_ghost_003a"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_003a"
                 }
             ],
             "ascii": null,
@@ -736,7 +736,7 @@
         },
 
         "fac_ghost_003a": {
-            "id": "act1.chapter2.fac_ghost_003a",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_003a",
             "title": "The Value of Cross",
             "location": "lower_slums",
             "text": [
@@ -750,7 +750,7 @@
             "choices": [
                 {
                     "text": "\"Fair enough. How do I get into Senate Hall?\"",
-                    "next": "act1.chapter2.fac_ghost_004"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_004"
                 }
             ],
             "ascii": null,
@@ -759,7 +759,7 @@
         },
 
         "fac_ghost_004": {
-            "id": "act1.chapter2.fac_ghost_004",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_004",
             "title": "Senate Hall",
             "location": "senate_hall",
             "text": [
@@ -776,14 +776,14 @@
                 {
                     "text": "[DEX 12] Slip past the biometric scanner during a guard rotation change",
                     "statCheck": { "stat": "dexterity", "dc": 12 },
-                    "next": "act1.chapter2.fac_ghost_005a",
-                    "failNext": "act1.chapter2.fac_ghost_005b"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_005a",
+                    "failNext": "act1.chapter2-saints-ghost.fac_ghost_005b"
                 },
                 {
                     "text": "[TECH 14] Hack the biometric scanner to accept your maintenance badge as authorized",
                     "statCheck": { "stat": "tech", "dc": 14 },
-                    "next": "act1.chapter2.fac_ghost_005a",
-                    "failNext": "act1.chapter2.fac_ghost_005b"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_005a",
+                    "failNext": "act1.chapter2-saints-ghost.fac_ghost_005b"
                 }
             ],
             "ascii": null,
@@ -792,7 +792,7 @@
         },
 
         "fac_ghost_005a": {
-            "id": "act1.chapter2.fac_ghost_005a",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_005a",
             "title": "Clean Infiltration",
             "location": "senate_hall",
             "text": [
@@ -808,7 +808,7 @@
             "choices": [
                 {
                     "text": "Look at the file",
-                    "next": "act1.chapter2.fac_ghost_006"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_006"
                 }
             ],
             "ascii": null,
@@ -817,7 +817,7 @@
         },
 
         "fac_ghost_005b": {
-            "id": "act1.chapter2.fac_ghost_005b",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_005b",
             "title": "Rough Infiltration",
             "location": "senate_hall",
             "text": [
@@ -834,7 +834,7 @@
             "choices": [
                 {
                     "text": "Look at the file",
-                    "next": "act1.chapter2.fac_ghost_006"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_006"
                 }
             ],
             "ascii": null,
@@ -843,7 +843,7 @@
         },
 
         "fac_ghost_006": {
-            "id": "act1.chapter2.fac_ghost_006",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_006",
             "title": "The Senator's Secret",
             "location": "senate_hall",
             "text": [
@@ -864,11 +864,11 @@
             "choices": [
                 {
                     "text": "Take a photo of the file and bring it all back to the Broker",
-                    "next": "act1.chapter2.fac_ghost_007"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_007"
                 },
                 {
                     "text": "Leave the file. Some things are not meant to be data points.",
-                    "next": "act1.chapter2.fac_ghost_007"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_007"
                 }
             ],
             "ascii": null,
@@ -877,7 +877,7 @@
         },
 
         "fac_ghost_007": {
-            "id": "act1.chapter2.fac_ghost_007",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_007",
             "title": "Debriefing",
             "location": "deep_net_cafe",
             "text": [
@@ -896,15 +896,15 @@
             "choices": [
                 {
                     "text": "Leave the bugs active and walk away. The mission is done. Cross made his choice.",
-                    "next": "act1.chapter2.fac_ghost_008a"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_008a"
                 },
                 {
                     "text": "Warn Senator Cross. Tell him about the surveillance. He deserves to know he's being watched by everyone.",
-                    "next": "act1.chapter2.fac_ghost_008b"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_008b"
                 },
                 {
                     "text": "Use the information about Lily to blackmail Cross yourself. He's already compromised. A little more leverage won't hurt.",
-                    "next": "act1.chapter2.fac_ghost_008c"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_008c"
                 }
             ],
             "ascii": null,
@@ -913,7 +913,7 @@
         },
 
         "fac_ghost_008a": {
-            "id": "act1.chapter2.fac_ghost_008a",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_008a",
             "title": "The Professional",
             "location": "deep_net_cafe",
             "text": [
@@ -932,7 +932,7 @@
             "choices": [
                 {
                     "text": "Leave the Deep Net Cafe",
-                    "next": "act1.chapter2.fac_ghost_009"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_009"
                 }
             ],
             "ascii": null,
@@ -941,7 +941,7 @@
         },
 
         "fac_ghost_008b": {
-            "id": "act1.chapter2.fac_ghost_008b",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_008b",
             "title": "The Warning",
             "location": "senate_hall",
             "text": [
@@ -965,7 +965,7 @@
             "choices": [
                 {
                     "text": "Disappear into the city before anyone notices",
-                    "next": "act1.chapter2.fac_ghost_009"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_009"
                 }
             ],
             "ascii": null,
@@ -974,7 +974,7 @@
         },
 
         "fac_ghost_008c": {
-            "id": "act1.chapter2.fac_ghost_008c",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_008c",
             "title": "The Blackmailer",
             "location": "senate_hall",
             "text": [
@@ -996,7 +996,7 @@
             "choices": [
                 {
                     "text": "Pocket the credits. This is how the city works.",
-                    "next": "act1.chapter2.fac_ghost_009"
+                    "next": "act1.chapter2-saints-ghost.fac_ghost_009"
                 }
             ],
             "ascii": null,
@@ -1005,7 +1005,7 @@
         },
 
         "fac_ghost_009": {
-            "id": "act1.chapter2.fac_ghost_009",
+            "id": "act1.chapter2-saints-ghost.fac_ghost_009",
             "title": "The Price of Knowing",
             "location": "lower_slums",
             "text": [

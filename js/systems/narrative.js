@@ -389,7 +389,11 @@ window.Latency.Narrative = (function () {
                 // ── Experience ────────────────────────────────────────
                 case 'add_experience':
                 case 'add_xp':
-                    character.experience = (character.experience || 0) + Number(action.amount || 0);
+                    if (window.Latency.CharacterSystem && typeof window.Latency.CharacterSystem.addExperience === 'function') {
+                        window.Latency.CharacterSystem.addExperience(Number(action.amount || 0));
+                    } else {
+                        character.experience = (character.experience || 0) + Number(action.amount || 0);
+                    }
                     _emit('narrative:experience', {
                         amount: action.amount,
                         total: character.experience
@@ -423,36 +427,45 @@ window.Latency.Narrative = (function () {
 
                 // ── Faction reputation ────────────────────────────────
                 case 'modify_reputation':
-                    if (!character.factions) { character.factions = {}; }
-                    var oldRep = Number(character.factions[action.faction]) || 0;
-                    character.factions[action.faction] = oldRep + Number(action.amount || 0);
+                    if (window.Latency.FactionSystem && typeof window.Latency.FactionSystem.modifyReputation === 'function') {
+                        window.Latency.FactionSystem.modifyReputation(action.faction, Number(action.amount || 0));
+                    } else {
+                        if (!character.factions) { character.factions = {}; }
+                        var oldRep = Number(character.factions[action.faction]) || 0;
+                        character.factions[action.faction] = oldRep + Number(action.amount || 0);
+                    }
                     _emit('narrative:reputation', {
                         faction: action.faction,
-                        oldValue: oldRep,
-                        newValue: character.factions[action.faction]
+                        amount: Number(action.amount || 0)
                     });
                     break;
 
                 // ── Inventory ─────────────────────────────────────────
                 case 'add_item':
-                    if (!character.inventory) { character.inventory = []; }
-                    var newItem = action.item || { id: action.itemId, name: action.name || action.itemId };
-                    character.inventory.push(newItem);
-                    _emit('narrative:item', { action: 'add', item: newItem });
+                    var addItemId = action.itemId || (action.item && action.item.id) || action.item;
+                    if (window.Latency.Inventory && typeof window.Latency.Inventory.addItem === 'function') {
+                        window.Latency.Inventory.addItem(addItemId);
+                    } else {
+                        if (!character.inventory) { character.inventory = []; }
+                        character.inventory.push({ id: addItemId, name: action.name || addItemId });
+                    }
+                    _emit('narrative:item', { action: 'add', itemId: addItemId });
                     break;
 
                 case 'remove_item':
-                    if (character.inventory) {
-                        var itemId = action.itemId || (action.item && action.item.id) || action.item;
+                    var rmItemId = action.itemId || (action.item && action.item.id) || action.item;
+                    if (window.Latency.Inventory && typeof window.Latency.Inventory.removeItem === 'function') {
+                        window.Latency.Inventory.removeItem(rmItemId);
+                    } else if (character.inventory) {
                         for (var r = 0; r < character.inventory.length; r++) {
                             var inv = character.inventory[r];
-                            if (inv === itemId || (inv && inv.id === itemId)) {
+                            if (inv === rmItemId || (inv && inv.id === rmItemId)) {
                                 character.inventory.splice(r, 1);
-                                _emit('narrative:item', { action: 'remove', itemId: itemId });
                                 break;
                             }
                         }
                     }
+                    _emit('narrative:item', { action: 'remove', itemId: rmItemId });
                     break;
 
                 // ── Health ────────────────────────────────────────────

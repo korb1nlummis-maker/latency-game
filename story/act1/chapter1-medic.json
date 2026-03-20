@@ -7,7 +7,7 @@
     },
     "nodes": {
         "med_001": {
-            "id": "act1.chapter1.med_001",
+            "id": "act1.chapter1-medic.med_001",
             "title": "The Medical Quarter",
             "location": "medical_quarter",
             "text": [
@@ -26,7 +26,7 @@
             "choices": [
                 {
                     "text": "Approach the triage station with your job assignment",
-                    "next": "act1.chapter1.med_002"
+                    "next": "act1.chapter1-medic.med_002"
                 }
             ],
             "ascii": null,
@@ -35,7 +35,7 @@
         },
 
         "med_002": {
-            "id": "act1.chapter1.med_002",
+            "id": "act1.chapter1-medic.med_002",
             "title": "Dr. Okafor",
             "location": "medical_quarter",
             "text": [
@@ -52,11 +52,11 @@
             "choices": [
                 {
                     "text": "\"I'll do my best.\"",
-                    "next": "act1.chapter1.med_003"
+                    "next": "act1.chapter1-medic.med_003"
                 },
                 {
                     "text": "\"What happened to him?\"",
-                    "next": "act1.chapter1.med_003a"
+                    "next": "act1.chapter1-medic.med_003a"
                 }
             ],
             "ascii": null,
@@ -65,7 +65,7 @@
         },
 
         "med_003a": {
-            "id": "act1.chapter1.med_003a",
+            "id": "act1.chapter1-medic.med_003a",
             "title": "The Worker's Story",
             "location": "medical_quarter",
             "text": [
@@ -80,7 +80,7 @@
             "choices": [
                 {
                     "text": "Go to Bay 3",
-                    "next": "act1.chapter1.med_003"
+                    "next": "act1.chapter1-medic.med_003"
                 }
             ],
             "ascii": null,
@@ -89,7 +89,7 @@
         },
 
         "med_003": {
-            "id": "act1.chapter1.med_003",
+            "id": "act1.chapter1-medic.med_003",
             "title": "Bay 3: Grak",
             "location": "medical_quarter",
             "text": [
@@ -107,12 +107,12 @@
                 {
                     "text": "[Wisdom 12] Assess the burns systematically. Determine the best treatment approach.",
                     "statCheck": { "stat": "wisdom", "dc": 12 },
-                    "next": "act1.chapter1.med_004",
-                    "failNext": "act1.chapter1.med_004a"
+                    "next": "act1.chapter1-medic.med_004",
+                    "failNext": "act1.chapter1-medic.med_004a"
                 },
                 {
                     "text": "Start with pain management. He is suffering.",
-                    "next": "act1.chapter1.med_004b"
+                    "next": "act1.chapter1-medic.med_004b"
                 }
             ],
             "ascii": null,
@@ -121,7 +121,7 @@
         },
 
         "med_004": {
-            "id": "act1.chapter1.med_004",
+            "id": "act1.chapter1-medic.med_004",
             "title": "Successful Diagnosis",
             "location": "medical_quarter",
             "text": [
@@ -139,7 +139,7 @@
             "choices": [
                 {
                     "text": "Tell Dr. Okafor what you found",
-                    "next": "act1.chapter1.med_005"
+                    "next": "act1.chapter1-medic.med_005"
                 }
             ],
             "ascii": null,
@@ -148,7 +148,7 @@
         },
 
         "med_004a": {
-            "id": "act1.chapter1.med_004a",
+            "id": "act1.chapter1-medic.med_004a",
             "title": "Uncertain Diagnosis",
             "location": "medical_quarter",
             "text": [
@@ -162,7 +162,7 @@
             "choices": [
                 {
                     "text": "\"What do you mean, bigger?\"",
-                    "next": "act1.chapter1.med_005"
+                    "next": "act1.chapter1-medic.med_005"
                 }
             ],
             "ascii": null,
@@ -171,7 +171,7 @@
         },
 
         "med_004b": {
-            "id": "act1.chapter1.med_004b",
+            "id": "act1.chapter1-medic.med_004b",
             "title": "Pain First",
             "location": "medical_quarter",
             "text": [
@@ -187,7 +187,7 @@
             "choices": [
                 {
                     "text": "\"Dr. Okafor, you need to see this.\"",
-                    "next": "act1.chapter1.med_005"
+                    "next": "act1.chapter1-medic.med_005"
                 }
             ],
             "ascii": null,
@@ -196,7 +196,7 @@
         },
 
         "med_005": {
-            "id": "act1.chapter1.med_005",
+            "id": "act1.chapter1-medic.med_005",
             "title": "The Chemical",
             "location": "medical_quarter",
             "text": [
@@ -214,17 +214,17 @@
             "choices": [
                 {
                     "text": "\"I'll get the sample.\"",
-                    "next": "act1.chapter1.med_007"
+                    "next": "act1.chapter1-medic.med_007"
                 },
                 {
                     "text": "\"Can't we report this to the authorities?\"",
-                    "next": "act1.chapter1.med_006"
+                    "next": "act1.chapter1-medic.med_006"
                 },
                 {
                     "text": "[Intelligence 13] \"If this compound is in multiple factories, someone is distributing it. Who benefits?\"",
                     "statCheck": { "stat": "intelligence", "dc": 13 },
-                    "next": "act1.chapter1.med_006a",
-                    "failNext": "act1.chapter1.med_007"
+                    "next": "act1.chapter1-medic.med_006a",
+                    "failNext": "act1.chapter1-medic.med_007"
                 }
             ],
             "ascii": null,
@@ -233,7 +233,7 @@
         },
 
         "med_006": {
-            "id": "act1.chapter1.med_006",
+            "id": "act1.chapter1-medic.med_006",
             "title": "Authorities",
             "location": "medical_quarter",
             "text": [
@@ -247,7 +247,7 @@
             "choices": [
                 {
                     "text": "\"Then I'll get the sample myself.\"",
-                    "next": "act1.chapter1.med_007"
+                    "next": "act1.chapter1-medic.med_007"
                 }
             ],
             "ascii": null,
@@ -256,7 +256,7 @@
         },
 
         "med_006a": {
-            "id": "act1.chapter1.med_006a",
+            "id": "act1.chapter1-medic.med_006a",
             "title": "The Supply Chain",
             "location": "medical_quarter",
             "text": [
@@ -273,7 +273,7 @@
             "choices": [
                 {
                     "text": "\"I'll get the sample from Voss Chemical. And I'll look for more answers.\"",
-                    "next": "act1.chapter1.med_007"
+                    "next": "act1.chapter1-medic.med_007"
                 }
             ],
             "ascii": null,
@@ -282,7 +282,7 @@
         },
 
         "med_007": {
-            "id": "act1.chapter1.med_007",
+            "id": "act1.chapter1-medic.med_007",
             "title": "Voss Chemical",
             "location": "sector_5",
             "text": [
@@ -298,13 +298,13 @@
             "choices": [
                 {
                     "text": "Blend in with the shift change. Walk in like you belong.",
-                    "next": "act1.chapter1.med_008"
+                    "next": "act1.chapter1-medic.med_008"
                 },
                 {
                     "text": "[Dexterity 13] Find a side entrance. Avoid the crowd entirely.",
                     "statCheck": { "stat": "dexterity", "dc": 13 },
-                    "next": "act1.chapter1.med_008a",
-                    "failNext": "act1.chapter1.med_008"
+                    "next": "act1.chapter1-medic.med_008a",
+                    "failNext": "act1.chapter1-medic.med_008"
                 }
             ],
             "ascii": null,
@@ -313,7 +313,7 @@
         },
 
         "med_008": {
-            "id": "act1.chapter1.med_008",
+            "id": "act1.chapter1-medic.med_008",
             "title": "The Vat Room",
             "location": "voss_chemical",
             "text": [
@@ -325,13 +325,13 @@
             "choices": [
                 {
                     "text": "Put on the gloves and go in. Get the sample.",
-                    "next": "act1.chapter1.med_009"
+                    "next": "act1.chapter1-medic.med_009"
                 },
                 {
                     "text": "[Wisdom 13] Check the safety protocols first. What are the workers being told?",
                     "statCheck": { "stat": "wisdom", "dc": 13 },
-                    "next": "act1.chapter1.med_008b",
-                    "failNext": "act1.chapter1.med_009"
+                    "next": "act1.chapter1-medic.med_008b",
+                    "failNext": "act1.chapter1-medic.med_009"
                 }
             ],
             "ascii": null,
@@ -340,7 +340,7 @@
         },
 
         "med_008a": {
-            "id": "act1.chapter1.med_008a",
+            "id": "act1.chapter1-medic.med_008a",
             "title": "Side Entrance",
             "location": "voss_chemical",
             "text": [
@@ -354,7 +354,7 @@
             "choices": [
                 {
                     "text": "Enter the vat room. Collect the sample.",
-                    "next": "act1.chapter1.med_009"
+                    "next": "act1.chapter1-medic.med_009"
                 }
             ],
             "ascii": null,
@@ -363,7 +363,7 @@
         },
 
         "med_008b": {
-            "id": "act1.chapter1.med_008b",
+            "id": "act1.chapter1-medic.med_008b",
             "title": "Safety Protocols",
             "location": "voss_chemical",
             "text": [
@@ -379,7 +379,7 @@
             "choices": [
                 {
                     "text": "Photograph the clipboard. Then get the sample.",
-                    "next": "act1.chapter1.med_009"
+                    "next": "act1.chapter1-medic.med_009"
                 }
             ],
             "ascii": null,
@@ -388,7 +388,7 @@
         },
 
         "med_009": {
-            "id": "act1.chapter1.med_009",
+            "id": "act1.chapter1-medic.med_009",
             "title": "The Sample",
             "location": "voss_chemical",
             "text": [
@@ -406,13 +406,13 @@
             "choices": [
                 {
                     "text": "Get out. You have what you came for.",
-                    "next": "act1.chapter1.med_010"
+                    "next": "act1.chapter1-medic.med_010"
                 },
                 {
                     "text": "[Intelligence 13] Take a second sample and grab the shipping manifest. More data, more leverage.",
                     "statCheck": { "stat": "intelligence", "dc": 13 },
-                    "next": "act1.chapter1.med_009a",
-                    "failNext": "act1.chapter1.med_009b"
+                    "next": "act1.chapter1-medic.med_009a",
+                    "failNext": "act1.chapter1-medic.med_009b"
                 }
             ],
             "ascii": null,
@@ -421,7 +421,7 @@
         },
 
         "med_009a": {
-            "id": "act1.chapter1.med_009a",
+            "id": "act1.chapter1-medic.med_009a",
             "title": "Extra Evidence",
             "location": "voss_chemical",
             "text": [
@@ -437,7 +437,7 @@
             "choices": [
                 {
                     "text": "Sprint for the exit",
-                    "next": "act1.chapter1.med_010"
+                    "next": "act1.chapter1-medic.med_010"
                 }
             ],
             "ascii": null,
@@ -446,7 +446,7 @@
         },
 
         "med_009b": {
-            "id": "act1.chapter1.med_009b",
+            "id": "act1.chapter1-medic.med_009b",
             "title": "Caught Reaching",
             "location": "voss_chemical",
             "text": [
@@ -461,7 +461,7 @@
             "choices": [
                 {
                     "text": "Get back to the clinic before they can track you",
-                    "next": "act1.chapter1.med_010"
+                    "next": "act1.chapter1-medic.med_010"
                 }
             ],
             "ascii": null,
@@ -470,7 +470,7 @@
         },
 
         "med_010": {
-            "id": "act1.chapter1.med_010",
+            "id": "act1.chapter1-medic.med_010",
             "title": "Back to the Clinic",
             "location": "medical_quarter",
             "text": [
@@ -485,11 +485,11 @@
             "choices": [
                 {
                     "text": "Check on Grak first, then go to Bay 7",
-                    "next": "act1.chapter1.med_011"
+                    "next": "act1.chapter1-medic.med_011"
                 },
                 {
                     "text": "Go straight to Bay 7. A child takes priority.",
-                    "next": "act1.chapter1.med_012"
+                    "next": "act1.chapter1-medic.med_012"
                 }
             ],
             "ascii": null,
@@ -498,7 +498,7 @@
         },
 
         "med_011": {
-            "id": "act1.chapter1.med_011",
+            "id": "act1.chapter1-medic.med_011",
             "title": "Grak's Condition",
             "location": "medical_quarter",
             "text": [
@@ -515,7 +515,7 @@
             "choices": [
                 {
                     "text": "Go to Bay 7",
-                    "next": "act1.chapter1.med_012"
+                    "next": "act1.chapter1-medic.med_012"
                 }
             ],
             "ascii": null,
@@ -524,7 +524,7 @@
         },
 
         "med_012": {
-            "id": "act1.chapter1.med_012",
+            "id": "act1.chapter1-medic.med_012",
             "title": "Bay 7: Lena",
             "location": "medical_quarter",
             "text": [
@@ -542,12 +542,12 @@
                 {
                     "text": "[Intelligence 14] Cross-reference her symptoms with the factory chemical data",
                     "statCheck": { "stat": "intelligence", "dc": 14 },
-                    "next": "act1.chapter1.med_013",
-                    "failNext": "act1.chapter1.med_013a"
+                    "next": "act1.chapter1-medic.med_013",
+                    "failNext": "act1.chapter1-medic.med_013a"
                 },
                 {
                     "text": "Treat the symptoms. Stabilize her breathing.",
-                    "next": "act1.chapter1.med_013a"
+                    "next": "act1.chapter1-medic.med_013a"
                 }
             ],
             "ascii": null,
@@ -556,7 +556,7 @@
         },
 
         "med_013": {
-            "id": "act1.chapter1.med_013",
+            "id": "act1.chapter1-medic.med_013",
             "title": "The Connection",
             "location": "medical_quarter",
             "text": [
@@ -573,7 +573,7 @@
             "choices": [
                 {
                     "text": "Tell Dr. Okafor. This is bigger than one clinic.",
-                    "next": "act1.chapter1.med_014"
+                    "next": "act1.chapter1-medic.med_014"
                 }
             ],
             "ascii": null,
@@ -582,7 +582,7 @@
         },
 
         "med_013a": {
-            "id": "act1.chapter1.med_013a",
+            "id": "act1.chapter1-medic.med_013a",
             "title": "Treating Lena",
             "location": "medical_quarter",
             "text": [
@@ -599,7 +599,7 @@
             "choices": [
                 {
                     "text": "Find Dr. Okafor",
-                    "next": "act1.chapter1.med_014"
+                    "next": "act1.chapter1-medic.med_014"
                 }
             ],
             "ascii": null,
@@ -608,7 +608,7 @@
         },
 
         "med_014": {
-            "id": "act1.chapter1.med_014",
+            "id": "act1.chapter1-medic.med_014",
             "title": "The Decision",
             "location": "medical_quarter",
             "text": [
@@ -626,15 +626,15 @@
             "choices": [
                 {
                     "text": "Report the compound to the Ashen Circle. The public needs to know.",
-                    "next": "act1.chapter1.med_015"
+                    "next": "act1.chapter1-medic.med_015"
                 },
                 {
                     "text": "Stay quiet. Treat who we can. Steal supplies where we must.",
-                    "next": "act1.chapter1.med_015a"
+                    "next": "act1.chapter1-medic.med_015a"
                 },
                 {
                     "text": "Sell the sample on the black market. The credits will save more lives than principles.",
-                    "next": "act1.chapter1.med_015b"
+                    "next": "act1.chapter1-medic.med_015b"
                 }
             ],
             "ascii": null,
@@ -643,7 +643,7 @@
         },
 
         "med_015": {
-            "id": "act1.chapter1.med_015",
+            "id": "act1.chapter1-medic.med_015",
             "title": "The Ashen Circle",
             "location": "medical_quarter",
             "text": [
@@ -662,7 +662,7 @@
             "choices": [
                 {
                     "text": "Go check on Lena.",
-                    "next": "act1.chapter1.med_016"
+                    "next": "act1.chapter1-medic.med_016"
                 }
             ],
             "ascii": null,
@@ -671,7 +671,7 @@
         },
 
         "med_015a": {
-            "id": "act1.chapter1.med_015a",
+            "id": "act1.chapter1-medic.med_015a",
             "title": "Stay Quiet",
             "location": "medical_quarter",
             "text": [
@@ -687,7 +687,7 @@
             "choices": [
                 {
                     "text": "Take the list. Go check on Lena before tonight's run.",
-                    "next": "act1.chapter1.med_016"
+                    "next": "act1.chapter1-medic.med_016"
                 }
             ],
             "ascii": null,
@@ -696,7 +696,7 @@
         },
 
         "med_015b": {
-            "id": "act1.chapter1.med_015b",
+            "id": "act1.chapter1-medic.med_015b",
             "title": "The Black Market",
             "location": "medical_quarter",
             "text": [
@@ -715,7 +715,7 @@
             "choices": [
                 {
                     "text": "Go check on Lena.",
-                    "next": "act1.chapter1.med_016"
+                    "next": "act1.chapter1-medic.med_016"
                 }
             ],
             "ascii": null,
@@ -724,7 +724,7 @@
         },
 
         "med_016": {
-            "id": "act1.chapter1.med_016",
+            "id": "act1.chapter1-medic.med_016",
             "title": "The Paywall",
             "location": "medical_quarter",
             "text": [
@@ -743,12 +743,12 @@
                 {
                     "text": "[Wisdom 14] Think. There has to be another way to help her breathe.",
                     "statCheck": { "stat": "wisdom", "dc": 14 },
-                    "next": "act1.chapter1.med_016a",
-                    "failNext": "act1.chapter1.med_017"
+                    "next": "act1.chapter1-medic.med_016a",
+                    "failNext": "act1.chapter1-medic.med_017"
                 },
                 {
                     "text": "Stay with Lena. Do everything the clinic can do.",
-                    "next": "act1.chapter1.med_017"
+                    "next": "act1.chapter1-medic.med_017"
                 }
             ],
             "ascii": null,
@@ -757,7 +757,7 @@
         },
 
         "med_016a": {
-            "id": "act1.chapter1.med_016a",
+            "id": "act1.chapter1-medic.med_016a",
             "title": "Improvisation",
             "location": "medical_quarter",
             "text": [
@@ -775,7 +775,7 @@
             "choices": [
                 {
                     "text": "Monitor Lena through the night",
-                    "next": "act1.chapter1.med_017"
+                    "next": "act1.chapter1-medic.med_017"
                 }
             ],
             "ascii": null,
@@ -784,7 +784,7 @@
         },
 
         "med_017": {
-            "id": "act1.chapter1.med_017",
+            "id": "act1.chapter1-medic.med_017",
             "title": "The Long Night",
             "location": "medical_quarter",
             "text": [
@@ -803,11 +803,11 @@
             "choices": [
                 {
                     "text": "\"You're a good man, Dr. Okafor.\"",
-                    "next": "act1.chapter1.med_018"
+                    "next": "act1.chapter1-medic.med_018"
                 },
                 {
                     "text": "Sit in silence. Some things do not need words.",
-                    "next": "act1.chapter1.med_018"
+                    "next": "act1.chapter1-medic.med_018"
                 }
             ],
             "ascii": null,
@@ -816,7 +816,7 @@
         },
 
         "med_018": {
-            "id": "act1.chapter1.med_018",
+            "id": "act1.chapter1-medic.med_018",
             "title": "Morning",
             "location": "medical_quarter",
             "text": [
@@ -835,7 +835,7 @@
             "choices": [
                 {
                     "text": "Take the badge. You will be back.",
-                    "next": "act1.chapter1.med_019"
+                    "next": "act1.chapter1-medic.med_019"
                 }
             ],
             "ascii": null,
@@ -844,7 +844,7 @@
         },
 
         "med_019": {
-            "id": "act1.chapter1.med_019",
+            "id": "act1.chapter1-medic.med_019",
             "title": "Outside the Clinic",
             "location": "medical_quarter",
             "text": [
@@ -861,7 +861,7 @@
             "choices": [
                 {
                     "text": "Walk home. Tomorrow, you come back.",
-                    "next": "act1.chapter1.med_020"
+                    "next": "act1.chapter1-medic.med_020"
                 }
             ],
             "ascii": null,
@@ -870,7 +870,7 @@
         },
 
         "med_020": {
-            "id": "act1.chapter1.med_020",
+            "id": "act1.chapter1-medic.med_020",
             "title": "Chapter End: The Medic",
             "location": "lower_slums",
             "text": [
@@ -885,12 +885,12 @@
                 "End of Chapter 1: The Medic Path."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.chapter1.medic_complete", "value": true },
+                { "type": "set_flag", "flag": "act1.chapter1-medic.medic_complete", "value": true },
                 { "type": "set_flag", "flag": "act1.med_neon_court_chemical", "value": true },
                 { "type": "add_experience", "amount": 50 }
             ],
             "choices": [],
-            "autoNext": "act1.chapter2.node_001",
+            "autoNext": "act1.chapter2-iron-neon.node_001",
             "ascii": null,
             "music": "ambient_chapter_end",
             "isEnding": false

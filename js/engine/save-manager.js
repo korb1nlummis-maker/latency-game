@@ -121,24 +121,21 @@ window.Latency.SaveManager = (function () {
             state.playtime = window.Latency._playtime;
         }
 
-        // Character data
-        if (window.Latency.GameState && window.Latency.GameState.character) {
-            var char = window.Latency.GameState.character;
-            // If character has a serialize method, use it
-            if (typeof char.serialize === 'function') {
-                state.character = char.serialize();
-            } else {
-                // Deep-clone plain object character data
-                try {
-                    state.character = JSON.parse(JSON.stringify(char));
-                } catch (e) {
-                    console.warn('[SaveManager] Could not serialize character:', e);
-                }
+        // Character data — prefer CharacterSystem.serialize(), fall back to GameState
+        if (window.Latency.CharacterSystem && typeof window.Latency.CharacterSystem.serialize === 'function') {
+            state.character = window.Latency.CharacterSystem.serialize();
+        } else if (window.Latency.GameState && window.Latency.GameState.character) {
+            try {
+                state.character = JSON.parse(JSON.stringify(window.Latency.GameState.character));
+            } catch (e) {
+                console.warn('[SaveManager] Could not serialize character:', e);
             }
         }
 
-        // Current story node
-        if (window.Latency.GameState && window.Latency.GameState.currentNodeId) {
+        // Current story node — prefer Narrative.getCurrentNodeId(), fall back to GameState
+        if (window.Latency.Narrative && typeof window.Latency.Narrative.getCurrentNodeId === 'function') {
+            state.currentNodeId = window.Latency.Narrative.getCurrentNodeId();
+        } else if (window.Latency.GameState && window.Latency.GameState.currentNodeId) {
             state.currentNodeId = window.Latency.GameState.currentNodeId;
         }
 

@@ -1,0 +1,3281 @@
+{
+    "meta": {
+        "file": "origins/cyborg",
+        "act": 0,
+        "description": "Cyborg origin story \u00e2\u20ac\u201d factory accident, corporate reconstruction, debt slavery, malfunction, escape"
+    },
+    "nodes": {
+        "cyb_001": {
+            "id": "origins.cyborg.cyb_001",
+            "title": "The Assembly Line",
+            "location": "the_foundry",
+            "text": [
+                "The last thing you remember as fully human is the sound of the press.",
+                "Helix Manufacturing Plant 9, Lower Industrial Sector. You've worked the line for three years, feeding sheet metal into a hydraulic press that stamps out chassis panels for corporate transport vehicles. The pay is garbage. The hours are worse. But it keeps a roof over your head in the Lower District, and that's more than a lot of people can say.",
+                "Today the foreman \u00e2\u20ac\u201d a bloated man named Voss who smells like synth-whiskey and engine grease \u00e2\u20ac\u201d has you running the number four press solo. Two-person job, always has been. But your partner called in sick, and Voss doesn't want to pull anyone off the quota line.",
+                "\"You can handle it,\" he says, not looking up from his datapad. \"Just move fast.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.started",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.race",
+                    "value": "cyborg"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Argue that it's unsafe to run the press alone",
+                    "next": "origins.cyborg.cyb_002"
+                },
+                {
+                    "text": "Keep your mouth shut and get to work",
+                    "next": "origins.cyborg.cyb_003"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_002": {
+            "id": "origins.cyborg.cyb_002",
+            "title": "The Argument",
+            "location": "the_foundry",
+            "text": [
+                "\"Voss, that press needs a spotter. Safety regs say\u00e2\u20ac\u201d\"",
+                "\"Safety regs say what I say they say.\" He finally looks up, and the contempt in his small eyes is the kind that only comes from a man who hates everyone beneath him and everyone above him in roughly equal measure. \"You want to quote regulations at me? I'll quote the clause in your contract that says insubordination is grounds for immediate termination. No severance. No references. You want to be unemployed in Sector 7? Because I've got a list of people who'll take your slot before your locker's cold.\"",
+                "He's not bluffing. You've seen him fire people for less. There are no other options in the Lower District that don't involve a gun or a needle.",
+                "You go to the press."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.argued_safety",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 5
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Start feeding the press",
+                    "next": "origins.cyborg.cyb_004"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_003": {
+            "id": "origins.cyborg.cyb_003",
+            "title": "Silence",
+            "location": "the_foundry",
+            "text": [
+                "You've learned when to talk and when to swallow it. Three years on this line has taught you that. Voss doesn't care if you live or die \u00e2\u20ac\u201d he cares about his quota numbers, because those numbers determine whether he gets to keep breathing the recycled air in his mid-level apartment instead of drowning down here with the rest of you.",
+                "You walk to press number four. The machine looms above you, fifteen tons of hydraulic force compressed into a frame of scarred steel. The safety guard is missing \u00e2\u20ac\u201d has been for months. Someone put in a work order. Someone else filed it in the trash."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.stayed_quiet",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Start feeding the press",
+                    "next": "origins.cyborg.cyb_004"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_004": {
+            "id": "origins.cyborg.cyb_004",
+            "title": "The Accident",
+            "location": "the_foundry",
+            "text": [
+                "The rhythm of the work is almost meditative. Grab a sheet from the stack. Feed it into the guides. Step back. The press drops with a sound like God closing a door. The stamped panel slides out the other side. Grab another sheet. Feed. Step. Drop. Slide.",
+                "You've done this ten thousand times. Your body knows the timing the way your lungs know how to breathe.",
+                "On the forty-seventh cycle, the sheet jams.",
+                "It catches on the guide rail at an angle, half-in, half-out. You should stop the line. You should hit the emergency cutoff and call for maintenance. But stopping the line means Voss, and Voss means consequences, and your brain does the math in a fraction of a second and decides that reaching in to free the jammed sheet is the rational choice.",
+                "Your hand closes on the metal. You pull. The sheet shifts. And the press drops.",
+                "The sound you hear is not the sound of the press. It is the sound of your own skeleton."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.accident",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "...",
+                    "next": "origins.cyborg.cyb_005"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_005": {
+            "id": "origins.cyborg.cyb_005",
+            "title": "The Damage",
+            "location": "the_foundry",
+            "text": [
+                "You don't lose consciousness immediately. That would be a mercy, and the universe doesn't trade in those.",
+                "Your right arm is gone from the elbow down \u00e2\u20ac\u201d not cleanly, not surgically, but crushed into something that no longer has a shape. The press caught your shoulder too, and your ribs on that side, and something in your spine has shifted in a way that means your legs aren't responding to your screaming brain's demands that they move.",
+                "Blood. A lot of it. Yours. The world is tilting. Someone is shouting. Alarms. Red lights painting the walls.",
+                "Voss's face appears above you. For the first time since you've known him, he looks scared. Not for you. For himself. For the paperwork. For the liability.",
+                "\"Get a med-team!\" he screams at someone you can't see. \"And shut off the goddamn press!\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Try to stay conscious",
+                    "next": "origins.cyborg.cyb_006"
+                },
+                {
+                    "text": "Let the darkness take you",
+                    "next": "origins.cyborg.cyb_007"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_006": {
+            "id": "origins.cyborg.cyb_006",
+            "title": "Fighting the Dark",
+            "location": "the_foundry",
+            "text": [
+                "You fight it. Every instinct in what's left of your body screams to let go, to slide into the black, but something in you \u00e2\u20ac\u201d stubbornness, maybe, or rage, or just the animal refusal to accept that this is how it ends \u00e2\u20ac\u201d keeps your eyes open.",
+                "You see the med-team arrive. You see them cut away your clothing. You see one of them look at your arm and then look away, which tells you everything about how bad it is. You see them load you onto a stretcher that stinks of disinfectant and old blood.",
+                "You see the ceiling of Plant 9 scroll above you as they carry you out. Fluorescent tubes. Water stains. The same ceiling you've stared at for three years. The last fully human image your eyes will ever record.",
+                "Then the anesthetic hits, and you go under."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.stayed_conscious",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "constitution",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "...",
+                    "next": "origins.cyborg.cyb_008"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_007": {
+            "id": "origins.cyborg.cyb_007",
+            "title": "Into the Dark",
+            "location": "the_foundry",
+            "text": [
+                "You stop fighting. The pain doesn't fade \u00e2\u20ac\u201d it just becomes irrelevant, like noise from a room you're leaving. The factory sounds stretch and distort, Voss's shouting becoming a long, low drone that blends into the press's dying hum.",
+                "The darkness is warm. You didn't expect that. You expected cold, the stories always say cold, but this is like sinking into heated water, every tension releasing, every broken bone ceasing to matter.",
+                "Somewhere in the black, a thought forms: is this dying?",
+                "It isn't. But by the time you find that out, you'll wish it had been."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.lost_consciousness",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "...",
+                    "next": "origins.cyborg.cyb_008"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_008": {
+            "id": "origins.cyborg.cyb_008",
+            "title": "Waking Up Wrong",
+            "location": "the_foundry",
+            "text": [
+                "You wake up in pieces.",
+                "Not metaphorically. Your senses come back one at a time, out of order, like a machine booting up subsystems. First: sound. A rhythmic beeping. Ventilation hum. Distant voices speaking in medical shorthand. Then: smell. Antiseptic. Solder flux. The ozone tang of active electronics. Then: vision, but wrong \u00e2\u20ac\u201d the light has a blue tint, and there are numbers at the edges. Temperature readings. Heart rate. A battery indicator.",
+                "A battery indicator.",
+                "You try to raise your right hand. Something moves. It is not your hand.",
+                "It is a prosthetic arm made of brushed steel and polymer, with visible hydraulic lines running along the forearm and fingers that articulate with a faint mechanical whir. It responds to your neural commands, but there is a delay \u00e2\u20ac\u201d a fraction of a second between the thought and the movement, like speaking through a translator."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.augmented",
+                    "value": true
+                },
+                {
+                    "type": "add_item",
+                    "item": "basic_prosthetic_arm"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Examine the prosthetic",
+                    "next": "origins.cyborg.cyb_009"
+                },
+                {
+                    "text": "Look around the room",
+                    "next": "origins.cyborg.cyb_010"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_009": {
+            "id": "origins.cyborg.cyb_009",
+            "title": "New Flesh",
+            "location": "the_foundry",
+            "text": [
+                "You turn the arm in the clinical light. It's not top-of-the-line \u00e2\u20ac\u201d you can see that even through the fog of painkillers and shock. The joints are bulky. The polymer casing is a uniform grey, no attempt at skin-matching. The serial number stamped on the inside of the wrist reads KT-4400, a model you've seen advertised in Lower District clinics: AFFORDABLE AUGMENTATION FOR THE WORKING CLASS.",
+                "Affordable. The word sits in your stomach like a stone.",
+                "Below the elbow, you can feel the arm. Above it, where prosthetic meets flesh, there is a band of numbness and a deep, hot ache that no painkiller seems to touch. The neural interface port is a chrome disc embedded in your shoulder, and you can feel the wires running under your skin like parasites.",
+                "Your left hand \u00e2\u20ac\u201d your real hand \u00e2\u20ac\u201d reaches up and finds more changes. A metal plate along your jaw. Something hard and angular behind your right ear. The ridge of a spinal brace running down the back of your neck."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Look around the room",
+                    "next": "origins.cyborg.cyb_010"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_010": {
+            "id": "origins.cyborg.cyb_010",
+            "title": "The Recovery Ward",
+            "location": "the_foundry",
+            "text": [
+                "The room is small, white, and aggressively sterile. A corporate medical facility \u00e2\u20ac\u201d you can tell by the Helix Manufacturing logo printed on the pillow, the sheets, the IV bags, even the cup of water on the bedside table. Branding everywhere, like they're afraid you'll forget who owns you.",
+                "A woman in a white coat sits in the chair beside your bed. She has been waiting for you to wake up. Her face is professionally sympathetic in the way that suggests she has delivered bad news so many times that the muscles have memorized the expression.",
+                "\"Welcome back,\" she says. \"I'm Dr. Osei. I've been overseeing your reconstruction. How are you feeling?\"",
+                "The question is so absurd that you almost laugh. Almost."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.met_dr_osei",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"What happened to me?\"",
+                    "next": "origins.cyborg.cyb_011"
+                },
+                {
+                    "text": "\"What did you do to my body?\"",
+                    "next": "origins.cyborg.cyb_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_011": {
+            "id": "origins.cyborg.cyb_011",
+            "title": "The Diagnosis",
+            "location": "the_foundry",
+            "text": [
+                "Dr. Osei pulls up a holographic display. Your body rotates slowly in translucent blue light, and the damage is mapped in red. There is a lot of red.",
+                "\"The press crushed your right arm, three ribs, and damaged two vertebrae in your thoracic spine. Your right lung collapsed. Internal bleeding. Your liver was lacerated.\" She speaks with clinical detachment. \"Without intervention, you would have died on the factory floor within minutes.\"",
+                "She taps the display and the red zones are replaced with gold \u00e2\u20ac\u201d the augmentations. The prosthetic arm. The spinal brace. The reinforced ribcage. The artificial lung.",
+                "\"Helix Manufacturing's employee medical policy covers life-saving intervention, including prosthetic reconstruction. You've been fitted with Kessler-Tanaka 4400 series augmentations. Functional, durable, and within policy parameters.\"",
+                "Within policy parameters. Not the best. Not even good. Just enough to get you back on a factory line."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"How much is this going to cost me?\"",
+                    "next": "origins.cyborg.cyb_013"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_012": {
+            "id": "origins.cyborg.cyb_012",
+            "title": "What They Did",
+            "location": "the_foundry",
+            "text": [
+                "The anger in your voice surprises even you. Dr. Osei doesn't flinch. She's heard worse.",
+                "\"We saved your life,\" she says evenly. \"The alternative was a body bag and a cremation invoice sent to your next of kin. If you have next of kin.\"",
+                "She pulls up the holographic display anyway, showing you the augmentation map. Right arm, full prosthetic. Spinal reinforcement. Artificial ribs. Synthetic lung lobe. Neural interface port for prosthetic control. Optical HUD overlay, basic model.",
+                "\"Thirty-seven percent of your body is now prosthetic,\" she says. \"That number may increase as we evaluate long-term integration. The neural interface is particularly delicate \u00e2\u20ac\u201d your brain needs time to learn the new pathways.\"",
+                "She pauses. \"I understand this is difficult. But you are alive, and you are functional. In the Lower District, that is not a small thing.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.angry_response",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"How much is this going to cost me?\"",
+                    "next": "origins.cyborg.cyb_013"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_013": {
+            "id": "origins.cyborg.cyb_013",
+            "title": "The Debt",
+            "location": "the_foundry",
+            "text": [
+                "This is the question Dr. Osei was waiting for. You can see it in the way her expression shifts \u00e2\u20ac\u201d the professional sympathy hardening into something more guarded.",
+                "\"Your reconstruction was performed under Helix Manufacturing's Corporate Reconstruction Clause. Section 14-C of your employment contract.\" She pulls up a document on the display. Dense text, small font, the kind of legal language designed to be signed without reading. \"You signed this clause when you were hired.\"",
+                "The number at the bottom of the page hits you like a second press.",
+                "487,000 credits.",
+                "Your annual salary is 18,200 credits. Before taxes. Before rent. Before food.",
+                "\"The debt is structured as a payroll deduction,\" Dr. Osei continues, her voice carefully neutral. \"Sixty percent of your earnings will be allocated to repayment until the balance is cleared. During this period, the augmentations remain the legal property of Helix Manufacturing. Tampering with, modifying, or attempting to remove corporate property is a criminal offense.\"",
+                "Your body isn't yours. It belongs to the company that broke it."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.debt_revealed",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -487000
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"That's more than twenty years of payments.\"",
+                    "next": "origins.cyborg.cyb_014"
+                },
+                {
+                    "text": "Say nothing. Let the number sink in.",
+                    "next": "origins.cyborg.cyb_015"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_014": {
+            "id": "origins.cyborg.cyb_014",
+            "title": "The Math",
+            "location": "the_foundry",
+            "text": [
+                "\"Twenty-six years, eight months, at current deduction rates,\" Dr. Osei says, and you can tell she's done this calculation before. For other people. Other broken bodies rebuilt with bargain parts and bonded to corporate debt. \"Assuming no interest rate adjustments and continued employment at current wage levels.\"",
+                "Assuming. The word hangs in the air like smoke. Interest rates adjust. They always adjust. Upward.",
+                "\"There is a secondary clause,\" she adds, and something in her tone makes you think this is the part she genuinely dislikes delivering. \"If at any point you are unable to maintain payments \u00e2\u20ac\u201d through termination, disability, or voluntary separation \u00e2\u20ac\u201d Helix Manufacturing reserves the right to reclaim corporate property. The augmentations.\"",
+                "Reclaim. They'll cut the metal out of you. Take back their cheap arm, their budget spine, their discount lung. And leave whatever's left.",
+                "\"I'm sorry,\" Dr. Osei says. And for one moment, you believe she means it."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.questioned_debt",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 5
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Return to work at the factory",
+                    "next": "origins.cyborg.cyb_016"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_015": {
+            "id": "origins.cyborg.cyb_015",
+            "title": "The Weight of Numbers",
+            "location": "the_foundry",
+            "text": [
+                "You don't say anything. There's nothing to say. The number is a wall, and you are on the wrong side of it.",
+                "Dr. Osei watches you for a moment, then quietly closes the holographic display. She's seen this reaction before too. The silence of people realizing they've been sold a cage shaped like salvation.",
+                "\"You'll be cleared for work in two weeks,\" she says. \"Light duty initially, then full rotation. Physical therapy will be integrated into your shift schedule \u00e2\u20ac\u201d the company doesn't want to lose billable hours.\"",
+                "She stands, straightens her coat. At the door she pauses without turning around.",
+                "\"For what it's worth, the 4400 series is reliable hardware. It won't fail you.\"",
+                "She leaves. The door clicks shut with the finality of a closing contract."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.silent_acceptance",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Return to work at the factory",
+                    "next": "origins.cyborg.cyb_016"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_016": {
+            "id": "origins.cyborg.cyb_016",
+            "title": "Back on the Line",
+            "location": "the_foundry",
+            "text": [
+                "Two weeks become three. Three become four. Then they clear you, and you go back.",
+                "The factory hasn't changed. The press that ate your arm has a new safety guard \u00e2\u20ac\u201d installed the day after your accident, a fact that fills you with a rage so pure it's almost calming. Voss avoids your eyes for the first week, then goes back to treating you like everyone else: replaceable.",
+                "But you've changed. The arm is stronger than flesh ever was. It doesn't tire. It doesn't shake. It lifts sheet metal that used to strain your back without registering the weight. The HUD overlay feeds you data constantly \u00e2\u20ac\u201d stress tolerances, temperature readings, the RPM of machinery around you. Information you never asked for and can't turn off.",
+                "The other workers look at you differently. Some with pity. Some with envy. A few with fear. You're not quite one of them anymore. Not baseline. Not fully human. Something in between that nobody has a comfortable word for."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.returned_to_work",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Focus on the work. Keep your head down.",
+                    "next": "origins.cyborg.cyb_017"
+                },
+                {
+                    "text": "Seek out other augmented workers",
+                    "next": "origins.cyborg.cyb_018"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_017": {
+            "id": "origins.cyborg.cyb_017",
+            "title": "Head Down",
+            "location": "the_foundry",
+            "text": [
+                "Months pass. You work. You eat. You sleep in the company dormitory because your old apartment ate too much of the forty percent of your wages you're allowed to keep. The dorm is a concrete cell with a charging port for your augmentations and a mattress that smells like the last three people who slept on it.",
+                "Every payday, you watch sixty percent of your earnings vanish into the debt. The number barely moves. Interest accrues. The balance adjusts. Helix takes its cut with the mechanical precision of the presses on the factory floor.",
+                "Your body runs on a maintenance schedule now. Every six weeks, a company technician inspects your augmentations, updates firmware, replaces worn gaskets. They treat you like machinery. Check the fluids. Calibrate the servos. Log the serial numbers. Sign here.",
+                "You start to wonder if they're right to."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.kept_quiet",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue enduring",
+                    "next": "origins.cyborg.cyb_019"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_018": {
+            "id": "origins.cyborg.cyb_018",
+            "title": "The Others",
+            "location": "the_foundry",
+            "text": [
+                "There are others like you. More than you expected.",
+                "Jin lost both legs to a conveyor malfunction in Plant 6. Dessa's lungs were replaced after a chemical spill that Helix tried to classify as \"employee negligence.\" Marcus has a prosthetic spine and half a face rebuilt in chrome after a ceiling collapse that killed two of his coworkers.",
+                "They eat together in the back corner of the cafeteria, away from the baseline workers. Not by choice \u00e2\u20ac\u201d at least, not entirely. There's an unspoken boundary. The augmented on one side. The whole on the other.",
+                "\"Four hundred and eighty-seven K,\" you tell them, and they nod like you've just shared the weather. Jin's debt is six hundred thousand. Dessa's is three-fifty. Marcus won't say his number, which means it's worse.",
+                "\"Welcome to the machine,\" Jin says, tapping his metal knee against yours. It rings like a bell."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.found_augmented_workers",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "charisma",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue enduring",
+                    "next": "origins.cyborg.cyb_019"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_019": {
+            "id": "origins.cyborg.cyb_019",
+            "title": "Fourteen Months",
+            "location": "the_foundry",
+            "text": [
+                "Fourteen months after the accident. A Tuesday. You know it's a Tuesday because your HUD tells you, along with the ambient temperature (too hot), the air quality index (poor), and your prosthetic battery level (sixty-one percent and dropping faster than it used to).",
+                "That last number is new. Three months ago, a full charge lasted sixteen hours. Now it's twelve. The servo in your wrist has developed a whine at certain angles. Your optical HUD flickers when you turn your head too fast.",
+                "The six-week maintenance check is supposed to catch these things. But the technician \u00e2\u20ac\u201d a bored kid who looks barely old enough to hold a soldering iron \u00e2\u20ac\u201d runs the same diagnostic script every time and signs off without actually looking.",
+                "You mention the battery drain. He shrugs. \"4400 series. They all do that after the first year. It's within acceptable parameters.\"",
+                "Acceptable for whom, you want to ask. But you already know the answer."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.degradation_begins",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Research the issue yourself",
+                    "next": "origins.cyborg.cyb_020"
+                },
+                {
+                    "text": "Push the technician for a real answer",
+                    "next": "origins.cyborg.cyb_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_020": {
+            "id": "origins.cyborg.cyb_020",
+            "title": "Self-Diagnosis",
+            "location": "lower_slums",
+            "text": [
+                "The Lower District has a grey market for technical manuals. You find a copy of the Kessler-Tanaka 4400 service guide on a bootleg data chip sold by a one-eyed vendor in the market district. It costs you a week's food budget.",
+                "The manual confirms what you suspected. The 4400 series has a documented degradation curve. Battery cells lose capacity. Servo motors wear. Neural interface connectors corrode. The projected service life before major overhaul is thirty-six months.",
+                "Thirty-six months. Your debt repayment schedule is twenty-six years.",
+                "You do the math eight times, hoping each time the numbers will change. They don't. The hardware will fail catastrophically long before the debt is paid. When it does, Helix will declare you unable to work, reclaim their property, and leave you with whatever meat is still attached.",
+                "The 4400 series isn't reconstruction. It's planned obsolescence. They built you to break."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.discovered_obsolescence",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "intelligence",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Look for an independent mechanic",
+                    "next": "origins.cyborg.cyb_022"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_021": {
+            "id": "origins.cyborg.cyb_021",
+            "title": "The Technician",
+            "location": "the_foundry",
+            "text": [
+                "You grab the kid's wrist as he reaches for the sign-off pad. He flinches. Your prosthetic hand is stronger than you intend, and his eyes go wide.",
+                "\"The battery drain,\" you say. \"Explain it.\"",
+                "He looks at the door. He looks at your hand on his wrist. He makes a calculation.",
+                "\"Look, I'm not supposed to \u00e2\u20ac\u201d\" He lowers his voice. \"The 4400 cells are lithium-polymer composite. Cheap ones. They degrade. Everyone knows it, the engineers know it, management knows it. The service life on these units is maybe three years before you need a full power cell replacement.\"",
+                "\"And the replacement?\"",
+                "\"That's a whole new reconstruction billing. Another hundred K, minimum. Added to existing debt.\"",
+                "He pulls his wrist free and backs toward the door. \"I didn't tell you any of that. Okay? I've got student loans. I can't \u00e2\u20ac\u201d\"",
+                "He leaves. You sit in the maintenance chair and stare at the wall and let the implications settle."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.confronted_tech",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.discovered_obsolescence",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Look for an independent mechanic",
+                    "next": "origins.cyborg.cyb_022"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_022": {
+            "id": "origins.cyborg.cyb_022",
+            "title": "Gutter Mechanics",
+            "location": "scrap_yards",
+            "text": [
+                "The scrap yards on the eastern edge of the Lower District are where augmented people go when corporate maintenance isn't enough. Unlicensed mechanics working out of shipping containers and converted dumpsters, using salvaged parts and pirated firmware. The work is illegal. The alternative is dying on schedule.",
+                "A woman named Kira runs the cleanest operation in the yards. Her workshop is a gutted transit container fitted with surgical lights and a workbench that's cleaner than the Helix medical ward. She's augmented herself \u00e2\u20ac\u201d both arms, military-grade, the kind of hardware that costs more than a house in the mid-levels.",
+                "She takes one look at your arm and sucks air through her teeth. The mechanic's equivalent of a doctor's grave expression.",
+                "\"KT-4400. Yeah. I see a lot of these.\" She turns your arm gently, peering at the joints with a magnifying lens mounted on her own prosthetic. \"How long since installation?\"",
+                "\"Fourteen months.\"",
+                "\"And the battery's already dropping. Let me guess \u00e2\u20ac\u201d they told you it's within acceptable parameters.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.found_kira",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Can you fix it?\"",
+                    "next": "origins.cyborg.cyb_023"
+                },
+                {
+                    "text": "\"How bad is it, really?\"",
+                    "next": "origins.cyborg.cyb_023"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_023": {
+            "id": "origins.cyborg.cyb_023",
+            "title": "The Fix",
+            "location": "scrap_yards",
+            "text": [
+                "Kira sets your arm down carefully. \"Fix it? Sure. I can replace the battery cells with aftermarket units that'll last five times as long. I can re-sleeve the servo motors. I can patch the neural interface corrosion with conductive gel that's better than what Helix uses in the first place.\"",
+                "She leans against her workbench. \"Problem is, the second I open that casing, I void the corporate warranty. Your augmentations are Helix property. Modifying them is tampering with corporate assets. That's a criminal charge.\"",
+                "\"And if I don't modify them?\"",
+                "\"Then in about eighteen months, your arm locks up, your spine brace fails, and your synthetic lung starts leaking. You end up back on a Helix operating table, where they bill you for another reconstruction and add it to your debt. Rinse. Repeat. Until the debt gets big enough that it's cheaper to repossess.\"",
+                "She holds up a battery cell \u00e2\u20ac\u201d small, cylindrical, glowing faintly blue. \"This is a five-credit part that would add three years to your arm's life. Helix could install it during routine maintenance. They choose not to. Think about why.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"Do it. Fix everything you can.\"",
+                    "next": "origins.cyborg.cyb_025"
+                },
+                {
+                    "text": "\"I can't risk a criminal charge. Not yet.\"",
+                    "next": "origins.cyborg.cyb_026"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_025": {
+            "id": "origins.cyborg.cyb_025",
+            "title": "Under the Hood",
+            "location": "scrap_yards",
+            "text": [
+                "The procedure takes four hours. Kira works with a precision that makes the Helix technicians look like children with crayons. She opens the arm casing with micro-tools, replaces the battery cells one by one, re-sleeves the servo motors, and applies conductive paste to every neural contact point.",
+                "It hurts. There's no anesthetic in the scrap yards. You feel every adjustment as a spike of sensation that your brain can't quite classify \u00e2\u20ac\u201d not pain exactly, but not anything else either. Something mechanical. Alien.",
+                "When she's done, the arm feels different. Lighter. The delay between thought and movement is gone. Your fingers close and open with a fluidity that feels almost organic.",
+                "\"I also patched your firmware,\" Kira says, wiping her tools. \"Removed the telemetry package Helix uses to track usage data. They won't be able to see what I changed \u00e2\u20ac\u201d but they also won't get their remote diagnostics anymore. If anyone asks, your transmitter glitched.\"",
+                "She charges you two hundred credits. It's almost nothing. It's also almost everything you have."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.kira_fixed_augments",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.telemetry_removed",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "tech",
+                    "amount": 1
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -200
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Return to the factory",
+                    "next": "origins.cyborg.cyb_027"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_026": {
+            "id": "origins.cyborg.cyb_026",
+            "title": "Walking Away",
+            "location": "scrap_yards",
+            "text": [
+                "Kira doesn't judge you for it. She's seen too many people in your position to waste time on judgment.",
+                "\"When you change your mind \u00e2\u20ac\u201d and you will \u00e2\u20ac\u201d you know where to find me.\" She hands you a data chip. \"Service manual for the 4400. Study it. Know your own body, even if they tell you it's not yours.\"",
+                "You take the chip and walk back through the scrap yards. Around you, augmented people sit in folding chairs outside the mechanic containers, waiting their turn. Missing limbs, glitching optics, sparking joints. A small economy of broken people keeping themselves running one illegal repair at a time.",
+                "A child runs past with a prosthetic leg that's clearly too small for her \u00e2\u20ac\u201d she's outgrown it, and nobody's going to resize a corporate asset for a kid in the Lower District.",
+                "You go back to work. But the data chip burns in your pocket like an ember."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.refused_repair",
+                    "value": true
+                },
+                {
+                    "type": "add_item",
+                    "item": "kt4400_service_manual"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Return to the factory",
+                    "next": "origins.cyborg.cyb_027"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_027": {
+            "id": "origins.cyborg.cyb_027",
+            "title": "The Ghost in the Machine",
+            "location": "the_foundry",
+            "text": [
+                "Eighteen months after the accident. A night shift.",
+                "The factory is skeleton-crewed between midnight and six. Just you and three others running the automated lines, watching for jams, clearing blockages. The building hums with the low-frequency vibration of machinery that never sleeps.",
+                "At 2:47 AM, something happens to your arm.",
+                "It starts as a twitch in your index finger. Then the whole hand spasms, clenching into a fist so tight the hydraulics whine. Your HUD flickers \u00e2\u20ac\u201d static, then a cascade of error codes scrolling too fast to read. The optical overlay stutters, and for three seconds you see the world in raw data: wireframe outlines, heat signatures, signal frequencies.",
+                "Then it stops. The arm relaxes. The HUD stabilizes. Everything returns to normal.",
+                "But in those three seconds, you saw something you weren't supposed to see."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.first_malfunction",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "What did you see?",
+                    "next": "origins.cyborg.cyb_028"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_028": {
+            "id": "origins.cyborg.cyb_028",
+            "title": "The Signal",
+            "location": "the_foundry",
+            "text": [
+                "In the wireframe vision, you saw the factory's hidden network. Not the standard operational grid \u00e2\u20ac\u201d everyone can see that. Something underneath it. A secondary signal layer that your augmentations aren't supposed to detect.",
+                "Data streams flowing from every augmented worker on the floor. Biometric telemetry. Neural activity patterns. Stress hormones. Sleep cycles. Even emotional states, translated into data points and beamed to a receiver hidden in the ceiling.",
+                "They're monitoring you. Not just your augmentations \u00e2\u20ac\u201d you. Your thoughts. Your feelings. Your body's chemical reactions to every moment of every shift.",
+                "And there was something else. A command layer. Signals flowing back down from the receiver into the augmentations. Micro-adjustments to servo response times, pain threshold modulation, serotonin regulation through the neural interface.",
+                "They're not just watching. They're tuning you. Like a machine."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.saw_hidden_network",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Tell the other augmented workers",
+                    "next": "origins.cyborg.cyb_029"
+                },
+                {
+                    "text": "Keep it to yourself and investigate further",
+                    "next": "origins.cyborg.cyb_030"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_029": {
+            "id": "origins.cyborg.cyb_029",
+            "title": "Shared Burden",
+            "location": "the_foundry",
+            "text": [
+                "You find Jin in the cafeteria the next day. Tell him everything. His face goes through a journey \u00e2\u20ac\u201d confusion, disbelief, then a recognition that settles like sediment.",
+                "\"I knew it,\" he whispers. \"I knew something was off. Some nights I come off shift and I can't remember being tired. I should be tired. Twelve hours on metal legs, I should be exhausted. But I'm not. And then I crash \u00e2\u20ac\u201d all at once, like someone flipped a switch.\"",
+                "Dessa hears you from the next table. She pulls her chair over. \"The mood thing. Yeah. I noticed. Days when the quota's behind, I feel... driven. Not motivated. Driven. Like something's pushing me from inside my own head. And when quota's met, the drive shuts off.\"",
+                "Marcus won't look at either of you. His prosthetic hand is shaking. \"They're inside us,\" he says. \"They're literally inside our heads and we signed the paper that let them in.\"",
+                "The silence at the table is the silence of people realizing they are not just workers, not just debtors, but products."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.told_others",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "charisma",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Plan your next move",
+                    "next": "origins.cyborg.cyb_031"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_030": {
+            "id": "origins.cyborg.cyb_030",
+            "title": "Alone With It",
+            "location": "lower_slums",
+            "text": [
+                "You don't tell anyone. Knowledge is currency in the Lower District, and this is the most valuable thing you've ever possessed. You need to understand it before you share it.",
+                "Over the next two weeks, you deliberately trigger the malfunction. It takes practice \u00e2\u20ac\u201d a specific combination of neural feedback that forces your HUD into diagnostic mode. Each time, you get a slightly longer window into the hidden network. Thirty seconds. A minute. Enough to map the system's architecture.",
+                "The command layer is sophisticated. It adjusts dopamine regulation to keep workers compliant. It modulates pain thresholds to keep them productive. It even tweaks sleep architecture through the neural interface, ensuring augmented workers get exactly enough rest to function but never enough to feel truly rested.",
+                "The system has a name, buried in the code headers: YOKE.",
+                "You copy everything to the data chip Kira gave you. Then you wipe your own diagnostic logs. If Helix is watching, they can't know you've seen behind the curtain."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.investigated_alone",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.discovered_yoke",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "intelligence",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Plan your next move",
+                    "next": "origins.cyborg.cyb_031"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_031": {
+            "id": "origins.cyborg.cyb_031",
+            "title": "Breaking Point",
+            "location": "the_foundry",
+            "text": [
+                "The malfunction comes back. This time, it's not a glitch.",
+                "You're on the factory floor, mid-shift, when your arm locks at full extension. Not a spasm \u00e2\u20ac\u201d a seizure. The hydraulics engage at maximum pressure and hold. Your fingers splay wide, trembling. The HUD crashes to static.",
+                "Pain. Real, unmistakable pain, radiating from the neural interface port in your shoulder like electricity through water. Your spine brace activates emergency lockout mode, freezing your torso rigid. For ten seconds, you are a statue of chrome and agony.",
+                "Then it releases. Everything at once. You collapse to your knees, gasping. Your HUD reboots, and in the brief window between shutdown and startup, you see the hidden network again. A single command, pulsing from the ceiling receiver:",
+                "ASSET DIAGNOSTIC \u00e2\u20ac\u201d STRESS TEST \u00e2\u20ac\u201d FAILURE THRESHOLD CALIBRATION.",
+                "They're testing how much you can take before you break. Running your body through planned failures to measure the limits of the hardware they own."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.stress_tested",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "That's it. You're done. Time to run.",
+                    "next": "origins.cyborg.cyb_032"
+                },
+                {
+                    "text": "Go to Kira. She needs to see this.",
+                    "next": "origins.cyborg.cyb_033"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_032": {
+            "id": "origins.cyborg.cyb_032",
+            "title": "The Decision",
+            "location": "the_foundry",
+            "text": [
+                "Something in you breaks. Not the hardware \u00e2\u20ac\u201d something older, deeper. The part of you that endured. The part that told itself it could survive this, that the debt would shrink, that the system was cruel but survivable.",
+                "That part dies on the factory floor, on your knees, tasting copper and ozone.",
+                "In its place, something else ignites. Not hope \u00e2\u20ac\u201d hope is too gentle a word. Defiance. The cold, hard certainty that you would rather die free than live as a piece of equipment that happens to have a heartbeat.",
+                "You stand up. Your arm works. Your legs work. Your mind works. Everything the company owns, you're going to take with you.",
+                "You walk off the factory floor. Through the locker room. Past the time clock that logs you out at 2:47 AM, nineteen months into a twenty-six-year sentence.",
+                "You don't look back."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.walked_out",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.on_the_run",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Head for the scrap yards",
+                    "next": "origins.cyborg.cyb_035"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_033": {
+            "id": "origins.cyborg.cyb_033",
+            "title": "Kira's Workshop",
+            "location": "scrap_yards",
+            "text": [
+                "You find Kira elbow-deep in someone else's arm, soldering a connection by the light of a headlamp. She takes one look at your face and tells her patient to wait.",
+                "You show her the data. The hidden network. The YOKE system. The stress test command. She reads it on the data chip in silence, her military-grade fingers scrolling through code with a speed that's almost inhuman.",
+                "When she's done, she sets the chip down and stares at the far wall of her container for a long time.",
+                "\"I knew they were monitoring,\" she says quietly. \"Every mechanic in the yards knows about the telemetry. But this...\" She picks up the chip again. \"This is neural control. This is puppeteering. They're not just tracking their property \u00e2\u20ac\u201d they're operating it.\"",
+                "\"Can you get it out of me?\"",
+                "\"The YOKE hooks? Maybe. But the second I sever those connections, Helix will know. Their system will flag you as a rogue asset. You'll have hours before they send recovery teams.\"",
+                "\"Recovery teams.\"",
+                "\"Repossession agents. With cutting tools.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.showed_kira_data",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Do it anyway. Cut me free.\"",
+                    "next": "origins.cyborg.cyb_034"
+                },
+                {
+                    "text": "\"Is there another way?\"",
+                    "next": "origins.cyborg.cyb_034"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_034": {
+            "id": "origins.cyborg.cyb_034",
+            "title": "Cut Free",
+            "location": "scrap_yards",
+            "text": [
+                "Kira works fast. She opens every access panel, traces every wire, finds every YOKE hook embedded in your neural interface. There are eleven of them \u00e2\u20ac\u201d eleven tiny transceivers woven into the connections between your brain and your prosthetics.",
+                "\"This is going to hurt,\" she warns, and she's not wrong. Each hook she cuts sends a white-hot lance through your nervous system. Your body convulses. Your vision whites out. The prosthetic arm locks and releases in rapid succession.",
+                "Seven minutes. Eleven hooks. An eternity of fire in your skull.",
+                "And then... silence. For the first time in nineteen months, your head is quiet. No background hum. No subliminal adjustments. No invisible hand on the throttle of your emotions. Just you.",
+                "Kira presses a stimulant patch to your neck. \"You've got maybe six hours before their system registers the disconnect and flags you. After that, every Helix security contractor in the Lower District will have your biometric profile.\"",
+                "\"Where do I go?\"",
+                "\"Anywhere that isn't here. And don't stop moving.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.yoke_removed",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.on_the_run",
+                    "value": true
+                },
+                {
+                    "type": "add_item",
+                    "item": "stimulant_patch"
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "tech",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Run",
+                    "next": "origins.cyborg.cyb_035"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_035": {
+            "id": "origins.cyborg.cyb_035",
+            "title": "Running",
+            "location": "underground_tunnels",
+            "text": [
+                "The underground tunnels beneath the Lower District were sewage lines once, before the city built over itself and forgot about the infrastructure below. Now they're a labyrinth of dripping concrete and forgotten machinery, home to people who can't afford even the Lower District's prices.",
+                "You run through ankle-deep water that stinks of chemical runoff. Your HUD maps the tunnels in real-time, building a wireframe model of every intersection, every branch, every dead end. Without the YOKE system clouding your processing, your augmentations feel sharper. Faster. Like wearing glasses for the first time.",
+                "Behind you \u00e2\u20ac\u201d maybe a kilometer, maybe less \u00e2\u20ac\u201d you hear the whine of search drones entering the tunnel system. Helix doesn't waste time.",
+                "The tunnel branches ahead. Left goes deeper underground, toward the old transit network. Right angles upward, toward the market district and the crowds."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.in_tunnels",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go deeper \u00e2\u20ac\u201d the old transit network",
+                    "next": "origins.cyborg.cyb_036"
+                },
+                {
+                    "text": "Head for the crowds \u00e2\u20ac\u201d hide in plain sight",
+                    "next": "origins.cyborg.cyb_037"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_036": {
+            "id": "origins.cyborg.cyb_036",
+            "title": "The Deep",
+            "location": "underground_tunnels",
+            "text": [
+                "You go deeper. The tunnels narrow, the ceiling drops, and the water gets colder. Your HUD registers a temperature shift \u00e2\u20ac\u201d twelve degrees cooler than the surface. Down here, the city's noise fades to a distant rumble, like being inside the belly of something enormous and sleeping.",
+                "The old transit network is a graveyard of abandoned infrastructure. Rusted rail lines. Collapsed platforms. Train cars gutted for parts decades ago, their hollow shells squatting in the dark like the ribcages of metal giants.",
+                "In one of these shells, you find signs of habitation. A sleeping bag. Empty food containers. A jury-rigged power tap pulling electricity from a buried conduit. Someone has been living here.",
+                "A voice from the darkness: \"You're making a lot of noise for someone being hunted.\"",
+                "A figure emerges from behind a column. Augmented \u00e2\u20ac\u201d heavily. Both legs, one arm, half a face in chrome. They move with the careful precision of someone whose hardware is held together by willpower and solder."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"I'm not looking for trouble.\"",
+                    "next": "origins.cyborg.cyb_038"
+                },
+                {
+                    "text": "\"You know about the drones behind me?\"",
+                    "next": "origins.cyborg.cyb_039"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_037": {
+            "id": "origins.cyborg.cyb_037",
+            "title": "The Crowd",
+            "location": "market_district",
+            "text": [
+                "You surface through a maintenance hatch into the market district at the height of the evening rush. Bodies everywhere \u00e2\u20ac\u201d vendors, shoppers, hustlers, pickpockets. The noise hits you like a wall after the tunnel silence. Neon signs. Shouting. The sizzle of street food and the acrid stink of recycled cooking oil.",
+                "Your prosthetic arm draws looks, but not the kind you're worried about. Half the people down here have some form of augmentation \u00e2\u20ac\u201d cheap optics, secondhand limbs, bootleg neural ports. You're just another chrome body in the crowd.",
+                "The drones won't follow you up here. Too many signals, too many bodies, too much interference for precision tracking. But they'll seal the area. Standard Helix protocol for rogue asset recovery: cordon, scan, close in.",
+                "You need to get out of the district entirely. And you need help.",
+                "A hand-painted sign on a nearby wall reads: PASSAGE SOUTH \u00e2\u20ac\u201d ASK FOR MOLE \u00e2\u20ac\u201d and an arrow pointing down an alley."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Follow the sign",
+                    "next": "origins.cyborg.cyb_040"
+                },
+                {
+                    "text": "Try to find your own way out",
+                    "next": "origins.cyborg.cyb_041"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_038": {
+            "id": "origins.cyborg.cyb_038",
+            "title": "The Runner",
+            "location": "underground_tunnels",
+            "text": [
+                "\"Nobody comes down here looking for trouble. Trouble finds you just fine on its own.\" The figure steps into the light from your HUD. A woman, maybe fifty, though the augmentations make age hard to read. The chrome half of her face is older model \u00e2\u20ac\u201d clunky, industrial. The human half is scarred.",
+                "\"Name's Fen. I've been living down here since I walked out of a MediCore factory six years ago.\" She says it casually, like she's mentioning the weather. \"Same story as yours, I'm guessing. Accident. Debt. Cheap parts. The slow realization that you're livestock.\"",
+                "The search drones hum closer. Fen cocks her head, listening with augmented hearing.",
+                "\"Two units. Helix Sec-4 model. Thermal tracking, sixty-meter range.\" She grabs a battered signal jammer from her sleeping bag. \"This'll buy us twenty minutes. After that, we move.\"",
+                "She presses the button. The drone whine cuts to silence.",
+                "\"So,\" she says. \"You got a plan, or did you just run?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.met_fen",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"I have data. About what Helix is really doing to us.\"",
+                    "next": "origins.cyborg.cyb_042"
+                },
+                {
+                    "text": "\"No plan. Just couldn't stay.\"",
+                    "next": "origins.cyborg.cyb_043"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_039": {
+            "id": "origins.cyborg.cyb_039",
+            "title": "Hunted",
+            "location": "underground_tunnels",
+            "text": [
+                "\"Oh, I know about the drones.\" The figure taps the side of their chrome skull. \"Enhanced hearing, military surplus. Picked them up when you were still three tunnels back. You run loud.\"",
+                "They step forward. A woman, built like a weapon that's been used too many times and maintained too few. \"Fen. Ex-MediCore. Six years in the tunnels. You?\"",
+                "\"Helix. Nineteen months. The press\u00e2\u20ac\u201d\"",
+                "\"Don't need the details. Seen enough 4400s to know the story.\" She pulls a device from her coat \u00e2\u20ac\u201d a battered signal jammer held together with tape and desperation. \"This jams drone comms for about twenty minutes. After that, they switch to autonomous mode and follow thermal.\"",
+                "She activates it. The distant whine of the drones wavers and dies.",
+                "\"Twenty minutes,\" she repeats. \"Talk fast.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.met_fen",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"I have data. About what Helix is really doing to us.\"",
+                    "next": "origins.cyborg.cyb_042"
+                },
+                {
+                    "text": "\"No plan. Just couldn't stay.\"",
+                    "next": "origins.cyborg.cyb_043"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_040": {
+            "id": "origins.cyborg.cyb_040",
+            "title": "The Passage",
+            "location": "market_district",
+            "text": [
+                "The alley smells like piss and ozone. At the end of it, a metal door with no handle. You knock \u00e2\u20ac\u201d three times, pause, twice, the pattern that seems universal in the Lower District for 'I'm not a cop.'",
+                "A slot opens at eye level. Two eyes study you. Augmented \u00e2\u20ac\u201d the irises glow faint amber.",
+                "\"What do you need?\"",
+                "\"Passage south. Someone told me to ask for Mole.\"",
+                "\"Someone.\" The eyes narrow. \"Mole doesn't take walk-ins. Mole takes referrals. Who sent you?\"",
+                "You have no one to name. No referral. No network. Just desperation and a pair of search drones tightening a net around the market district.",
+                "But then your HUD flickers \u00e2\u20ac\u201d the same glitch as the malfunction on the factory floor \u00e2\u20ac\u201d and in the wireframe overlay you see it: a signal signature emanating from behind the door. A signature you recognize from the YOKE data. This person's augmentations are broadcasting on the same hidden frequency.",
+                "\"You're running YOKE hooks,\" you say. \"I can see them. I can tell you what they're doing to you.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Wait for a response",
+                    "next": "origins.cyborg.cyb_044"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_041": {
+            "id": "origins.cyborg.cyb_041",
+            "title": "Alone in the Crowd",
+            "location": "market_district",
+            "text": [
+                "You push through the market crowd, keeping your head down and your arm tucked inside your jacket. Every face could be a spotter. Every drone overhead \u00e2\u20ac\u201d and there are dozens, most of them civilian \u00e2\u20ac\u201d could be carrying Helix tracking firmware.",
+                "Your HUD maps the district in real-time, plotting exits, alleys, maintenance hatches. The wireframe overlay shows you signal density \u00e2\u20ac\u201d heavy near the main streets, thinning toward the edges. If you can get to the district boundary, the signal coverage drops. Fewer eyes.",
+                "You're two blocks from the edge when you see them. Two men in grey coats, moving against the crowd's flow, scanning faces with handheld devices. Helix recovery contractors. They haven't spotted you yet, but they're close.",
+                "A hand grabs your real arm from behind. You spin, fist raised\u00e2\u20ac\u201d",
+                "It's a kid. Twelve, maybe thirteen. Augmented left eye, cheap model that glows green in the neon light. \"You're the one they're looking for,\" the kid says. \"Come with me if you want to keep your parts.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Follow the kid",
+                    "next": "origins.cyborg.cyb_044"
+                },
+                {
+                    "text": "Pull away and keep running",
+                    "next": "origins.cyborg.cyb_045"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_042": {
+            "id": "origins.cyborg.cyb_042",
+            "title": "The Data",
+            "location": "underground_tunnels",
+            "text": [
+                "You tell Fen about YOKE. The hidden network. The neural control hooks. The stress tests. The planned obsolescence. All of it, fast, because the clock is ticking on her jammer.",
+                "Fen listens without interrupting. When you finish, she's quiet for a long time. Then she reaches behind her ear and pulls out a data chip of her own.",
+                "\"Six years I've been down here,\" she says. \"Six years collecting stories from every runner who comes through these tunnels. People from Helix, MediCore, Stanton Bio, all the reconstruction corps. Same story every time. Debt. Degradation. Disposal.\" She holds up the chip. \"But I never had proof of the control layer. Nobody could show me the hooks.\"",
+                "She looks at you with her one human eye, and there is something in it that you haven't seen in a long time. It takes you a moment to identify it.",
+                "Purpose.",
+                "\"There are people who need to see this,\" she says. \"People who can do something with it. But they're not down here. They're on the other side of the district, and getting there means going through Helix's cordon.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.shared_yoke_data",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Let's go. Together.\"",
+                    "next": "origins.cyborg.cyb_046"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_043": {
+            "id": "origins.cyborg.cyb_043",
+            "title": "No Plan",
+            "location": "underground_tunnels",
+            "text": [
+                "\"Just couldn't stay,\" you repeat, and the words sound small in the tunnel dark. Fen studies you with the appraising look of someone who has survived by reading people quickly and accurately.",
+                "\"That's honest, at least. Most runners come down here with a manifesto or a death wish. You're just...\" She searches for the word. \"...done.\"",
+                "\"Yeah. Done.\"",
+                "\"Done is a start.\" She begins packing her meager belongings into a rucksack. \"I've been running a waystation down here for six years. Helping people like you get through the tunnels, out of the district, into the grey zones where corporate jurisdiction gets thin. I know the routes. I know the blind spots. And I know that two augmented bodies move quieter than one.\"",
+                "She shoulders the rucksack. \"Helix will have the main tunnels locked down within the hour. But there's a service corridor that runs under the old transit hub. It's tight, it's flooded past the knees, and it smells like death. But it comes out on the far side of the cordon.\"",
+                "\"You coming?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.joined_fen",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"I'm coming.\"",
+                    "next": "origins.cyborg.cyb_046"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_044": {
+            "id": "origins.cyborg.cyb_044",
+            "title": "The Network",
+            "location": "market_district",
+            "text": [
+                "The door opens. Behind it is a narrow staircase descending into blue-lit darkness. The person with amber eyes \u00e2\u20ac\u201d short, wiry, augmented hands that move in quick nervous gestures \u00e2\u20ac\u201d leads you down.",
+                "\"Name's Ticker,\" they say over their shoulder. \"And yeah, if what you're saying about YOKE is real, Mole's going to want to hear it. The whole network's going to want to hear it.\"",
+                "The staircase opens into a basement workshop that makes Kira's scrap yard container look primitive. Workbenches loaded with augmentation parts. Screens showing security camera feeds from across the district. A communications array built from scavenged corporate hardware.",
+                "And people. A dozen, maybe more, all augmented, all busy. Some working on hardware. Some monitoring screens. Some just resting, sleeping on cots pushed against the walls. A community built underground, invisible to the city above.",
+                "In the center of the room, a massive figure hunched over a terminal. Their back is a landscape of chrome \u00e2\u20ac\u201d a full spinal replacement from skull to tailbone, with auxiliary processing units bolted along the vertebrae like barnacles on a ship's hull.",
+                "\"Mole,\" Ticker announces. \"Got a live one. Says they can see YOKE.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.found_network",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.met_mole",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Tell Mole everything",
+                    "next": "origins.cyborg.cyb_047"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_045": {
+            "id": "origins.cyborg.cyb_045",
+            "title": "The Chase",
+            "location": "market_district",
+            "text": [
+                "You pull away from the kid and run. Instinct. Trust is a luxury you left on the factory floor.",
+                "Two blocks. Three. The district edge is right there, you can see the barrier where the market stalls thin out and the grey zone begins. Your HUD plots the path. Fifty meters. Forty.",
+                "The Helix contractors spot you. One shouts. You hear boots on pavement, fast and coordinated.",
+                "Your prosthetic arm surges with a strength you didn't know it had \u00e2\u20ac\u201d Kira's modifications, or maybe just adrenaline finding new pathways through the neural interface. You vault a vendor's cart, sending trays of bootleg data chips clattering across the ground. You duck under a tarp, through a gap between buildings so narrow you leave paint scrapes on both walls.",
+                "The contractors are closing. Professional. Augmented themselves, probably. Better hardware than yours.",
+                "Then the kid appears again, somehow ahead of you, holding open a grate in the ground. \"Last chance, stubborn.\"",
+                "This time, you don't hesitate."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "dexterity",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Drop through the grate",
+                    "next": "origins.cyborg.cyb_044"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_046": {
+            "id": "origins.cyborg.cyb_046",
+            "title": "Through the Flood",
+            "location": "underground_tunnels",
+            "text": [
+                "The service corridor is everything Fen promised. Tight. Flooded. Rank with the smell of stagnant water and rust. You wade through it single-file, Fen leading with the certainty of someone who has made this trip many times.",
+                "Your HUD maps the passage in wireframe, painting the walls and ceiling in blue lines. Water level: knee-high and rising. Structural integrity: questionable. Signal coverage: zero. You are invisible down here. Invisible and alone with the sound of your own breathing and the slosh of water against metal walls.",
+                "\"How many people have you taken through here?\" you ask.",
+                "\"Enough to lose count,\" Fen says. \"Not enough to feel like it matters.\"",
+                "An hour of wading. The corridor narrows, widens, narrows again. Twice you have to squeeze through gaps where the walls have buckled inward. Your prosthetic arm scrapes against concrete, and the sound is loud enough to make both of you freeze.",
+                "Then: light. A faint grey glow from ahead. The corridor opens into a junction beneath the transit hub. The cordon is behind you."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.escaped_cordon",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Surface at the transit hub",
+                    "next": "origins.cyborg.cyb_048"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_047": {
+            "id": "origins.cyborg.cyb_047",
+            "title": "Mole",
+            "location": "underground_tunnels",
+            "text": [
+                "Mole turns around. The face is half-human, half-display \u00e2\u20ac\u201d the left side of their skull has been replaced with a transparent panel showing the actual hardware of their brain augmentations, circuits pulsing with blue light. It's deliberate, you realize. A statement. Look at what they put inside us.",
+                "\"YOKE,\" Mole says. Their voice is deep, resonant, processed through vocal augmentations that give every word a harmonic undertone. \"We've been chasing rumors of a neural control layer for three years. Every time we get close, the evidence disappears. People disappear.\"",
+                "You hand over your data chip. Mole slots it into a reader built into their own arm. Their eyes \u00e2\u20ac\u201d one human brown, one digital blue \u00e2\u20ac\u201d scan the data at machine speed.",
+                "\"This is it.\" The words come out quiet. Almost reverent. \"Command structure. Hook placement protocols. The whole architecture.\" They look up at you. \"Do you know what you've brought us?\"",
+                "\"Proof.\"",
+                "\"More than proof. A map. We can trace these command signals back to every factory, every clinic, every reconstruction center in the city. We can show everyone with Helix hardware what's been done to them.\"",
+                "Mole stands. They're enormous \u00e2\u20ac\u201d nearly seven feet, with a frame that suggests the original body was large before the augmentations made it larger.",
+                "\"You can't go back. You know that. The second Helix realizes this data is in the wild, they'll burn everything to find you.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.gave_data_to_mole",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"I wasn't planning on going back.\"",
+                    "next": "origins.cyborg.cyb_048"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_048": {
+            "id": "origins.cyborg.cyb_048",
+            "title": "The Surface",
+            "location": "transit_hub",
+            "text": [
+                "You surface into the transit hub at dawn. The station is a cathedral of rust and faded advertisements, its platforms crowded with early commuters shuffling toward trains that will take them to factories not unlike the one you just fled.",
+                "The air is different up here. Not cleaner \u00e2\u20ac\u201d the Lower District doesn't do clean \u00e2\u20ac\u201d but different. The weight of the tunnels lifts from your shoulders. Your HUD registers a faint drizzle, acid content within tolerable limits.",
+                "For the first time in nineteen months, nobody is monitoring your heartbeat. Nobody is adjusting your serotonin. Nobody is testing your stress thresholds or calibrating your pain response. The silence inside your head is vast and terrifying and beautiful.",
+                "You are a fugitive. A debtor. A rogue asset carrying stolen corporate property in every prosthetic joint and every synthetic nerve.",
+                "You are also, for the first time since the press came down, free."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.reached_surface",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find somewhere to hide",
+                    "next": "origins.cyborg.cyb_049"
+                },
+                {
+                    "text": "Keep moving \u00e2\u20ac\u201d don't stop",
+                    "next": "origins.cyborg.cyb_050"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_049": {
+            "id": "origins.cyborg.cyb_049",
+            "title": "The Bolt Hole",
+            "location": "lower_slums",
+            "text": [
+                "You find a condemned building three blocks from the transit hub. The door is boarded, but your prosthetic arm tears the planks away like paper. Inside: dust, darkness, the smell of mold and rat droppings. Perfect.",
+                "You climb to the third floor \u00e2\u20ac\u201d high enough to see approaches, low enough to jump if you need to. A room with most of its windows intact and a door you can barricade. You pile debris against it and sit with your back to the wall, breathing hard.",
+                "Your HUD displays your vital signs. Heart rate elevated. Cortisol high. Battery at forty-three percent. You need to charge, need to sleep, need to eat. The human parts of you and the machine parts making the same demands in different languages.",
+                "Through the window, you watch the city wake up. The Lower District doesn't have sunrises \u00e2\u20ac\u201d just a gradual lightening of the perpetual grey, like a bruise fading. People begin to fill the streets below. Workers. Vendors. Children heading to schools that will teach them just enough to operate the machines that will eventually break them.",
+                "You close your eyes. Just for a moment."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.found_shelter",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rest and think about what comes next",
+                    "next": "origins.cyborg.cyb_051"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_050": {
+            "id": "origins.cyborg.cyb_050",
+            "title": "Keep Moving",
+            "location": "neon_strip",
+            "text": [
+                "You don't stop. Stopping means thinking, and thinking means feeling, and feeling means the full weight of what you've done will crush you flat.",
+                "You walk through the waking city like a ghost. Through the neon strip where the clubs are closing and the last of the night's revelers stagger into the grey morning. Past bars where augmented fighters nurse broken hands and empty bottles. Past clinics where the desperate wait for budget medical care that will cost them years of debt.",
+                "Your arm draws no attention here. The neon strip is chrome city \u00e2\u20ac\u201d augmented bouncers, augmented bartenders, augmented fighters who've replaced so much of themselves that the original person is an architectural footnote.",
+                "You catch your reflection in a club window. Chrome arm. Metal jaw. The faint glow of your HUD visible in your eyes. When did you stop seeing yourself as a person with prosthetics and start seeing yourself as a prosthetic with a person attached?",
+                "A question for later. Right now, you need money, shelter, and a plan. In that order."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.kept_moving",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Look for work \u00e2\u20ac\u201d off the books",
+                    "next": "origins.cyborg.cyb_052"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_051": {
+            "id": "origins.cyborg.cyb_051",
+            "title": "Dreams of Metal",
+            "location": "lower_slums",
+            "text": [
+                "You sleep, and you dream of the press.",
+                "In the dream, it falls in slow motion. You can see every hydraulic piston extending, every bolt straining, the sheet metal catching the light as it folds around your arm. But in the dream, the press doesn't stop at your arm. It keeps going. Shoulder, chest, skull. It flattens you into a sheet of metal and chrome, and then a worker picks you up and feeds you into another press, and you come out stamped into a shape you don't recognize. A gear. A bolt. A component. Useful.",
+                "You wake gasping. The room is dark. Your HUD tells you six hours have passed. Battery at thirty-one percent. You need to find a power source before the arm goes into conservation mode.",
+                "The streets below are busy now. Midday in the Lower District. Time to move."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Look for work \u00e2\u20ac\u201d off the books",
+                    "next": "origins.cyborg.cyb_052"
+                },
+                {
+                    "text": "Find a place to charge first",
+                    "next": "origins.cyborg.cyb_053"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_052": {
+            "id": "origins.cyborg.cyb_052",
+            "title": "Grey Market Labor",
+            "location": "neon_strip",
+            "text": [
+                "The neon strip's back alleys have a shadow economy that operates entirely in cash and favors. Day labor for people who can't show ID. Augmented muscle needed for loading, hauling, intimidating. No questions asked, no names exchanged.",
+                "A bar owner named Stacks hires you to unload a shipment of bootleg liquor from a cargo skiff. Twelve crates, heavy as sin. Your prosthetic arm handles the weight without complaint, and Stacks watches you work with the calculating eye of someone who recognizes useful equipment.",
+                "\"You're running,\" he says. Not a question. \"Corporate markings on that arm. Helix?\"",
+                "You don't answer. He doesn't need you to.",
+                "\"I don't care who you're running from. I care that you showed up, did the work, and didn't steal anything. That puts you ahead of ninety percent of the labor pool.\" He hands you a credit chip. \"Come back tomorrow. I've got more work.\"",
+                "Two hundred credits. Enough for food and a charging station. Not enough for a future."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.found_work",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 200
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Take the work. Day by day.",
+                    "next": "origins.cyborg.cyb_054"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_053": {
+            "id": "origins.cyborg.cyb_053",
+            "title": "Power Hungry",
+            "location": "lower_slums",
+            "text": [
+                "Public charging stations in the Lower District are coin-operated and monitored. Using one means logging your augmentation's serial number, which means giving Helix a ping on your location. Might as well send them a written invitation.",
+                "You find another way. An abandoned laundromat with a live power conduit behind the dryer hookups. Your HUD walks you through the process of jury-rigging a connection \u00e2\u20ac\u201d strip the wire, match the voltage, regulate the amperage through your interface port. It's crude and dangerous and feels like drinking electricity through a straw.",
+                "Battery climbs. Thirty-one. Forty. Fifty. The prosthetic arm hums as it charges, and the sound is comforting in a way you don't want to examine too closely.",
+                "While you charge, you think. About Helix. About the debt. About the fact that right now, somewhere in a corporate office, someone is looking at a screen that says ASSET MISSING \u00e2\u20ac\u201d RECOVERY IN PROGRESS, and that asset is you. Your body. Your bones and metal and wire.",
+                "The battery hits seventy percent. Good enough. Time to move."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.jury_rigged_charge",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "tech",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Look for work \u00e2\u20ac\u201d off the books",
+                    "next": "origins.cyborg.cyb_052"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_054": {
+            "id": "origins.cyborg.cyb_054",
+            "title": "Three Weeks Free",
+            "location": "neon_strip",
+            "text": [
+                "Three weeks of grey market work. Hauling for Stacks. Running deliveries for a pharmacy that doesn't ask what's in the packages. Standing watch outside a gambling den where the house rules include 'no killing the dealer.'",
+                "You sleep in shifts, never the same place twice. Charging where you can \u00e2\u20ac\u201d stolen power from condemned buildings, shared outlets in the augmented shelters that operate in the cracks between corporate jurisdiction. Your HUD maps the safe zones, the patrol routes, the blind spots in the surveillance grid.",
+                "The arm is holding. Kira's work \u00e2\u20ac\u201d or your own careful management \u00e2\u20ac\u201d is keeping the hardware functional. But the spine brace aches on cold nights, and the synthetic lung rattles when you exert yourself. The 4400 series is aging, even with better maintenance. Time is not on your side.",
+                "One evening, Stacks pulls you aside after closing.",
+                "\"Someone's been asking about you,\" he says, wiping a glass. \"Not Helix. Someone else. Wanted to know about the new loader with the chrome arm who doesn't give a name.\"",
+                "Your stomach drops. \"Who?\"",
+                "\"Didn't say. Left a message, though.\" He slides a folded paper across the bar. Inside, in neat handwriting: WE KNOW WHAT THEY DID TO YOU. WE CAN HELP. SECTOR 7 BAR. MIDNIGHT."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.three_weeks_free",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go to the meeting",
+                    "next": "origins.cyborg.cyb_055"
+                },
+                {
+                    "text": "It's a trap. Ignore it.",
+                    "next": "origins.cyborg.cyb_056"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_055": {
+            "id": "origins.cyborg.cyb_055",
+            "title": "Sector 7 Bar",
+            "location": "sector_7_bar",
+            "text": [
+                "The Sector 7 Bar is a hole in the wall that makes Stacks's place look upscale. Low ceiling. Bad lighting. The kind of clientele that drinks to forget things they'll need to remember in the morning. The jukebox plays static between songs, and nobody seems to mind.",
+                "You arrive at midnight. The bar is half-empty. You sit at a corner table with your back to the wall and your prosthetic hand under the table, ready.",
+                "She arrives at five past. A tall woman in a long coat, face half-hidden by a hood. When she sits across from you, you see her eyes \u00e2\u20ac\u201d one natural green, one augmented with a gold iris that dilates in precise geometric patterns.",
+                "\"I'm Vex,\" she says. \"I represent a group of people who are very interested in the data you took from Helix Manufacturing's Plant 9.\"",
+                "Your hand tightens under the table. \"How do you know about that?\"",
+                "\"Because we've been waiting for someone to find it. Someone who could see the YOKE network. Someone whose malfunction cracked the door open instead of shutting them down.\" She leans forward. \"What happened to you wasn't random. The 4400 series has a known firmware vulnerability. One in ten thousand units glitches in a way that exposes the hidden network. Helix knows about it. They usually catch it during maintenance and wipe the unit's memory.\"",
+                "\"They didn't catch me.\"",
+                "\"No. They didn't.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.met_vex",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"What does your group want?\"",
+                    "next": "origins.cyborg.cyb_057"
+                },
+                {
+                    "text": "\"Why should I trust you?\"",
+                    "next": "origins.cyborg.cyb_058"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_056": {
+            "id": "origins.cyborg.cyb_056",
+            "title": "Paranoia",
+            "location": "neon_strip",
+            "text": [
+                "You burn the note and don't go. Three weeks on the run has taught you that trust is a vulnerability you can't afford. Whoever left that message knows too much about you already.",
+                "You skip town. Leave Stacks's bar, leave the neon strip, move to a different sector. Find new grey market work in a recycling plant where they don't even look at your face, just your arms.",
+                "A week passes. Then another. No one follows. No drones. No contractors. Maybe it was nothing.",
+                "Then you find the second note. Slipped under the door of the squat you've been sleeping in. Same handwriting: WE'RE NOT YOUR ENEMY. BUT YOUR ENEMIES ARE CLOSER THAN YOU THINK. SECTOR 7 BAR. WHENEVER YOU'RE READY.",
+                "They found you again. Without trying, apparently. That means they're either very good, or they have access to surveillance you can't see.",
+                "Either way, ignoring them isn't working."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.initially_refused",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 5
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Fine. Go to the Sector 7 Bar.",
+                    "next": "origins.cyborg.cyb_055"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_057": {
+            "id": "origins.cyborg.cyb_057",
+            "title": "The Offer",
+            "location": "sector_7_bar",
+            "text": [
+                "\"We want to burn YOKE to the ground,\" Vex says, and the simplicity of it is almost refreshing. \"Not just at Helix. Everywhere. Every reconstruction corp in the city is running some version of neural control on their augmented workers. Different names, same system. Thousands of people walking around with hooks in their brains, being tuned like instruments.\"",
+                "She pulls up a holographic display from a device in her wrist \u00e2\u20ac\u201d military-grade hardware, not corporate. \"We're a collective. Runners, mechanics, hackers, a few sympathetic engineers who used to design these systems. We've been building the tools to expose YOKE for years. What we've been missing is the raw data \u00e2\u20ac\u201d the proof that the control layer exists and that the corps know about it.\"",
+                "\"And I have that proof.\"",
+                "\"You have a piece of it. The Helix piece. We need you to help us get the rest.\"",
+                "She holds out her hand across the sticky bar table. \"Join us. We'll keep you safe, keep your hardware running, and give you a chance to hurt the people who did this to you. Not just run from them. Hurt them.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Take her hand",
+                    "next": "origins.cyborg.cyb_059"
+                },
+                {
+                    "text": "\"I need to think about it.\"",
+                    "next": "origins.cyborg.cyb_060"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_058": {
+            "id": "origins.cyborg.cyb_058",
+            "title": "Trust",
+            "location": "sector_7_bar",
+            "text": [
+                "\"Trust.\" Vex says the word like she's tasting something familiar and bitter. \"You shouldn't trust me. You shouldn't trust anyone right now. That's good. That means you're thinking clearly.\"",
+                "She rolls up her sleeve. Her left forearm is augmented \u00e2\u20ac\u201d but not like yours. The casing is open, deliberately, showing the internals. Among the servos and wiring, you can see eleven small holes where transceivers were removed. Scar tissue, both organic and synthetic, has grown around the empty sockets.",
+                "\"I had YOKE hooks too,\" she says. \"MediCore, not Helix. Different company, same system. I was a domestic service cyborg for a mid-level family in the Cloud Towers. When I started asking questions they didn't like, they flagged me for repossession. I ran.\"",
+                "She rolls her sleeve back down. \"The people who helped me escape gave me something nobody in the Lower District has much of: a choice. I'm offering you the same thing.\"",
+                "\"What kind of choice?\"",
+                "\"The kind where you stop running and start fighting.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.questioned_trust",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Tell me more about what you're fighting for.\"",
+                    "next": "origins.cyborg.cyb_057"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_059": {
+            "id": "origins.cyborg.cyb_059",
+            "title": "The Handshake",
+            "location": "sector_7_bar",
+            "text": [
+                "Her hand is warm. Augmented, like yours, but the handshake is deliberately gentle \u00e2\u20ac\u201d the kind of control that comes from someone who knows exactly how much force their prosthetics can deliver and has learned to hold it back.",
+                "\"Welcome to the fight,\" she says. No ceremony. No dramatic speeches. Just two people in a bad bar making a decision that will probably get them killed.",
+                "She gives you a location \u00e2\u20ac\u201d a safe house in the lower slums, three rooms above a shuttered noodle shop. Food, charging station, basic medical supplies. Other runners cycle through, but you'll have a permanent bunk.",
+                "\"First thing tomorrow, we get your hardware assessed properly. Not scrap yard patch jobs \u00e2\u20ac\u201d real engineering. We have people who can extend the life of that 4400 by years if we swap the right components.\"",
+                "For the first time since the press, something in your chest loosens. Not quite hope. But the space where hope might grow, if you let it."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.joined_collective",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "charisma",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go to the safe house",
+                    "next": "origins.cyborg.cyb_061"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_060": {
+            "id": "origins.cyborg.cyb_060",
+            "title": "Hesitation",
+            "location": "sector_7_bar",
+            "text": [
+                "Vex doesn't push. She slides a small device across the table \u00e2\u20ac\u201d a comm unit, stripped of tracking hardware.",
+                "\"When you're ready. Channel 7. Say the word 'malfunction' and we'll come to you.\" She finishes her drink \u00e2\u20ac\u201d which she hasn't touched until now \u00e2\u20ac\u201d in one long pull. \"I'll tell you something for free, though. Helix hasn't stopped looking. The data you took is worth more than you know, and they want it back. Every day you're alone out here, the odds get worse.\"",
+                "She stands. \"The Lower District eats people who don't have a crew. You know that.\"",
+                "She leaves. You sit in the bar and turn the comm unit over in your prosthetic hand. The metal fingers catch the neon light from the sign outside. SECTOR 7 BAR, it reads, flickering. The R is burned out.",
+                "You pocket the comm unit. You'll think about it.",
+                "You think about it for two days. On the third day, you pick up a tail. Helix contractors. Two of them.",
+                "You press the comm unit. \"Malfunction.\"",
+                "Vex answers in three seconds."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.hesitated",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.joined_collective",
+                    "value": true
+                },
+                {
+                    "type": "add_item",
+                    "item": "stripped_comm_unit"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Meet Vex at the safe house",
+                    "next": "origins.cyborg.cyb_061"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_061": {
+            "id": "origins.cyborg.cyb_061",
+            "title": "Safe House",
+            "location": "lower_slums",
+            "text": [
+                "The safe house is exactly what Vex described. Three rooms above a dead noodle shop, accessible through a fire escape that's been reinforced with welded steel. The windows are blacked out. The walls are lined with signal-dampening mesh. Inside, it's sparse but functional \u00e2\u20ac\u201d bunks, a small kitchen, a charging station, and a workbench loaded with tools.",
+                "Two other people are there when you arrive. A short man with a prosthetic jaw who introduces himself as Dex, and a woman missing both eyes \u00e2\u20ac\u201d empty sockets covered by a visor that projects a soft blue light \u00e2\u20ac\u201d called Iris. The irony of her name is apparently intentional.",
+                "\"New runner,\" Dex says, looking you over. \"Helix 4400. I can hear the servo whine from here. We'll fix that.\"",
+                "Iris doesn't speak, but she tilts her visor toward you in acknowledgment. Her hands move over a keyboard with a speed that suggests she sees in ways that eyes never could.",
+                "Your bunk is against the far wall. A thin mattress, a blanket, a charging cable. It's not much. It's more than you've had in weeks."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.at_safe_house",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rest. You've earned it.",
+                    "next": "origins.cyborg.cyb_062"
+                },
+                {
+                    "text": "Explore the safe house",
+                    "next": "origins.cyborg.cyb_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_062": {
+            "id": "origins.cyborg.cyb_062",
+            "title": "Sleep",
+            "location": "lower_slums",
+            "text": [
+                "You sleep for fourteen hours straight. No dreams. No press nightmares. Just deep, black, empty nothing \u00e2\u20ac\u201d the kind of sleep your body has been screaming for since the day the YOKE hooks went in.",
+                "When you wake, your HUD tells you it's morning. Battery at ninety-eight percent \u00e2\u20ac\u201d the charging station is better quality than anything you've used since leaving Helix. Your arm responds without lag. Your spine brace has settled into a comfortable alignment.",
+                "Someone has left food on the table beside your bunk. Real food \u00e2\u20ac\u201d rice, protein, vegetables. Not the paste-and-supplement blocks you've been living on. You eat everything and nearly cry. Your emotion-processing layer \u00e2\u20ac\u201d the human one, the original one \u00e2\u20ac\u201d is doing things you haven't allowed it to do in months.",
+                "Vex appears in the doorway. She's dressed differently \u00e2\u20ac\u201d no coat, no hood. Just a grey shirt that shows the full extent of her augmentations. Both arms. A partial chest reconstruction. The scars of someone who has been taken apart and put back together by people who didn't care about the original architecture.",
+                "\"Ready to work?\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"Ready.\"",
+                    "next": "origins.cyborg.cyb_064"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_063": {
+            "id": "origins.cyborg.cyb_063",
+            "title": "The Workshop",
+            "location": "lower_slums",
+            "text": [
+                "The safe house has a basement. You find it through a concealed hatch under a rug in the kitchen \u00e2\u20ac\u201d a ladder down into a room that's bigger than the apartment above it.",
+                "It's a workshop. Not Kira's scrap-yard improvisation \u00e2\u20ac\u201d this is organized, stocked, professional. Augmentation components sorted by type and manufacturer in labeled bins. Surgical tools sterilized in UV cabinets. Three operating tables with adjustable clamps and neural interface rigs.",
+                "On the far wall, a board covered in photographs, documents, and connecting strings. You recognize some of the corporate logos \u00e2\u20ac\u201d Helix, MediCore, Stanton Bio, Crucible Dynamics. Faces of executives. Facility locations. Production numbers.",
+                "And in the center, written in red marker: YOKE.",
+                "They've been building a case. Years of work, from the look of it. Your data \u00e2\u20ac\u201d the Helix data \u00e2\u20ac\u201d fills a gap you can see on the board. One of many gaps, but a critical one.",
+                "Dex appears behind you on the ladder. \"Impressive, isn't it? Three years of collecting evidence that people with money and power don't want collected.\" He taps his prosthetic jaw. \"Everyone down here has a reason to fight.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.saw_evidence_board",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Get some sleep. Tomorrow, you work.",
+                    "next": "origins.cyborg.cyb_062"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_064": {
+            "id": "origins.cyborg.cyb_064",
+            "title": "The Mission",
+            "location": "lower_slums",
+            "text": [
+                "Vex lays it out over the workbench, using a holographic map of the Lower District.",
+                "\"Your YOKE data covers Helix Manufacturing. That's one company. There are six major reconstruction corps operating in the city, and we believe all of them are running some version of neural control on their augmented workers. We need data from each one.\"",
+                "She highlights a building on the map. A medical clinic in the market district, branded with MediCore's green cross.",
+                "\"MediCore runs a maintenance clinic three blocks from here. Every augmented worker on a MediCore contract passes through it for their six-week checkup. The clinic's servers store diagnostic data that should include YOKE command logs \u00e2\u20ac\u201d if MediCore is using the same system.\"",
+                "\"You want me to break into a corporate medical clinic.\"",
+                "\"I want you to walk in through the front door.\" She pulls up a forged ID on the workbench display. \"You're an augmented worker. You need a checkup. The clinic won't turn you away \u00e2\u20ac\u201d they bill by the patient, and they don't cross-reference registrations in real-time. You'll have a thirty-minute window to access a diagnostic terminal and pull the data.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.first_mission",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"I'll do it.\"",
+                    "next": "origins.cyborg.cyb_065"
+                },
+                {
+                    "text": "\"What if they recognize my hardware as Helix?\"",
+                    "next": "origins.cyborg.cyb_065"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_065": {
+            "id": "origins.cyborg.cyb_065",
+            "title": "Preparation",
+            "location": "lower_slums",
+            "text": [
+                "Dex spends two hours modifying your arm's external casing. New polymer panels that cover the Helix serial numbers. A paint job that makes the 4400 hardware look like a MediCore M-series \u00e2\u20ac\u201d similar enough to pass a visual inspection, different enough in the details that only a specialist would catch the swap.",
+                "Iris provides the digital cover. Forged registration codes loaded into your neural interface. A fake maintenance history. A fabricated debt profile that will check out on a surface scan.",
+                "\"Don't let them plug into your deep systems,\" Iris says \u00e2\u20ac\u201d the first words you've heard her speak. Her voice is soft, precise, each word chosen with care. \"Surface diagnostics only. If they try to run a full integration scan, the forgery won't hold.\"",
+                "Vex hands you a data extraction device, small enough to palm. \"Plug this into any diagnostic terminal. It'll pull everything and wipe the access logs. You'll have sixty seconds once it's connected.\"",
+                "You look at the three of them. Outcasts. Fugitives. Broken people who decided to break back.",
+                "\"Let's go.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_item",
+                    "item": "data_extraction_device"
+                },
+                {
+                    "type": "add_item",
+                    "item": "forged_medicore_id"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Head to the MediCore clinic",
+                    "next": "origins.cyborg.cyb_067"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_067": {
+            "id": "origins.cyborg.cyb_067",
+            "title": "The MediCore Clinic",
+            "location": "market_district",
+            "text": [
+                "The MediCore maintenance clinic is clean in a way that feels aggressive. White walls. White floors. Green accents in MediCore's corporate color. The waiting room smells of antiseptic and the faint ozone of active augmentation hardware.",
+                "A dozen patients sit in plastic chairs, waiting. All augmented. Some look nervous \u00e2\u20ac\u201d first-timers, probably, still adjusting to the reality of their new bodies. Others have the dead-eyed patience of people who've been through this enough times to stop caring.",
+                "You check in at the front desk. The receptionist \u00e2\u20ac\u201d a synth with a practiced smile \u00e2\u20ac\u201d scans your forged ID without interest. \"MediCore patient 447-J. Six-week maintenance. Bay 3, please.\"",
+                "Bay 3 is a small examination room with a diagnostic terminal mounted on the wall. A reclining chair with neural interface hookups. A screen displaying your fake medical history.",
+                "You have thirty minutes. The extraction device is warm in your palm."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.inside_medicore",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Plug the extraction device into the terminal immediately",
+                    "next": "origins.cyborg.cyb_068"
+                },
+                {
+                    "text": "Wait for the technician to start the checkup first",
+                    "next": "origins.cyborg.cyb_069"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_068": {
+            "id": "origins.cyborg.cyb_068",
+            "title": "Quick Hands",
+            "location": "market_district",
+            "text": [
+                "You don't wait. Every second in this building is a second closer to being caught. You palm the extraction device, lean over the terminal as if examining your own records, and slot it into the data port.",
+                "The device hums. A progress bar fills on its tiny screen. Thirty percent. Fifty. The data is flowing \u00e2\u20ac\u201d diagnostic logs, maintenance records, and beneath them, encrypted command layer data. YOKE. Different branding, same architecture.",
+                "Seventy percent. Eighty.",
+                "The door opens. A technician walks in, datapad in hand. \"Patient 447-J? I'm\u00e2\u20ac\u201d\" He stops. Looks at you. Looks at the terminal. Looks at the device plugged into the data port.",
+                "His expression says everything. He reaches for the alarm panel on the wall."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Grab the device and run",
+                    "next": "origins.cyborg.cyb_070"
+                },
+                {
+                    "text": "Stop him from hitting the alarm",
+                    "next": "origins.cyborg.cyb_071"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_069": {
+            "id": "origins.cyborg.cyb_069",
+            "title": "Playing the Part",
+            "location": "market_district",
+            "text": [
+                "You sit in the chair and wait. Play the role. Be the patient. The technician arrives two minutes later \u00e2\u20ac\u201d a young man, tired eyes, the kind of person who got into medicine to help people and ended up running corporate diagnostics for a paycheck.",
+                "\"Surface diagnostic,\" he says, connecting a sensor to your neural interface port. \"Just routine. How's the hardware been?\"",
+                "\"Stiff in the mornings,\" you say. A believable complaint for any augmented person.",
+                "He nods, tapping his datapad. \"That's normal for the M-series. I'll check the joint lubricant levels.\" He turns to the terminal, entering commands. The screen fills with diagnostic data \u00e2\u20ac\u201d your fake readings, convincing enough on the surface.",
+                "While his back is turned, you slip the extraction device from your pocket and plug it into the secondary data port behind the chair. The terminal doesn't register it \u00e2\u20ac\u201d the device is designed to look like a peripheral sensor to the system.",
+                "\"Everything looks stable,\" the technician says. \"I'll schedule you for a follow-up in six weeks.\"",
+                "The device's progress bar reads: COMPLETE."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.clean_extraction",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "dexterity",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Pocket the device and leave calmly",
+                    "next": "origins.cyborg.cyb_072"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_070": {
+            "id": "origins.cyborg.cyb_070",
+            "title": "Grab and Go",
+            "location": "market_district",
+            "text": [
+                "You yank the device from the port \u00e2\u20ac\u201d ninety-one percent extracted, it'll have to be enough \u00e2\u20ac\u201d and move. The technician's hand is on the alarm panel. Your prosthetic arm is faster. Not to hurt him \u00e2\u20ac\u201d you don't want to hurt him \u00e2\u20ac\u201d but to put the chair between you and the door.",
+                "\"Don't,\" you say, but he's already pressing the button.",
+                "The alarm is silent \u00e2\u20ac\u201d a corporate clinic doesn't want to panic the patients \u00e2\u20ac\u201d but you can see it in the sudden tension of the staff in the hallway, the way heads turn toward your bay. Security will be here in seconds.",
+                "You go through the window. Third floor \u00e2\u20ac\u201d a drop that would break human legs, but your augmented spine absorbs the impact with a jarring crack that sends pain lancing up your back. Your HUD flashes RED \u00e2\u20ac\u201d structural stress warning on the spinal brace.",
+                "You run. Behind you, the clinic erupts into controlled chaos."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.messy_extraction",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "strength",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Run for the rendezvous point",
+                    "next": "origins.cyborg.cyb_073"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_071": {
+            "id": "origins.cyborg.cyb_071",
+            "title": "Confrontation",
+            "location": "market_district",
+            "text": [
+                "Your prosthetic hand catches his wrist before he reaches the panel. The grip is precise \u00e2\u20ac\u201d firm enough to stop him, not enough to break anything. He stares at your hand on his arm, then at your face.",
+                "\"Please don't,\" you say quietly. \"I'm not here to hurt anyone.\"",
+                "His eyes are wide, but he's not screaming. Not yet. \"You're stealing data. That's \u00e2\u20ac\u201d that's a corporate crime. They'll\u00e2\u20ac\u201d\"",
+                "\"They'll what? Add it to my debt?\" You let that land. His eyes flick to your augmentations, understanding clicking into place. \"I'm one of them. The ones they rebuild and bind. You've seen us come through here. You know what happens to us.\"",
+                "He's quiet for a long moment. Behind you, the extraction device reads ninety-seven percent. Ninety-eight.",
+                "\"The command layer,\" he whispers. \"I've seen... anomalies in the diagnostic data. Neural feedback loops that shouldn't be there. I filed reports. They told me to stop filing reports.\"",
+                "Complete. You pull the device free.",
+                "\"I never saw you,\" the technician says. He sits down heavily in his chair and stares at the wall. \"Bay 3 was empty today.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.convinced_technician",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "charisma",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Leave quietly",
+                    "next": "origins.cyborg.cyb_072"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_072": {
+            "id": "origins.cyborg.cyb_072",
+            "title": "Clean Exit",
+            "location": "market_district",
+            "text": [
+                "You walk out of the MediCore clinic the same way you walked in: calmly, anonymously, just another augmented patient finishing a routine checkup. The receptionist doesn't look up. The waiting room patients don't look up. Nobody looks up, because in the Lower District, invisibility is the default state of the poor.",
+                "Three blocks from the clinic, you duck into an alley and press your back against the wall. Your hands \u00e2\u20ac\u201d one flesh, one metal \u00e2\u20ac\u201d are shaking. The adrenaline dump hits all at once, and for a moment you can't breathe.",
+                "The extraction device is warm in your pocket. Full of data. Full of proof.",
+                "You press the comm unit. \"Done. Clean.\"",
+                "Vex's voice: \"Come home.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.medicore_data_acquired",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Return to the safe house",
+                    "next": "origins.cyborg.cyb_074"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_073": {
+            "id": "origins.cyborg.cyb_073",
+            "title": "The Chase",
+            "location": "market_district",
+            "text": [
+                "You run through the market district with the clinic's silent alarm trailing behind you like a scent. Your HUD tracks the pursuit \u00e2\u20ac\u201d two security guards from the clinic, augmented, faster than average. And something else: a drone, MediCore branded, lifting from the clinic's roof.",
+                "The comm unit crackles. Dex's voice: \"We see you. Head for the fish market, north entrance. We've got a diversion ready.\"",
+                "You cut through an alley, vault a fence with your prosthetic arm providing the lift, and hit the fish market at a sprint. The smell is overwhelming \u00e2\u20ac\u201d salt, decay, ice. Stalls stretch in every direction under a corrugated metal roof.",
+                "Behind you, an explosion. Not large \u00e2\u20ac\u201d a flash-bang, maybe, or a signal flare. But it's enough. The drone wheels toward the sound. The security guards slow, confused.",
+                "You keep running. Through the market. Out the north side. Into a maintenance tunnel that Iris has already unlocked remotely.",
+                "The hatch seals behind you. Darkness. Safety. The extraction device in your hand, warm with stolen proof."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.medicore_data_acquired",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Return to the safe house",
+                    "next": "origins.cyborg.cyb_074"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_074": {
+            "id": "origins.cyborg.cyb_074",
+            "title": "Proof",
+            "location": "lower_slums",
+            "text": [
+                "Back at the safe house, Iris plugs the extraction device into her terminal. The data flows across her screen \u00e2\u20ac\u201d diagnostic logs, patient records, and buried beneath them, the command layer.",
+                "\"COMPASS,\" she says, reading the headers. \"MediCore calls their system COMPASS. Different name, same architecture. Same hooks. Same neural control pathways.\"",
+                "Vex stands behind her, arms crossed. \"That's two corps confirmed. Helix's YOKE and MediCore's COMPASS. Same technology, probably same source code. Someone built this system and sold it to every reconstruction company in the city.\"",
+                "\"Who?\"",
+                "\"That's the question worth killing for,\" Vex says. \"And people have been killed for asking it.\" She turns to you. \"You did good today. Whatever path brought you here \u00e2\u20ac\u201d the accident, the debt, the malfunction \u00e2\u20ac\u201d it led to this. You're part of something now. Something that matters.\"",
+                "Dex raises a cup of synthetic coffee. \"To the new runner.\"",
+                "Iris's visor pulses. Agreement.",
+                "You drink. It tastes terrible. It's the best thing you've ever had."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.compass_discovered",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "choices": [
+                {
+                    "text": "This is your life now",
+                    "next": "origins.cyborg.cyb_075"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_075": {
+            "id": "origins.cyborg.cyb_075",
+            "title": "Months Pass",
+            "location": "lower_slums",
+            "text": [
+                "You become a runner. It's not a job \u00e2\u20ac\u201d it's a state of being. Three months with the collective teach you things no factory ever would.",
+                "Dex teaches you to maintain your own hardware. How to swap battery cells, re-sleeve servos, patch neural interface corrosion. Your hands \u00e2\u20ac\u201d one flesh, one metal \u00e2\u20ac\u201d learn the delicate work of keeping yourself alive when the warranty has expired.",
+                "Iris teaches you to read signals. The hidden data streams flowing through the Lower District's infrastructure, the corporate surveillance networks, the gaps and blind spots you can exploit. Your HUD becomes a weapon instead of a leash.",
+                "Vex teaches you to fight. Not brawling \u00e2\u20ac\u201d tactical movement, threat assessment, the art of knowing when to run and when to stand. Your augmented body, freed from YOKE's throttling, is capable of things that surprise you both.",
+                "The collective grows. Other runners trickle in, drawn by rumors of people who can remove YOKE hooks. You help with the operations, holding hands while Kira \u00e2\u20ac\u201d yes, Kira, recruited by the collective months before you \u00e2\u20ac\u201d cuts the hooks free one by one."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "tech",
+                    "amount": 1
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "dexterity",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue the fight",
+                    "next": "origins.cyborg.cyb_076"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_076": {
+            "id": "origins.cyborg.cyb_076",
+            "title": "The Raid",
+            "location": "lower_slums",
+            "text": [
+                "They come at 3 AM on a Thursday.",
+                "Your HUD wakes you before the door breaches \u00e2\u20ac\u201d motion sensors Iris installed in the stairwell, tripped by six bodies moving in tactical formation. Heavy boots. The hum of military-grade augmentation.",
+                "\"Contact,\" you say, and the word is enough. Three months of drills kick in. Vex is at the window, scanning egress routes. Dex is at the data terminal, running the emergency purge. Iris is already halfway through the floor hatch, her visor pulsing red.",
+                "The door comes in. Flash-bangs \u00e2\u20ac\u201d your HUD filters the worst of the light, but the concussion rattles your skull. Through the smoke, figures in black tactical gear with HELIX RECOVERY stenciled on their chest plates.",
+                "Not just contractors this time. A full recovery team. Armed. Armored. And leading them, a man you haven't seen in over a year.",
+                "Voss. Your old foreman. Wearing a Helix security badge and a smile that suggests he's been waiting for this."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.safe_house_raided",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Fight your way out",
+                    "next": "origins.cyborg.cyb_077"
+                },
+                {
+                    "text": "Cover the others' escape",
+                    "next": "origins.cyborg.cyb_078"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_077": {
+            "id": "origins.cyborg.cyb_077",
+            "title": "Fight",
+            "location": "lower_slums",
+            "text": [
+                "Your prosthetic arm \u00e2\u20ac\u201d upgraded, maintained, unshackled \u00e2\u20ac\u201d hits the first tactical officer with enough force to crack his chest plate. The servo motors scream. The room becomes a blur of chrome and violence.",
+                "Kira's work holds. Every modification, every patch, every upgrade pours through your augmentations like electricity through copper. You are faster than they expect. Stronger. The YOKE system throttled your hardware to sixty percent of capacity \u00e2\u20ac\u201d you'd never known what full power felt like until Kira cut the hooks.",
+                "Now they know too.",
+                "You put down two officers before the third tags you with a neural disruptor \u00e2\u20ac\u201d a wave of static that blanks your HUD and sends your prosthetic arm into spasm. The world goes white. You stagger.",
+                "Vex catches you. \"Move. NOW.\" She hauls you toward the window. Below, a three-story drop to the alley. Behind you, Voss is shouting orders.",
+                "You jump. Together. The landing cracks the pavement and jars every joint in your body, but you're moving before the pain registers."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.fought_back",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "strength",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Run",
+                    "next": "origins.cyborg.cyb_079"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_078": {
+            "id": "origins.cyborg.cyb_078",
+            "title": "Rearguard",
+            "location": "lower_slums",
+            "text": [
+                "\"Go!\" you shout, and you put yourself between the recovery team and the floor hatch. Dex drops through first, then Iris. Vex hesitates at the edge, looking back at you.",
+                "\"I'm right behind you,\" you lie. You both know it.",
+                "You face the tactical team. Six of them. Armored. Armed. Professional. Your prosthetic arm hums as the servos engage at full power, the sound filling the room like a war drum.",
+                "\"Asset recovery,\" Voss says from behind his team. \"Surrender the stolen hardware and you'll be processed humanely.\"",
+                "\"Humanely.\" The word tastes like ash. \"Like the press was humane? Like the debt was humane? Like the hooks in my brain were humane?\"",
+                "You buy Vex forty-five seconds by being too stubborn and too angry to go down easily. When the neural disruptor finally drops you, your friends are gone, the data is purged, and Voss is standing over you with a split lip and a look on his face that says this didn't go the way he planned.",
+                "You smile up at him through the static. It's the kind of smile that makes people nervous."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.covered_retreat",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "constitution",
+                    "amount": 1
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "charisma",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "...",
+                    "next": "origins.cyborg.cyb_080"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_079": {
+            "id": "origins.cyborg.cyb_079",
+            "title": "Scattered",
+            "location": "underground_tunnels",
+            "text": [
+                "The collective scatters. Emergency protocol \u00e2\u20ac\u201d everyone runs in different directions, no communication for seventy-two hours, then regroup at the backup location. You've drilled this. It still hurts.",
+                "You run through the tunnels alone, your HUD mapping the route in real-time. Behind you, the sounds of the raid fade. No pursuit \u00e2\u20ac\u201d yet. They were after the safe house, not individual runners. Small mercy.",
+                "You find a dead-end tunnel and collapse against the wall. Your body \u00e2\u20ac\u201d the meat and the metal \u00e2\u20ac\u201d trembles with spent adrenaline. The neural disruptor has left a ringing in your ears and a taste like burned copper.",
+                "Voss. They sent Voss. The man who put you on the press alone. The man whose negligence cost you your arm, your ribs, your lung. Now he's wearing a security badge and hunting you through the city.",
+                "The universe has a sense of humor. It just isn't funny.",
+                "You sit in the dark for a long time. Then you get up, check your battery (fifty-eight percent), and start walking."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.collective_scattered",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Survive the seventy-two hours",
+                    "next": "origins.cyborg.cyb_081"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_080": {
+            "id": "origins.cyborg.cyb_080",
+            "title": "Captured",
+            "location": "the_foundry",
+            "text": [
+                "You wake in a room you recognize. The recovery ward at Helix Plant 9. The same white walls. The same branded pillow. The same antiseptic smell. Full circle.",
+                "Your augmentations are locked \u00e2\u20ac\u201d remote override, the kind of command that YOKE would have enabled without you ever knowing. But YOKE's hooks are gone, so they've done it manually. Clamps on your joints. A signal blocker on your neural interface. Your HUD is dead.",
+                "Voss sits in the visitor chair. He's cleaned the blood off his face but the bruise is spreading nicely.",
+                "\"Four hundred and eighty-seven thousand credits,\" he says. \"Plus recovery costs. Plus damages. Plus the data theft charges.\" He leans forward. \"You know what happens now, right?\"",
+                "\"Repossession.\"",
+                "\"Unless.\" He holds up a finger. \"Your friends. The collective. We want locations, names, the backup data. Give us that, and Helix restructures your debt. New terms. Better hardware. A real life.\"",
+                "You look at him. At the man who killed you once already. At the company that built you back wrong on purpose.",
+                "\"No.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.captured",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Hold the line",
+                    "next": "origins.cyborg.cyb_082"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_081": {
+            "id": "origins.cyborg.cyb_081",
+            "title": "Seventy-Two Hours",
+            "location": "lower_slums",
+            "text": [
+                "Three days of silence. Three days of hiding in the cracks of the Lower District, moving from squat to squat, charging where you can, eating what you find. Your body runs on reserves \u00e2\u20ac\u201d the human parts hungry and cold, the machine parts efficiently managing power draw.",
+                "You think about the others. Vex. Dex. Iris. Kira. Whether they made it. Whether the data survived. Whether any of it mattered.",
+                "On the third morning, your comm unit crackles. Vex's voice, using the coded callsign: \"Malfunction clear. Rally point Charlie.\"",
+                "Relief hits you so hard your knees buckle. They're alive. The network survived.",
+                "Rally point Charlie is a warehouse on the edge of the scrap yards. When you arrive, they're all there \u00e2\u20ac\u201d bruised, tired, but whole. The data, backed up on three separate encrypted chips, is intact. The evidence board from the basement has been recreated from memory on the warehouse wall.",
+                "\"They hit the safe house,\" Vex says. \"They didn't hit us. We're still standing.\"",
+                "Dex looks at you. \"So. What now?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.survived_72hrs",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"We keep going. Harder this time.\"",
+                    "next": "origins.cyborg.cyb_083"
+                },
+                {
+                    "text": "\"Maybe it's time to go public.\"",
+                    "next": "origins.cyborg.cyb_084"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_082": {
+            "id": "origins.cyborg.cyb_082",
+            "title": "Resistance",
+            "location": "the_foundry",
+            "text": [
+                "They keep you in the recovery ward for two days. No food. Minimal water. Voss comes back three times with the same offer, phrased differently each time. The carrot gets smaller. The stick gets bigger.",
+                "You say no. Each time, the word gets easier.",
+                "On the second night, the door lock clicks. Not from the outside \u00e2\u20ac\u201d from the inside. Your HUD, which has been dark for two days, flickers to life. A single message scrolls across the display:",
+                "HOLD ON. WE'RE COMING. \u00e2\u20ac\u201d IRIS",
+                "Twenty minutes later, the power to the recovery ward goes out. Emergency lighting bathes everything in red. Your augmentation locks disengage \u00e2\u20ac\u201d someone has remotely overridden the manual clamps. You feel your arm respond. Your legs. Your spine.",
+                "The door opens. Dex stands in the hallway, prosthetic jaw set in a grim smile. Behind him, the sounds of chaos \u00e2\u20ac\u201d alarms, shouting, the crash of equipment.",
+                "\"Extraction,\" he says. \"Let's move.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.rescued",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go with Dex",
+                    "next": "origins.cyborg.cyb_083"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_083": {
+            "id": "origins.cyborg.cyb_083",
+            "title": "Harder",
+            "location": "lower_slums",
+            "text": [
+                "The collective rebuilds. A new safe house, better hidden. New protocols, harder to crack. And a new mission \u00e2\u20ac\u201d not just gathering data, but acting on it.",
+                "Over the next four months, you hit three more corporate facilities. Stanton Bio's augmentation plant. Crucible Dynamics' testing laboratory. A Helix data center that houses the YOKE server architecture itself. Each operation is dangerous. Each one adds to the pile of evidence.",
+                "Your augmentations evolve with you. Dex upgrades your arm with salvaged military components \u00e2\u20ac\u201d faster servos, stronger actuators, a reinforced casing that can take a bullet. Iris installs a secondary processing unit behind your ear that lets you interface with corporate security systems. Kira replaces your degrading spinal brace with a prototype she built herself, stronger and lighter than anything Helix ever produced.",
+                "You are becoming something. Not the machine they built you to be. Not the person you were before the press. Something new. Something with a prosthetic arm and a real fist and the knowledge of what corporations do to the bodies they own."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.collective_rebuilt",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "tech",
+                    "amount": 1
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "strength",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The final operation",
+                    "next": "origins.cyborg.cyb_085"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_084": {
+            "id": "origins.cyborg.cyb_084",
+            "title": "Going Public",
+            "location": "lower_slums",
+            "text": [
+                "\"Public?\" Vex raises an eyebrow. \"With what? We have data from two corps. The feeds won't touch it \u00e2\u20ac\u201d they're corporate-owned. The courts won't hear it \u00e2\u20ac\u201d the judges are corporate-funded. Going public means going to the people, and the people are tired, scared, and one paycheck away from the street.\"",
+                "\"So we make them angry,\" you say. \"We show them what's in their heads. Every augmented worker in the Lower District \u00e2\u20ac\u201d we show them the hooks. Let them feel it. Let them understand that the debt isn't the worst part. The worst part is that they can't even feel properly angry about it because the anger is being regulated.\"",
+                "Silence. Then Iris speaks, her soft voice cutting through the room like a blade. \"That could start a riot.\"",
+                "\"Or a revolution,\" Dex says.",
+                "Vex looks at each of you. Then she nods slowly. \"Not yet. We need more data. More corps. A complete picture. When we go public, it has to be everything. All of it. Irrefutable. The kind of evidence that can't be buried.\"",
+                "\"Then we keep digging.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.wants_public_exposure",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Four more months of operations",
+                    "next": "origins.cyborg.cyb_083"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_085": {
+            "id": "origins.cyborg.cyb_085",
+            "title": "The Source",
+            "location": "lower_slums",
+            "text": [
+                "Iris finds it. Buried in the Crucible Dynamics data, a contract reference that traces the YOKE/COMPASS technology back to a single source: a subsidiary of Meridian Corp called Meridian Neural Solutions. A company that officially doesn't exist in any public registry.",
+                "\"Meridian,\" Vex says, and the word carries the weight of a corporation so powerful it makes Helix look like a street vendor. Meridian Corp \u00e2\u20ac\u201d the company whose Cloud Towers pierce the storm layer, whose memory stack technology promises immortality to the rich, whose logo is on every enforcement drone in the city.",
+                "\"They built the control system and sold it to every reconstruction company as a standard integration package. YOKE, COMPASS, whatever they call it \u00e2\u20ac\u201d it's all Meridian firmware at the core. Every augmented worker in the city is running Meridian code in their heads.\"",
+                "The room is very quiet.",
+                "\"We can't fight Meridian,\" Dex says. \"They own the city.\"",
+                "\"We're not going to fight them,\" you say, and you're surprised by the certainty in your own voice. \"We're going to expose them. And then everyone else will fight them for us.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.meridian_discovered",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Plan the exposure",
+                    "next": "origins.cyborg.cyb_086"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_086": {
+            "id": "origins.cyborg.cyb_086",
+            "title": "The Plan",
+            "location": "lower_slums",
+            "text": [
+                "The plan is simple in concept, terrifying in execution. Iris can broadcast the YOKE data across the Lower District's public communication network \u00e2\u20ac\u201d every screen, every speaker, every augmented person's HUD. A simultaneous data dump showing every hook, every control pathway, every corporate signature.",
+                "But to do it, she needs access to a signal amplifier powerful enough to reach every corner of the district. The only ones that powerful are the ones on top of the Meridian communication towers.",
+                "\"The tower on Seventh Street,\" Iris says, pulling up schematics she's hacked from the city planning archives. \"It's the lowest-altitude relay in the Lower District. Forty stories. Rooftop access through a maintenance hatch. Security is automated \u00e2\u20ac\u201d drones and cameras, no human guards. I can loop the camera feeds. The drones are harder.\"",
+                "Vex looks at you. \"This is a one-way trip for the collective. Once we broadcast, Meridian will know who we are and what we have. There's no going back underground.\"",
+                "\"There's no underground left,\" you say. \"They found our last safe house. They'll find the next one. The only direction left is up.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"When do we go?\"",
+                    "next": "origins.cyborg.cyb_087"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_087": {
+            "id": "origins.cyborg.cyb_087",
+            "title": "The Tower",
+            "location": "transit_hub",
+            "text": [
+                "Dawn. The communication tower rises from the transit hub like a needle, its signal array glowing faintly against the grey sky. Rain. Always rain in the Lower District.",
+                "Four of you. Iris carries the broadcast equipment. Dex carries the tools. Vex carries the contingency plan \u00e2\u20ac\u201d a dead-man's switch that will broadcast the data automatically if the signal is interrupted. You carry yourself, all the chrome and rage and borrowed time you've been running on.",
+                "The maintenance hatch is where Iris said it would be. The camera feeds loop on schedule. You climb \u00e2\u20ac\u201d forty stories of ladder in a vertical shaft, your prosthetic arm finding grip where human hands would slip.",
+                "At the top, the wind hits you like a wall. The Lower District spreads below in a carpet of neon and squalor, rain-slicked and endless. Above, the Cloud Towers gleam in the first light that reaches past the storm layer. Two different worlds, stacked on top of each other, connected by the invisible threads of a system designed to keep one serving the other.",
+                "Iris begins setting up the broadcast array. Dex connects the signal amplifier. Vex watches the perimeter.",
+                "\"Five minutes,\" Iris says."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.at_the_tower",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Keep watch",
+                    "next": "origins.cyborg.cyb_088"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "cyb_088": {
+            "id": "origins.cyborg.cyb_088",
+            "title": "Five Minutes",
+            "location": "transit_hub",
+            "text": [
+                "The drones find you at minute three.",
+                "Four Meridian security drones, rising from below the roofline like hornets from a disturbed nest. Your HUD identifies them instantly \u00e2\u20ac\u201d Sec-9 model, armed with neural disruptors and crowd-control tasers. More firepower than the Helix recovery team brought to the safe house.",
+                "\"Iris?\" Vex calls.",
+                "\"Two minutes.\"",
+                "\"We don't have two minutes.\"",
+                "The drones circle, scanning. Their PA systems crackle: \"UNAUTHORIZED PERSONNEL. VACATE THE RESTRICTED AREA IMMEDIATELY. NON-COMPLIANCE WILL RESULT IN CORRECTIVE ACTION.\"",
+                "Corrective action. Such clean language for what their weapons do to a human nervous system.",
+                "You look at the drones. You look at your prosthetic arm. You look at the distance between the rooftop edge and the nearest drone.",
+                "Dex reads your mind. \"That is a terrible idea,\" he says.",
+                "\"Yeah.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Do the terrible thing \u00e2\u20ac\u201d attack the drones",
+                    "next": "origins.cyborg.cyb_089"
+                },
+                {
+                    "text": "Find another way to buy time",
+                    "next": "origins.cyborg.cyb_090"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_089": {
+            "id": "origins.cyborg.cyb_089",
+            "title": "Against the Sky",
+            "location": "transit_hub",
+            "text": [
+                "You grab a loose pipe from the rooftop infrastructure and launch yourself at the nearest drone. Your augmented arm \u00e2\u20ac\u201d upgraded, unleashed, running at a capacity Helix never intended \u00e2\u20ac\u201d drives the pipe through the drone's sensor array with the force of a hydraulic press.",
+                "The irony is not lost on you.",
+                "The drone spins, sparking, and crashes into the second one. Both go down in a tangle of rotors and shattered casing. The third drone fires \u00e2\u20ac\u201d a neural disruptor blast that clips your shoulder and sends white fire down your prosthetic arm. The servos seize. Your HUD stutters.",
+                "But you're already moving. You grab the downed drone's wreckage and hurl it at the third unit with your flesh arm \u00e2\u20ac\u201d not strong enough to destroy it, but enough to knock it off course. Its next shot goes wide.",
+                "The fourth drone has a clear line on Iris. You see the targeting laser paint her back. No time to reach it. No time to throw anything.",
+                "Dex's prosthetic jaw unhinges \u00e2\u20ac\u201d you didn't know it could do that \u00e2\u20ac\u201d and emits a focused electromagnetic pulse that drops the drone like a stone.",
+                "\"Modified,\" he says, snapping his jaw back into place. \"Hurt like hell. Worth it.\"",
+                "\"SIGNAL LIVE,\" Iris announces."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.fought_drones",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "strength",
+                    "amount": 1
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Watch the broadcast",
+                    "next": "origins.cyborg.cyb_091"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_090": {
+            "id": "origins.cyborg.cyb_090",
+            "title": "The Distraction",
+            "location": "transit_hub",
+            "text": [
+                "\"Iris \u00e2\u20ac\u201d can you loop their targeting systems? The same way you looped the cameras?\"",
+                "\"Not from here. I need\u00e2\u20ac\u201d\" She looks at her broadcast equipment. Looks at the drones. Her visor pulses rapid-fire as she calculates. \"Give me your neural interface port. I can bounce a spoofed signal through your augmentations. Your arm's transmitter is strong enough to confuse their targeting for about ninety seconds.\"",
+                "\"Will it hurt?\"",
+                "\"Absolutely.\"",
+                "You kneel beside her. She jams a connector into your neural interface port, and the world explodes into static. Your HUD goes haywire \u00e2\u20ac\u201d colors, numbers, fragments of code cascading across your vision. Your prosthetic arm locks, releases, locks again. Every nerve ending, real and synthetic, fires simultaneously.",
+                "Through the chaos, you hear the drones faltering. Their targeting lasers scatter wildly, painting the sky with red lines that point at everything and nothing. They spin in confused circles, sensors overwhelmed by the garbage signal pouring from your augmentations.",
+                "Ninety seconds of agony. Then Iris pulls the connector.",
+                "\"SIGNAL LIVE.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.signal_distraction",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "constitution",
+                    "amount": 1
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "tech",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Watch the broadcast",
+                    "next": "origins.cyborg.cyb_091"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_091": {
+            "id": "origins.cyborg.cyb_091",
+            "title": "The Broadcast",
+            "location": "transit_hub",
+            "text": [
+                "From the top of the tower, you watch it happen.",
+                "Every public screen in the Lower District goes white, then fills with data. The YOKE architecture. The COMPASS system. The neural control pathways. The corporate signatures. Names, dates, code headers, command logs. Everything the collective has gathered, everything you bled and ran and fought for, pouring across ten thousand screens simultaneously.",
+                "And more than the screens. Every augmented person in broadcast range receives the data directly through their neural interface. You can see it happening below \u00e2\u20ac\u201d people stopping in the streets, hands going to their heads, eyes unfocusing as the information floods their HUDs. Some stagger. Some fall. Some stand very still, reading the data that tells them what has been done to their bodies without their knowledge or consent.",
+                "Iris narrates the broadcast in her quiet, precise voice, transmitted through every speaker in the district: \"This is what they put inside you. This is how they control you. This is what your debt really pays for. You are not employees. You are not patients. You are products. And the warranty just expired.\"",
+                "The silence that follows is the loudest thing you've ever heard."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.broadcast_complete",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "choices": [
+                {
+                    "text": "What happens next depends on who you've become",
+                    "next": "origins.cyborg.cyb_092"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_092": {
+            "id": "origins.cyborg.cyb_092",
+            "title": "Aftermath",
+            "location": "transit_hub",
+            "text": [
+                "The aftermath is not a revolution. Not yet. Revolutions take time to build, like pressure in a hydraulic system.",
+                "But it's a start. In the hours after the broadcast, the Lower District convulses. Augmented workers walk off factory lines. Clinics are overwhelmed by people demanding YOKE hook removal. The grey-market mechanics in the scrap yards are flooded with more patients than they can handle.",
+                "Helix, MediCore, Stanton Bio, Crucible Dynamics \u00e2\u20ac\u201d all release identical statements calling the broadcast \"fabricated propaganda\" and \"a criminal act of cyberterrorism.\" Nobody believes them. Not anymore.",
+                "Vex finds you standing at the edge of the rooftop, watching the chaos below. Rain runs down your prosthetic arm, pooling in the joint seams.",
+                "\"You know they'll come for us harder now,\" she says.",
+                "\"Let them.\"",
+                "\"We need to disappear. Regroup. The data's out there \u00e2\u20ac\u201d it can't be taken back. But we need to survive to see what grows from it.\"",
+                "She's right. The tower will be crawling with Meridian security within the hour. Time to vanish."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.aftermath",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Disappear into the Lower District",
+                    "next": "origins.cyborg.cyb_093"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_093": {
+            "id": "origins.cyborg.cyb_093",
+            "title": "Ghost",
+            "location": "lower_slums",
+            "text": [
+                "The collective dissolves \u00e2\u20ac\u201d by design, not defeat. Vex, Dex, Iris, Kira \u00e2\u20ac\u201d each one fading into the vast anonymity of the Lower District like drops of rain into a gutter. Different sectors. Different names. The data backup distributed across a network of dead drops that only Iris can trace.",
+                "You are alone again. But it's a different kind of alone. The first time you ran, you were a broken thing fleeing the machine that broke you. Now you're a weapon that chose to disarm itself. Temporary. Strategic.",
+                "The weeks that follow are hard. Meridian's response to the broadcast is swift and brutal. Sweep teams. Mass arrests. Any augmented person caught with the broadcast data on their systems is flagged for 'emergency maintenance' \u00e2\u20ac\u201d a euphemism everyone now understands.",
+                "But the data is out. Copied. Shared. Hidden in the Lower District's digital underground like seeds in frozen soil. It can't be unlearned. The people who saw it remember. The ones with hooks in their heads feel them now, every minute of every day, knowing what they are.",
+                "You keep your head down. Work odd jobs. Maintain your hardware. Watch. Wait."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.went_underground",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Survive until the dust settles",
+                    "next": "origins.cyborg.cyb_094"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_094": {
+            "id": "origins.cyborg.cyb_094",
+            "title": "The Reckoning",
+            "location": "lower_slums",
+            "text": [
+                "Two months after the broadcast. Your comm unit \u00e2\u20ac\u201d the one Vex gave you \u00e2\u20ac\u201d crackles for the first time since the dissolution.",
+                "Not Vex's voice. Iris's. Soft, precise, carrying the weight of something enormous.",
+                "\"It's working. The pressure is building. Three factories have shut down \u00e2\u20ac\u201d workers refused to return until the hooks are removed. A MediCore clinic was occupied by patients demanding transparent diagnostics. There's a class-action suit being organized by a legal collective in the mid-levels \u00e2\u20ac\u201d they're using our data as evidence.\"",
+                "A pause. Then: \"Meridian is scared. Their stock value has dropped eleven percent. The board is meeting in emergency session. They're talking about 'voluntary deactivation' of the control systems.\"",
+                "Voluntary. As if they ever gave anyone a choice before.",
+                "\"The fight isn't over,\" Iris says. \"It's just beginning. And we need people on the ground. People who can lead. People who know what it feels like to be property.\"",
+                "\"I know what it feels like.\"",
+                "\"I know you do. That's why I'm calling.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.movement_growing",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Answer the call",
+                    "next": "origins.cyborg.cyb_095"
+                },
+                {
+                    "text": "Hesitate \u00e2\u20ac\u201d you've given enough",
+                    "next": "origins.cyborg.cyb_096"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_095": {
+            "id": "origins.cyborg.cyb_095",
+            "title": "Answering",
+            "location": "lower_slums",
+            "text": [
+                "You don't hesitate. The word comes out before the thought finishes forming.",
+                "\"Where do you need me?\"",
+                "\"Sector 7. There's a gathering \u00e2\u20ac\u201d augmented workers, ex-patients, runners. They need someone who was there at the tower. Someone who can stand up and say: this is real, I lived it, and so can you.\"",
+                "You look at your prosthetic arm. The arm that Helix built to keep you working, that Kira rebuilt to keep you living, that Dex upgraded to keep you fighting. The arm that swung a pipe at a security drone on top of a communication tower while the truth went out across ten thousand screens.",
+                "Your arm. Regardless of who built it, it's yours now.",
+                "\"I'll be there,\" you say. And you mean it in a way that resonates through every component \u00e2\u20ac\u201d organic and prosthetic alike."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.answered_call",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "charisma",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go to the gathering",
+                    "next": "origins.cyborg.cyb_097"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "cyb_096": {
+            "id": "origins.cyborg.cyb_096",
+            "title": "The Weight",
+            "location": "lower_slums",
+            "text": [
+                "\"Iris... I don't know if I have more to give.\"",
+                "The line is quiet for a long time. You can hear her breathing \u00e2\u20ac\u201d or the hum of whatever passes for breathing in someone whose lungs are as much machine as flesh.",
+                "\"You don't owe anyone anything,\" she says finally. \"Not me. Not the collective. Not the movement. You already gave more than anyone had a right to ask.\"",
+                "You close your eyes. The press. The debt. The hooks. The tunnels. The tower. Every moment of the past two years plays back in a reel of chrome and blood and fluorescent light.",
+                "\"But?\" you say, because you can hear the but.",
+                "\"But there are people out there right now, at this exact moment, sitting in factory dormitories with hooks in their brains and numbers on their debts, who need to see someone like them standing up. Not a leader. Not a hero. Just... proof. Proof that you can walk away from the machine and survive.\"",
+                "Damn her. She's right.",
+                "\"Sector 7?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.hesitated_then_answered",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go to the gathering",
+                    "next": "origins.cyborg.cyb_097"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_097": {
+            "id": "origins.cyborg.cyb_097",
+            "title": "The Ending Approaches",
+            "location": "sector_7_bar",
+            "text": [
+                "The Sector 7 Bar. Where it began \u00e2\u20ac\u201d or where this chapter of it began. The same bad lighting, the same broken jukebox, the same clientele drinking to forget. But tonight the bar is full, and nobody is drinking.",
+                "They're waiting. Forty, maybe fifty people packed into a space meant for twenty. All augmented. Factory workers, domestic servants, ex-soldiers, medical patients. Every shade of chrome and polymer, every corporate logo filed off or painted over. They've come from across the district, drawn by word of mouth and encrypted messages and the quiet, stubborn refusal to be property one day longer.",
+                "They look at you when you walk in. Not with recognition \u00e2\u20ac\u201d most of them don't know your face. But they see the arm. The jaw. The eyes with their faint HUD glow. They see someone like them.",
+                "Iris is in the corner, her visor pulsing steady blue. She nods.",
+                "Someone has to start. Someone has to say the first words of whatever comes next."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.at_gathering",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Speak from the heart \u00e2\u20ac\u201d tell them your story",
+                    "next": "origins.cyborg.cyb_098a"
+                },
+                {
+                    "text": "Speak from the head \u00e2\u20ac\u201d present the evidence and the plan",
+                    "next": "origins.cyborg.cyb_098b"
+                },
+                {
+                    "text": "Speak from the gut \u00e2\u20ac\u201d channel the rage",
+                    "next": "origins.cyborg.cyb_098c"
+                },
+                {
+                    "text": "Don't speak \u00e2\u20ac\u201d show them the scars instead",
+                    "next": "origins.cyborg.cyb_098d"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_098a": {
+            "id": "origins.cyborg.cyb_098a",
+            "title": "The Heart",
+            "location": "sector_7_bar",
+            "text": [
+                "You tell them everything. The press. The sound of your own skeleton. Waking up in a body you didn't choose with a debt you couldn't pay. The foreman who put you there and the company that profited from your destruction.",
+                "You tell them about the malfunction. The three seconds that cracked open the door and showed you the wires in your own head. The mechanic in the scrap yards who kept you alive. The collective that gave you purpose.",
+                "You tell them about being property. About the six-week maintenance checks that treated you like a machine. About the YOKE system and the hooks and the stress tests and the slow, calculated degradation of hardware designed to fail on schedule.",
+                "And you tell them about the tower. About standing in the rain with three other broken people and pushing the truth into the sky.",
+                "When you finish, the bar is silent. Then a woman with a prosthetic leg stands up. \"They told me the conveyor accident was my fault,\" she says. \"They told me to be grateful for the reconstruction.\"",
+                "One by one, they stand. One by one, they speak.",
+                "This is how it begins. Not with a shout. With a whisper that won't stop."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.ending",
+                    "value": "heart"
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "charisma",
+                    "amount": 2
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue",
+                    "next": "origins.cyborg.cyb_100"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_098b": {
+            "id": "origins.cyborg.cyb_098b",
+            "title": "The Head",
+            "location": "sector_7_bar",
+            "text": [
+                "You don't tell them your story. They have their own. Instead, you tell them what you know.",
+                "The data. The systems. YOKE, COMPASS, and whatever else the corps are running. The planned obsolescence cycles. The neural control architecture. The corporate signatures that prove this isn't negligence \u00e2\u20ac\u201d it's engineering. Every augmented body in the city is a product, maintained just well enough to keep generating revenue, degraded just fast enough to ensure a return customer.",
+                "Then you lay out the plan. Legal action through the mid-level advocacy groups who've already filed suit. Direct action through the mechanics' network that can remove hooks and repair hardware outside corporate control. Information warfare through the data copies still circulating in the Lower District's digital underground.",
+                "\"This isn't about anger,\" you say. \"Anger burns out. This is about structure. Building something that lasts longer than any one of us.\"",
+                "Iris provides data backups to everyone in the room. By morning, the information will have spread to twelve other sectors.",
+                "It's not a revolution. It's infrastructure for one."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.ending",
+                    "value": "head"
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "intelligence",
+                    "amount": 2
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue",
+                    "next": "origins.cyborg.cyb_100"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "cyb_098c": {
+            "id": "origins.cyborg.cyb_098c",
+            "title": "The Gut",
+            "location": "sector_7_bar",
+            "text": [
+                "\"They built us to break,\" you say, and the words come out hard as chrome. \"Not by accident. By design. Every one of us in this room has a timer ticking inside them \u00e2\u20ac\u201d a countdown to the next failure, the next repair bill, the next link in the debt chain. They don't want us healthy. They don't want us free. They want us just functional enough to be profitable.\"",
+                "Your prosthetic fist clenches. The servos whine. People flinch.",
+                "\"I'm done being profitable. I'm done being a line item on a corporate balance sheet. I'm done having my anger chemically regulated so I'll shut up and feed the press and pay the debt and die on schedule.\"",
+                "You look at them. All of them. Chrome and flesh and fury.",
+                "\"They made us into machines. Fine. Machines are strong. Machines don't stop. Machines don't feel pain the way they want us to. They built us to break \u00e2\u20ac\u201d and instead, we broke free. Every one of you in this room is proof that their system isn't perfect. That their control isn't absolute. That somewhere in the engineering, they forgot to account for the fact that people \u00e2\u20ac\u201d even people with metal bones and synthetic lungs \u00e2\u20ac\u201d get angry.\"",
+                "The room erupts. Not in violence. In recognition. In the sound of forty voices that have been silent too long."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.ending",
+                    "value": "gut"
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "strength",
+                    "amount": 2
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue",
+                    "next": "origins.cyborg.cyb_100"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "cyb_098d": {
+            "id": "origins.cyborg.cyb_098d",
+            "title": "The Scars",
+            "location": "sector_7_bar",
+            "text": [
+                "You don't speak. You pull off your jacket. Roll up what's left of your sleeve. And you show them.",
+                "The prosthetic arm. The seam where metal meets flesh, puckered with scar tissue. The serial number Dex painted over but didn't fully conceal. The jury-rigged battery cells that Kira installed in a shipping container while you bit down on a leather strap. The empty sockets where eleven YOKE hooks used to sit, now sealed with conductive paste and scar-polymer.",
+                "You turn around. The spinal brace, visible through the back of your shirt. The neural interface port, chrome and angry against your skin. The map of a body that was broken, rebuilt, controlled, and finally \u00e2\u20ac\u201d finally \u00e2\u20ac\u201d reclaimed.",
+                "You don't need to say anything. Everyone in the room has their own version of the same map. Their own scars, organic and synthetic. Their own seams where they were taken apart and put back together by people who saw them as inventory.",
+                "A man in the front row stands up silently and removes his shirt. Prosthetic torso. Visible YOKE hook scars. He nods at you.",
+                "One by one, they stand. One by one, they show the evidence written on their bodies.",
+                "The room becomes a gallery of damage and survival. And in the silence, an understanding grows that needs no words."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.ending",
+                    "value": "scars"
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": 2
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue",
+                    "next": "origins.cyborg.cyb_100"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "cyb_100": {
+            "id": "origins.cyborg.cyb_100",
+            "title": "Origin Complete",
+            "location": "lower_slums",
+            "text": [
+                "The night fades. Dawn creeps across the Lower District in shades of grey and rust. You stand on the rooftop of your latest squat, watching the city stir. Below, the streets begin to fill \u00e2\u20ac\u201d workers heading to shifts they resent, vendors setting up stalls, children running between the rain puddles.",
+                "Augmented people move among them. You can see the chrome glinting in the early light. Some walk differently now \u00e2\u20ac\u201d heads higher, shoulders back. The broadcast changed something in them. Not everything. Not yet. But the seed is planted.",
+                "Your HUD displays the day's data. Battery at eighty-two percent. Servo function nominal. Spinal brace stable. Neural interface clear. For the first time in a long time, all systems are green.",
+                "A message arrives on your comm unit. No name. Just coordinates and a single word: BEGIN.",
+                "You don't know what's waiting at those coordinates. You don't know what comes next. But you know who you are now, and that's worth more than any amount of chrome.",
+                "You are not a product. You are not a debtor. You are not an asset to be recovered.",
+                "You are the malfunction they couldn't fix. And you're just getting started."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "origin.complete",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.cyborg_complete",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Begin the Prologue",
+                    "next": "shared.prologue.node_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        }
+    }
+}

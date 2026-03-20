@@ -41,6 +41,7 @@ window.Latency.Screens.Gameplay = (function () {
     var _typewriterCancel = null;  // cancel function from Latency.Typewriter
     var _typewriterRunning = false;
     var _pendingTimers = [];       // tracked setTimeout IDs for cleanup
+    var _lastDisplayedNodeId = null; // Track last displayed node to avoid re-typing on remount
 
     // DOM references (set during mount, nulled on unmount)
     var _els = {};
@@ -1036,6 +1037,55 @@ window.Latency.Screens.Gameplay = (function () {
     }
 
     // --------------------------------------------------------
+    // Static render (no typewriter) — used when remounting after
+    // overlay screens (inventory/map/settings) to avoid replaying
+    // --------------------------------------------------------
+    function _renderStoryNodeStatic(data) {
+        if (!data) return;
+
+        var node = data.node || data;
+        var raw = node.raw || {};
+
+        // Update location title
+        if (_els.locationTitle) {
+            _els.locationTitle.textContent = raw.title || raw.location || node.id || 'UNKNOWN LOCATION';
+        }
+
+        // Update ASCII art
+        if (_els.asciiArt) {
+            _els.asciiArt.textContent = '';
+            _els.asciiArt.style.display = 'none';
+            if (node.ascii || raw.ascii) {
+                var artPath = node.ascii || raw.ascii;
+                if (window.Latency.AssetLoader && typeof artPath === 'string') {
+                    window.Latency.AssetLoader.loadAsciiArt(artPath).then(function(art) {
+                        if (_els.asciiArt) {
+                            _els.asciiArt.textContent = art;
+                            _els.asciiArt.style.display = 'block';
+                        }
+                    }).catch(function() {});
+                }
+            }
+        }
+
+        // Build narrative text (show instantly, no typewriter)
+        var textContent = '';
+        if (Array.isArray(node.text)) {
+            textContent = node.text.join('\n\n');
+        } else if (typeof node.text === 'string') {
+            textContent = node.text;
+        }
+
+        if (_els.narrativeText && textContent) {
+            _els.narrativeText.setAttribute('data-full-text', textContent);
+            _els.narrativeText.innerHTML = textContent;
+        }
+
+        // Show choices immediately
+        _renderChoices(node.choices || []);
+    }
+
+    // --------------------------------------------------------
     // Choice rendering
     // --------------------------------------------------------
     function _renderChoices(choices) {
@@ -1115,6 +1165,9 @@ window.Latency.Screens.Gameplay = (function () {
     // --------------------------------------------------------
     function _onStoryNode(data) {
         _renderStoryNode(data);
+        if (data && data.nodeId) {
+            _lastDisplayedNodeId = data.nodeId;
+        }
         _refreshSidebar();
     }
 
@@ -1233,17 +1286,31 @@ window.Latency.Screens.Gameplay = (function () {
                 nodeId = 'shared.prologue.node_001';
             }
 
-            if (window.Latency.Narrative && window.Latency.Narrative.loadNode) {
-                // Small delay ensures DOM is fully settled and event listeners are active
-                var _loadTimerId = setTimeout(function() {
-                    window.Latency.Narrative.loadNode(nodeId).catch(function(err) {
-                        console.error('[Gameplay] Failed to load node:', err.message);
-                        if (_els.narrativeText) {
-                            _els.narrativeText.textContent = 'Error loading story: ' + err.message;
-                        }
-                    });
-                }, 100);
-                _pendingTimers.push(_loadTimerId);
+            if (window.Latency.Narrative) {
+                // Check if we're returning from an overlay and the node is already displayed
+                var narrativeNodeId = window.Latency.Narrative.getCurrentNodeId
+                    ? window.Latency.Narrative.getCurrentNodeId()
+                    : null;
+                var narrativeNode = window.Latency.Narrative.getCurrentNode
+                    ? window.Latency.Narrative.getCurrentNode()
+                    : null;
+
+                if (narrativeNodeId && narrativeNodeId === _lastDisplayedNodeId && narrativeNode) {
+                    // Returning from overlay — render statically (no typewriter replay)
+                    _renderStoryNodeStatic({ nodeId: narrativeNodeId, node: narrativeNode });
+                    console.log('[Gameplay] Restored node statically (returning from overlay):', narrativeNodeId);
+                } else if (window.Latency.Narrative.loadNode) {
+                    // Fresh load — use typewriter
+                    var _loadTimerId = setTimeout(function() {
+                        window.Latency.Narrative.loadNode(nodeId).catch(function(err) {
+                            console.error('[Gameplay] Failed to load node:', err.message);
+                            if (_els.narrativeText) {
+                                _els.narrativeText.textContent = 'Error loading story: ' + err.message;
+                            }
+                        });
+                    }, 100);
+                    _pendingTimers.push(_loadTimerId);
+                }
             } else {
                 if (_els.narrativeText) {
                     _els.narrativeText.textContent = 'Awaiting narrative data...';

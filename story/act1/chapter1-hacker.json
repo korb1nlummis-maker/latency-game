@@ -8,7 +8,7 @@
     },
     "nodes": {
         "hack_001": {
-            "id": "act1.hacker.hack_001",
+            "id": "act1.chapter1-hacker.hack_001",
             "title": "The Deep Net Cafe",
             "location": "deep_net_cafe",
             "text": [
@@ -26,11 +26,11 @@
             "choices": [
                 {
                     "text": "Approach Booth 7",
-                    "next": "act1.hacker.hack_002"
+                    "next": "act1.chapter1-hacker.hack_002"
                 },
                 {
                     "text": "Scope out the cafe first — check for other exits and threats",
-                    "next": "act1.hacker.hack_001a"
+                    "next": "act1.chapter1-hacker.hack_001a"
                 }
             ],
             "ascii": null,
@@ -39,7 +39,7 @@
         },
 
         "hack_001a": {
-            "id": "act1.hacker.hack_001a",
+            "id": "act1.chapter1-hacker.hack_001a",
             "title": "Casing the Joint",
             "location": "deep_net_cafe",
             "text": [
@@ -54,7 +54,7 @@
             "choices": [
                 {
                     "text": "Approach Booth 7",
-                    "next": "act1.hacker.hack_002"
+                    "next": "act1.chapter1-hacker.hack_002"
                 }
             ],
             "ascii": null,
@@ -63,7 +63,7 @@
         },
 
         "hack_002": {
-            "id": "act1.hacker.hack_002",
+            "id": "act1.chapter1-hacker.hack_002",
             "title": "Zero",
             "location": "deep_net_cafe",
             "text": [
@@ -81,11 +81,11 @@
             "choices": [
                 {
                     "text": "\"You're Zero? I'm here about the job.\"",
-                    "next": "act1.hacker.hack_003"
+                    "next": "act1.chapter1-hacker.hack_003"
                 },
                 {
                     "text": "\"You scanned me before I sat down. What else do you know?\"",
-                    "next": "act1.hacker.hack_003a"
+                    "next": "act1.chapter1-hacker.hack_003a"
                 }
             ],
             "ascii": "assets/ascii/npcs/zero.txt",
@@ -94,7 +94,7 @@
         },
 
         "hack_003a": {
-            "id": "act1.hacker.hack_003a",
+            "id": "act1.chapter1-hacker.hack_003a",
             "title": "Zero's Assessment",
             "location": "deep_net_cafe",
             "text": [
@@ -107,7 +107,7 @@
             "choices": [
                 {
                     "text": "\"Fair enough. Tell me about the job.\"",
-                    "next": "act1.hacker.hack_003"
+                    "next": "act1.chapter1-hacker.hack_003"
                 }
             ],
             "ascii": null,
@@ -116,7 +116,7 @@
         },
 
         "hack_003": {
-            "id": "act1.hacker.hack_003",
+            "id": "act1.chapter1-hacker.hack_003",
             "title": "The Job",
             "location": "deep_net_cafe",
             "text": [
@@ -133,19 +133,19 @@
             "choices": [
                 {
                     "text": "\"Who's the client?\"",
-                    "next": "act1.hacker.hack_004a"
+                    "next": "act1.chapter1-hacker.hack_004a"
                 },
                 {
                     "text": "\"What's the security look like?\"",
-                    "next": "act1.hacker.hack_004b"
+                    "next": "act1.chapter1-hacker.hack_004b"
                 },
                 {
                     "text": "\"One-fifty? I want two hundred.\"",
-                    "next": "act1.hacker.hack_004c"
+                    "next": "act1.chapter1-hacker.hack_004c"
                 },
                 {
                     "text": "\"I'm in. Let's start.\"",
-                    "next": "act1.hacker.hack_005"
+                    "next": "act1.chapter1-hacker.hack_005"
                 }
             ],
             "ascii": null,
@@ -154,7 +154,7 @@
         },
 
         "hack_004a": {
-            "id": "act1.hacker.hack_004a",
+            "id": "act1.chapter1-hacker.hack_004a",
             "title": "The Client",
             "location": "deep_net_cafe",
             "text": [
@@ -168,11 +168,11 @@
             "choices": [
                 {
                     "text": "\"What's the security look like?\"",
-                    "next": "act1.hacker.hack_004b"
+                    "next": "act1.chapter1-hacker.hack_004b"
                 },
                 {
                     "text": "\"Good enough for me. Let's go.\"",
-                    "next": "act1.hacker.hack_005"
+                    "next": "act1.chapter1-hacker.hack_005"
                 }
             ],
             "ascii": null,
@@ -181,7 +181,7 @@
         },
 
         "hack_004b": {
-            "id": "act1.hacker.hack_004b",
+            "id": "act1.chapter1-hacker.hack_004b",
             "title": "Security Briefing",
             "location": "deep_net_cafe",
             "text": [
@@ -197,11 +197,11 @@
             "choices": [
                 {
                     "text": "\"Seven seconds. I've worked with less. Let's do this.\"",
-                    "next": "act1.hacker.hack_005"
+                    "next": "act1.chapter1-hacker.hack_005"
                 },
                 {
                     "text": "\"I want to know who's paying before I commit.\"",
-                    "next": "act1.hacker.hack_004a"
+                    "next": "act1.chapter1-hacker.hack_004a"
                 }
             ],
             "ascii": null,
@@ -210,7 +210,7 @@
         },
 
         "hack_004c": {
-            "id": "act1.hacker.hack_004c",
+            "id": "act1.chapter1-hacker.hack_004c",
             "title": "Negotiation",
             "location": "deep_net_cafe",
             "text": [
@@ -224,11 +224,11 @@
             "choices": [
                 {
                     "text": "\"One-seventy-five works. Brief me on security.\"",
-                    "next": "act1.hacker.hack_004b"
+                    "next": "act1.chapter1-hacker.hack_004b"
                 },
                 {
                     "text": "\"Deal. Let's get started.\"",
-                    "next": "act1.hacker.hack_005"
+                    "next": "act1.chapter1-hacker.hack_005"
                 }
             ],
             "ascii": null,
@@ -237,7 +237,7 @@
         },
 
         "hack_005": {
-            "id": "act1.hacker.hack_005",
+            "id": "act1.chapter1-hacker.hack_005",
             "title": "Jacking In",
             "location": "deep_net_cafe",
             "text": [
@@ -256,8 +256,8 @@
                 {
                     "text": "[Tech 12] Probe the outer firewall for vulnerabilities",
                     "statCheck": { "stat": "tech", "dc": 12 },
-                    "next": "act1.hacker.hack_006",
-                    "failNext": "act1.hacker.hack_006f"
+                    "next": "act1.chapter1-hacker.hack_006",
+                    "failNext": "act1.chapter1-hacker.hack_006f"
                 }
             ],
             "ascii": null,
@@ -266,7 +266,7 @@
         },
 
         "hack_006": {
-            "id": "act1.hacker.hack_006",
+            "id": "act1.chapter1-hacker.hack_006",
             "title": "Outer Wall Breached",
             "location": "deep_net_cafe",
             "text": [
@@ -283,8 +283,8 @@
                 {
                     "text": "[Tech 13] Time the IDS gap and slip through",
                     "statCheck": { "stat": "tech", "dc": 13 },
-                    "next": "act1.hacker.hack_007",
-                    "failNext": "act1.hacker.hack_007f"
+                    "next": "act1.chapter1-hacker.hack_007",
+                    "failNext": "act1.chapter1-hacker.hack_007f"
                 }
             ],
             "ascii": null,
@@ -293,7 +293,7 @@
         },
 
         "hack_006f": {
-            "id": "act1.hacker.hack_006f",
+            "id": "act1.chapter1-hacker.hack_006f",
             "title": "Firewall Resistance",
             "location": "deep_net_cafe",
             "text": [
@@ -310,8 +310,8 @@
                 {
                     "text": "[Tech 14] Push through the IDS with extra caution",
                     "statCheck": { "stat": "tech", "dc": 14 },
-                    "next": "act1.hacker.hack_007",
-                    "failNext": "act1.hacker.hack_007f"
+                    "next": "act1.chapter1-hacker.hack_007",
+                    "failNext": "act1.chapter1-hacker.hack_007f"
                 }
             ],
             "ascii": null,
@@ -320,7 +320,7 @@
         },
 
         "hack_007": {
-            "id": "act1.hacker.hack_007",
+            "id": "act1.chapter1-hacker.hack_007",
             "title": "Past the Watchers",
             "location": "deep_net_cafe",
             "text": [
@@ -337,11 +337,11 @@
             "choices": [
                 {
                     "text": "Tell Zero about the shadow accounts immediately",
-                    "next": "act1.hacker.hack_008"
+                    "next": "act1.chapter1-hacker.hack_008"
                 },
                 {
                     "text": "Quietly copy the shadow account data before saying anything",
-                    "next": "act1.hacker.hack_008a"
+                    "next": "act1.chapter1-hacker.hack_008a"
                 }
             ],
             "ascii": null,
@@ -350,7 +350,7 @@
         },
 
         "hack_007f": {
-            "id": "act1.hacker.hack_007f",
+            "id": "act1.chapter1-hacker.hack_007f",
             "title": "Caught in the Sweep",
             "location": "deep_net_cafe",
             "text": [
@@ -367,11 +367,11 @@
             "choices": [
                 {
                     "text": "Alert Zero to the shadow accounts",
-                    "next": "act1.hacker.hack_008"
+                    "next": "act1.chapter1-hacker.hack_008"
                 },
                 {
                     "text": "Grab what you can of the shadow data before time runs out",
-                    "next": "act1.hacker.hack_008a"
+                    "next": "act1.chapter1-hacker.hack_008a"
                 }
             ],
             "ascii": null,
@@ -380,7 +380,7 @@
         },
 
         "hack_008": {
-            "id": "act1.hacker.hack_008",
+            "id": "act1.chapter1-hacker.hack_008",
             "title": "Zero's Interest",
             "location": "deep_net_cafe",
             "text": [
@@ -397,7 +397,7 @@
             "choices": [
                 {
                     "text": "Disconnect cleanly and review the haul",
-                    "next": "act1.hacker.hack_009"
+                    "next": "act1.chapter1-hacker.hack_009"
                 }
             ],
             "ascii": null,
@@ -406,7 +406,7 @@
         },
 
         "hack_008a": {
-            "id": "act1.hacker.hack_008a",
+            "id": "act1.chapter1-hacker.hack_008a",
             "title": "Quiet Hands",
             "location": "deep_net_cafe",
             "text": [
@@ -425,7 +425,7 @@
             "choices": [
                 {
                     "text": "Jack out and assess the situation",
-                    "next": "act1.hacker.hack_009"
+                    "next": "act1.chapter1-hacker.hack_009"
                 }
             ],
             "ascii": null,
@@ -434,7 +434,7 @@
         },
 
         "hack_009": {
-            "id": "act1.hacker.hack_009",
+            "id": "act1.chapter1-hacker.hack_009",
             "title": "The Haul",
             "location": "deep_net_cafe",
             "text": [
@@ -452,15 +452,15 @@
             "choices": [
                 {
                     "text": "Sell the shadow data to the Ghost Syndicate for credits and reputation",
-                    "next": "act1.hacker.hack_010a"
+                    "next": "act1.chapter1-hacker.hack_010a"
                 },
                 {
                     "text": "Keep the data as personal leverage — tell no one",
-                    "next": "act1.hacker.hack_010b"
+                    "next": "act1.chapter1-hacker.hack_010b"
                 },
                 {
                     "text": "Report the laundering to the Circuit Saints — they'll know what to do with it",
-                    "next": "act1.hacker.hack_010c"
+                    "next": "act1.chapter1-hacker.hack_010c"
                 }
             ],
             "ascii": null,
@@ -469,7 +469,7 @@
         },
 
         "hack_010a": {
-            "id": "act1.hacker.hack_010a",
+            "id": "act1.chapter1-hacker.hack_010a",
             "title": "Syndicate Payday",
             "location": "deep_net_cafe",
             "text": [
@@ -489,7 +489,7 @@
             "choices": [
                 {
                     "text": "Pocket the credits and prepare to leave",
-                    "next": "act1.hacker.hack_011"
+                    "next": "act1.chapter1-hacker.hack_011"
                 }
             ],
             "ascii": null,
@@ -498,7 +498,7 @@
         },
 
         "hack_010b": {
-            "id": "act1.hacker.hack_010b",
+            "id": "act1.chapter1-hacker.hack_010b",
             "title": "Private Arsenal",
             "location": "deep_net_cafe",
             "text": [
@@ -516,7 +516,7 @@
             "choices": [
                 {
                     "text": "Leave the booth with your secret intact",
-                    "next": "act1.hacker.hack_011"
+                    "next": "act1.chapter1-hacker.hack_011"
                 }
             ],
             "ascii": null,
@@ -525,7 +525,7 @@
         },
 
         "hack_010c": {
-            "id": "act1.hacker.hack_010c",
+            "id": "act1.chapter1-hacker.hack_010c",
             "title": "The Saints' Due",
             "location": "deep_net_cafe",
             "text": [
@@ -544,7 +544,7 @@
             "choices": [
                 {
                     "text": "Acknowledge the payment and prepare to leave",
-                    "next": "act1.hacker.hack_011"
+                    "next": "act1.chapter1-hacker.hack_011"
                 }
             ],
             "ascii": null,
@@ -553,7 +553,7 @@
         },
 
         "hack_011": {
-            "id": "act1.hacker.hack_011",
+            "id": "act1.chapter1-hacker.hack_011",
             "title": "Something Wrong",
             "location": "deep_net_cafe",
             "text": [
@@ -573,11 +573,11 @@
             "choices": [
                 {
                     "text": "\"Who? Who was watching?\"",
-                    "next": "act1.hacker.hack_012"
+                    "next": "act1.chapter1-hacker.hack_012"
                 },
                 {
                     "text": "\"We need to move. Now.\"",
-                    "next": "act1.hacker.hack_012a"
+                    "next": "act1.chapter1-hacker.hack_012a"
                 }
             ],
             "ascii": null,
@@ -586,7 +586,7 @@
         },
 
         "hack_012": {
-            "id": "act1.hacker.hack_012",
+            "id": "act1.chapter1-hacker.hack_012",
             "title": "The Unknown Watcher",
             "location": "deep_net_cafe",
             "text": [
@@ -604,7 +604,7 @@
             "choices": [
                 {
                     "text": "Leave through the main exit and disappear into the crowd",
-                    "next": "act1.hacker.hack_013"
+                    "next": "act1.chapter1-hacker.hack_013"
                 }
             ],
             "ascii": null,
@@ -613,7 +613,7 @@
         },
 
         "hack_012a": {
-            "id": "act1.hacker.hack_012a",
+            "id": "act1.chapter1-hacker.hack_012a",
             "title": "Tactical Exit",
             "location": "deep_net_cafe",
             "text": [
@@ -631,7 +631,7 @@
             "choices": [
                 {
                     "text": "Navigate the service tunnels back to the street",
-                    "next": "act1.hacker.hack_013"
+                    "next": "act1.chapter1-hacker.hack_013"
                 }
             ],
             "ascii": null,
@@ -640,7 +640,7 @@
         },
 
         "hack_013": {
-            "id": "act1.hacker.hack_013",
+            "id": "act1.chapter1-hacker.hack_013",
             "title": "New Reality",
             "location": "lower_slums_street",
             "text": [
@@ -664,7 +664,7 @@
             "choices": [
                 {
                     "text": "Head home. Tomorrow, the real work begins.",
-                    "next": "act1.chapter2.start"
+                    "next": "act1.chapter2-iron-neon.start"
                 }
             ],
             "ascii": null,

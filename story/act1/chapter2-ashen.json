@@ -7,7 +7,7 @@
     },
     "nodes": {
         "fac_ashen_001": {
-            "id": "act1.chapter2.fac_ashen_001",
+            "id": "act1.chapter2-ashen.fac_ashen_001",
             "title": "The Dream That Isn't a Dream",
             "location": "player_apartment",
             "text": [
@@ -29,15 +29,15 @@
             "choices": [
                 {
                     "text": "\"Let a man die? Explain yourself.\"",
-                    "next": "act1.chapter2.fac_ashen_002"
+                    "next": "act1.chapter2-ashen.fac_ashen_002"
                 },
                 {
                     "text": "\"How are you in my head?\"",
-                    "next": "act1.chapter2.fac_ashen_002"
+                    "next": "act1.chapter2-ashen.fac_ashen_002"
                 },
                 {
                     "text": "Reach for a weapon.",
-                    "next": "act1.chapter2.fac_ashen_002"
+                    "next": "act1.chapter2-ashen.fac_ashen_002"
                 }
             ],
             "ascii": null,
@@ -46,7 +46,7 @@
         },
 
         "fac_ashen_002": {
-            "id": "act1.chapter2.fac_ashen_002",
+            "id": "act1.chapter2-ashen.fac_ashen_002",
             "title": "Sable's Burden",
             "location": "player_apartment",
             "text": [
@@ -64,11 +64,11 @@
             "choices": [
                 {
                     "text": "\"Why do you need me?\"",
-                    "next": "act1.chapter2.fac_ashen_003"
+                    "next": "act1.chapter2-ashen.fac_ashen_003"
                 },
                 {
                     "text": "\"That sounds like assisted suicide with extra steps.\"",
-                    "next": "act1.chapter2.fac_ashen_003"
+                    "next": "act1.chapter2-ashen.fac_ashen_003"
                 }
             ],
             "ascii": null,
@@ -77,7 +77,7 @@
         },
 
         "fac_ashen_003": {
-            "id": "act1.chapter2.fac_ashen_003",
+            "id": "act1.chapter2-ashen.fac_ashen_003",
             "title": "The Complication",
             "location": "player_apartment",
             "text": [
@@ -93,21 +93,21 @@
             "choices": [
                 {
                     "text": "\"I'll help him. Everyone deserves to choose how they go.\"",
-                    "next": "act1.chapter2.fac_ashen_004",
+                    "next": "act1.chapter2-ashen.fac_ashen_004",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.ashen_agreed_willing", "value": true }
                     ]
                 },
                 {
                     "text": "\"I'll hear Orin out. But I'm not promising anything.\"",
-                    "next": "act1.chapter2.fac_ashen_004",
+                    "next": "act1.chapter2-ashen.fac_ashen_004",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.ashen_agreed_cautious", "value": true }
                     ]
                 },
                 {
                     "text": "\"This is cult nonsense. I won't help someone kill themselves.\"",
-                    "next": "act1.chapter2.fac_ashen_004",
+                    "next": "act1.chapter2-ashen.fac_ashen_004",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.ashen_refused_initial", "value": true }
                     ]
@@ -119,7 +119,7 @@
         },
 
         "fac_ashen_004": {
-            "id": "act1.chapter2.fac_ashen_004",
+            "id": "act1.chapter2-ashen.fac_ashen_004",
             "title": "Meeting Orin",
             "location": "medical_district",
             "text": [
@@ -138,11 +138,11 @@
             "choices": [
                 {
                     "text": "Sit down. Listen.",
-                    "next": "act1.chapter2.fac_ashen_005"
+                    "next": "act1.chapter2-ashen.fac_ashen_005"
                 },
                 {
                     "text": "\"Your daughter is trying to save you. Why won't you let her?\"",
-                    "next": "act1.chapter2.fac_ashen_005"
+                    "next": "act1.chapter2-ashen.fac_ashen_005"
                 }
             ],
             "ascii": null,
@@ -151,7 +151,7 @@
         },
 
         "fac_ashen_005": {
-            "id": "act1.chapter2.fac_ashen_005",
+            "id": "act1.chapter2-ashen.fac_ashen_005",
             "title": "Orin's Truth",
             "location": "medical_district",
             "text": [
@@ -170,14 +170,14 @@
             "choices": [
                 {
                     "text": "\"I'll take you to the Ossuary. Let's go.\"",
-                    "next": "act1.chapter2.fac_ashen_006",
+                    "next": "act1.chapter2-ashen.fac_ashen_006",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.agreed_to_escort", "value": true }
                     ]
                 },
                 {
                     "text": "\"Your family deserves to say goodbye first.\"",
-                    "next": "act1.chapter2.fac_ashen_006",
+                    "next": "act1.chapter2-ashen.fac_ashen_006",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.suggested_family_goodbye", "value": true }
                     ]
@@ -189,7 +189,7 @@
         },
 
         "fac_ashen_006": {
-            "id": "act1.chapter2.fac_ashen_006",
+            "id": "act1.chapter2-ashen.fac_ashen_006",
             "title": "The Family",
             "location": "medical_district",
             "text": [
@@ -209,21 +209,21 @@
             "choices": [
                 {
                     "text": "\"This is Orin's choice. Not yours. Not mine. His.\"",
-                    "next": "act1.chapter2.fac_ashen_007",
+                    "next": "act1.chapter2-ashen.fac_ashen_007",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.defended_orins_choice", "value": true }
                     ]
                 },
                 {
                     "text": "\"What if you came with us? Witnessed what he's chosen?\"",
-                    "next": "act1.chapter2.fac_ashen_007",
+                    "next": "act1.chapter2-ashen.fac_ashen_007",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.invited_family", "value": true }
                     ]
                 },
                 {
                     "text": "[WIS 13] \"Sera. What do you think your father would want if the stack didn't exist?\"",
-                    "next": "act1.chapter2.fac_ashen_007",
+                    "next": "act1.chapter2-ashen.fac_ashen_007",
                     "requirement": { "stat": "WIS", "check": "gte", "value": 13 },
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.wisdom_question", "value": true }
@@ -236,7 +236,7 @@
         },
 
         "fac_ashen_007": {
-            "id": "act1.chapter2.fac_ashen_007",
+            "id": "act1.chapter2-ashen.fac_ashen_007",
             "title": "A Fracture in the Ward",
             "location": "medical_district",
             "text": [
@@ -254,7 +254,7 @@
             "choices": [
                 {
                     "text": "Lead the way into the undercity.",
-                    "next": "act1.chapter2.fac_ashen_008"
+                    "next": "act1.chapter2-ashen.fac_ashen_008"
                 }
             ],
             "ascii": null,
@@ -263,7 +263,7 @@
         },
 
         "fac_ashen_008": {
-            "id": "act1.chapter2.fac_ashen_008",
+            "id": "act1.chapter2-ashen.fac_ashen_008",
             "title": "The Descent",
             "location": "undercity_passages",
             "text": [
@@ -280,7 +280,7 @@
             "choices": [
                 {
                     "text": "Step into the light.",
-                    "next": "act1.chapter2.fac_ashen_009"
+                    "next": "act1.chapter2-ashen.fac_ashen_009"
                 }
             ],
             "ascii": null,
@@ -289,7 +289,7 @@
         },
 
         "fac_ashen_009": {
-            "id": "act1.chapter2.fac_ashen_009",
+            "id": "act1.chapter2-ashen.fac_ashen_009",
             "title": "The Ossuary",
             "location": "the_ossuary",
             "text": [
@@ -307,11 +307,11 @@
             "choices": [
                 {
                     "text": "\"This place is... not what I expected.\"",
-                    "next": "act1.chapter2.fac_ashen_010"
+                    "next": "act1.chapter2-ashen.fac_ashen_010"
                 },
                 {
                     "text": "Say nothing. Take it in.",
-                    "next": "act1.chapter2.fac_ashen_010"
+                    "next": "act1.chapter2-ashen.fac_ashen_010"
                 }
             ],
             "ascii": "assets/ascii/locations/ossuary.txt",
@@ -320,7 +320,7 @@
         },
 
         "fac_ashen_010": {
-            "id": "act1.chapter2.fac_ashen_010",
+            "id": "act1.chapter2-ashen.fac_ashen_010",
             "title": "Sable's Teaching",
             "location": "the_ossuary",
             "text": [
@@ -338,11 +338,11 @@
             "choices": [
                 {
                     "text": "\"And the ceremony? What actually happens?\"",
-                    "next": "act1.chapter2.fac_ashen_011"
+                    "next": "act1.chapter2-ashen.fac_ashen_011"
                 },
                 {
                     "text": "[WIS 14] \"You're not nihilists. You're the opposite.\"",
-                    "next": "act1.chapter2.fac_ashen_011",
+                    "next": "act1.chapter2-ashen.fac_ashen_011",
                     "requirement": { "stat": "WIS", "check": "gte", "value": 14 },
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.understood_circle", "value": true }
@@ -355,7 +355,7 @@
         },
 
         "fac_ashen_011": {
-            "id": "act1.chapter2.fac_ashen_011",
+            "id": "act1.chapter2-ashen.fac_ashen_011",
             "title": "The Ceremony Begins",
             "location": "the_ossuary",
             "text": [
@@ -373,7 +373,7 @@
             "choices": [
                 {
                     "text": "Watch. Bear witness.",
-                    "next": "act1.chapter2.fac_ashen_012"
+                    "next": "act1.chapter2-ashen.fac_ashen_012"
                 }
             ],
             "ascii": null,
@@ -382,7 +382,7 @@
         },
 
         "fac_ashen_012": {
-            "id": "act1.chapter2.fac_ashen_012",
+            "id": "act1.chapter2-ashen.fac_ashen_012",
             "title": "The Impossible Moment",
             "location": "the_ossuary",
             "text": [
@@ -404,7 +404,7 @@
             "choices": [
                 {
                     "text": "...",
-                    "next": "act1.chapter2.fac_ashen_013"
+                    "next": "act1.chapter2-ashen.fac_ashen_013"
                 }
             ],
             "ascii": null,
@@ -413,7 +413,7 @@
         },
 
         "fac_ashen_013": {
-            "id": "act1.chapter2.fac_ashen_013",
+            "id": "act1.chapter2-ashen.fac_ashen_013",
             "title": "After the Light",
             "location": "the_ossuary",
             "text": [
@@ -430,7 +430,7 @@
             "choices": [
                 {
                     "text": "\"I want to join the Ashen Circle.\"",
-                    "next": "act1.chapter2.fac_ashen_014",
+                    "next": "act1.chapter2-ashen.fac_ashen_014",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.ashen_joined", "value": true },
                         { "type": "modify_faction", "faction": "ashenCircle", "amount": 20 },
@@ -439,7 +439,7 @@
                 },
                 {
                     "text": "\"I need time. But I won't forget what I saw here.\"",
-                    "next": "act1.chapter2.fac_ashen_014",
+                    "next": "act1.chapter2-ashen.fac_ashen_014",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.ashen_neutral_observer", "value": true },
                         { "type": "modify_faction", "faction": "ashenCircle", "amount": 8 },
@@ -448,7 +448,7 @@
                 },
                 {
                     "text": "\"What you're doing here is beautiful. But it's still illegal, and people should know what happens to stacked minds. I'm going to Meridian.\"",
-                    "next": "act1.chapter2.fac_ashen_015",
+                    "next": "act1.chapter2-ashen.fac_ashen_015",
                     "onSelect": [
                         { "type": "set_flag", "flag": "chapter2.ashen_reported", "value": true },
                         { "type": "modify_faction", "faction": "ashenCircle", "amount": -25 },
@@ -462,7 +462,7 @@
         },
 
         "fac_ashen_014": {
-            "id": "act1.chapter2.fac_ashen_014",
+            "id": "act1.chapter2-ashen.fac_ashen_014",
             "title": "The Circle Holds",
             "location": "the_ossuary",
             "text": [
@@ -492,7 +492,7 @@
         },
 
         "fac_ashen_015": {
-            "id": "act1.chapter2.fac_ashen_015",
+            "id": "act1.chapter2-ashen.fac_ashen_015",
             "title": "The Betrayal",
             "location": "the_ossuary",
             "text": [
