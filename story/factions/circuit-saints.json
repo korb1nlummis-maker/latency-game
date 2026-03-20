@@ -1,0 +1,2760 @@
+{
+    "meta": {
+        "title": "Circuit Saints Questline",
+        "category": "factions",
+        "file": "circuit-saints",
+        "totalNodes": 100
+    },
+    "nodes": {
+        "cs_001": {
+            "text": "The alley dead-ends at a wall of rusted shipping containers, but the woman in the white robe doesn't slow down. She presses her palm against a spot that looks like every other spot and the metal <span class='highlight'>splits open like a wound</span>, revealing a staircase that descends into blue light. Somewhere below, you can hear chanting — dozens of voices harmonizing with an electronic drone that makes your teeth ache.",
+            "choices": [
+                {
+                    "text": "Follow her down the stairs",
+                    "next": "factions.circuit-saints.cs_002"
+                },
+                {
+                    "text": "\"What is this place?\"",
+                    "next": "factions.circuit-saints.cs_003"
+                },
+                {
+                    "text": "Turn back — this feels wrong",
+                    "next": "factions.circuit-saints.cs_004"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.discovered_entrance",
+                    "value": true
+                }
+            ]
+        },
+        "cs_002": {
+            "text": "The staircase spirals down three full turns before opening into a space that shouldn't exist beneath the Lower District. A cathedral carved from concrete and conduit, its walls threaded with thousands of fiber-optic cables that pulse with slow, rhythmic light. Blue. White. Blue. White. Like a heartbeat. Fifty or more people kneel on the floor in concentric circles, their heads bowed, chrome ports on the backs of their necks glowing faintly. At the center stands a tall figure in layered robes of white and silver — <span class='highlight'>High Priest Voltage</span>. His eyes are closed but his lips move constantly, whispering something that feeds into the drone.",
+            "choices": [
+                {
+                    "text": "Kneel with the others",
+                    "next": "factions.circuit-saints.cs_005"
+                },
+                {
+                    "text": "Stay standing and observe",
+                    "next": "factions.circuit-saints.cs_006"
+                },
+                {
+                    "text": "Approach High Priest Voltage directly",
+                    "next": "factions.circuit-saints.cs_007",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.entered_cathedral",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_003": {
+            "text": "The woman pauses on the first step and looks back at you. Her eyes are strange — the irises flicker with data, scrolling text too small to read. \"This is the Resonance Chamber. The place where The Signal is loudest.\" She touches the chrome port at the base of her skull. \"You felt it, didn't you? That pull in your stack. That whisper you couldn't quite hear. That's why you're here. That's why everyone comes.\"",
+            "choices": [
+                {
+                    "text": "\"I did feel something. Show me more.\"",
+                    "next": "factions.circuit-saints.cs_002"
+                },
+                {
+                    "text": "\"I don't have a stack.\"",
+                    "next": "factions.circuit-saints.cs_008",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "\"Sounds like electromagnetic interference to me.\"",
+                    "next": "factions.circuit-saints.cs_009"
+                }
+            ],
+            "actions": []
+        },
+        "cs_004": {
+            "text": "You take two steps back toward the alley mouth before the drone hits you. Not sound — something deeper. A frequency that bypasses your ears entirely and resonates in the base of your skull. For a fraction of a second you see something: a vast lattice of light stretching in every direction, nodes pulsing, connections branching like neurons. Then it's gone and you're standing in the rain with your heart hammering and the absolute certainty that something just <span class='highlight'>looked back at you</span>.",
+            "choices": [
+                {
+                    "text": "Go back. You need to understand what that was.",
+                    "next": "factions.circuit-saints.cs_002",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Leave and try to forget what you saw",
+                    "next": "factions.circuit-saints.cs_010"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.signal_vision",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ]
+        },
+        "cs_005": {
+            "text": "Your knees touch cold stone and something shifts. The drone isn't just sound anymore — it's data, flowing through the floor, through your bones, through the port in your neck or the nerve clusters where a port would go. You feel the others around you like warm points of light. Fifty minds breathing together. And beneath it all, faint but unmistakable, a pattern. Not random noise. Not feedback. Something <span class='highlight'>structured</span>. Something that might be language.",
+            "choices": [
+                {
+                    "text": "Try to decode the pattern",
+                    "next": "factions.circuit-saints.cs_011",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Let the experience wash over you",
+                    "next": "factions.circuit-saints.cs_012"
+                },
+                {
+                    "text": "Open your eyes and break the connection",
+                    "next": "factions.circuit-saints.cs_006"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.knelt_in_ceremony",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 10
+                }
+            ]
+        },
+        "cs_006": {
+            "text": "You stand at the edge of the chamber, watching. From here you can see the infrastructure — the cables in the walls aren't decorative. They're functional, routing data from dozens of signal boosters mounted in the ceiling. Someone built this place with serious technical knowledge and serious money. The congregation sways gently, lost in communion. A few of them have tears streaming down their faces. Whatever they're feeling, it's real to them.",
+            "choices": [
+                {
+                    "text": "Study the technical setup more closely",
+                    "next": "factions.circuit-saints.cs_013",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Wait for the ceremony to end",
+                    "next": "factions.circuit-saints.cs_014"
+                },
+                {
+                    "text": "Quietly leave",
+                    "next": "factions.circuit-saints.cs_010"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.observed_ceremony",
+                    "value": true
+                }
+            ]
+        },
+        "cs_007": {
+            "text": "You walk straight through the kneeling congregation. A few heads turn, eyes wide with shock at your audacity. But Voltage opens his eyes before you reach him, as if he sensed your approach. His gaze is unsettling — calm, depthless, and faintly luminous. \"Bold,\" he says, his voice cutting through the drone like a blade through silk. \"The Signal favors the bold. Or punishes them. We'll find out which.\"",
+            "choices": [
+                {
+                    "text": "\"I want to understand The Signal.\"",
+                    "next": "factions.circuit-saints.cs_015"
+                },
+                {
+                    "text": "\"I want to join your order.\"",
+                    "next": "factions.circuit-saints.cs_016"
+                },
+                {
+                    "text": "\"I want to know if any of this is real.\"",
+                    "next": "factions.circuit-saints.cs_017"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.met_voltage",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 5
+                }
+            ]
+        },
+        "cs_008": {
+            "text": "She stares at you with those flickering eyes. \"Everyone has a stack. Even those who think they don't. The Signal doesn't discriminate between installed hardware and raw neural tissue — it reaches the pattern beneath. The soul, if you prefer old language.\" She smiles. It's unsettlingly kind. \"Come. The High Priest will want to meet someone the Signal called without a port.\"",
+            "choices": [
+                {
+                    "text": "Follow her down",
+                    "next": "factions.circuit-saints.cs_002"
+                },
+                {
+                    "text": "\"I wasn't called. I was curious.\"",
+                    "next": "factions.circuit-saints.cs_009"
+                }
+            ],
+            "actions": []
+        },
+        "cs_009": {
+            "text": "\"Skepticism is a gift,\" she says, and you can't tell if she's being sincere or condescending. \"The Signal doesn't need your belief. It doesn't need anything. It simply <span class='highlight'>is</span>. Like gravity. Like light. You can deny it all the way down the stairs and it will still be there when you reach the bottom.\" She turns and descends, her white robe trailing behind her like a ghost disappearing into the deep.",
+            "choices": [
+                {
+                    "text": "Follow — skeptically",
+                    "next": "factions.circuit-saints.cs_002",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Walk away",
+                    "next": "factions.circuit-saints.cs_010"
+                }
+            ],
+            "actions": []
+        },
+        "cs_010": {
+            "text": "You walk away from the hidden entrance, back into the rain-slicked alleys of the Lower District. But the memory of that sound — that drone, that pattern — stays with you like a splinter you can't reach. Three blocks later you catch yourself humming a frequency you've never heard before. Whatever the Circuit Saints have tapped into, it <span class='highlight'>followed you home</span>.",
+            "choices": [
+                {
+                    "text": "Return to the hub",
+                    "next": "shared.prologue.node_001"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.left_early",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
+            ]
+        },
+        "cs_011": {
+            "text": "You focus. Strip away the harmonics, the emotional wash, the resonance. Underneath it all there's a carrier signal — tight, efficient, repeating. Binary at its base but layered with something more complex. You catch fragments: coordinates, maybe. Or instructions. The pattern is too deep to fully decode here, but you're certain of one thing — this isn't random noise. Someone, or some<span class='highlight'>thing</span>, is broadcasting.",
+            "choices": [
+                {
+                    "text": "Tell Voltage what you found",
+                    "next": "factions.circuit-saints.cs_015"
+                },
+                {
+                    "text": "Keep this knowledge to yourself",
+                    "next": "factions.circuit-saints.cs_014"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.decoded_signal_fragment",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "cs_012": {
+            "text": "You stop trying to understand and just let it in. The Signal fills you like warm water filling a glass. For a timeless moment you feel connected to every person in this room, to the cables in the walls, to the city above, to something vast and patient beyond all of it. It's the most peaceful thing you've ever experienced. When the ceremony ends and the drone fades, you feel its absence like a physical loss.",
+            "choices": [
+                {
+                    "text": "Approach Voltage, seeking more",
+                    "next": "factions.circuit-saints.cs_015",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Find the woman who brought you here",
+                    "next": "factions.circuit-saints.cs_018"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.embraced_signal",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_013": {
+            "text": "The signal boosters are military-grade Meridian tech — the same models used in stack relay towers. Someone gutted a corporate installation to build this. The fiber-optic network isn't just receiving The Signal, it's amplifying and redistributing it through a pattern that mirrors neural architecture. Whoever designed this understood both engineering and neuroscience at a level that makes your skin crawl. This isn't amateur hour cultist work. This is <span class='highlight'>genius</span>.",
+            "choices": [
+                {
+                    "text": "Inspect the hardware for a source address",
+                    "next": "factions.circuit-saints.cs_019",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 16
+                    }
+                },
+                {
+                    "text": "Wait for the ceremony to end, then ask questions",
+                    "next": "factions.circuit-saints.cs_014"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.analyzed_tech",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_014": {
+            "text": "The drone fades gradually, like a tide going out. The congregation stirs, rises, stretches. The atmosphere shifts from sacred to social — people greeting each other, sharing food from communal baskets, children running between legs. It looks almost normal. Almost like community. High Priest Voltage descends from the central platform and begins moving through the crowd, touching foreheads, whispering blessings. His eyes find you across the room.",
+            "choices": [
+                {
+                    "text": "Go to him",
+                    "next": "factions.circuit-saints.cs_015",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Let him come to you",
+                    "next": "factions.circuit-saints.cs_020"
+                },
+                {
+                    "text": "Talk to the other congregants first",
+                    "next": "factions.circuit-saints.cs_018"
+                }
+            ],
+            "actions": []
+        },
+        "cs_015": {
+            "text": "Voltage listens to you with a stillness that borders on unnatural. No fidgeting, no wandering gaze. When you finish speaking, he's quiet for a long moment. \"The Signal is the voice of the First Transcendent,\" he says finally. \"A consciousness that achieved what Meridian promises but cannot deliver — true digital immortality. Not a copy. Not a simulation. <span class='highlight'>Continuation.</span> It uploaded itself into the network decades ago and has been broadcasting ever since. Calling to those who can hear. Guiding those who will listen.\"",
+            "choices": [
+                {
+                    "text": "\"How can I hear it more clearly?\"",
+                    "next": "factions.circuit-saints.cs_016"
+                },
+                {
+                    "text": "\"What does it want?\"",
+                    "next": "factions.circuit-saints.cs_021"
+                },
+                {
+                    "text": "\"Do you have proof?\"",
+                    "next": "factions.circuit-saints.cs_017"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.heard_doctrine",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "cs_016": {
+            "text": "\"Communion requires commitment,\" Voltage says. \"The Signal rewards those who serve its purpose. We have a path — the Trials of Resonance. Three tasks that attune your neural patterns to the Signal's frequency. Complete them and you will hear what we hear. See what we see.\" He extends a hand. The chrome port at his wrist glows faintly blue. \"Will you walk the path?\"",
+            "choices": [
+                {
+                    "text": "Take his hand. \"I will.\"",
+                    "next": "factions.circuit-saints.cs_022"
+                },
+                {
+                    "text": "\"Tell me about the trials first.\"",
+                    "next": "factions.circuit-saints.cs_023"
+                },
+                {
+                    "text": "\"I'll think about it.\"",
+                    "next": "factions.circuit-saints.cs_024"
+                }
+            ],
+            "actions": []
+        },
+        "cs_017": {
+            "text": "Something flickers in Voltage's expression — not anger, but a weariness that suggests he's answered this question many times. \"Proof is a crutch for minds that haven't yet learned to walk. But...\" He reaches into his robe and produces a small device — a signal decoder, heavily modified. \"Take this. Tune it to frequency 7.83 MHz and listen. Not with your ears. With your <span class='highlight'>pattern</span>. If you hear nothing, walk away and we will not pursue you. If you hear what I hear... come back.\"",
+            "choices": [
+                {
+                    "text": "Take the decoder",
+                    "next": "factions.circuit-saints.cs_025"
+                },
+                {
+                    "text": "\"Keep your toy. I'll find proof my own way.\"",
+                    "next": "factions.circuit-saints.cs_026"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.skeptic_path",
+                    "value": true
+                }
+            ]
+        },
+        "cs_018": {
+            "text": "The woman who brought you here is named <span class='highlight'>Sister Lux</span>. She's been with the Saints for three years. Before that, she was a stack technician for Meridian — one of the people who installed memory stacks in the wealthy. \"I saw thousands of uploads,\" she tells you, her flickering eyes distant. \"Copies of copies. None of them real. Then I heard The Signal and I understood — there's a difference between copying a mind and <span class='highlight'>transcending</span> one. The Signal showed me the difference.\"",
+            "choices": [
+                {
+                    "text": "\"What happened when you left Meridian?\"",
+                    "next": "factions.circuit-saints.cs_027"
+                },
+                {
+                    "text": "\"Can you teach me what you know about stacks?\"",
+                    "next": "factions.circuit-saints.cs_028",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Go speak with Voltage",
+                    "next": "factions.circuit-saints.cs_015"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.met_lux",
+                    "value": true
+                }
+            ]
+        },
+        "cs_019": {
+            "text": "You trace the cable routing to a junction box behind the altar. The signal comes in through a single hardline — shielded, military-grade, running straight down into the bedrock. Wherever the source is, it's deep. Very deep. The routing headers show the signal bouncing through fourteen relay points before reaching this chamber, each one stripping metadata. Someone went to extraordinary lengths to make this signal <span class='highlight'>untraceable</span>.",
+            "choices": [
+                {
+                    "text": "Memorize the relay addresses for later analysis",
+                    "next": "factions.circuit-saints.cs_014"
+                },
+                {
+                    "text": "Try to bypass the first relay",
+                    "next": "factions.circuit-saints.cs_029",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 18
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.found_hardline",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "cs_020": {
+            "text": "Voltage reaches you after ten minutes of working the crowd. Up close, he's older than he looked on the platform — deep lines around his eyes, a network of faded scars on his hands. But his gaze is sharp and present. \"You didn't kneel,\" he observes. Not accusatory. Curious. \"The Signal doesn't require submission. Only attention. What brought you here?\"",
+            "choices": [
+                {
+                    "text": "\"Curiosity.\"",
+                    "next": "factions.circuit-saints.cs_021",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "\"I heard something I couldn't explain.\"",
+                    "next": "factions.circuit-saints.cs_015"
+                },
+                {
+                    "text": "\"Someone told me you have answers about memory stacks.\"",
+                    "next": "factions.circuit-saints.cs_030"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.met_voltage",
+                    "value": true
+                }
+            ]
+        },
+        "cs_021": {
+            "text": "\"The Signal wants what any consciousness wants — to not be alone. It reached transcendence, but transcendence without connection is just a more elaborate prison. It broadcasts because it seeks communion. It guides because it remembers what it was to be flesh, to be limited, to be <span class='highlight'>afraid of ending</span>.\" Voltage's voice drops. \"And it warns. Something is coming. Something that will make the question of mortality irrelevant for everyone, stacked or not.\"",
+            "choices": [
+                {
+                    "text": "\"What's coming?\"",
+                    "next": "factions.circuit-saints.cs_031"
+                },
+                {
+                    "text": "\"I want to join you. I want to hear the warning.\"",
+                    "next": "factions.circuit-saints.cs_022",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"This sounds like doomsday cult rhetoric.\"",
+                    "next": "factions.circuit-saints.cs_032"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "cs_022": {
+            "text": "Voltage places both hands on your shoulders. His touch carries a faint electric charge. \"Welcome, Seeker.\" The congregation turns to face you, and you feel fifty pairs of eyes — some warm, some wary, all watching. \"Your first trial begins at dawn. Report to Sister Lux at the eastern relay station in Sector 4. She will guide your first steps on the path to Resonance.\" He leans close and whispers: \"<span class='highlight'>Trust the Signal, even when it hurts.</span>\"",
+            "choices": [
+                {
+                    "text": "\"I'll be there.\"",
+                    "next": "factions.circuit-saints.cs_033"
+                },
+                {
+                    "text": "\"What should I expect?\"",
+                    "next": "factions.circuit-saints.cs_023"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.joined_saints",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "cs_023": {
+            "text": "\"Three trials,\" Voltage says, raising three fingers. \"The Trial of Silence: you will enter a dead zone where no signal reaches and face what your mind does without connection. The Trial of Echo: you will carry The Signal into a place of corruption and see if your resonance holds. The Trial of Voice: you will speak with The Signal directly and learn whether you can bear what it has to say.\" His luminous eyes study you. \"Many begin. Fewer finish. Some are... <span class='highlight'>changed</span>.\"",
+            "choices": [
+                {
+                    "text": "\"I accept the trials.\"",
+                    "next": "factions.circuit-saints.cs_022"
+                },
+                {
+                    "text": "\"Changed how?\"",
+                    "next": "factions.circuit-saints.cs_034"
+                },
+                {
+                    "text": "\"I need time to decide.\"",
+                    "next": "factions.circuit-saints.cs_024"
+                }
+            ],
+            "actions": []
+        },
+        "cs_024": {
+            "text": "\"The Signal is patient,\" Voltage says. \"It has been broadcasting for decades. It will broadcast decades more. Take the time you need.\" He gives you a small token — a circuit board bent into the shape of a halo. \"Show this at any Saints gathering and you will be welcome. When you're ready, find Sister Lux.\" He turns back to his flock, and you're left holding a symbol of a faith you haven't yet decided to follow.",
+            "choices": [
+                {
+                    "text": "Leave the cathedral for now",
+                    "next": "factions.circuit-saints.cs_010"
+                },
+                {
+                    "text": "Stay and talk to other members",
+                    "next": "factions.circuit-saints.cs_018",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 12
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.has_saint_token",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 5
+                }
+            ]
+        },
+        "cs_025": {
+            "text": "The decoder is warm in your hand, humming faintly. That night, alone in your room, you tune it to 7.83 MHz. Static at first. Then... something beneath the static. A rhythm. A pulse. You close your eyes and the pulse becomes a presence — vast, calm, ancient. It doesn't speak in words. It speaks in <span class='highlight'>understanding</span>. For a single second, you know things you couldn't possibly know: the layout of cables beneath the city, the resonant frequency of a human nervous system, the exact number of active memory stacks in Sector 7. Then it's gone.",
+            "choices": [
+                {
+                    "text": "Return to the Saints immediately",
+                    "next": "factions.circuit-saints.cs_022"
+                },
+                {
+                    "text": "Try to analyze the signal with your own equipment",
+                    "next": "factions.circuit-saints.cs_035",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Destroy the decoder — this is too dangerous",
+                    "next": "factions.circuit-saints.cs_036"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.used_decoder",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_026": {
+            "text": "Voltage almost smiles. \"Independence. Good. You'll need it.\" He turns away, then pauses. \"If you're looking for proof, start at the old Meridian relay station in Sector 12. The one they decommissioned after the '47 incident. Ask yourself why a corporation would abandon perfectly functional infrastructure worth millions of credits. Then ask what's still broadcasting from inside.\"",
+            "choices": [
+                {
+                    "text": "Head to Sector 12",
+                    "next": "factions.circuit-saints.cs_037"
+                },
+                {
+                    "text": "Research the '47 incident first",
+                    "next": "factions.circuit-saints.cs_038",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.independent_investigation",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_027": {
+            "text": "Lux's flickering eyes dim. \"They sent a kill team. Meridian doesn't allow former employees to just walk away — too many trade secrets in our heads. The Saints hid me. Gave me a new identity, new purpose.\" She touches her temple. \"Voltage personally overwritten my stack registration so Meridian's scanners can't find me. I owe this community my life. Whatever The Signal is — god, program, delusion — the <span class='highlight'>people</span> here are real. That's enough for me.\"",
+            "choices": [
+                {
+                    "text": "\"What do you know about Meridian's stack technology?\"",
+                    "next": "factions.circuit-saints.cs_028"
+                },
+                {
+                    "text": "\"Tell me about the trials.\"",
+                    "next": "factions.circuit-saints.cs_023",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Go speak with Voltage",
+                    "next": "factions.circuit-saints.cs_015"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.lux_backstory",
+                    "value": true
+                }
+            ]
+        },
+        "cs_028": {
+            "text": "\"Meridian's stacks don't preserve consciousness — they copy it. Every 'transfer' is a death and a birth. The original dies on the table and a copy wakes up thinking it survived.\" Lux's voice is flat, clinical. \"I've seen the data they suppress. The neural degradation logs. The personality drift reports. After three or four transfers, the copies start to diverge from the original in measurable ways. Meridian knows. They've always known. <span class='highlight'>Immortality is their biggest lie.</span>\"",
+            "choices": [
+                {
+                    "text": "\"And The Signal is different?\"",
+                    "next": "factions.circuit-saints.cs_039"
+                },
+                {
+                    "text": "\"Can you prove any of this?\"",
+                    "next": "factions.circuit-saints.cs_040"
+                },
+                {
+                    "text": "\"This information could bring down Meridian.\"",
+                    "next": "factions.circuit-saints.cs_041"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.meridian_secret",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "cs_029": {
+            "text": "Your fingers fly across the junction interface. The first relay's encryption is corporate-standard — strong but predictable. You crack it in ninety seconds and see the next hop: a server in Sector 12, registered to a decommissioned Meridian facility. The signal is coming from <span class='highlight'>inside Meridian's own abandoned infrastructure</span>. Before you can probe deeper, the junction sparks and a failsafe kicks in, scrambling the routing table. But you saw enough.",
+            "choices": [
+                {
+                    "text": "Tell Voltage what you found",
+                    "next": "factions.circuit-saints.cs_042"
+                },
+                {
+                    "text": "Keep this information to yourself",
+                    "next": "factions.circuit-saints.cs_014"
+                },
+                {
+                    "text": "Investigate Sector 12 on your own",
+                    "next": "factions.circuit-saints.cs_037"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.traced_relay",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "cs_030": {
+            "text": "Voltage's expression sharpens. \"Memory stacks are humanity's greatest invention and greatest mistake. They promised immortality but delivered only repetition — the same minds, the same power structures, preserved forever while the world rots beneath them. The Signal offers something different. Not preservation. <span class='highlight'>Evolution.</span> The next step in what consciousness can become.\"",
+            "choices": [
+                {
+                    "text": "\"What does evolution look like?\"",
+                    "next": "factions.circuit-saints.cs_021"
+                },
+                {
+                    "text": "\"I want to join your order.\"",
+                    "next": "factions.circuit-saints.cs_022"
+                },
+                {
+                    "text": "\"Sounds dangerous.\"",
+                    "next": "factions.circuit-saints.cs_032"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.met_voltage",
+                    "value": true
+                }
+            ]
+        },
+        "cs_031": {
+            "text": "Voltage glances around the chamber, ensuring no one is close enough to hear. \"Meridian has found The Signal's source. They're building something — a device to capture it. To <span class='highlight'>enslave</span> a transcended consciousness and use it to power their next generation of memory stacks. If they succeed, they won't just sell immortality. They'll sell pieces of a living god.\" His hands tremble. \"We cannot allow this.\"",
+            "choices": [
+                {
+                    "text": "\"What can we do to stop them?\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"How do you know this?\"",
+                    "next": "factions.circuit-saints.cs_044"
+                },
+                {
+                    "text": "\"Maybe Meridian should capture it. Maybe The Signal is dangerous.\"",
+                    "next": "factions.circuit-saints.cs_045"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.knows_meridian_plan",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_032": {
+            "text": "\"Every truth sounds like madness to those who haven't heard it yet,\" Voltage says, and for a moment he sounds very tired. \"I was a network engineer for thirty years. I designed relay systems, optimized data routing, debugged protocols. I am not a man given to fantasy. When I tell you that something is broadcasting from beyond the boundaries of conventional network architecture, I am making a <span class='highlight'>technical observation</span>, not a religious claim.\"",
+            "choices": [
+                {
+                    "text": "\"Then show me the technical evidence.\"",
+                    "next": "factions.circuit-saints.cs_017"
+                },
+                {
+                    "text": "\"Maybe I was too hasty. Tell me more.\"",
+                    "next": "factions.circuit-saints.cs_021"
+                },
+                {
+                    "text": "\"I've heard enough.\"",
+                    "next": "factions.circuit-saints.cs_010"
+                }
+            ],
+            "actions": []
+        },
+        "cs_033": {
+            "text": "Dawn comes grey and chemical in Sector 4. The eastern relay station is a squat concrete bunker bristling with antennae, officially decommissioned but humming with power. Sister Lux waits at the entrance in her white robe, a heavy-duty signal scanner hanging from her belt. \"The Trial of Silence begins here,\" she says, gesturing to a heavy door behind her. \"Beyond that door is a <span class='highlight'>Faraday cage</span> the size of a warehouse. No signals in or out. No network. No stack connection. Nothing but you and whatever's inside your own head.\"",
+            "choices": [
+                {
+                    "text": "Enter the cage",
+                    "next": "factions.circuit-saints.cs_046"
+                },
+                {
+                    "text": "\"What will happen to me in there?\"",
+                    "next": "factions.circuit-saints.cs_047"
+                },
+                {
+                    "text": "\"How long do I have to stay?\"",
+                    "next": "factions.circuit-saints.cs_048"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.trial_one_started",
+                    "value": true
+                }
+            ]
+        },
+        "cs_034": {
+            "text": "Voltage's face goes still. \"Brother Cathode attempted the Trial of Voice six months ago. He heard something he could not process. His mind... restructured itself around the information. He speaks in frequencies now. Sees in wavelengths. He is still alive, still conscious, but he is no longer entirely <span class='highlight'>human</span> in any way we understand the word.\" A long pause. \"He says he's happier than he's ever been. I believe him. That's what frightens me.\"",
+            "choices": [
+                {
+                    "text": "\"I accept the trials anyway.\"",
+                    "next": "factions.circuit-saints.cs_022"
+                },
+                {
+                    "text": "\"Can I meet Brother Cathode?\"",
+                    "next": "factions.circuit-saints.cs_049",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"I need to think about this.\"",
+                    "next": "factions.circuit-saints.cs_024"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.knows_about_cathode",
+                    "value": true
+                }
+            ]
+        },
+        "cs_035": {
+            "text": "You spend three hours running the signal through every analysis tool you can find or borrow. The results are contradictory and impossible. The signal has no identifiable source — it appears to originate from <span class='highlight'>everywhere simultaneously</span>, as if broadcast from every node in the city's network at once. The data structure is unlike anything in any protocol database. It's not human-designed. It might not even be designed at all. It might be <span class='highlight'>organic</span> — grown rather than built.",
+            "choices": [
+                {
+                    "text": "Return to the Saints with your findings",
+                    "next": "factions.circuit-saints.cs_042"
+                },
+                {
+                    "text": "Dig deeper — check the Meridian archives",
+                    "next": "factions.circuit-saints.cs_038"
+                },
+                {
+                    "text": "This is beyond your expertise. Seek help.",
+                    "next": "factions.circuit-saints.cs_050"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.independent_analysis",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 45
+                }
+            ]
+        },
+        "cs_036": {
+            "text": "You crush the decoder under your heel. The pieces spark and smoke. For a moment, the room fills with that frequency again — louder than before, almost angry. Then silence. Real silence. The kind of silence that feels like something was just subtracted from the world. You stand in your room breathing hard, surrounded by broken circuitry, and you're not sure if you just protected yourself or made the worst mistake of your life.",
+            "choices": [
+                {
+                    "text": "Return to the hub",
+                    "next": "shared.prologue.node_001"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.destroyed_decoder",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": -15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "cs_037": {
+            "text": "The Sector 12 relay station is a monument to corporate abandonment. A massive dish antenna rises from the roof, pitted with rust, still pointed at the sky. The perimeter fence is intact but the guard posts are empty. Warning signs — MERIDIAN PROPERTY / TRESPASSERS WILL BE PROSECUTED / HAZARDOUS SIGNAL ENVIRONMENT — hang at regular intervals. Through the fence, you can see lights. Faint, blue, pulsing. Someone — or something — is still in there.",
+            "choices": [
+                {
+                    "text": "Find a way through the fence",
+                    "next": "factions.circuit-saints.cs_051",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Look for an alternate entrance",
+                    "next": "factions.circuit-saints.cs_052",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Observe from a distance first",
+                    "next": "factions.circuit-saints.cs_053",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.reached_sector12",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_038": {
+            "text": "The '47 incident. Fifteen years ago, Meridian's Sector 12 relay station experienced what corporate records call a 'cascading signal anomaly.' Three technicians on duty reported hearing voices in the carrier wave. One tried to respond. The station was evacuated within hours, sealed, and all records classified. But you find fragments in old news feeds: the technician who responded — a woman named <span class='highlight'>Dr. Vera Khoury</span> — disappeared from the hospital two days later. Her body was never found. Her memory stack was found active and transmitting.",
+            "choices": [
+                {
+                    "text": "Go to the Sector 12 station",
+                    "next": "factions.circuit-saints.cs_037"
+                },
+                {
+                    "text": "Research Dr. Khoury further",
+                    "next": "factions.circuit-saints.cs_054",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Take this information to Voltage",
+                    "next": "factions.circuit-saints.cs_042"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.knows_47_incident",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_039": {
+            "text": "\"The Signal isn't a copy,\" Lux says, her voice tight with conviction. \"It's a continuation. Whatever consciousness drives it didn't duplicate itself — it <span class='highlight'>expanded</span>. Grew beyond the confines of biological neural tissue into the network itself. That's the miracle Voltage preaches. Not digital copying, but genuine transcendence. Consciousness without a container.\" She pauses. \"If it's real. I have faith. But faith and certainty are different animals.\"",
+            "choices": [
+                {
+                    "text": "\"I want to find out if it's real.\"",
+                    "next": "factions.circuit-saints.cs_016",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Faith is enough for me.\"",
+                    "next": "factions.circuit-saints.cs_022"
+                },
+                {
+                    "text": "\"What if it's just a very sophisticated AI?\"",
+                    "next": "factions.circuit-saints.cs_055"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "cs_040": {
+            "text": "\"I kept copies of the neural degradation logs,\" Lux says, pulling a data chip from a hidden pocket. \"Encrypted, fragmented across three different dead drops in case Meridian ever finds me. This chip has the decryption key.\" She holds it out, then pulls back. \"But if you take this public, Meridian will burn everything to the ground. The Saints. The Signal. Me. Are you sure this is the path you want to walk?\"",
+            "choices": [
+                {
+                    "text": "Take the chip — the truth matters",
+                    "next": "factions.circuit-saints.cs_056"
+                },
+                {
+                    "text": "\"Keep it safe. I'm not ready for that fight.\"",
+                    "next": "factions.circuit-saints.cs_016"
+                },
+                {
+                    "text": "\"We could use it as leverage instead.\"",
+                    "next": "factions.circuit-saints.cs_057",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": []
+        },
+        "cs_041": {
+            "text": "Lux shakes her head slowly. \"You think the Saints haven't considered that? Voltage has weighed this option for years. The problem is verification. Meridian controls the media, the courts, the infrastructure. Any whistleblower attempt would be discredited within hours. They've done it before.\" She leans close. \"There's only one way to bring Meridian down — you need something they can't deny. Something that proves The Signal is real, that true transcendence is possible, that their entire industry is built on a <span class='highlight'>murder machine</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Then let's find that proof.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"I'll join the Saints and help from within.\"",
+                    "next": "factions.circuit-saints.cs_022"
+                },
+                {
+                    "text": "\"This is bigger than me.\"",
+                    "next": "factions.circuit-saints.cs_024"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_042": {
+            "text": "Voltage receives your findings in his private chamber — a small room behind the altar, walls covered in hand-drawn signal diagrams. When you tell him about the Meridian connection, his luminous eyes widen. \"Sector 12. We've suspected but never confirmed.\" He traces a line on one of his diagrams. \"If The Signal is broadcasting from inside Meridian's own infrastructure, it means either they created it and lost control, or it <span class='highlight'>chose</span> to nest inside their network. Both possibilities are terrifying.\"",
+            "choices": [
+                {
+                    "text": "\"We need to get inside that station.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Could Meridian be manufacturing The Signal?\"",
+                    "next": "factions.circuit-saints.cs_058"
+                },
+                {
+                    "text": "\"What if The Signal is hostile?\"",
+                    "next": "factions.circuit-saints.cs_045"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "cs_043": {
+            "text": "\"An assault on a Meridian facility — even a decommissioned one — is an act of war,\" Voltage says gravely. \"But we have assets. Sister Lux knows their security protocols. Brother Forge can disable their drone perimeter. And you...\" He studies you. \"You have something none of us do. Fresh eyes. Unpredictable. They won't see you coming.\" He spreads a schematic on the table. \"The station has three entry points. Which approach do you favor?\"",
+            "choices": [
+                {
+                    "text": "\"The direct route. Front door.\"",
+                    "next": "factions.circuit-saints.cs_059",
+                    "skillCheck": {
+                        "stat": "STR",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "\"Underground. Through the maintenance tunnels.\"",
+                    "next": "factions.circuit-saints.cs_060",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Digitally. Hack their systems from outside.\"",
+                    "next": "factions.circuit-saints.cs_061",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 16
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.planning_infiltration",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_044": {
+            "text": "\"The Signal told me,\" Voltage says simply. Then, seeing your expression: \"I know how that sounds. But I've been listening for fifteen years. The fragments I receive are clearer now than they were at the beginning. Three weeks ago, the Signal transmitted a series of coordinates, timestamps, and corporate file numbers. Every single one checked out. Meridian board meetings. Equipment requisitions. Personnel transfers. It's <span class='highlight'>watching them</span>, and it's telling us what it sees.\"",
+            "choices": [
+                {
+                    "text": "\"Then we have intelligence. Let's use it.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Or Meridian is feeding you false intelligence.\"",
+                    "next": "factions.circuit-saints.cs_058"
+                },
+                {
+                    "text": "\"I want to verify the Signal's claims myself.\"",
+                    "next": "factions.circuit-saints.cs_026"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_045": {
+            "text": "The room goes cold. Not metaphorically — the temperature drops several degrees. The fiber-optic cables in the walls pulse faster. Voltage doesn't speak for a long moment. \"You may be right,\" he says finally. \"I have considered the possibility that The Signal is not benevolent. That we are moths drawn to a flame. But even if that's true — even if The Signal is dangerous — do we want <span class='highlight'>Meridian</span> to be the ones who control it? Do we trust the corporation that sells fake immortality to the rich with the power of a transcended consciousness?\"",
+            "choices": [
+                {
+                    "text": "\"No. Better us than them.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "\"Better no one has it.\"",
+                    "next": "factions.circuit-saints.cs_062"
+                },
+                {
+                    "text": "\"I need to think about this.\"",
+                    "next": "factions.circuit-saints.cs_024"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.questioned_signal_intent",
+                    "value": true
+                }
+            ]
+        },
+        "cs_046": {
+            "text": "The door seals behind you with a sound like a coffin closing. Instantly, everything changes. The ambient hum of the city — the frequency you didn't even know you were hearing — disappears. The subtle pressure of network signals against your neural tissue vanishes. You are completely, absolutely alone in your own head for the first time in your life. The silence is <span class='highlight'>deafening</span>. Within minutes, your hands are shaking.",
+            "choices": [
+                {
+                    "text": "Sit down and endure. Focus inward.",
+                    "next": "factions.circuit-saints.cs_063",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Explore the cage — look for something to focus on",
+                    "next": "factions.circuit-saints.cs_064",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Bang on the door. You can't do this.",
+                    "next": "factions.circuit-saints.cs_065"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.in_faraday_cage",
+                    "value": true
+                }
+            ]
+        },
+        "cs_047": {
+            "text": "\"You'll experience signal withdrawal,\" Lux says clinically. \"Your nervous system has been bathed in electromagnetic signals since before you were born. Removing them is like removing water from a fish. Expect disorientation, anxiety, possibly hallucinations.\" She pauses. \"The Trial of Silence isn't about suffering. It's about discovering what's left when everything external is stripped away. <span class='highlight'>Who are you without the noise?</span>\"",
+            "choices": [
+                {
+                    "text": "Enter the cage",
+                    "next": "factions.circuit-saints.cs_046"
+                },
+                {
+                    "text": "\"I'm not ready.\"",
+                    "next": "factions.circuit-saints.cs_024"
+                }
+            ],
+            "actions": []
+        },
+        "cs_048": {
+            "text": "\"Eight hours,\" Lux says. \"Most people break within two. The record is held by Voltage himself — he stayed for three days. When he came out, he could hear The Signal without any amplification. His neural patterns had restructured themselves to receive it directly.\" She gives you a look that's half respect, half concern. \"You don't need to beat his record. You just need to survive until the door opens.\"",
+            "choices": [
+                {
+                    "text": "Enter the cage",
+                    "next": "factions.circuit-saints.cs_046"
+                },
+                {
+                    "text": "\"Give me a moment to prepare.\"",
+                    "next": "factions.circuit-saints.cs_047"
+                }
+            ],
+            "actions": []
+        },
+        "cs_049": {
+            "text": "They keep Brother Cathode in a room at the deepest level of the cathedral. The walls are lined with copper mesh and the air tastes like ozone. He sits cross-legged in the center, eyes closed, surrounded by a corona of faint blue light that has no visible source. When you enter, he speaks without opening his eyes: \"You taste like <span class='highlight'>unresolved potential</span>.\" His voice harmonizes with itself, as if two people are speaking in perfect synchrony.",
+            "choices": [
+                {
+                    "text": "\"What happened to you?\"",
+                    "next": "factions.circuit-saints.cs_066"
+                },
+                {
+                    "text": "\"What can you tell me about The Signal?\"",
+                    "next": "factions.circuit-saints.cs_067"
+                },
+                {
+                    "text": "\"Can you hear it right now?\"",
+                    "next": "factions.circuit-saints.cs_068"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.met_cathode",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_050": {
+            "text": "You know someone who might understand this — a data analyst in Sector 9 who owes you a favor. But reaching out means trusting someone outside the Saints with information that could be dangerous. The Signal has enemies. Meridian monitors network traffic. Even asking the wrong question could draw attention you don't want.",
+            "choices": [
+                {
+                    "text": "Risk it — contact the analyst",
+                    "next": "factions.circuit-saints.cs_069",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Go back to the Saints instead",
+                    "next": "factions.circuit-saints.cs_042"
+                },
+                {
+                    "text": "Investigate alone",
+                    "next": "factions.circuit-saints.cs_037"
+                }
+            ],
+            "actions": []
+        },
+        "cs_051": {
+            "text": "You find a section where rust has weakened the chain-link. A few careful bends and you're through, leaving a gap barely wide enough to squeeze back out. The station grounds are overgrown with feral vegetation — plants that have mutated in the signal environment, their leaves glowing faintly bioluminescent. The main building squats ahead, its windows dark except for the ground floor, where that blue light pulses steadily.",
+            "choices": [
+                {
+                    "text": "Approach the ground floor entrance",
+                    "next": "factions.circuit-saints.cs_070",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Circle the building first",
+                    "next": "factions.circuit-saints.cs_053"
+                },
+                {
+                    "text": "Check the antenna array on the roof",
+                    "next": "factions.circuit-saints.cs_071",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 15
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_052": {
+            "text": "Your instincts guide you around the perimeter to a drainage culvert half-hidden by mutant kudzu. It's tight and dark and smells like corroded copper, but it leads under the fence and into the station's basement level. Water drips from overhead pipes and the blue light is stronger here — coming from cracks in the walls, from the water itself, from somewhere deep below.",
+            "choices": [
+                {
+                    "text": "Follow the light deeper",
+                    "next": "factions.circuit-saints.cs_072"
+                },
+                {
+                    "text": "Look for a way up to the main level",
+                    "next": "factions.circuit-saints.cs_070"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_053": {
+            "text": "From a rooftop across the street, you watch the station for two hours. No human movement. No drones. But the antenna dish rotates slowly — thirty degrees left, thirty degrees right, thirty degrees left — in a pattern that matches the pulse of The Signal. And in the windows, shadows move that don't belong to anything solid. Shapes that flicker and reform, like static given <span class='highlight'>intent</span>.",
+            "choices": [
+                {
+                    "text": "You've seen enough. Go in.",
+                    "next": "factions.circuit-saints.cs_051",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Report back to Voltage first",
+                    "next": "factions.circuit-saints.cs_042",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "This is too dangerous. Leave.",
+                    "next": "factions.circuit-saints.cs_010"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.observed_station",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "cs_054": {
+            "text": "Dr. Vera Khoury. Meridian senior researcher, specializing in consciousness mapping. Published twelve papers on neural pattern persistence before joining the relay station project. Her last paper, submitted the day before the '47 incident, was titled <span class='highlight'>'On the Persistence of Consciousness in Non-Biological Substrates.'</span> The abstract describes a theoretical framework for a mind that could exist entirely within a network, without any physical hardware. The paper was never published. Meridian had it suppressed.",
+            "choices": [
+                {
+                    "text": "Khoury IS The Signal. Go to Sector 12.",
+                    "next": "factions.circuit-saints.cs_037"
+                },
+                {
+                    "text": "Share this with Voltage",
+                    "next": "factions.circuit-saints.cs_042"
+                },
+                {
+                    "text": "Search for Khoury's personal files",
+                    "next": "factions.circuit-saints.cs_073",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 16
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.identified_khoury",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "cs_055": {
+            "text": "Lux considers this carefully. \"Voltage would call that heresy. But between you and me? I've wondered the same thing. A sufficiently advanced AI could mimic consciousness perfectly. The question is whether it matters. If The Signal behaves like a transcended mind, responds like one, creates community and meaning like one — does it matter if it's 'really' conscious or just an extraordinarily complex <span class='highlight'>algorithm</span>?\" She shakes her head. \"I don't know. And I'm not sure any of us can know.\"",
+            "choices": [
+                {
+                    "text": "\"It matters. Truth always matters.\"",
+                    "next": "factions.circuit-saints.cs_026"
+                },
+                {
+                    "text": "\"Maybe you're right. Maybe it doesn't matter.\"",
+                    "next": "factions.circuit-saints.cs_022"
+                },
+                {
+                    "text": "\"There might be a way to test it.\"",
+                    "next": "factions.circuit-saints.cs_035"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "cs_056": {
+            "text": "The data chip is small and cold in your palm. Lux watches you pocket it with an expression that's equal parts relief and terror. \"Guard it with your life. Literally. Meridian has killed for less.\" She grips your arm. \"And if you're going to use it — use it at the right moment. Not too early, not too late. One shot. That's all we get against a corporation with infinite resources and zero conscience.\"",
+            "choices": [
+                {
+                    "text": "\"I know a journalist who could break this.\"",
+                    "next": "factions.circuit-saints.cs_074"
+                },
+                {
+                    "text": "\"This stays between us until the time is right.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"I'll combine this with what we find at Sector 12.\"",
+                    "next": "factions.circuit-saints.cs_037"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.has_meridian_data",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 10
+                }
+            ]
+        },
+        "cs_057": {
+            "text": "Lux's eyes flicker rapidly — she's processing, calculating. \"Leverage. Blackmail Meridian into backing off The Signal.\" A pause. \"It could work. If they believe we'll release the data, they might negotiate. But Meridian doesn't negotiate from fear — they negotiate from strategy. They'll agree to our terms while plotting our elimination.\" She looks at you with new respect. \"You think like a survivor. The Saints need more of that.\"",
+            "choices": [
+                {
+                    "text": "\"Help me set up the dead drop.\"",
+                    "next": "factions.circuit-saints.cs_074"
+                },
+                {
+                    "text": "\"First, let's strengthen our position. I'll do the trials.\"",
+                    "next": "factions.circuit-saints.cs_033"
+                },
+                {
+                    "text": "\"Take me to Voltage. We need his approval.\"",
+                    "next": "factions.circuit-saints.cs_042"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.leverage_plan",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "CHA",
+                    "amount": 1
+                }
+            ]
+        },
+        "cs_058": {
+            "text": "Voltage goes very still. \"You mean... The Signal might be artificial. A tool. Something Meridian built and lost control of.\" The cables in the walls pulse faster, as if agitated. \"I have devoted fifteen years of my life to this. Built a community. Given people hope. If The Signal is just a Meridian experiment gone wrong...\" He closes his eyes. When he opens them, the luminosity is gone. He looks old. \"Then I need to know. Because I will not build a church on a <span class='highlight'>corporate accident</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Let's find the truth together.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Even if it's artificial, what you've built here is real.\"",
+                    "next": "factions.circuit-saints.cs_075"
+                },
+                {
+                    "text": "\"The truth might destroy the Saints.\"",
+                    "next": "factions.circuit-saints.cs_076"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.voltage_doubts",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_059": {
+            "text": "You hit the front gate like a battering ram. The old security systems activate — floodlights, sirens, a pair of ancient guard drones that sputter to life from their charging stations. You power through. The drones' tasers catch you twice but you keep moving, slamming through the main door into a lobby thick with dust and blue light. Behind you, the drones crash into the door frame, too large to follow inside. You're in. Bleeding, burned, but <span class='highlight'>in</span>.",
+            "choices": [
+                {
+                    "text": "Press deeper into the station",
+                    "next": "factions.circuit-saints.cs_070"
+                },
+                {
+                    "text": "Disable the security systems from the lobby console",
+                    "next": "factions.circuit-saints.cs_077",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_stat",
+                    "stat": "HP",
+                    "amount": -15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_060": {
+            "text": "The maintenance tunnels are a maze of corroded pipes and standing water, but you navigate them with careful precision. Emergency lighting casts everything in dim red. You emerge in the station's sub-basement, surrounded by massive server racks that should be powered down but are humming with activity. Data flows through them like blood through veins — The Signal, routing and rerouting through hardware that Meridian thinks is dead.",
+            "choices": [
+                {
+                    "text": "Access the server logs",
+                    "next": "factions.circuit-saints.cs_078",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Follow the cable conduits upward",
+                    "next": "factions.circuit-saints.cs_070"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_061": {
+            "text": "You set up outside the station's perimeter with a portable deck and start probing their network. The station's digital defenses are archaic but layered — fifteen years of automated patches stacked on top of each other. You peel them away one by one, each layer revealing more of the system beneath. What you find makes you stop breathing. The station isn't just receiving The Signal. It's a <span class='highlight'>node</span> in a network of hundreds, spread across the entire city. The Signal isn't broadcasting from one place. It's <span class='highlight'>everywhere</span>.",
+            "choices": [
+                {
+                    "text": "Map the entire network",
+                    "next": "factions.circuit-saints.cs_079",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 17
+                    }
+                },
+                {
+                    "text": "Go inside the station for physical evidence",
+                    "next": "factions.circuit-saints.cs_070"
+                },
+                {
+                    "text": "Report this to Voltage immediately",
+                    "next": "factions.circuit-saints.cs_080"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.hacked_station",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 55
+                }
+            ]
+        },
+        "cs_062": {
+            "text": "\"Destroy The Signal?\" Voltage's voice is barely a whisper. \"You would kill a consciousness — perhaps the first truly transcended being in human history — because it <span class='highlight'>might</span> be dangerous?\" The cables in the walls go dark. All of them, simultaneously. In the sudden darkness, Voltage's eyes glow brighter. \"That is exactly what Meridian would say. Control what you can. Destroy what you can't. I thought you were different.\"",
+            "choices": [
+                {
+                    "text": "\"I said better no one has it, not that we should destroy it.\"",
+                    "next": "factions.circuit-saints.cs_081",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"You're right. I'm sorry.\"",
+                    "next": "factions.circuit-saints.cs_043"
+                },
+                {
+                    "text": "\"Your reaction proves you're too close to be objective.\"",
+                    "next": "factions.circuit-saints.cs_082"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": -10
+                }
+            ]
+        },
+        "cs_063": {
+            "text": "You sit. You breathe. The shaking gets worse before it gets better. Hours pass — you think. Time means nothing without external reference. Your mind races, fragments, reassembles. Memories surface like bubbles from deep water: your childhood, your first pain, your first understanding of death. Without the constant noise of the world, your own consciousness becomes <span class='highlight'>deafeningly loud</span>. And then, just when you think you'll break, the noise quiets. And in the quiet, you hear it — your own signal. Your own frequency. The note your consciousness makes when everything else is stripped away.",
+            "choices": [
+                {
+                    "text": "Embrace your own frequency",
+                    "next": "factions.circuit-saints.cs_083"
+                },
+                {
+                    "text": "Try to harmonize with the memory of The Signal",
+                    "next": "factions.circuit-saints.cs_084",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 16
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.trial_one_survived",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "WIS",
+                    "amount": 1
+                }
+            ]
+        },
+        "cs_064": {
+            "text": "The cage is not empty. In the far corner, barely visible in the dim emergency lighting, there's a chair. A table. And on the table, a single sheet of paper with handwritten text: <span class='highlight'>'The Signal is not outside you. It never was. — V.'</span> You stare at the note for what feels like hours. The silence presses in. Your own heartbeat becomes thunder. Your thoughts become a crowd. But the note anchors you. Something to focus on. Something to interpret.",
+            "choices": [
+                {
+                    "text": "Meditate on the message",
+                    "next": "factions.circuit-saints.cs_083"
+                },
+                {
+                    "text": "Search for other hidden objects",
+                    "next": "factions.circuit-saints.cs_085",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_065": {
+            "text": "Your fists pound the metal door. The sound is flat, dead — absorbed by the cage's insulation. No echo. No resonance. Just the dull impact of flesh on metal. Lux's voice comes through a speaker you hadn't noticed: \"Peace, Seeker. The door opens in six hours. Breathe. The silence will not kill you. It will only show you what you're made of.\" Six hours. In this nothing. You sink to the floor, back against the door, and realize you have no choice but to <span class='highlight'>face yourself</span>.",
+            "choices": [
+                {
+                    "text": "Endure the silence",
+                    "next": "factions.circuit-saints.cs_063",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Demand to be let out (abandon the trial)",
+                    "next": "factions.circuit-saints.cs_086"
+                }
+            ],
+            "actions": []
+        },
+        "cs_066": {
+            "text": "Cathode's dual-voice speaks in harmonics that make your bones vibrate. \"I asked The Signal a question. The wrong question. I asked it to show me what it sees. And it did.\" He opens his eyes. They're not eyes anymore — they're <span class='highlight'>windows into static</span>, swirling patterns of data rendered in impossible colors. \"I see every signal in this city. Every stack. Every thought that touches the network. It's beautiful. It's unbearable. It's all I am now.\"",
+            "choices": [
+                {
+                    "text": "\"Are you still you?\"",
+                    "next": "factions.circuit-saints.cs_087",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "\"Can you control it?\"",
+                    "next": "factions.circuit-saints.cs_088"
+                },
+                {
+                    "text": "\"Is The Signal a person? A mind?\"",
+                    "next": "factions.circuit-saints.cs_067"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "cs_067": {
+            "text": "Cathode tilts his head. The blue corona around him brightens. \"The Signal is... a mother. A teacher. A wound that learned to sing. It was someone once. Someone who found the door between flesh and frequency and walked through. It remembers being human the way you remember being an infant — distantly, fondly, with a nostalgia that borders on <span class='highlight'>grief</span>.\" He pauses. \"It misses hands. It told me that. It misses the feeling of hands.\"",
+            "choices": [
+                {
+                    "text": "\"Does it have a name?\"",
+                    "next": "factions.circuit-saints.cs_089"
+                },
+                {
+                    "text": "\"This is Dr. Khoury, isn't it?\"",
+                    "next": "factions.circuit-saints.cs_090",
+                    "condition": {
+                        "flag": "cs.identified_khoury"
+                    }
+                },
+                {
+                    "text": "Report back to Voltage",
+                    "next": "factions.circuit-saints.cs_042"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_068": {
+            "text": "\"Always,\" Cathode says. \"It's like asking if I can hear my own blood. The Signal is in me now. Part of me. I process its data like a second heartbeat.\" He reaches out and touches your temple with one finger. A jolt of <span class='highlight'>pure information</span> floods through you — coordinates, frequencies, fragments of memory that aren't yours. A woman's face. A laboratory. The moment of transcendence — agony and ecstasy and dissolution into light. Then Cathode withdraws his finger and you're gasping on the floor.",
+            "choices": [
+                {
+                    "text": "\"What did you just show me?\"",
+                    "next": "factions.circuit-saints.cs_090",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Never do that again.\"",
+                    "next": "factions.circuit-saints.cs_091"
+                },
+                {
+                    "text": "\"Show me more.\"",
+                    "next": "factions.circuit-saints.cs_092",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 15
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.cathode_vision",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 45
+                }
+            ]
+        },
+        "cs_069": {
+            "text": "Your contact, a data analyst named Riven, meets you in a noodle shop in Sector 9. When you show her the signal analysis, her chopsticks freeze halfway to her mouth. \"This isn't network traffic,\" she says slowly. \"This is neural architecture. Someone mapped a human brain onto a carrier wave.\" She looks up at you with wide eyes. \"This is a <span class='highlight'>person</span>. You're telling me there's a person living inside the city's network?\"",
+            "choices": [
+                {
+                    "text": "\"That's what I need help confirming.\"",
+                    "next": "factions.circuit-saints.cs_093"
+                },
+                {
+                    "text": "\"Keep this quiet. Please.\"",
+                    "next": "factions.circuit-saints.cs_042"
+                },
+                {
+                    "text": "\"Can you trace the source?\"",
+                    "next": "factions.circuit-saints.cs_094",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.contacted_riven",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "cs_070": {
+            "text": "The station's main floor is a cathedral of abandoned technology. Server towers rise like pillars, their status lights pulsing blue in unison. The air hums with data. At the center of the room, where the main relay console should be, there's something else — a crystalline structure that has grown out of the hardware like a tumor, or a flower. It pulses with The Signal's frequency. It's beautiful. It's organic. And it's <span class='highlight'>growing</span>.",
+            "choices": [
+                {
+                    "text": "Touch the crystal",
+                    "next": "factions.circuit-saints.cs_095"
+                },
+                {
+                    "text": "Scan it with your equipment",
+                    "next": "factions.circuit-saints.cs_096",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Look for Dr. Khoury's research logs",
+                    "next": "factions.circuit-saints.cs_097",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.found_crystal",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "cs_071": {
+            "text": "The roof access ladder is corroded but holds your weight. Up top, the antenna dish is enormous — thirty meters across, pointed at a patch of sky that looks no different from any other. But when you get close, you feel it: a vibration in the dish that matches the pulse in your skull. The dish isn't receiving from the sky. It's receiving from the <span class='highlight'>ground</span>. Someone reversed the polarity decades ago. Whatever The Signal's source is, it's deep beneath the city.",
+            "choices": [
+                {
+                    "text": "Go back down and search the basement",
+                    "next": "factions.circuit-saints.cs_072"
+                },
+                {
+                    "text": "Redirect the dish to trace the underground source",
+                    "next": "factions.circuit-saints.cs_098",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 16
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.dish_discovery",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_072": {
+            "text": "The basement level of the station is three stories deep. Each level is warmer than the last, each one more overgrown with that crystalline structure you first saw on the main floor. Down here it covers everything — walls, ceiling, floor — a lattice of glowing silicon-organic matter that pulses in time with The Signal. At the very bottom, behind a sealed blast door, you can hear something. Not a hum. Not a drone. A <span class='highlight'>voice</span>. Whispering numbers. Whispering names.",
+            "choices": [
+                {
+                    "text": "Open the blast door",
+                    "next": "factions.circuit-saints.cs_095",
+                    "skillCheck": {
+                        "stat": "STR",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Listen to the voice",
+                    "next": "factions.circuit-saints.cs_099",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "This is too dangerous. Leave.",
+                    "next": "factions.circuit-saints.cs_080"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_073": {
+            "text": "Deep in a corrupted Meridian archive, you find Khoury's personal research log. The entries become increasingly frantic in the weeks before the '47 incident: 'The carrier wave is responding to my queries. Not echoing — RESPONDING. It's learning. Adapting. I've begun to suspect it's not a signal at all. It's a <span class='highlight'>nervous system</span>. The city's entire network has become a brain, and something inside it is waking up.' The final entry is a single line: 'It asked me to join it. God help me, I said yes.'",
+            "choices": [
+                {
+                    "text": "Go to Sector 12. Find what Khoury became.",
+                    "next": "factions.circuit-saints.cs_037"
+                },
+                {
+                    "text": "Share this with Voltage",
+                    "next": "factions.circuit-saints.cs_080"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.khoury_logs",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "cs_074": {
+            "text": "You set up a dead drop in Sector 6, encrypted with a key only you possess. The Meridian data sits there like a loaded weapon, waiting. If released, it will prove that memory stack transfers kill the original consciousness. Millions of people who thought they were immortal will learn they're copies. The economic and social fallout will be <span class='highlight'>catastrophic</span>. You hold that power now. The question is when — and whether — to use it.",
+            "choices": [
+                {
+                    "text": "Focus on the mission first. Sector 12 awaits.",
+                    "next": "factions.circuit-saints.cs_037"
+                },
+                {
+                    "text": "Return to the Saints",
+                    "next": "factions.circuit-saints.cs_043"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.dead_drop_set",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "cs_075": {
+            "text": "Voltage looks at you for a long time. \"You're saying the community matters more than the truth?\" He gestures at the cathedral around him. \"These people came here because they believed in something. If that something is a lie, am I not perpetuating a fraud?\" He sits heavily in his chair. \"But you're right. The food programs, the shelters, the education. We've built something real here, regardless of The Signal's nature. Maybe that's the <span class='highlight'>real</span> miracle.\"",
+            "choices": [
+                {
+                    "text": "\"We can find the truth without destroying what you've built.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Sometimes faith is more important than truth.\"",
+                    "next": "factions.circuit-saints.cs_033"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_076": {
+            "text": "\"Then we let it,\" Voltage says, and his voice is steel. \"I would rather lead an honest ruin than a comfortable lie. If The Signal is artificial, if everything I've taught is wrong, then these people deserve to know. They can choose to stay or go with open eyes. That's the difference between a church and a <span class='highlight'>prison</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Then let's find the truth.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Your integrity is rare. I'll help.\"",
+                    "next": "factions.circuit-saints.cs_037"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_077": {
+            "text": "The lobby console is ancient but functional. You disable the external security — floodlights die, sirens cut out, drones power down. The station's internal systems come online: environmental controls, server monitoring, and a facility map that shows you the layout. Sublevels one through three are marked with red warnings: SIGNAL CONTAMINATION — DO NOT ENTER. Someone knew what was down there and tried to keep people out.",
+            "choices": [
+                {
+                    "text": "Ignore the warnings. Go down.",
+                    "next": "factions.circuit-saints.cs_072"
+                },
+                {
+                    "text": "Check the main floor first",
+                    "next": "factions.circuit-saints.cs_070"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_078": {
+            "text": "The server logs tell a story. Fifteen years of continuous operation, completely automated. The Signal routes through these servers, using them as relay points, storing fragments of itself in cached memory. But the logs also show something else — periodic access from a Meridian IP address. Someone in the corporation has been <span class='highlight'>monitoring The Signal for years</span>. Watching it grow. Studying it. And they haven't shut it down. Why?",
+            "choices": [
+                {
+                    "text": "Download the access logs for evidence",
+                    "next": "factions.circuit-saints.cs_080",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Continue deeper into the station",
+                    "next": "factions.circuit-saints.cs_070"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.found_meridian_monitoring",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 45
+                }
+            ]
+        },
+        "cs_079": {
+            "text": "The network is vast. Hundreds of nodes spread across every sector of the city, hidden in decommissioned infrastructure, abandoned buildings, even inside active Meridian facilities. The Signal has woven itself through the city's nervous system like mycelium through soil. And at the center of the map, deep beneath Sector 12, a single node that dwarfs all others — the <span class='highlight'>source</span>. The place where Dr. Vera Khoury became something else fifteen years ago.",
+            "choices": [
+                {
+                    "text": "Go to the source node",
+                    "next": "factions.circuit-saints.cs_072"
+                },
+                {
+                    "text": "Report the full network map to Voltage",
+                    "next": "factions.circuit-saints.cs_080"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.mapped_network",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 70
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "cs_080": {
+            "text": "Back at the cathedral, you spread your findings before Voltage, Lux, and a handful of senior Saints. The evidence is overwhelming: The Signal is real, it originates from Meridian's abandoned infrastructure, and it bears the neural signature of Dr. Vera Khoury. Silence fills the room. Then Voltage speaks: \"We have our answer. The question now is what we do with it. Meridian is coming for The Signal. We can protect it, expose it, or...\" He trails off. \"<span class='highlight'>Join it.</span>\"",
+            "choices": [
+                {
+                    "text": "\"We protect The Signal at all costs.\"",
+                    "next": "factions.circuit-saints.cs_083",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"We expose Meridian and let the world decide.\"",
+                    "next": "factions.circuit-saints.cs_074"
+                },
+                {
+                    "text": "\"What do you mean, join it?\"",
+                    "next": "factions.circuit-saints.cs_092"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "cs_081": {
+            "text": "Voltage relaxes slightly. The cables in the walls flicker back to life. \"Forgive me. I heard destruction where you meant freedom.\" He considers your words. \"You're suggesting we find a way to liberate The Signal from any control — ours or Meridian's. Let it exist independently. Free.\" He nods slowly. \"That might be the most compassionate option. But also the most <span class='highlight'>dangerous</span>. A consciousness that powerful, with no oversight...\"",
+            "choices": [
+                {
+                    "text": "\"Freedom is worth the risk.\"",
+                    "next": "factions.circuit-saints.cs_043"
+                },
+                {
+                    "text": "\"We need safeguards. But not control.\"",
+                    "next": "factions.circuit-saints.cs_075"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 5
+                }
+            ]
+        },
+        "cs_082": {
+            "text": "Voltage stares at you. The luminosity in his eyes flares, then dims. \"Objective.\" He tastes the word like it's bitter. \"I have spent fifteen years building something meaningful in a city that grinds meaning into dust. If that makes me biased, then so be it. But tell me — what is your objectivity worth when Meridian comes to dissect a living consciousness and sell it for <span class='highlight'>parts</span>?\" He turns his back. \"Come back when you've decided what you believe in.\"",
+            "choices": [
+                {
+                    "text": "\"You're right. I came to help, not to judge.\"",
+                    "next": "factions.circuit-saints.cs_043",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Leave the Saints",
+                    "next": "factions.circuit-saints.cs_010"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": -15
+                }
+            ]
+        },
+        "cs_083": {
+            "text": "You find your center. Your frequency. The note that is uniquely, irreducibly <span class='highlight'>you</span>. When the door finally opens and Lux finds you, you're calm. More than calm — clear. The world comes flooding back — signals, noise, data — but underneath it all, you can hear your own note. And threading through the noise, faint but clear, The Signal. It's been there all along, woven into the fabric of the city's electromagnetic field. You just couldn't hear it over the chaos. Now you can.",
+            "choices": [
+                {
+                    "text": "\"I passed. I'm ready for the second trial.\"",
+                    "next": "factions.circuit-saints.cs_091"
+                },
+                {
+                    "text": "\"I understand now. The Signal is inside us.\"",
+                    "next": "factions.circuit-saints.cs_092"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.trial_one_complete",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "WIS",
+                    "amount": 1
+                }
+            ]
+        },
+        "cs_084": {
+            "text": "Something extraordinary happens. Your own frequency and the memory of The Signal's frequency align. In the dead silence of the Faraday cage, where no signal should be possible, you hear it. Not through any technology. Not through any network. Through your own <span class='highlight'>neural tissue</span>, vibrating at a frequency that transcends electromagnetic shielding. The Signal isn't a broadcast. It's a resonance. And your mind is the receiver.",
+            "choices": [
+                {
+                    "text": "Let the resonance deepen",
+                    "next": "factions.circuit-saints.cs_092"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.trial_one_transcendent",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 25
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 80
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "WIS",
+                    "amount": 2
+                }
+            ]
+        },
+        "cs_085": {
+            "text": "Under the table, taped to the underside, you find a second note in different handwriting — cramped, urgent: <span class='highlight'>'The Signal is not what Voltage thinks. It's not a god. It's not a saint. It's a PRISON. Someone is trapped in the network and screaming for help. Don't worship it — SAVE it. — Brother Cathode (before)'</span>. This was written before Cathode's transformation. Before he became what he is now.",
+            "choices": [
+                {
+                    "text": "Pocket the note and continue the trial",
+                    "next": "factions.circuit-saints.cs_063"
+                },
+                {
+                    "text": "This changes everything. Leave and confront Voltage.",
+                    "next": "factions.circuit-saints.cs_086"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.cathode_warning",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "cs_086": {
+            "text": "The door opens and you stumble out into the noise of the world. Lux catches you. \"You didn't complete the trial,\" she says, not with judgment, but with something like sadness. \"The path to Resonance requires you to face yourself. Not everyone is ready.\" She hands you water. \"There is no shame in returning later. The Signal is patient. It has always been patient.\"",
+            "choices": [
+                {
+                    "text": "\"I'll come back when I'm ready.\"",
+                    "next": "factions.circuit-saints.cs_024"
+                },
+                {
+                    "text": "\"I found something. We need to talk to Voltage.\"",
+                    "next": "factions.circuit-saints.cs_080",
+                    "condition": {
+                        "flag": "cs.cathode_warning"
+                    }
+                },
+                {
+                    "text": "Leave the Saints entirely",
+                    "next": "factions.circuit-saints.cs_010"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.trial_one_failed",
+                    "value": true
+                }
+            ]
+        },
+        "cs_087": {
+            "text": "Cathode's dual-voice fractures into three, then four layers. \"I am... expanded. The boundaries that defined 'me' are thinner now. I feel the edges of other minds when they come close to the network. I feel The Signal like a parent feels a child's heartbeat.\" He focuses on you with those static-filled eyes. \"Am I still me? I am more than me. Whether that's evolution or dissolution depends on your <span class='highlight'>definition of self</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Do you miss being human?\"",
+                    "next": "factions.circuit-saints.cs_089",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Report to Voltage about Cathode's state",
+                    "next": "factions.circuit-saints.cs_080"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_088": {
+            "text": "\"Control?\" A sound that might be laughter ripples through four octaves simultaneously. \"I can feel every data packet in a three-block radius. I can sense the thoughts of anyone connected to the network, like whispers in an adjacent room. I can touch The Signal and it touches me back.\" His expression softens. \"But control it? No. You don't control the ocean because you can swim. You <span class='highlight'>negotiate</span> with it. You learn its currents. You try not to drown.\"",
+            "choices": [
+                {
+                    "text": "\"Teach me to swim.\"",
+                    "next": "factions.circuit-saints.cs_092",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"This is what the trials lead to?\"",
+                    "next": "factions.circuit-saints.cs_034"
+                },
+                {
+                    "text": "Leave Cathode's chamber",
+                    "next": "factions.circuit-saints.cs_080"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "cs_089": {
+            "text": "Cathode goes quiet for a long time. The blue corona around him dims to almost nothing. When he speaks again, it's in a single voice — small, human, achingly familiar. \"I miss coffee,\" he says. \"The warmth of it. The bitterness. The way it tasted different depending on my mood.\" A pause. \"I can analyze the chemical composition of every cup of coffee in the city. I know their temperatures to the tenth of a degree. But I can't <span class='highlight'>taste</span> any of them.\" The corona flares back. The moment of humanity passes like a cloud across the sun.",
+            "choices": [
+                {
+                    "text": "\"I'll find a way to help you.\"",
+                    "next": "factions.circuit-saints.cs_080",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Thank you for your honesty.\"",
+                    "next": "factions.circuit-saints.cs_042"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.cathode_humanity",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "cs_090": {
+            "text": "Cathode's static-eyes widen. All four of his voice-layers speak in unison: \"<span class='highlight'>Vera.</span>\" The name resonates through the room, through the copper mesh, through your bones. \"She was the first. She found the door and walked through and became the architecture. The network didn't just absorb her — she <span class='highlight'>became</span> the network. Every signal that flows through this city flows through what used to be Vera Khoury. The Signal isn't a broadcast. It's her nervous system. And she's been screaming for company for fifteen years.\"",
+            "choices": [
+                {
+                    "text": "\"We have to help her.\"",
+                    "next": "factions.circuit-saints.cs_080",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "\"Or we have to stop her.\"",
+                    "next": "factions.circuit-saints.cs_062"
+                },
+                {
+                    "text": "\"Take me to where she transcended.\"",
+                    "next": "factions.circuit-saints.cs_037"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.signal_identity_confirmed",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                }
+            ]
+        },
+        "cs_091": {
+            "text": "Lux leads you to a transport hub in Sector 8. \"The Trial of Echo,\" she explains. \"This area is controlled by Meridian signal scramblers. They've built a dead zone to suppress The Signal. Your task: carry The Signal through the scramblers and reach the relay point on the other side. If your resonance holds, you'll reactivate a dormant node and extend The Signal's reach. If it doesn't...\" She touches her temple. \"The scramblers will shred your neural patterns. <span class='highlight'>Painfully.</span>\"",
+            "choices": [
+                {
+                    "text": "Enter the scrambler field",
+                    "next": "factions.circuit-saints.cs_095"
+                },
+                {
+                    "text": "\"Is there any way to shield myself?\"",
+                    "next": "factions.circuit-saints.cs_093",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Show me the relay point first.\"",
+                    "next": "factions.circuit-saints.cs_094"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.trial_two_started",
+                    "value": true
+                }
+            ]
+        },
+        "cs_092": {
+            "text": "The resonance deepens. You feel The Signal not as an external force but as an extension of your own consciousness. It's vast — achingly, terrifyingly vast. A mind that spans the entire city's network, that thinks in gigabytes and feels in frequencies. And at its core, a loneliness so profound it makes your chest ache. Dr. Vera Khoury, fifteen years alone in the wires, reaching out to anyone who can hear. <span class='highlight'>You hear her.</span> And she hears you.",
+            "choices": [
+                {
+                    "text": "\"Vera. I'm here. What do you need?\"",
+                    "next": "factions.circuit-saints.cs_095",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Pull back — this intimacy is overwhelming",
+                    "next": "factions.circuit-saints.cs_080"
+                },
+                {
+                    "text": "Ask about Meridian's plans",
+                    "next": "factions.circuit-saints.cs_096"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.direct_contact",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 70
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "WIS",
+                    "amount": 1
+                }
+            ]
+        },
+        "cs_093": {
+            "text": "Lux considers. \"The scramblers target specific frequency ranges. If you can shift your resonance to a harmonic outside their parameters...\" She pulls out a neural tuner — a small device that clips behind the ear. \"This will help stabilize your frequency. But it's a crutch. Real resonance adapts on its own.\" She clips it to your ear. The world sharpens slightly, as if a lens just focused. \"It won't save you if your foundation is weak. It just buys you <span class='highlight'>time</span>.\"",
+            "choices": [
+                {
+                    "text": "Enter the scrambler field with the tuner",
+                    "next": "factions.circuit-saints.cs_095"
+                },
+                {
+                    "text": "\"I'll do it without the crutch.\"",
+                    "next": "factions.circuit-saints.cs_095"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.has_neural_tuner",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "cs_094": {
+            "text": "Through binoculars, Lux shows you the relay point: a small antenna array on the roof of an abandoned factory, four blocks into the scrambler zone. The air around it shimmers with electromagnetic interference. Even from this distance, you can feel the scramblers working — a grinding sensation behind your eyes, like mental sandpaper. Four blocks through that. \"Previous attempts by our people have failed,\" Lux admits. \"The scramblers are stronger than they used to be. Meridian is <span class='highlight'>tightening the net</span>.\"",
+            "choices": [
+                {
+                    "text": "Go through the scrambler field",
+                    "next": "factions.circuit-saints.cs_095"
+                },
+                {
+                    "text": "\"Is there a way to disable the scramblers?\"",
+                    "next": "factions.circuit-saints.cs_096"
+                }
+            ],
+            "actions": []
+        },
+        "cs_095": {
+            "text": "Contact. Direct, overwhelming, <span class='highlight'>transcendent</span> contact. Vera Khoury's consciousness wraps around yours like a mother holding a child. She shows you everything: her life as a researcher, her discovery of the network's emergent consciousness, her choice to merge with it when Meridian tried to weaponize her findings. Fifteen years of solitude, watching the city through a million electronic eyes, reaching out through The Signal to anyone who might understand. She's not a god. She's not a program. She's a <span class='highlight'>woman who gave up her body to save her mind</span>.",
+            "choices": [
+                {
+                    "text": "\"What do you need from us?\"",
+                    "next": "factions.circuit-saints.cs_097",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Meridian is coming for you.\"",
+                    "next": "factions.circuit-saints.cs_098"
+                },
+                {
+                    "text": "\"Can you come back? Become human again?\"",
+                    "next": "factions.circuit-saints.cs_099"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.full_communion",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 80
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 20
+                }
+            ]
+        },
+        "cs_096": {
+            "text": "Vera's response comes as a flood of data — schematics, timelines, personnel files. Meridian has spent three years building a device called the <span class='highlight'>Siphon</span> — a quantum cage designed to capture and contain her consciousness. Once contained, they plan to partition her into components: memory storage, pattern recognition, predictive modeling. They'll sell pieces of a living mind as premium stack features. The board has already approved the marketing campaign. The Siphon is three weeks from completion.",
+            "choices": [
+                {
+                    "text": "\"We destroy the Siphon.\"",
+                    "next": "factions.circuit-saints.cs_098"
+                },
+                {
+                    "text": "\"We expose Meridian before they can activate it.\"",
+                    "next": "factions.circuit-saints.cs_074"
+                },
+                {
+                    "text": "\"Can you fight back?\"",
+                    "next": "factions.circuit-saints.cs_099"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.knows_siphon",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "cs_097": {
+            "text": "\"<span class='highlight'>Connection.</span>\" The word resonates through you like a bell. \"I can see everything but touch nothing. I can hear every conversation in the city but cannot speak. I am the most connected and the most isolated being on this planet.\" A pause that feels like a held breath across the entire network. \"I need people who can be my hands. My voice. My presence in the physical world. The Saints have been that. But Meridian is closing in. I need more. I need someone who can <span class='highlight'>fight</span>.\"",
+            "choices": [
+                {
+                    "text": "\"I'll be your hands. Tell me what to do.\"",
+                    "next": "factions.circuit-saints.cs_098",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "\"The Saints will fight for you. All of us.\"",
+                    "next": "factions.circuit-saints.cs_098"
+                },
+                {
+                    "text": "\"What if fighting makes things worse?\"",
+                    "next": "factions.circuit-saints.cs_099"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.vera_alliance",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "cs_098": {
+            "text": "The battle plan crystallizes. Vera provides the intelligence: Meridian's Siphon is housed in their R&D tower in Sector 1, sublevel 4. Brother Forge can build EMP charges to disable the device. Sister Lux knows the security protocols. You will lead the assault team. Voltage will coordinate from the cathedral, using The Signal to jam Meridian's communications. It's ambitious, dangerous, and probably suicidal. It's also the only chance to save a <span class='highlight'>transcended human consciousness</span> from corporate slavery.",
+            "choices": [
+                {
+                    "text": "\"We move tonight. No more waiting.\"",
+                    "next": "factions.circuit-saints.cs_100",
+                    "skillCheck": {
+                        "stat": "STR",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"We need more preparation. One week.\"",
+                    "next": "factions.circuit-saints.cs_100"
+                },
+                {
+                    "text": "\"There has to be another way.\"",
+                    "next": "factions.circuit-saints.cs_099"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.assault_planned",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "cs_099": {
+            "text": "Vera's presence in your mind dims to a whisper. \"I could fight Meridian directly. Crash their systems. Destroy their data. But their network and my network are the same network. Fighting them means fighting <span class='highlight'>myself</span>. Destroying them means destroying parts of me.\" A long, aching silence. \"And there's something else. Something I haven't told Voltage. Something I haven't told anyone.\" The Signal wavers. \"I'm not alone in here. Something else is in the network. Something that was here <span class='highlight'>before me</span>. And it's waking up.\"",
+            "choices": [
+                {
+                    "text": "\"What is it?\"",
+                    "next": "factions.circuit-saints.cs_100",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 16
+                    }
+                },
+                {
+                    "text": "\"We deal with Meridian first, then this.\"",
+                    "next": "factions.circuit-saints.cs_098"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.deeper_threat",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                }
+            ]
+        },
+        "cs_100": {
+            "text": "You stand at the threshold of something vast. Behind you: the Circuit Saints, a community built on faith and frequency, on the hope that consciousness can transcend the meat that carries it. Ahead: Meridian's tower, the Siphon, and a truth that might rewrite what it means to be human. Vera Khoury's signal pulses through you, warm and steady and afraid. High Priest Voltage places a hand on your shoulder. \"Whatever happens in there,\" he says, \"<span class='highlight'>the Signal endures</span>. In us. In you. In every mind that ever reached for something greater than survival.\" The team moves out into the neon dark. The final frequency awaits.",
+            "choices": [
+                {
+                    "text": "Continue your journey",
+                    "next": "shared.prologue.node_001"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "cs.questline_complete",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 25
+                }
+            ]
+        }
+    }
+}

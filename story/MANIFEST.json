@@ -1,48 +1,67 @@
 {
-    "version": "1.0",
-    "totalNodes": 0,
-    "acts": {
-        "prologue": {
-            "files": ["shared/prologue.json"],
-            "nodeCount": 42
-        },
-        "act1": {
-            "files": [
-                "act1/chapter1-enforcer.json",
-                "act1/chapter1-hacker.json",
-                "act1/chapter1-medic.json",
-                "act1/chapter1-smuggler.json",
-                "act1/chapter2-iron-neon.json",
-                "act1/chapter2-saints-ghost.json",
-                "act1/chapter2-ashen.json",
-                "act1/chapter3.json",
-                "act1/chapter4.json"
-            ],
-            "nodeCount": 304
-        },
-        "act2": {
-            "files": ["act2/chapter1.json", "act2/chapter2.json", "act2/chapter3.json"],
-            "nodeCount": 0
-        },
-        "act3": {
-            "files": ["act3/chapter1.json"],
-            "nodeCount": 0
-        },
-        "act4": {
-            "files": ["act4/chapter1.json"],
-            "nodeCount": 0
-        },
-        "act5": {
-            "files": ["act5/chapter1.json", "act5/chapter2.json", "act5/chapter3.json"],
-            "nodeCount": 0
-        }
-    },
-    "totalEndings": 105,
-    "endingsByAct": {
-        "act1": 10,
-        "act2": 10,
-        "act3": 10,
-        "act4": 15,
-        "act5": 60
-    }
+  "version": "2.0",
+  "generated": "2026-03-20T05:11:43Z",
+  "totalNodes": 2550,
+  "note": "Node counts auto-generated. Ghost Syndicate, Enforcer, Hacker jobs, side quests, and random encounters still in production.",
+  "origins": {
+    "cyborg.json": 100,
+    "dark_elf.json": 100,
+    "dwarf.json": 110,
+    "half_giant.json": 100,
+    "human.json": 100,
+    "orc.json": 100,
+    "shadowkin.json": 100,
+    "synth.json": 100,
+    "voidborn.json": 100,
+    "wood_elf.json": 100
+  },
+  "shared": {
+    "prologue.json": 59
+  },
+  "act1": {
+    "chapter1-enforcer.json": 29,
+    "chapter1-hacker.json": 23,
+    "chapter1-medic.json": 32,
+    "chapter1-smuggler.json": 31,
+    "chapter2-ashen.json": 15,
+    "chapter2-iron-neon.json": 30,
+    "chapter2-saints-ghost.json": 36,
+    "chapter3.json": 56,
+    "chapter4.json": 63
+  },
+  "act2": {
+    "chapter1.json": 54,
+    "chapter2.json": 45,
+    "chapter3.json": 51
+  },
+  "act3": {
+    "chapter1.json": 51
+  },
+  "act4": {
+    "chapter1.json": 55
+  },
+  "act5": {
+    "chapter1.json": 50,
+    "chapter2.json": 40,
+    "chapter3a.json": 24,
+    "chapter3b.json": 21
+  },
+  "endings": {
+    "combat-endings.json": 15
+  },
+  "factions": {
+    "ashen-circle.json": 100,
+    "circuit-saints.json": 100,
+    "iron-collective.json": 100,
+    "neon-court.json": 100,
+    "ghost-syndicate.json": "in-progress"
+  },
+  "jobs": {
+    "diplomat.json": 80,
+    "gladiator.json": 80,
+    "medic.json": 100,
+    "smuggler.json": 100,
+    "enforcer.json": "in-progress",
+    "hacker.json": "in-progress"
+  }
 }

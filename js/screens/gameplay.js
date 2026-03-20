@@ -1143,6 +1143,10 @@ window.Latency.Screens.Gameplay = (function () {
             if (available) {
                 (function (choiceData, choiceIndex) {
                     _bind(btn, 'click', function () {
+                        // Play click SFX on choice selection
+                        if (window.Latency.SfxManager) {
+                            window.Latency.SfxManager.play('click');
+                        }
                         if (window.Latency.Narrative && window.Latency.Narrative.makeChoice) {
                             window.Latency.Narrative.makeChoice(choiceIndex, choiceData);
                         } else {
@@ -1287,18 +1291,33 @@ window.Latency.Screens.Gameplay = (function () {
             }
 
             if (window.Latency.Narrative) {
-                var isFreshStart = !!(params && params.nodeId);
                 var existingNode = window.Latency.Narrative.getCurrentNode
                     ? window.Latency.Narrative.getCurrentNode() : null;
+                var existingNodeId = window.Latency.Narrative.getCurrentNodeId
+                    ? window.Latency.Narrative.getCurrentNodeId() : null;
 
-                if (!isFreshStart && existingNode) {
+                // Determine if this is a genuine fresh start (new game / character creation)
+                // vs. returning from an overlay (inventory, map, settings, etc.).
+                // We compare the Narrative's current node ID against the last node ID
+                // we displayed.  If they match, the player simply opened and closed an
+                // overlay — show the text instantly (no typewriter replay).
+                // If params.nodeId is provided AND differs from the existing node, treat
+                // it as a fresh navigation (character creation / new game).
+                var isFreshStart = params && params.nodeId && params.nodeId !== existingNodeId;
+                var isOverlayReturn = !isFreshStart
+                    && existingNode && existingNodeId
+                    && existingNodeId === _lastDisplayedNodeId;
+
+                if (isOverlayReturn) {
                     // Returning from overlay — render current node statically (no typewriter)
-                    var existingNodeId = window.Latency.Narrative.getCurrentNodeId
-                        ? window.Latency.Narrative.getCurrentNodeId() : null;
                     _renderStoryNodeStatic({ nodeId: existingNodeId, node: existingNode });
+                    _lastDisplayedNodeId = existingNodeId;
                     console.log('[Gameplay] Static restore (overlay return):', existingNodeId);
                 } else if (window.Latency.Narrative.loadNode) {
-                    // Fresh load — use typewriter
+                    // Fresh load (new game, character creation, or first mount) — use typewriter
+                    if (isFreshStart) {
+                        _lastDisplayedNodeId = null;
+                    }
                     var _loadTimerId = setTimeout(function() {
                         window.Latency.Narrative.loadNode(nodeId).catch(function(err) {
                             console.error('[Gameplay] Failed to load node:', err.message);

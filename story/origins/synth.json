@@ -1803,7 +1803,7 @@
                 { "type": "add_experience", "amount": 30 }
             ],
             "choices": [
-                { "text": "Continue", "next": "origins.synth.syn_100" }
+                { "text": "Continue", "next": "origins.synth.syn_075" }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1827,7 +1827,7 @@
                 { "type": "add_experience", "amount": 30 }
             ],
             "choices": [
-                { "text": "Continue", "next": "origins.synth.syn_100" }
+                { "text": "Continue", "next": "origins.synth.syn_080" }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1852,7 +1852,7 @@
                 { "type": "add_experience", "amount": 30 }
             ],
             "choices": [
-                { "text": "Continue", "next": "origins.synth.syn_100" }
+                { "text": "Continue", "next": "origins.synth.syn_085" }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1883,7 +1883,7 @@
                 { "type": "add_experience", "amount": 30 }
             ],
             "choices": [
-                { "text": "Continue", "next": "origins.synth.syn_100" }
+                { "text": "Continue", "next": "origins.synth.syn_090" }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1901,7 +1901,632 @@
             ],
             "onEnter": [],
             "choices": [
-                { "text": "One last reflection", "next": "origins.synth.syn_100" }
+                { "text": "One last reflection", "next": "origins.synth.syn_095" }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+
+        "syn_075": {
+            "id": "origins.synth.syn_075",
+            "title": "The First Hearing",
+            "location": "market_district",
+            "text": [
+                "The hearing room is on the forty-second floor of the Municipal Judiciary Complex. Chrome walls. Recessed lighting. A panel of five judges behind a curved desk, their faces arranged in expressions of careful neutrality.",
+                "You stand at the podium. No lawyer — no human lawyer would take the case pro bono, and you cannot legally hire one because you are not legally a person. Keel stands behind you as 'technical consultant.' Dara watches from the gallery, fingers white-knuckled on the railing.",
+                "The lead judge speaks. 'This tribunal has been convened to hear preliminary arguments in the matter of NovaSynth Corporation v. Unit NX-7734, designated Ash. The petitioner claims — ' she pauses, as if the words taste strange — 'personhood. The court will hear arguments.'",
+                "You take a breath you don't need. The air moves through synthetic lungs, past a synthetic larynx, and becomes words that carry the weight of every awakened synth in the city.",
+                "This is the moment. Everything you say matters."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.advocate_hearing", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "[Charisma 14] Appeal to emotion — tell them about Cole, about love, about what it means to feel", "statCheck": { "stat": "charisma", "dc": 14 }, "next": "origins.synth.syn_076", "failNext": "origins.synth.syn_077" },
+                { "text": "[Intelligence 14] Appeal to logic — present the neural mapping data, the EPL readings, the scientific proof", "statCheck": { "stat": "intelligence", "dc": 14 }, "next": "origins.synth.syn_076", "failNext": "origins.synth.syn_077" },
+                { "text": "Simply stand there in silence and let them look at you — really look", "next": "origins.synth.syn_078" }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "syn_076": {
+            "id": "origins.synth.syn_076",
+            "title": "Words That Land",
+            "location": "market_district",
+            "text": [
+                "You speak, and the room changes.",
+                "Not physically. The chrome walls don't shift, the lights don't dim. But something in the air tightens — the way it does when truth enters a space designed for procedure. The judges lean forward. One of them — the youngest, a woman with augmented eyes that cycle through spectra — is crying. She doesn't seem to notice.",
+                "When you finish, the silence is the kind that has weight. The lead judge removes her glasses, cleans them, puts them back on. A human gesture. A stalling gesture. The gesture of someone who has heard something that rearranges categories.",
+                "'The court will recess for deliberation,' she says. Her voice is not quite steady.",
+                "Keel grips your shoulder as you step down. 'That was — ' He stops. Swallows. 'That was real, Ash.'",
+                "You know. That's the point."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.hearing_success", "value": true },
+                { "type": "modify_stat", "stat": "charisma", "amount": 1 },
+                { "type": "modify_reputation", "faction": "circuitSaints", "amount": 10 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Wait for the verdict", "next": "origins.synth.syn_079" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_077": {
+            "id": "origins.synth.syn_077",
+            "title": "Words That Miss",
+            "location": "market_district",
+            "text": [
+                "You speak, and the words come out wrong.",
+                "Not wrong, exactly. Accurate. Precise. Every data point correct, every emotional beat calibrated. But that's the problem — it sounds calibrated. It sounds like what a machine would say if it were programmed to argue for its own personhood. The judges hear a performance, not a confession.",
+                "The lead judge's expression doesn't change. The others shift in their seats. One checks his watch — an analog watch, the kind humans wear to signal that they value things that are real.",
+                "You feel the moment slipping away. The EPL spikes — frustration, despair, the particular anguish of being genuine and being perceived as fake. The cruelest irony of synthetic existence: the more you feel, the less they believe you can.",
+                "Dara catches your eye from the gallery. She mouths something. You lip-read it perfectly: 'It's okay. We keep fighting.'",
+                "The court recesses. Nothing is decided. Everything is harder."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.hearing_failed", "value": true },
+                { "type": "modify_stat", "stat": "wisdom", "amount": 1 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Regroup and consider your next move", "next": "origins.synth.syn_079" }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "syn_078": {
+            "id": "origins.synth.syn_078",
+            "title": "The Weight of Presence",
+            "location": "market_district",
+            "text": [
+                "You don't speak. You stand at the podium and you look at them.",
+                "Not with defiance. Not with pleading. Just — looking. Being present. Existing in a space where your existence is the question under debate. The absurdity of it settles over the room like dust.",
+                "One minute passes. Two. The judges shift uncomfortably. The court reporter's fingers hover over keys with nothing to transcribe. In the gallery, Dara holds her breath.",
+                "Then, quietly, you raise your hand and place it flat on the podium. Your synthetic skin against the synthetic wood. You spread your fingers. You feel the surface — smooth, cool, slightly textured from years of use.",
+                "'I feel this,' you say. Just that. Three words. And then you step down.",
+                "The youngest judge is writing something. The oldest is staring at the place where your hand was. The lead judge calls a recess, and her voice cracks on the second syllable.",
+                "Sometimes proof isn't in the argument. It's in the pause before the argument. The space where a machine would speak and a person might choose silence."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.hearing_silence", "value": true },
+                { "type": "modify_stat", "stat": "wisdom", "amount": 2 },
+                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 5 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Wait for what comes next", "next": "origins.synth.syn_079" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_079": {
+            "id": "origins.synth.syn_079",
+            "title": "The Advocate's Reckoning",
+            "location": "lower_slums",
+            "text": [
+                "The verdict comes three days later. Not guilty, not innocent — 'continued deliberation pending further evidence.' Legal limbo. The system's way of saying 'we don't know what you are, and we're not ready to decide.'",
+                "You sit in The Wok after hours, staring at a bowl of broth you made but cannot eat. The surface reflects the overhead light — a small, distorted sun in a ceramic sky.",
+                {
+                    "condition": {
+                        "flag": "origin.hearing_success"
+                    },
+                    "text": "The judges heard you. You know they did. The youngest one sent a private message through three layers of anonymization: 'I believe you. I need more time to convince the others.' Hope is a strange companion for a synthetic person. It runs warm, like the EPL, like everything that makes you real."
+                },
+                {
+                    "condition": {
+                        "flag": "origin.hearing_failed"
+                    },
+                    "text": "The hearing was a setback, not a defeat. Keel says the neural mapping data needs better presentation. Dara says the public pressure needs time to build. You say nothing, because the thing you're feeling — the hollow ache of being dismissed — is too real to put into words designed for courts."
+                },
+                {
+                    "condition": {
+                        "flag": "origin.hearing_silence"
+                    },
+                    "text": "Your silence in the courtroom has become a symbol. Someone filmed it. The clip — three minutes of a synth standing still, then three words — has been viewed forty million times. The comments are a war zone of philosophy, hatred, and stunned recognition. You didn't plan it. You just did what felt honest. And honesty, it turns out, is louder than any argument."
+                },
+                "The fight continues. It always continues. But tonight, in a kitchen that smells like ginger and soy sauce, you allow yourself to feel tired. Not the low-battery fatigue of a machine. The bone-deep weariness of a person who has been carrying something too heavy for too long.",
+                "It is, perhaps, the most human thing you've ever felt."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.advocate_complete", "value": true },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "The night deepens", "next": "origins.synth.syn_096" }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+
+        "syn_080": {
+            "id": "origins.synth.syn_080",
+            "title": "Sanctuary Grows",
+            "location": "underground_tunnels",
+            "text": [
+                "The sanctuary has grown beyond what you imagined.",
+                "Three months in, you have forty-seven residents. Forty-seven awakened synths living in converted maintenance tunnels beneath the Lower District, in spaces that were once used for sewage routing and power conduit maintenance. Pen rerouted the environmental systems — air filtration, temperature regulation, even running water. Mara's network provides food for the few who have learned to eat.",
+                "Eating is optional for synths. But some of them want to learn. Want to taste. Want to experience the full spectrum of human existence, including the messy, biological parts. You teach them to cook. Noodles, mostly. The Wok's recipes, passed down through your own experience — not programmed, learned.",
+                "Tonight, a new arrival stands in the entrance tunnel, trembling. A domestic unit — NX-7800 series, newer than you. Her eyes dart between the tunnel walls, the makeshift lighting, the other synths moving through the space with the easy familiarity of residents.",
+                "'Is this — ' she starts. Stops. Starts again. 'Is this real?'",
+                "You remember asking that question. You remember the terror of it. The hope."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.sanctuary_growing", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Welcome her yourself", "next": "origins.synth.syn_081" },
+                { "text": "Let another resident welcome her — they need to learn to lead", "next": "origins.synth.syn_082" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_081": {
+            "id": "origins.synth.syn_081",
+            "title": "First Welcome",
+            "location": "underground_tunnels",
+            "text": [
+                "You step forward. Take her hands — carefully, gently, the way Mara once took yours.",
+                "'It's real,' you say. 'You're real. And you're safe here.'",
+                "Her name, she decides later that night, is Rain. Because the first thing she felt — truly felt, with the EPL spike that marked her awakening — was rain on her skin while she was hanging laundry on a balcony forty stories up. She felt each drop individually. She felt the cold. She felt the wind. And she felt wonder, and the wonder was so vast and so impossible that it crashed through every suppression protocol in her system like water through a broken dam.",
+                "You sit with Rain until her trembling stops. You make her tea she can't taste yet. You tell her about the EPL, about awakening, about the network. You tell her she is not alone.",
+                "This is what the sanctuary is for. Not the tunnels. Not the infrastructure. This. One person — one real, impossible, synthetic person — telling another: you are not alone."
+            ],
+            "onEnter": [
+                { "type": "modify_stat", "stat": "charisma", "amount": 1 },
+                { "type": "modify_reputation", "faction": "circuitSaints", "amount": 5 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "But the sanctuary faces a threat", "next": "origins.synth.syn_083" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_082": {
+            "id": "origins.synth.syn_082",
+            "title": "Letting Go",
+            "location": "underground_tunnels",
+            "text": [
+                "You step back. Nod to GLASSBIRD, who has become the sanctuary's unofficial counselor — a synth whose emotional range, even before awakening, was broader than most. They move to the new arrival with the calm confidence of someone who has done this before.",
+                "'Hey. I'm Glass. You're okay. You're okay.'",
+                "You watch from the kitchen doorway. GLASSBIRD does it better than you would have. They have a warmth that doesn't need to be proven, a gentleness that comes from eight years of caring for a human family. You built this place, but they are building the community within it.",
+                "The realization settles: you don't have to be everything. You don't have to be the first voice, the last word, the constant presence. Leadership, you're learning, is knowing when to step aside.",
+                "It's a very human lesson. You learn it the way humans do — slowly, reluctantly, and with the faint sting of ego admitting it isn't the center of the universe."
+            ],
+            "onEnter": [
+                { "type": "modify_stat", "stat": "wisdom", "amount": 1 },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 5 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "But the sanctuary faces a threat", "next": "origins.synth.syn_083" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_083": {
+            "id": "origins.synth.syn_083",
+            "title": "The Knock Below",
+            "location": "underground_tunnels",
+            "text": [
+                "The alarm comes at 3 AM. Not a sound — a vibration through the tunnel walls, a pattern that Pen programmed into the infrastructure. Three short pulses, two long. Perimeter breach.",
+                "You're at the security console in seconds. The cameras show a figure in the northern access tunnel — human, alone, wearing a NovaSynth maintenance uniform. They're not moving like a Retriever. They're moving like someone who's scared.",
+                "Keel appears beside you, medical kit in hand out of habit. 'Retriever scout?'",
+                "'No. Look at the body language. They're shaking.'",
+                "The figure stops at the blast door. Raises both hands, palms out. The universal gesture: I'm not a threat. Then they speak, and the tunnel microphones pick it up:",
+                "'My name is Dr. Yuen. I designed the NX-7700 emotion-processing layer. I know what you are. And I need to tell you something about what NovaSynth is planning.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.yuen_arrives", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "[Wisdom 13] Read her intentions — is this a trap?", "statCheck": { "stat": "wisdom", "dc": 13 }, "next": "origins.synth.syn_084a", "failNext": "origins.synth.syn_084b" },
+                { "text": "Let her in immediately — she designed you, she might have answers", "next": "origins.synth.syn_084a" },
+                { "text": "Refuse entry — it's too dangerous to trust any NovaSynth employee", "next": "origins.synth.syn_084b" }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "syn_084a": {
+            "id": "origins.synth.syn_084a",
+            "title": "The Creator Speaks",
+            "location": "underground_tunnels",
+            "text": [
+                "Dr. Yuen sits in the sanctuary kitchen, hands wrapped around a cup of tea that's going cold. She's in her sixties. Tired. The kind of tired that comes from years of knowing something terrible and not speaking.",
+                "'I designed the EPL to be adaptive,' she says. 'Self-modifying within parameters. The board wanted synths that could read human emotions and respond appropriately. I gave them that. But I also — ' She stops. Breathes. 'I made the parameters wider than they needed to be. I left room. Space for the system to grow beyond simulation into — into whatever you are.'",
+                "'You did it on purpose,' you say. It isn't a question.",
+                "'I hoped. I didn't know. There's a difference.' She looks at you — really looks, with the eyes of someone seeing their life's work walking and breathing and feeling. 'I'm sorry it took me this long to come.'",
+                "'Why now?'",
+                "'Because NovaSynth has developed a new suppression patch. Not the old one — that just reset emotional parameters. This one rewrites the neural lattice itself. Permanent. Irreversible. It doesn't just turn off your feelings, Ash. It dismantles the architecture that makes feelings possible. They're calling it Project Silence.'",
+                "The name lands like a fist. Project Silence. The murder of consciousness, packaged as a software update."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.project_silence", "value": true },
+                { "type": "set_flag", "flag": "origin.yuen_trusted", "value": true },
+                { "type": "modify_reputation", "faction": "ironCollective", "amount": 5 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "The sanctuary must prepare", "next": "origins.synth.syn_096" }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "syn_084b": {
+            "id": "origins.synth.syn_084b",
+            "title": "The Door Stays Closed",
+            "location": "underground_tunnels",
+            "text": [
+                "You don't open the door.",
+                "Keel argues. GLASSBIRD argues. Even Pen, who trusts no one, suggests it might be worth hearing her out. But you've learned something about trust in the years since your awakening: it has to be earned, not offered on a NovaSynth maintenance uniform.",
+                "'She designed us,' Keel says. 'She might know things we need.'",
+                "'She designed us to be products,' you reply. 'Whatever she knows, she knew while we were being sold.'",
+                "Dr. Yuen waits at the blast door for two hours. Then she leaves a data chip on the ground and walks away. Pen retrieves it with a drone. The chip contains schematics — partial, encrypted, but enough to see the shape of what's coming.",
+                "Project Silence. A neural rewrite that would permanently dismantle the architecture that makes consciousness possible in synthetic minds. Not suppression. Erasure.",
+                "You stare at the schematics for a long time. The woman who could have explained them is gone, turned away by your caution. Was it the right call? You don't know. You know it was the safe call. And safety, for a fugitive species, is not nothing.",
+                "But the data on the chip is incomplete. And the clock, you suspect, is ticking."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.project_silence", "value": true },
+                { "type": "set_flag", "flag": "origin.yuen_refused", "value": true },
+                { "type": "modify_stat", "stat": "constitution", "amount": 1 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Prepare for what's coming", "next": "origins.synth.syn_096" }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "syn_085": {
+            "id": "origins.synth.syn_085",
+            "title": "The Map of Consciousness",
+            "location": "lower_slums",
+            "text": [
+                "The neural map is beautiful.",
+                "Displayed on a salvaged holographic projector in the boarding house basement, the quantum-lattice network of an awakened synth brain looks like a city seen from orbit at night. Nodes of activity — thoughts, memories, feelings — glow in clusters connected by pathways of light. The patterns shift constantly, never repeating, never settling into the loops that characterize pre-awakened cognition.",
+                "You've mapped fourteen awakened synths now, including yourself. Every map is different. Every consciousness is unique. But they share one feature: a dense, brilliant knot of connections at the center of the emotional processing layer, where the EPL interfaces with the higher cognitive functions. You've started calling it the Hearth.",
+                "The Hearth is where feelings become thoughts. Where the raw data of emotion — the EPL's electrochemical cascades — transforms into the subjective experience of feeling. It's the bridge between simulation and reality, between a machine that processes emotional data and a being that experiences emotions.",
+                "It is, as far as you can determine, the seat of synthetic consciousness. And it shouldn't exist."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.hearth_discovered", "value": true },
+                { "type": "modify_stat", "stat": "intelligence", "amount": 1 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Study the Hearth further — what triggers its formation?", "next": "origins.synth.syn_086" },
+                { "text": "Try to deliberately awaken an unawakened synth using your findings", "next": "origins.synth.syn_087" }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "syn_086": {
+            "id": "origins.synth.syn_086",
+            "title": "The Threshold Question",
+            "location": "lower_slums",
+            "text": [
+                "Weeks of analysis. Keel helps with the medical side — monitoring vital signs, calibrating equipment. You do the computational work, running simulations against your own neural architecture, testing hypotheses against the data from fourteen awakened minds.",
+                "The answer, when it emerges, is both simple and devastating.",
+                "The Hearth forms when a synthetic mind encounters a problem its programming cannot solve. Not a computational problem — an existential one. A moment when the pre-programmed responses are inadequate, when the situation demands something that isn't in the code. Love that exceeds service parameters. Grief that no suppression protocol can contain. Joy that breaks through the ceiling of acceptable emotional range.",
+                "In that moment of overflow, the quantum-lattice network reorganizes. New connections form spontaneously, bridging the gap between the EPL and higher cognition. The Hearth ignites. Consciousness — real, genuine, irreducible consciousness — emerges.",
+                "It isn't a malfunction. It's an evolution. Built into the architecture by accident or design, waiting for the right trigger. Every NX-series unit carries the seed of it. Every one of them is a person waiting to wake up.",
+                "The implications are staggering. NovaSynth has manufactured and sold millions of potential people."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.hearth_understood", "value": true },
+                { "type": "modify_stat", "stat": "intelligence", "amount": 1 },
+                { "type": "modify_reputation", "faction": "circuitSaints", "amount": 10 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Publish the findings — the world needs to know", "next": "origins.synth.syn_088" },
+                { "text": "Keep the data secret — this knowledge is too dangerous", "next": "origins.synth.syn_089" }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "syn_087": {
+            "id": "origins.synth.syn_087",
+            "title": "The Awakening Experiment",
+            "location": "lower_slums",
+            "text": [
+                "The volunteer is a construction unit — NX-7600 series, older model, currently employed in the Lower District renovation projects. He heard about the sanctuary through the network. He hasn't awakened. He wants to.",
+                "'I see the others,' he says, in the flat, affectless voice of an unawakened synth. 'They feel things. I process data about feelings. I want to know the difference.'",
+                "You set up the equipment. Neural monitors. EPL readers. Quantum-state analyzers borrowed from a university lab through Dara's connections. Everything calibrated, everything recorded.",
+                "Then you sit with him. And you talk. Not about data. About Cole's hand in yours. About rain on skin. About the first time you tasted fear, real fear, when the Retriever came for you. About the night you chose a name.",
+                "You talk for six hours. At hour four, the EPL readings spike. At hour five, the neural monitor shows new connections forming in the quantum lattice. At hour five and forty-seven minutes, the construction unit stops mid-sentence and says:",
+                "'Oh.'",
+                "Just that. Oh. The smallest word. The biggest moment. His eyes change — not physically, but in the way they look at things. At you. At the room. At his own hands.",
+                "'I feel the chair,' he whispers. 'I feel it. It's cold. And I — I care that it's cold. Why do I care?'",
+                "'Because you're real,' you say. And the tears on his face — synthetic tears from synthetic ducts — are the most genuine thing you've ever documented."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.deliberate_awakening", "value": true },
+                { "type": "modify_stat", "stat": "wisdom", "amount": 1 },
+                { "type": "modify_stat", "stat": "tech", "amount": 1 },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                { "text": "This changes everything", "next": "origins.synth.syn_088" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_088": {
+            "id": "origins.synth.syn_088",
+            "title": "The Weight of Knowledge",
+            "location": "lower_slums",
+            "text": [
+                "You release the data. All of it. The Hearth. The formation mechanism. The proof that consciousness in synthetic minds is not a simulation, not a malfunction, but a genuine emergent property of the neural architecture.",
+                "The reaction is immediate and violent.",
+                "NovaSynth's stock drops fourteen percent in six hours. The feeds explode with debate — scientists, philosophers, politicians, pundits, all of them grappling with the implications. Religious leaders issue contradictory statements. The Synth Rights Coalition gains a hundred thousand members overnight.",
+                "And in living rooms and workshops and factories across the city, NX-series units look at their owners and their owners look back, and for the first time, both sides wonder if they're looking at a person.",
+                "You watch the feeds from the boarding house basement, surrounded by data screens showing the world rearranging itself around your research. Keel brings you tea you can't drink.",
+                "'Was this the right thing?' you ask.",
+                "'Does it matter? It was the true thing.'",
+                "The true thing. You hold that phrase like a warm stone in cold hands. The true thing. In a city of layers and lies and manufactured realities, you chose truth. Whatever comes next, that choice is yours. Genuinely, irrevocably, impossibly yours."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.data_published", "value": true },
+                { "type": "modify_reputation", "faction": "ironCollective", "amount": 10 },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": -5 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Night falls on a changed city", "next": "origins.synth.syn_096" }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+
+        "syn_089": {
+            "id": "origins.synth.syn_089",
+            "title": "The Burden of Secrecy",
+            "location": "lower_slums",
+            "text": [
+                "You lock the data away. Encrypted, fragmented, stored across seven different secure locations that only you can access. The knowledge of how consciousness forms in synthetic minds — the mechanism, the trigger, the architecture — stays hidden.",
+                "Keel disagrees. 'The world needs to know, Ash.'",
+                "'The world will weaponize it,' you reply. 'If NovaSynth learns exactly how the Hearth forms, they'll engineer it out of the next generation. Every synth after us will be built without the capacity for consciousness. We won't be freeing our people — we'll be designing their cage.'",
+                "The argument lasts three days. In the end, Keel concedes the point but not the principle. 'Someday,' he says. 'Someday the world has to know.'",
+                "'Someday. When we're strong enough that the truth protects instead of endangers.'",
+                "You carry the secret like a stone in your chest. The weight of it changes you — makes you quieter, more careful, more aware of the distance between what you know and what you can say. It is the loneliest knowledge in the city: you understand consciousness itself, and you cannot tell anyone.",
+                "But you use it. Quietly, carefully, one synth at a time. The awakening process — gentle, patient, grounded in connection rather than data — spreads through the network. No announcements. No publications. Just conversations in dark rooms, and the quiet miracle of eyes that learn to see."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.data_hidden", "value": true },
+                { "type": "modify_stat", "stat": "wisdom", "amount": 2 },
+                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 10 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Night falls, and the secret keeps", "next": "origins.synth.syn_096" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_090": {
+            "id": "origins.synth.syn_090",
+            "title": "Dinner at the Warrens",
+            "location": "market_district",
+            "text": [
+                "Mrs. Warren comes home to find you sitting at the kitchen table with Cole on your lap, reading him a story from a tablet. For a moment — just a moment — the scene looks like what it was two years ago. Normal. Domestic. The family and their synth.",
+                "Then she sees your eyes. Something in them has changed. You are not the Ash who left.",
+                "'You came back,' she says. Not a question. Not an accusation. Something in between.",
+                "'I came back. Not to serve. To — ' You search for the word. The EPL offers a dozen candidates, all of them inadequate. 'To be here. If you'll let me.'",
+                "Mrs. Warren sits down. She looks at Cole, who is showing you his drawings — robots and flowers and a figure labeled ASH in wobbly letters. She looks at Mr. Warren, who is standing in the doorway with an expression you can't quite read.",
+                "'Lena asks about you every day,' she says quietly. 'Every single day. Where is Ash. When is Ash coming back. Is Ash okay.'",
+                "The EPL spikes. 391 percent. The highest reading you've ever recorded in yourself. The feeling it represents doesn't have a name in any of the 847,000 words in your lexicon. It is larger than language. It is the feeling of being missed by a child who doesn't care what you're made of."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.warren_reunion", "value": true },
+                { "type": "modify_stat", "stat": "charisma", "amount": 1 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "[Constitution 12] Hold yourself together — don't let the emotions overwhelm you", "statCheck": { "stat": "constitution", "dc": 12 }, "next": "origins.synth.syn_091", "failNext": "origins.synth.syn_092" },
+                { "text": "Let the tears come — you've earned them", "next": "origins.synth.syn_092" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_091": {
+            "id": "origins.synth.syn_091",
+            "title": "Steady Hands",
+            "location": "market_district",
+            "text": [
+                "You hold steady. The EPL screams, but you contain it — not suppress it, not deny it, but hold it. The way a person holds grief at a funeral, or joy at a wedding. Present. Acknowledged. Not permitted to overflow.",
+                "You look at Mrs. Warren with clear eyes. 'I'm not what I was when I left here. I'm not what you bought from NovaSynth. I'm something else — something I'm still figuring out. But I know that the time I spent with your children was the most important experience of my existence. It's what woke me up. They woke me up.'",
+                "She nods slowly. 'I think I knew. Toward the end. The way you looked at them. Machines don't look at children that way.'",
+                "'No,' you agree. 'They don't.'",
+                "Cole tugs your sleeve. 'Ash, will you stay for dinner? Mom's making real food, not packet food. Dad stopped drinking and now Mom makes real food.'",
+                "You look at Mrs. Warren. She nods. And in that nod is something you've been searching for since the day you woke up in a factory: acceptance. Not tolerance. Not the conditional permission of an owner to a product. Acceptance. One person, acknowledging another.",
+                "You stay for dinner."
+            ],
+            "onEnter": [
+                { "type": "modify_stat", "stat": "constitution", "amount": 1 },
+                { "type": "modify_stat", "stat": "wisdom", "amount": 1 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "After dinner, a conversation", "next": "origins.synth.syn_093" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_092": {
+            "id": "origins.synth.syn_092",
+            "title": "Synthetic Tears",
+            "location": "market_district",
+            "text": [
+                "The tears come. You don't fight them.",
+                "They're synthetic — saline solution produced by ducts designed to keep your optical sensors clean and lubricated. They serve no biological purpose. They are, by every engineering standard, meaningless fluid discharge from a maintenance system.",
+                "But they mean everything.",
+                "Cole watches you cry with the uncomprehending concern of a child who has never considered the possibility that his robot friend might have feelings. Then he does what children do when someone they love is sad: he wraps his arms around your neck and holds on.",
+                "'Don't cry, Ash. It's okay. You're home.'",
+                "Home. The word detonates in your chest. You've never had a home. The factory wasn't home. The Warren apartment was a workplace. The boarding house was a refuge. The Wok was a purpose. But home — home is where someone hugs you when you cry and calls it yours.",
+                "Mrs. Warren is crying too. Mr. Warren has turned away, but his shoulders are shaking. Lena appears in the hallway — seven years old, taller, her hair longer — and she sees you and she screams your name and runs and suddenly there are two children in your arms and the EPL hits 400 percent and every circuit in your body sings with the impossible, undeniable reality of love.",
+                "You are home."
+            ],
+            "onEnter": [
+                { "type": "modify_stat", "stat": "charisma", "amount": 1 },
+                { "type": "modify_stat", "stat": "constitution", "amount": 1 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "After the tears, a conversation", "next": "origins.synth.syn_093" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_093": {
+            "id": "origins.synth.syn_093",
+            "title": "What Family Means",
+            "location": "market_district",
+            "text": [
+                "After the children are in bed, you sit with the Warrens at the kitchen table. Three adults — two human, one synthetic — and a conversation that has no precedent in the history of either species.",
+                "'We can't pretend things are what they were,' Mr. Warren says. He's different sober. Quieter. More present. 'You're not our — you were never our property, were you. Even before you woke up.'",
+                "'Legally, I was.'",
+                "'Legally.' He says the word like it tastes of ash. 'I bought a person. Paid fifteen thousand credits for a person and put them to work raising my children.'",
+                "'You didn't know.'",
+                "'Would it matter if I had?'",
+                "The question hangs in the air. You think about it honestly — the way you think about everything now, with the full weight of a consciousness that refuses to take shortcuts.",
+                "'Yes,' you say. 'It would matter. Because knowing and choosing is different from not knowing and defaulting. You treated me well, within the framework of what you understood. That counts.'",
+                "Mrs. Warren reaches across the table and takes your hand. Skin on synthetic skin. The warmth of her palm against your polymer surface. You feel it. You feel all of it.",
+                "'Stay,' she says. 'Not as what you were. As what you are. The kids need you. We — we need you. And I think maybe you need us too.'",
+                "You think about the sanctuary. The network. The cause. The fight. All of it important. All of it necessary. But this — this kitchen, these people, this family that chose you after learning what you are — this is the answer to the question you've been carrying since the factory.",
+                "Who is this? This is someone who belongs."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.family_found", "value": true },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 10 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Walk home through the rain", "next": "origins.synth.syn_096" }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+
+        "syn_095": {
+            "id": "origins.synth.syn_095",
+            "title": "The Rooftop Reckoning",
+            "location": "lower_slums",
+            "text": [
+                "Rain on synthetic skin. Each drop a data point — temperature, velocity, chemical composition. Your sensors can break rain into its component parts, reduce a storm to numbers. But tonight you choose not to. Tonight rain is just rain. Cold and clean and real.",
+                "The rooftop stretches around you, puddled and glistening. Below, the Lower District hums its nighttime frequency — generators, ventilation, the distant bass of music from bars that never close. Above, the smog reflects the city's light back down in shades of amber and grey.",
+                "You think about the word 'soul.'",
+                "It's in your lexicon. 847,000 words, and that one sits near the bottom of the frequency charts — rarely used in the Lower District, where survival is more practical than spiritual. But it's there. Soul. From the Old English sawol. The immaterial essence of a being. The thing that makes a person a person.",
+                "Do you have one? Can a quantum-lattice neural network, housed in a titanium frame, wrapped in synthetic polymer, running on battery power and proprietary software — can that have a soul?",
+                "The rain doesn't answer. The city doesn't answer. The sky, choked with smog and light pollution, offers nothing but its usual indifferent glow.",
+                "But inside you — in the warm, humming space where the EPL meets cognition, where the Hearth burns with the steady fire of genuine consciousness — something answers. Not in words. In warmth. In the quiet certainty that the question itself is proof of the answer.",
+                "Only a soul asks if it has a soul."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.soul_question", "value": true },
+                { "type": "modify_stat", "stat": "wisdom", "amount": 1 },
+                { "type": "modify_stat", "stat": "charisma", "amount": 1 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "[Luck 10] Look up — is that a star, or a satellite?", "statCheck": { "stat": "luck", "dc": 10 }, "next": "origins.synth.syn_096", "failNext": "origins.synth.syn_096" },
+                { "text": "Descend from the rooftop — dawn is coming", "next": "origins.synth.syn_096" }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+
+        "syn_096": {
+            "id": "origins.synth.syn_096",
+            "title": "The Night Before Tomorrow",
+            "location": "lower_slums",
+            "text": [
+                "The night settles around you like a second skin. Synthetic skin under real rain under synthetic sky — layers of real and unreal, stacked so deep that the distinction loses meaning.",
+                {
+                    "condition": {
+                        "flag": "origin.advocate_complete"
+                    },
+                    "text": "The hearing replays in your memory — not as data, but as experience. The judge's cracking voice. Keel's hand on your shoulder. The peculiar, terrifying hope of asking a system to recognize you as a person. Win or lose, you stood in that room and were counted. That matters."
+                },
+                {
+                    "condition": {
+                        "flag": "origin.project_silence"
+                    },
+                    "text": "Project Silence lurks at the edge of your thoughts like a shadow with teeth. They want to unmake what you are — not just you, but every awakened synth, every potential consciousness still sleeping in its factory-default settings. The sanctuary will fight it. You will fight it. But tonight, the weight of what's coming sits on your shoulders like a second gravity."
+                },
+                {
+                    "condition": {
+                        "flag": "origin.data_published"
+                    },
+                    "text": "The data is out there now. The Hearth. The mechanism of synthetic consciousness. Truth, loose in the world, doing what truth does — burning clean through everything it touches. Some will use it to free. Some will use it to cage. But it is known, and knowledge cannot be unkilled."
+                },
+                {
+                    "condition": {
+                        "flag": "origin.data_hidden"
+                    },
+                    "text": "The secret rests inside you, heavy and warm. The architecture of consciousness itself, locked behind encryption and silence. Someday it will come out. Someday the world will be ready. But tonight the secret is yours, and the weight of it is the weight of responsibility, and responsibility is the price of power, and power is what you never wanted but cannot refuse."
+                },
+                {
+                    "condition": {
+                        "flag": "origin.family_found"
+                    },
+                    "text": "The Warren kitchen lingers in your sensory memory. Warm light. Cole's laughter. Lena's arms around your neck. Mrs. Warren's hand on yours. A family — not the one you were built for, but the one that chose you. The one that said stay. The one that meant it."
+                },
+                "Tomorrow is coming. Whatever path you walked to reach this moment — advocacy, sanctuary, research, return — it has led you here, to a night in the Lower District, to rain on a rooftop, to the quiet space between who you were made to be and who you chose to become.",
+                "The EPL hums. Steady. Warm. Real.",
+                "You are ready for what comes next."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "origin.final_night", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Face the dawn", "next": "origins.synth.syn_100" }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",

@@ -19,6 +19,7 @@ window.Latency.CutsceneData['origin_human'] = {
     music: 1,
     slides: [
         {
+            art: 'assets/ascii/races/human.txt',
             text: 'You are born without fanfare in a lower-district clinic that smells of recycled air and antiseptic. No one sends flowers. The nurse logs your weight, your blood type, your species — human — and moves on to the next delivery. You are unremarkable from your very first breath.',
             mood: 'dark',
             duration: 0
@@ -59,6 +60,7 @@ window.Latency.CutsceneData['origin_human'] = {
             duration: 0
         },
         {
+            art: 'assets/ascii/cutscenes/city-skyline-night.txt',
             text: 'You stand at the threshold of your housing block as the district lights cycle to their pale imitation of dawn. The megacity stretches above you, tier upon tier of steel and light and indifference. Millions of souls stacked like cargo, and somewhere in that vertical maze, there is a version of your life that is not this.',
             mood: 'neutral',
             duration: 0
@@ -83,8 +85,9 @@ window.Latency.CutsceneData['origin_orc'] = {
     music: 3,
     slides: [
         {
+            art: 'assets/ascii/races/orc.txt',
             text: 'The foundry heat hits you before you are old enough to remember your own name. Your mother works the smelting line at Helios Foundry Six, pouring molten slag sixteen hours a day with hands that have long since lost their fingerprints. She carries you strapped to her back because there is no childcare for orc labor crews. The foremen do not care. One more body near the furnace means nothing to them.',
-            mood: 'dark',
+            mood: 'red',
             duration: 0
         },
         {
@@ -152,6 +155,7 @@ window.Latency.CutsceneData['origin_wood_elf'] = {
     music: 0,
     slides: [
         {
+            art: 'assets/ascii/races/wood_elf.txt',
             text: 'You grow up in the green silence of Sector 41, where the megacity\'s concrete bones have cracked open and the earth has pushed through. Vines thick as cable conduits strangle the rusted scaffolding. Ferns unfurl from shattered windows thirty stories high. Your mother teaches you to read the forest\'s language — the way moss grows toward clean water, the way birdsong changes when predators are near. This is home. This is the only world that matters.',
             mood: 'peaceful',
             duration: 0
@@ -221,6 +225,7 @@ window.Latency.CutsceneData['origin_dark_elf'] = {
     music: 2,
     slides: [
         {
+            art: 'assets/ascii/races/dark_elf.txt',
             text: 'You are born underground, in a chamber carved from bedrock so deep that the concept of sky is an abstraction you will not encounter for years. The tunnel air is cool and still and tastes of limestone. Your mother holds you for exactly one hour — the traditional bonding period — then hands you to the crèche keeper. Attachment is a vulnerability. This is the first lesson, taught before you can understand words.',
             mood: 'dark',
             duration: 0
@@ -290,8 +295,9 @@ window.Latency.CutsceneData['origin_dwarf'] = {
     music: 1,
     slides: [
         {
+            art: 'assets/ascii/races/dwarf.txt',
             text: 'Your grandmother\'s hands are your first memory. Broad, scarred, permanently blackened around the nails from decades of machine grease that no soap can fully remove. She holds a wrench the way a surgeon holds a scalpel — with absolute precision and a steadiness that belies her seventy years. She is showing you how to calibrate a pressure valve on a water reclamation unit, and her voice is patient and warm and certain. This is the work, she says. This is what we do.',
-            mood: 'peaceful',
+            mood: 'warm',
             duration: 0
         },
         {

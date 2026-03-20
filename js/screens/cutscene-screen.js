@@ -64,7 +64,7 @@ window.Latency.Screens.CutsceneScreen = (function () {
     var TYPEWRITER_SPEED = 30;     // ms per character
     var PROMPT_DELAY = 200;        // ms before showing prompt after text finishes
 
-    // Mood background colors (very subtle tints over black)
+    // Mood background colors — each has animated gradient in CSS
     var MOOD_CLASSES = {
         dark:         'cs-mood-dark',
         red:          'cs-mood-red',
@@ -72,12 +72,12 @@ window.Latency.Screens.CutsceneScreen = (function () {
         melancholy:   'cs-mood-blue',
         peaceful:     'cs-mood-dark',
         neutral:      'cs-mood-dark',
-        tension:      'cs-mood-red',
+        tension:      'cs-mood-tension',
         anger:        'cs-mood-red',
-        determination:'cs-mood-dark',
-        warm:         'cs-mood-dark',
+        determination:'cs-mood-warm',
+        warm:         'cs-mood-warm',
         cold:         'cs-mood-blue',
-        eerie:        'cs-mood-blue'
+        eerie:        'cs-mood-eerie'
     };
 
     // --------------------------------------------------------
@@ -191,6 +191,53 @@ window.Latency.Screens.CutsceneScreen = (function () {
     function _buildScreen() {
         var screen = _el('div', 'cutscene-screen cs-mood-dark');
 
+        // Cinematic canvas for animated background effects
+        var cinematicCanvas = document.createElement('canvas');
+        cinematicCanvas.className = 'cs-cinematic-canvas';
+        cinematicCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;';
+        screen.appendChild(cinematicCanvas);
+        _els.cinematicCanvas = cinematicCanvas;
+
+        // Initialize cinematic renderer
+        if (window.Latency.CinematicRenderer) {
+            window.Latency.CinematicRenderer.init(cinematicCanvas);
+        }
+
+        // Animated background gradient layer
+        var bgGradient = _el('div', 'cs-bg-gradient');
+        screen.appendChild(bgGradient);
+
+        // Vignette overlay (dark edges)
+        var vignette = _el('div', 'cs-vignette');
+        screen.appendChild(vignette);
+
+        // Cinematic letterbox bars
+        screen.appendChild(_el('div', 'cs-letterbox-top'));
+        screen.appendChild(_el('div', 'cs-letterbox-bottom'));
+
+        // Corner frame decorations
+        screen.appendChild(_el('div', 'cs-frame-corner cs-frame-tl'));
+        screen.appendChild(_el('div', 'cs-frame-corner cs-frame-tr'));
+        screen.appendChild(_el('div', 'cs-frame-corner cs-frame-bl'));
+        screen.appendChild(_el('div', 'cs-frame-corner cs-frame-br'));
+
+        // Ambient data streams (falling code on sides)
+        var streamLeft = _el('div', 'cs-data-stream cs-data-stream-left');
+        _buildDataStream(streamLeft, 4);
+        screen.appendChild(streamLeft);
+
+        var streamRight = _el('div', 'cs-data-stream cs-data-stream-right');
+        _buildDataStream(streamRight, 4);
+        screen.appendChild(streamRight);
+
+        // Floating particles
+        var particles = _el('div', 'cs-particles');
+        _buildParticles(particles, 15);
+        screen.appendChild(particles);
+
+        // Horizontal sweep line
+        screen.appendChild(_el('div', 'cs-sweep-line'));
+
         // CRT scanline overlay
         var scanlines = _el('div', 'cs-scanlines');
         screen.appendChild(scanlines);
@@ -221,13 +268,50 @@ window.Latency.Screens.CutsceneScreen = (function () {
 
         screen.appendChild(slideContainer);
 
-        // "CLICK TO CONTINUE" prompt (bottom)
-        var prompt = _el('div', 'cs-continue-prompt', '> CLICK TO CONTINUE');
+        // "CLICK TO CONTINUE" prompt (bottom, inside letterbox area)
+        var prompt = _el('div', 'cs-continue-prompt', 'CLICK TO CONTINUE');
         prompt.style.visibility = 'hidden';
         _els.prompt = prompt;
         screen.appendChild(prompt);
 
         return screen;
+    }
+
+    // --------------------------------------------------------
+    // Build: floating data particles
+    // --------------------------------------------------------
+    function _buildParticles(container, count) {
+        var chars = '01アイウエオカキクケコ░▒▓█▀▄■□●○◆◇';
+        for (var i = 0; i < count; i++) {
+            var p = _el('span', 'cs-particle');
+            p.textContent = chars[Math.floor(Math.random() * chars.length)];
+            p.style.left = (Math.random() * 100) + '%';
+            p.style.animationDuration = (8 + Math.random() * 12) + 's';
+            p.style.animationDelay = (Math.random() * 10) + 's';
+            p.style.fontSize = (8 + Math.random() * 6) + 'px';
+            container.appendChild(p);
+        }
+    }
+
+    // --------------------------------------------------------
+    // Build: falling data stream columns
+    // --------------------------------------------------------
+    function _buildDataStream(container, columns) {
+        var chars = '01001101010011001010110100101';
+        for (var i = 0; i < columns; i++) {
+            var col = _el('div', 'cs-data-column');
+            // Build a random column of characters
+            var text = '';
+            var len = 20 + Math.floor(Math.random() * 30);
+            for (var j = 0; j < len; j++) {
+                text += chars[Math.floor(Math.random() * chars.length)] + '\n';
+            }
+            col.textContent = text;
+            col.style.left = (i * (60 / columns) + Math.random() * 5) + 'px';
+            col.style.animationDuration = (6 + Math.random() * 8) + 's';
+            col.style.animationDelay = (Math.random() * 5) + 's';
+            container.appendChild(col);
+        }
     }
 
     // --------------------------------------------------------
@@ -305,7 +389,28 @@ window.Latency.Screens.CutsceneScreen = (function () {
         if (!slide) return;
 
         // Set mood
-        _setMood(slide.mood || 'dark');
+        var mood = slide.mood || 'dark';
+        _setMood(mood);
+
+        // Set cinematic background effect based on mood
+        if (window.Latency.CinematicRenderer) {
+            var moodEffectMap = {
+                dark:          'fog',
+                red:           'embers',
+                tension:       'embers',
+                anger:         'embers',
+                blue:          'rain',
+                melancholy:    'rain',
+                cold:          'rain',
+                eerie:         'void',
+                warm:          'neon',
+                neutral:       'stars',
+                peaceful:      'stars',
+                determination: 'sparks'
+            };
+            var effect = moodEffectMap[mood] || 'fog';
+            window.Latency.CinematicRenderer.setEffect(effect, { intensity: 0.6 });
+        }
 
         // Handle music cue on this slide
         if (slide.music !== undefined && slide.music !== null) {
@@ -361,7 +466,10 @@ window.Latency.Screens.CutsceneScreen = (function () {
             // Trigger voice narration if VoiceManager is available
             if (window.Latency.VoiceManager && window.Latency.VoiceManager.isEnabled()) {
                 var cleanText = slide.text.replace(/<[^>]*>/g, '').replace(/&[^;]+;/g, ' ');
-                window.Latency.VoiceManager.speak(cleanText);
+                var voiceOpts = {};
+                if (slide.mood) voiceOpts.mood = slide.mood;
+                if (slide.speaker) voiceOpts.speaker = slide.speaker;
+                window.Latency.VoiceManager.speak(cleanText, voiceOpts);
             }
 
             _els.narrativeText.setAttribute('data-full-text', slide.text);
@@ -496,6 +604,58 @@ window.Latency.Screens.CutsceneScreen = (function () {
     }
 
     // --------------------------------------------------------
+    // Show title card with cinematic reveal
+    // --------------------------------------------------------
+    function _showTitleCard(title, onComplete) {
+        if (!_els.screen) {
+            if (onComplete) onComplete();
+            return;
+        }
+
+        // Create title card overlay
+        var card = _el('div', 'cs-title-card');
+        var titleText = _el('div', 'cs-title-text', title);
+        card.appendChild(titleText);
+
+        // Add subtitle based on cutscene type
+        if (_cutsceneData && _cutsceneData.id) {
+            var subtitle = '';
+            if (_cutsceneData.id.indexOf('origin_') === 0) {
+                subtitle = 'ORIGIN STORY';
+            } else if (_cutsceneData.id.indexOf('act') === 0) {
+                subtitle = 'CHAPTER';
+            }
+            if (subtitle) {
+                var sub = _el('div', 'cs-title-subtitle', subtitle);
+                card.appendChild(sub);
+            }
+        }
+
+        _els.screen.appendChild(card);
+
+        // Hide slide container during title
+        if (_els.slideContainer) {
+            _els.slideContainer.style.opacity = '0';
+        }
+
+        // Trigger animation
+        _setTimeout(function () {
+            card.classList.add('cs-visible');
+        }, 50);
+
+        // Remove title card after animation and show first slide
+        _setTimeout(function () {
+            if (card.parentNode) {
+                card.parentNode.removeChild(card);
+            }
+            if (_els.slideContainer) {
+                _els.slideContainer.style.opacity = '1';
+            }
+            if (onComplete) onComplete();
+        }, 3200);
+    }
+
+    // --------------------------------------------------------
     // Public API
     // --------------------------------------------------------
     return {
@@ -554,8 +714,14 @@ window.Latency.Screens.CutsceneScreen = (function () {
             // Start music
             _startMusic();
 
-            // Show first slide
-            _showSlide(0);
+            // Show title card if cutscene has a title, then first slide
+            if (_cutsceneData.title) {
+                _showTitleCard(_cutsceneData.title, function () {
+                    _showSlide(0);
+                });
+            } else {
+                _showSlide(0);
+            }
 
             console.log('[CutsceneScreen] Mounted. Playing cutscene:', _cutsceneData.id || '(unnamed)',
                 '—', _slideCount, 'slides.');
@@ -565,6 +731,11 @@ window.Latency.Screens.CutsceneScreen = (function () {
          * Unmount the cutscene screen, cleaning up event listeners and DOM.
          */
         unmount: function () {
+            // Destroy cinematic renderer
+            if (window.Latency.CinematicRenderer) {
+                window.Latency.CinematicRenderer.destroy();
+            }
+
             // Cancel typewriter
             _cancelTypewriter();
 

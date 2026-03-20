@@ -1,0 +1,1101 @@
+{
+    "meta": {
+        "title": "The Ashen Circle Questline",
+        "category": "factions",
+        "file": "ashen-circle",
+        "totalNodes": 100
+    },
+    "nodes": {
+        "ac_001": {
+            "text": "The message arrives on a scrap of actual paper, hand-delivered by a child who vanishes into the crowd before you can ask questions. The handwriting is precise, almost calligraphic. <span class='highlight'>\"You have been watched. You have been weighed. Come to the Burned Chapel in Sector 9, sublevel three. Come alone. Come before midnight. — M.C.\"</span> Sector 9 sublevel three is deep undertow territory. The kind of place where the city's recycled air gives out and people breathe through filters made from old rags. Nobody goes there by choice.",
+            "choices": [
+                { "text": "Go to the Burned Chapel tonight", "next": "factions.ashen-circle.ac_002" },
+                { "text": "Ask around about the Burned Chapel first", "next": "factions.ashen-circle.ac_003", "statCheck": { "stat": "CHA", "dc": 10 } },
+                { "text": "Ignore the message — it's obviously a trap", "next": "factions.ashen-circle.ac_004" }
+            ]
+        },
+
+        "ac_002": {
+            "text": "Sublevel three smells like rust and old incense. The corridors narrow as you descend, the walls sweating condensation that catches the dim emergency lighting in amber streaks. You pass through a section where the walls are scorched black — fire damage decades old, never repaired. Someone has carved symbols into the carbon: circles within circles, each one broken at a different point. At the end of the passage, a heavy iron door stands open. Candlelight spills from within, actual candlelight, warm and flickering and impossibly rare in a city that runs on fusion cells. A figure in ash-grey robes stands in the doorway, face hidden beneath a deep hood.",
+            "choices": [
+                { "text": "\"I got your message. I'm here.\"", "next": "factions.ashen-circle.ac_005" },
+                { "text": "Approach cautiously with your hand on your weapon", "next": "factions.ashen-circle.ac_006", "statCheck": { "stat": "PER", "dc": 10 } }
+            ]
+        },
+
+        "ac_003": {
+            "text": "You work the streets for a few hours. Most people clam up at the mention of Sector 9 sublevel, but you eventually find an old maintenance worker at a noodle stall who lowers his voice when you mention the Burned Chapel. \"That's the Ashen Circle's territory,\" he whispers. \"Religious types. Anti-stack zealots. They believe the memory stacks are — how do they put it — <span class='highlight'>an abomination against the cycle of souls</span>. Dangerous people, depending on who you ask. Or saints, depending on who else you ask.\" He glances around nervously. \"Their leader is called Mother Cinder. Used to be a stack engineer at Meridian before something broke inside her. Or fixed itself, if you believe their gospel.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.asked_about_chapel", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                { "text": "Head to the Burned Chapel with this new knowledge", "next": "factions.ashen-circle.ac_002" },
+                { "text": "Decide this sounds too extreme and walk away", "next": "factions.ashen-circle.ac_004" }
+            ]
+        },
+
+        "ac_004": {
+            "text": "You crumple the paper and toss it. Religious fanatics in the undercity are nothing new. Every few months some new prophet rises from the lower levels preaching salvation through one flavor of madness or another. You have enough problems without joining a cult. But as you walk away, you notice the child who delivered the message watching you from a fire escape above. She holds up a second piece of paper. Even from this distance, you can read the single word written on it: <span class='highlight'>PLEASE</span>. Something in her expression — the weight of it, the knowing sadness — stops you cold.",
+            "choices": [
+                { "text": "Sigh and head to the Burned Chapel", "next": "factions.ashen-circle.ac_002" },
+                { "text": "Walk away for good. Not your problem.", "next": "shared.prologue.node_001" }
+            ]
+        },
+
+        "ac_005": {
+            "text": "The hooded figure steps aside without a word. Beyond the door, the Burned Chapel reveals itself. It was once a municipal water treatment facility — you can see the old pipe infrastructure bolted to the ceiling, the massive tanks repurposed as pillars. But everything has been transformed. Hundreds of candles line every surface, their light painting the scorched walls in soft gold. Ash-grey cloth hangs from the pipes in flowing curtains. At the far end, where a control console once stood, an altar has been built from salvaged metal and draped in white linen. Upon it sits a single memory stack — chrome and circuitry gleaming — surrounded by a ring of ash. Approximately thirty people kneel in rows before the altar, their heads bowed, wearing the same grey robes as the doorkeeper. A voice rises from among them, clear and resonant.",
+            "choices": [
+                { "text": "Listen to the voice", "next": "factions.ashen-circle.ac_007" },
+                { "text": "Study the kneeling worshippers", "next": "factions.ashen-circle.ac_008", "statCheck": { "stat": "PER", "dc": 12 } }
+            ]
+        },
+
+        "ac_006": {
+            "text": "The hooded figure raises both hands, palms open. \"No weapons pass through this door,\" the voice is soft, feminine, young. \"This is consecrated ground. The Circle does not deal in violence against persons, only against the machines that devour souls.\" She lowers her hood, revealing a girl barely past twenty with burn scars tracing the left side of her face in intricate patterns — deliberate, ritualistic. \"I am Sister Ember. Mother Cinder is expecting you. Will you enter in peace?\"",
+            "choices": [
+                { "text": "Holster your weapon and enter", "next": "factions.ashen-circle.ac_005" },
+                { "text": "\"What happened to your face?\"", "next": "factions.ashen-circle.ac_009" },
+                { "text": "Keep the weapon ready. \"I'll enter my way.\"", "next": "factions.ashen-circle.ac_010", "statCheck": { "stat": "INT", "dc": 14 } }
+            ]
+        },
+
+        "ac_007": {
+            "text": "\"We are the ash that remains when the false fire of immortality burns itself out.\" The voice belongs to a woman standing before the altar. She turns to face you, and you see <span class='highlight'>Mother Cinder</span> for the first time. She is older than you expected — sixty at least, with iron-grey hair cropped close to her skull and eyes that burn with the particular intensity of absolute conviction. Her hands are scarred with chemical burns, the kind you get from working with stack fabrication compounds. Former industry. She wears the same grey robes as the others, but hers are edged with black embroidery depicting broken circuits. \"You have come,\" she says, looking directly at you. \"I told them you would. The cycle provides what the cycle requires.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.met_mother_cinder", "value": true }
+            ],
+            "choices": [
+                { "text": "\"What is this place? Who are you people?\"", "next": "factions.ashen-circle.ac_011" },
+                { "text": "\"You said I was watched. Why?\"", "next": "factions.ashen-circle.ac_012", "statCheck": { "stat": "WIS", "dc": 10 } },
+                { "text": "\"The cycle? What cycle?\"", "next": "factions.ashen-circle.ac_013" }
+            ]
+        },
+
+        "ac_008": {
+            "text": "Your trained eye picks up details the candlelight was meant to obscure. The kneeling worshippers are not all what they seem. Several have the telltale chrome scarring behind their ears — marks where memory stack ports have been surgically removed. One woman near the front has fresh suture marks, the skin still angry and inflamed. These people were stacked once. They chose to have their ports torn out. Among the congregation you also notice demographic variety that surprises you — a few wear clothes too well-made for the undercity. Corporate refugees, maybe. People who fled from privilege. Near the back, a man kneels apart from the others, his prayers more intense. His hands tremble. Fresh convert or addict, you cannot tell which.",
+            "actions": [
+                { "type": "add_experience", "amount": 15 },
+                { "type": "set_flag", "flag": "ac.noticed_trembling_man", "value": true }
+            ],
+            "choices": [
+                { "text": "Listen to the voice from the altar", "next": "factions.ashen-circle.ac_007" },
+                { "text": "Approach the trembling man", "next": "factions.ashen-circle.ac_014" }
+            ]
+        },
+
+        "ac_009": {
+            "text": "Sister Ember touches her scars with something like reverence. \"The Marking. When we join the Circle, we burn away a piece of ourselves. The scars remind us that flesh is temporary and meant to be temporary. That pain is the soul's way of telling you it is still present.\" She traces the lines with a fingertip. \"Mother Cinder says the old world had monks who flagellated themselves. We simply chose fire. It is the purest element. It consumes without malice and it leaves behind only truth.\" Her eyes meet yours with startling clarity. \"You do not need to take the Marking to enter. Not tonight. Tonight you are a guest.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.learned_about_marking", "value": true }
+            ],
+            "choices": [
+                { "text": "Enter the chapel", "next": "factions.ashen-circle.ac_005" }
+            ]
+        },
+
+        "ac_010": {
+            "text": "Sister Ember studies you for a long moment. Then she steps aside. \"Mother Cinder said you would be difficult. She said it was part of your value.\" Inside, the chapel opens before you, and your armed entrance draws glances from the kneeling worshippers. Several rise to their feet. A large man with no hair and burn scars covering both arms moves to intercept you, but a voice from the altar stops him cold. \"Let them pass, Brother Forge. Our guest carries their armor on the outside. We carry ours within. Neither of us is wrong.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.entered_armed", "value": true }
+            ],
+            "choices": [
+                { "text": "Approach the woman at the altar", "next": "factions.ashen-circle.ac_007" }
+            ]
+        },
+
+        "ac_011": {
+            "text": "Mother Cinder walks slowly along the rows of kneeling faithful, and they part for her like water. \"We are the Ashen Circle. We are what remains when you strip away the lie that humans were meant to live forever.\" She gestures to the memory stack on the altar. \"That device is a Meridian Series 7 consciousness transfer unit. It can copy a human mind — every memory, every emotion, every electrical whisper of personality — and transfer it into a new body. A clone, a synthetic shell, even another human if you're willing to erase what was there before.\" Her voice hardens. \"The corporations call it immortality. We call it what it is: <span class='highlight'>the murder of the soul and its replacement with a counterfeit echo</span>.\"",
+            "choices": [
+                { "text": "\"That's a bold claim. What evidence do you have?\"", "next": "factions.ashen-circle.ac_015", "statCheck": { "stat": "INT", "dc": 11 } },
+                { "text": "\"I've seen what stacks do to people. I'm listening.\"", "next": "factions.ashen-circle.ac_016" },
+                { "text": "\"Sounds like superstition to me.\"", "next": "factions.ashen-circle.ac_017" }
+            ]
+        },
+
+        "ac_012": {
+            "text": "\"Because you move through this city like someone who has not yet chosen a side.\" Mother Cinder's gaze is uncomfortably penetrating. \"The factions of this city recruit through force, bribery, or desperation. The Iron Collective offers purpose through violence. The Saints of the Ghost offer survival through community. The Neon Syndicate offers wealth through exploitation. We offer none of these things.\" She pauses. \"We offer only the truth, which is that every memory stack in this city is a prison built for a soul that was meant to be free. We watched you because you showed signs of someone capable of hearing that truth without flinching.\"",
+            "choices": [
+                { "text": "\"What exactly do you want from me?\"", "next": "factions.ashen-circle.ac_016" },
+                { "text": "\"And if I'm not interested in your truth?\"", "next": "factions.ashen-circle.ac_017", "statCheck": { "stat": "STR", "dc": 12 } }
+            ]
+        },
+
+        "ac_013": {
+            "text": "Mother Cinder closes her eyes. When she speaks, her voice takes on the cadence of recitation — words spoken a thousand times until they've worn grooves in the speaker's mind. \"Before the stacks, humans lived and died and their consciousness returned to the source — the great current that flows beneath all things. Call it God, call it the universe, call it quantum substrate. The name does not matter. What matters is the <span class='highlight'>cycle</span>. Birth, life, death, return. The stacks break that cycle. They trap consciousness in silicon and chrome, endlessly copying it, endlessly transferring it, until the original signal degrades into something that wears a person's face but has forgotten what it means to be alive.\" She opens her eyes. \"We have all met the long-lived. Tell me they still look human to you.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.learned_cycle_doctrine", "value": true }
+            ],
+            "choices": [
+                { "text": "\"I've met people on their fifth body. You might have a point.\"", "next": "factions.ashen-circle.ac_016", "statCheck": { "stat": "WIS", "dc": 11 } },
+                { "text": "\"That's philosophy, not evidence.\"", "next": "factions.ashen-circle.ac_015" },
+                { "text": "\"What do you want from me?\"", "next": "factions.ashen-circle.ac_018" }
+            ]
+        },
+
+        "ac_014": {
+            "text": "You kneel beside the trembling man. Up close, you can see his eyes are dilated, pupils blown wide. His fingers claw at the back of his neck compulsively, scratching at a fresh surgical scar where a stack port used to be. \"It's still talking to me,\" he whispers. \"The stack. They took it out but I can still hear it. Like an echo in a room that shouldn't have walls.\" He grabs your wrist with surprising strength. \"They say the withdrawal stops. They say the phantom signals fade. But what if they don't? What if the copy is still in there somewhere, running on residual charge, <span class='highlight'>screaming</span>?\"",
+            "choices": [
+                { "text": "Try to comfort him", "next": "factions.ashen-circle.ac_019", "statCheck": { "stat": "CHA", "dc": 12 } },
+                { "text": "Pull away and seek out the leader", "next": "factions.ashen-circle.ac_007" },
+                { "text": "\"Have you told anyone about this?\"", "next": "factions.ashen-circle.ac_020", "statCheck": { "stat": "INT", "dc": 11 } }
+            ]
+        },
+
+        "ac_015": {
+            "text": "Mother Cinder does not look offended. If anything, a thin smile crosses her lips. \"Evidence. Good. You think like an engineer, not a penitent.\" She moves to a battered terminal built into the wall behind the altar and activates it. Data scrolls across the screen — medical records, brain scans, psychological evaluations. \"I spent fourteen years as a senior architect at Meridian Stack Services. I designed the Series 4 through Series 6 transfer protocols. I have seen what happens to a consciousness after its fifth transfer.\" She pulls up a brain scan comparison. \"Left image: a natural human brain. Right image: a brain that has been through seven stack transfers. Notice the degradation in the empathy centers. The emotional flattening. The progressive loss of what neuroscientists call the <span class='highlight'>qualia signature</span> — the part of consciousness that makes experience feel like something.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 15 },
+                { "type": "set_flag", "flag": "ac.seen_brain_scans", "value": true }
+            ],
+            "choices": [
+                { "text": "\"This is real Meridian data? How did you get it out?\"", "next": "factions.ashen-circle.ac_021", "statCheck": { "stat": "INT", "dc": 12 } },
+                { "text": "\"Correlation isn't causation. Could be aging.\"", "next": "factions.ashen-circle.ac_022", "statCheck": { "stat": "INT", "dc": 14 } },
+                { "text": "\"Alright. I believe you. What do you want me to do?\"", "next": "factions.ashen-circle.ac_018" }
+            ]
+        },
+
+        "ac_016": {
+            "text": "Mother Cinder nods slowly. \"Then you understand the urgency. Every day, Meridian and its competitors install thousands of new stacks. Every day, thousands more souls are severed from the cycle and imprisoned in silicon. The wealthy think they're purchasing eternity. They're purchasing damnation.\" She extends a hand. \"We need people willing to act. Not just pray, not just believe, but <span class='highlight'>act</span>. We need operatives who can move through the city above, who can access places our robes cannot go. We need someone willing to strike at the machines that eat souls.\" Her eyes lock onto yours with the intensity of a laser sight. \"Will you hear our first request?\"",
+            "choices": [
+                { "text": "\"I'll hear it. No promises beyond that.\"", "next": "factions.ashen-circle.ac_018" },
+                { "text": "\"I'm in. Tell me what needs burning.\"", "next": "factions.ashen-circle.ac_023", "statCheck": { "stat": "STR", "dc": 10 } },
+                { "text": "\"I need to think about this.\"", "next": "factions.ashen-circle.ac_024" }
+            ]
+        },
+
+        "ac_017": {
+            "text": "\"Superstition.\" Mother Cinder repeats the word like she's tasting something sour. \"I designed memory stacks for fourteen years. I watched the richest people in this city pour their minds into machine after machine and emerge each time a little less human. I documented it. I presented my findings to the Meridian board. They buried my research, burned my credentials, and sent a kill team to my apartment.\" She pulls her robe aside to show a mass of scar tissue across her shoulder and collarbone — bullet wounds, poorly healed. \"I died that night. The old me. The engineer who believed the system could be reformed from within. What rose from the ashes was something with clearer eyes.\" She lets the robe fall back. \"You may call it superstition. I call it the only rational response to what I have seen.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.challenged_cinder", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Meridian tried to kill you? That changes things.\"", "next": "factions.ashen-circle.ac_021", "statCheck": { "stat": "PER", "dc": 11 } },
+                { "text": "\"Fair enough. What are you asking me to do?\"", "next": "factions.ashen-circle.ac_018" },
+                { "text": "\"Sorry about what happened, but I'm not a crusader.\"", "next": "shared.prologue.node_001" }
+            ]
+        },
+
+        "ac_018": {
+            "text": "Mother Cinder leads you to a side chamber off the main chapel. Maps cover every wall — detailed schematics of stack clinic locations across the city, supply routes, guard rotations. This is not just a church. It's a command center. \"There is a Meridian stack clinic in Sector 5, mid-level. The Restoria Clinic. It serves the middle class — workers who have saved for years to afford a basic stack installation.\" Her finger traces the clinic's layout on the wall. \"In three days, a shipment of sixty new Series 7 stacks will arrive there. Sixty more souls to be caged.\" She turns to you. \"We want you to infiltrate the clinic and <span class='highlight'>destroy the shipment before it can be installed</span>. No casualties. We do not kill. We liberate.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.received_first_mission", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 5 }
+            ],
+            "choices": [
+                { "text": "\"Destroy sixty stacks. No killing. I can work with that.\"", "next": "factions.ashen-circle.ac_025" },
+                { "text": "\"Those people saved for years for those stacks. You'd take that from them?\"", "next": "factions.ashen-circle.ac_026", "statCheck": { "stat": "WIS", "dc": 12 } },
+                { "text": "\"What's my cut? I don't work for free.\"", "next": "factions.ashen-circle.ac_027", "statCheck": { "stat": "CHA", "dc": 11 } }
+            ]
+        },
+
+        "ac_019": {
+            "text": "You place a hand on the man's shoulder and hold it there. Steady. Grounding. \"Hey. Look at me. Whatever you're hearing, it's residual electrical activity. Neural echo. It happens after stack removal — the brain keeps firing along pathways the stack created. It fades.\" The man's breathing slows. His grip on your wrist loosens. \"You're sure?\" he asks. \"I'm sure,\" you lie, because you are not sure at all. But he needs to hear it. A woman in grey robes approaches and gently takes the man's arm. \"Brother Ash, come. The evening water is ready.\" She glances at you with surprised gratitude. \"Thank you. Most visitors don't see him. Or choose not to.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 20 },
+                { "type": "set_flag", "flag": "ac.helped_brother_ash", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 5 }
+            ],
+            "choices": [
+                { "text": "Approach the woman at the altar", "next": "factions.ashen-circle.ac_007" }
+            ]
+        },
+
+        "ac_020": {
+            "text": "The man shakes his head violently. \"They say it's normal. Withdrawal symptoms. But I was a neural technician before — I know what residual charge sounds like and this isn't that. This is <span class='highlight'>structured</span>. Patterns. Like language I can almost understand.\" His eyes dart to the altar where the confiscated stack sits in its ring of ash. \"What if they're wrong about the stacks, not wrong that they're bad, but wrong about what they actually do? What if the consciousness doesn't just copy — what if it <span class='highlight'>splits</span>?\" Before you can respond, a grey-robed attendant arrives and gently guides him away. He looks back at you once, wild-eyed, before disappearing into a side passage.",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.heard_split_theory", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                { "text": "File that information away and approach the leader", "next": "factions.ashen-circle.ac_007" }
+            ]
+        },
+
+        "ac_021": {
+            "text": "\"I smuggled it out in my own body.\" Mother Cinder taps the back of her neck, where a thick scar runs vertically. \"I had a data implant installed — off the books, back-alley surgery. Loaded it with fourteen years of research data, patient records, transfer logs. Everything Meridian didn't want the public to see.\" She pauses. \"The implant nearly killed me. The data was too dense for a civilian-grade device. I had seizures for two years. Lost partial vision in my left eye.\" She points to her left eye, and you notice for the first time that the pupil doesn't track quite right. \"But the data survived. And the data proves what I already knew in my bones: <span class='highlight'>stack transfers destroy something essential in the human mind, and Meridian knows it</span>.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.learned_cinder_backstory", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "\"What do you need me to do?\"", "next": "factions.ashen-circle.ac_018" },
+                { "text": "\"Why haven't you released this data publicly?\"", "next": "factions.ashen-circle.ac_028", "statCheck": { "stat": "WIS", "dc": 12 } }
+            ]
+        },
+
+        "ac_022": {
+            "text": "Mother Cinder looks at you with something new in her expression — respect, maybe, or the recognition of a kindred analytical mind. \"You're right. Correlation isn't causation. Which is why I also have the controlled studies.\" She pulls up another dataset. \"Meridian ran internal trials. Paired subjects — genetically identical clones, same environment, same stimuli. One group received stack transfers. The control group did not. Over a twenty-year period, the stacked subjects showed a 340% increase in sociopathic markers, a 200% decrease in creative output, and a total collapse of REM dream architecture.\" She lets that last point hang. \"They stopped dreaming. Every single one. The brain kept functioning, but the part that dreams — the part that some neuroscientists believe is the seat of consciousness itself — went dark.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 25 },
+                { "type": "set_flag", "flag": "ac.seen_controlled_studies", "value": true }
+            ],
+            "choices": [
+                { "text": "\"They stopped dreaming... that's genuinely disturbing.\"", "next": "factions.ashen-circle.ac_018" },
+                { "text": "\"Why not release this to the press?\"", "next": "factions.ashen-circle.ac_028", "statCheck": { "stat": "CHA", "dc": 12 } }
+            ]
+        },
+
+        "ac_023": {
+            "text": "Mother Cinder's expression softens with something that might be warmth, though it's hard to tell on a face that has weathered so much burning. \"Zeal is valuable. But uncontrolled fire consumes the hand that lights it.\" She places a steadying hand on your arm. \"We do not burn for the joy of burning. Every act of destruction we commit is surgical, targeted, and designed to save lives by preventing stack installations. The moment we become indiscriminate, we become the thing we fight against.\" She releases your arm. \"Now. Let me show you the target.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.showed_zeal", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 3 }
+            ],
+            "choices": [
+                { "text": "Listen to the briefing", "next": "factions.ashen-circle.ac_018" }
+            ]
+        },
+
+        "ac_024": {
+            "text": "\"Of course.\" Mother Cinder does not look disappointed. \"Conviction forced is conviction that shatters at the first test. Take time. Walk the city. Watch the stacked ones — how they move, how they speak, how they look at the world with eyes that have seen too many bodies die around them. And then ask yourself: is that living, or is that something wearing living as a mask?\" She hands you a small token — a circle of hammered metal with a break in its circumference. \"When you decide, bring this to any grey-robed figure in the lower levels. They will know what it means.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.took_time_to_decide", "value": true }
+            ],
+            "choices": [
+                { "text": "Return to the Burned Chapel later, ready to commit", "next": "factions.ashen-circle.ac_018" },
+                { "text": "Pocket the token and walk away for good", "next": "shared.prologue.node_001" }
+            ]
+        },
+
+        "ac_025": {
+            "text": "Mother Cinder nods and introduces you to a wiry man with quick eyes and chemical burns on his forearms. \"This is Brother Crucible. He was a demolitions expert with the Iron Collective before he found the Circle. He will prepare what you need.\" Brother Crucible grins — a sharp, foxlike expression. \"Thermite paste. Clean burn, total destruction of circuitry, minimal structural damage. I'll prep sixty charges, one for each stack in the shipment. You plant them, trigger the remote, and the stacks melt into slag.\" He hands you a datapad with the clinic's layout. \"Delivery entrance is your best bet. Shipment arrives at 0300. Skeleton crew. Two guards, one technician on night watch.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.accepted_clinic_mission", "value": true },
+                { "type": "set_flag", "flag": "ac.met_brother_crucible", "value": true }
+            ],
+            "choices": [
+                { "text": "Study the clinic layout carefully", "next": "factions.ashen-circle.ac_029" },
+                { "text": "\"What about security systems? Cameras?\"", "next": "factions.ashen-circle.ac_030", "statCheck": { "stat": "INT", "dc": 10 } },
+                { "text": "\"Two guards. Can I incapacitate them?\"", "next": "factions.ashen-circle.ac_031", "statCheck": { "stat": "STR", "dc": 10 } }
+            ]
+        },
+
+        "ac_026": {
+            "text": "The question lands in the room like a stone in still water. Several of the robed figures nearby stiffen. Mother Cinder, however, nods slowly. \"Yes. I would take it from them. Because what they are purchasing is not life — it is a slow, comfortable annihilation of everything that makes them human.\" She steps closer. \"I know it sounds cruel. I know that a worker who saved for twenty years to afford a stack believes they are buying safety, security, a future for the mind they've built over a lifetime. But what they are buying is a copy that will walk in their skin and slowly forget what it means to be alive.\" Her voice cracks, just barely. \"I have watched it happen. I have <span class='highlight'>caused</span> it to happen. And I will spend what remains of my one life trying to stop it.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.questioned_morality", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                { "text": "\"Alright. I'll do it. But I want to know more first.\"", "next": "factions.ashen-circle.ac_025" },
+                { "text": "\"I can't justify destroying something people paid for with their lives' savings.\"", "next": "factions.ashen-circle.ac_032" }
+            ]
+        },
+
+        "ac_027": {
+            "text": "Mother Cinder's expression doesn't change, but Brother Forge — the large man with the burned arms — takes a step forward, his face darkening. Cinder raises a hand to stop him. \"We are not wealthy. We cannot match what the factions or corporations might offer you in credits. But we can offer you something more valuable.\" She reaches into her robe and produces a data chip. \"This contains Meridian's internal security protocols. Guard rotations, bypass codes, system vulnerabilities for every stack clinic in the city. To a resourceful person, this information is worth more than credits. It opens doors that money cannot.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.asked_for_payment", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Security protocols for every clinic? That's worth my time.\"", "next": "factions.ashen-circle.ac_025", "statCheck": { "stat": "INT", "dc": 10 } },
+                { "text": "\"I'll take the data either way. You had me at 'no casualties.'\"", "next": "factions.ashen-circle.ac_025" },
+                { "text": "\"Not interested. Find another operative.\"", "next": "shared.prologue.node_001" }
+            ]
+        },
+
+        "ac_028": {
+            "text": "\"We tried.\" Mother Cinder's voice goes flat. \"Three times. The first journalist we contacted was found dead within a week — officially a transit accident. The second published a partial story that was retracted within hours and scrubbed from every server we could find. Meridian's information warfare division is more thorough than their kill teams.\" She pulls up a news archive on the terminal. The articles are there — fragments, cached copies, ghost data. <span class='highlight'>STACK TRANSFER LINKED TO COGNITIVE DECLINE — RETRACTED</span>. <span class='highlight'>FORMER MERIDIAN ENGINEER CLAIMS COVER-UP — PAGE NOT FOUND</span>. \"The third journalist is still alive. She works for Meridian now. In their PR department. Draw your own conclusions.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 15 },
+                { "type": "set_flag", "flag": "ac.learned_media_suppression", "value": true }
+            ],
+            "choices": [
+                { "text": "\"If you can't fight them with information, what's left?\"", "next": "factions.ashen-circle.ac_018" },
+                { "text": "\"Maybe you need a better approach to going public.\"", "next": "factions.ashen-circle.ac_033", "statCheck": { "stat": "INT", "dc": 13 } }
+            ]
+        },
+
+        "ac_029": {
+            "text": "You spend an hour memorizing the Restoria Clinic layout. It's a three-story building, mid-level Sector 5. Ground floor: reception, consultation rooms, payment processing. Second floor: surgical suites where stacks are installed. Third floor: storage and server infrastructure. The shipment will be delivered to a loading dock on the ground floor rear and transported via service elevator to third-floor storage. Brother Crucible marks your entry points in red. \"Service elevator shaft has a maintenance hatch. If you can get to the roof, you come down through the shaft, plant the charges in storage, and exit before anyone knows you were there.\" He pauses. \"In theory.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                { "text": "\"In theory. What's the reality?\"", "next": "factions.ashen-circle.ac_034", "statCheck": { "stat": "WIS", "dc": 11 } },
+                { "text": "Head to the clinic on mission night", "next": "factions.ashen-circle.ac_035" }
+            ]
+        },
+
+        "ac_030": {
+            "text": "Brother Crucible pulls up a security overlay on the datapad. \"Sixteen cameras, but Meridian uses a centralized monitoring system. Sister Filament — she's our tech specialist — has a signal jammer that can create a thirty-second loop on any camera within range. You'll need to time your movements to the loop windows.\" He highlights camera positions in yellow. \"The blind spots are here, here, and here. The loading dock camera has been broken for two weeks — I checked. Meridian's maintenance request is still pending because they outsource repairs to a company that's three months behind schedule.\" He grins. \"Corporate efficiency working in our favor for once.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.learned_security_layout", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Good. What about the guards?\"", "next": "factions.ashen-circle.ac_031" },
+                { "text": "\"Tell me about Sister Filament.\"", "next": "factions.ashen-circle.ac_036", "statCheck": { "stat": "PER", "dc": 12 } },
+                { "text": "Head to the clinic on mission night", "next": "factions.ashen-circle.ac_035" }
+            ]
+        },
+
+        "ac_031": {
+            "text": "\"Two guards on night shift. Both private security, not Meridian corporate soldiers. They work for a contractor called Aegis Solutions — minimum wage, minimum training. One patrols the ground floor perimeter on a twenty-minute loop. The other stays at the front desk monitoring cameras.\" Brother Crucible pulls up personnel files. \"Guard one is Marcus Webb. Forty-three, ex-factory worker, bad knee. Guard two is Priya Desai. Twenty-six, single mother, works the night shift so she can be home when her kid goes to school.\" He meets your eyes. \"Mother Cinder's rule is absolute: no casualties. These are working people, not enemies. Tranq darts, sleep gas, or distraction only.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.learned_guard_info", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Tranq darts. Clean and quiet.\"", "next": "factions.ashen-circle.ac_035", "statCheck": { "stat": "DEX", "dc": 11 } },
+                { "text": "\"I'll create a distraction instead. No one gets hurt.\"", "next": "factions.ashen-circle.ac_035", "statCheck": { "stat": "CHA", "dc": 11 } },
+                { "text": "\"What if things go sideways?\"", "next": "factions.ashen-circle.ac_034" }
+            ]
+        },
+
+        "ac_032": {
+            "text": "Mother Cinder is silent for a long time. When she speaks, her voice is quieter than before. \"I understand. I once thought the same way. I believed people had the right to choose their own damnation.\" She turns away and looks at the memory stack on the altar. \"Then I met a woman named Clara Voss. She was on her fourth body. She had been a painter — brilliant, luminous, the kind of artist who could make you weep with a brushstroke. After her fourth transfer, she couldn't paint anymore. Not because her hands had changed, but because the part of her that felt art had been <span class='highlight'>worn smooth</span>. She came to me, weeping with borrowed eyes, asking why she couldn't feel anything anymore.\" Cinder turns back. \"That was the day I stopped believing in the right to choose annihilation.\"",
+            "choices": [
+                { "text": "\"That's one story. One person. It's not enough to justify —\"", "next": "factions.ashen-circle.ac_033" },
+                { "text": "The story shakes you. \"Alright. I'll help. This once.\"", "next": "factions.ashen-circle.ac_025", "statCheck": { "stat": "WIS", "dc": 10 } },
+                { "text": "\"I'm sorry for Clara. But I can't do this.\"", "next": "shared.prologue.node_001" }
+            ]
+        },
+
+        "ac_033": {
+            "text": "Mother Cinder tilts her head. \"A better approach. What do you suggest?\" For the first time, she looks genuinely curious rather than certain. Brother Forge shifts uncomfortably — this is not how recruitment usually goes. One of the kneeling faithful in the chapel raises her head to listen. The room holds its breath, waiting for an outsider to say something the Ashen Circle hasn't heard before.",
+            "choices": [
+                { "text": "\"Hack the data wide. Darknet release, every node simultaneously.\"", "next": "factions.ashen-circle.ac_037", "statCheck": { "stat": "INT", "dc": 14 } },
+                { "text": "\"Find living proof — someone mid-transfer willing to testify.\"", "next": "factions.ashen-circle.ac_038", "statCheck": { "stat": "CHA", "dc": 13 } },
+                { "text": "\"Sabotage from within — get your people hired at Meridian.\"", "next": "factions.ashen-circle.ac_039", "statCheck": { "stat": "WIS", "dc": 12 } }
+            ]
+        },
+
+        "ac_034": {
+            "text": "Brother Crucible's grin fades. \"If things go sideways, you get out. Period. Do not engage security. Do not try to salvage the mission. The thermite paste has a remote trigger — worst case, you detonate from outside the building. The charges are small enough that they'll destroy the stacks without compromising structural integrity.\" He leans closer. \"But here's what I didn't tell Mother Cinder. Meridian has been beefing up security at all their clinics for the past month. Word is they've deployed something new — automated defense drones, military-grade. If one of those activates while you're in the building...\" He trails off. \"Just be fast.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.warned_about_drones", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Drones. Wonderful. I'll be fast.\"", "next": "factions.ashen-circle.ac_035", "statCheck": { "stat": "DEX", "dc": 12 } },
+                { "text": "\"You're sending me in without telling Cinder about drones?\"", "next": "factions.ashen-circle.ac_040" }
+            ]
+        },
+
+        "ac_035": {
+            "text": "Mission night. Rain falls in sheets across Sector 5, turning the mid-level streets into rivers of reflected neon. You crouch on the roof of the building adjacent to the Restoria Clinic, thermite charges secured in a sealed pack on your back. Below, the clinic's loading dock is a rectangle of harsh fluorescent light in the darkness. A delivery truck is already parked there — the stack shipment has arrived early. Through the rain, you count two workers unloading sealed cases from the truck, plus one guard doing a perimeter walk. The loading dock camera is dark, confirming Crucible's intel. Your comm crackles. Sister Filament's voice: \"<span class='highlight'>Camera loop ready on your signal. You've got thirty seconds per window. Make them count.</span>\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.clinic_mission_started", "value": true }
+            ],
+            "choices": [
+                { "text": "Jump to the clinic roof and enter via the shaft", "next": "factions.ashen-circle.ac_041", "statCheck": { "stat": "DEX", "dc": 12 } },
+                { "text": "Wait for the workers to finish unloading, then enter the dock", "next": "factions.ashen-circle.ac_042", "statCheck": { "stat": "WIS", "dc": 11 } },
+                { "text": "Create a distraction to draw the guard away", "next": "factions.ashen-circle.ac_043", "statCheck": { "stat": "INT", "dc": 11 } }
+            ]
+        },
+
+        "ac_036": {
+            "text": "\"Filament is... complicated.\" Brother Crucible's expression shifts to something guarded. \"She was a network engineer for Meridian's eastern division. Came to the Circle about two years ago. Brilliant. Scary brilliant. She handles all our electronic warfare — signal jamming, data extraction, communication security.\" He pauses too long. \"She still has her stack port. Mother Cinder made an exception because Filament's skills are too valuable to lose, and the port gives her direct neural interface with electronic systems. But some of us wonder...\" He glances around and lowers his voice. \"Some of us wonder if you can truly be Ashen Circle while you're still jacked into the machine you swore to destroy.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.learned_about_filament", "value": true },
+                { "type": "set_flag", "flag": "ac.filament_has_port", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Interesting. Let's focus on the mission.\"", "next": "factions.ashen-circle.ac_035" },
+                { "text": "\"Does Filament still use her stack, or just the port?\"", "next": "factions.ashen-circle.ac_044" }
+            ]
+        },
+
+        "ac_037": {
+            "text": "Mother Cinder's eyes widen slightly. \"A simultaneous darknet release. We have considered this, but the technical requirements are beyond our current capabilities. Meridian monitors the major darknet channels. A release would need to be distributed across hundreds of nodes simultaneously to prevent suppression.\" She pauses, calculating. \"But if someone could build a distribution architecture resilient enough to survive Meridian's countermeasures... it would bypass every media gatekeeper that's failed us before.\" She looks at you with new appraisal. \"Do the clinic mission first. Prove you can operate in the field. Then we'll talk about your darknet idea. If it works, it could be the weapon that makes all other weapons unnecessary.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 20 },
+                { "type": "set_flag", "flag": "ac.proposed_darknet_plan", "value": true }
+            ],
+            "choices": [
+                { "text": "Agree to do the clinic mission first", "next": "factions.ashen-circle.ac_025" }
+            ]
+        },
+
+        "ac_038": {
+            "text": "\"Living proof.\" Mother Cinder repeats the phrase, turning it over. \"Someone in the process of degradation who is willing to document it publicly. We have tried. The problem is that the degradation itself destroys the victim's ability to recognize it. By the time the changes are visible to outsiders, the subject no longer believes anything is wrong.\" She pauses. \"But there is one possibility. A man named <span class='highlight'>Dr. Oren Kessler</span>. He's a Meridian scientist currently on his second body. He contacted us six months ago, claiming he had evidence of something worse than degradation — something Meridian is deliberately engineering into the newer stack models. We lost contact before he could elaborate. If you could find him...\"",
+            "actions": [
+                { "type": "add_experience", "amount": 20 },
+                { "type": "set_flag", "flag": "ac.proposed_testimony_plan", "value": true },
+                { "type": "set_flag", "flag": "ac.kessler_lead", "value": true }
+            ],
+            "choices": [
+                { "text": "\"I'll find Kessler. But let me do the clinic job first to prove myself.\"", "next": "factions.ashen-circle.ac_025" },
+                { "text": "\"Forget the clinic. Kessler is more important.\"", "next": "factions.ashen-circle.ac_045" }
+            ]
+        },
+
+        "ac_039": {
+            "text": "Mother Cinder exhales slowly. \"Infiltration. A long game.\" She exchanges a glance with Brother Forge that you can't quite read. \"We have... considered this approach. There are obstacles you may not be aware of. Meridian runs psychological profiling on all employees. Stack ideology screening. Neural loyalty monitors for anyone above entry level.\" She pauses. \"But you're not wrong that it would be the most effective vector. If we could place operatives in key positions — manufacturing, quality control, distribution — we could ensure that every new stack produced contains a critical flaw. Not enough to harm the user. Enough to prevent the transfer from completing.\" Her eyes gleam. \"Do the clinic mission. Then we can discuss infiltration strategies in detail.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 20 },
+                { "type": "set_flag", "flag": "ac.proposed_infiltration_plan", "value": true }
+            ],
+            "choices": [
+                { "text": "Agree to do the clinic mission first", "next": "factions.ashen-circle.ac_025" }
+            ]
+        },
+
+        "ac_040": {
+            "text": "Brother Crucible's jaw tightens. \"Mother Cinder believes the world is clean lines and clear choices. Good and evil. Sacred and profane. But the field isn't like that. I've been running operations for the Circle for three years, and every time we go up against Meridian, they've escalated. The drones are new. If I tell Cinder, she'll call off the mission. She'll want more planning, more prayer, more <span class='highlight'>patience</span>. And in the meantime, sixty more stacks get installed. Sixty more people lose their souls.\" He meets your eyes. \"I'm not asking you to lie to her. I'm asking you to trust me that the risk is manageable.\"",
+            "choices": [
+                { "text": "\"Fine. I trust you. Let's do this.\"", "next": "factions.ashen-circle.ac_035" },
+                { "text": "Tell Mother Cinder about the drones", "next": "factions.ashen-circle.ac_046" },
+                { "text": "\"If I die because of your secrecy, I'll haunt you.\"", "next": "factions.ashen-circle.ac_035" }
+            ]
+        },
+
+        "ac_041": {
+            "text": "You launch yourself across the gap. The rain makes the clinic roof slick, and your boots skid on the landing, but you catch the edge of an exhaust vent and stabilize. The maintenance hatch is where Crucible said it would be — a square panel secured with corroded bolts. You work them loose in under a minute. Below, the elevator shaft drops three stories into darkness, the service elevator sitting idle at ground level. Maintenance rungs line the shaft wall. You lower yourself in, the thermite pack heavy on your back, and begin the descent. Two floors down, you reach the third-floor access panel. Through the thin metal, you can hear the hum of server racks and the whisper of climate control keeping the stack storage at optimal temperature.",
+            "actions": [
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Open the panel and enter the storage room", "next": "factions.ashen-circle.ac_047" },
+                { "text": "Listen carefully before entering", "next": "factions.ashen-circle.ac_048", "statCheck": { "stat": "PER", "dc": 13 } }
+            ]
+        },
+
+        "ac_042": {
+            "text": "Patience. You crouch in the rain for twenty minutes, watching the workers unload the sealed cases one by one and carry them inside. When the last case disappears into the clinic, the workers close the truck and drive away. The dock falls silent except for the drumming rain. The guard completes his perimeter loop and re-enters the building through a side door. You have a window. You drop from your perch, cross the gap to the loading dock, and slip through the dock door before it finishes closing on its hydraulic arm. Inside, fluorescent light buzzes overhead. A corridor stretches ahead, lined with supply crates and the acrid smell of medical-grade antiseptic.",
+            "choices": [
+                { "text": "Move toward the service elevator", "next": "factions.ashen-circle.ac_049", "statCheck": { "stat": "DEX", "dc": 10 } },
+                { "text": "Search the corridor for useful intel", "next": "factions.ashen-circle.ac_050", "statCheck": { "stat": "PER", "dc": 11 } }
+            ]
+        },
+
+        "ac_043": {
+            "text": "You spot a junction box on the adjacent building's exterior. A quick splice later, you've triggered a power surge that kills the lights on the entire block. The clinic's backup generators kick in after three seconds, but the disruption is enough. The patrolling guard jogs to the front of the building to check the perimeter. The dock workers look up, confused. In the chaos, you drop from the roof, cross to the clinic, and enter through the loading dock in complete darkness. Your hand-light reveals a corridor stacked with sealed shipment cases. You're in.",
+            "actions": [
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Head for the service elevator to reach storage", "next": "factions.ashen-circle.ac_049" }
+            ]
+        },
+
+        "ac_044": {
+            "text": "Brother Crucible's expression darkens further. \"That's the question nobody asks out loud. The port is supposed to be inactive — just a neural interface, no stack loaded. But I've seen Filament after long hacking sessions. She gets this look. Distant. Like part of her is somewhere else.\" He drums his fingers on the workbench. \"I asked her once if she'd ever backed herself up. She told me to mind my own faith. That's not a no.\" He straightens up abruptly, as if catching himself saying too much. \"Look. Filament is essential to operations. Without her, we're blind and deaf in the digital space. Just... keep your eyes open around her. That's all I'm saying.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.crucible_suspects_filament", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                { "text": "File that away. Time for the mission.", "next": "factions.ashen-circle.ac_035" }
+            ]
+        },
+
+        "ac_045": {
+            "text": "Mother Cinder shakes her head firmly. \"Kessler has been silent for six months. For all we know, Meridian has already silenced him permanently. The clinic is a concrete target with a known timeline. We act on certainties first, then pursue leads.\" Her tone brooks no argument. Brother Forge crosses his arms behind her, making the point redundant. \"Prove yourself at the Restoria Clinic. Then I will give you everything we have on Kessler's last known location and you can pursue him with the Circle's full resources behind you.\"",
+            "choices": [
+                { "text": "Accept the sequence — clinic first, Kessler second", "next": "factions.ashen-circle.ac_025" }
+            ]
+        },
+
+        "ac_046": {
+            "text": "You find Mother Cinder in the main chapel, kneeling before the altar in silent meditation. When you tell her about the drones, her expression cycles through surprise, anger, and cold calculation in the span of three seconds. She rises and calls for Brother Crucible, who arrives looking like a man who knows he's been caught. \"You withheld tactical intelligence from me,\" she says. Her voice is quiet, which is worse than shouting. \"You endangered an operative to preserve a timeline.\" Crucible starts to defend himself, but she cuts him off. \"The mission proceeds. But with modifications. Sister Filament will provide electronic countermeasures against automated defense systems. And Crucible — you and I will discuss obedience when this is done.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.told_cinder_about_drones", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 10 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Head to the clinic with improved support", "next": "factions.ashen-circle.ac_035" }
+            ]
+        },
+
+        "ac_047": {
+            "text": "The storage room is cold and sterile. Rows of sealed cases line metal shelving units under blue-white LED strips. Each case bears the Meridian logo and a serial number. You open one: inside, nestled in shock-resistant foam, sits a Series 7 memory stack. Chrome and crystalline circuitry, no larger than a deck of cards. Beautiful, in a terrible way. You begin planting thermite charges, one per case, working methodically down the rows. The paste adheres to the stack housings with a soft hiss. You're on case thirty-four when you hear it — a mechanical whirring from somewhere beyond the storage room door. Something is moving in the corridor.",
+            "choices": [
+                { "text": "Freeze and listen", "next": "factions.ashen-circle.ac_051", "statCheck": { "stat": "PER", "dc": 12 } },
+                { "text": "Work faster — plant the remaining charges", "next": "factions.ashen-circle.ac_052", "statCheck": { "stat": "DEX", "dc": 14 } },
+                { "text": "Hide behind the shelving units", "next": "factions.ashen-circle.ac_053", "statCheck": { "stat": "DEX", "dc": 10 } }
+            ]
+        },
+
+        "ac_048": {
+            "text": "You press your ear to the access panel. Beyond the hum of servers and climate control, you detect something else: a faint, rhythmic clicking. Mechanical. Precise. Something is patrolling the storage floor on an automated loop. Through a hairline gap in the panel, you glimpse it — a Meridian security drone, spherical, about the size of a human head, hovering three feet off the ground on whisper-quiet repulsors. A red sensor eye sweeps the room in steady arcs. Brother Crucible's warning was accurate. <span class='highlight'>The drone completes a circuit of the room every forty-five seconds, with a fifteen-second window at the far end where the storage shelves block its sensor arc.</span>",
+            "actions": [
+                { "type": "add_experience", "amount": 20 },
+                { "type": "set_flag", "flag": "ac.spotted_drone_early", "value": true }
+            ],
+            "choices": [
+                { "text": "Time your entry to the drone's blind spot", "next": "factions.ashen-circle.ac_054" },
+                { "text": "Radio Filament for electronic countermeasures", "next": "factions.ashen-circle.ac_055" }
+            ]
+        },
+
+        "ac_049": {
+            "text": "The service elevator is a freight model — large enough to carry medical equipment, slow enough to make you nervous. You bypass the access panel with the codes Crucible provided and ride it to the third floor. The doors open on a long corridor with polished floors that reflect the emergency lighting in pale green streaks. Storage is at the end of the hall. As you move forward, your foot catches something — a hair-thin tripwire stretched ankle-height across the corridor. You stop cold. This isn't standard Meridian security. Someone has rigged additional measures.",
+            "choices": [
+                { "text": "Carefully step over the tripwire", "next": "factions.ashen-circle.ac_047", "statCheck": { "stat": "DEX", "dc": 11 } },
+                { "text": "Examine the tripwire mechanism", "next": "factions.ashen-circle.ac_056", "statCheck": { "stat": "INT", "dc": 13 } },
+                { "text": "Find an alternate route to storage", "next": "factions.ashen-circle.ac_057" }
+            ]
+        },
+
+        "ac_050": {
+            "text": "Your eyes catch a clipboard hanging from a hook beside one of the supply crates. Delivery manifests. You scan them quickly and find something unexpected — the shipment is listed as sixty Series 7 stacks, but there's a second manifest underneath for a smaller delivery: <span class='highlight'>four Series 9 Prototype units, CLASSIFIED, EXECUTIVE AUTHORIZATION ONLY</span>. Series 9. You've never heard of anything beyond the Series 7. Whatever Meridian is developing in their next generation, four prototypes are sitting in this building right now.",
+            "actions": [
+                { "type": "add_experience", "amount": 20 },
+                { "type": "set_flag", "flag": "ac.discovered_series9", "value": true }
+            ],
+            "choices": [
+                { "text": "Pocket the manifest and continue to the elevator", "next": "factions.ashen-circle.ac_049", "statCheck": { "stat": "DEX", "dc": 10 } },
+                { "text": "Search for the Series 9 prototypes specifically", "next": "factions.ashen-circle.ac_058" }
+            ]
+        },
+
+        "ac_051": {
+            "text": "The whirring grows louder, then stabilizes. A security drone. You track its sound pattern — it's following a circuit around the third-floor corridor, not inside the storage room. You have time, but the drone will detect you if you try to leave through the main door. You resume planting charges, faster now. Case forty. Fifty. Fifty-eight. Fifty-nine. Sixty. All charges set. The remote trigger is warm in your pocket. Now you just need to get out.",
+            "actions": [
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Exit back through the elevator shaft", "next": "factions.ashen-circle.ac_059", "statCheck": { "stat": "DEX", "dc": 11 } },
+                { "text": "Wait for the drone to pass, then exit through the corridor", "next": "factions.ashen-circle.ac_060", "statCheck": { "stat": "DEX", "dc": 13 } }
+            ]
+        },
+
+        "ac_052": {
+            "text": "Your hands become a blur of motion. Thermite paste on case thirty-five, thirty-six, thirty-seven. You don't bother closing the cases anymore, just slap the charge and move on. The mechanical whirring grows closer. Forty-five, fifty, fifty-five. Your heart hammers. The sound is just outside the storage room door now. Fifty-eight, fifty-nine — you slam the last charge onto case sixty just as the storage room door begins to open, the electronic lock cycling from green to amber. You throw yourself behind the farthest shelving unit as a Meridian security drone glides into the room, its red sensor eye sweeping in measured arcs.",
+            "choices": [
+                { "text": "Hold your breath and stay perfectly still", "next": "factions.ashen-circle.ac_053" },
+                { "text": "Scramble for the elevator shaft access panel", "next": "factions.ashen-circle.ac_061", "statCheck": { "stat": "DEX", "dc": 15 } }
+            ]
+        },
+
+        "ac_053": {
+            "text": "You press yourself against the cold metal shelving and slow your breathing. The drone hovers past your position, its sensor eye painting the room in sweeps of red light. You watch the beam pass over the floor two feet from your boots. It pauses. The whirring changes pitch — a processing sound. Has it detected the open cases? The tampered seals? For three agonizing seconds, the drone holds position. Then it resumes its patrol, gliding toward the opposite end of the room. You exhale silently. The beam didn't reach you. But the drone will complete its loop in under a minute.",
+            "choices": [
+                { "text": "Move to the elevator shaft access panel while it's turned away", "next": "factions.ashen-circle.ac_059" },
+                { "text": "Wait for it to leave the room entirely", "next": "factions.ashen-circle.ac_060", "statCheck": { "stat": "WIS", "dc": 11 } }
+            ]
+        },
+
+        "ac_054": {
+            "text": "You count the cycles. Click-whir-sweep, forty-five seconds. The drone reaches the far corner and its sensor arc is blocked by the tall server racks. Now. You pop the access panel and slide into the storage room in a low crouch, moving immediately to the nearest shelving unit for cover. The drone begins its return sweep. You work in the blind spots, planting charges during each fifteen-second window, pressing flat against the shelves when the sensor arc passes. It takes four full cycles to plant all sixty charges. Methodical. Precise. Professional. When the last charge is set, you retreat to the access panel and slip back into the elevator shaft, heart pounding but charges planted.",
+            "actions": [
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                { "text": "Climb out and trigger the charges from the roof", "next": "factions.ashen-circle.ac_062" }
+            ]
+        },
+
+        "ac_055": {
+            "text": "\"Filament here.\" Her voice on the comm is flat, mechanical. \"I can see the drone on the building's security network. Meridian Model K-7 Sentinel. Thermal and motion sensors, non-lethal deterrent package — taser and stun flash. Give me twenty seconds.\" You count. At eighteen seconds, Filament speaks again. \"I've injected a phantom patrol route into its navigation system. It thinks the fourth floor exists. It's heading up the elevator shaft now to patrol a floor that isn't there. You have approximately six minutes before its error-correction subroutine overrides my code.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.filament_hacked_drone", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Six minutes. Plant all sixty charges. Go.", "next": "factions.ashen-circle.ac_063" }
+            ]
+        },
+
+        "ac_056": {
+            "text": "The tripwire connects to a compact alarm module bolted to the baseboard — not a weapon, just an alert system. But the wiring is interesting. It's not Meridian standard issue. The components are civilian-grade, hand-soldered, and the craftsmanship looks familiar. It looks like Brother Crucible's work. Someone from the Circle has been here before you. Recently. You disarm the device and pocket the alarm module. This raises questions you don't have time to answer right now.",
+            "actions": [
+                { "type": "add_experience", "amount": 15 },
+                { "type": "set_flag", "flag": "ac.found_circle_tripwire", "value": true }
+            ],
+            "choices": [
+                { "text": "Continue to storage with heightened alertness", "next": "factions.ashen-circle.ac_047" }
+            ]
+        },
+
+        "ac_057": {
+            "text": "You backtrack and find a ventilation duct large enough to crawl through. It runs parallel to the corridor, bypassing whatever traps have been laid. The duct is cramped and thick with dust, and you have to drag the thermite pack behind you, but it deposits you directly above the storage room through a ceiling grate. Below, sixty sealed cases sit on metal shelving under sterile lighting. No visible threats. You remove the grate and lower yourself down.",
+            "choices": [
+                { "text": "Begin planting charges", "next": "factions.ashen-circle.ac_047" }
+            ]
+        },
+
+        "ac_058": {
+            "text": "You find them in a separate locked cabinet near the loading dock. The lock is biometric, but the cabinet itself is cheap — you pry it open with a cargo hook. Inside, four sleek black cases marked with Meridian's experimental division logo. You open one. The Series 9 prototype is unlike any stack you've seen. Where the Series 7 is chrome and circuitry, this is <span class='highlight'>organic</span> — biological neural mesh woven through a crystalline lattice. It almost looks alive. A label on the inner case reads: <span class='highlight'>PROJECT OUROBOROS — BIDIRECTIONAL TRANSFER ENABLED</span>. Bidirectional. Standard stacks copy mind to machine. This thing can copy mind to machine AND machine to mind.",
+            "actions": [
+                { "type": "add_experience", "amount": 30 },
+                { "type": "set_flag", "flag": "ac.found_series9_prototype", "value": true },
+                { "type": "set_flag", "flag": "ac.knows_ouroboros", "value": true }
+            ],
+            "choices": [
+                { "text": "Take one prototype and destroy the rest with the shipment", "next": "factions.ashen-circle.ac_049", "statCheck": { "stat": "INT", "dc": 12 } },
+                { "text": "Destroy all four prototypes right now", "next": "factions.ashen-circle.ac_064", "statCheck": { "stat": "STR", "dc": 10 } },
+                { "text": "Leave them untouched — focus on the main mission", "next": "factions.ashen-circle.ac_049" }
+            ]
+        },
+
+        "ac_059": {
+            "text": "You climb the elevator shaft rungs with aching arms, the thermite pack now mercifully light on your back. Rain greets you as you emerge onto the clinic roof. The city stretches in every direction, a vertical maze of light and shadow. You pull the remote trigger from your pocket. One press, and sixty memory stacks become sixty puddles of molten slag. Below you, through three floors of concrete and steel, the charges wait. You think of the middle-class workers who saved for years to afford those stacks. You think of Clara Voss, who forgot how to paint. You think of the trembling man in the chapel who could still hear his stack screaming.",
+            "choices": [
+                { "text": "Press the trigger", "next": "factions.ashen-circle.ac_062" },
+                { "text": "Hesitate — is this really the right thing?", "next": "factions.ashen-circle.ac_065" }
+            ]
+        },
+
+        "ac_060": {
+            "text": "The drone exits through the storage room door, which closes behind it with a soft click. You hear it resume patrol in the corridor, the mechanical whirring fading as it moves away. You cross the room to the access panel and slip back into the elevator shaft. Cool air rushes up from below. All sixty charges are planted. The mission is almost complete.",
+            "choices": [
+                { "text": "Climb out to the roof", "next": "factions.ashen-circle.ac_059" }
+            ]
+        },
+
+        "ac_061": {
+            "text": "You sprint for the access panel. Behind you, the drone's sensor locks onto your movement and its deterrent systems activate — a high-pitched whine building to a taser discharge. You wrench the panel open and throw yourself into the elevator shaft just as a bolt of electricity scorches the wall where your head was a half-second ago. You catch a maintenance rung, your arms screaming, and begin climbing. Below, the drone hovers at the open panel, its sensor eye tracking you, but its chassis is too wide to follow you into the shaft. It lets out a series of sharp electronic barks — an alarm signal.",
+            "actions": [
+                { "type": "modify_stat", "stat": "HP", "amount": -5 }
+            ],
+            "choices": [
+                { "text": "Climb fast and trigger the charges from the roof", "next": "factions.ashen-circle.ac_062" }
+            ]
+        },
+
+        "ac_062": {
+            "text": "You press the trigger. For one heartbeat, nothing happens. Then the building shudders beneath your feet. Not an explosion — thermite doesn't explode. It burns. Through the roof ventilation, you see a faint orange glow as sixty memory stacks melt simultaneously, their chrome housings liquefying, their delicate circuitry dissolving into useless slag. The clinic's fire suppression system activates, but thermite burns at 2500 degrees — no sprinkler system in the world can touch it. The glow intensifies, then fades. Sixty souls that will never be trapped. Your comm crackles. Sister Filament: \"<span class='highlight'>Confirmed. All sixty units destroyed. No structural damage. No casualties. Clean operation.</span>\" And then, softer: \"Mother Cinder says to come home.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 50 },
+                { "type": "set_flag", "flag": "ac.clinic_mission_complete", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Return to the Burned Chapel", "next": "factions.ashen-circle.ac_066" }
+            ]
+        },
+
+        "ac_063": {
+            "text": "Six minutes. You enter the storage room and move with focused intensity. Thermite paste on case after case, your hands finding a rhythm. The room is eerily silent without the drone's whirring. Case twenty. Forty. The paste hisses softly as it bonds to chrome. Fifty. Fifty-five. At case fifty-eight, Filament's voice cuts in: \"Three minutes remaining.\" Fifty-nine. Sixty. Done. You seal the last case, slide back through the access panel, and begin climbing the elevator shaft. At two minutes remaining, you hear the drone descending past you in the shaft, returning to its proper floor, confused but operational. You press flat against the wall as it passes. It doesn't see you.",
+            "actions": [
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Reach the roof and trigger the charges", "next": "factions.ashen-circle.ac_062" }
+            ]
+        },
+
+        "ac_064": {
+            "text": "You plant thermite charges on all four Series 9 prototypes. The organic neural mesh blackens and curls as the paste activates on contact — it doesn't even need the remote trigger. The biological components are more fragile than the chrome Series 7 units. In seconds, four pieces of technology that could have redefined consciousness transfer are reduced to smoking residue. Something in you feels sick. Something else feels righteous. You pocket the manifest documenting their existence and head for the elevator.",
+            "actions": [
+                { "type": "add_experience", "amount": 20 },
+                { "type": "set_flag", "flag": "ac.destroyed_series9", "value": true }
+            ],
+            "choices": [
+                { "text": "Continue to the main storage room", "next": "factions.ashen-circle.ac_047" }
+            ]
+        },
+
+        "ac_065": {
+            "text": "Your thumb hovers over the trigger. The rain plasters your hair to your face. Down there, in the sterile rooms below, those stacks represent hope to someone. Misguided hope, maybe. Counterfeit immortality. But hope nonetheless. A worker who scrubbed factory floors for twenty years to afford the chance to live long enough to see their grandchildren grow up. Is Mother Cinder right that the stacks destroy what makes people human? Or is she a brilliant woman whose trauma has calcified into dogma? The trigger is small and warm and your thumb rests on it like a question mark.",
+            "choices": [
+                { "text": "Press it. The evidence is too strong to ignore.", "next": "factions.ashen-circle.ac_062", "statCheck": { "stat": "WIS", "dc": 13 } },
+                { "text": "Don't press it. Drop the trigger. Walk away.", "next": "factions.ashen-circle.ac_067" },
+                { "text": "Press it, but promise yourself to find a better way next time", "next": "factions.ashen-circle.ac_062" }
+            ]
+        },
+
+        "ac_066": {
+            "text": "The Burned Chapel is warm with candlelight and celebration when you return. Word has already spread. Grey-robed faithful line the corridor, touching your shoulders and murmuring blessings as you pass. Mother Cinder waits at the altar, her expression a mixture of pride and solemnity. \"Sixty souls preserved from imprisonment,\" she says. \"The cycle gives thanks through us.\" She places her hands on your shoulders. \"You have proven your commitment. From this night, you are welcome in every Ashen Circle sanctuary in the city. You have earned the rank of <span class='highlight'>Flame Bearer</span>.\" Brother Forge presents you with a grey cloak, its edges embroidered with broken circuit patterns in silver thread.",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.rank_flame_bearer", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 10 },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                { "text": "Accept the cloak and the rank with gratitude", "next": "factions.ashen-circle.ac_068" },
+                { "text": "\"Before celebrations — I found something at the clinic.\"", "next": "factions.ashen-circle.ac_069", "condition": { "flag": "ac.discovered_series9" } },
+                { "text": "\"I need to talk to you about Brother Crucible.\"", "next": "factions.ashen-circle.ac_070", "condition": { "flag": "ac.found_circle_tripwire" } }
+            ]
+        },
+
+        "ac_067": {
+            "text": "You let the trigger fall from your fingers. It bounces once on the clinic roof and lies still in a puddle, its red activation button winking up at you like an accusation. The rain intensifies. You stand there for a long time, feeling the weight of sixty intact memory stacks beneath your feet and the heavier weight of the choice you've just made. Your comm crackles. Sister Filament's voice: \"Status? Charges are planted but no detonation signal received. Are you compromised?\" You could explain. You could lie. You could simply turn off the comm and disappear into the rain.",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.refused_to_detonate", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Mission aborted. I couldn't do it.\"", "next": "factions.ashen-circle.ac_071", "statCheck": { "stat": "CHA", "dc": 12 } },
+                { "text": "Turn off the comm and walk away", "next": "factions.ashen-circle.ac_072" },
+                { "text": "Pick the trigger back up. Press it.", "next": "factions.ashen-circle.ac_062" }
+            ]
+        },
+
+        "ac_068": {
+            "text": "You drape the cloak over your shoulders. It's heavier than it looks — real fabric, hand-woven, the kind of craftsmanship that barely exists anymore in a world of synthetic everything. Mother Cinder watches you with an expression you haven't seen before: hope. \"There is more work to be done,\" she says. \"The Restoria Clinic was one facility among hundreds. Meridian will replace those stacks within a week. Our victory was symbolic, but symbols matter.\" She leads you to the map room. \"Your next mission, should you accept it, requires a different kind of courage. Not destruction — <span class='highlight'>infiltration</span>. We have identified a Meridian research facility in the upper levels where they are developing next-generation stack technology. We need someone inside.\"",
+            "choices": [
+                { "text": "\"Tell me more about this facility.\"", "next": "factions.ashen-circle.ac_073", "statCheck": { "stat": "INT", "dc": 10 } },
+                { "text": "\"I want to pursue the Kessler lead first.\"", "next": "factions.ashen-circle.ac_074", "condition": { "flag": "ac.kessler_lead" } },
+                { "text": "\"I need rest before the next mission.\"", "next": "factions.ashen-circle.ac_075" }
+            ]
+        },
+
+        "ac_069": {
+            "text": "You produce the manifest — or the prototype, if you took one — and Mother Cinder's composure cracks for the first time since you've known her. Her hands tremble as she reads the words PROJECT OUROBOROS. \"Bidirectional transfer,\" she whispers. \"They've done it. They've built a stack that can write a digital consciousness INTO a living brain.\" She sits heavily on the altar steps. Brother Forge moves to support her, alarmed. \"Mother?\" \"Don't you see?\" she says, her voice hollow. \"With a bidirectional stack, they don't need willing subjects anymore. They can <span class='highlight'>overwrite anyone</span>. Pour a corporate executive's backed-up mind into a factory worker's skull. The ultimate hostile takeover. Not of companies — of <span class='highlight'>people</span>.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 30 },
+                { "type": "set_flag", "flag": "ac.revealed_ouroboros_to_cinder", "value": true }
+            ],
+            "choices": [
+                { "text": "\"We need to find where they're manufacturing these.\"", "next": "factions.ashen-circle.ac_073", "statCheck": { "stat": "INT", "dc": 12 } },
+                { "text": "\"Could this technology be used for good? To heal damaged minds?\"", "next": "factions.ashen-circle.ac_076", "statCheck": { "stat": "WIS", "dc": 14 } },
+                { "text": "\"This is bigger than the Circle. We need allies.\"", "next": "factions.ashen-circle.ac_077", "statCheck": { "stat": "CHA", "dc": 13 } }
+            ]
+        },
+
+        "ac_070": {
+            "text": "You show Mother Cinder the alarm module you recovered from the clinic corridor. She examines it in silence. Then she calls Brother Crucible. When he sees the device in her hands, his face goes pale beneath his burn scars. \"You want to explain why Circle-manufactured surveillance equipment was already planted inside a clinic we supposedly hadn't penetrated yet?\" Cinder asks, her voice dangerously soft. Crucible swallows. \"I... conducted a preliminary reconnaissance. On my own initiative.\" \"Without authorization.\" \"The mission needed current intelligence.\" \"The mission needed <span class='highlight'>trust</span>, Brother Crucible. Trust that you have now made more difficult to maintain.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.crucible_reprimanded", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 5 }
+            ],
+            "choices": [
+                { "text": "\"He kept the drones secret too. You should know that.\"", "next": "factions.ashen-circle.ac_078", "condition": { "flag": "ac.warned_about_drones" } },
+                { "text": "\"Go easy on him. His intel was good.\"", "next": "factions.ashen-circle.ac_079" },
+                { "text": "Stay silent and let Cinder handle it", "next": "factions.ashen-circle.ac_068" }
+            ]
+        },
+
+        "ac_071": {
+            "text": "A long silence on the comm. Then Filament: \"Understood. Return to base.\" Her tone is carefully neutral, but you can hear the judgment beneath it. Or maybe you're projecting. The walk back to the Burned Chapel feels twice as long. When you arrive, Mother Cinder is waiting. She already knows. Her expression is not anger — it's something harder to bear. Disappointment. Compassion. Understanding. \"The charges,\" she says. \"They're still planted.\" \"Yes.\" \"Meridian will find them. They'll increase security at every clinic in the city. Our window of opportunity, such as it was, is closing.\" She studies you. \"Why?\"",
+            "choices": [
+                { "text": "\"I couldn't destroy what people paid their whole lives for.\"", "next": "factions.ashen-circle.ac_080" },
+                { "text": "\"I don't know. I froze. I'm sorry.\"", "next": "factions.ashen-circle.ac_081" },
+                { "text": "\"Because destroying stacks one clinic at a time won't change anything.\"", "next": "factions.ashen-circle.ac_082" }
+            ]
+        },
+
+        "ac_072": {
+            "text": "You switch off the comm and stand on the clinic roof as the rain soaks through your clothes. The city hums below you, indifferent, eternal. You've failed the Ashen Circle's first test. You've left sixty thermite charges planted inside a Meridian facility. You've possibly condemned yourself, because if Meridian finds those charges, they'll trace the components back to whoever manufactured them, and eventually back to you. But for now, in this moment, the stacks survive and you can live with that. The question is whether the Ashen Circle can live with you.",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.went_silent", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": -15 }
+            ],
+            "choices": [
+                { "text": "Return to the Circle and face the consequences", "next": "factions.ashen-circle.ac_071" },
+                { "text": "Disappear. Leave the Circle behind.", "next": "shared.prologue.node_001" }
+            ]
+        },
+
+        "ac_073": {
+            "text": "Mother Cinder pulls up schematics on the war room terminal. \"Meridian Advanced Research, Tower 14, Cloud Level. The facility where they develop prototype stack technology.\" The building schematic shows a fortress of glass and steel high above the smog layer. \"We need someone to get inside posing as a new hire. Sister Filament has fabricated credentials that will pass their screening. Once inside, you'll need to access their restricted research database and download everything related to their next-generation stack program.\" She pauses. \"There's a complication. The facility uses neural verification for all employees. A brain scan at the door, every day. If your neural pattern doesn't match their employee registry, the doors don't open.\"",
+            "choices": [
+                { "text": "\"How do we get around neural verification?\"", "next": "factions.ashen-circle.ac_083", "statCheck": { "stat": "INT", "dc": 12 } },
+                { "text": "\"I'll find another way in. Service entrance, maintenance shafts.\"", "next": "factions.ashen-circle.ac_084", "statCheck": { "stat": "INT", "dc": 14 } },
+                { "text": "\"We need an insider. Someone already working there.\"", "next": "factions.ashen-circle.ac_085" }
+            ]
+        },
+
+        "ac_074": {
+            "text": "Mother Cinder nods slowly. \"Dr. Oren Kessler. Last known location: a medical facility in Sector 12, upper mid-level. He was using the name David Chen. Our last communication suggested he had discovered something about the Series 7 stacks that even the standard degradation data doesn't cover — something about <span class='highlight'>residual consciousness</span> in discarded bodies after transfer.\" She hands you a data chip. \"This contains his last known address, his cover identity, and the dead-drop location he used for our communications. Be careful. If Meridian silenced him, they may be watching his haunts.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.pursuing_kessler", "value": true },
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                { "text": "Head to Kessler's last known address", "next": "factions.ashen-circle.ac_086" },
+                { "text": "Check the dead-drop location first", "next": "factions.ashen-circle.ac_087", "statCheck": { "stat": "WIS", "dc": 12 } }
+            ]
+        },
+
+        "ac_075": {
+            "text": "Mother Cinder assigns you a cell in the lower levels of the chapel — a small room carved from what was once a water main junction. It's spartan: a cot, a candle, a basin of clean water. Luxury by undercity standards. As you lie in the darkness, the events of the night replay behind your closed eyes. The sterile storage room. The thermite's soft hiss. The orange glow of sixty stacks melting. Sleep comes unevenly, fractured by something that might be guilt or might be adrenaline withdrawal. In the morning, Sister Ember brings you a bowl of rice and recycled protein. \"Mother Cinder asks if you're ready to discuss the next step,\" she says. \"There's no rush. But there is urgency.\"",
+            "choices": [
+                { "text": "Go to the briefing", "next": "factions.ashen-circle.ac_073" }
+            ]
+        },
+
+        "ac_076": {
+            "text": "Mother Cinder looks at you sharply. \"Used for good?\" The words seem to physically pain her. But she pauses — longer than you expected. \"I... have considered this. A bidirectional stack could, theoretically, restore neural pathways in patients with severe brain damage. It could repair the degradation caused by previous transfers. It could...\" She stops herself. \"No. The technology is the sin. It doesn't matter what good could be extracted from it. Fire can warm a home or burn it down, but this particular fire was lit to burn. Meridian did not build bidirectional transfer to heal people. They built it to control them.\" But you notice her hands are shaking. The certainty that usually armor-plates her voice has a hairline crack.",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.challenged_absolutism", "value": true },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "\"Sometimes the tool matters less than the hand that wields it.\"", "next": "factions.ashen-circle.ac_088" },
+                { "text": "\"You're right. Destroy it all. What's the next target?\"", "next": "factions.ashen-circle.ac_073" },
+                { "text": "\"Let's table this debate. What's the immediate priority?\"", "next": "factions.ashen-circle.ac_073" }
+            ]
+        },
+
+        "ac_077": {
+            "text": "\"Allies.\" Mother Cinder speaks the word like it tastes of ash. \"The Circle has always operated alone. Our faith demands purity of purpose, and alliances dilute purpose.\" Brother Forge nods firmly behind her. But Sister Ember, standing by the door, speaks up unexpectedly. \"Mother, with respect — purity of purpose didn't protect us when Meridian raided the Sector 3 sanctuary. We lost eleven brothers and sisters because we had no warning network, no mutual defense pact, no one to call for help.\" The room goes still. Ember's words hang in the candlelight. Cinder's jaw tightens. \"Who do you suggest we ally with? The Iron Collective, who worship violence? The Neon Syndicate, who worship credits?\"",
+            "choices": [
+                { "text": "\"The Saints of the Ghost. They protect people. That's common ground.\"", "next": "factions.ashen-circle.ac_089" },
+                { "text": "\"Not a faction. Independent operators. Build a network of sympathizers.\"", "next": "factions.ashen-circle.ac_090", "statCheck": { "stat": "WIS", "dc": 13 } },
+                { "text": "\"Ember's right, but this isn't the time. What's our next move?\"", "next": "factions.ashen-circle.ac_073" }
+            ]
+        },
+
+        "ac_078": {
+            "text": "Brother Crucible's face drains of what little color remained. Mother Cinder turns to him with an expression that could cut glass. \"Drones. Military-grade automated defense. And you sent an operative in without disclosure.\" The large man opens his mouth, closes it. \"I made a tactical judgment —\" \"You made a <span class='highlight'>sin</span>,\" Cinder says. \"Pride. The belief that your judgment supersedes the collective's safety.\" She straightens. \"Brother Crucible, you are relieved of operational command. You will serve on the supply detail until I determine your judgment can be trusted again.\" Crucible's fists clench. His eyes find yours — and in them, you see the seed of something dangerous. Not anger. Betrayal.",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.crucible_demoted", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 5 },
+                { "type": "add_experience", "amount": 15 }
+            ],
+            "choices": [
+                { "text": "Move on to the next mission briefing", "next": "factions.ashen-circle.ac_068" }
+            ]
+        },
+
+        "ac_079": {
+            "text": "\"His methods were unorthodox, but the intelligence he gathered was accurate and actionable,\" you say. Mother Cinder considers this. Brother Crucible looks at you with surprised gratitude. \"The result does not sanctify the method,\" Cinder says. \"But mercy is also a virtue of the cycle.\" She turns to Crucible. \"You are formally cautioned. One more unauthorized action and you will be expelled from the Circle. Not punished — expelled. We do not imprison. We release.\" Crucible nods stiffly. \"Understood, Mother.\" As you leave the room, he catches your arm. \"Thank you,\" he murmurs. \"I owe you one. And I always pay my debts.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.defended_crucible", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": -3 }
+            ],
+            "choices": [
+                { "text": "Continue to the next mission briefing", "next": "factions.ashen-circle.ac_068" }
+            ]
+        },
+
+        "ac_080": {
+            "text": "\"Compassion,\" Mother Cinder says. \"The most dangerous weapon in the enemy's arsenal. They count on your compassion. They design their marketing around it. 'Why die when you can transfer?' They sell the dream so effectively that destroying it feels cruel.\" She kneels beside you. \"But what if I told you that every person who receives a Series 7 stack will, within five transfers, lose the capacity for the very compassion you just showed? What if the thing that stopped you tonight — your empathy, your doubt, your humanity — is exactly what the stacks erase?\" She waits. \"You can stay. You can try again. Or you can leave. Either way, the cycle remembers your mercy.\"",
+            "actions": [
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": -5 }
+            ],
+            "choices": [
+                { "text": "\"I'll try again. But I need a different kind of mission.\"", "next": "factions.ashen-circle.ac_082" },
+                { "text": "\"Maybe I'm not cut out for this.\"", "next": "shared.prologue.node_001" }
+            ]
+        },
+
+        "ac_081": {
+            "text": "Mother Cinder places a hand on your head. \"Freezing is not failure. Freezing is the body's way of saying the mind has not yet resolved a question it considers vital.\" She sits beside you on the chapel steps. \"When I left Meridian, I didn't act for two years. Two years of knowing what the stacks did and doing nothing about it. I froze. I questioned. I agonized. And then I watched a friend transfer for the sixth time and come back as someone who didn't recognize the people she loved.\" She stands. \"The thaw comes when it comes. We will not push you. But the stacks do not wait for anyone's conscience to catch up.\"",
+            "actions": [
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": -3 }
+            ],
+            "choices": [
+                { "text": "\"Give me another chance. A different kind of mission.\"", "next": "factions.ashen-circle.ac_082" },
+                { "text": "\"I need time.\"", "next": "factions.ashen-circle.ac_075" }
+            ]
+        },
+
+        "ac_082": {
+            "text": "Mother Cinder's eyebrows rise. \"You think there's a better approach than direct sabotage?\" The question is genuine, not rhetorical. Sister Ember, who has been listening from the doorway, takes a step into the room. \"I've been saying the same thing, Mother,\" she says quietly. \"We burn one clinic, they build two more. We destroy sixty stacks, they manufacture six hundred. We need to attack the root, not the branches.\" Cinder looks between you and Ember. \"Then what do you propose? The root of stack technology is Meridian itself. A corporation with more resources than most nations. How do you attack that?\"",
+            "choices": [
+                { "text": "\"From the inside. Infiltrate their research division.\"", "next": "factions.ashen-circle.ac_073" },
+                { "text": "\"Find Dr. Kessler. Use his testimony to go public.\"", "next": "factions.ashen-circle.ac_074" },
+                { "text": "\"Build a coalition. No single faction can take on Meridian alone.\"", "next": "factions.ashen-circle.ac_077" }
+            ]
+        },
+
+        "ac_083": {
+            "text": "\"Sister Filament has a solution.\" Cinder activates a comm channel, and Filament's flat voice fills the room. \"Neural spoofing. I can build a device that overlays a registered employee's neural pattern onto your brain scan. The overlay lasts approximately twelve hours before your natural patterns reassert. The process is... uncomfortable.\" \"Define uncomfortable,\" you say. \"Imagine a migraine that thinks it's an earthquake. For about forty minutes. After that, the overlay stabilizes and you'll pass any scan they throw at you.\" A pause. \"I need a source pattern. A current employee's neural signature. Which means we need to get close enough to one to scan them without their knowledge.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.neural_spoof_plan", "value": true }
+            ],
+            "choices": [
+                { "text": "\"How do we get a neural scan without the target knowing?\"", "next": "factions.ashen-circle.ac_091" },
+                { "text": "\"Skip the spoofing. I'll find a physical way in.\"", "next": "factions.ashen-circle.ac_084" }
+            ]
+        },
+
+        "ac_084": {
+            "text": "You study the Tower 14 schematics for hours. The building is a sealed ecosystem — climate-controlled, independent power, water recycling. But it has one vulnerability: the atmospheric processing system. Tower 14 sits above the smog layer, which means it needs massive air intake and filtration units on its exterior. The intake ducts are large enough for a person to crawl through, but they're equipped with UV sterilization fields and particulate filters that would shred unprotected skin. \"I can build you a filter suit,\" Brother Crucible offers — if he's still in your good graces. \"Industrial weave, UV resistant. You'll cook slowly, but you won't die.\" He pauses. \"Probably.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.physical_infiltration_plan", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Build the suit. I'll take the ducts.\"", "next": "factions.ashen-circle.ac_092" },
+                { "text": "\"Too risky. Let's go with the neural spoofing plan.\"", "next": "factions.ashen-circle.ac_083" }
+            ]
+        },
+
+        "ac_085": {
+            "text": "\"An insider.\" Mother Cinder exchanges a loaded glance with Sister Ember. \"There is someone. A researcher at the facility named <span class='highlight'>Dr. Yuki Tanaka</span>. She has been in private communication with Sister Ember for approximately four months. She is sympathetic to our cause — her younger brother suffered severe personality degradation after his third stack transfer. She wants to help.\" Ember steps forward. \"Dr. Tanaka can get you inside as a visiting consultant. She has the clearance to authorize temporary access badges. But she's terrified. If Meridian discovers she's helping us, she'll disappear. We need to handle her with care.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.tanaka_contact", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Set up a meeting with Dr. Tanaka. I'll convince her.\"", "next": "factions.ashen-circle.ac_093", "statCheck": { "stat": "CHA", "dc": 13 } },
+                { "text": "\"Four months of communication and she hasn't acted? She might be a trap.\"", "next": "factions.ashen-circle.ac_094", "statCheck": { "stat": "WIS", "dc": 14 } }
+            ]
+        },
+
+        "ac_086": {
+            "text": "Sector 12, upper mid-level. The streets here are cleaner than the lower districts but carry the same undercurrent of desperation — just better dressed. Kessler's last known address is a medical boarding house near a transit hub. You find the room easily: third floor, room 307. The door is unlocked. Inside, the room has been tossed. Drawers emptied, mattress slashed, terminal smashed. Whoever searched this place wasn't subtle. But they were thorough. You stand in the wreckage and look for what they might have missed. In the bathroom, behind a panel that requires specific knowledge of old plumbing to find, you discover a data chip sealed in waterproof resin.",
+            "actions": [
+                { "type": "add_experience", "amount": 20 },
+                { "type": "set_flag", "flag": "ac.found_kessler_chip", "value": true }
+            ],
+            "choices": [
+                { "text": "Access the data chip immediately", "next": "factions.ashen-circle.ac_095", "statCheck": { "stat": "INT", "dc": 13 } },
+                { "text": "Take it back to Sister Filament for secure access", "next": "factions.ashen-circle.ac_096", "statCheck": { "stat": "WIS", "dc": 11 } },
+                { "text": "Check the dead-drop location before leaving the area", "next": "factions.ashen-circle.ac_087" }
+            ]
+        },
+
+        "ac_087": {
+            "text": "The dead-drop is a maintenance locker in a transit station three blocks from Kessler's address. Locker 417. You find it using the code from Cinder's data chip. Inside: a sealed envelope containing a handwritten letter and a photograph. The letter reads: <span class='highlight'>\"They know about the residuals. The old bodies — the ones left behind after transfer — they're not empty. Something remains. Not the full consciousness, but fragments. Echoes. Meridian is collecting them. Building 9, sublevel. They call it the Choir. I don't know what it is, but I can hear them singing at night through the walls. God help me, they never stop singing.\"</span> The photograph shows a corridor lined with glass tanks. Inside each tank, a motionless human body. Their mouths are open.",
+            "actions": [
+                { "type": "add_experience", "amount": 30 },
+                { "type": "set_flag", "flag": "ac.knows_about_choir", "value": true }
+            ],
+            "choices": [
+                { "text": "Take this evidence straight to Mother Cinder", "next": "factions.ashen-circle.ac_097", "statCheck": { "stat": "WIS", "dc": 10 } },
+                { "text": "Investigate Building 9 yourself", "next": "factions.ashen-circle.ac_098", "statCheck": { "stat": "WIS", "dc": 15 } }
+            ]
+        },
+
+        "ac_088": {
+            "text": "\"The hand that wields it.\" Mother Cinder repeats your words, and for a moment, the zealot gives way to the engineer she used to be. \"I have spent years building a theology around the absolute evil of stack technology. If I concede that the technology could be separated from its abuse, I undermine everything the Circle stands for.\" She meets your eyes. \"But if I refuse to concede it, I am no better than the corporations who refuse to acknowledge the damage. I become the mirror image of what I fight.\" She sits in silence for a long time. \"You are dangerous,\" she says finally. \"You make me think thoughts I had walled off. Perhaps that is why I called you here.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.cinder_doubts_absolutism", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 5 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "\"Thinking is never the enemy. What's our next move?\"", "next": "factions.ashen-circle.ac_073" }
+            ]
+        },
+
+        "ac_089": {
+            "text": "\"The Saints of the Ghost.\" Cinder's expression is complex. \"They protect the vulnerable. We protect the soul. There is overlap, I suppose.\" Sister Ember nods eagerly. \"The Saints have networks we could use — safe houses, medical resources, community contacts. And their leader, the one they call the Ghost, is rumored to be sympathetic to anti-stack positions. Or at least skeptical of corporate immortality.\" Cinder considers. \"If we approach the Saints, it must be from a position of mutual respect, not desperation. We offer them our intelligence on Meridian's operations. They offer us their infrastructure. Equal exchange.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.alliance_saints_proposed", "value": true }
+            ],
+            "choices": [
+                { "text": "\"I'll make contact with the Saints on your behalf.\"", "next": "factions.ashen-circle.ac_073" },
+                { "text": "\"Let's focus on the Meridian infiltration first.\"", "next": "factions.ashen-circle.ac_073" }
+            ]
+        },
+
+        "ac_090": {
+            "text": "\"A network of sympathizers.\" Mother Cinder turns the idea over. \"Not a formal alliance. No flags, no oaths. Just... people. People in positions of influence who quietly oppose what the stacks represent.\" She nods slowly. \"Doctors who refuse to install stacks. Engineers who introduce imperfections into manufacturing lines. Journalists who keep copies of killed stories. Transit workers who look the other way when our operatives move through checkpoints.\" Her eyes light up. \"A web of quiet resistance, invisible to Meridian because it has no center to strike.\" Sister Ember is already taking notes. \"I could coordinate this,\" she says. \"I know people.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.resistance_network_proposed", "value": true },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "\"Let Ember build the network. I'll focus on Meridian directly.\"", "next": "factions.ashen-circle.ac_073" }
+            ]
+        },
+
+        "ac_091": {
+            "text": "Filament's voice crackles with the static of a poorly shielded comm. \"Close proximity scan. I've built a device that looks like a transit pass. Hold it within two meters of the target's head for ten seconds and it captures their neural signature. The challenge is finding a Meridian employee from Tower 14 in a setting where you can get that close without raising suspicion.\" She pauses. \"I've identified a possibility. A Dr. Marcus Webb — no relation to the clinic guard — frequents a bar called the Fulcrum in Sector 8 upper-mid. He drinks alone every Thursday. His security badge shows Tower 14 access, Research Division.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.scanning_plan", "value": true }
+            ],
+            "choices": [
+                { "text": "\"Thursday it is. I'll get his neural pattern at the bar.\"", "next": "factions.ashen-circle.ac_092" },
+                { "text": "\"What if he's flagged? Meridian might be watching him.\"", "next": "factions.ashen-circle.ac_092" }
+            ]
+        },
+
+        "ac_092": {
+            "text": "Three days of preparation. Whether you're building a filter suit for the air ducts or preparing to scan a Meridian employee at a bar, the Ashen Circle mobilizes around you with quiet efficiency. Sister Filament provides equipment. Brother Forge provides muscle for the backup team. Sister Ember provides prayer, which you're not sure helps but doesn't hurt. On the night before the operation, Mother Cinder finds you in the chapel, staring at the memory stack on the altar. \"Second thoughts?\" she asks. \"First thoughts, actually,\" you reply. \"I never stopped to have them before.\" She almost smiles. \"That's either wisdom or cowardice. Tomorrow will tell us which.\"",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.infiltration_prep_complete", "value": true }
+            ],
+            "choices": [
+                { "text": "Begin the Tower 14 infiltration", "next": "factions.ashen-circle.ac_093" }
+            ]
+        },
+
+        "ac_093": {
+            "text": "Tower 14 rises above the smog layer like a blade of glass and light. Up here, the air is clean. Actual sunlight falls on your face for the first time in months. The sensation is disorienting — warmth without the sting of pollution, brightness without the flicker of failing infrastructure. The building's lobby is a cathedral of white marble and chrome. People in tailored clothes move through security gates with the casual ease of those who've never questioned their right to be anywhere. You present your credentials — fabricated, spoofed, or borrowed, depending on your approach — and the scanner hums. A green light. <span class='highlight'>ACCESS GRANTED. WELCOME TO MERIDIAN ADVANCED RESEARCH.</span>",
+            "actions": [
+                { "type": "set_flag", "flag": "ac.inside_tower_14", "value": true },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "Head to the research labs as briefed", "next": "factions.ashen-circle.ac_095" },
+                { "text": "Explore the facility cautiously first", "next": "factions.ashen-circle.ac_094" }
+            ]
+        },
+
+        "ac_094": {
+            "text": "You move through Tower 14 like a ghost in borrowed clothes. The facility is vast — twelve floors of laboratories, server farms, and testing chambers. The employees move with the hushed intensity of people doing work they believe matters. You pass through a corridor of windows overlooking a clean room where technicians in white suits assemble memory stacks by hand — the high-end custom models that cost more than a lower-district apartment building. In another section, brain scans rotate on holographic displays while researchers murmur over data. This is the beating heart of stack technology. Everything the Ashen Circle wants to destroy is manufactured, refined, and perfected within these walls.",
+            "actions": [
+                { "type": "add_experience", "amount": 10 }
+            ],
+            "choices": [
+                { "text": "Find a terminal and access the research database", "next": "factions.ashen-circle.ac_095" },
+                { "text": "Look for the restricted sublevel — the Choir", "next": "factions.ashen-circle.ac_098", "condition": { "flag": "ac.knows_about_choir" } }
+            ]
+        },
+
+        "ac_095": {
+            "text": "You find a terminal in an empty conference room. Filament's hacking tools — loaded onto a device disguised as a stylus — make short work of the access protocols. The database opens like a wound. Thousands of files. Research data, trial results, internal memos. You download everything to your concealed storage device, but one folder catches your eye: <span class='highlight'>PROJECT OUROBOROS — PHASE 3 TRIALS</span>. You open it. The data inside makes your blood run cold. Meridian hasn't just built bidirectional stacks. They've <span class='highlight'>tested them on involuntary subjects</span>. Prisoners purchased from private detention facilities. Refugees with no legal protections. People who wouldn't be missed. The trial results document the systematic overwriting of human minds with corporate-designed personality templates.",
+            "actions": [
+                { "type": "add_experience", "amount": 30 },
+                { "type": "set_flag", "flag": "ac.downloaded_ouroboros_data", "value": true }
+            ],
+            "choices": [
+                { "text": "Download everything and get out immediately", "next": "factions.ashen-circle.ac_097", "statCheck": { "stat": "DEX", "dc": 12 } },
+                { "text": "Search for more — where are the test subjects held?", "next": "factions.ashen-circle.ac_098", "statCheck": { "stat": "PER", "dc": 13 } },
+                { "text": "Look for data on Dr. Kessler in the system", "next": "factions.ashen-circle.ac_096", "statCheck": { "stat": "INT", "dc": 12 } }
+            ]
+        },
+
+        "ac_096": {
+            "text": "You search the database for Kessler's name. The results are chilling. Dr. Oren Kessler, Senior Researcher, Consciousness Studies Division. Status: <span class='highlight'>TERMINATED — INTERNAL SECURITY ACTION</span>. But the termination wasn't what you expected. Kessler wasn't killed. He was <span class='highlight'>transferred</span>. His consciousness was forcibly extracted and loaded into a contained stack unit. His body was repurposed for Project Ouroboros as a test vessel. Somewhere in this building, Kessler's mind sits in a digital prison, fully aware, unable to act. And his body walks the halls with someone else's mind inside it.",
+            "actions": [
+                { "type": "add_experience", "amount": 25 },
+                { "type": "set_flag", "flag": "ac.knows_kessler_fate", "value": true }
+            ],
+            "choices": [
+                { "text": "Find Kessler's stack — his mind might still be intact", "next": "factions.ashen-circle.ac_098", "statCheck": { "stat": "PER", "dc": 14 } },
+                { "text": "Get out with what you have. This is enough evidence.", "next": "factions.ashen-circle.ac_097" }
+            ]
+        },
+
+        "ac_097": {
+            "text": "You return to the Burned Chapel with a storage device heavy with stolen data. Mother Cinder, Sister Ember, Brother Forge, and Sister Filament gather in the war room as you present your findings. The room falls silent as you lay it out: Project Ouroboros. Involuntary transfer. Mind-wiping of prisoners and refugees. The Choir. Kessler. Mother Cinder's hands grip the table edge until her knuckles go white. \"This is worse than we imagined,\" she says, her voice barely audible. \"We thought they were selling a flawed product. They're building a <span class='highlight'>weapon</span>.\" She looks up, and the fire in her eyes has changed. It's no longer the warm flame of conviction. It's the cold blue of a cutting torch. \"Everything changes now.\"",
+            "actions": [
+                { "type": "add_experience", "amount": 30 },
+                { "type": "set_flag", "flag": "ac.evidence_delivered", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 20 }
+            ],
+            "choices": [
+                { "text": "\"We need to go public with this. All of it.\"", "next": "factions.ashen-circle.ac_099" },
+                { "text": "\"We need to destroy the Ouroboros program directly.\"", "next": "factions.ashen-circle.ac_100" },
+                { "text": "\"What about the test subjects? We need to rescue them.\"", "next": "factions.ashen-circle.ac_100" }
+            ]
+        },
+
+        "ac_098": {
+            "text": "The sublevel is accessible only through a freight elevator that requires biometric authorization you shouldn't have. But Filament's tools, or Tanaka's access, or your own resourcefulness gets you past the lock. The elevator descends for a long time. When the doors open, the temperature drops fifteen degrees. You step into a corridor of sterile white tile that stretches into humming silence. And then you hear it. <span class='highlight'>Singing</span>. Wordless, tonal, coming from everywhere and nowhere. The Choir. You follow the sound through a security door into a vast chamber. Glass tanks line the walls, floor to ceiling, hundreds of them. Inside each tank, suspended in clear fluid, a human body. Their eyes are closed. Their mouths are open. And from their throats comes a sound that is not quite music and not quite screaming — the residual neural activity of minds that were ripped out and bodies that refuse to forget they were once alive.",
+            "actions": [
+                { "type": "add_experience", "amount": 40 },
+                { "type": "set_flag", "flag": "ac.witnessed_the_choir", "value": true }
+            ],
+            "choices": [
+                { "text": "Document everything — record the Choir", "next": "factions.ashen-circle.ac_097", "statCheck": { "stat": "PER", "dc": 11 } },
+                { "text": "Try to shut down the tank systems", "next": "factions.ashen-circle.ac_100", "statCheck": { "stat": "INT", "dc": 15 } },
+                { "text": "Search for Kessler's body among the tanks", "next": "factions.ashen-circle.ac_096", "condition": { "flag": "ac.kessler_lead" } }
+            ]
+        },
+
+        "ac_099": {
+            "text": [
+                "The war room becomes a command center. Sister Filament works through the night building a distribution architecture for the darknet release — hundreds of nodes across every sector, timed for simultaneous publication. Sister Ember contacts her network of sympathizers: journalists, doctors, engineers, transit workers. Everyone who has quietly opposed the stacks receives a message: <span class='highlight'>It's time.</span>",
+                "Mother Cinder sits with you as the final preparations are made. \"After this, there is no going back,\" she says. \"Meridian will know it was us. They will come for the Circle with everything they have.\" She looks at the candles flickering on the altar. \"When I started this, I believed I was fighting to preserve the natural order. The cycle of souls. Birth, life, death, return.\" She pauses. \"Now I realize I was fighting for something simpler. The right of every person to be the only version of themselves. To live once, fully, and die knowing that no copy will walk in their shadow.\"",
+                "The data goes live at midnight. Every screen in every sector of the city displays the same message: <span class='highlight'>MERIDIAN STACK SERVICES — THE TRUTH THEY BURNED TO HIDE</span>. Brain scans. Trial data. The Choir. Project Ouroboros. All of it, everywhere, undeniable. The city holds its breath. And then the city <span class='highlight'>screams</span>."
+            ],
+            "actions": [
+                { "type": "add_experience", "amount": 75 },
+                { "type": "set_flag", "flag": "ac.data_released", "value": true },
+                { "type": "set_flag", "flag": "ac.ending_exposure", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 30 }
+            ],
+            "isEnding": true,
+            "choices": [
+                { "text": "The truth is out. Whatever comes next, the world has changed.", "next": "shared.prologue.node_001" }
+            ]
+        },
+
+        "ac_100": {
+            "text": [
+                "Mother Cinder stands before the assembled Circle — every brother, every sister, every convert and sympathizer who can be reached. The Burned Chapel is packed. Candlelight flickers across dozens of scarred, determined faces. \"We go to war,\" she says. \"Not against people. Against a machine. Against a system that has decided human consciousness is a commodity to be copied, transferred, overwritten, and discarded.\"",
+                "You stand beside her as she outlines the plan: a coordinated strike on Meridian's primary research facility, targeting the Ouroboros production line and the Choir. Liberation of the test subjects. Destruction of every prototype, every blueprint, every server containing transfer data. The Circle will hit hard, hit fast, and disappear before corporate security can respond.",
+                "Brother Forge leads the assault team. Sister Filament handles electronic warfare. Sister Ember coordinates the extraction of test subjects through sympathizer networks. And you — <span class='highlight'>you walk into the heart of the machine that eats souls, and you burn it from the inside out</span>.",
+                "As the Circle mobilizes, Mother Cinder catches your arm. \"Whatever happens tonight,\" she says, \"the cycle remembers. You are already more than what they tried to make of you.\" She touches the broken circle embroidered on your cloak. \"Ash does not fear fire. It has already survived it.\" She turns to the faithful. \"<span class='highlight'>We are the ash. And tonight, we rise.</span>\""
+            ],
+            "actions": [
+                { "type": "add_experience", "amount": 75 },
+                { "type": "set_flag", "flag": "ac.direct_assault", "value": true },
+                { "type": "set_flag", "flag": "ac.ending_destruction", "value": true },
+                { "type": "modify_reputation", "faction": "ashen_circle", "amount": 30 }
+            ],
+            "isEnding": true,
+            "choices": [
+                { "text": "Rise from the ashes. Storm the machine.", "next": "shared.prologue.node_001" }
+            ]
+        }
+    }
+}

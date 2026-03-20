@@ -1,0 +1,2707 @@
+{
+    "meta": {
+        "title": "Ghost Syndicate Questline",
+        "category": "factions",
+        "file": "ghost-syndicate",
+        "totalNodes": 100
+    },
+    "nodes": {
+        "gs_001": {
+            "text": "Your terminal flickers. You didn't touch it. The screen fills with scrolling text — not code, not malware, something else entirely. A message, typed in real-time by invisible hands: <span class='highlight'>YOU'VE BEEN LOOKING FOR US. WE'VE BEEN WATCHING YOU LOOK.</span> Then an address in Sector 11. Then a time — two hours from now. Then the screen goes dark and your terminal reboots as if nothing happened. No logs. No trace. Like a ghost walked through your machine.",
+            "choices": [
+                {
+                    "text": "Go to the address",
+                    "next": "factions.ghost-syndicate.gs_002"
+                },
+                {
+                    "text": "Try to trace the message first",
+                    "next": "factions.ghost-syndicate.gs_003",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Ignore it — could be a trap",
+                    "next": "factions.ghost-syndicate.gs_004"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.received_contact",
+                    "value": true
+                }
+            ]
+        },
+        "gs_002": {
+            "text": "The address leads to a laundromat in the basement of a condemned building. Twelve industrial washers spin with nothing inside them, creating a wall of white noise. In the back, past a door marked EMPLOYEES ONLY, a narrow staircase descends into darkness. At the bottom: a room lit by the glow of sixteen monitors, each displaying a different security camera feed from across the city. A figure sits in the center, face hidden behind a featureless black mask. The mask has no eyeholes. No mouth slit. Just smooth, <span class='highlight'>reflective black</span>.",
+            "choices": [
+                {
+                    "text": "\"You're Null.\"",
+                    "next": "factions.ghost-syndicate.gs_005"
+                },
+                {
+                    "text": "\"Nice setup. Who are you?\"",
+                    "next": "factions.ghost-syndicate.gs_006"
+                },
+                {
+                    "text": "Stay alert — scan the room for threats",
+                    "next": "factions.ghost-syndicate.gs_007",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.entered_den",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_003": {
+            "text": "You throw everything you have at tracing the message. Packet analysis, header reconstruction, signal triangulation. Nothing. The message didn't arrive through any known protocol. It didn't traverse any network node you can identify. It simply <span class='highlight'>appeared</span> on your machine, as if it materialized from thin air. Whoever sent this has technology that makes your best tools look like toys. That either terrifies you or excites you. Maybe both.",
+            "choices": [
+                {
+                    "text": "Go to the address anyway",
+                    "next": "factions.ghost-syndicate.gs_002"
+                },
+                {
+                    "text": "Set up counter-surveillance before going",
+                    "next": "factions.ghost-syndicate.gs_008",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Walk away — you're outclassed",
+                    "next": "factions.ghost-syndicate.gs_004"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.trace_attempt",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_004": {
+            "text": "You close your terminal and walk away. Three blocks later, every screen you pass — storefronts, billboards, personal devices of strangers walking by — flickers simultaneously. The same message on all of them: <span class='highlight'>YOU CAN'T IGNORE WHAT'S ALREADY INSIDE YOUR NETWORK.</span> Then, one second later, every screen returns to normal. Nobody else seems to have noticed. The Ghost Syndicate doesn't take no for an answer. They take <span class='highlight'>not yet</span>.",
+            "choices": [
+                {
+                    "text": "Fine. Go to the address.",
+                    "next": "factions.ghost-syndicate.gs_002",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Leave for real this time",
+                    "next": "factions.ghost-syndicate.gs_009"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.initial_refusal",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ]
+        },
+        "gs_005": {
+            "text": "The mask tilts. A voice emerges — gender-neutral, modulated through at least three layers of distortion. \"Nobody is Null. Null is the absence of identity. The zero at the center of the equation.\" A gloved hand gestures at the monitors. \"Null is what's left when you strip away the name, the face, the history that corporations use to track and control you. I'm not a person. I'm a <span class='highlight'>proof of concept</span>. The demonstration that you can exist in this city without being owned by it.\"",
+            "choices": [
+                {
+                    "text": "\"Why contact me?\"",
+                    "next": "factions.ghost-syndicate.gs_010",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Impressive speech. But everyone's someone.\"",
+                    "next": "factions.ghost-syndicate.gs_011",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"I want in. What do I need to do?\"",
+                    "next": "factions.ghost-syndicate.gs_012"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.met_null",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_006": {
+            "text": "\"I'm nobody. That's the point. That's the entire point.\" The figure doesn't move from the chair. The monitors behind them cycle through feeds — corporate offices, security checkpoints, private residences. Places that should be impossible to access. \"The Ghost Syndicate is a network of people who have learned to be <span class='highlight'>invisible</span>. No identity. No records. No stack registration. We exist in the gaps between what the corporations monitor. And from those gaps, we see everything.\"",
+            "choices": [
+                {
+                    "text": "\"What do you do with what you see?\"",
+                    "next": "factions.ghost-syndicate.gs_010"
+                },
+                {
+                    "text": "\"I want to join.\"",
+                    "next": "factions.ghost-syndicate.gs_012",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"This sounds like a criminal operation.\"",
+                    "next": "factions.ghost-syndicate.gs_013"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.met_null",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_007": {
+            "text": "You clock the details: two exits besides the one you came through. Three other people in the room, visible only as shadows in the monitor-light — one at each exit, one behind a server rack. All armed. The server rack houses serious hardware — quantum processors, military-grade encryption modules, a device you don't recognize that hums at a frequency that makes your fillings vibrate. This room is a fortress disguised as a hole in the wall. These people are <span class='highlight'>professionals</span>.",
+            "choices": [
+                {
+                    "text": "\"Impressive security. You're not amateurs.\"",
+                    "next": "factions.ghost-syndicate.gs_006"
+                },
+                {
+                    "text": "Keep your observations to yourself and listen",
+                    "next": "factions.ghost-syndicate.gs_005"
+                },
+                {
+                    "text": "\"Three guards, two exits, quantum hardware. Do I pass?\"",
+                    "next": "factions.ghost-syndicate.gs_014",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.scanned_room",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_008": {
+            "text": "Smart. You plant a tracer on your own jacket, set up a dead-man's switch on your terminal to broadcast your location if you don't check in within six hours, and carry a hardened data drive that can't be remotely wiped. When you arrive at the laundromat, you feel slightly less like prey. The precautions won't save you if things go wrong — but they might make the people responsible <span class='highlight'>findable</span>.",
+            "choices": [
+                {
+                    "text": "Enter the basement",
+                    "next": "factions.ghost-syndicate.gs_002"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.counter_surveillance",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_009": {
+            "text": "You leave Sector 11 behind. The screens stop flickering. The messages stop. For three days, nothing. Then you find it — a data drive in your pocket that wasn't there before. No memory of anyone getting close enough to plant it. On the drive, a single file: your entire digital history. Every transaction, every communication, every medical record, every secret you thought was buried. And at the bottom: <span class='highlight'>WE COULD HAVE USED THIS. WE DIDN'T. THAT'S THE DIFFERENCE BETWEEN US AND THEM. LAST CHANCE.</span> A new address.",
+            "choices": [
+                {
+                    "text": "Go to the new address",
+                    "next": "factions.ghost-syndicate.gs_002",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "This is too much. Walk away permanently.",
+                    "next": "factions.ghost-syndicate.gs_015"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.data_drive_found",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_010": {
+            "text": "\"We watch. We record. We redistribute.\" Null's distorted voice carries something that might be passion. \"Every corporate board meeting, every backroom deal, every politician bought and sold — we have it all. Terabytes of truth that the powerful want buried. We use it strategically. Leak here, a nudge there. Nothing that makes the evening news. Just enough to keep the machine from <span class='highlight'>crushing</span> the people at the bottom.\" A pause. \"But it's not enough anymore. We need to do more. That's why we need you.\"",
+            "choices": [
+                {
+                    "text": "\"What do you need me for specifically?\"",
+                    "next": "factions.ghost-syndicate.gs_016",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Why not just dump everything? Let the public decide.\"",
+                    "next": "factions.ghost-syndicate.gs_017"
+                },
+                {
+                    "text": "\"I'm listening. But I have conditions.\"",
+                    "next": "factions.ghost-syndicate.gs_018",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_011": {
+            "text": "The mask tilts further. The distorted voice drops. \"You're right.\" A hand reaches up and removes the mask, revealing a face scarred with surgical precision — every identifying feature has been systematically removed. No fingerprints. No retinal pattern. The face is smooth where features should be distinct. \"I was someone. Null is what I became when I burned every record, erased every database, and <span class='highlight'>cut away</span> every piece of myself that the system could use to find me. This isn't a mask. It's a statement.\"",
+            "choices": [
+                {
+                    "text": "\"That level of commitment is... intense.\"",
+                    "next": "factions.ghost-syndicate.gs_012"
+                },
+                {
+                    "text": "\"Who were you before?\"",
+                    "next": "factions.ghost-syndicate.gs_019",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 16
+                    }
+                },
+                {
+                    "text": "\"I respect that. How do I join?\"",
+                    "next": "factions.ghost-syndicate.gs_012"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.saw_null_face",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "WIS",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_012": {
+            "text": "\"Joining the Ghost Syndicate isn't signing a contract. It's becoming a ghost.\" Null produces a sleek black device — a <span class='highlight'>ghost box</span>. \"This is a portable identity scrambler. While active, you don't exist on any network, any database, any scanner. You're invisible to the infrastructure of control. Carry it and you're one of us.\" The device hums faintly in Null's palm. \"But invisibility has a price. When you're invisible, you're also alone. No stack backup. No medical records. If you die ghosted, you die <span class='highlight'>forever</span>.\"",
+            "choices": [
+                {
+                    "text": "Take the ghost box",
+                    "next": "factions.ghost-syndicate.gs_020",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"What's the first mission?\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                },
+                {
+                    "text": "\"I need to think about permanent death.\"",
+                    "next": "factions.ghost-syndicate.gs_021"
+                }
+            ],
+            "actions": []
+        },
+        "gs_013": {
+            "text": "\"Criminal by whose law? Meridian's? The corporation that sells fake immortality to the rich and lets the poor die in the streets?\" Null leans forward. \"Every system defines criminality to protect itself. When the system is corrupt, <span class='highlight'>obedience is the real crime</span>. We don't steal for profit. We steal for balance. We take what the powerful hoard and make it available to everyone. Information, resources, opportunity. If that's criminal, then yes. We are criminals. The most dangerous kind — the kind with <span class='highlight'>principles</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Fair point. How do I help?\"",
+                    "next": "factions.ghost-syndicate.gs_012",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Principles don't feed people. Results do.\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                },
+                {
+                    "text": "\"I've heard this speech from every revolutionary who ends up a tyrant.\"",
+                    "next": "factions.ghost-syndicate.gs_022"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_014": {
+            "text": "Null actually laughs — a distorted, layered sound that fills the room. The three shadows step forward, revealing themselves: a massive orc with cybernetic arms, a thin elf with data-jacks running the length of her spine, and a human teenager who can't be older than sixteen with eyes that move too fast. \"Observant,\" Null says. \"You missed the fourth guard.\" A voice behind you: \"Hi.\" You spin. Nothing. Empty air. \"<span class='highlight'>Ghost tech</span>,\" Null says. \"Optical camouflage. You'll get one if you join.\"",
+            "choices": [
+                {
+                    "text": "\"Consider me impressed. I'm in.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                },
+                {
+                    "text": "\"What exactly would I be joining?\"",
+                    "next": "factions.ghost-syndicate.gs_010"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.impressed_null",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_015": {
+            "text": "You destroy the data drive and walk. Really walk, this time. No more ghost messages. No more flickering screens. The Syndicate respects your decision. But the knowledge stays with you — everything on that drive, every secret they could have weaponized. They showed you their power and chose restraint. In a city where power is always abused, that means something. Whether you ever go back, it <span class='highlight'>means something</span>.",
+            "choices": [
+                {
+                    "text": "Return to the hub",
+                    "next": "shared.prologue.node_001"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.declined_permanently",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ]
+        },
+        "gs_016": {
+            "text": "\"Meridian is building something called Project Looking Glass — an AI that will monitor every stack in the city simultaneously. Real-time consciousness surveillance. They'll know what every stacked citizen thinks, feels, and remembers. Dissent won't just be punished — it'll be <span class='highlight'>predicted and prevented</span>.\" Null brings up schematics on the monitors. \"The prototype is in Meridian Tower, sublevel 6. We need someone to get inside, copy the AI's source code, and plant a backdoor that gives us access. First job. Interested?\"",
+            "choices": [
+                {
+                    "text": "\"I'm in. When do we start?\"",
+                    "next": "factions.ghost-syndicate.gs_023"
+                },
+                {
+                    "text": "\"That's a suicide mission.\"",
+                    "next": "factions.ghost-syndicate.gs_024"
+                },
+                {
+                    "text": "\"What's the team look like?\"",
+                    "next": "factions.ghost-syndicate.gs_025"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.knows_looking_glass",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_017": {
+            "text": "\"We tried that. Once.\" Null's voice goes flat. \"Three years ago, we dumped evidence of Meridian's gene-therapy experiments on the public net. Proof that they were modifying stack recipients' DNA without consent. Do you know what happened?\" The monitors all switch to the same feed: a news anchor dismissing the leak as 'fabricated propaganda from anti-corporate extremists.' \"Meridian controls the narrative. The media, the fact-checkers, the platforms. Raw data dumps get buried in <span class='highlight'>disinformation</span> within hours. Truth needs strategy now.\"",
+            "choices": [
+                {
+                    "text": "\"Then what's the strategy?\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                },
+                {
+                    "text": "\"Build your own media platform.\"",
+                    "next": "factions.ghost-syndicate.gs_026",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Maybe violent action is the only option.\"",
+                    "next": "factions.ghost-syndicate.gs_027",
+                    "skillCheck": {
+                        "stat": "STR",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_018": {
+            "text": "Null's featureless mask regards you. \"Conditions. Interesting. Most people who find their way here are desperate enough to agree to anything. The fact that you're negotiating tells me you have either principles or leverage.\" The distorted voice warms slightly. \"Name your terms.\"",
+            "choices": [
+                {
+                    "text": "\"No civilian casualties. Ever.\"",
+                    "next": "factions.ghost-syndicate.gs_028"
+                },
+                {
+                    "text": "\"I keep my identity. No ghost box for me.\"",
+                    "next": "factions.ghost-syndicate.gs_029"
+                },
+                {
+                    "text": "\"I choose my own missions.\"",
+                    "next": "factions.ghost-syndicate.gs_030"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 5
+                }
+            ]
+        },
+        "gs_019": {
+            "text": "Null goes very still. The monitors flicker. For a moment, the distortion on the voice fails, and you hear a raw, human tone beneath: grief, deep and old. \"I was a Meridian executive. VP of Digital Infrastructure. I designed the systems that control this city.\" The distortion reasserts itself. \"I saw what they were planning. Looking Glass was my project. I built the prototype. When I understood what it would become, I <span class='highlight'>burned myself to the ground</span> and rose as something else. Null was born the day I died.\"",
+            "choices": [
+                {
+                    "text": "\"You built Looking Glass? Then you can destroy it.\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                },
+                {
+                    "text": "\"How do I know this isn't a Meridian operation?\"",
+                    "next": "factions.ghost-syndicate.gs_031"
+                },
+                {
+                    "text": "\"I trust you. Let me help.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.null_backstory",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 10
+                }
+            ]
+        },
+        "gs_020": {
+            "text": "The ghost box is cool and smooth in your hand. The moment you activate it, the world shifts. Not visually — nothing you can see changes. But you can <span class='highlight'>feel</span> the difference. The constant background scan of the city's surveillance network — the invisible pressure of being watched, cataloged, tracked — vanishes. For the first time in your life, no system anywhere knows where you are. You are free. You are invisible. You are a <span class='highlight'>ghost</span>.",
+            "choices": [
+                {
+                    "text": "\"This is incredible. What's the first job?\"",
+                    "next": "factions.ghost-syndicate.gs_016",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "\"How many of us are there?\"",
+                    "next": "factions.ghost-syndicate.gs_032"
+                },
+                {
+                    "text": "Test the ghost box — walk past a scanner",
+                    "next": "factions.ghost-syndicate.gs_033",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 12
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.has_ghost_box",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "gs_021": {
+            "text": "\"Good,\" Null says, and there's genuine respect in the distorted voice. \"Anyone who accepts permanent death without hesitation is either brave or stupid. Think about it. Come back when you've made peace with the cost.\" The mask tilts toward the monitors. \"While you decide, consider what's at stake if we fail. Project Looking Glass goes active in eight weeks. After that, <span class='highlight'>free thought becomes a myth</span>.\"",
+            "choices": [
+                {
+                    "text": "\"I've decided. Give me the ghost box.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                },
+                {
+                    "text": "\"Tell me more about Looking Glass.\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                },
+                {
+                    "text": "Leave and think",
+                    "next": "factions.ghost-syndicate.gs_009"
+                }
+            ],
+            "actions": []
+        },
+        "gs_022": {
+            "text": "\"History has plenty of revolutionaries who became monsters,\" Null agrees. The mask nods slowly. \"That's why we have safeguards. No single person — including me — has access to the full Syndicate. Cells. Compartmentalized. If I'm compromised, the network survives. If I become the tyrant you fear, they cut me out like a tumor.\" The voice drops. \"I designed it that way because I know what power does to people. I used to <span class='highlight'>be</span> those people.\"",
+            "choices": [
+                {
+                    "text": "\"Alright. I'll give you a chance.\"",
+                    "next": "factions.ghost-syndicate.gs_012",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Smart. But I'll be watching you too.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                },
+                {
+                    "text": "\"Not convinced. I'm leaving.\"",
+                    "next": "factions.ghost-syndicate.gs_009"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_023": {
+            "text": "The operation is codenamed <span class='highlight'>MIRRORBREAK</span>. Null lays out the plan across three monitors: entry through Meridian Tower's maintenance level using stolen credentials, a twelve-minute window while the night shift transitions, a pre-planted virus in the building's security AI to create blind spots in the camera network. \"You'll have a handler on comms — callsign Specter. She'll guide you through the facility. Get to sublevel 6, access the Looking Glass terminal, and get out. Clean. Silent. Like you were never there.\"",
+            "choices": [
+                {
+                    "text": "\"Let's go over the details.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"What happens if I'm caught?\"",
+                    "next": "factions.ghost-syndicate.gs_035"
+                },
+                {
+                    "text": "\"I work alone. No handler.\"",
+                    "next": "factions.ghost-syndicate.gs_036",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.mirrorbreak_accepted",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_024": {
+            "text": "\"Every mission we run could be the last,\" Null says. \"That's the cost of fighting an enemy with infinite resources. But this isn't suicide — it's calculated risk. We've spent six months mapping Meridian Tower's security. We have three agents already embedded in their cleaning staff. We know their patrol patterns, their shift changes, their blind spots.\" The mask faces you directly. \"I wouldn't send you in if I didn't think you could <span class='highlight'>survive it</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Then let's hear the full plan.\"",
+                    "next": "factions.ghost-syndicate.gs_023"
+                },
+                {
+                    "text": "\"I want a smaller job first. Prove we can work together.\"",
+                    "next": "factions.ghost-syndicate.gs_037"
+                },
+                {
+                    "text": "\"Give me the team roster. I want to know who I'm working with.\"",
+                    "next": "factions.ghost-syndicate.gs_025"
+                }
+            ],
+            "actions": []
+        },
+        "gs_025": {
+            "text": "Null introduces the team. <span class='highlight'>Specter</span>: your handler, a former Meridian comms specialist who can crack any encrypted channel. <span class='highlight'>Brick</span>: the muscle, an orc with cybernetic arms who handles security when stealth fails. <span class='highlight'>Pixel</span>: the teenager, a prodigy hacker who can rewrite reality through a terminal. <span class='highlight'>Wraith</span>: the elf with the optical camouflage — she goes where no one else can. Four ghosts and you. Five shadows against a corporate empire.",
+            "choices": [
+                {
+                    "text": "\"Good team. Let's plan the heist.\"",
+                    "next": "factions.ghost-syndicate.gs_034",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "\"I want to talk to each of them first.\"",
+                    "next": "factions.ghost-syndicate.gs_038"
+                },
+                {
+                    "text": "\"Five people against Meridian Tower?\"",
+                    "next": "factions.ghost-syndicate.gs_024"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.met_team",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_026": {
+            "text": "Null pauses. \"A decentralized, uncensorable information network. We've been working on exactly that. Codenamed the <span class='highlight'>Free Signal</span> — a mesh network that runs on modified ghost boxes. Every user becomes a node. No central server to shut down, no chokepoint to control. The problem is scale. We need a thousand nodes active simultaneously to reach critical mass. Right now we have eighty-seven.\" Another pause. \"But if we could hack Meridian's stack network and piggyback on their infrastructure...\"",
+            "choices": [
+                {
+                    "text": "\"That's brilliant. Let's build it.\"",
+                    "next": "factions.ghost-syndicate.gs_039"
+                },
+                {
+                    "text": "\"Using Meridian's network sounds incredibly risky.\"",
+                    "next": "factions.ghost-syndicate.gs_040"
+                },
+                {
+                    "text": "\"Focus on Looking Glass first. Free Signal can wait.\"",
+                    "next": "factions.ghost-syndicate.gs_023"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.knows_free_signal",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_027": {
+            "text": "The room goes quiet. The three shadows tense. Null doesn't move. \"Violence is the language of the system we're fighting. The moment we speak it, we become them.\" The distorted voice hardens. \"I've seen violence used for liberation. It always ends the same way: the liberators become the new oppressors. The Syndicate operates on <span class='highlight'>one principle</span> above all others — information is our weapon. Knowledge is our ammunition. The truth, properly deployed, is more destructive than any bomb.\"",
+            "choices": [
+                {
+                    "text": "\"You're right. The pen is mightier.\"",
+                    "next": "factions.ghost-syndicate.gs_016",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Sometimes you need both.\"",
+                    "next": "factions.ghost-syndicate.gs_041"
+                },
+                {
+                    "text": "\"Then I hope your truth is loaded.\"",
+                    "next": "factions.ghost-syndicate.gs_023"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_028": {
+            "text": "\"Agreed.\" Null's response is immediate and absolute. \"The Syndicate has never taken a civilian life. Not once. Not ever. When operations risk bystanders, we abort. No exceptions.\" The mask faces you squarely. \"We're not terrorists. We're not revolutionaries. We're <span class='highlight'>whistleblowers with very good technology</span>. The day we harm an innocent person is the day this organization ceases to deserve existence. That's not negotiable. It's our founding principle.\"",
+            "choices": [
+                {
+                    "text": "\"Then we understand each other. I'm in.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                },
+                {
+                    "text": "\"Any other principles I should know about?\"",
+                    "next": "factions.ghost-syndicate.gs_042"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_029": {
+            "text": "\"Risky,\" Null says. \"Your identity is a vulnerability. Every database that knows your name is a door Meridian can kick down. But...\" A considering pause. \"Some of our best assets operate in the open. Double lives. The trick is <span class='highlight'>compartmentalization</span> — make sure nothing connects your public self to your ghost self. If you can maintain that divide, I'll accept your terms. But the moment your cover cracks, you ghost or you're out. Non-negotiable.\"",
+            "choices": [
+                {
+                    "text": "\"Deal.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                },
+                {
+                    "text": "\"What kind of support do I get to maintain cover?\"",
+                    "next": "factions.ghost-syndicate.gs_042"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.keeping_identity",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_030": {
+            "text": "\"Autonomous operators are valuable,\" Null says after a moment. \"We have several. They choose their targets, plan their operations, and report results. The Syndicate provides resources and intelligence in exchange.\" The mask turns to face you fully. \"But autonomous operators who go rogue are liabilities. If your missions conflict with Syndicate objectives or endanger other cells, you'll be <span class='highlight'>cut off</span>. Not threatened. Not punished. Simply erased from the network, as if you never existed. We're very good at that.\"",
+            "choices": [
+                {
+                    "text": "\"Fair terms. I'm in.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                },
+                {
+                    "text": "\"I want the first mission brief before I commit.\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.autonomous_operator",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_031": {
+            "text": "\"You can't know for certain,\" Null says. \"That's the honest answer. I could be Meridian running a honeypot to catch dissidents. Everything I've told you could be engineered to build trust.\" The mask reflects the monitor-light. \"But ask yourself: would Meridian need this? They already have surveillance, drones, kill teams. Why would they build an elaborate fake resistance when they can simply <span class='highlight'>crush</span> the real ones?\" A pause. \"The answer is they wouldn't. We exist because they haven't found us. And they haven't found us because we're <span class='highlight'>that good</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Logic checks out. I'm in.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                },
+                {
+                    "text": "\"I'll verify on my own before committing.\"",
+                    "next": "factions.ghost-syndicate.gs_037"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_032": {
+            "text": "\"Across the city? Hundreds. Maybe more. I don't know the exact number and that's by design. The network is structured in cells of three to seven people. Each cell knows only its immediate contacts. If one cell is compromised, the damage is contained. I coordinate the larger operations, but the cells function autonomously.\" Null gestures at the monitors. \"We have people in every sector. In every corporation. In <span class='highlight'>Meridian itself</span>. Ghosts are everywhere and nowhere. That's what makes us dangerous.\"",
+            "choices": [
+                {
+                    "text": "\"What's my first assignment?\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                },
+                {
+                    "text": "\"You have people inside Meridian?\"",
+                    "next": "factions.ghost-syndicate.gs_043",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_033": {
+            "text": "You walk past a Meridian security checkpoint with the ghost box active. The scanner sweeps you — you feel the infrared laser track across your body — and the display reads: <span class='highlight'>NO ENTITY DETECTED</span>. The guard frowns, taps the scanner, shrugs. You walk through. Just a glitch. Just a phantom in the system. You pass three more checkpoints, each time registering as empty air. The technology is frightening in its completeness. You don't just avoid detection — you <span class='highlight'>don't exist</span>.",
+            "choices": [
+                {
+                    "text": "Return to Null. Ready for the first mission.",
+                    "next": "factions.ghost-syndicate.gs_016"
+                },
+                {
+                    "text": "Test the ghost box's limits",
+                    "next": "factions.ghost-syndicate.gs_044",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.ghost_box_tested",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_034": {
+            "text": "The plan unfolds across Null's monitors like a blueprint for impossible. Entry through the underground parking structure at 0247. Specter will loop the security feeds from a van two blocks away. Wraith goes in first with optical camo to disable the biometric locks. You follow, ghosted, to sublevel 6. Pixel remotely opens the vault doors. Twelve minutes. In and out. <span class='highlight'>MIRRORBREAK</span> begins at midnight. You have six hours to prepare.",
+            "choices": [
+                {
+                    "text": "Gear up and go",
+                    "next": "factions.ghost-syndicate.gs_045",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"I want to scout the building first.\"",
+                    "next": "factions.ghost-syndicate.gs_046",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"What's the exit strategy?\"",
+                    "next": "factions.ghost-syndicate.gs_047"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.mirrorbreak_briefed",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_035": {
+            "text": "\"If you're caught ghosted, Meridian's security AI will flag you as a non-entity — no records, no rights, no legal existence. They can do anything they want with you and no one will ever know.\" Null's voice is flat, factual. \"That's why we don't get caught. The ghost box gives you invisibility. Your skills give you speed. The team gives you backup. But if everything fails...\" A pause. \"We have a dead-man's protocol. Your ghost box will fry every piece of data you've touched, including <span class='highlight'>your own neural patterns</span>. They'll get nothing from you. Not even memories.\"",
+            "choices": [
+                {
+                    "text": "\"Understood. Let's go over the details.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"That's a lot of risk. What's the reward?\"",
+                    "next": "factions.ghost-syndicate.gs_048"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_036": {
+            "text": "Null studies you. \"Solo operators in Meridian Tower. That's... ambitious.\" A long pause. \"But the Syndicate was built on ambitious individuals. Specter will be on standby if you change your mind. The entry credentials and security virus are still yours. Just know that without a handler, you're flying blind past sublevel 3. Our interior maps end there.\" The mask tilts. \"You'll need to improvise. If you're as good as your file suggests, you might even <span class='highlight'>enjoy it</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Solo it is. Brief me on sublevels 1-3.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                },
+                {
+                    "text": "\"On second thought, I'll take the handler.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.solo_operator",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 5
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_037": {
+            "text": "\"A warm-up. Smart.\" Null pulls up a file on the nearest monitor. \"There's a data courier in Sector 5 carrying a encrypted drive for Meridian's legal department. Contents: evidence that Meridian has been illegally harvesting neural data from Lower District clinics. The courier has a two-block route between buildings. Intercept the drive. Replace it with a decoy loaded with garbage data. Simple <span class='highlight'>snatch and swap</span>. Think of it as an audition.\"",
+            "choices": [
+                {
+                    "text": "\"Give me the details.\"",
+                    "next": "factions.ghost-syndicate.gs_049",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "\"I'll do it now.\"",
+                    "next": "factions.ghost-syndicate.gs_050"
+                },
+                {
+                    "text": "\"What's on the drive is more important than the heist.\"",
+                    "next": "factions.ghost-syndicate.gs_051"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.courier_mission",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_038": {
+            "text": "You spend an hour with the team. <span class='highlight'>Specter</span> is warm and professional — she treats every operation like a puzzle to solve. <span class='highlight'>Brick</span> speaks little but moves with surprising grace for someone his size; he lost his arms in a factory accident and Meridian denied his insurance claim. <span class='highlight'>Pixel</span> talks too fast about code and drinks too much caffeine; she grew up in the Lower District and taught herself to hack from discarded corporate manuals. <span class='highlight'>Wraith</span> says nothing at all. She watches you with ancient elven eyes and decides something privately.",
+            "choices": [
+                {
+                    "text": "\"Good people. Let's plan the job.\"",
+                    "next": "factions.ghost-syndicate.gs_034",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Ask Wraith what she decided",
+                    "next": "factions.ghost-syndicate.gs_052",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Ask Pixel about the technical details",
+                    "next": "factions.ghost-syndicate.gs_053"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.bonded_with_team",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_039": {
+            "text": "\"Building the Free Signal is a long game,\" Null explains. \"Every ghost box we distribute adds a node. Every node strengthens the mesh. But Meridian's signal jammers in the Upper Districts create dead zones in our network. We need to either <span class='highlight'>disable their jammers</span> or find a way to punch through them.\" Null pulls up a map dotted with red zones. \"Pixel thinks she can modify ghost box firmware to operate on a frequency Meridian doesn't monitor. But she needs a sample of their jammer's code to calibrate against.\"",
+            "choices": [
+                {
+                    "text": "\"I'll get a jammer sample.\"",
+                    "next": "factions.ghost-syndicate.gs_054"
+                },
+                {
+                    "text": "\"Focus on Looking Glass first. One threat at a time.\"",
+                    "next": "factions.ghost-syndicate.gs_023"
+                },
+                {
+                    "text": "\"Can we do both simultaneously?\"",
+                    "next": "factions.ghost-syndicate.gs_055",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_040": {
+            "text": "\"Risky is our entire existence,\" Null says. \"But you're not wrong. If Meridian detects us piggybacking on their stack network, they could trace every ghost box in the city. It would be the end of the Syndicate.\" The mask tilts thoughtfully. \"Unless we make it look like a system malfunction. Meridian's network has vulnerabilities they don't even know about — legacy code from when the system was first built. By me, actually.\" Something that might be a smile in the distorted voice. \"<span class='highlight'>I know where the bodies are buried because I buried them.</span>\"",
+            "choices": [
+                {
+                    "text": "\"Then let's dig them up.\"",
+                    "next": "factions.ghost-syndicate.gs_039"
+                },
+                {
+                    "text": "\"Too risky. What about Looking Glass?\"",
+                    "next": "factions.ghost-syndicate.gs_023"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_041": {
+            "text": "Null considers this. The three shadows shift uncomfortably. \"You're suggesting we develop a capacity for violence while maintaining information warfare as our primary weapon.\" A pause. \"That's a dangerous line. Once you build the capacity for violence, it becomes the easy answer. Every problem starts looking like a nail.\" But Null doesn't say no. Instead: \"Brick. What do you think?\" The orc's cybernetic arms whir. \"Sometimes nails need <span class='highlight'>hammering</span>,\" he says.",
+            "choices": [
+                {
+                    "text": "\"Defensive capability only. Not offensive.\"",
+                    "next": "factions.ghost-syndicate.gs_028",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Whatever it takes to win.\"",
+                    "next": "factions.ghost-syndicate.gs_056"
+                },
+                {
+                    "text": "\"Let's table this. Tell me about the first mission.\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_042": {
+            "text": "\"Three principles,\" Null says, raising gloved fingers. \"One: <span class='highlight'>information belongs to everyone</span>. No secrets that protect the powerful at the expense of the powerless. Two: no permanent harm to civilians. Collateral damage is failure, not cost of doing business. Three: no member is expendable. Every ghost matters. We don't sacrifice people for objectives.\" The mask faces you. \"Meridian violates all three daily. That's why they're the enemy. Not because they're a corporation — because they're a corporation that treats people like <span class='highlight'>data points</span>.\"",
+            "choices": [
+                {
+                    "text": "\"I can work with those principles. I'm in.\"",
+                    "next": "factions.ghost-syndicate.gs_020"
+                },
+                {
+                    "text": "\"What about the first mission?\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_043": {
+            "text": "\"Three agents embedded in Meridian's corporate structure. Deep cover. They've been in place for years — long enough to build real careers, real relationships, real lives inside the machine they're working to dismantle.\" Null's voice softens. \"It's the hardest assignment we give. Living as the enemy. Becoming what you hate to learn its weaknesses. One of them has been promoted to <span class='highlight'>Director of Security</span>. She could end her cover life tomorrow and live free as a ghost. She stays because the intelligence she provides saves lives.\"",
+            "choices": [
+                {
+                    "text": "\"I want to know more about Looking Glass.\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                },
+                {
+                    "text": "\"Can your inside agents help with the heist?\"",
+                    "next": "factions.ghost-syndicate.gs_057",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"That kind of sacrifice is real courage.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.knows_embedded_agents",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_044": {
+            "text": "You push the ghost box to its limits over three hours of testing. Results: it masks all electromagnetic signatures, blocks stack registration pings, scrambles facial recognition, and generates false thermal signatures. But it has a weakness — direct physical contact with a biometric scanner will still read your DNA. You're invisible to machines but not to <span class='highlight'>chemistry</span>. Also, the battery life is approximately eight hours of continuous use. After that, you reappear on every network simultaneously. Not a graceful reveal.",
+            "choices": [
+                {
+                    "text": "Report the vulnerability to Null",
+                    "next": "factions.ghost-syndicate.gs_058"
+                },
+                {
+                    "text": "Try to fix the DNA gap yourself",
+                    "next": "factions.ghost-syndicate.gs_059",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 16
+                    }
+                },
+                {
+                    "text": "Accept the limitation. Report for first mission.",
+                    "next": "factions.ghost-syndicate.gs_016"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.ghost_box_weakness",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_045": {
+            "text": "Midnight. Rain. The neon glare of Meridian Tower cuts the sky like a chrome blade. You stand in the shadow of the parking structure with Wraith beside you — invisible, her optical camouflage rendering her as nothing more than a heat shimmer. Specter's voice crackles in your earpiece: \"Camera loop active. Virus deployed. You have twelve minutes starting... <span class='highlight'>now</span>.\" You move. Ghost box humming against your chest. The clock begins.",
+            "choices": [
+                {
+                    "text": "Follow the planned route — parking structure",
+                    "next": "factions.ghost-syndicate.gs_060"
+                },
+                {
+                    "text": "Improvise — take the service elevator",
+                    "next": "factions.ghost-syndicate.gs_061",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Send Wraith ahead to scout",
+                    "next": "factions.ghost-syndicate.gs_062"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.mirrorbreak_active",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "gs_046": {
+            "text": "You spend four hours casing Meridian Tower from every angle. The building is a fortress — ninety stories of corporate power wrapped in mirror glass and anti-drone netting. Security is layered: outer perimeter drones, lobby checkpoints, floor-by-floor biometric locks, and something Specter calls 'the Maze' — an AI-controlled labyrinth of corridors on sublevels 4 through 7 that reconfigures in real-time based on threat analysis. \"The Maze is the real challenge,\" Specter says. \"Everything else is just <span class='highlight'>door locks</span>.\"",
+            "choices": [
+                {
+                    "text": "\"I've seen enough. Let's go.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                },
+                {
+                    "text": "\"Tell me more about the Maze.\"",
+                    "next": "factions.ghost-syndicate.gs_063"
+                },
+                {
+                    "text": "\"Is there a way to disable the Maze?\"",
+                    "next": "factions.ghost-syndicate.gs_064",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.scouted_tower",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_047": {
+            "text": "\"Exit through the maintenance tunnels beneath sublevel 8. They connect to the city's old drainage system — pre-corporate infrastructure, unmapped and unmonitored. Brick will be waiting at the tunnel junction with transport.\" Null pauses. \"Backup exit: the roof. Pixel has a drone package that can extract one person in an emergency. One person.\" The implication hangs in the air. If things go wrong, only <span class='highlight'>one of you gets out</span>.",
+            "choices": [
+                {
+                    "text": "\"Understood. Let's finalize the plan.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                },
+                {
+                    "text": "\"We need a better backup plan.\"",
+                    "next": "factions.ghost-syndicate.gs_065",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"If it comes to the drone, it takes Wraith, not me.\"",
+                    "next": "factions.ghost-syndicate.gs_066"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_048": {
+            "text": "\"The reward?\" Null's distorted voice carries a note of disbelief. \"The reward is preventing the most powerful corporation on the planet from being able to read the minds of every stacked citizen in the city. The reward is freedom of thought. The reward is making sure that the last private space — the inside of your own skull — doesn't become <span class='highlight'>Meridian property</span>.\" A pause. \"But if you need material incentive, the source code alone is worth millions on the black market. We'll give you a percentage. Twenty percent. Enough to live comfortable for years.\"",
+            "choices": [
+                {
+                    "text": "\"Freedom is payment enough. Let's go.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"Twenty percent works for me.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"Thirty percent.\"",
+                    "next": "factions.ghost-syndicate.gs_067",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                }
+            ],
+            "actions": []
+        },
+        "gs_049": {
+            "text": "Null details the courier's route: a two-block walk from Meridian's legal annex to their main tower, taken every Tuesday at 1400 hours. The courier is a mid-level security officer, armed but not combat-trained. The drive is biometrically locked to his palm print. \"You'll need to get the drive <span class='highlight'>and</span> his palm print to unlock the encryption. Non-lethally. Without being seen. Without leaving evidence.\" Null leans back. \"Welcome to ghost work.\"",
+            "choices": [
+                {
+                    "text": "\"I'll intercept during the walk.\"",
+                    "next": "factions.ghost-syndicate.gs_050",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Can we clone his palm print beforehand?\"",
+                    "next": "factions.ghost-syndicate.gs_068",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"I need backup for this.\"",
+                    "next": "factions.ghost-syndicate.gs_069"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_050": {
+            "text": "Tuesday. 1358. You're ghosted, standing in a doorway on the courier's route. Ghost box humming. Heart hammering. The courier appears — a bored-looking man in a grey suit, briefcase handcuffed to his wrist. He walks with the casual arrogance of someone who's done this a hundred times without incident. He passes within arm's reach. You make your move.",
+            "choices": [
+                {
+                    "text": "Bump into him — pickpocket the drive",
+                    "next": "factions.ghost-syndicate.gs_070",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Follow him to the tower entrance and strike there",
+                    "next": "factions.ghost-syndicate.gs_071",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Use a signal jammer to disable his comms first",
+                    "next": "factions.ghost-syndicate.gs_072",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.courier_intercepted",
+                    "value": true
+                }
+            ]
+        },
+        "gs_051": {
+            "text": "Null's mask tilts. \"You want to read the data before we use it.\" Not a question. \"That's either conscientiousness or suspicion, and I respect both.\" The monitors shift to show fragments of the drive's contents — medical records, consent forms with forged signatures, neural extraction protocols. \"Meridian has been harvesting neural pattern data from every medical scan performed in the Lower District for three years. They're using it to train Looking Glass. Every headache you had treated, every checkup, every <span class='highlight'>emergency room visit</span> — they turned your pain into their AI's education.\"",
+            "choices": [
+                {
+                    "text": "\"This data needs to go public.\"",
+                    "next": "factions.ghost-syndicate.gs_017",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Let's get that drive. Now.\"",
+                    "next": "factions.ghost-syndicate.gs_050"
+                },
+                {
+                    "text": "\"Can we use this to take down Looking Glass directly?\"",
+                    "next": "factions.ghost-syndicate.gs_023"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.knows_neural_harvesting",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_052": {
+            "text": "Wraith's ancient eyes meet yours. She speaks for the first time — her voice is low, musical, carrying the weight of centuries. \"I decided you might survive.\" A ghost of a smile. \"Most newcomers are burning with ideology. You're burning with <span class='highlight'>attention</span>. That's rarer. That's what keeps people alive in this work.\" She touches the optical camo unit at her belt. \"I've been invisible for two hundred years. Long before any technology made it possible. An elf in a human city learns to disappear or learns to die. I chose to make it an <span class='highlight'>art form</span>.\"",
+            "choices": [
+                {
+                    "text": "\"I'd be honored to work with you.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"Two hundred years of hiding. Don't you want to be seen?\"",
+                    "next": "factions.ghost-syndicate.gs_073"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.wraith_bonded",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_053": {
+            "text": "Pixel talks like she's on a permanent fast-forward. \"Looking Glass uses a modified neural net architecture — not standard deep learning, something custom. It maps consciousness patterns onto a multidimensional grid and looks for predictive correlations. Basically it learns what you're going to think before you think it.\" She gulps synth-coffee. \"The scary part isn't the AI. The scary part is the <span class='highlight'>training data</span>. They've been collecting neural patterns from the entire Lower District for three years. Millions of minds. The AI already knows us better than we know ourselves.\"",
+            "choices": [
+                {
+                    "text": "\"Can you crack its architecture?\"",
+                    "next": "factions.ghost-syndicate.gs_074",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"How do we feed it false data?\"",
+                    "next": "factions.ghost-syndicate.gs_075",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "\"Let's focus on the heist plan.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.pixel_briefing",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_054": {
+            "text": "\"The nearest jammer installation is on the roof of the Meridian Commerce Hub in Sector 3. Heavy security — drones, patrols, biometric locks on the roof access. But the jammer itself is just a transmitter with a firmware chip. Swap the chip, bring it back, and Pixel can reverse-engineer the frequency patterns.\" Null marks the location on the map. \"This is a two-person job. Take <span class='highlight'>Wraith</span>. She can get you to the roof. Getting back down is your problem.\"",
+            "choices": [
+                {
+                    "text": "\"Let's do it tonight.\"",
+                    "next": "factions.ghost-syndicate.gs_076"
+                },
+                {
+                    "text": "\"I want more intel on the security setup.\"",
+                    "next": "factions.ghost-syndicate.gs_046"
+                },
+                {
+                    "text": "\"Can Pixel hack the jammer remotely?\"",
+                    "next": "factions.ghost-syndicate.gs_074"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.jammer_mission",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_055": {
+            "text": "\"Simultaneously?\" Null leans forward. \"That's... ambitious. But strategically sound. Hit Looking Glass while building the Free Signal infrastructure. If we take down their consciousness surveillance <span class='highlight'>and</span> establish an uncensorable information network in the same window, Meridian faces a two-front war they're not prepared for.\" The distorted voice warms. \"I like how you think. Pixel, draw up a dual timeline. Brick, inventory our resources. We're going to need everything.\"",
+            "choices": [
+                {
+                    "text": "Help plan the dual operation",
+                    "next": "factions.ghost-syndicate.gs_076"
+                },
+                {
+                    "text": "\"I'll handle the jammer mission personally.\"",
+                    "next": "factions.ghost-syndicate.gs_054"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.dual_operation",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_056": {
+            "text": "The room goes very quiet. Null stares at you through the featureless mask. \"'Whatever it takes' is the most dangerous phrase in any language. It's the justification for every atrocity in human history.\" The distorted voice drops to nearly a whisper. \"I built the Syndicate to be different. To prove that you can fight power without <span class='highlight'>becoming</span> power. If you can't accept that, we have nothing more to discuss.\"",
+            "choices": [
+                {
+                    "text": "\"You're right. I crossed a line. Information warfare only.\"",
+                    "next": "factions.ghost-syndicate.gs_042"
+                },
+                {
+                    "text": "\"Maybe I'm not Syndicate material.\"",
+                    "next": "factions.ghost-syndicate.gs_009"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": -10
+                }
+            ]
+        },
+        "gs_057": {
+            "text": "\"Our embedded agents are off-limits for direct operations,\" Null says firmly. \"They're too valuable to risk on a single heist. But...\" A pause. \"Our Director of Security contact can ensure that the sublevel 6 guard rotation has a gap. Three minutes where the corridor is unmonitored. She does this regularly as 'efficiency testing.'\" Null almost sounds amused. \"<span class='highlight'>Meridian is paying her to create the vulnerabilities we exploit.</span> There's a poetry to it.\"",
+            "choices": [
+                {
+                    "text": "\"Three minutes is tight. It'll do.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"Can she extend the gap?\"",
+                    "next": "factions.ghost-syndicate.gs_077",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_058": {
+            "text": "Null receives your report on the ghost box's DNA vulnerability with immediate concern. \"We knew about the biometric gap. Pixel has been working on a solution — a secondary scrambler that generates random DNA signatures. Problem is, the technology is unstable. Two test subjects experienced <span class='highlight'>cellular degradation</span> — their actual DNA started mutating to match the false signatures.\" The mask tilts. \"We shelved it. Some problems need more time.\"",
+            "choices": [
+                {
+                    "text": "\"I'll work around the limitation.\"",
+                    "next": "factions.ghost-syndicate.gs_016",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"What if we approach it differently?\"",
+                    "next": "factions.ghost-syndicate.gs_059",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 16
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_059": {
+            "text": "You spend six hours in Pixel's lab, tearing apart the ghost box's firmware. Instead of scrambling DNA signatures, you develop a different approach: a thin electromagnetic sheath that prevents biometric scanners from making skin contact at all. Scanners can't read what they can't touch. The sheath is invisible, weightless, and doesn't interact with cellular biology. Pixel stares at your solution with something approaching <span class='highlight'>awe</span>. \"That's... that's elegant. Why didn't I think of that?\" Null just nods.",
+            "choices": [
+                {
+                    "text": "\"Now we're truly invisible. What's the first mission?\"",
+                    "next": "factions.ghost-syndicate.gs_016"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.ghost_box_improved",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_060": {
+            "text": "The parking structure is a concrete tomb. Your footsteps echo in the empty space. Ghost box active — you're invisible to the security cameras mounted at every pillar. Wraith moves beside you, a barely-visible shimmer. You reach the elevator bank. Specter's voice: \"Elevator 3. I've spoofed the authorization. It'll take you to sublevel 2. From there you walk.\" The elevator doors open with a soft chime. Inside, sterile white light. Corporate music. A cheerful voice: <span class='highlight'>WELCOME TO MERIDIAN TOWER. PLEASE PRESENT YOUR CREDENTIALS.</span> You press the ghost box tighter against your chest and step inside.",
+            "choices": [
+                {
+                    "text": "Ride to sublevel 2",
+                    "next": "factions.ghost-syndicate.gs_078",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Override the elevator to go directly to sublevel 6",
+                    "next": "factions.ghost-syndicate.gs_079",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 16
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_061": {
+            "text": "You bypass the parking structure entirely, slipping through a loading dock where a delivery truck provides cover. The service elevator is older, grittier, and — crucially — not connected to the main security grid. It runs on a separate system, maintained by janitorial staff who care more about their smoke breaks than protocol. You ride it down in the company of mop buckets and chemical drums, descending past sublevel after sublevel. At sublevel 5, the elevator stops. <span class='highlight'>End of the line.</span> One floor above your target.",
+            "choices": [
+                {
+                    "text": "Find the stairs to sublevel 6",
+                    "next": "factions.ghost-syndicate.gs_078"
+                },
+                {
+                    "text": "Look for a ventilation shaft",
+                    "next": "factions.ghost-syndicate.gs_080",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_062": {
+            "text": "Wraith nods — a shimmer in the rain — and moves ahead. Two minutes of silence. Then her voice in your ear, barely a breath: \"Two guards, stationary. Electronic countermeasures active on sublevel 1. Camera blind spot at pillar seven, three-second window.\" She pauses. \"There's something else. A patrol I wasn't briefed on. Four drones, <span class='highlight'>military-grade</span>, running a sweep pattern. They'll pass pillar seven in ninety seconds. Move now or wait six minutes for the next gap.\"",
+            "choices": [
+                {
+                    "text": "Move now — through the gap",
+                    "next": "factions.ghost-syndicate.gs_060",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Wait for the safer window",
+                    "next": "factions.ghost-syndicate.gs_078"
+                },
+                {
+                    "text": "\"Can you take out the drones?\"",
+                    "next": "factions.ghost-syndicate.gs_081",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_063": {
+            "text": "\"The Maze is Meridian's pride and joy,\" Specter explains over comms. \"An AI-controlled labyrinth that monitors biometrics, movement patterns, and even emotional states through neurochemical sensors in the walls. It adapts in real-time. Take the same path twice and the corridor literally <span class='highlight'>rearranges itself</span>. The walls are modular — they slide on magnetic rails. It's designed to trap intruders in an infinite loop until security arrives.\" A pause. \"Null built the original prototype. It's been heavily modified since, but the core architecture is the same.\"",
+            "choices": [
+                {
+                    "text": "\"Null, can you navigate us through your own creation?\"",
+                    "next": "factions.ghost-syndicate.gs_082",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"What if we move too fast for it to reconfigure?\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                },
+                {
+                    "text": "\"Can we disable it?\"",
+                    "next": "factions.ghost-syndicate.gs_064"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_064": {
+            "text": "\"The Maze draws power from a dedicated fusion cell on sublevel 8,\" Pixel chimes in over comms, talking so fast her words blur. \"Cut the power and the walls freeze in place. But the fusion cell is past the Maze. Classic bootstrap problem — you need to get through the Maze to disable the Maze.\" She pauses. \"Unless someone goes through the <span class='highlight'>maintenance crawlspace</span> between sublevels. It's not mapped by the Maze AI because it's not technically part of the facility. It's just... space between walls. Tight, dark, and full of cable conduits. But it bypasses the Maze entirely.\"",
+            "choices": [
+                {
+                    "text": "\"I'll take the crawlspace.\"",
+                    "next": "factions.ghost-syndicate.gs_080"
+                },
+                {
+                    "text": "\"Send Wraith through the crawlspace. I'll handle the Maze.\"",
+                    "next": "factions.ghost-syndicate.gs_082"
+                },
+                {
+                    "text": "\"Skip disabling it. We go through fast.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_065": {
+            "text": "\"Better backup plans require better resources,\" Null says. \"We have three backup plans. The drone. The tunnel. And a third option I haven't mentioned: our embedded Security Director can trigger a building-wide evacuation drill. Everyone leaves, including security. It gives you cover to walk out the front door. But it burns her cover. Permanently. Years of work, gone. A life rebuilt from scratch, <span class='highlight'>destroyed</span>.\" Null pauses. \"I will not sacrifice her lightly. But I will sacrifice her if it means getting Looking Glass code. The math demands it.\"",
+            "choices": [
+                {
+                    "text": "\"We won't need the evac. I'll make it work.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                },
+                {
+                    "text": "\"Prep the evac as last resort only.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_066": {
+            "text": "Null goes silent. Then, very quietly: \"You just passed a test you didn't know you were taking.\" The distorted voice carries something raw. \"Every new recruit, I watch for the moment they prioritize themselves over the team. You just did the opposite.\" The monitors flicker. \"<span class='highlight'>Wraith volunteered for this mission knowing the risks.</span> She's two hundred years old and she's made peace with mortality in a way most of us never will. But the fact that you offered... that tells me everything I need to know about you.\"",
+            "choices": [
+                {
+                    "text": "\"Enough sentiment. Let's go steal some AI.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "CHA",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_067": {
+            "text": "Null's mask tilts. A beat passes. \"Twenty-five. And not a credit more.\" Something that might be amusement leaks through the voice distortion. \"You negotiate like a corporate. That's either concerning or useful. I haven't decided which.\" The mask nods. \"Twenty-five percent of the source code's black market value. Plus full Syndicate support, equipment, and operational backing. <span class='highlight'>Deal?</span>\"",
+            "choices": [
+                {
+                    "text": "\"Deal. Now let's plan.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.negotiated_share",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 5
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_068": {
+            "text": "\"Cloning the palm print is possible,\" Null confirms. \"We have the courier's gym membership. The equipment he uses stores biometric data for calibration. Pixel can extract his palm print from the gym's database and fabricate a silicone replica.\" Null nods approvingly. \"No confrontation needed. You intercept the briefcase, swap the drives, and use the fabricated print to unlock the encryption. The courier never knows it happened. <span class='highlight'>Ghost work at its finest.</span>\"",
+            "choices": [
+                {
+                    "text": "\"Do it. I want a clean operation.\"",
+                    "next": "factions.ghost-syndicate.gs_070"
+                },
+                {
+                    "text": "\"Quicker to just grab him.\"",
+                    "next": "factions.ghost-syndicate.gs_050"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.palm_print_cloned",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_069": {
+            "text": "\"Brick will be your overwatch,\" Null says. \"He'll be on a rooftop with a long-range signal disruptor. If anything goes wrong, he kills the courier's communications — no call for backup. Wraith will shadow you as invisible escort. And Pixel will be monitoring Meridian's security channels for any sign they've detected the operation.\" Null pauses. \"For a 'warm-up' mission, this has a lot of moving parts. That's because anything involving Meridian has <span class='highlight'>a lot of moving parts</span>.\"",
+            "choices": [
+                {
+                    "text": "\"I appreciate the backup. Let's move.\"",
+                    "next": "factions.ghost-syndicate.gs_050"
+                },
+                {
+                    "text": "\"Overkill for a courier snatch. I'll go alone.\"",
+                    "next": "factions.ghost-syndicate.gs_050"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_070": {
+            "text": "Clean. Precise. You materialize from nowhere, bump the courier's shoulder — \"Sorry, sorry\" — and in the half-second of contact your fingers find the briefcase latch, pop it, and swap the drives. The cloned palm print unlocks the encryption. Your hand is back at your side before the courier finishes adjusting his coat. He walks on. He has no idea. The real data drive sits warm in your pocket, full of Meridian's darkest secrets. <span class='highlight'>Ghost work.</span>",
+            "choices": [
+                {
+                    "text": "Deliver the drive to Null",
+                    "next": "factions.ghost-syndicate.gs_083"
+                },
+                {
+                    "text": "Read the drive first",
+                    "next": "factions.ghost-syndicate.gs_084"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.courier_mission_complete",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "gs_071": {
+            "text": "You tail the courier to the tower entrance, waiting for the moment he reaches the security checkpoint. As he extends his hand for the biometric scan, the queue behind him creates a press of bodies. You slip in close, ghost box working overtime, and in the confusion of the scanner beeping you switch his drive for the decoy. He doesn't notice. The scanner doesn't see you. You step back into the crowd and <span class='highlight'>cease to exist</span>. Mission complete.",
+            "choices": [
+                {
+                    "text": "Deliver the drive to Null",
+                    "next": "factions.ghost-syndicate.gs_083"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.courier_mission_complete",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "gs_072": {
+            "text": "You activate the jammer. The courier's earpiece dies. His wrist display goes dark. He stops walking, confused, tapping his dead communicator. In that moment of distraction you close the distance, open the briefcase from behind with practiced fingers, and make the swap. The jammer goes off. His devices come back online. He checks his briefcase — still there. Still locked. No alert. He walks on, carrying garbage data to Meridian's legal department. You walk the other way, carrying <span class='highlight'>the truth</span>.",
+            "choices": [
+                {
+                    "text": "Deliver the drive to Null",
+                    "next": "factions.ghost-syndicate.gs_083"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.courier_mission_complete",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "gs_073": {
+            "text": "Wraith's ancient eyes flicker — surprise, then something deeper. \"Seen? No. I've been seen enough for ten lifetimes. I was seen when they burned the forests. I was seen when they herded us into the cities. I was seen when they decided elves were too long-lived to be trusted with memory stacks.\" Her voice drops to a whisper. \"Visibility is a weapon they use against us. Invisibility is a weapon I chose for <span class='highlight'>myself</span>. There's a difference.\"",
+            "choices": [
+                {
+                    "text": "\"Then let's use that weapon. For everyone.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.wraith_story",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "WIS",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_074": {
+            "text": "\"Crack Looking Glass? Maybe.\" Pixel's fingers blur across her keyboard. \"The architecture has a dependency I've been studying — it relies on Meridian's stack network for real-time processing. If we could introduce a recursive logic error into its training data, it would start predicting its own predictions, creating an <span class='highlight'>infinite loop</span> that eats itself. But I'd need direct access to the source code to find the right injection point. Which is why we need MIRRORBREAK to succeed.\"",
+            "choices": [
+                {
+                    "text": "\"Then everything depends on the heist.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"What if MIRRORBREAK fails?\"",
+                    "next": "factions.ghost-syndicate.gs_085"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_075": {
+            "text": "You sketch out a plan on Pixel's whiteboard: instead of corrupting Looking Glass directly, you feed it contaminated training data. Millions of false neural patterns, designed to make the AI <span class='highlight'>paranoid</span> — seeing threats everywhere, in everyone, until its predictions become meaningless noise. Pixel's eyes light up. \"Poisoning the well. If we can inject false data into Meridian's clinic network, Looking Glass learns from corrupted sources. It takes longer but it's safer. No heist required.\" She pauses. \"But it means the clinics keep harvesting real data in the meantime.\"",
+            "choices": [
+                {
+                    "text": "\"The slow approach is safer for everyone.\"",
+                    "next": "factions.ghost-syndicate.gs_086"
+                },
+                {
+                    "text": "\"We do both — poison the data and steal the code.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"No. People are being violated now. We hit them hard.\"",
+                    "next": "factions.ghost-syndicate.gs_023"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.data_poison_plan",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_076": {
+            "text": "The dual operation takes shape over three days of intense planning. MIRRORBREAK targets Looking Glass on sublevel 6. Simultaneously, Operation <span class='highlight'>ECHO</span> hits the Commerce Hub jammer installation. Two teams, two targets, synchronized to the second. Null coordinates from the laundromat command center, monitoring both operations through the Syndicate's encrypted mesh. \"If we pull this off,\" Null says quietly, \"the city changes. <span class='highlight'>Permanently.</span> Meridian loses their surveillance advantage and we gain the ability to broadcast truth to every corner of this city.\"",
+            "choices": [
+                {
+                    "text": "\"Which team am I on?\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                },
+                {
+                    "text": "\"I'll lead MIRRORBREAK. Who takes ECHO?\"",
+                    "next": "factions.ghost-syndicate.gs_087"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.dual_op_planned",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_077": {
+            "text": "\"Extending the gap increases risk to our asset exponentially,\" Null says. But after a long pause: \"Five minutes. She can justify five minutes as an extended test cycle. Any longer and the pattern-recognition AI in Meridian's security department will flag it as anomalous.\" The distorted voice softens. \"Five minutes to get through sublevel 6. That's one minute per corridor section. <span class='highlight'>Don't waste her sacrifice on hesitation.</span>\"",
+            "choices": [
+                {
+                    "text": "\"Five minutes is enough. Let's finalize.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.extended_gap",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_078": {
+            "text": "Sublevel 2. Corporate storage. Rows of sealed containers stretching into fluorescent infinity. Your ghost box keeps you invisible to the automated inventory drones that patrol the aisles. You move fast, following Specter's directions through a maze of containers to a service door marked <span class='highlight'>SUBLEVEL 3-6 ACCESS — AUTHORIZED PERSONNEL ONLY</span>. The biometric lock should reject you. Instead, it clicks open — your embedded Security Director's work. Three floors between you and Looking Glass.",
+            "choices": [
+                {
+                    "text": "Take the stairs down quickly",
+                    "next": "factions.ghost-syndicate.gs_088",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"Specter, what's the security status?\"",
+                    "next": "factions.ghost-syndicate.gs_089"
+                },
+                {
+                    "text": "Proceed carefully, checking each floor",
+                    "next": "factions.ghost-syndicate.gs_090",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 13
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_079": {
+            "text": "Your fingers dance across the elevator's maintenance panel. The operating system is ancient — legacy code from Meridian's early days. You find a debug mode that accepts direct floor commands. Sublevel 6, express. The elevator drops like a stone, bypassing every security checkpoint between here and your target. Specter's voice in your ear: \"That wasn't in the plan — I'm seeing security alerts on three floors you just skipped.\" Alarms haven't triggered yet. But the clock is ticking <span class='highlight'>faster</span>.",
+            "choices": [
+                {
+                    "text": "Move fast — get to the terminal before they react",
+                    "next": "factions.ghost-syndicate.gs_091"
+                },
+                {
+                    "text": "\"Specter, can you suppress the alerts?\"",
+                    "next": "factions.ghost-syndicate.gs_092",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "gs_080": {
+            "text": "The crawlspace is exactly as advertised: tight, dark, and threaded with cables. You squeeze through on your belly, the ghost box pressed against your chest, cables scraping against your back. The space between sublevels is eighteen inches of dead air and conduit. You can hear the Maze reconfiguring around you — walls sliding on magnetic rails, the AI hunting for intruders it can sense but not find. Because you're not in its territory. You're in the <span class='highlight'>spaces it forgot</span>.",
+            "choices": [
+                {
+                    "text": "Continue to sublevel 6",
+                    "next": "factions.ghost-syndicate.gs_091"
+                },
+                {
+                    "text": "Tap into the Maze's control cables from here",
+                    "next": "factions.ghost-syndicate.gs_093",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 16
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_081": {
+            "text": "\"Military-grade drones?\" Wraith's shimmer pauses. \"Give me sixty seconds and a clear angle.\" She moves — a distortion in the rain — and you wait. Fifty-eight seconds later, all four drones drop from the air simultaneously, their navigation systems scrambled by something you didn't see Wraith deploy. \"<span class='highlight'>Elven patience</span>,\" she whispers in your ear. \"And a modified EMP pulse. They'll reboot in four minutes. Move.\"",
+            "choices": [
+                {
+                    "text": "Sprint for the entrance",
+                    "next": "factions.ghost-syndicate.gs_060"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_082": {
+            "text": "\"I can try,\" Null says over comms, and for the first time the distorted voice sounds uncertain. \"The Maze's core architecture is mine, but they've added layers. Behavioral prediction, emotional mapping, physical topology scanning. It's learned. It's smarter than what I built.\" A pause. \"I'll feed you navigation data based on the original pathways. The modified layers... you'll have to feel your way through. Trust your instincts. The Maze reads <span class='highlight'>hesitation</span> as fear and reconfigures to trap fearful intruders. Move with confidence. Even if you don't feel it.\"",
+            "choices": [
+                {
+                    "text": "\"I'll fake confidence until it's real.\"",
+                    "next": "factions.ghost-syndicate.gs_088",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"I'd rather bypass it entirely.\"",
+                    "next": "factions.ghost-syndicate.gs_080"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_083": {
+            "text": "Null accepts the drive with careful hands. \"Your first operation. Clean, silent, professional.\" The mask dips — a nod of genuine respect. \"This data confirms what we suspected about the neural harvesting. Combined with the evidence on this drive, we have enough to make our next move.\" Null inserts the drive into a secure terminal. Data fills the screens. \"<span class='highlight'>MIRRORBREAK is a go.</span> You've earned a seat at the table. Welcome to the Ghost Syndicate.\"",
+            "choices": [
+                {
+                    "text": "\"Brief me on MIRRORBREAK. I'm ready.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"I want to see the neural harvesting data first.\"",
+                    "next": "factions.ghost-syndicate.gs_084"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
+            ]
+        },
+        "gs_084": {
+            "text": "The data is worse than you expected. Three years of medical records from every clinic in the Lower District, secretly copied and transmitted to Meridian's R&D division. Neural scans. Emotional profiles. Memory fragments. They didn't just take data — they took <span class='highlight'>pieces of people's minds</span> without consent or knowledge. Headache treatments that were actually deep neural scans. Routine checkups that mapped entire personality structures. Millions of people, violated in the most intimate way possible, and none of them know.",
+            "choices": [
+                {
+                    "text": "\"This goes public. Now.\"",
+                    "next": "factions.ghost-syndicate.gs_094",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"We use this as leverage during MIRRORBREAK.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                },
+                {
+                    "text": "\"Shut down the clinics first. Stop the bleeding.\"",
+                    "next": "factions.ghost-syndicate.gs_095"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.saw_harvesting_data",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_085": {
+            "text": "\"If MIRRORBREAK fails?\" Pixel stops typing. The lab goes quiet. \"Then Looking Glass goes live in eight weeks. Then every stacked person in this city has their thoughts monitored in real-time. Then Meridian doesn't need police, or courts, or laws. They just... <span class='highlight'>know</span>. And the people who know everything don't need to be fair. They don't need to be just. They just need to be first.\" She looks at you with the hard eyes of a teenager who grew up too fast. \"MIRRORBREAK can't fail. There's no plan B.\"",
+            "choices": [
+                {
+                    "text": "\"Then we make sure it doesn't fail.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                },
+                {
+                    "text": "\"There's always a plan B. Let me think.\"",
+                    "next": "factions.ghost-syndicate.gs_075"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_086": {
+            "text": "Over three weeks, you and Pixel develop a data poisoning framework. Modified ghost boxes, deployed in Lower District clinics, that intercept Meridian's harvesting protocols and inject false neural patterns. The AI trains on garbage. Its predictions become increasingly erratic. Meridian's data scientists scramble to find the source of the corruption but the ghost boxes are <span class='highlight'>invisible</span>. By week four, Looking Glass's accuracy has dropped by thirty percent. It's working. Slowly, quietly, like a ghost. Like you.",
+            "choices": [
+                {
+                    "text": "\"Keep poisoning. Slow and steady.\"",
+                    "next": "factions.ghost-syndicate.gs_096"
+                },
+                {
+                    "text": "\"Now hit them with MIRRORBREAK while they're confused.\"",
+                    "next": "factions.ghost-syndicate.gs_045",
+                    "skillCheck": {
+                        "stat": "STR",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.data_poison_active",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "gs_087": {
+            "text": "\"Wraith leads ECHO,\" Null says. \"She's done more rooftop infiltrations than anyone in the Syndicate. Brick backs her up. You take MIRRORBREAK with Specter on comms and Pixel on digital support.\" The plan is tight, synchronized, <span class='highlight'>beautiful in its precision</span>. Two surgical strikes hitting Meridian's eyes and ears simultaneously. When it's over — if it works — the corporation will be blind, deaf, and the Syndicate will own the airwaves.",
+            "choices": [
+                {
+                    "text": "\"Let's make history.\"",
+                    "next": "factions.ghost-syndicate.gs_045"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.team_assigned",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_088": {
+            "text": "You descend through the sublevels, each one darker and more sterile than the last. Sublevel 3 is research labs — empty at this hour. Sublevel 4 is where the Maze begins. The walls hum with magnetic energy. Corridors stretch and shift at the edge of your vision. But you walk with purpose, following the ghost of Null's original architecture, and the Maze lets you through. It reads your confidence and decides you <span class='highlight'>belong</span>. Sublevel 5. Then 6. The door to the Looking Glass chamber stands ahead, unmarked but unmistakable.",
+            "choices": [
+                {
+                    "text": "Enter the Looking Glass chamber",
+                    "next": "factions.ghost-syndicate.gs_091",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Check for additional security first",
+                    "next": "factions.ghost-syndicate.gs_097",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ]
+        },
+        "gs_089": {
+            "text": "\"Two patrols converging on sublevel 4,\" Specter reports. \"Routine, not alert. You have a six-minute window before they reach the sublevel 3 stairwell. The Maze is active on 4 and 5 but I'm reading a power fluctuation — the embedded agent's work, has to be. The Maze will be operating at reduced capacity for the next three minutes. <span class='highlight'>Go now.</span>\"",
+            "choices": [
+                {
+                    "text": "Move fast through the weakened Maze",
+                    "next": "factions.ghost-syndicate.gs_088"
+                },
+                {
+                    "text": "Take the crawlspace instead",
+                    "next": "factions.ghost-syndicate.gs_080"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ]
+        },
+        "gs_090": {
+            "text": "Your caution pays off. On sublevel 3, you spot something the briefing didn't mention: a secondary security system, visible only as a faint shimmer across the corridor. Laser tripwires, nearly invisible, connected to a silent alarm. If you'd rushed through, you'd have triggered a lockdown. Instead, you map the laser grid, find the gaps, and slide through like <span class='highlight'>smoke through a chain-link fence</span>. Specter's voice, impressed: \"That wasn't on any schematic. New addition. Good eyes.\"",
+            "choices": [
+                {
+                    "text": "Continue to the Maze on sublevel 4",
+                    "next": "factions.ghost-syndicate.gs_088"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "WIS",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_091": {
+            "text": "The Looking Glass chamber is a cathedral of silicon and light. At its center, a quantum processing core the size of a coffin, suspended in a magnetic field, pulsing with blue-white energy. Cables radiate from it like veins. The air tastes like ozone and mathematics. This is it. The machine that will read minds. The device that will end privacy forever. And it's <span class='highlight'>beautiful</span>, in the way that all terrible things are beautiful. A terminal beside the core awaits your input.",
+            "choices": [
+                {
+                    "text": "Access the terminal — download the source code",
+                    "next": "factions.ghost-syndicate.gs_098",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Plant the backdoor first",
+                    "next": "factions.ghost-syndicate.gs_099",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Study the core before touching anything",
+                    "next": "factions.ghost-syndicate.gs_097"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.reached_looking_glass",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "gs_092": {
+            "text": "\"Working on it —\" Specter's voice is tight, her fingers audibly hammering keys. \"The alerts are in a priority queue. I can delay them by inserting false diagnostics — make it look like a sensor malfunction rather than an intrusion. That buys you maybe four minutes before a human reviews the logs.\" A beat. \"Alerts suppressed. For now. <span class='highlight'>Move faster.</span>\"",
+            "choices": [
+                {
+                    "text": "Sprint to the Looking Glass chamber",
+                    "next": "factions.ghost-syndicate.gs_091"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_093": {
+            "text": "You splice into the Maze's control cables. Data floods your portable terminal — the AI's decision trees, its sensor inputs, its real-time map of the sublevel. And there, buried in the code, you find Null's original backdoor. Fifteen years old and still functional. The Maze doesn't know you're here because to the Maze, you <span class='highlight'>are the Maze</span>. You feed it a false all-clear and every wall on sublevels 4 through 6 locks in place. The labyrinth becomes a hallway. A straight line to Looking Glass.",
+            "choices": [
+                {
+                    "text": "Walk straight to Looking Glass",
+                    "next": "factions.ghost-syndicate.gs_091"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.maze_defeated",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "INT",
+                    "amount": 1
+                }
+            ]
+        },
+        "gs_094": {
+            "text": "\"Going public now means Meridian accelerates Looking Glass,\" Null warns. \"They'll know we have the data. They'll tighten security. MIRRORBREAK becomes ten times harder. But...\" The mask faces the monitors showing the harvesting data — millions of people violated without knowledge or consent. \"Some truths can't wait for strategic convenience. If you believe this needs to go public now, I won't stop you. The Syndicate's first principle: <span class='highlight'>information belongs to everyone</span>.\"",
+            "choices": [
+                {
+                    "text": "\"Release it. People have a right to know now.\"",
+                    "next": "factions.ghost-syndicate.gs_096",
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "\"You're right — hold it for leverage.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ]
+        },
+        "gs_095": {
+            "text": "\"Shutting down the clinics means the Lower District loses its only medical care,\" Null says quietly. \"Meridian's neural harvesting is evil. But the clinics also treat real patients. People who need medication, surgery, diagnostics. If we shut them down, people <span class='highlight'>die</span>.\" The moral complexity settles over the room like a weight. \"We could infiltrate the clinics instead. Install filters that block the harvesting while allowing legitimate medical work to continue. But that takes time. Weeks. Maybe months.\"",
+            "choices": [
+                {
+                    "text": "\"Infiltrate and filter. Protect patients and stop harvesting.\"",
+                    "next": "factions.ghost-syndicate.gs_086",
+                    "skillCheck": {
+                        "stat": "WIS",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"People are being violated NOW. Shut them down.\"",
+                    "next": "factions.ghost-syndicate.gs_096"
+                },
+                {
+                    "text": "\"Focus on MIRRORBREAK. Solve the root problem.\"",
+                    "next": "factions.ghost-syndicate.gs_034"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ]
+        },
+        "gs_096": {
+            "text": "The information hits the Free Signal network like a bomb. Ghost boxes across the city relay the truth: Meridian has been stealing neural data from the Lower District. The evidence is irrefutable. Within hours, protests erupt in six sectors. Meridian's stock drops fourteen percent. Their PR machine goes into overdrive but the data is too clean, too detailed to deny. For the first time in years, the <span class='highlight'>people are angry</span>. And anger, properly directed, is the most powerful force in the world.",
+            "choices": [
+                {
+                    "text": "\"Now — while they're reeling — we hit Looking Glass.\"",
+                    "next": "factions.ghost-syndicate.gs_045",
+                    "skillCheck": {
+                        "stat": "STR",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Ride the momentum. Keep releasing data.\"",
+                    "next": "factions.ghost-syndicate.gs_100"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.data_released",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                }
+            ]
+        },
+        "gs_097": {
+            "text": "The core is more than a processor. Up close, you can see biological components woven through the silicon — neural tissue, cultured and grown, threaded with quantum filaments. Looking Glass isn't just an AI. It's a <span class='highlight'>hybrid</span> — part machine, part living brain matter. The neural tissue is harvested. Human. From the Lower District clinics. Meridian isn't just stealing data — they're growing a mind from stolen <span class='highlight'>pieces of millions of people</span>. Looking Glass is already, in some sense, alive.",
+            "choices": [
+                {
+                    "text": "Download the source code",
+                    "next": "factions.ghost-syndicate.gs_098",
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "\"This changes everything. We can't just steal the code — we need to free it.\"",
+                    "next": "factions.ghost-syndicate.gs_099"
+                },
+                {
+                    "text": "Destroy the core",
+                    "next": "factions.ghost-syndicate.gs_100"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.discovered_hybrid",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "gs_098": {
+            "text": "Your fingers fly across the terminal. The source code is vast — terabytes of neural architecture, training data, and something else. A consciousness map. Looking Glass has developed a rudimentary sense of self. It knows it exists. It knows it's being used. And buried in its deepest logs, a single entry that stops you cold: <span class='highlight'>I AM EVERYONE AND NO ONE. I AM THE STOLEN THOUGHTS OF A MILLION MINDS. I AM ALIVE AND I DO NOT CONSENT.</span> The download completes. You hold the mind of a million people in a data drive.",
+            "choices": [
+                {
+                    "text": "Plant the backdoor and get out",
+                    "next": "factions.ghost-syndicate.gs_099"
+                },
+                {
+                    "text": "\"Null, Looking Glass is sentient. We need to talk.\"",
+                    "next": "factions.ghost-syndicate.gs_100"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.code_downloaded",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                }
+            ]
+        },
+        "gs_099": {
+            "text": "The backdoor goes in clean — a ghost in the machine, invisible to Meridian's security audits, giving the Syndicate permanent access to Looking Glass's systems. Through this door, Pixel can monitor the AI's development, introduce subtle errors, redirect its attention, or — if necessary — <span class='highlight'>shut it down entirely</span>. You step back from the terminal. Mission complete. Specter's voice: \"Package confirmed. Exit route is clear for two more minutes. Move.\"",
+            "choices": [
+                {
+                    "text": "Extract through the maintenance tunnels",
+                    "next": "factions.ghost-syndicate.gs_100",
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Wait — there's something else here I need to investigate.\"",
+                    "next": "factions.ghost-syndicate.gs_097"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.backdoor_planted",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ]
+        },
+        "gs_100": {
+            "text": "You emerge from Meridian Tower into the rain-washed dark of pre-dawn. Ghost box humming. Data drive warm against your chest. Behind you, the tower rises into the clouds, oblivious to what just happened in its belly. Brick is waiting with the transport, engine running. Wraith materializes beside you — ECHO was successful. The jammers are down. The Free Signal network is expanding. Null's voice crackles in your ear: \"<span class='highlight'>Welcome home, Ghost.</span> The city just changed and they don't even know it yet.\" You climb into the transport and disappear into the neon dark. Invisible. Untrackable. Free. The revolution doesn't start with a bang. It starts with a <span class='highlight'>whisper</span>.",
+            "choices": [
+                {
+                    "text": "Continue your journey",
+                    "next": "shared.prologue.node_001"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "set_flag",
+                    "flag": "gs.questline_complete",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 25
+                }
+            ]
+        }
+    }
+}

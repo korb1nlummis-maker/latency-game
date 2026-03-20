@@ -19,6 +19,7 @@
         race: 'half_giant',
         slides: [
             {
+                art: 'assets/ascii/races/half_giant.txt',
                 text: 'The first thing you remember is the sound of rebar bending. Your hands did that. You were four years old, and the foreman laughed and called you a natural. You did not know what rebar was. You just wanted to hold the bird that had landed on it.',
                 mood: 'blue',
                 duration: 0
@@ -81,6 +82,7 @@
         race: 'cyborg',
         slides: [
             {
+                art: 'assets/ascii/races/cyborg.txt',
                 text: 'Your left hand used to shake when you were nervous. A tiny tremor, barely visible, that started in your ring finger and spread to your wrist. You remember this because it is the first thing the augmentation took from you. The new hand is steady. Perfectly, horribly steady.',
                 mood: 'blue',
                 duration: 0
@@ -143,8 +145,9 @@
         race: 'synth',
         slides: [
             {
+                art: 'assets/ascii/races/synth.txt',
                 text: 'You open your eyes. That is the beginning. There is no before. No darkness you woke from, no dream that faded, no warmth of a bed left behind. One moment you are nothing. The next, you are standing in a warehouse with fluorescent lights humming above you and a barcode printed on the inside of your wrist.',
-                mood: 'blue',
+                mood: 'eerie',
                 duration: 0
             },
             {
@@ -205,6 +208,7 @@
         race: 'shadowkin',
         slides: [
             {
+                art: 'assets/ascii/races/shadowkin.txt',
                 text: 'You are six years old the first time your shadow moves on its own. You are sitting in a patch of streetlight, drawing on the pavement with a piece of chalk, and you notice it: your shadow reaches for the chalk when you are not moving. It pulls toward the dark places between the buildings like smoke drawn under a door.',
                 mood: 'dark',
                 duration: 0
@@ -267,8 +271,9 @@
         race: 'voidborn',
         slides: [
             {
+                art: 'assets/ascii/races/voidborn.txt',
                 text: 'The world is too loud. Not in sound — in information. You see the thermal bloom of every body, the electrical halo of every neural impulse, the probability clouds that cluster around every decision point like static before lightning. A man walks toward a crosswalk, and you see fourteen versions of him, translucent, branching, each one taking a different step. Only one of them is real. You are not always sure which.',
-                mood: 'blue',
+                mood: 'eerie',
                 duration: 0
             },
             {

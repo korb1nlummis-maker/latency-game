@@ -874,24 +874,38 @@ window.Latency.Screens.CharacterCreation = (function () {
         // Transition to origin cutscene if one exists, otherwise straight to gameplay
         var SM = window.Latency.StateMachine;
         if (SM) {
-            // Set character's starting node
+            // Determine starting node: origin story if one exists, otherwise prologue
+            var originNodePrefixes = {
+                human: 'human', orc: 'orc', wood_elf: 'welf',
+                dark_elf: 'delf', dwarf: 'dwf', half_giant: 'hgnt',
+                cyborg: 'cyb', synth: 'syn', shadowkin: 'shd', voidborn: 'vbd'
+            };
+            var raceId = _character.raceId;
+            var prefix = originNodePrefixes[raceId];
+            // Always start at origin story if race has a known prefix — the
+            // Narrative system will lazy-load the JSON file via fetch.
+            var startNodeId = prefix
+                ? 'origins.' + raceId + '.' + prefix + '_001'
+                : 'shared.prologue.node_001';
+            console.log('[CharacterCreation] Start node for ' + raceId + ': ' + startNodeId);
+
             var char = window.Latency.CharacterSystem.getCharacter();
             if (char) {
-                char.currentNodeId = 'shared.prologue.node_001';
+                char.currentNodeId = startNodeId;
             }
 
-            var cutsceneId = 'origin_' + _character.raceId;
+            var cutsceneId = 'origin_' + raceId;
             var hasCS = window.Latency.CutsceneData && window.Latency.CutsceneData[cutsceneId];
             if (hasCS) {
                 // Transition to race-specific origin cutscene
                 if (SM.transition) {
-                    SM.transition('cutscene', { cutsceneId: cutsceneId, character: characterData, nodeId: 'shared.prologue.node_001' });
+                    SM.transition('cutscene', { cutsceneId: cutsceneId, character: characterData, nodeId: startNodeId });
                 } else if (window.Latency.ScreenManager) {
-                    window.Latency.ScreenManager.show('cutscene', { cutsceneId: cutsceneId, character: characterData, nodeId: 'shared.prologue.node_001' });
+                    window.Latency.ScreenManager.show('cutscene', { cutsceneId: cutsceneId, character: characterData, nodeId: startNodeId });
                 }
             } else {
                 // No cutscene for this race, go straight to gameplay
-                SM.transition('gameplay', { character: characterData, nodeId: 'shared.prologue.node_001' });
+                SM.transition('gameplay', { character: characterData, nodeId: startNodeId });
             }
         }
     }

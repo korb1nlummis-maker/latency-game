@@ -1,0 +1,2402 @@
+{
+    "meta": {
+        "file": "neon-court",
+        "type": "faction_questline",
+        "faction": "neonCourt",
+        "description": "Neon Court faction questline — rise through the ranks of the wealthy elite from Guest to Inner Circle",
+        "nodeCount": 100
+    },
+    "nodes": {
+        "nc_001": {
+            "id": "factions.neon-court.nc_001",
+            "title": "The Gilded Invitation",
+            "location": "lower_district_apartment",
+            "text": [
+                "You find it slipped under your door — a card made of actual paper, thick and cream-colored, edged with circuitry that pulses soft violet. In the Lower District, real paper is worth more than most people earn in a week. Whoever sent this wanted you to understand that before you even read the words.",
+                "The text shifts as you tilt the card, holographic ink rearranging itself: YOU ARE CORDIALLY INVITED TO AN EVENING AT THE PRISM GALLERY. FLOOR 188, CLOUD TOWER SEVEN. TONIGHT. NO PLUS ONE. NO QUESTIONS. The ink dissolves after you read it, leaving only a shimmering access code etched into the card's embedded chip.",
+                "Floor 188. That's Neon Court territory — the glittering upper reaches where the city's elite burn more credits on a single evening than your entire block earns in a year. The Neon Court controls the memory stack clinics, the designer drug trade, the underground fight circuits. They own the nightlife and, by extension, they own the night.",
+                "You've heard stories. Everyone in the Lower District has. The Court takes an interest in someone, elevates them, reshapes them. Some come back changed. Most don't come back at all."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.questline_started", "value": true },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "uninitiated" }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the invitation. Dress in whatever passes for your best.",
+                    "next": "factions.neon-court.nc_003"
+                },
+                {
+                    "text": "Investigate who sent the card before committing.",
+                    "next": "factions.neon-court.nc_002"
+                }
+            ]
+        },
+        "nc_002": {
+            "id": "factions.neon-court.nc_002",
+            "title": "Following the Trail",
+            "location": "lower_district_streets",
+            "text": [
+                "You spend the afternoon asking around. The card's chip is military-grade encrypted — no street-level tech can crack it. But the paper itself tells a story. Only one supplier in the city deals in real cellulose stock: Harmond's, a boutique in the Mid-Tier that caters exclusively to Neon Court clientele.",
+                "A contact at the noodle stand on Block 9 recognizes the violet circuitry pattern. 'That's a Velvet special,' she whispers, glancing around. 'Velvet — the Court's fixer. Handles recruitment, acquisitions, disappearances. If Velvet sent you that card, you've already been watched for weeks.'",
+                "The contact leans closer. 'Word of advice? If you go, don't refuse anything offered. And if you don't go, move to a different sector. Velvet doesn't handle rejection well.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.investigated_invitation", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "All the more reason to go. Head to Cloud Tower Seven.",
+                    "next": "factions.neon-court.nc_003"
+                },
+                {
+                    "text": "This sounds like trouble. Try to ignore the invitation.",
+                    "next": "factions.neon-court.nc_004"
+                }
+            ]
+        },
+        "nc_003": {
+            "id": "factions.neon-court.nc_003",
+            "title": "Cloud Tower Seven — Lobby",
+            "location": "cloud_tower_seven",
+            "text": [
+                "The elevator to Floor 188 requires a biometric scan, a credit verification you shouldn't pass, and the access code from the card. Somehow, all three clear. The doors seal behind you and the lift begins its ascent — smooth, silent, the kind of engineering that doesn't exist below Floor 50.",
+                "Through the glass walls of the elevator shaft you watch the city transform. The grime and neon chaos of the lower levels gives way to clean lines, manicured terraces, air that smells of nothing at all. By Floor 100, the rain clouds are below you. By Floor 150, you can see stars.",
+                "The elevator opens onto a corridor of black marble and floating light fixtures that drift like luminous jellyfish. A woman leans against the far wall, arms crossed, watching you with eyes that shift color — amber to violet to silver — with each blink. She's dressed in a suit that costs more than your apartment building.",
+                "'You came,' she says. Not a question. 'I'm Velvet. I handle introductions for the Court.' She pushes off the wall and walks toward you, heels clicking on marble. 'Tonight, you're a guest. Behave like one and we'll see about tomorrow.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.met_velvet", "value": true },
+                { "type": "set_flag", "flag": "neon_court.entered_tower", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"What exactly does the Court want with someone like me?\"",
+                    "next": "factions.neon-court.nc_005"
+                },
+                {
+                    "text": "\"Lead the way, Velvet. I clean up better than I look.\"",
+                    "next": "factions.neon-court.nc_006"
+                },
+                {
+                    "text": "Try to read Velvet's body language for hidden intentions.",
+                    "next": "factions.neon-court.nc_005",
+                    "statCheck": { "stat": "wisdom", "dc": 12 },
+                    "failNext": "factions.neon-court.nc_006"
+                }
+            ]
+        },
+        "nc_004": {
+            "id": "factions.neon-court.nc_004",
+            "title": "An Offer You Can't Refuse",
+            "location": "lower_district_apartment",
+            "text": [
+                "You try to ignore it. For three days, nothing happens. Then your credit account is frozen. Your ration card stops working. The door lock on your apartment resets to a code you don't know, and you spend a night on the street while a drone circles your block with your face on its scan list.",
+                "On the fourth morning, you find another card. Same paper, same violet circuitry. This time the message reads: WE ASKED NICELY ONCE. TONIGHT. SAME TIME. SAME PLACE.",
+                "Whoever the Neon Court is, they've made their point. They can reach into your life and dismantle it piece by piece without breaking a sweat. Going isn't really a choice anymore. It's damage control."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.coerced_entry", "value": true },
+                { "type": "modify_currency", "amount": -200 }
+            ],
+            "choices": [
+                {
+                    "text": "Fine. Go to Cloud Tower Seven — but on your terms.",
+                    "next": "factions.neon-court.nc_003"
+                }
+            ]
+        },
+        "nc_005": {
+            "id": "factions.neon-court.nc_005",
+            "title": "Velvet's Measure",
+            "location": "cloud_tower_seven",
+            "text": [
+                "Velvet studies you the way a collector studies a piece before deciding whether to acquire it. If you passed her unspoken test, you catch it — the micro-tension in her jaw, the way her right hand stays near her hip where something is concealed. She's armed. She's also nervous, which means whoever sent her is watching.",
+                "'The Court wants what it always wants,' Velvet says, walking you down the corridor. 'Useful people. You've been flagged — your file crossed Lady Prism's desk, and she doesn't look at files unless she intends to act. That's all I know. That's all I need to know.'",
+                "She stops at a set of double doors carved from synthetic ivory. Music pulses behind them — low, rhythmic, expensive. 'In there is the Prism Gallery. The Court's public face. Smile, drink what's offered, and for your own sake, don't stare at anyone's stack port. It's considered intimate.'",
+                "The doors swing open. Light and sound wash over you like a wave."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Step inside and take in the Gallery.",
+                    "next": "factions.neon-court.nc_007"
+                }
+            ]
+        },
+        "nc_006": {
+            "id": "factions.neon-court.nc_006",
+            "title": "Following Velvet",
+            "location": "cloud_tower_seven",
+            "text": [
+                "Velvet smirks — not warmth, but something closer to professional approval. 'Confidence. Good. You'll need it.' She leads you down a corridor that seems to stretch longer than the building should allow, an architectural trick involving mirrored surfaces and subtle gravitational fields.",
+                "'Quick briefing,' she says without slowing. 'The Prism Gallery is the Court's salon. Everyone inside is either obscenely wealthy, obscenely dangerous, or both. Lady Prism hosts these evenings to scout talent. You're tonight's talent. Try not to disappoint.'",
+                "She pauses at carved ivory doors. 'One rule: don't touch anyone's stack port. It's like grabbing someone's soul in there. Other than that — drink, mingle, survive. I'll find you later.'",
+                "The doors open. The Gallery awaits."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Enter the Prism Gallery.",
+                    "next": "factions.neon-court.nc_007"
+                }
+            ]
+        },
+        "nc_007": {
+            "id": "factions.neon-court.nc_007",
+            "title": "The Prism Gallery",
+            "location": "prism_gallery",
+            "text": [
+                "The Gallery is a cathedral of excess. The ceiling is a transparent dome open to the stars, and the floor is polished obsidian that reflects everything like a dark mirror. Guests drift between sculptures that move on their own — living art, bodies suspended in stasis fields, their expressions frozen in ecstasy or agony. It takes you a moment to realize they're real people.",
+                "Servers glide past carrying trays of luminescent drinks and micro-dose inhalers in jeweled cases. The guests wear clothes that shift pattern and color in response to their moods — neural-linked fashion that probably costs more than a Lower District life insurance payout. Conversations happen in clusters, whispered and sharp, every word a transaction.",
+                "A massive chrome figure stands near the entrance, arms folded. Seven feet tall, face hidden behind a featureless mirror-finish visor. Chrome — the Court's chief of security. Velvet mentioned the name during the walk. Chrome doesn't speak. Chrome doesn't need to.",
+                "Across the room, elevated on a platform of floating crystal, a woman holds court. She looks no older than twenty-five, but her eyes are ancient — dark pools that have watched centuries pass from the safety of transferred bodies. Lady Prism. The consciousness that has ruled the Neon Court for over two hundred years, migrating from host to host through the stack technology she helped invent."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.entered_gallery", "value": true },
+                { "type": "set_flag", "flag": "neon_court.met_chrome", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Approach Lady Prism directly. Make an impression.",
+                    "next": "factions.neon-court.nc_008",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "failNext": "factions.neon-court.nc_009"
+                },
+                {
+                    "text": "Work the room first. Gather information before the main event.",
+                    "next": "factions.neon-court.nc_010"
+                },
+                {
+                    "text": "Examine the living art installations more closely.",
+                    "next": "factions.neon-court.nc_011"
+                }
+            ]
+        },
+        "nc_008": {
+            "id": "factions.neon-court.nc_008",
+            "title": "Audience with Lady Prism",
+            "location": "prism_gallery",
+            "text": [
+                "You walk straight toward the crystal platform. Conversations stutter as you pass — a nobody from the lower levels crossing the Gallery floor with purpose. Chrome shifts, one massive hand rising, but Lady Prism raises a single finger and the bodyguard freezes.",
+                "'Bold,' Lady Prism says. Her voice is music — literally. Vocal implants layer harmonics beneath each word, making every syllable resonate. 'I do love bold. It's so much more entertaining than cautious.' She leans forward, chin resting on interlaced fingers. 'You received my invitation. You came. Now tell me — what do you think you're worth to me?'",
+                "The room has gone quiet. Every eye is on you. This is the moment that determines whether you're a guest or a footnote.",
+                "You speak with a conviction that surprises even you, weaving words about value, perspective, and the view from the bottom that those at the top have forgotten. Prism's ancient eyes gleam. When you finish, she begins to clap — slowly, deliberately. The room follows."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.impressed_prism", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [
+                {
+                    "text": "Accept her attention with grace.",
+                    "next": "factions.neon-court.nc_012"
+                }
+            ]
+        },
+        "nc_009": {
+            "id": "factions.neon-court.nc_009",
+            "title": "A Stumble Before Prism",
+            "location": "prism_gallery",
+            "text": [
+                "You approach the platform, but the sheer weight of the room's attention crushes your composure. Under Lady Prism's ancient gaze, your words come out clipped, rehearsed, empty. You sound exactly like what you are — someone from the Lower District pretending to belong.",
+                "Prism's expression doesn't change, but something in her eyes dims. 'Potential,' she murmurs, 'but unrefined. Velvet — take our guest to the secondary lounge. Perhaps with fewer eyes, they'll find their voice.'",
+                "It's a dismissal wrapped in silk. The room's attention slides away from you like water off polished chrome. Velvet appears at your elbow, grip firm. 'Don't worry,' she whispers. 'You're still breathing. That's more than most get on their first approach.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.fumbled_introduction", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Go with Velvet to the secondary lounge. Regroup.",
+                    "next": "factions.neon-court.nc_013"
+                }
+            ]
+        },
+        "nc_010": {
+            "id": "factions.neon-court.nc_010",
+            "title": "Working the Gallery",
+            "location": "prism_gallery",
+            "text": [
+                "You take a drink from a passing server — something blue that tastes like copper and electricity — and begin circulating. Conversations are layered affairs here: the words being spoken, the words being implied, and the words being concealed. You catch fragments.",
+                "A man in a suit of living mercury discusses 'the Harvest schedule' with a woman whose eyes are replaced with spinning data-cores. A cluster of laughing socialites compare the quality of their latest body transfers — this one's lungs are better, that one's reflexes are sharper. They talk about their previous bodies the way people in the Lower District talk about last week's weather.",
+                "Near the bar, a lean figure with silver hair and a smile like a razor watches you watching them. They raise a glass in silent acknowledgment. A courtier named Sable, you'll learn later — one of the Court's information brokers.",
+                "You gather enough to understand the hierarchy: Lady Prism at the top, her Inner Circle of five advisors below, then the Courtiers who manage the Court's operations, and finally the Associates who do the work. Below Associates are Guests — which is what you are. The bottom of a very tall ladder."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.observed_gallery", "value": true },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "Approach Lady Prism now that you understand the terrain.",
+                    "next": "factions.neon-court.nc_008",
+                    "statCheck": { "stat": "charisma", "dc": 12 },
+                    "failNext": "factions.neon-court.nc_009"
+                },
+                {
+                    "text": "Talk to Sable, the silver-haired information broker.",
+                    "next": "factions.neon-court.nc_014"
+                }
+            ]
+        },
+        "nc_011": {
+            "id": "factions.neon-court.nc_011",
+            "title": "Living Art",
+            "location": "prism_gallery",
+            "text": [
+                "You drift toward the nearest installation. A woman floats in a column of pale light, her body slowly rotating. Her eyes are open but blank — not unconscious, but somewhere else entirely. Her stack port gleams at the base of her skull, and thin filaments of light connect it to the stasis field generator.",
+                "A placard reads: DREAMING IN PUBLIC, BY ARTIST COLLECTIVE VOID. MEDIUM: LIVING HOST, MEMORY LOOP, STASIS FIELD. The woman is experiencing a single memory on infinite repeat while strangers watch her facial expressions shift. It's beautiful. It's horrifying.",
+                "You check the other installations. A man reliving his first kiss, over and over. Twins suspended back-to-back, sharing a spliced memory that belongs to neither of them. A child — barely ten — locked in a moment of wonder, mouth open, eyes wide, frozen in someone else's joy.",
+                "A cold understanding settles in your gut. These aren't volunteers. The placards don't list consent forms. They list acquisition dates."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.discovered_living_art", "value": true },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "Push down the revulsion and continue mingling.",
+                    "next": "factions.neon-court.nc_010"
+                },
+                {
+                    "text": "Ask a nearby courtier about the installations.",
+                    "next": "factions.neon-court.nc_015"
+                }
+            ]
+        },
+        "nc_012": {
+            "id": "factions.neon-court.nc_012",
+            "title": "Prism's Offer",
+            "location": "prism_gallery",
+            "text": [
+                "Lady Prism descends from her platform — a gesture that, judging by the gasps around the room, doesn't happen often. Up close, her perfection is unsettling. Skin without a single pore visible. Eyes that shift between colors with mechanical precision. She's beautiful the way a weapon is beautiful.",
+                "'I've watched you for some time,' she says, walking a slow circle around you. 'Through cameras, through intermediaries, through the eyes of people you didn't realize were mine. You have a quality I value above all others in this tedious city: you're unpredictable.'",
+                "She stops in front of you. 'The Neon Court is always recruiting. We offer wealth, protection, access to stack technology that would make your current lifespan look like a candle in a hurricane. In return, we ask for loyalty and service. A fair trade, I think.'",
+                "'Start as an Associate. Prove yourself, and there's no ceiling to how high you can rise. I've watched empires built by people who started lower than you.' She extends a hand — perfectly manicured, rings worth a fortune. 'Do we have an understanding?'"
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Take her hand. \"We have an understanding.\"",
+                    "next": "factions.neon-court.nc_016"
+                },
+                {
+                    "text": "\"What happens to Associates who fail to prove themselves?\"",
+                    "next": "factions.neon-court.nc_017"
+                }
+            ]
+        },
+        "nc_013": {
+            "id": "factions.neon-court.nc_013",
+            "title": "The Secondary Lounge",
+            "location": "prism_gallery_lounge",
+            "text": [
+                "The secondary lounge is smaller, quieter — still opulent, but without the Gallery's pressure-cooker intensity. Velvet pours you a drink from a bottle that has no label, which in the upper levels means it's too exclusive to need one.",
+                "'You froze,' Velvet says, not unkindly. 'Everyone freezes the first time they see Prism. She's been alive for two centuries. She's worn more bodies than most people wear outfits. That kind of age has gravity to it.'",
+                "Velvet sits across from you, legs crossed, studying you with those color-shifting eyes. 'Here's the truth: Prism flagged you because you've got something. I don't know what yet. My job is to figure it out and decide if you're worth the Court's investment.'",
+                "'So consider this your second chance. I'm easier to talk to than Prism, and I actually care whether you succeed. Marginally.'"
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"Why do you care? What's in it for you?\"",
+                    "next": "factions.neon-court.nc_018"
+                },
+                {
+                    "text": "\"Tell me what the Court actually needs from someone like me.\"",
+                    "next": "factions.neon-court.nc_019"
+                }
+            ]
+        },
+        "nc_014": {
+            "id": "factions.neon-court.nc_014",
+            "title": "Sable's Trade",
+            "location": "prism_gallery",
+            "text": [
+                "Sable's smile widens as you approach — a predator pleased that prey walked into range voluntarily. 'A new face. How refreshing. The Gallery gets so incestuous after a few decades.' They swirl their drink, a liquid that seems to contain actual starlight. 'I'm Sable. I know things. It's my entire function in the Court ecosystem.'",
+                "'You're here because Prism's curious about you. That's useful — curiosity is how she starts. The question is whether curiosity becomes interest, and interest becomes investment.' Sable leans closer. 'I can help with that. For a price.'",
+                "'Nothing so crude as credits. I trade in favors. Do something for me now, and I'll ensure the right words reach the right ears about you. My currency is information, and I'm offering to spend some on your behalf.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.met_sable", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"What kind of favor?\"",
+                    "next": "factions.neon-court.nc_020"
+                },
+                {
+                    "text": "\"I'll make my own impression, thanks.\"",
+                    "next": "factions.neon-court.nc_008",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "failNext": "factions.neon-court.nc_009"
+                }
+            ]
+        },
+        "nc_015": {
+            "id": "factions.neon-court.nc_015",
+            "title": "The Price of Art",
+            "location": "prism_gallery",
+            "text": [
+                "The courtier — a woman with diamond-dust skin grafts that make her shimmer — glances at the installations with the bored expression of someone who's seen them a hundred times. 'The Dreaming series? Void Collective's been the Gallery's resident artists for three years. Very popular.'",
+                "'The subjects are sourced from the Lower District, mostly. Debtors, addicts, people who've burned through their social credit. The Court offers them a deal: a year in the installation in exchange for debt clearance and a small payment to their families.' She sips her drink. 'Honestly, it's more humane than what the debt collectors would do.'",
+                "You notice she didn't mention the child. When you point to the installation with the ten-year-old, the courtier's expression flickers — just for a moment. 'That one's different. A gift from Lady Prism's personal collection. I wouldn't ask questions about it if you want to remain a guest.'",
+                "The warning is clear. Whatever the truth about these installations, the Court considers inquiry into them a boundary not to be crossed. At least, not yet."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.questioned_art", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "File this away. Approach Lady Prism.",
+                    "next": "factions.neon-court.nc_008",
+                    "statCheck": { "stat": "charisma", "dc": 13 },
+                    "failNext": "factions.neon-court.nc_009"
+                },
+                {
+                    "text": "Talk to Sable, the silver-haired information broker.",
+                    "next": "factions.neon-court.nc_014"
+                }
+            ]
+        },
+        "nc_016": {
+            "id": "factions.neon-court.nc_016",
+            "title": "Welcome to the Court",
+            "location": "prism_gallery",
+            "text": [
+                "Prism's hand is cool and dry. Her grip is precise — enough pressure to communicate control, not enough to threaten. The deal is sealed in a handshake that has more binding power than any contract in the Lower District.",
+                "'Velvet will handle your onboarding,' Prism says, already turning back to her platform. 'You'll be given quarters on Floor 140, an expense account, and a wardrobe. You'll also be given your first assignment. Complete it, and you're an Associate. Fail, and we'll have a less pleasant conversation.'",
+                "Velvet materializes at your side as if summoned. 'Congratulations,' she says, with the tone of someone who's said it a hundred times. 'Welcome to the Neon Court. Your old life is over. Try not to miss it too much.'",
+                "She leads you toward a private elevator. As the Gallery's lights fade behind you, you catch Chrome's visor tracking your departure. Behind that featureless mirror, you imagine something like evaluation. Or maybe warning."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "associate" },
+                { "type": "set_flag", "flag": "neon_court.joined", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 10 },
+                { "type": "modify_currency", "amount": 500 },
+                { "type": "add_experience", "amount": 75 }
+            ],
+            "choices": [
+                {
+                    "text": "Follow Velvet to your new quarters.",
+                    "next": "factions.neon-court.nc_021"
+                }
+            ]
+        },
+        "nc_017": {
+            "id": "factions.neon-court.nc_017",
+            "title": "The Cost of Failure",
+            "location": "prism_gallery",
+            "text": [
+                "Prism's smile doesn't waver, but something behind her eyes sharpens. 'A pragmatic question. I respect that.' She gestures toward the living art installations without looking at them. 'The Court has many uses for people. Not all of them are glamorous. Those who serve well are rewarded beyond imagination. Those who don't...'",
+                "She lets the silence fill in the rest. The floating bodies in their stasis fields suddenly feel less like art and more like warning signs.",
+                "'But I didn't invite you here to threaten you. Threats are for people without options. I'm offering you options.' She extends her hand again. 'The only failure that concerns me is the failure to choose. Everything else can be managed.'"
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Take her hand. The message is received.",
+                    "next": "factions.neon-court.nc_016"
+                },
+                {
+                    "text": "\"I'll join. But I have conditions.\"",
+                    "next": "factions.neon-court.nc_016",
+                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "failNext": "factions.neon-court.nc_016"
+                }
+            ]
+        },
+        "nc_018": {
+            "id": "factions.neon-court.nc_018",
+            "title": "Velvet's Angle",
+            "location": "prism_gallery_lounge",
+            "text": [
+                "Velvet tilts her head, and for a moment the professional mask slips. You see something underneath — fatigue, maybe. Or loneliness. 'I'm a fixer. I find people, I place them, I manage them. Every successful recruit reflects well on me. Every failure...' She draws a finger across her throat with theatrical flair, but her eyes aren't joking.",
+                "'I've been with the Court for eleven years. Started where you are — a nobody from the Mid-Tier who caught someone's eye. Worked my way up to Velvet.' She pauses. 'That's not my real name. Nobody uses real names past Associate level. You become your role. It's cleaner that way.'",
+                "'So yes, I have a personal stake in your success. If you rise, I rise. If you flame out, I'm the one who has to explain to Prism why her instinct was wrong. And Lady Prism does not enjoy being wrong.'",
+                "She refills your glass. 'Now. Are you ready to hear what the Court actually wants from you, or do you need more emotional context first?'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.velvet_personal", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"Tell me what you need. I'm ready.\"",
+                    "next": "factions.neon-court.nc_019"
+                }
+            ]
+        },
+        "nc_019": {
+            "id": "factions.neon-court.nc_019",
+            "title": "The Court's Needs",
+            "location": "prism_gallery_lounge",
+            "text": [
+                "Velvet activates a privacy field — the air around you shimmers and all sound from outside the bubble cuts to silence. 'The Court runs on three pillars: stack technology, nightlife, and influence. Stack clinics keep the elite immortal. The clubs and galleries keep them entertained. And influence — political, economic, social — keeps the whole structure standing.'",
+                "'Right now, all three are under pressure. The Iron Collective is pushing into our territory with cheap augmentation that undercuts our stack clinics. The Ghost Syndicate is stealing our club clientele with underground experiences we can't match. And the Circuit Saints are preaching against immortality, which hurts our brand.'",
+                "'Lady Prism needs operatives who can move between levels. Someone who knows the Lower District but can navigate the upper floors. Someone who doesn't show up on the other factions' radar yet. That's you.'",
+                "She deactivates the field. 'Start as an Associate. Prove your value. The Court will give you everything you need — resources, connections, protection. All we ask is results.'"
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"I'm in. What's my first assignment?\"",
+                    "next": "factions.neon-court.nc_016"
+                }
+            ]
+        },
+        "nc_020": {
+            "id": "factions.neon-court.nc_020",
+            "title": "Sable's Favor",
+            "location": "prism_gallery",
+            "text": [
+                "Sable produces a tiny crystal vial from nowhere — a trick of sleight-of-hand or hidden pockets. 'There's a man here tonight named Aldric Voss. Old money, older grudges. He's been lobbying against Lady Prism's expansion into the Mid-Tier stack market. I need you to slip this into his drink.'",
+                "They see your expression and laugh. 'It's not poison. It's a memory loosener. Pharmaceutical grade. It'll make him chatty for about thirty minutes — chatty enough to say something indiscreet that my recording implants can capture. A little leverage, that's all. Nobody gets hurt.'",
+                "The vial glints in your palm. It's warm, almost alive. 'Do this, and I'll make sure Lady Prism hears glowing things about you. Refuse, and we'll part as strangers. No hard feelings. Mostly.'"
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Accept the task. Slip the vial into Voss's drink.",
+                    "next": "factions.neon-court.nc_022",
+                    "statCheck": { "stat": "dexterity", "dc": 13 },
+                    "failNext": "factions.neon-court.nc_023"
+                },
+                {
+                    "text": "Refuse. You'll earn your place honestly.",
+                    "next": "factions.neon-court.nc_008",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "failNext": "factions.neon-court.nc_009"
+                }
+            ]
+        },
+        "nc_021": {
+            "id": "factions.neon-court.nc_021",
+            "title": "Floor 140 — New Quarters",
+            "location": "neon_court_quarters",
+            "text": [
+                "Your new quarters are on Floor 140 — not the pinnacle, but so far above your old life that the difference is literally atmospheric. The apartment is three times the size of your Lower District room, with actual windows that open to filtered air, a bed that adjusts to your body temperature, and a closet full of clothes that probably cost more than everything you've ever owned combined.",
+                "A holo-display on the wall shows your new identity: Associate status, Neon Court clearance level 2, expense account loaded with 500 credits. There's also a list of rules. No unauthorized contact with other factions. No discussion of Court business below Floor 100. No removal of the tracking implant that Velvet mentions, almost as an afterthought, will be installed tomorrow.",
+                "'Tracking implant?' you ask.",
+                "Velvet shrugs. 'Subcutaneous. Painless. It lets us know where you are. Standard for all Associates. Think of it as the Court knowing where its investments are.' She moves to the door. 'Rest tonight. Tomorrow, you meet your handler and get your first job. Welcome to the good life.'",
+                "She leaves. The door locks behind her — from the outside."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.has_quarters", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Sleep. You'll need the energy.",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "Explore the apartment for surveillance devices.",
+                    "next": "factions.neon-court.nc_025",
+                    "statCheck": { "stat": "intelligence", "dc": 13 },
+                    "failNext": "factions.neon-court.nc_024"
+                }
+            ]
+        },
+        "nc_022": {
+            "id": "factions.neon-court.nc_022",
+            "title": "The Slip",
+            "location": "prism_gallery",
+            "text": [
+                "You find Aldric Voss near the bar — a heavyset man with platinum hair and augmented eyes that glow faintly gold. He's mid-conversation, gesturing with a drink in one hand. You position yourself nearby, wait for a server to pass between you, and in the moment of visual obstruction, the vial's contents find their way into his glass.",
+                "Clean. Unnoticed. Voss drinks without pausing his sentence.",
+                "Twenty minutes later, you hear it from across the room — Voss, laughing too loudly, telling a cluster of horrified listeners about Lady Prism's 'little harvesting operation in Sector 4.' Sable appears beside you, eyes bright, recording implants working overtime.",
+                "'Beautiful,' Sable whispers. 'Absolutely beautiful. You and I are going to be wonderful friends.' They squeeze your arm and vanish into the crowd. True to their word, by the end of the evening Lady Prism beckons you forward with a knowing smile."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.drugged_voss", "value": true },
+                { "type": "set_flag", "flag": "neon_court.sable_favor_complete", "value": true },
+                { "type": "add_experience", "amount": 40 },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 5 }
+            ],
+            "choices": [
+                {
+                    "text": "Approach Lady Prism with Sable's endorsement.",
+                    "next": "factions.neon-court.nc_012"
+                }
+            ]
+        },
+        "nc_023": {
+            "id": "factions.neon-court.nc_023",
+            "title": "Caught in the Act",
+            "location": "prism_gallery",
+            "text": [
+                "Your hand isn't steady enough. As you move to pour the vial's contents, Voss turns unexpectedly. He sees the vial, sees your hand over his drink, and his augmented eyes flash red — threat detection.",
+                "'What the hell do you think you're doing?' His voice carries. Heads turn. Chrome's visor swivels toward the disturbance.",
+                "Velvet appears from nowhere, inserting herself between you and Voss with practiced ease. 'A misunderstanding, Aldric. My associate was trying to offer you a top-up. Clumsy, not criminal.' She squeezes your arm hard enough to leave marks and steers you away.",
+                "'Sable put you up to this,' Velvet hisses as she walks you toward the secondary lounge. 'That snake. Don't ever take jobs from Court members without clearing it through me first. You nearly got yourself disappeared on your first night.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.failed_sable_task", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Apologize to Velvet and accept her guidance.",
+                    "next": "factions.neon-court.nc_013"
+                }
+            ]
+        },
+        "nc_024": {
+            "id": "factions.neon-court.nc_024",
+            "title": "First Morning",
+            "location": "neon_court_quarters",
+            "text": [
+                "You sleep better than you have in years. The bed is a marvel of engineering — it monitors your REM cycles, adjusts temperature, even releases micro-doses of calming agents into the air. When you wake, the windows have shifted from opaque to transparent, revealing a sky you've never seen from this angle. Clean blue. Actual clouds. The sun.",
+                "A package waits by the door: clothes tailored to your measurements (when did they measure you?), a Court-issue communicator, and a data chip labeled FIRST ASSIGNMENT. Breakfast arrives via pneumatic tube — real food, not the protein paste you're used to. Eggs, fruit, something that might be actual coffee.",
+                "The data chip loads onto your communicator. A woman's voice — not Velvet, someone more clinical — briefs you: 'Associate, your first assignment is a collection run. The Neon Court maintains several stack clinics in the Mid-Tier. One of them, Elysium Stacks on Floor 87, is three cycles behind on its tribute payments. You will visit Elysium Stacks, determine the cause of the delay, and resolve the situation. Velvet will provide tactical support remotely. Chrome will be on standby if the situation escalates.'",
+                "The message ends with a single line of text: FAILURE IS NOT ENCOURAGED."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.first_assignment", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Head to Elysium Stacks. Time to earn your keep.",
+                    "next": "factions.neon-court.nc_026"
+                },
+                {
+                    "text": "Contact Velvet for more details before heading out.",
+                    "next": "factions.neon-court.nc_027"
+                }
+            ]
+        },
+        "nc_025": {
+            "id": "factions.neon-court.nc_025",
+            "title": "Surveillance Sweep",
+            "location": "neon_court_quarters",
+            "text": [
+                "Your instincts serve you well. A methodical search of the apartment reveals three micro-cameras (ceiling corner, bathroom mirror, bedroom light fixture), two audio pickups (embedded in the headboard and the kitchen counter), and a biometric monitor woven into the carpet fibers that tracks your heartbeat and movement patterns.",
+                "The Court watches its investments. Every room in this tower is a glass cage with comfortable furniture.",
+                "You disable nothing — that would trigger alerts. But knowing where the eyes are gives you options. The bathroom has a 30-second blind spot when the steam from the shower fogs the camera before the auto-defog activates. The bedroom camera has a narrow angle that leaves the far corner unmonitored. Small freedoms, but freedoms nonetheless.",
+                "You sleep with the awareness of being watched, which is its own kind of exhaustion."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.found_surveillance", "value": true },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "Get what rest you can. Tomorrow begins the work.",
+                    "next": "factions.neon-court.nc_024"
+                }
+            ]
+        },
+        "nc_026": {
+            "id": "factions.neon-court.nc_026",
+            "title": "Elysium Stacks",
+            "location": "elysium_stacks_clinic",
+            "text": [
+                "Elysium Stacks occupies a sterile suite on Floor 87 — the Mid-Tier, where people are wealthy enough to afford stack procedures but not wealthy enough to be protected from the Court's collection practices. The clinic's waiting room is clean and bright, filled with clients waiting for memory backups, personality archiving, or the full consciousness transfer that the truly desperate save a lifetime to afford.",
+                "The clinic's manager is a nervous man named Dr. Orrin Hale. When you flash your Court credentials, he goes pale. 'I can explain,' he says immediately, which tells you everything about his guilt. He leads you to his office, locking the door behind you.",
+                "'The payments are late because we've been losing clients,' Hale says, mopping his brow. 'The Iron Collective opened a discount augmentation shop two floors down. They're offering basic stack services at half our price. Inferior quality, dangerous even, but people don't care about quality when they can barely afford the procedure in the first place.'",
+                "'I'm not skimming, I swear. Check the books. The revenue just isn't there anymore.'"
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Audit the books to verify his claim.",
+                    "next": "factions.neon-court.nc_028",
+                    "statCheck": { "stat": "intelligence", "dc": 12 },
+                    "failNext": "factions.neon-court.nc_029"
+                },
+                {
+                    "text": "\"Not my problem. Find the money or face the consequences.\"",
+                    "next": "factions.neon-court.nc_030"
+                },
+                {
+                    "text": "Investigate the Iron Collective's discount shop yourself.",
+                    "next": "factions.neon-court.nc_031"
+                }
+            ]
+        },
+        "nc_027": {
+            "id": "factions.neon-court.nc_027",
+            "title": "Velvet's Briefing",
+            "location": "neon_court_quarters",
+            "text": [
+                "Velvet's face appears on your communicator, framed by what looks like a nightclub's back office. She's already working. 'Elysium Stacks. Dr. Orrin Hale. He's been managing that clinic for six years without incident. Payments were always on time until three months ago.'",
+                "'My read? He's either skimming — unlikely, he's too scared — or something's disrupting his business. The Iron Collective has been pushing into Mid-Tier territory lately with cheap stack knockoffs. If they've set up near Elysium, that could explain the revenue drop.'",
+                "She sips something offscreen. 'Your job is to get the Court its money. How you do it is up to you. Intimidation, negotiation, investigation — I don't care as long as the tribute flows again. Chrome is parked in a transport on Floor 85 if you need muscle, but calling in Chrome on your first assignment is... not ideal for your reputation.'",
+                "'One more thing: be careful with Hale. He's a Court client himself — he's had two stack transfers over the years. Damaging Court clients without authorization tends to end careers. And in the Court, careers and lives are the same thing.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.velvet_briefing", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Head to Elysium Stacks with this intel.",
+                    "next": "factions.neon-court.nc_026"
+                }
+            ]
+        },
+        "nc_028": {
+            "id": "factions.neon-court.nc_028",
+            "title": "Cooked Books",
+            "location": "elysium_stacks_clinic",
+            "text": [
+                "You spend an hour going through Hale's financial records. Your training — or maybe just your instinct for deception — pays off. The books confirm a revenue decline, but they also reveal something Hale neglected to mention: a secondary account siphoning a small percentage of each transaction into an offshore credit reserve registered to Hale's wife.",
+                "It's not the full amount owed to the Court. Maybe twenty percent of the missing tribute. But it's enough to prove that Hale's sob story isn't the complete picture. He's been skimming a little while blaming the Iron Collective for a lot.",
+                "'Care to explain this?' you ask, pointing to the discrepancy. Hale's face crumbles like wet paper."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.found_skimming", "value": true },
+                { "type": "add_experience", "amount": 35 }
+            ],
+            "choices": [
+                {
+                    "text": "Report the full truth to Velvet. Let the Court decide Hale's fate.",
+                    "next": "factions.neon-court.nc_032"
+                },
+                {
+                    "text": "Use this as leverage. Hale owes you a favor now.",
+                    "next": "factions.neon-court.nc_033"
+                },
+                {
+                    "text": "Show mercy. He pays back the skimmed amount and you report only the Iron Collective issue.",
+                    "next": "factions.neon-court.nc_034"
+                }
+            ]
+        },
+        "nc_029": {
+            "id": "factions.neon-court.nc_029",
+            "title": "Clean Books",
+            "location": "elysium_stacks_clinic",
+            "text": [
+                "You look through the books, but financial forensics isn't your strength. The numbers seem to support Hale's story — client visits are down, revenue has dropped, and the Iron Collective's presence on Floor 85 correlates with the decline. If there's something hidden in these records, you can't find it.",
+                "Hale watches you with the desperate hope of a man who might have just gotten away with something. Or the genuine relief of an innocent person being believed. You can't tell which."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Accept his explanation and report the Iron Collective issue to Velvet.",
+                    "next": "factions.neon-court.nc_034"
+                },
+                {
+                    "text": "Intimidate Hale into paying regardless.",
+                    "next": "factions.neon-court.nc_030"
+                },
+                {
+                    "text": "Investigate the Iron Collective shop on Floor 85.",
+                    "next": "factions.neon-court.nc_031"
+                }
+            ]
+        },
+        "nc_030": {
+            "id": "factions.neon-court.nc_030",
+            "title": "Hard Pressure",
+            "location": "elysium_stacks_clinic",
+            "text": [
+                "You lean across Hale's desk. 'The Court doesn't accept excuses, Doctor. It accepts credits. You have one week to make up the shortfall, or I come back with Chrome. And Chrome doesn't negotiate.'",
+                "Hale's face goes white. 'I — I can try. I'll take out loans, increase prices, something. Please. I have a family. I've been a loyal client for—'",
+                "'One week,' you repeat, and leave. Behind you, Hale collapses into his chair. Through the office window, you can see his hands shaking as he reaches for his communicator.",
+                "The approach is effective but blunt. Velvet, when you report in, is carefully neutral. 'The money will come in. Whether Hale survives the stress is another question. You completed the assignment. That's what matters.' Her tone suggests she would have handled it differently."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.intimidated_hale", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 5 },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "Return to Court headquarters for the next assignment.",
+                    "next": "factions.neon-court.nc_035"
+                }
+            ]
+        },
+        "nc_031": {
+            "id": "factions.neon-court.nc_031",
+            "title": "Iron Collective Discount Shop",
+            "location": "mid_tier_floor_85",
+            "text": [
+                "Two floors down from Elysium Stacks, you find the competition: IRON WORKS STACK & AUG, a storefront clinic with exposed ductwork and the aesthetic of a chop shop pretending to be a hospital. The waiting room is packed — twice the clients Elysium had, at half the price.",
+                "The procedures are rough. Through a half-open door you can see a technician installing a basic stack port with tools that look more suited to engine repair than neurosurgery. The client is conscious and gritting their teeth. No anesthetic — that costs extra.",
+                "The shop is run by a thick-armed woman with Iron Collective insignia tattooed across her knuckles. She spots you looking and grins. 'Court rat, huh? Relax. Free market. Your boss doesn't own stack technology, she just thinks she does.'",
+                "You could report this to Velvet and let the Court's lawyers or enforcers handle it. Or you could take a more direct approach."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.visited_iron_shop", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Report the shop's location and practices to Velvet.",
+                    "next": "factions.neon-court.nc_034"
+                },
+                {
+                    "text": "Sabotage the shop's equipment when no one's looking.",
+                    "next": "factions.neon-court.nc_036",
+                    "statCheck": { "stat": "dexterity", "dc": 14 },
+                    "failNext": "factions.neon-court.nc_037"
+                },
+                {
+                    "text": "Try to negotiate — suggest they pay a licensing fee to the Court.",
+                    "next": "factions.neon-court.nc_038",
+                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "failNext": "factions.neon-court.nc_037"
+                }
+            ]
+        },
+        "nc_032": {
+            "id": "factions.neon-court.nc_032",
+            "title": "Full Disclosure",
+            "location": "neon_court_quarters",
+            "text": [
+                "You report everything to Velvet — the revenue decline, the Iron Collective competition, and the skimming. Velvet listens without expression, then nods slowly. 'Thorough. I appreciate thorough.'",
+                "Two days later, you hear that Dr. Hale has been 'reassigned.' His clinic is under new management. His wife's offshore account has been seized. Hale himself was last seen being escorted into a private elevator by Chrome. Nobody asks where those elevators go.",
+                "Velvet sends you a message: GOOD WORK. PRISM NOTICED. Your expense account gains a modest bump, and your clearance level ticks up. The Court rewards loyalty and information in equal measure.",
+                "You try not to think about where Hale ended up. In the Neon Court, thinking too much is a luxury that costs more than the credits in your account."
+            ],
+            "onEnter": [
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 10 },
+                { "type": "modify_currency", "amount": 200 },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [
+                {
+                    "text": "Await your next assignment.",
+                    "next": "factions.neon-court.nc_035"
+                }
+            ]
+        },
+        "nc_033": {
+            "id": "factions.neon-court.nc_033",
+            "title": "Personal Leverage",
+            "location": "elysium_stacks_clinic",
+            "text": [
+                "'Here's what's going to happen,' you tell Hale. 'You pay back the skimmed amount immediately. Set up a payment plan for the rest. I report to the Court that the shortfall is entirely due to Iron Collective competition, which is mostly true. You keep your clinic, your family keeps their freedom, and you owe me.'",
+                "Hale stares at you like you've offered him oxygen on a space station. 'You'd do that? Why?'",
+                "'Because a grateful doctor with a stack clinic is more useful to me than a disgraced one in a Court holding cell. Consider this an investment.'",
+                "Hale agrees instantly. The skimmed credits are returned to the Court's accounts within the hour. You report the Iron Collective angle to Velvet, omitting the embezzlement. Hale is now yours — a contact in the Mid-Tier who will remember that you saved his life and his family."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.hale_ally", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 5 },
+                { "type": "modify_currency", "amount": 100 },
+                { "type": "add_experience", "amount": 45 }
+            ],
+            "choices": [
+                {
+                    "text": "Return for your next assignment.",
+                    "next": "factions.neon-court.nc_035"
+                }
+            ]
+        },
+        "nc_034": {
+            "id": "factions.neon-court.nc_034",
+            "title": "The Competition Report",
+            "location": "neon_court_quarters",
+            "text": [
+                "You report to Velvet that the Iron Collective is undercutting Elysium Stacks with a budget clinic on Floor 85. Velvet's eyes narrow. 'Iron Collective pushing into our stack market. That's not a random expansion — that's a strategic move. Someone in the Collective leadership is testing our boundaries.'",
+                "'You did well to identify this. The tribute issue is a symptom, not the disease. I'll escalate this to Prism's war council. The Court's response will be... comprehensive.'",
+                "Within a week, the Iron Collective shop on Floor 85 is shuttered. Not through violence — through regulation. The Court's political contacts push through an emergency health and safety inspection that reveals dozens of violations. The shop is closed, its operators arrested by Mid-Tier security, and Elysium Stacks' client flow recovers.",
+                "The Court's power isn't just muscle. It's systems, connections, leverage applied at exactly the right pressure points. You're beginning to understand how this world works."
+            ],
+            "onEnter": [
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 8 },
+                { "type": "modify_reputation", "faction": "ironCollective", "amount": -5 },
+                { "type": "add_experience", "amount": 40 },
+                { "type": "modify_currency", "amount": 150 }
+            ],
+            "choices": [
+                {
+                    "text": "Await your next assignment.",
+                    "next": "factions.neon-court.nc_035"
+                }
+            ]
+        },
+        "nc_035": {
+            "id": "factions.neon-court.nc_035",
+            "title": "Rising in the Ranks",
+            "location": "neon_court_quarters",
+            "text": [
+                "Weeks pass. Assignments come in a steady flow — each one more complex than the last, each one revealing another facet of the Neon Court's operations. You collect debts, broker deals, manage VIP guests at Court-owned nightclubs, and handle the occasional 'delicate situation' that requires someone who can move between the city's layers without attracting attention.",
+                "Your quarters improve. Your wardrobe expands. Credits accumulate in your account faster than you can spend them, though the Court provides enough temptation to try. Designer drugs are offered freely — Prism's own blends, guaranteed safe and engineered for specific moods. Memory enhancers, confidence boosters, things that make the music sound better and the nights last longer.",
+                "Velvet checks in regularly, her communications shifting from professional oversight to something warmer. 'You're doing well,' she says one evening, and the surprise in her voice suggests she means it. 'Prism is considering advancing you to Courtier rank. That's fast. Usually takes a year.'",
+                "But the work has a weight to it. You've seen what happens to people who cross the Court. You've delivered warnings that were barely veiled threats. You've watched families lose everything because they couldn't pay tribute. The luxury is real, but so is the cost."
+            ],
+            "onEnter": [
+                { "type": "add_experience", "amount": 60 }
+            ],
+            "choices": [
+                {
+                    "text": "Push forward. The Courtier rank is within reach.",
+                    "next": "factions.neon-court.nc_039"
+                },
+                {
+                    "text": "Seek out Velvet privately. You have questions about the Court's ethics.",
+                    "next": "factions.neon-court.nc_040"
+                }
+            ]
+        },
+        "nc_036": {
+            "id": "factions.neon-court.nc_036",
+            "title": "Quiet Sabotage",
+            "location": "mid_tier_floor_85",
+            "text": [
+                "You wait until the shop's busiest hour, when the staff is focused on clients. A quick slip into their equipment room, a few precise disconnections in their sterilization unit and stack calibrator. Nothing that will hurt anyone immediately — but the next few procedures will produce results bad enough to drive clients away on their own.",
+                "Within two weeks, word spreads through the Mid-Tier: Iron Works botched three stack installations in a row. Clients started experiencing memory bleeds, personality fragmentation, one case of total identity collapse. The shop closes under the weight of its own incompetence — incompetence you engineered.",
+                "You report the shop's closure to Velvet as a natural market correction. She raises an eyebrow but doesn't dig deeper. 'However it happened, Elysium's numbers are recovering. Well done.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.sabotaged_iron_shop", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 8 },
+                { "type": "modify_reputation", "faction": "ironCollective", "amount": -10 },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [
+                {
+                    "text": "Return for your next assignment.",
+                    "next": "factions.neon-court.nc_035"
+                }
+            ]
+        },
+        "nc_037": {
+            "id": "factions.neon-court.nc_037",
+            "title": "Ejected",
+            "location": "mid_tier_floor_85",
+            "text": [
+                "The Iron Collective doesn't take kindly to your approach. Two augmented workers grab you by the arms and haul you out through the back entrance, depositing you in an alley between waste recyclers. 'Tell your Court masters to stay in their towers,' one of them spits. 'The streets belong to people who actually work for a living.'",
+                "You pick yourself up, bruised but intact. The assignment isn't complete, but you've confirmed the Iron Collective's presence and hostility. That information alone has value.",
+                "You report back to Velvet. She sighs. 'Not ideal, but not a disaster. We'll handle the Iron Collective situation through other channels. You focus on keeping Hale's tribute flowing.'"
+            ],
+            "onEnter": [
+                { "type": "damage", "amount": 10 }
+            ],
+            "choices": [
+                {
+                    "text": "Lick your wounds and return to Court territory.",
+                    "next": "factions.neon-court.nc_034"
+                }
+            ]
+        },
+        "nc_038": {
+            "id": "factions.neon-court.nc_038",
+            "title": "The Licensing Deal",
+            "location": "mid_tier_floor_85",
+            "text": [
+                "The shop's manager — Kira, her name turns out to be — laughs at first. But you're persuasive, and the numbers you lay out are compelling. A licensing fee to the Court in exchange for access to legitimate stack technology specs, quality components, and protection from the regulatory harassment that the Court can bring to bear anytime it wants.",
+                "'You're basically selling us a protection racket,' Kira says. But she's smiling. 'At least you're honest about it. Fine. Twenty percent of revenue, and we get access to Court-certified components. My clients stop dying from bargain-bin hardware, and your bosses get their cut. Everyone wins.'",
+                "You shake on it. When you report the arrangement to Velvet, she's genuinely impressed. 'You turned competition into revenue? Prism will love this. You think like a Courtier already.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.iron_licensing_deal", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
+                { "type": "modify_currency", "amount": 300 },
+                { "type": "add_experience", "amount": 60 }
+            ],
+            "choices": [
+                {
+                    "text": "Return triumphant for your next assignment.",
+                    "next": "factions.neon-court.nc_035"
+                }
+            ]
+        },
+        "nc_039": {
+            "id": "factions.neon-court.nc_039",
+            "title": "The Courtier Trials",
+            "location": "prism_gallery",
+            "text": [
+                "Advancement in the Neon Court isn't granted — it's earned through the Trials. Three tests, administered by the Inner Circle, designed to evaluate whether an Associate deserves to join the Courtier ranks.",
+                "Velvet briefs you in person, which means it's serious. 'Trial of Masks: you'll attend a Court function under a false identity and extract information from a target without being detected. Trial of Glass: you'll be given a business crisis and one hour to resolve it. Trial of Thorns: you'll face a situation where every option has a cost, and you'll be judged on which cost you choose to pay.'",
+                "She pauses. 'The Trials are designed to break people. Sixty percent of Associates fail. Of those, most are quietly demoted. Some are... repurposed. I've seen it happen.'",
+                "'But you're ready,' she adds, and the conviction in her voice is either genuine belief or expert manipulation. With Velvet, it might be both."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trials_started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Begin the Trial of Masks.",
+                    "next": "factions.neon-court.nc_041"
+                }
+            ]
+        },
+        "nc_040": {
+            "id": "factions.neon-court.nc_040",
+            "title": "Velvet After Hours",
+            "location": "velvet_private_quarters",
+            "text": [
+                "Velvet agrees to meet you off-record — her private quarters on Floor 160, a space that's smaller than you'd expect for someone of her rank but filled with personal touches. Real books on actual shelves. A window with a view of the storm layer below, lightning flickering like a nervous system.",
+                "She pours drinks — the unlabeled kind — and sits across from you. Without the professional mask, she looks tired. The color-shifting eyes cycle slower, a sign of relaxation or exhaustion.",
+                "'Ethics,' she repeats when you broach the subject. 'You want to talk about ethics in the Neon Court. That's either brave or suicidal.' She drinks. 'The Court isn't good or evil. It's a machine. It converts power into comfort and comfort into control. The people at the top are comfortable because the people at the bottom provide the fuel.'",
+                "'Is that ethical? No. Is it different from any other system in this city? Also no. The Iron Collective exploits labor. The Ghost Syndicate exploits fear. The Circuit Saints exploit faith. We exploit desire. Every faction is a machine. We're just honest about what we're burning.'",
+                "She meets your eyes. 'If you want to change the machine from the inside, you need to be inside. Courtier rank gives you that access. But it also makes you part of the engine. The question isn't whether the Court is ethical. The question is whether you can stay ethical inside it.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.velvet_honest_conversation", "value": true },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "\"I can. I'll rise and change things from within.\"",
+                    "next": "factions.neon-court.nc_039"
+                },
+                {
+                    "text": "\"What about you, Velvet? Have you stayed ethical?\"",
+                    "next": "factions.neon-court.nc_042"
+                }
+            ]
+        },
+        "nc_041": {
+            "id": "factions.neon-court.nc_041",
+            "title": "Trial of Masks",
+            "location": "court_function_hall",
+            "text": [
+                "The function is a gala at the Court's private opera house on Floor 195. You're given a false identity — Lysander Caine, an off-world investor interested in memory technology — and a target: Marchioness Dahlia, one of Lady Prism's Inner Circle advisors. You need to learn her position on the upcoming 'Harvest expansion vote' without revealing who you really are.",
+                "The opera house is breathtaking. Gravity is reduced here, allowing the performers to dance in slow arcs through the air. The audience watches from floating balconies, sipping luminescent champagne. Marchioness Dahlia occupies a private box, surrounded by sycophants.",
+                "You need to get close enough to engage her in conversation, maintain your cover, and extract the information. The room is full of Court members who know your face — if anyone recognizes you, the Trial is over."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Approach Dahlia's box directly with a confident cover story.",
+                    "next": "factions.neon-court.nc_043",
+                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "failNext": "factions.neon-court.nc_044"
+                },
+                {
+                    "text": "Work through her sycophants first — get introduced naturally.",
+                    "next": "factions.neon-court.nc_043",
+                    "statCheck": { "stat": "intelligence", "dc": 13 },
+                    "failNext": "factions.neon-court.nc_044"
+                },
+                {
+                    "text": "Use the opera's intermission to engineer a 'chance' encounter.",
+                    "next": "factions.neon-court.nc_043",
+                    "statCheck": { "stat": "luck", "dc": 12 },
+                    "failNext": "factions.neon-court.nc_044"
+                }
+            ]
+        },
+        "nc_042": {
+            "id": "factions.neon-court.nc_042",
+            "title": "Velvet's Truth",
+            "location": "velvet_private_quarters",
+            "text": [
+                "The question hits her like a physical thing. She's quiet for a long time, watching the lightning below. When she speaks, her voice is stripped of its usual performance.",
+                "'No,' she says simply. 'I stopped being ethical three years in. There was a family — Lower District, couldn't pay tribute on a shop the Court had 'invested' in. Standard collection run. The father tried to fight. Chrome was there. I watched Chrome...' She stops. Drinks. 'I told myself it was business. That the system required enforcement. That if I hadn't been there, someone worse would have been.'",
+                "'I've told myself a lot of things over eleven years. Most of them at three in the morning when the stack nightmares hit.' She looks at you with an expression you haven't seen from her before — vulnerability, raw and unguarded. 'You asked why I care whether you succeed. This is why. If you can rise in the Court and still be... you... then maybe the machine can change. Maybe I didn't waste eleven years feeding it.'",
+                "She reaches out and touches your hand. Her fingers are warm. 'Don't become me. Rise higher than I did. And when you get there, remember what it looks like from down here.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.velvet_vulnerable", "value": true },
+                { "type": "set_flag", "flag": "neon_court.velvet_romance_available", "value": true },
+                { "type": "add_experience", "amount": 40 }
+            ],
+            "choices": [
+                {
+                    "text": "Hold her hand. \"I won't forget.\"",
+                    "next": "factions.neon-court.nc_045"
+                },
+                {
+                    "text": "\"Come with me. Rise together.\"",
+                    "next": "factions.neon-court.nc_046"
+                },
+                {
+                    "text": "\"I'll do what needs to be done. Time for the Trials.\"",
+                    "next": "factions.neon-court.nc_039"
+                }
+            ]
+        },
+        "nc_043": {
+            "id": "factions.neon-court.nc_043",
+            "title": "Dahlia's Confidence",
+            "location": "court_function_hall",
+            "text": [
+                "Your approach works. Marchioness Dahlia is delighted by 'Lysander Caine' — his charm, his knowledge of off-world markets, his apparent wealth. Over champagne and whispered conversation, she reveals more than she should.",
+                "'The Harvest expansion? I'm for it, naturally. The current sourcing from the Lower District is becoming... conspicuous. Too many disappearances in the same sectors. The Ashen Circle has noticed. If we expand the sourcing network to include the outer settlements and the refugee camps, we can reduce density and avoid scrutiny.'",
+                "She leans in conspiratorially. 'Between us, Lysander, the real opposition is Councilor Graves. He thinks the Harvest is unsustainable. Wants to develop synthetic alternatives. Can you imagine? Synthetic memories. They'd be worthless — like drinking recycled water when you could have wine.'",
+                "You file every word. When you excuse yourself at the evening's end, Dahlia blows you a kiss. 'Do visit again, Lysander. The Court needs more men of vision.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_masks_passed", "value": true },
+                { "type": "set_flag", "flag": "neon_court.learned_harvest_secret", "value": true },
+                { "type": "add_experience", "amount": 60 }
+            ],
+            "choices": [
+                {
+                    "text": "Report success and move to the Trial of Glass.",
+                    "next": "factions.neon-court.nc_047"
+                }
+            ]
+        },
+        "nc_044": {
+            "id": "factions.neon-court.nc_044",
+            "title": "Cover Blown",
+            "location": "court_function_hall",
+            "text": [
+                "It almost works. You get close to Dahlia, the conversation is flowing, and then one of her sycophants — a sharp-eyed courtier named Lux — peers at you too closely. 'I've seen you before. You're that new Associate. The one from the Lower District.'",
+                "The room goes cold. Dahlia's smile curdles. 'A test? How gauche.' She turns her back on you. The Trial of Masks is over.",
+                "Velvet meets you outside, expression unreadable. 'You failed the Trial of Masks. Normally, that ends the advancement process.' She lets the silence stretch. 'But Prism has authorized a second attempt for candidates who show exceptional promise in other areas. You'll take the Trial of Glass next. If you pass it decisively, we can revisit Masks later.'",
+                "'Don't make me regret advocating for you.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_masks_failed", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the second chance. Move to the Trial of Glass.",
+                    "next": "factions.neon-court.nc_047"
+                }
+            ]
+        },
+        "nc_045": {
+            "id": "factions.neon-court.nc_045",
+            "title": "A Quiet Promise",
+            "location": "velvet_private_quarters",
+            "text": [
+                "You hold her hand. The lightning outside paints shadows across the room. For a moment, neither of you is a Court operative. You're just two people in a high tower, looking down at the storm.",
+                "'Careful,' Velvet whispers. 'Attachments are liabilities in the Court. If Prism sees this, she'll use it. Use me against you, or you against me.' But she doesn't pull away. Her fingers tighten around yours.",
+                "'When this is over — when you've risen as far as you need to — find me. I'll be the one waiting to see if it was worth it.'",
+                "She lets go, and the professional mask slides back into place like armor. 'Now. The Trials. Let's make you a Courtier.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.velvet_romance_started", "value": true },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "Begin the Courtier Trials.",
+                    "next": "factions.neon-court.nc_039"
+                }
+            ]
+        },
+        "nc_046": {
+            "id": "factions.neon-court.nc_046",
+            "title": "Velvet's Refusal",
+            "location": "velvet_private_quarters",
+            "text": [
+                "Velvet shakes her head slowly. 'I'm too deep in the machine. If I tried to rise now, Prism would see it as a power play. Fixers are supposed to stay fixers. That's the deal. I find people, I place them, I manage them. I don't become them.'",
+                "'But you — you're new enough, bright enough, outside enough to climb without tripping the wires. So climb. And when you reach the top, don't forget the view from here.'",
+                "She squeezes your hand once, firmly, then releases it. 'Partners, then. Not in the Court's terms. In ours. I'll watch your back. You reach the places I can't. And together, maybe we change something.'",
+                "It's not a romance. It's something harder to name and possibly more dangerous."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.velvet_partnership", "value": true },
+                { "type": "add_experience", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "Begin the Courtier Trials.",
+                    "next": "factions.neon-court.nc_039"
+                }
+            ]
+        },
+        "nc_047": {
+            "id": "factions.neon-court.nc_047",
+            "title": "Trial of Glass",
+            "location": "court_war_room",
+            "text": [
+                "The Trial of Glass takes place in the Court's war room — a sealed chamber on Floor 190 with walls that display real-time data feeds from every Court operation in the city. You're alone with a panel of three Inner Circle members, their faces hidden behind ornate masks.",
+                "A crisis scenario is loaded: 'One of the Court's premier nightclubs, Eclipse, has been raided by City Security acting on a tip from the Circuit Saints. Thirty VIP clients have been detained, including two with outstanding warrants. Three kilos of Court-manufactured euphoria compounds were seized. The media is en route. You have one hour.'",
+                "The clock starts. The data feeds show Eclipse's layout, the detained client list, media positions, City Security deployment, and the Court's available resources. This is a puzzle with lives as pieces."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Focus on the clients — activate legal teams, get the VIPs released first.",
+                    "next": "factions.neon-court.nc_048",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "failNext": "factions.neon-court.nc_050"
+                },
+                {
+                    "text": "Focus on the evidence — find a way to make the seized drugs disappear before they're catalogued.",
+                    "next": "factions.neon-court.nc_049",
+                    "statCheck": { "stat": "intelligence", "dc": 15 },
+                    "failNext": "factions.neon-court.nc_050"
+                },
+                {
+                    "text": "Focus on the source — trace the Circuit Saints tip and turn it into a counter-narrative.",
+                    "next": "factions.neon-court.nc_049",
+                    "statCheck": { "stat": "intelligence", "dc": 14 },
+                    "failNext": "factions.neon-court.nc_050"
+                }
+            ]
+        },
+        "nc_048": {
+            "id": "factions.neon-court.nc_048",
+            "title": "The Client Solution",
+            "location": "court_war_room",
+            "text": [
+                "You prioritize people over product. The Court's legal team is activated — three firms on retainer, each specializing in different aspects of corporate law, criminal defense, and media suppression. Within twenty minutes, the VIP clients are being processed for release on 'diplomatic immunity' provisions that the Court's political contacts activate with a single call.",
+                "The two clients with warrants are more complex. You arrange for them to be transferred to a private security facility the Court controls, effectively removing them from City Security's jurisdiction through a labyrinth of legal technicalities that would take months to untangle.",
+                "For the media, you leak a counter-story: City Security acting on fabricated evidence from a rival faction, motivated by political vendetta. It's not entirely false — the Circuit Saints did plant the tip. By the time reporters arrive at Eclipse, the narrative is already shifting.",
+                "The Inner Circle panel watches in silence. When the hour expires, two of the three masks nod. The third remains still, but two out of three is a pass."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_glass_passed", "value": true },
+                { "type": "add_experience", "amount": 65 }
+            ],
+            "choices": [
+                {
+                    "text": "Proceed to the Trial of Thorns.",
+                    "next": "factions.neon-court.nc_051"
+                }
+            ]
+        },
+        "nc_049": {
+            "id": "factions.neon-court.nc_049",
+            "title": "The Strategic Solution",
+            "location": "court_war_room",
+            "text": [
+                "You attack the problem at its root. The evidence is the real threat — without the drugs, there's no case. You identify a Court-friendly officer in City Security's evidence processing chain and route a priority order through legitimate channels to 'reclassify' the seized compounds as medical-grade stack supplements pending laboratory verification. The reclassification buys time — weeks of bureaucratic delay.",
+                "Simultaneously, you trace the Circuit Saints' tip to its source: a mid-level Saint operative named Brother Ash who's been surveilling Eclipse for months. You compile a dossier on Brother Ash's own legal vulnerabilities — unlicensed preaching, unauthorized neural scans on converts, tax fraud — and arrange for it to reach City Security as an anonymous counter-tip.",
+                "The raid transforms from an offensive against the Court into a scandal involving the Circuit Saints. Two problems solved, one move. The Inner Circle panel is visibly impressed. All three masks nod."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_glass_passed", "value": true },
+                { "type": "set_flag", "flag": "neon_court.trial_glass_perfect", "value": true },
+                { "type": "modify_reputation", "faction": "circuitSaints", "amount": -5 },
+                { "type": "add_experience", "amount": 75 }
+            ],
+            "choices": [
+                {
+                    "text": "Proceed to the Trial of Thorns.",
+                    "next": "factions.neon-court.nc_051"
+                }
+            ]
+        },
+        "nc_050": {
+            "id": "factions.neon-court.nc_050",
+            "title": "Partial Containment",
+            "location": "court_war_room",
+            "text": [
+                "Your strategy has merit but the execution stumbles. You manage to contain some of the damage — a few VIPs are released, the media story is muddied — but the drugs are catalogued, two clients remain in custody, and the Circuit Saints claim a public victory against 'Court decadence.'",
+                "The Inner Circle panel deliberates. One mask nods. Two remain still. It's not a pass.",
+                "Velvet intercepts you outside the war room. 'Not a complete failure. You showed strategic thinking, just not enough of it. The good news: Prism is allowing you to retake the Trial of Glass after a cooling period. The bad news: there is no cooling period. She wants you in the Trial of Thorns immediately. If you pass that one decisively, the Glass failure can be forgiven.'",
+                "The stakes just doubled."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_glass_failed", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "No rest. Into the Trial of Thorns.",
+                    "next": "factions.neon-court.nc_051"
+                }
+            ]
+        },
+        "nc_051": {
+            "id": "factions.neon-court.nc_051",
+            "title": "Trial of Thorns",
+            "location": "court_trial_chamber",
+            "text": [
+                "The Trial of Thorns is not a simulation. You're brought to a real room with real people and a real crisis. A Court-operated stack clinic in the Lower District has been discovered by a group of Ashen Circle investigators. The clinic isn't just performing standard procedures — it's running the Harvest.",
+                "In the room are three people: Dr. Fen, the clinic's operator, who is terrified. Mira, an Ashen Circle investigator who was captured before she could transmit her findings. And Kael, a Lower District teenager who was being prepped for memory extraction when the Ashen Circle arrived.",
+                "Your options are laid out by a disembodied voice — one of the Inner Circle, watching from behind walls: 'The investigator has seen too much. The teenager is scheduled for extraction. The doctor is a Court asset. Resolve this situation. Every choice has a cost. We are watching which costs you choose to pay.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_thorns_started", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Release Mira with a warning and wipe her evidence. Protect the teenager.",
+                    "next": "factions.neon-court.nc_052",
+                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "failNext": "factions.neon-court.nc_053"
+                },
+                {
+                    "text": "Silence Mira permanently. The Court's secrets must be protected.",
+                    "next": "factions.neon-court.nc_054"
+                },
+                {
+                    "text": "Shut down the clinic entirely. The Harvest is wrong.",
+                    "next": "factions.neon-court.nc_055"
+                },
+                {
+                    "text": "Bribe Mira to switch sides. Everyone has a price.",
+                    "next": "factions.neon-court.nc_056",
+                    "statCheck": { "stat": "luck", "dc": 14 },
+                    "failNext": "factions.neon-court.nc_053"
+                }
+            ]
+        },
+        "nc_052": {
+            "id": "factions.neon-court.nc_052",
+            "title": "The Merciful Resolution",
+            "location": "court_trial_chamber",
+            "text": [
+                "You convince Mira that silence is in everyone's interest. A memory wipe — selective, precise, removing only the last 48 hours — is administered by Dr. Fen with your guarantee that neither Mira nor Kael will be harmed further. Mira wakes up believing she was investigating a dead-end lead. Kael is released back to the Lower District with enough credits to disappear.",
+                "The clinic is relocated and its records purged. The Harvest continues, but you've ensured these two specific people survive it.",
+                "The Inner Circle's verdict comes through Velvet: 'Compassion with pragmatism. You found a solution that protected the Court's interests without unnecessary violence. Two of three judges approved. You pass the Trial of Thorns.'",
+                "Velvet adds, privately: 'The third judge was Lady Prism herself. She abstained, which means she's still evaluating you. That's better than a no. Barely.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_thorns_merciful", "value": true },
+                { "type": "set_flag", "flag": "neon_court.trial_thorns_passed", "value": true },
+                { "type": "add_experience", "amount": 70 }
+            ],
+            "choices": [
+                {
+                    "text": "Receive Courtier status.",
+                    "next": "factions.neon-court.nc_057"
+                }
+            ]
+        },
+        "nc_053": {
+            "id": "factions.neon-court.nc_053",
+            "title": "The Messy Resolution",
+            "location": "court_trial_chamber",
+            "text": [
+                "Your plan doesn't hold together. Mira fights the memory wipe, screaming about justice and exposure. Kael panics and tries to run. Dr. Fen freezes. The situation spirals until Chrome enters the room uninvited and resolves everything with mechanical efficiency: Mira sedated, Kael restrained, the clinic locked down.",
+                "Chrome's intervention is a mark against you — the Trial was supposed to test your ability to handle crises independently. The Inner Circle's verdict is split: one pass, one fail, one abstention.",
+                "Velvet delivers the news with careful diplomacy: 'You didn't pass the Trial of Thorns cleanly, but you didn't catastrophically fail either. Prism has decided to advance you to Courtier on a probationary basis. That means the rank, but not the full privileges. You'll need to prove yourself in the field to earn full status.'",
+                "Probationary Courtier. It's not the triumph you wanted, but it's a foothold."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_thorns_messy", "value": true },
+                { "type": "set_flag", "flag": "neon_court.probationary_courtier", "value": true },
+                { "type": "add_experience", "amount": 40 }
+            ],
+            "choices": [
+                {
+                    "text": "Accept probationary status. Prove yourself.",
+                    "next": "factions.neon-court.nc_057"
+                }
+            ]
+        },
+        "nc_054": {
+            "id": "factions.neon-court.nc_054",
+            "title": "The Ruthless Resolution",
+            "location": "court_trial_chamber",
+            "text": [
+                "You make the call. It's the hardest decision you've ever made, or the easiest, depending on what you've become. Mira is 'disappeared' — a euphemism the Court uses for permanent removal from the population. Dr. Fen administers a lethal dose of sedative that looks like a standard anesthetic. Mira stops breathing without ever knowing why.",
+                "Kael watches with wide eyes. You tell the teenager that silence is the price of survival. The look on Kael's face will follow you to sleep for years.",
+                "The Inner Circle's verdict is unanimous: pass. All three masks nod. Lady Prism's voice comes through the speakers directly: 'You understand necessity. That is the Court's highest virtue.'",
+                "Velvet is waiting outside. She doesn't speak. She doesn't need to. The look she gives you says everything — disappointment, grief, and something that might be fear. Whatever you were before you walked into that room, you're something different now."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_thorns_ruthless", "value": true },
+                { "type": "set_flag", "flag": "neon_court.trial_thorns_passed", "value": true },
+                { "type": "set_flag", "flag": "neon_court.killed_mira", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": -15 },
+                { "type": "add_experience", "amount": 60 }
+            ],
+            "choices": [
+                {
+                    "text": "Receive Courtier status. You earned it.",
+                    "next": "factions.neon-court.nc_057"
+                }
+            ]
+        },
+        "nc_055": {
+            "id": "factions.neon-court.nc_055",
+            "title": "The Defiant Resolution",
+            "location": "court_trial_chamber",
+            "text": [
+                "You shut it down. All of it. You release Mira, free Kael, and tell Dr. Fen that the Harvest is over — at least in this clinic. The words come out steady, certain, righteous.",
+                "The Inner Circle's reaction is immediate. Chrome enters the room. Not for the others — for you. Velvet's voice crackles through your communicator: 'What are you doing? This isn't how the Trial works—'",
+                "But Lady Prism's voice cuts through everything, calm and amused: 'Let them speak. I want to hear the reasoning.'",
+                "You speak. You talk about sustainability, about the risk of exposure, about how the Harvest creates enemies faster than it generates profit. You frame morality as strategy. It's not entirely honest, but it's not entirely dishonest either.",
+                "Prism is silent for a long moment. Then: 'Interesting. Wrong, but interesting. Advance them to Courtier. Probationary. I want to see what happens when idealism meets reality at a higher altitude.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_thorns_defiant", "value": true },
+                { "type": "set_flag", "flag": "neon_court.probationary_courtier", "value": true },
+                { "type": "set_flag", "flag": "neon_court.harvest_opposed", "value": true },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 10 },
+                { "type": "add_experience", "amount": 55 }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the probationary rank. The fight continues from higher ground.",
+                    "next": "factions.neon-court.nc_057"
+                }
+            ]
+        },
+        "nc_056": {
+            "id": "factions.neon-court.nc_056",
+            "title": "Turning the Investigator",
+            "location": "court_trial_chamber",
+            "text": [
+                "Everyone has a price — that's the Court's core philosophy. You gamble on it. Mira is an Ashen Circle true believer, but true believers still have families, debts, fears. You offer her something the Ashen Circle can't: a full memory backup of her dying mother, currently in a Lower District hospice, preserved forever in stack technology.",
+                "Mira breaks. The offer is too personal, too precisely aimed. She agrees to file a false report with the Ashen Circle — 'clinic was clean, no evidence of Harvest operations' — in exchange for the backup. The Court gains a double agent. The teenager is released as a gesture of good faith.",
+                "The Inner Circle is delighted. Three unanimous nods. Converting an enemy operative into an asset is exactly the kind of creative ruthlessness the Court prizes. Lady Prism sends a personal message: 'You think like one of us.'",
+                "Whether that's a compliment or a diagnosis, you're not sure."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.trial_thorns_passed", "value": true },
+                { "type": "set_flag", "flag": "neon_court.turned_mira", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
+                { "type": "add_experience", "amount": 80 }
+            ],
+            "choices": [
+                {
+                    "text": "Receive Courtier status.",
+                    "next": "factions.neon-court.nc_057"
+                }
+            ]
+        },
+        "nc_057": {
+            "id": "factions.neon-court.nc_057",
+            "title": "Courtier",
+            "location": "prism_gallery",
+            "text": [
+                "The ceremony is intimate — held in Prism's private chambers on Floor 200, the building's summit. The room is circular, walled in glass that shows the city in every direction. From here, the Lower District is invisible, swallowed by clouds and distance. Only the towers stand above the weather, spearing into clear sky like monuments to ambition.",
+                "Lady Prism pins a crystalline insignia to your chest — the Court's mark, a prism refracting light into spectrum. 'You are now a Courtier of the Neon Court,' she announces to the small gathering. 'You will manage Court operations, attend Court councils, and represent our interests in all interactions. Your word is the Court's word. Speak carefully.'",
+                "The privileges are immediate: quarters on Floor 170, a personal expense account with no visible limit, access to the Court's private stack clinic for free backup procedures, and a seat at the weekly strategy council. You're given a new wardrobe, a personal transport, and a small staff.",
+                "Velvet raises a glass from across the room. Chrome nods — the first acknowledgment you've received from the silent giant. Sable, if present, winks. You've arrived. But the game is just beginning to get dangerous."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "courtier" },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
+                { "type": "modify_currency", "amount": 1000 },
+                { "type": "add_experience", "amount": 100 },
+                { "type": "add_item", "item": "court_insignia" }
+            ],
+            "choices": [
+                {
+                    "text": "Settle into your new role. Attend the first strategy council.",
+                    "next": "factions.neon-court.nc_058"
+                }
+            ]
+        },
+        "nc_058": {
+            "id": "factions.neon-court.nc_058",
+            "title": "The Strategy Council",
+            "location": "court_council_chambers",
+            "text": [
+                "The strategy council meets in a chamber that floats — literally — suspended by gravitational manipulation in the hollow core of Cloud Tower Seven. The table is a ring, with Lady Prism at the head and her Inner Circle advisors spaced around it. You take your seat among the Courtiers, the newest and lowest-ranked.",
+                "The agenda is revealing. Marchioness Dahlia reports on the Harvest: production is steady but demand is increasing. Councilor Graves, a gaunt man with deep-set eyes, argues for reduced harvesting and increased research into synthetic memory alternatives. Lord Vex, a flamboyant figure in shifting holographic robes, reports on the nightlife operations — revenue is up, but Ghost Syndicate competition is stealing market share in the underground entertainment sector.",
+                "The final item catches your attention: 'The Succession Question.' Lady Prism has occupied her current body for thirty-two years — nearing the safe limit for consciousness transfer. She'll need a new host body within the year. The selection process is already underway.",
+                "Prism catches you watching. 'Yes,' she says. 'Even immortality has maintenance schedules. Don't look so surprised — you'll understand when you're on your third body.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.attended_council", "value": true },
+                { "type": "set_flag", "flag": "neon_court.knows_succession", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Ask about the Harvest privately after the council.",
+                    "next": "factions.neon-court.nc_059"
+                },
+                {
+                    "text": "Approach Councilor Graves about synthetic memory research.",
+                    "next": "factions.neon-court.nc_060"
+                },
+                {
+                    "text": "Investigate the Ghost Syndicate competition that Lord Vex mentioned.",
+                    "next": "factions.neon-court.nc_061"
+                }
+            ]
+        },
+        "nc_059": {
+            "id": "factions.neon-court.nc_059",
+            "title": "The Harvest Revealed",
+            "location": "court_council_chambers",
+            "text": [
+                "Marchioness Dahlia indulges your curiosity with the casual openness of someone who sees nothing wrong with what she's describing. 'The Harvest is the Court's most essential operation. Memory stack technology requires organic memory engrams as raw material — you can't build a consciousness backup from nothing. The engrams need to be sourced from living minds.'",
+                "'We operate clinics in the Lower District that offer free 'memory optimization' to the poor. They come in, we scan them, and we extract surplus memory engrams during the process. Most subjects experience mild amnesia — they lose a few days, a few weeks. Nothing they'll miss. The extracted engrams are refined and used in stack transfers for our clients.'",
+                "She sips her wine. 'The ethical squeamish call it exploitation. I call it recycling. Those people's memories were going to decay and die with them anyway. We give them purpose. We give them immortality — in fragments, distributed across a hundred different stacks. It's almost spiritual, if you think about it.'",
+                "The scale hits you: thousands of Lower District residents, processed through dozens of clinics, their memories harvested to fuel the immortality of the rich. The foundation of the Neon Court's power isn't technology. It's people."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.harvest_full_knowledge", "value": true },
+                { "type": "add_experience", "amount": 40 }
+            ],
+            "choices": [
+                {
+                    "text": "This needs to be exposed. Start gathering evidence secretly.",
+                    "next": "factions.neon-court.nc_062"
+                },
+                {
+                    "text": "Accept the reality. This is how the world works at this level.",
+                    "next": "factions.neon-court.nc_063"
+                },
+                {
+                    "text": "Approach Councilor Graves — he seems to oppose this too.",
+                    "next": "factions.neon-court.nc_060"
+                }
+            ]
+        },
+        "nc_060": {
+            "id": "factions.neon-court.nc_060",
+            "title": "Graves's Alternative",
+            "location": "graves_laboratory",
+            "text": [
+                "Councilor Graves maintains a private laboratory on Floor 185 — a stark contrast to the Court's usual opulence. Clinical, efficient, every surface devoted to research. He greets you with the wary relief of a man who's been waiting for an ally.",
+                "'Synthetic memory engrams,' he says, pulling up holographic displays of molecular structures. 'I've been working on them for fifteen years. The theory is sound — we can grow organic-equivalent engrams in a lab, eliminating the need for the Harvest entirely. No more Lower District clinics. No more... processing.'",
+                "'The problem is Prism. She's convinced synthetic engrams produce inferior stack transfers — less vivid, less stable. She's wrong, but she's been alive for two centuries and she trusts her experience over my data.' He sighs. 'Dahlia actively sabotages my funding. Vex doesn't care either way. I'm outnumbered on the Inner Circle three to one, with Prism as the tiebreaker who always breaks against me.'",
+                "'If you support my research — publicly, at council — it could shift the balance. But it would also make you enemies. Dahlia doesn't forget slights, and Prism doesn't appreciate being told she's wrong.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.met_graves", "value": true },
+                { "type": "set_flag", "flag": "neon_court.knows_synthetic_option", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Support Graves publicly at the next council meeting.",
+                    "next": "factions.neon-court.nc_064"
+                },
+                {
+                    "text": "Support Graves secretly — fund his research off the books.",
+                    "next": "factions.neon-court.nc_065"
+                },
+                {
+                    "text": "Decline. The political risk is too high right now.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_061": {
+            "id": "factions.neon-court.nc_061",
+            "title": "Ghost Syndicate Incursion",
+            "location": "lower_district_underground",
+            "text": [
+                "Lord Vex's intelligence leads you to the Lower District's entertainment underbelly. The Ghost Syndicate has opened a series of 'memory parlors' — unlicensed establishments where clients can experience stolen memories directly. No stack transfer, no permanent backup — just raw, unfiltered access to someone else's life for an hour or a night.",
+                "The experience is addictive and dangerous. Some clients lose track of which memories are theirs. Others develop personality bleed — fragments of the memory donor's identity overwriting their own. But the parlors are cheap, visceral, and wildly popular. They're eating into the Court's nightlife revenue from below.",
+                "You scout one of the parlors. It's set up in an abandoned water reclamation facility — dark, humid, bodies laid out on makeshift cots with neural cables snaking between them. The operator is a Ghost Syndicate tech who goes by the handle 'Whisper.'",
+                "'Court spy?' Whisper asks, not looking up from their console. 'Relax. We're not competing with your bosses. They sell immortality to the rich. We sell experience to the poor. Different markets.' They grin. 'Although your boss's rich clients have been coming down here too. Turns out, even immortals get bored.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.investigated_ghost_parlors", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Shut this operation down by force.",
+                    "next": "factions.neon-court.nc_066",
+                    "statCheck": { "stat": "strength", "dc": 14 },
+                    "failNext": "factions.neon-court.nc_067"
+                },
+                {
+                    "text": "Propose a partnership — the Court supplies premium memories, the Syndicate runs distribution.",
+                    "next": "factions.neon-court.nc_068",
+                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "failNext": "factions.neon-court.nc_067"
+                },
+                {
+                    "text": "Report the locations to Velvet for a coordinated Court response.",
+                    "next": "factions.neon-court.nc_069"
+                }
+            ]
+        },
+        "nc_062": {
+            "id": "factions.neon-court.nc_062",
+            "title": "Gathering Evidence",
+            "location": "neon_court_quarters",
+            "text": [
+                "You begin the dangerous work of documenting the Harvest. It requires patience, discretion, and a steady nerve — the Court's surveillance systems are everywhere, and one slip means joining the people you're trying to help.",
+                "Using the blind spots you identified in your quarters, you compile data from council meetings, clinic reports, and carefully cultivated conversations with lower-ranked Court operatives. The picture that emerges is staggering: over twelve thousand Lower District residents processed through Harvest clinics in the past year alone. Memory loss ranges from days to years. Some subjects have been harvested so thoroughly they can't remember their own names.",
+                "You encrypt the data on a chip hidden in the lining of your Court insignia. The question now is who to give it to. The media would create a scandal but the Court's lawyers would bury it. The Ashen Circle would act but might not survive the Court's retaliation. The City Authority is half-owned by the Court already.",
+                "Or you could use it as leverage within the Court itself — force changes from the inside."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.has_harvest_evidence", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [
+                {
+                    "text": "Approach the Ashen Circle with the evidence.",
+                    "next": "factions.neon-court.nc_070"
+                },
+                {
+                    "text": "Use the evidence as leverage at the next council meeting.",
+                    "next": "factions.neon-court.nc_071"
+                },
+                {
+                    "text": "Hold onto it. The timing isn't right yet.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_063": {
+            "id": "factions.neon-court.nc_063",
+            "title": "Playing the Game",
+            "location": "neon_court_quarters",
+            "text": [
+                "You settle into the Courtier role. Weeks become months. You attend councils, manage operations, navigate the Court's labyrinth of alliances and rivalries. The luxury becomes normal — you catch yourself one morning casually discarding a meal that would have fed your old block for a day, and the realization barely registers anymore.",
+                "Velvet watches you with an expression that's hard to read. Pride, maybe. Or mourning for whatever she thinks you're losing.",
+                "The Court's internal politics sharpen as Prism's body transfer deadline approaches. Dahlia and Graves are in open conflict over the Harvest. Lord Vex plays both sides, always smiling. Chrome says nothing, but you notice the bodyguard spending more time near Graves's laboratory than near Prism's chambers.",
+                "And then, one night, Velvet comes to you with information that changes everything."
+            ],
+            "onEnter": [
+                { "type": "add_experience", "amount": 35 }
+            ],
+            "choices": [
+                {
+                    "text": "\"What have you found?\"",
+                    "next": "factions.neon-court.nc_072"
+                }
+            ]
+        },
+        "nc_064": {
+            "id": "factions.neon-court.nc_064",
+            "title": "Public Support",
+            "location": "court_council_chambers",
+            "text": [
+                "At the next council meeting, you speak in favor of Graves's synthetic memory research. You frame it as business strategy — reducing dependency on a vulnerable supply chain, eliminating the risk of exposure that the Harvest represents, future-proofing the Court's core technology.",
+                "Dahlia's response is volcanic. 'A Courtier, barely past their probation, lecturing the Inner Circle on risk management? The Harvest has sustained this Court for eighty years. Synthetic alternatives are a fantasy peddled by a man who's lost his nerve.'",
+                "Graves, emboldened, pushes back with data. The argument escalates until Prism silences the room with a raised hand. 'Enough. I'll consider both positions.' She looks at you with those ancient, calculating eyes. 'Bold of you, Courtier. Boldness has a shelf life in this Court. Use it wisely.'",
+                "After the meeting, Dahlia corners you in the corridor. 'You've made an enemy today,' she says pleasantly. 'I hope your boldness comes with survival instincts.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.supported_graves_publicly", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": -5 },
+                { "type": "add_experience", "amount": 45 }
+            ],
+            "choices": [
+                {
+                    "text": "Continue navigating Court politics.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_065": {
+            "id": "factions.neon-court.nc_065",
+            "title": "Shadow Funding",
+            "location": "graves_laboratory",
+            "text": [
+                "You divert a portion of your Courtier expense account — small amounts, carefully laundered through shell operations — into Graves's research. It's enough to accelerate his timeline without triggering financial audits. Graves is grateful and cautious. 'If Dahlia finds out you're funding this, she'll destroy both of us. But the work is close. Six months, maybe less, and I'll have a viable synthetic engram prototype.'",
+                "You set up dead drops and encrypted channels. The shadow funding becomes a second job, demanding precision and paranoia in equal measure. But it's also the first thing you've done in the Court that feels unambiguously right.",
+                "The question is whether six months is fast enough. Prism's body transfer is approaching, and the political situation is deteriorating."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.funded_graves_secretly", "value": true },
+                { "type": "modify_currency", "amount": -500 },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [
+                {
+                    "text": "Continue the covert operation while navigating Court politics.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_066": {
+            "id": "factions.neon-court.nc_066",
+            "title": "Raiding the Parlor",
+            "location": "lower_district_underground",
+            "text": [
+                "You call in Court enforcers — a squad of armored operatives who descend on the memory parlor like a surgical strike. Whisper and the other operators are rounded up. The neural equipment is seized. The clients are disconnected mid-experience, some of them screaming as borrowed memories are torn from their minds.",
+                "The operation is efficient but ugly. Two Syndicate guards put up a fight and are neutralized with crowd-control weapons. Whisper, being dragged out, locks eyes with you. 'You think this changes anything? We'll be back in a week. Your Court can't control what people want to feel.'",
+                "Lord Vex is pleased with the report. The Court's nightlife numbers tick up as the underground competition goes dark. But you notice Ghost Syndicate tags appearing on buildings near Court territory — warnings, promises, threats painted in bioluminescent ink that only shows up after dark."
+            ],
+            "onEnter": [
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 10 },
+                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": -15 },
+                { "type": "add_experience", "amount": 45 }
+            ],
+            "choices": [
+                {
+                    "text": "Report success and continue Court duties.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_067": {
+            "id": "factions.neon-court.nc_067",
+            "title": "Syndicate Pushback",
+            "location": "lower_district_underground",
+            "text": [
+                "The Ghost Syndicate isn't as passive as they appear. Your attempt to intervene is met with resistance — not violent, but effective. Signal jammers kill your communications. The lights go out. By the time you find your way out of the parlor, Whisper and the equipment have vanished. The space is empty, scrubbed clean.",
+                "A message is projected onto the wall in holographic text: COURTESY OF THE GHOST SYNDICATE. DON'T COME BACK.",
+                "You report the failed operation to Lord Vex, who takes it with surprising equanimity. 'The Syndicate has been outmaneuvering us in the underground for years. That's why I'm glad you're here — fresh eyes, fresh approaches. We'll find another way.'"
+            ],
+            "onEnter": [
+                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": -5 },
+                { "type": "add_experience", "amount": 20 }
+            ],
+            "choices": [
+                {
+                    "text": "Return to Court duties and regroup.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_068": {
+            "id": "factions.neon-court.nc_068",
+            "title": "The Memory Partnership",
+            "location": "lower_district_underground",
+            "text": [
+                "Whisper listens to your proposal with the cautious interest of a street dealer being offered franchise terms. 'Premium memories from the Court's vaults, distributed through our parlor network. We handle the street-level operation, you supply the product. We split sixty-forty, our favor — we're taking the risk.'",
+                "You negotiate to fifty-fifty with quality guarantees. The deal is struck in the back of the memory parlor, sealed with a handshake that bridges two factions who were at each other's throats an hour ago.",
+                "When you present the arrangement to Lord Vex, he's ecstatic. 'You turned the Ghost Syndicate from competitors to distributors? This is the kind of thinking that earns Inner Circle attention.' Even Lady Prism, when informed, sends a rare personal acknowledgment: 'Creative. Continue.'",
+                "The memory partnership becomes one of the Court's most profitable secondary operations. And you've built a bridge to the Ghost Syndicate that could prove useful later."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.ghost_partnership", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
+                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 10 },
+                { "type": "modify_currency", "amount": 500 },
+                { "type": "add_experience", "amount": 70 }
+            ],
+            "choices": [
+                {
+                    "text": "Continue Court duties, now with Syndicate connections.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_069": {
+            "id": "factions.neon-court.nc_069",
+            "title": "Coordinated Response",
+            "location": "neon_court_quarters",
+            "text": [
+                "You feed the parlor locations to Velvet, who coordinates a city-wide operation. Over a single night, Court enforcers hit twelve Ghost Syndicate memory parlors simultaneously. Equipment seized, operators detained, clients scattered.",
+                "The operation is a decisive victory — on paper. In practice, the Ghost Syndicate has dozens more parlors, hidden deeper, protected by encryption and misdirection. The twelve you shut down are back under different names within two weeks.",
+                "But the show of force matters. Lord Vex uses it to negotiate favorable terms with the Syndicate's leadership, carving out territory agreements that protect the Court's core nightlife operations. 'Sometimes,' Vex tells you with a wink, 'the point of a war isn't to win. It's to negotiate from strength.'",
+                "You file that lesson away. It will prove useful."
+            ],
+            "onEnter": [
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 8 },
+                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": -8 },
+                { "type": "add_experience", "amount": 40 }
+            ],
+            "choices": [
+                {
+                    "text": "Continue Court duties.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_070": {
+            "id": "factions.neon-court.nc_070",
+            "title": "The Ashen Circle Contact",
+            "location": "lower_district_streets",
+            "text": [
+                "Making contact with the Ashen Circle without triggering Court surveillance is a high-wire act. You use the blind spots in your quarters to prepare, then make the trip to the Lower District on a fabricated errand, swapping three transports and two disguises to shake any tails.",
+                "The Ashen Circle contact is a weathered woman named Sister Cinder who operates out of a community kitchen in Sector 3. She listens to your story with an expression of weary validation — not surprise, but confirmation of what the Circle has long suspected.",
+                "'We knew the Harvest existed,' she says. 'Proving it has been the challenge. Every investigator we send either disappears or comes back with conveniently empty memories.' She looks at your data chip like a lifeline. 'This could change everything. If we can verify this data and distribute it before the Court can suppress it...'",
+                "'But the moment we move, the Court will know it came from inside. And there aren't many people at Courtier rank who'd risk this. They'll trace it to you.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.contacted_ashen_circle", "value": true },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 15 }
+            ],
+            "choices": [
+                {
+                    "text": "\"I know the risks. Release the data.\"",
+                    "next": "factions.neon-court.nc_073"
+                },
+                {
+                    "text": "\"Hold it for now. I need to be in a stronger position first.\"",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_071": {
+            "id": "factions.neon-court.nc_071",
+            "title": "Internal Leverage",
+            "location": "court_council_chambers",
+            "text": [
+                "At the next strategy council, you present the evidence — not as an accusation, but as a risk assessment. 'The Harvest's operational security is deteriorating. I've compiled data showing multiple near-exposures, investigation attempts by the Ashen Circle, and growing awareness among Lower District populations that our free clinics are not what they seem.'",
+                "You lay out the numbers: the cost of exposure versus the cost of transitioning to Graves's synthetic alternatives. The math is compelling. Even Dahlia struggles to argue against pure financial logic.",
+                "Prism listens with unreadable expression. 'You're not arguing against the Harvest on moral grounds,' she observes. 'You're arguing against it on strategic grounds. Interesting. I was warned you might be an idealist. This is more... practical.'",
+                "She tables the discussion for further analysis, which in Court politics is as close to a victory as you'll get without a fight. Graves catches your eye across the table and nods imperceptibly."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.used_evidence_internally", "value": true },
+                { "type": "add_experience", "amount": 55 }
+            ],
+            "choices": [
+                {
+                    "text": "Continue building the case for change from within.",
+                    "next": "factions.neon-court.nc_063"
+                }
+            ]
+        },
+        "nc_072": {
+            "id": "factions.neon-court.nc_072",
+            "title": "Velvet's Discovery",
+            "location": "velvet_private_quarters",
+            "text": [
+                "Velvet arrives at your quarters after midnight, visibly shaken. Her color-shifting eyes are cycling rapidly — a sign of extreme stress. She activates a military-grade privacy field before speaking.",
+                "'The body transfer,' she says. 'Prism's upcoming transfer to a new host body. I've been handling logistics. Tonight I accessed the host selection files.' She pauses, steadying herself. 'The host isn't a volunteer. She's a twenty-year-old woman from the Lower District named Asha. She was brought in through a Harvest clinic six months ago. They've been... preparing her. Clearing her consciousness to make room for Prism's.'",
+                "'That's not a stack transfer, that's murder. Prism isn't moving to a clone or a synthetic body. She's overwriting a living person's mind and taking their body. And she's done it before — every transfer, every body she's worn. They were all people once.'",
+                "The room is very quiet. Outside the privacy field, the city glitters, oblivious.",
+                "'This is the Court's deepest secret,' Velvet whispers. 'The stack technology doesn't just transfer consciousness. It erases the host. Two hundred years of Prism's immortality — that's two hundred years of murdered hosts. And the Inner Circle knows. They've always known.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.knows_darkest_secret", "value": true },
+                { "type": "set_flag", "flag": "neon_court.knows_asha", "value": true },
+                { "type": "add_experience", "amount": 80 }
+            ],
+            "choices": [
+                {
+                    "text": "\"We have to save Asha. And stop the transfer.\"",
+                    "next": "factions.neon-court.nc_074"
+                },
+                {
+                    "text": "\"This is our leverage. We use this to take control of the Court.\"",
+                    "next": "factions.neon-court.nc_075"
+                },
+                {
+                    "text": "\"We need to be strategic. How long before the transfer?\"",
+                    "next": "factions.neon-court.nc_076"
+                }
+            ]
+        },
+        "nc_073": {
+            "id": "factions.neon-court.nc_073",
+            "title": "The Leak",
+            "location": "lower_district_streets",
+            "text": [
+                "Sister Cinder distributes the Harvest data through the Ashen Circle's underground network. Within forty-eight hours, the information hits the public consciousness like a bomb. Independent journalists verify the data. Social media erupts. Protests form outside Neon Court properties. The Lower District, long simmering with resentment, begins to boil.",
+                "The Court's response is swift and brutal. Legal teams file injunctions. Media contacts are pressured to retract. But the data is too detailed, too damning to suppress entirely. For the first time in decades, the Neon Court is on the defensive.",
+                "And then Velvet contacts you. 'They know it was an inside leak. Prism has ordered a full investigation. You need to come in — now. If I can't manage this, Chrome will manage it instead, and Chrome's management techniques don't leave survivors.'",
+                "Your position in the Court is compromised. The question is what you do with the time you have left."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.harvest_leaked", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": -30 },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 25 }
+            ],
+            "choices": [
+                {
+                    "text": "Go to Velvet. Face the Court's investigation head-on.",
+                    "next": "factions.neon-court.nc_077"
+                },
+                {
+                    "text": "Flee the Court entirely. Your cover is blown.",
+                    "next": "factions.neon-court.nc_078"
+                }
+            ]
+        },
+        "nc_074": {
+            "id": "factions.neon-court.nc_074",
+            "title": "Rescue Planning",
+            "location": "velvet_private_quarters",
+            "text": [
+                "Velvet lays out what she knows. Asha is being held in a private medical suite on Floor 199 — one floor below Prism's chambers. The suite is guarded by Chrome personally and two additional security teams. Access requires Inner Circle clearance, which neither of you has.",
+                "'We can't do this alone,' Velvet says. 'We need allies inside the Court, and we need a distraction big enough to pull Chrome away from that door.' She pulls up a map of the tower's security grid. 'The transfer is scheduled for three days from now. That's our window.'",
+                "You need to recruit help, create a diversion, and extract Asha from the most heavily guarded floor in the city. It's suicide. It's also the right thing to do.",
+                "'One more thing,' Velvet adds quietly. 'If we do this and fail, Prism won't just kill us. She'll harvest us. Our memories, our personalities, everything we are — fed into the stack network and distributed as raw material. We won't just die. We'll be erased.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.rescue_planned", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Recruit Councilor Graves — he has Inner Circle access.",
+                    "next": "factions.neon-court.nc_079"
+                },
+                {
+                    "text": "Contact the Ghost Syndicate for outside support.",
+                    "next": "factions.neon-court.nc_080"
+                },
+                {
+                    "text": "Approach Chrome directly. The bodyguard has been acting strange.",
+                    "next": "factions.neon-court.nc_081"
+                }
+            ]
+        },
+        "nc_075": {
+            "id": "factions.neon-court.nc_075",
+            "title": "The Power Play",
+            "location": "velvet_private_quarters",
+            "text": [
+                "Velvet stares at you. 'You want to use this to... take over the Court?' She's quiet for a moment, then a slow, complicated smile crosses her face. 'That's either brilliant or insane. Possibly both.'",
+                "'Think about it,' you say. 'If we expose Prism's transfer method to the rest of the Court — not the public, just the Court — it undermines her authority. The Courtiers, the Associates, even some of the Inner Circle might not know the full truth. They think the host bodies are volunteers or clones. If they learn Prism is murdering people to stay alive...'",
+                "'Some will be horrified. Some won't care. But it creates instability. And in instability, there's opportunity.' Velvet nods slowly. 'We'd need to control the narrative. Present ourselves as the ethical alternative. Build a coalition before Prism can retaliate.'",
+                "'And we'd need to deal with Prism herself. She's two hundred years old, she's survived a dozen coup attempts, and she has Chrome. This isn't a chess game — it's a knife fight in the dark against someone who's been fighting in the dark since before either of us was born.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.planning_coup", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Build the coalition. Start with Councilor Graves.",
+                    "next": "factions.neon-court.nc_082"
+                },
+                {
+                    "text": "Go directly to Prism. Confront her with what you know.",
+                    "next": "factions.neon-court.nc_083"
+                }
+            ]
+        },
+        "nc_076": {
+            "id": "factions.neon-court.nc_076",
+            "title": "The Timeline",
+            "location": "velvet_private_quarters",
+            "text": [
+                "'Three days,' Velvet says. 'The transfer prep takes seventy-two hours. Asha is already in the final stages — consciousness thinning, personality being stripped layer by layer to make room for Prism's engram. By the time of the transfer, Asha's mind will be a blank slate. There's nothing left to save if we wait too long.'",
+                "'Prism's Inner Circle is gathered for the event. Dahlia is managing security logistics. Graves is providing medical oversight — he hates it, but refusing would end his position. Vex is handling the post-transfer celebration. Chrome, as always, guards the door.'",
+                "She meets your eyes. 'Three days. Whatever we're going to do, we need to decide now and act fast. This is the moment, one way or another. The Court pivots on what happens in that room on Floor 199.'",
+                "Three days. One choice that determines the fate of the Court, of Asha, and of everything you've built since that gilded invitation slipped under your door."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Plan a rescue for Asha.",
+                    "next": "factions.neon-court.nc_074"
+                },
+                {
+                    "text": "Plan a coup against Lady Prism.",
+                    "next": "factions.neon-court.nc_075"
+                },
+                {
+                    "text": "Do nothing. Let the transfer happen and maintain your position.",
+                    "next": "factions.neon-court.nc_084"
+                }
+            ]
+        },
+        "nc_077": {
+            "id": "factions.neon-court.nc_077",
+            "title": "Facing the Court",
+            "location": "court_trial_chamber",
+            "text": [
+                "You go to Velvet. She's waiting in the same trial chamber where you passed the Trial of Thorns — the symmetry isn't lost on you. 'I've bought you a window,' she says, 'but it's closing. Prism suspects you but hasn't confirmed it. If you can provide a plausible alternative source for the leak, you might survive this.'",
+                "The investigation is led by Dahlia, who enjoys it with visible relish. She interrogates you for three hours, probing for inconsistencies, watching your micro-expressions. It's the hardest conversation of your life.",
+                "You need to either convince Dahlia of your innocence or deflect suspicion onto someone else."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Blame the leak on a fabricated external source.",
+                    "next": "factions.neon-court.nc_085",
+                    "statCheck": { "stat": "charisma", "dc": 17 },
+                    "failNext": "factions.neon-court.nc_086"
+                },
+                {
+                    "text": "Admit to the leak and challenge Prism directly.",
+                    "next": "factions.neon-court.nc_087"
+                }
+            ]
+        },
+        "nc_078": {
+            "id": "factions.neon-court.nc_078",
+            "title": "The Escape",
+            "location": "lower_district_streets",
+            "text": [
+                "You run. The Court's tracking implant burns in your arm as you descend through the tower's service corridors, but you prepared for this — a black-market signal jammer purchased weeks ago, just in case. It buys you maybe six hours before they recalibrate.",
+                "By the time Chrome arrives at your quarters, you're already in the Lower District, buried in the crowds and chaos of Sector 7. The Ashen Circle provides safe harbor — Sister Cinder opens a door and pulls you inside without a word.",
+                "You've lost everything: the quarters, the credits, the wardrobe, the power. But you've kept your life and your evidence. From the Lower District, you watch the Harvest scandal unfold. The Court is damaged but not destroyed. Prism is still in power. The revolution you hoped to spark is a slow burn, not an explosion.",
+                "But the fire is lit. And you're free to fan it."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.fled_court", "value": true },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "exile" },
+                { "type": "modify_currency", "amount": -1000 }
+            ],
+            "choices": [
+                {
+                    "text": "Join the revolution against the Court from the outside.",
+                    "next": "factions.neon-court.nc_094"
+                }
+            ]
+        },
+        "nc_079": {
+            "id": "factions.neon-court.nc_079",
+            "title": "Graves's Decision",
+            "location": "graves_laboratory",
+            "text": [
+                "Councilor Graves listens to your plan with the expression of a man who's been waiting for this conversation for years. 'I've known about the host erasure since my first transfer oversight,' he says quietly. 'I've hated it. I've rationalized it. I've lost sleep over it. And I've done nothing, because doing something meant dying.'",
+                "He paces his lab, hands clasped behind his back. 'But my synthetic engram research is nearly complete. If we can stop this transfer and prove that synthetics are viable, we can end the Harvest and the host erasure in one move. Prism wouldn't need stolen bodies anymore.'",
+                "'I'll help. I have Inner Circle access. I can get you into Floor 199. But I need a guarantee: if this works, the Court transitions to synthetic technology. No more harvesting. No more murder. That's my price.'",
+                "You shake hands. Three days. The clock is ticking."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.graves_allied", "value": true },
+                { "type": "add_experience", "amount": 50 }
+            ],
+            "choices": [
+                {
+                    "text": "Prepare the rescue operation.",
+                    "next": "factions.neon-court.nc_088"
+                }
+            ]
+        },
+        "nc_080": {
+            "id": "factions.neon-court.nc_080",
+            "title": "Syndicate Backup",
+            "location": "lower_district_underground",
+            "text": [
+                "You reach out to your Ghost Syndicate contacts — Whisper, if the partnership was established, or cold contacts if not. The Syndicate is intrigued. Anything that destabilizes the Neon Court creates opportunities for them.",
+                "'We can provide a diversion,' the Syndicate operative says. 'A coordinated attack on three Court-owned nightclubs simultaneously. Every enforcer and security team in the tower will be pulled to respond. That gives you maybe thirty minutes with reduced security on the upper floors.'",
+                "'In return, we want the Court's memory synthesis formulas. The tech that makes their designer drugs. If the Court falls or weakens, we want to be ready to fill the vacuum.'",
+                "It's a steep price — handing Ghost Syndicate the keys to one of the Court's most profitable operations. But you need the diversion."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.syndicate_diversion", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the deal. The diversion is essential.",
+                    "next": "factions.neon-court.nc_088"
+                },
+                {
+                    "text": "Reject the price. Find another way to create a diversion.",
+                    "next": "factions.neon-court.nc_088"
+                }
+            ]
+        },
+        "nc_081": {
+            "id": "factions.neon-court.nc_081",
+            "title": "Chrome's Secret",
+            "location": "cloud_tower_seven",
+            "text": [
+                "You find Chrome in the tower's training facility — a vast space on Floor 180 where the bodyguard practices combat routines with mechanical precision. No one else is present. The facility is silent except for the sound of Chrome's movements through the air.",
+                "You speak to Chrome directly, knowing the bodyguard has never responded to anyone except Lady Prism. 'I know about Asha. I know about the transfer. I know what happens to the hosts.'",
+                "Chrome stops mid-routine. The mirror visor turns toward you. For a long, terrible moment, nothing happens.",
+                "Then Chrome reaches up and removes the visor.",
+                "The face underneath is young — impossibly young for someone who's served as Prism's bodyguard for decades. And the eyes... the eyes are full of a grief so deep it has become architecture, a structure built to contain pain.",
+                "'I was the first,' Chrome says. A woman's voice, raw from years of silence. 'The first host body. Prism used me, then moved on. But the procedure wasn't perfect back then. Part of me survived the erasure. Not enough to be who I was. Enough to remember what she did.'",
+                "'I've been waiting for someone inside the Court who would help me stop her. I'll get you into Floor 199. I'll deal with Prism myself.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.chrome_allied", "value": true },
+                { "type": "set_flag", "flag": "neon_court.chrome_secret", "value": true },
+                { "type": "add_experience", "amount": 75 }
+            ],
+            "choices": [
+                {
+                    "text": "Accept Chrome's help. Prepare the rescue.",
+                    "next": "factions.neon-court.nc_088"
+                }
+            ]
+        },
+        "nc_082": {
+            "id": "factions.neon-court.nc_082",
+            "title": "Building the Coalition",
+            "location": "neon_court_quarters",
+            "text": [
+                "You and Velvet spend two days in a frenzy of quiet politics. Graves joins immediately when approached — his opposition to the Harvest makes him a natural ally. Lord Vex is harder. He's a survivor, not an idealist, and his loyalty is to whoever holds power.",
+                "You present Vex with the truth about Prism's transfers and a simple argument: 'If Prism can erase anyone's consciousness and take their body, none of us are safe. Today it's volunteers from the Lower District. Tomorrow it might be one of us.'",
+                "Vex goes pale. The implications land. 'I'll support a change of leadership,' he says carefully, 'if — and only if — the transition is managed. No chaos. No vacuum. The Court's operations must continue. My operations must continue.'",
+                "Dahlia remains loyal to Prism. Chrome is an unknown quantity. The coalition is fragile — Graves for moral reasons, Vex for self-preservation, you and Velvet for something in between. But it's enough to move."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.coalition_built", "value": true },
+                { "type": "set_flag", "flag": "neon_court.vex_allied", "value": true },
+                { "type": "add_experience", "amount": 60 }
+            ],
+            "choices": [
+                {
+                    "text": "Launch the coup during Prism's transfer ceremony.",
+                    "next": "factions.neon-court.nc_088"
+                }
+            ]
+        },
+        "nc_083": {
+            "id": "factions.neon-court.nc_083",
+            "title": "Confronting Prism",
+            "location": "prism_private_chambers",
+            "text": [
+                "You request a private audience with Lady Prism. She grants it, which either means she doesn't suspect you or she's confident enough in her power that suspicion doesn't matter. You meet in her chambers on Floor 200 — alone, except for Chrome standing motionless by the door.",
+                "'I know about the host bodies,' you say. No preamble. No games. 'Asha. And everyone before her. You don't transfer consciousness to willing vessels. You erase people and move in.'",
+                "Prism's expression doesn't change. She studies you the way she studied you at your first meeting — like a collector evaluating an acquisition. 'Yes,' she says simply. 'I do. I have for two hundred years. Does that shock you?'",
+                "'The bodies I've worn were poor, desperate, damaged people with no futures. I gave their flesh purpose. I gave their existence meaning it never would have had otherwise. Is that murder? Or is it the ultimate form of recycling?' She smiles. 'You climbed very high, very fast, to arrive at this confrontation. What do you intend to do with it?'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.confronted_prism", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "\"End the Harvest. Adopt synthetic technology. Or I expose everything.\"",
+                    "next": "factions.neon-court.nc_089"
+                },
+                {
+                    "text": "\"Step down. The Court needs new leadership.\"",
+                    "next": "factions.neon-court.nc_090"
+                },
+                {
+                    "text": "\"Teach me. I want to understand immortality from your perspective.\"",
+                    "next": "factions.neon-court.nc_091"
+                }
+            ]
+        },
+        "nc_084": {
+            "id": "factions.neon-court.nc_084",
+            "title": "The Silent Witness",
+            "location": "prism_private_chambers",
+            "text": [
+                "You do nothing. You tell yourself it's strategic patience, but the truth is simpler and uglier: you've been inside the machine too long. The luxury, the power, the insulation from consequences — it's changed your calculus. Asha is a stranger. Your position is everything you've worked for.",
+                "You attend the transfer ceremony as a witness. Floor 199 is prepared like an operating theater crossed with a temple — clinical equipment surrounded by ceremonial lighting and flowers. Asha lies on the central platform, sedated, her consciousness already thinned to a whisper. Lady Prism reclines on an adjacent platform, serene.",
+                "The procedure takes four hours. You watch a two-hundred-year-old mind pour itself into a twenty-year-old body. Asha's face changes — subtly at first, then dramatically. New expressions, new light in the eyes, new movements. By the end, Asha is gone. Prism wears her body like a new coat, stretching, testing, smiling.",
+                "'Young again,' Prism says, flexing new hands. She looks at you. 'You stayed. You watched. You chose comfort over conscience. That makes you one of us.' The words feel like a door closing."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.watched_transfer", "value": true },
+                { "type": "set_flag", "flag": "neon_court.asha_lost", "value": true },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 10 },
+                { "type": "add_experience", "amount": 30 }
+            ],
+            "choices": [
+                {
+                    "text": "Accept your place. Rise to Inner Circle.",
+                    "next": "factions.neon-court.nc_096"
+                },
+                {
+                    "text": "The guilt is too much. Plan to bring the Court down from within.",
+                    "next": "factions.neon-court.nc_075"
+                }
+            ]
+        },
+        "nc_085": {
+            "id": "factions.neon-court.nc_085",
+            "title": "The Deflection",
+            "location": "court_trial_chamber",
+            "text": [
+                "Your performance is masterful. You construct a narrative involving a disgruntled former clinic technician — someone who exists in the Court's records but left three months ago under unfavorable circumstances. You plant just enough detail to make the story credible and just enough doubt about your own involvement to make investigating you seem like a waste of resources.",
+                "Dahlia isn't entirely convinced, but she's pragmatic. Chasing the fabricated lead is faster than interrogating a Courtier with political connections. The investigation shifts targets. You breathe again.",
+                "Velvet is impressed and troubled. 'You lie very well,' she observes. 'I'm not sure if that's a compliment or a concern.' But the immediate danger passes. The Harvest scandal continues to burn in the public sphere, weakening the Court's reputation while you remain inside, protected, positioned.",
+                "The question now is what to do with that position."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.survived_investigation", "value": true },
+                { "type": "add_experience", "amount": 65 }
+            ],
+            "choices": [
+                {
+                    "text": "Use the chaos to push for reform from within.",
+                    "next": "factions.neon-court.nc_072"
+                }
+            ]
+        },
+        "nc_086": {
+            "id": "factions.neon-court.nc_086",
+            "title": "Caught",
+            "location": "court_trial_chamber",
+            "text": [
+                "Dahlia sees through you. Maybe your tells are too obvious, maybe she's simply better at this game than you are. 'You're lying,' she says flatly. 'Chrome — detain the Courtier.'",
+                "Chrome moves toward you. Velvet steps between you and the bodyguard, a move that costs her everything. 'If you touch them, I walk. And I take my entire network of contacts with me.'",
+                "The standoff lasts three heartbeats. Then Prism's voice comes through the chamber's speakers: 'Enough. Bring them both to me. This is no longer Dahlia's investigation. It's mine.'",
+                "You and Velvet are escorted to Floor 200. Whatever happens next, you face it together."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.caught_by_court", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Face Lady Prism's judgment.",
+                    "next": "factions.neon-court.nc_087"
+                }
+            ]
+        },
+        "nc_087": {
+            "id": "factions.neon-court.nc_087",
+            "title": "Prism's Judgment",
+            "location": "prism_private_chambers",
+            "text": [
+                "Lady Prism sits in a chair that's more throne than furniture, watching you with the patience of someone who's had centuries to learn it. Chrome stands behind her. Velvet is beside you, defiant but afraid.",
+                "'You leaked the Harvest data,' Prism says. Not a question. 'You exposed the Court's most sensitive operation to public scrutiny. You've cost us contracts, clients, political capital, and at least three Inner Circle members' reputations.'",
+                "She stands and walks toward you. 'The old me would have you harvested. Fed into the stack network piece by piece until nothing was left. But I'm curious — you rose faster than anyone in decades. You showed brilliance, adaptability, and a moral center that I find simultaneously infuriating and compelling.'",
+                "'So I'm giving you a choice. A real one, not the kind the Court usually offers.' Her ancient eyes bore into yours. 'Join my Inner Circle. Help me reform the Harvest from within — slower than you'd like, but permanently. Or leave the Court and take your revolution to the streets, where it will burn bright and change nothing.'",
+                "'What do you choose?'"
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Accept. Join the Inner Circle and reform from within.",
+                    "next": "factions.neon-court.nc_096"
+                },
+                {
+                    "text": "Refuse. Leave the Court and fight from outside.",
+                    "next": "factions.neon-court.nc_094"
+                },
+                {
+                    "text": "\"Neither. I'm taking the Court from you. Tonight.\"",
+                    "next": "factions.neon-court.nc_088"
+                }
+            ]
+        },
+        "nc_088": {
+            "id": "factions.neon-court.nc_088",
+            "title": "The Night of Prisms",
+            "location": "cloud_tower_seven",
+            "text": [
+                "It happens on the night of the transfer ceremony. Whether through careful planning or desperate improvisation, all the pieces converge on Floor 199 of Cloud Tower Seven.",
+                "The diversion hits first — Ghost Syndicate strikes, or a manufactured crisis, or simply the chaos of the Harvest scandal reaching critical mass. Court enforcers scramble. The tower's security grid lights up with alerts. In the confusion, you move.",
+                "Velvet is with you. Graves provides Inner Circle access codes. Chrome — if allied — leads the way, the tower's most dangerous guardian now turned against its master. If Chrome isn't with you, you fight through two security checkpoints that leave you battered but moving.",
+                "Floor 199. The medical suite. Asha on the platform, consciousness flickering like a candle in wind. Prism on the adjacent platform, eyes closed, ready for transfer. Dahlia at the controls. And then you walk in."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.night_of_prisms", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Stop the transfer. Save Asha at any cost.",
+                    "next": "factions.neon-court.nc_092"
+                },
+                {
+                    "text": "Confront Prism. Demand her surrender and a peaceful transition of power.",
+                    "next": "factions.neon-court.nc_089"
+                },
+                {
+                    "text": "Redirect the transfer — put Prism's consciousness into a synthetic host instead.",
+                    "next": "factions.neon-court.nc_093",
+                    "statCheck": { "stat": "intelligence", "dc": 16 },
+                    "failNext": "factions.neon-court.nc_092"
+                }
+            ]
+        },
+        "nc_089": {
+            "id": "factions.neon-court.nc_089",
+            "title": "The Ultimatum",
+            "location": "prism_private_chambers",
+            "text": [
+                "You face Lady Prism across the room that has been her seat of power for decades. Behind you, your allies — however many you've gathered. Before you, two centuries of accumulated power, cunning, and ruthlessness.",
+                "'The Harvest ends,' you say. 'The host erasure ends. The Court transitions to synthetic memory technology. And you step down from leadership.'",
+                "Prism laughs. Not cruelly — genuinely, with the amusement of someone who's seen this before. 'Step down? My dear, I am the Court. Without me, this entire structure — the clinics, the clubs, the political networks, the stack technology itself — collapses. You're not threatening a leader. You're threatening a civilization.'",
+                "She's not entirely wrong. But she's not entirely right either. The Court's power comes from systems, not just one consciousness. And systems can survive changes at the top.",
+                "'Last chance,' you say."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Follow through. End Prism's reign.",
+                    "next": "factions.neon-court.nc_092"
+                },
+                {
+                    "text": "Negotiate — Prism reforms, but keeps a reduced role.",
+                    "next": "factions.neon-court.nc_096",
+                    "statCheck": { "stat": "charisma", "dc": 18 },
+                    "failNext": "factions.neon-court.nc_092"
+                }
+            ]
+        },
+        "nc_090": {
+            "id": "factions.neon-court.nc_090",
+            "title": "Prism's Response",
+            "location": "prism_private_chambers",
+            "text": [
+                "Prism's amusement fades. 'Step down,' she repeats, tasting the words like a new flavor. 'No one has said that to me in... oh, sixty years? Seventy? The last one who tried is currently a decorative installation in the Gallery. Lovely expression, frozen permanently in surprise.'",
+                "'You have conviction. I admire that. But conviction without power is just noise.' She signals, and Chrome steps forward. Or should. Chrome doesn't move.",
+                "The bodyguard stands perfectly still, visor reflecting the room. Prism turns to look, and for the first time in perhaps decades, uncertainty crosses her face. 'Chrome?'",
+                "Whatever happens next depends on the alliances you've built and the choices you've made."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Press the advantage while Prism is uncertain.",
+                    "next": "factions.neon-court.nc_092"
+                }
+            ]
+        },
+        "nc_091": {
+            "id": "factions.neon-court.nc_091",
+            "title": "The Temptation of Eternity",
+            "location": "prism_private_chambers",
+            "text": [
+                "Prism's expression shifts — from guarded amusement to something like genuine interest. 'You want to understand. Not judge, not fight, not reform. Understand.' She sits back, considering you with fresh eyes.",
+                "'Two hundred and twelve years,' she says softly. 'I was born in the old world, before the towers, before the stacks, before any of this. I watched the world rebuild itself. I helped build it. And I realized that the greatest tragedy of human existence isn't suffering — it's that we learn just enough to be wise, and then we die before we can use that wisdom.'",
+                "'The bodies I've worn... yes, they were people. People who would have lived fifty, sixty years and been forgotten. I remember every one of them. Their memories, their feelings, their last thoughts before I moved in. I carry them all. Is that murder? Or is it the closest thing to true remembrance?'",
+                "She extends her hand. 'I can give you this. Immortality. Not the commercial stack transfer — the real thing. My process. You would live for centuries, wearing bodies like coats, accumulating wisdom, power, experience beyond imagination. All it costs is... well. You know what it costs.'"
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.tempted_by_immortality", "value": true }
+            ],
+            "choices": [
+                {
+                    "text": "Accept. Become immortal. Become the next Prism.",
+                    "next": "factions.neon-court.nc_098"
+                },
+                {
+                    "text": "Refuse. Some costs are too high.",
+                    "next": "factions.neon-court.nc_092"
+                }
+            ]
+        },
+        "nc_092": {
+            "id": "factions.neon-court.nc_092",
+            "title": "The Fall of Prism",
+            "location": "prism_private_chambers",
+            "text": [
+                "It ends quickly, when it ends. Prism has survived two centuries through intelligence and adaptability, but she's never faced a coalition attacking from inside and outside simultaneously. Graves locks the transfer equipment. Chrome — if allied — physically restrains Prism. If Chrome isn't with you, Velvet disables the security grid while you confront Prism directly.",
+                "Dahlia fights for Prism to the last, but Lord Vex switches sides at the critical moment, as you knew he would. The Marchioness is restrained by her own guards, snarling promises of revenge that echo off the walls.",
+                "Prism, held in place or simply defeated, looks at you with those ancient eyes. 'You'll regret this,' she says calmly. 'Not because I'll punish you. Because you'll discover that leading the Court is harder than judging it. Every compromise I made, you'll make. Every body I wore, you'll understand why. Give it time.'",
+                "Asha is saved — pulled from the transfer platform before the procedure could complete, her consciousness battered but intact. She won't remember what almost happened to her. That might be a mercy."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.prism_deposed", "value": true },
+                { "type": "set_flag", "flag": "neon_court.asha_saved", "value": true },
+                { "type": "add_experience", "amount": 100 }
+            ],
+            "choices": [
+                {
+                    "text": "Take leadership of the Neon Court. Reform it from the top.",
+                    "next": "factions.neon-court.nc_095"
+                },
+                {
+                    "text": "Dismantle the Court entirely. No one should have this power.",
+                    "next": "factions.neon-court.nc_097"
+                },
+                {
+                    "text": "Install Graves as leader with a reform mandate.",
+                    "next": "factions.neon-court.nc_096"
+                }
+            ]
+        },
+        "nc_093": {
+            "id": "factions.neon-court.nc_093",
+            "title": "The Synthetic Solution",
+            "location": "prism_private_chambers",
+            "text": [
+                "In a stroke of desperate brilliance, you modify the transfer equipment — rerouting Prism's consciousness not into Asha's body but into a synthetic host that Graves has been developing. The prototype isn't perfect, but it's functional. A body without a mind to erase. A vessel without a victim.",
+                "The transfer initiates before Prism can object. Her consciousness streams out of her dying body and into the synthetic — a jarring, imperfect process that leaves the ancient mind disoriented and weakened but alive. Asha is disconnected from the equipment, consciousness intact.",
+                "Prism opens new eyes — synthetic eyes, in a synthetic face. She looks at her artificial hands with an expression of horror and wonder. 'What have you done?'",
+                "'Given you immortality without the murder,' you reply. 'The Court's technology just evolved. Welcome to the future.'",
+                "The Inner Circle watches. Graves is elated. Vex is calculating. Dahlia is furious. And Chrome — Chrome is weeping behind the visor, silently, watching the monster that consumed her original self trapped in a body made of circuits and polymer instead of stolen flesh."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.synthetic_transfer", "value": true },
+                { "type": "set_flag", "flag": "neon_court.asha_saved", "value": true },
+                { "type": "set_flag", "flag": "neon_court.prism_synthetic", "value": true },
+                { "type": "add_experience", "amount": 120 }
+            ],
+            "choices": [
+                {
+                    "text": "Propose a new Court structure with synthetic technology at its core.",
+                    "next": "factions.neon-court.nc_095"
+                }
+            ]
+        },
+        "nc_094": {
+            "id": "factions.neon-court.nc_094",
+            "title": "Ending — The Revolutionary",
+            "location": "lower_district_streets",
+            "text": [
+                "You leave the Neon Court behind — the luxury, the power, the gilded cage. The Lower District welcomes you back with the indifferent embrace of a world that never noticed you left. But you're not the same person who received that violet-edged invitation. You have knowledge, connections, and a burning purpose.",
+                "The Ashen Circle becomes your base of operations. Sister Cinder introduces you to a network of resistance cells that have been fighting the Court's influence for years. With your insider knowledge, their operations become sharper, more targeted. Harvest clinics are exposed and shut down. Court operatives are identified and turned. The slow work of revolution continues.",
+                "Velvet sends encrypted messages sometimes. She's still inside, still playing the game, feeding you information when she can. The Court weakens under sustained pressure from within and without. It may take years, but the machine is breaking down.",
+                "On clear nights, you look up at Cloud Tower Seven and remember what it felt like to live above the clouds. Then you look at the people around you — real, unmodified, struggling, alive — and you remember why you came back down.",
+                "The revolution isn't glamorous. But it's honest. And it's yours."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.ending", "value": "revolutionary" },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "revolutionary" },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 30 },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": -30 },
+                { "type": "add_experience", "amount": 150 }
+            ],
+            "choices": [],
+            "isEnding": true
+        },
+        "nc_095": {
+            "id": "factions.neon-court.nc_095",
+            "title": "Ending — The New Court",
+            "location": "prism_private_chambers",
+            "text": [
+                "You take the throne. Not Prism's literal chair — you have that removed, replaced with a round table — but the mantle of leadership. The Neon Court under your rule is a different beast: still powerful, still decadent, still the city's social and technological elite, but with new rules and new limits.",
+                "The Harvest is abolished. Graves's synthetic memory technology becomes the Court's new foundation — stack transfers without victims, immortality without murder. It's less efficient, less vivid, and some of the old guard complain endlessly about the 'quality decline.' But nobody dies for someone else's extra century.",
+                "Velvet becomes your right hand — officially, this time. Chrome stays on as security chief, the visor finally removed, the woman underneath allowed to exist as herself for the first time in decades. Lord Vex manages the nightlife empire with his usual theatrical flair. Graves oversees the technology transition. Dahlia is exiled, her assets seized, her network dismantled.",
+                "Lady Prism, whether imprisoned or transferred to a synthetic body, watches from whatever cage you've built for her. 'Give it time,' she told you. And she was right — every day brings compromises, difficult choices, the grinding weight of power. But you make them differently than she did. Imperfectly, sometimes poorly, but with a conscience that you refuse to let atrophy.",
+                "The Neon Court endures. Changed, humbled, evolving. And at its center, you — the nobody from the Lower District who climbed the highest tower in the city and found, at the top, that the view is only worth having if you remember where you started."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.ending", "value": "new_leader" },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "leader" },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 30 },
+                { "type": "modify_currency", "amount": 5000 },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "isEnding": true
+        },
+        "nc_096": {
+            "id": "factions.neon-court.nc_096",
+            "title": "Ending — The Inner Circle",
+            "location": "court_council_chambers",
+            "text": [
+                "You join the Inner Circle — not as Prism's puppet, but as a voice of reform within the Court's highest ranks. It's the most difficult path: working alongside people who've enabled exploitation for decades, arguing for change in increments measured in years rather than revolutions.",
+                "Prism remains in power, but your presence forces compromises. The Harvest is scaled back — not eliminated, but reduced, with genuine volunteer programs supplementing the forced extractions. Graves's synthetic research receives full funding. Chrome is given a choice about their continued service for the first time ever.",
+                "Velvet rises with you, taking a seat at the council table she never expected to occupy. Together, you represent a new generation within the Court — one that remembers the Lower District, that sees the people below the clouds as people rather than resources.",
+                "It's not a revolution. It's evolution, slow and frustrating and full of compromise. Dahlia fights you at every turn. Prism watches with ancient amusement, occasionally supporting your reforms, occasionally blocking them, always calculating. The system bends but doesn't break.",
+                "Is it enough? Some nights, staring down at the storm layer from Floor 195, you're not sure. But the alternative — burning it all down — would leave nothing to rebuild. So you stay. You push. You compromise. And you hope that the small changes accumulate into something that matters."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.ending", "value": "inner_circle_reformer" },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "inner_circle" },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 20 },
+                { "type": "modify_currency", "amount": 2000 },
+                { "type": "add_experience", "amount": 175 }
+            ],
+            "choices": [],
+            "isEnding": true
+        },
+        "nc_097": {
+            "id": "factions.neon-court.nc_097",
+            "title": "Ending — The Dissolution",
+            "location": "cloud_tower_seven",
+            "text": [
+                "You tear it down. All of it. The Neon Court's assets are seized and distributed. The stack clinics are opened to public oversight. The memory technology is released to the public domain. The cloud towers' exclusive upper floors are opened to refugees from the Lower District. For one chaotic, beautiful, terrifying week, the city's power structure inverts.",
+                "Lady Prism's consciousness is extracted from her body and stored — not destroyed, but archived, a two-hundred-year-old mind in digital suspension. 'You'll call for me eventually,' she says as the procedure begins. 'When you realize that power without structure is just chaos with better lighting.'",
+                "The aftermath is messy. Without the Court's infrastructure, the city's stack technology degrades. Memory clinics close. The immortality industry collapses, taking thousands of jobs with it. The Iron Collective and Ghost Syndicate rush to fill the vacuum, carving the Court's territory into competing fiefdoms that are, in some ways, worse than what came before.",
+                "But the Harvest is over. The host erasures are over. No more Lower District residents disappearing into clinics that promise hope and deliver oblivion. That's something. That's real.",
+                "Whether it's worth the cost depends on who you ask. The former Court elites, newly mortal, would say no. The Lower District families whose members were being harvested would say yes. You stand in the middle, watching the old world burn and hoping the new one is worth the ashes."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.ending", "value": "dissolution" },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "destroyer" },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": -50 },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 20 },
+                { "type": "modify_reputation", "faction": "ironCollective", "amount": 10 },
+                { "type": "add_experience", "amount": 175 }
+            ],
+            "choices": [],
+            "isEnding": true
+        },
+        "nc_098": {
+            "id": "factions.neon-court.nc_098",
+            "title": "Ending — True Immortality",
+            "location": "prism_private_chambers",
+            "text": [
+                "You accept Prism's offer. The procedure is performed in her private chambers — just you, Prism, and the ancient technology that has sustained her through centuries. She guides you through the process with the tenderness of a parent teaching a child to walk.",
+                "Your consciousness is copied, refined, and prepared for transfer. A host body is selected — another Lower District resident, another life to be overwritten. You tell yourself this one is a volunteer. Prism assures you they always are. You don't look too closely at the paperwork.",
+                "The transfer is instantaneous and eternal. One moment you're in your old body; the next, you're someone else. Younger, stronger, with decades of life ahead. Your original body is discarded — cremated, recycled, forgotten. You wear a new face in the mirror and slowly, disturbingly, begin to love it.",
+                "Prism takes you under her wing. You become her protégé, her successor-in-waiting, the second immortal in the Neon Court's history. Together, you rule from the cloud tops, watching generations pass below like weather patterns.",
+                "Velvet doesn't speak to you anymore. Chrome watches with those grieving eyes. The Lower District continues to burn through lives that you no longer share. You've transcended mortality. Whether you've transcended humanity is a question you stop asking after the first century, because the answer frightens you.",
+                "You live forever. It costs you everything that made living worthwhile."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.ending", "value": "true_immortality" },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "immortal" },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 30 },
+                { "type": "modify_stat", "stat": "constitution", "amount": 5 },
+                { "type": "modify_stat", "stat": "charisma", "amount": 5 },
+                { "type": "add_experience", "amount": 200 }
+            ],
+            "choices": [],
+            "isEnding": true
+        },
+        "nc_099": {
+            "id": "factions.neon-court.nc_099",
+            "title": "Ending — The Double Agent",
+            "location": "neon_court_quarters",
+            "text": [
+                "You play every side. Court member to the elite, informant to the Ashen Circle, business partner to the Ghost Syndicate, strategic contact for the Iron Collective. You become the node through which information flows — the one person in the city who talks to everyone and belongs to no one.",
+                "It's exhausting, exhilarating, and ultimately lonely. Velvet suspects but can't prove anything. Chrome watches but doesn't act. Lady Prism either doesn't know or doesn't care, which amounts to the same thing when you're dealing with a two-hundred-year-old mind.",
+                "The information you broker prevents wars, exposes corruption, saves lives, and destroys them. You're responsible for the Iron Collective raiding two Harvest clinics, saving dozens of victims. You're also responsible for tipping the Court about an Ashen Circle safe house, resulting in arrests that you feel in your chest like broken ribs.",
+                "Every faction thinks you're loyal to them. None of them are right. You're loyal to the balance — the fragile equilibrium between powers that prevents any single faction from dominating completely. It's not justice. It's not revolution. It's maintenance, performed by someone who knows all the machines intimately enough to keep them from grinding each other to pieces.",
+                "When you die — and you will die, because you refused Prism's immortality offer — the balance will shift. But while you live, you hold the center. And the center, however unstable, however compromised, is the only place where all the city's people have a chance."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.ending", "value": "double_agent" },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "double_agent" },
+                { "type": "modify_reputation", "faction": "neonCourt", "amount": 5 },
+                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 5 },
+                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 5 },
+                { "type": "modify_reputation", "faction": "ironCollective", "amount": 5 },
+                { "type": "add_experience", "amount": 175 }
+            ],
+            "choices": [],
+            "isEnding": true
+        },
+        "nc_100": {
+            "id": "factions.neon-court.nc_100",
+            "title": "Ending — Velvet's Dawn",
+            "location": "velvet_private_quarters",
+            "text": [
+                "In the end, it's not about the Court. It's about Velvet.",
+                "When the dust settles — after the power struggles, the revelations, the choices that cut like glass — you find her in her quarters on Floor 160, watching lightning paint the clouds below. The color-shifting eyes cycle slowly: amber, violet, silver, amber. She's tired. You both are.",
+                "'We could leave,' she says, not looking at you. 'Both of us. Walk away from the Court, the factions, all of it. Find some forgotten corner of the world where the towers can't reach and the stack network doesn't matter. Be nobody for a while.'",
+                "You take her hand. The surveillance cameras watch but you don't care anymore. Let the Court see. Let Prism see. Let the whole gleaming, rotten, beautiful machine see two of its components choosing each other over the engine.",
+                "You leave that night. No announcement, no dramatic exit. Just two people descending Floor by Floor through the cloud layer, past the neon and the rain, past the drones and the vendors, past the life you built and the person you became. You descend until the towers are just lights above you, distant as stars.",
+                "The world below the clouds is hard and ugly and real. The air smells like rust and ozone. The streets are crowded with people who've never seen the inside of a cloud tower and never will. It's not paradise. It's not glamorous. But Velvet's hand is warm in yours, and when she smiles — really smiles, not the professional version — you see someone who's been waiting eleven years to exist outside a role.",
+                "The Court will survive without you. The factions will continue their wars. The Harvest will grind on until someone else stops it. But here, in the rain, holding the hand of someone who chose humanity over immortality, you've found something the Neon Court could never sell: a reason to be mortal."
+            ],
+            "onEnter": [
+                { "type": "set_flag", "flag": "neon_court.ending", "value": "velvet_romance" },
+                { "type": "set_flag", "flag": "neon_court.rank", "value": "departed" },
+                { "type": "set_flag", "flag": "neon_court.velvet_romance_ending", "value": true },
+                { "type": "add_experience", "amount": 150 }
+            ],
+            "choices": [],
+            "isEnding": true
+        }
+    }
+}

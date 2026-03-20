@@ -35,6 +35,9 @@ window.Latency.Typewriter = (function () {
     /** @type {boolean} Whether a type operation is currently in progress. */
     var _typing = false;
 
+    /** @type {number} Counter for visible characters typed, used for SFX throttling. */
+    var _visibleCharCount = 0;
+
     /** @type {Function|null} Bound skip handler for keyboard/click events. */
     var _skipHandler = null;
 
@@ -163,6 +166,7 @@ window.Latency.Typewriter = (function () {
 
         _skipRequested = false;
         _typing = true;
+        _visibleCharCount = 0;
 
         _installSkipListener(element);
 
@@ -214,6 +218,12 @@ window.Latency.Typewriter = (function () {
 
             // Visible character — append and schedule next
             element.innerHTML += token;
+
+            // Play subtle typewriter SFX every 3rd visible character
+            _visibleCharCount++;
+            if (_visibleCharCount % 3 === 0 && window.Latency.SfxManager) {
+                window.Latency.SfxManager.play('typewriter');
+            }
 
             // Auto-scroll the narrative panel to keep new text visible
             var scrollParent = element.closest('.gp-narrative-panel') || element.parentElement;

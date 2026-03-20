@@ -282,6 +282,27 @@ window.Latency.Screens.SettingsScreen = (function () {
             }
         })));
 
+        // SFX Volume
+        var sfxVolume = _getSfxVolume();
+        rows.appendChild(_buildRow('SFX Volume', _buildSlider({
+            min: 0, max: 100, step: 5, value: Math.round(sfxVolume * 100),
+            blocks: 10,
+            formatValue: function (v) { return v + '%'; },
+            onChange: function (v) {
+                if (window.Latency.SfxManager && window.Latency.SfxManager.setVolume) {
+                    window.Latency.SfxManager.setVolume(v / 100);
+                }
+            }
+        })));
+
+        // SFX Mute
+        var sfxMuted = _getSfxMuted();
+        rows.appendChild(_buildRow('SFX Mute', _buildToggle(sfxMuted, function (muted) {
+            if (window.Latency.SfxManager && window.Latency.SfxManager.setMuted) {
+                window.Latency.SfxManager.setMuted(muted);
+            }
+        })));
+
         // ── VOICE section ──
         rows.appendChild(_el('div', 'settings-section-header', 'VOICE'));
 
@@ -456,6 +477,20 @@ window.Latency.Screens.SettingsScreen = (function () {
     function _getMusicMuted() {
         if (window.Latency.MusicManager && typeof window.Latency.MusicManager.isMuted === 'function') {
             return window.Latency.MusicManager.isMuted();
+        }
+        return false;
+    }
+
+    function _getSfxVolume() {
+        if (window.Latency.SfxManager && typeof window.Latency.SfxManager.getVolume === 'function') {
+            return window.Latency.SfxManager.getVolume();
+        }
+        return 0.6;
+    }
+
+    function _getSfxMuted() {
+        if (window.Latency.SfxManager && typeof window.Latency.SfxManager.isMuted === 'function') {
+            return window.Latency.SfxManager.isMuted();
         }
         return false;
     }

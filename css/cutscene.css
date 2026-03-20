@@ -1,13 +1,14 @@
 /* ============================================================
  * LATENCY - Cutscene Screen Styles
  * ============================================================
- * Terminal-aesthetic cinematic text sequences with ASCII art,
- * mood backgrounds, typewriter narration, CRT scanline overlay,
- * and fade transitions between slides.
+ * CINEMATIC terminal-aesthetic with animated backgrounds,
+ * floating data particles, glitch effects, mood gradients,
+ * cinematic letterboxing, vignette overlays, CRT scanlines,
+ * and dynamic text presentation.
  * ============================================================ */
 
 /* ----------------------------------------------------------
- * Screen container
+ * Screen container — full cinematic viewport
  * ---------------------------------------------------------- */
 
 .cutscene-screen {
@@ -23,30 +24,218 @@
     color: var(--text-primary, #00ff88);
     position: relative;
     overflow: hidden;
-    padding: var(--space-8, 2rem) var(--space-4, 1rem);
+    padding: 4rem 2rem;
     cursor: pointer;
     user-select: none;
-    transition: background-color var(--transition-cinematic, 800ms ease-in-out);
+    transition: background-color 1.2s ease-in-out;
+    background-color: #000;
 }
 
 /* ----------------------------------------------------------
- * Mood backgrounds
+ * Cinematic letterbox bars (top & bottom)
  * ---------------------------------------------------------- */
 
-.cs-mood-dark {
-    background-color: #000000;
+.cs-letterbox-top,
+.cs-letterbox-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #000;
+    z-index: 100;
+    pointer-events: none;
 }
 
-.cs-mood-red {
-    background-color: #0f0404;
+.cs-letterbox-top {
+    top: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
 }
 
-.cs-mood-blue {
-    background-color: #040408;
+.cs-letterbox-bottom {
+    bottom: 0;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.8);
 }
 
 /* ----------------------------------------------------------
- * CRT scanline overlay
+ * Animated background gradient layer
+ * ---------------------------------------------------------- */
+
+.cs-bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.6;
+    transition: opacity 1.5s ease;
+    pointer-events: none;
+}
+
+/* Mood-specific animated gradients */
+.cs-mood-dark .cs-bg-gradient {
+    background: radial-gradient(ellipse at 50% 50%, #0a0a1a 0%, #000 70%);
+    animation: cs-bg-breathe-dark 8s ease-in-out infinite;
+}
+
+.cs-mood-red .cs-bg-gradient {
+    background: radial-gradient(ellipse at 30% 70%, #1a0505 0%, #0a0000 40%, #000 80%);
+    animation: cs-bg-breathe-red 6s ease-in-out infinite;
+}
+
+.cs-mood-blue .cs-bg-gradient {
+    background: radial-gradient(ellipse at 70% 30%, #050a1a 0%, #000510 40%, #000 80%);
+    animation: cs-bg-breathe-blue 7s ease-in-out infinite;
+}
+
+.cs-mood-tension .cs-bg-gradient {
+    background: radial-gradient(ellipse at 50% 50%, #1a0808 0%, #0f0000 30%, #000 70%);
+    animation: cs-bg-pulse-tension 3s ease-in-out infinite;
+}
+
+.cs-mood-warm .cs-bg-gradient {
+    background: radial-gradient(ellipse at 40% 60%, #1a1005 0%, #0f0800 40%, #000 80%);
+    animation: cs-bg-breathe-warm 8s ease-in-out infinite;
+}
+
+.cs-mood-eerie .cs-bg-gradient {
+    background: radial-gradient(ellipse at 60% 40%, #0a0520 0%, #050010 40%, #000 80%);
+    animation: cs-bg-breathe-eerie 5s ease-in-out infinite;
+}
+
+@keyframes cs-bg-breathe-dark {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes cs-bg-breathe-red {
+    0%, 100% { opacity: 0.5; background-position: 30% 70%; }
+    50% { opacity: 0.8; background-position: 70% 30%; }
+}
+
+@keyframes cs-bg-breathe-blue {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes cs-bg-pulse-tension {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.9; }
+}
+
+@keyframes cs-bg-breathe-warm {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes cs-bg-breathe-eerie {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    33% { opacity: 0.8; transform: scale(1.02); }
+    66% { opacity: 0.3; transform: scale(0.98); }
+}
+
+/* ----------------------------------------------------------
+ * Vignette overlay (dark edges, bright center)
+ * ---------------------------------------------------------- */
+
+.cs-vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(
+        ellipse at 50% 50%,
+        transparent 40%,
+        rgba(0, 0, 0, 0.4) 70%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+}
+
+/* ----------------------------------------------------------
+ * Floating data particles (CSS-only animated elements)
+ * ---------------------------------------------------------- */
+
+.cs-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.cs-particle {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    opacity: 0;
+    pointer-events: none;
+    color: #00ff88;
+    text-shadow: 0 0 4px currentColor;
+    animation: cs-particle-float linear infinite;
+}
+
+.cs-particle:nth-child(odd) {
+    color: #00d4ff;
+}
+
+.cs-particle:nth-child(3n) {
+    color: #ff6b35;
+    font-size: 8px;
+}
+
+@keyframes cs-particle-float {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) translateX(0);
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px) translateX(30px);
+    }
+}
+
+/* ----------------------------------------------------------
+ * Horizontal scan line that sweeps across the screen
+ * ---------------------------------------------------------- */
+
+.cs-sweep-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 255, 136, 0.1) 20%,
+        rgba(0, 255, 136, 0.4) 50%,
+        rgba(0, 255, 136, 0.1) 80%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 3;
+    animation: cs-sweep 8s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes cs-sweep {
+    0% { top: -2px; }
+    100% { top: 100%; }
+}
+
+/* ----------------------------------------------------------
+ * CRT scanline overlay (enhanced)
  * ---------------------------------------------------------- */
 
 .cs-scanlines {
@@ -56,29 +245,126 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: var(--z-overlay, 50);
+    z-index: 50;
     background: repeating-linear-gradient(
         to bottom,
         transparent,
-        transparent var(--scanline-size, 2px),
-        rgba(0, 0, 0, var(--scanline-opacity, 0.04)) var(--scanline-size, 2px),
-        rgba(0, 0, 0, var(--scanline-opacity, 0.04)) calc(var(--scanline-size, 2px) * 2)
+        transparent 2px,
+        rgba(0, 0, 0, 0.06) 2px,
+        rgba(0, 0, 0, 0.06) 4px
     );
 }
 
 /* ----------------------------------------------------------
- * Slide counter (top-right, dim)
+ * Corner frame decorations (cyberpunk UI frame)
+ * ---------------------------------------------------------- */
+
+.cs-frame-corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.cs-frame-corner::before,
+.cs-frame-corner::after {
+    content: '';
+    position: absolute;
+    background: #00ff88;
+    box-shadow: 0 0 6px #00ff88;
+}
+
+.cs-frame-tl {
+    top: 70px;
+    left: 20px;
+}
+.cs-frame-tl::before { top: 0; left: 0; width: 20px; height: 1px; }
+.cs-frame-tl::after  { top: 0; left: 0; width: 1px; height: 20px; }
+
+.cs-frame-tr {
+    top: 70px;
+    right: 20px;
+}
+.cs-frame-tr::before { top: 0; right: 0; width: 20px; height: 1px; }
+.cs-frame-tr::after  { top: 0; right: 0; width: 1px; height: 20px; }
+
+.cs-frame-bl {
+    bottom: 70px;
+    left: 20px;
+}
+.cs-frame-bl::before { bottom: 0; left: 0; width: 20px; height: 1px; }
+.cs-frame-bl::after  { bottom: 0; left: 0; width: 1px; height: 20px; }
+
+.cs-frame-br {
+    bottom: 70px;
+    right: 20px;
+}
+.cs-frame-br::before { bottom: 0; right: 0; width: 20px; height: 1px; }
+.cs-frame-br::after  { bottom: 0; right: 0; width: 1px; height: 20px; }
+
+/* ----------------------------------------------------------
+ * Slide counter (top-right, dim, inside letterbox)
  * ---------------------------------------------------------- */
 
 .cs-slide-counter {
     position: absolute;
-    top: var(--space-4, 1rem);
-    right: var(--space-4, 1rem);
-    font-size: var(--text-sm, 0.75rem);
+    top: 75px;
+    right: 30px;
+    font-size: 0.7rem;
     color: var(--text-dim, #445566);
-    letter-spacing: var(--tracking-wide, 0.05em);
-    z-index: var(--z-content, 2);
+    letter-spacing: 0.1em;
+    z-index: 5;
     font-family: var(--font-mono, 'Courier New', monospace);
+}
+
+/* ----------------------------------------------------------
+ * Title display (for cutscene title card)
+ * ---------------------------------------------------------- */
+
+.cs-title-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cs-title-card.cs-visible {
+    animation: cs-title-reveal 3s ease-out forwards;
+}
+
+.cs-title-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00ff88;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    text-shadow:
+        0 0 10px #00ff88,
+        0 0 20px #00ff88,
+        0 0 40px rgba(0, 255, 136, 0.5),
+        0 0 80px rgba(0, 255, 136, 0.2);
+    font-family: var(--font-mono, 'Courier New', monospace);
+}
+
+.cs-title-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-dim, #445566);
+    letter-spacing: 0.2em;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+@keyframes cs-title-reveal {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(1.02); }
 }
 
 /* ----------------------------------------------------------
@@ -92,103 +378,270 @@
     justify-content: center;
     max-width: 800px;
     width: 100%;
-    z-index: var(--z-content, 2);
+    z-index: 5;
     opacity: 1;
-    transition: opacity 300ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
+    padding: 0 1rem;
 }
 
 .cs-slide-container.cs-fade-out {
     opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms ease-in, transform 300ms ease-in;
 }
 
 .cs-slide-container.cs-fade-in {
     opacity: 1;
+    transform: translateY(0);
+    animation: cs-slide-appear 500ms ease-out;
+}
+
+@keyframes cs-slide-appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ----------------------------------------------------------
- * ASCII art area
+ * ASCII art area (enhanced with glow)
  * ---------------------------------------------------------- */
 
 .cs-ascii-area {
     display: none;
     width: 100%;
-    margin-bottom: var(--space-6, 1.5rem);
+    margin-bottom: 1.5rem;
     text-align: center;
     overflow: hidden;
+    animation: cs-art-reveal 1s ease-out;
 }
 
 .cs-ascii-area pre,
 .cs-ascii-area .ascii-art {
     font-family: var(--font-mono, 'Courier New', monospace);
-    font-size: var(--text-sm, 0.75rem);
-    line-height: 1.2;
+    font-size: 0.65rem;
+    line-height: 1.15;
     color: #00ff41;
     text-shadow:
         0 0 4px #00ff41,
         0 0 8px #00ff41,
-        0 0 16px #00ff41;
+        0 0 20px rgba(0, 255, 65, 0.4);
     white-space: pre;
     margin: 0 auto;
     text-align: center;
 }
 
+@keyframes cs-art-reveal {
+    from { opacity: 0; filter: blur(4px); transform: scale(0.95); }
+    to { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
 /* ----------------------------------------------------------
- * Speaker name (cyan with "> " prefix)
+ * Speaker name (enhanced with animated underline)
  * ---------------------------------------------------------- */
 
 .cs-speaker {
     display: none;
-    font-size: var(--text-md, 1rem);
-    font-weight: var(--weight-bold, 700);
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--accent-2, #00d4ff);
-    text-shadow: var(--glow-accent-2, 0 0 10px rgba(0, 212, 255, 0.4));
-    letter-spacing: var(--tracking-wider, 0.1em);
-    margin-bottom: var(--space-3, 0.75rem);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
     font-family: var(--font-mono, 'Courier New', monospace);
     text-align: left;
     width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    position: relative;
+    text-transform: uppercase;
+}
+
+.cs-speaker::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #00d4ff;
+    box-shadow: 0 0 8px #00d4ff;
+    animation: cs-speaker-line 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes cs-speaker-line {
+    to { width: 100%; }
 }
 
 /* ----------------------------------------------------------
- * Narrative text
+ * Narrative text (enhanced typography)
  * ---------------------------------------------------------- */
 
 .cs-narrative-text {
-    font-size: var(--text-base, 0.875rem);
-    line-height: var(--leading-relaxed, 1.625);
+    font-size: 1rem;
+    line-height: 1.8;
     color: var(--text-primary, #00ff88);
-    text-shadow: var(--text-glow-subtle, 0 0 4px rgba(0, 255, 136, 0.3));
+    text-shadow: 0 0 6px rgba(0, 255, 136, 0.4);
     font-family: var(--font-mono, 'Courier New', monospace);
     text-align: left;
     width: 100%;
     max-width: 800px;
-    min-height: 3em;
+    min-height: 4em;
+    padding: 0.5rem 0;
+}
+
+/* Highlight spans within narrative */
+.cs-narrative-text .highlight {
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.cs-narrative-text .danger {
+    color: #ff2d75;
+    text-shadow: 0 0 8px rgba(255, 45, 117, 0.5);
+}
+
+.cs-narrative-text .tech {
+    color: #00d4ff;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
 }
 
 /* ----------------------------------------------------------
- * "CLICK TO CONTINUE" prompt (bottom, pulsing)
+ * Glitch effect on text (triggered via class)
+ * ---------------------------------------------------------- */
+
+.cs-glitch-text {
+    animation: cs-text-glitch 0.3s ease-in-out;
+}
+
+@keyframes cs-text-glitch {
+    0% { transform: translate(0); filter: none; }
+    20% { transform: translate(-3px, 1px); filter: hue-rotate(90deg); }
+    40% { transform: translate(2px, -2px); filter: hue-rotate(180deg); clip-path: inset(20% 0 40% 0); }
+    60% { transform: translate(-1px, 2px); filter: hue-rotate(270deg); clip-path: inset(60% 0 10% 0); }
+    80% { transform: translate(3px, -1px); filter: none; clip-path: none; }
+    100% { transform: translate(0); filter: none; clip-path: none; }
+}
+
+/* ----------------------------------------------------------
+ * "CLICK TO CONTINUE" prompt (enhanced)
  * ---------------------------------------------------------- */
 
 .cs-continue-prompt {
     position: absolute;
-    bottom: var(--space-8, 2rem);
+    bottom: 75px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: var(--text-sm, 0.75rem);
+    font-size: 0.7rem;
     color: var(--text-dim, #445566);
-    letter-spacing: var(--tracking-wider, 0.1em);
+    letter-spacing: 0.2em;
     font-family: var(--font-mono, 'Courier New', monospace);
-    z-index: var(--z-content, 2);
-    animation: cs-pulse 1.5s ease-in-out infinite;
+    z-index: 10;
+    animation: cs-prompt-pulse 2s ease-in-out infinite;
+    text-transform: uppercase;
 }
 
-@keyframes cs-pulse {
-    0%, 100% {
-        opacity: 0.4;
-    }
-    50% {
-        opacity: 1;
-    }
+.cs-continue-prompt::before {
+    content: '▸ ';
+    color: #00ff88;
+    animation: cs-caret-blink 1s step-end infinite;
+}
+
+@keyframes cs-prompt-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.9; }
+}
+
+@keyframes cs-caret-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ----------------------------------------------------------
+ * Mood-specific text colors
+ * ---------------------------------------------------------- */
+
+.cs-mood-red .cs-narrative-text {
+    color: #ff9988;
+    text-shadow: 0 0 6px rgba(255, 100, 80, 0.3);
+}
+
+.cs-mood-red .cs-speaker {
+    color: #ff4444;
+    text-shadow: 0 0 10px rgba(255, 68, 68, 0.6);
+    border-bottom-color: rgba(255, 68, 68, 0.2);
+}
+
+.cs-mood-red .cs-speaker::after {
+    background: #ff4444;
+    box-shadow: 0 0 8px #ff4444;
+}
+
+.cs-mood-blue .cs-narrative-text {
+    color: #88ccff;
+    text-shadow: 0 0 6px rgba(100, 180, 255, 0.3);
+}
+
+.cs-mood-tension .cs-narrative-text {
+    color: #ffaa88;
+    text-shadow: 0 0 8px rgba(255, 170, 100, 0.4);
+    animation: cs-text-shake 0.1s linear infinite;
+    animation-play-state: paused;
+}
+
+.cs-mood-tension:hover .cs-narrative-text {
+    animation-play-state: running;
+}
+
+@keyframes cs-text-shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(0.5px, -0.5px); }
+    50% { transform: translate(-0.5px, 0.5px); }
+    75% { transform: translate(0.5px, 0.5px); }
+    100% { transform: translate(0); }
+}
+
+/* ----------------------------------------------------------
+ * Ambient data stream (vertical falling code on sides)
+ * ---------------------------------------------------------- */
+
+.cs-data-stream {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.15;
+}
+
+.cs-data-stream-left {
+    left: 0;
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+.cs-data-stream-right {
+    right: 0;
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6), transparent);
+}
+
+.cs-data-column {
+    position: absolute;
+    top: -100%;
+    width: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 8px;
+    line-height: 1.4;
+    color: #00ff88;
+    text-align: center;
+    animation: cs-data-fall linear infinite;
+    white-space: pre;
+}
+
+@keyframes cs-data-fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200vh); }
 }
 
 /* ----------------------------------------------------------
@@ -203,4 +656,35 @@
 @keyframes cs-fade-out {
     from { opacity: 1; }
     to   { opacity: 0; }
+}
+
+/* ----------------------------------------------------------
+ * Responsive adjustments
+ * ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .cutscene-screen {
+        padding: 3rem 1rem;
+    }
+
+    .cs-letterbox-top,
+    .cs-letterbox-bottom {
+        height: 40px;
+    }
+
+    .cs-title-text {
+        font-size: 1.5rem;
+    }
+
+    .cs-narrative-text {
+        font-size: 0.875rem;
+    }
+
+    .cs-frame-corner {
+        display: none;
+    }
+
+    .cs-data-stream {
+        display: none;
+    }
 }
