@@ -25,6 +25,7 @@
     position: relative;
     overflow: hidden;
     padding: 4rem 2rem;
+    padding-bottom: 5rem;
     cursor: pointer;
     user-select: none;
     transition: background-color 1.2s ease-in-out;
@@ -794,28 +795,31 @@
 
 @media (max-width: 768px) {
     .cutscene-screen {
-        padding: 2rem 0.75rem;
+        padding: 1.5rem 0.75rem 4rem;
+        justify-content: flex-start;
+        padding-top: 2rem;
     }
 
     .cs-letterbox-top,
     .cs-letterbox-bottom {
-        height: 20px;
+        height: 15px;
     }
 
     .cs-slide-container {
-        padding: 0 0.5rem;
+        padding: 0 0.25rem;
         justify-content: flex-start;
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     .cs-title-text {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .cs-narrative-text {
-        font-size: 1rem;
-        max-height: 40vh;
-        line-height: 1.6;
+        font-size: 0.9rem;
+        max-height: 35vh;
+        line-height: 1.5;
+        overflow-y: auto;
     }
 
     .cs-frame-corner {
@@ -828,43 +832,48 @@
 
     .cs-art-image {
         max-width: 100%;
-        max-height: 200px;
+        max-height: 160px;
     }
 
     .ascii-art-image {
-        max-height: 200px;
+        max-height: 160px;
     }
 
     .cs-slide-counter {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 
-    .cs-prompt {
-        font-size: 0.75rem;
+    .cs-continue-prompt {
+        bottom: 50px;
+        font-size: 0.65rem;
     }
 }
 
 @media (max-width: 480px) {
     .cutscene-screen {
-        padding: 1.5rem 0.5rem;
+        padding: 1rem 0.5rem 3.5rem;
     }
 
     .cs-letterbox-top,
     .cs-letterbox-bottom {
-        height: 10px;
+        height: 8px;
     }
 
     .cs-art-image {
-        max-height: 180px;
+        max-height: 140px;
     }
 
     .ascii-art-image {
-        max-height: 180px;
+        max-height: 140px;
     }
 
     .cs-narrative-text {
-        font-size: 0.95rem;
-        max-height: 45vh;
-        line-height: 1.5;
+        font-size: 0.85rem;
+        max-height: 38vh;
+        line-height: 1.45;
+    }
+
+    .cs-continue-prompt {
+        bottom: 45px;
     }
 }

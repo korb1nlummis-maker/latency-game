@@ -116,6 +116,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!muteBtn || !L.MusicManager) return;
 
+        // Stop clicks on music controls from bubbling to screen handlers
+        // (e.g. cutscene screen advances on any click)
+        var controlsEl = document.getElementById('music-controls');
+        if (controlsEl) {
+            controlsEl.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        }
+
         muteBtn.addEventListener('click', function () {
             L.MusicManager.toggleMute();
             muteBtn.textContent = L.MusicManager.isMuted() ? '🔇' : '🔊';

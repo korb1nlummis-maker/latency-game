@@ -558,6 +558,15 @@ window.Latency.Screens.CutsceneScreen = (function () {
     // Handle user input (click / key)
     // --------------------------------------------------------
     function _handleInput(e) {
+        // Ignore clicks on music controls (they sit over the cutscene)
+        if (e && e.type === 'click') {
+            var target = e.target;
+            while (target && target !== document.body) {
+                if (target.id === 'music-controls') return;
+                target = target.parentElement;
+            }
+        }
+
         // Prevent default for spacebar (no page scroll)
         if (e && e.type === 'keydown') {
             if (e.code === 'Space' || e.code === 'Enter') {
