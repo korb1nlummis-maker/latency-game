@@ -225,10 +225,15 @@ window.Latency.Typewriter = (function () {
                 window.Latency.SfxManager.play('typewriter');
             }
 
-            // Auto-scroll the narrative panel to keep new text visible
-            var scrollParent = element.closest('.gp-narrative-panel') || element.parentElement;
-            if (scrollParent && scrollParent.scrollHeight > scrollParent.clientHeight) {
-                scrollParent.scrollTop = scrollParent.scrollHeight;
+            // Auto-scroll to keep new text visible
+            // Check the element itself first (cutscene narrative), then parent panels (gameplay)
+            if (element.scrollHeight > element.clientHeight) {
+                element.scrollTop = element.scrollHeight;
+            } else {
+                var scrollParent = element.closest('.gp-narrative-panel') || element.parentElement;
+                if (scrollParent && scrollParent.scrollHeight > scrollParent.clientHeight) {
+                    scrollParent.scrollTop = scrollParent.scrollHeight;
+                }
             }
 
             _timerId = setTimeout(_typeNext, _speed);

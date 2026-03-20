@@ -123,7 +123,7 @@
   /* Font sizes - scaled for readability on terminal UI */
   --text-xs:   0.625rem;   /* 10px - micro labels          */
   --text-sm:   0.75rem;    /* 12px - secondary info, stats  */
-  --text-base: 0.875rem;   /* 14px - body text, narratives  */
+  --text-base: 1.05rem;    /* ~17px - body text, narratives  */
   --text-md:   1rem;       /* 16px - prominent UI text      */
   --text-lg:   1.125rem;   /* 18px - sub-headings           */
   --text-xl:   1.5rem;     /* 24px - section titles         */
