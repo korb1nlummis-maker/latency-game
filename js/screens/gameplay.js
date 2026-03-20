@@ -1287,18 +1287,16 @@ window.Latency.Screens.Gameplay = (function () {
             }
 
             if (window.Latency.Narrative) {
-                // Check if we're returning from an overlay and the node is already displayed
-                var narrativeNodeId = window.Latency.Narrative.getCurrentNodeId
-                    ? window.Latency.Narrative.getCurrentNodeId()
-                    : null;
-                var narrativeNode = window.Latency.Narrative.getCurrentNode
-                    ? window.Latency.Narrative.getCurrentNode()
-                    : null;
+                var isFreshStart = !!(params && params.nodeId);
+                var existingNode = window.Latency.Narrative.getCurrentNode
+                    ? window.Latency.Narrative.getCurrentNode() : null;
 
-                if (narrativeNodeId && narrativeNodeId === _lastDisplayedNodeId && narrativeNode) {
-                    // Returning from overlay — render statically (no typewriter replay)
-                    _renderStoryNodeStatic({ nodeId: narrativeNodeId, node: narrativeNode });
-                    console.log('[Gameplay] Restored node statically (returning from overlay):', narrativeNodeId);
+                if (!isFreshStart && existingNode) {
+                    // Returning from overlay — render current node statically (no typewriter)
+                    var existingNodeId = window.Latency.Narrative.getCurrentNodeId
+                        ? window.Latency.Narrative.getCurrentNodeId() : null;
+                    _renderStoryNodeStatic({ nodeId: existingNodeId, node: existingNode });
+                    console.log('[Gameplay] Static restore (overlay return):', existingNodeId);
                 } else if (window.Latency.Narrative.loadNode) {
                     // Fresh load — use typewriter
                     var _loadTimerId = setTimeout(function() {

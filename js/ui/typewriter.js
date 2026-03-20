@@ -215,6 +215,12 @@ window.Latency.Typewriter = (function () {
             // Visible character — append and schedule next
             element.innerHTML += token;
 
+            // Auto-scroll the narrative panel to keep new text visible
+            var scrollParent = element.closest('.gp-narrative-panel') || element.parentElement;
+            if (scrollParent && scrollParent.scrollHeight > scrollParent.clientHeight) {
+                scrollParent.scrollTop = scrollParent.scrollHeight;
+            }
+
             _timerId = setTimeout(_typeNext, _speed);
         }
 

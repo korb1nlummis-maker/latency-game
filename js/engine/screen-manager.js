@@ -240,10 +240,20 @@ window.Latency.ScreenManager = (function () {
      */
     async function show(screenName, params, transitionType) {
         // ------------------------------------------------------------------
+        // 0. Skip if already showing this screen (prevents duplicate mounts)
+        // ------------------------------------------------------------------
+        if (_activeScreenName === screenName && !_transitioning && !params) {
+            return;
+        }
+
+        // ------------------------------------------------------------------
         // 1. If already mid-transition, queue this request and bail out.
         // ------------------------------------------------------------------
         if (_transitioning) {
-            _queued = { name: screenName, params: params, transition: transitionType };
+            // Only queue if it's a different screen than what we're transitioning to
+            if (!_queued || _queued.name !== screenName) {
+                _queued = { name: screenName, params: params, transition: transitionType };
+            }
             return;
         }
 
