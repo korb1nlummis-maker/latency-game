@@ -521,5 +521,129 @@ window.Latency.Enemies = {
         loot: { credits: [0, 100], items: [{ id: 'void_resonator', chance: 0.15 }, { id: 'neural_reset', chance: 0.4 }] },
         xp: 800,
         description: 'High priest of the Ashen Circle. Preaches the beauty of ending all things, and practices what they preach.'
+    },
+
+    // =========================================================================
+    //  STORY-REFERENCED ENEMIES (used by specific combat encounters)
+    // =========================================================================
+
+    slum_thug_leader: {
+        id: 'slum_thug_leader',
+        name: 'Metal-Jaw',
+        level: 2,
+        stats: { strength: 14, dexterity: 11, constitution: 13, intelligence: 9, wisdom: 9, charisma: 10, tech: 7, luck: 10 },
+        maxHp: 22,
+        armor: 12,
+        weapon: { name: 'Shock Baton', damage: '1d8+1', stat: 'strength' },
+        abilities: ['stunning_strike'],
+        ai: 'aggressive',
+        loot: { credits: [15, 40], items: [{ id: 'shock_baton', chance: 0.25 }] },
+        xp: 40,
+        description: 'Slum gang leader with a chrome jaw implant and a nasty shock baton. Runs mugging crews in Sector 7.'
+    },
+
+    faction_traitor: {
+        id: 'faction_traitor',
+        name: 'Faction Traitor',
+        level: 6,
+        stats: { strength: 13, dexterity: 15, constitution: 12, intelligence: 14, wisdom: 11, charisma: 12, tech: 13, luck: 11 },
+        maxHp: 45,
+        armor: 14,
+        weapon: { name: 'Silenced Pistol', damage: '2d6+1', stat: 'dexterity' },
+        abilities: ['dirty_trick', 'smoke_bomb'],
+        ai: 'tactical',
+        loot: { credits: [30, 80], items: [{ id: 'encrypted_data', chance: 0.4 }] },
+        xp: 120,
+        description: 'A former ally who sold out for credits. Fights dirty and knows your weaknesses.'
+    },
+
+    meridian_retrieval_agent: {
+        id: 'meridian_retrieval_agent',
+        name: 'Meridian Retrieval Agent',
+        level: 8,
+        stats: { strength: 14, dexterity: 16, constitution: 14, intelligence: 15, wisdom: 13, charisma: 10, tech: 16, luck: 10 },
+        maxHp: 55,
+        armor: 16,
+        weapon: { name: 'Neural Disruptor', damage: '2d8+2', stat: 'tech' },
+        abilities: ['emp_pulse', 'targeting_lock'],
+        ai: 'tactical',
+        loot: { credits: [50, 120], items: [{ id: 'meridian_keycard', chance: 0.3 }] },
+        xp: 180,
+        description: 'Corporate recovery specialist. Meridian sends these when they want something back — and they always get it back.'
+    },
+
+    meridian_sec_drone: {
+        id: 'meridian_sec_drone',
+        name: 'Meridian Security Drone',
+        level: 7,
+        stats: { strength: 10, dexterity: 18, constitution: 12, intelligence: 6, wisdom: 6, charisma: 1, tech: 18, luck: 8 },
+        maxHp: 40,
+        armor: 17,
+        weapon: { name: 'Laser Turret', damage: '2d6+3', stat: 'tech' },
+        abilities: ['overwatch'],
+        ai: 'defensive',
+        loot: { credits: [0, 0], items: [{ id: 'drone_parts', chance: 0.5 }] },
+        xp: 100,
+        description: 'Hovering corporate security drone. Scans, tracks, and eliminates unauthorized personnel.'
+    },
+
+    neon_court_enforcer: {
+        id: 'neon_court_enforcer',
+        name: 'Neon Court Enforcer',
+        level: 5,
+        stats: { strength: 14, dexterity: 14, constitution: 13, intelligence: 10, wisdom: 10, charisma: 14, tech: 10, luck: 12 },
+        maxHp: 38,
+        armor: 14,
+        weapon: { name: 'Neon Blade', damage: '1d10+2', stat: 'dexterity' },
+        abilities: ['flourish', 'riposte'],
+        ai: 'aggressive',
+        loot: { credits: [25, 60], items: [{ id: 'neon_shard', chance: 0.2 }] },
+        xp: 100,
+        description: 'The Neon Court\'s muscle. Flashy fighters who treat combat as performance art — but the blades are real.'
+    },
+
+    vault_sentinel: {
+        id: 'vault_sentinel',
+        name: 'Vault Sentinel',
+        level: 10,
+        stats: { strength: 18, dexterity: 12, constitution: 18, intelligence: 8, wisdom: 10, charisma: 4, tech: 14, luck: 8 },
+        maxHp: 80,
+        armor: 18,
+        weapon: { name: 'Integrated Cannon', damage: '2d10+3', stat: 'strength' },
+        abilities: ['armor_plating', 'suppressive_fire'],
+        ai: 'defensive',
+        loot: { credits: [0, 0], items: [{ id: 'sentinel_core', chance: 0.15 }] },
+        xp: 250,
+        description: 'Pre-collapse security automaton. Still guarding vaults that no one remembers locking.'
+    },
+
+    vault_sentinel_alpha: {
+        id: 'vault_sentinel_alpha',
+        name: 'Vault Sentinel Alpha',
+        level: 14,
+        stats: { strength: 20, dexterity: 14, constitution: 20, intelligence: 12, wisdom: 12, charisma: 4, tech: 18, luck: 10 },
+        maxHp: 120,
+        armor: 20,
+        weapon: { name: 'Plasma Lance', damage: '3d8+5', stat: 'strength' },
+        abilities: ['armor_plating', 'adaptive_targeting', 'emergency_repair'],
+        ai: 'tactical',
+        loot: { credits: [0, 50], items: [{ id: 'alpha_core', chance: 0.2 }] },
+        xp: 450,
+        description: 'Command-tier sentinel. Older, meaner, and built to survive things that killed everything else.'
+    },
+
+    vault_sentinel_beta: {
+        id: 'vault_sentinel_beta',
+        name: 'Vault Sentinel Beta',
+        level: 12,
+        stats: { strength: 16, dexterity: 16, constitution: 16, intelligence: 10, wisdom: 10, charisma: 4, tech: 16, luck: 10 },
+        maxHp: 90,
+        armor: 19,
+        weapon: { name: 'Twin Pulse Guns', damage: '2d8+4', stat: 'tech' },
+        abilities: ['armor_plating', 'dual_fire'],
+        ai: 'aggressive',
+        loot: { credits: [0, 30], items: [{ id: 'beta_core', chance: 0.2 }] },
+        xp: 350,
+        description: 'Fire-support variant sentinel. Trades armor for speed and overwhelming firepower.'
     }
 };
