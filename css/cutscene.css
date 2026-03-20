@@ -794,12 +794,18 @@
 
 @media (max-width: 768px) {
     .cutscene-screen {
-        padding: 3rem 1rem;
+        padding: 2rem 0.75rem;
     }
 
     .cs-letterbox-top,
     .cs-letterbox-bottom {
-        height: 40px;
+        height: 20px;
+    }
+
+    .cs-slide-container {
+        padding: 0 0.5rem;
+        justify-content: flex-start;
+        padding-top: 1rem;
     }
 
     .cs-title-text {
@@ -807,8 +813,9 @@
     }
 
     .cs-narrative-text {
-        font-size: 1.05rem;
-        max-height: 35vh;
+        font-size: 1rem;
+        max-height: 40vh;
+        line-height: 1.6;
     }
 
     .cs-frame-corner {
@@ -821,10 +828,43 @@
 
     .cs-art-image {
         max-width: 100%;
-        max-height: 280px;
+        max-height: 200px;
     }
 
     .ascii-art-image {
-        max-height: 280px;
+        max-height: 200px;
+    }
+
+    .cs-slide-counter {
+        font-size: 0.7rem;
+    }
+
+    .cs-prompt {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cutscene-screen {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .cs-letterbox-top,
+    .cs-letterbox-bottom {
+        height: 10px;
+    }
+
+    .cs-art-image {
+        max-height: 180px;
+    }
+
+    .ascii-art-image {
+        max-height: 180px;
+    }
+
+    .cs-narrative-text {
+        font-size: 0.95rem;
+        max-height: 45vh;
+        line-height: 1.5;
     }
 }
