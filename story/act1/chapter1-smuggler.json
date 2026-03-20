@@ -16,11 +16,25 @@
                 "It takes you three hours. The Neon Court isn't on any public map. You follow rumors through the mid-district markets, trade a favor with a street vendor who owes you nothing, and eventually find yourself standing before a door recessed into the wall of an unmarked building in Sector 11. The door is matte black and featureless except for a single neon line that pulses violet along its frame, like a vein carrying light instead of blood.",
                 "You knock. The door doesn't open. Instead, the neon line brightens and a voice emerges from everywhere at once, smooth and genderless and faintly amused.",
                 "\"Name and purpose. You have four seconds.\"",
-                { "condition": { "race": "dark_elf" }, "text": "You've heard of places like this. Every dark elf who's worked the shadow trade has. The Neon Court is one of the oldest smuggling exchanges in the city, a neutral ground where deals are brokered and betrayals are punished with surgical precision. You feel almost nostalgic." },
-                { "condition": { "race": "synth" }, "text": "Your social-interaction protocols flag the voice as deliberately engineered to provoke anxiety. Pitch-modulated, spatialized audio, timed pressure. Whoever runs this operation understands persuasion architecture at a hardware level." }
+                {
+                    "condition": {
+                        "race": "dark_elf"
+                    },
+                    "text": "You've heard of places like this. Every dark elf who's worked the shadow trade has. The Neon Court is one of the oldest smuggling exchanges in the city, a neutral ground where deals are brokered and betrayals are punished with surgical precision. You feel almost nostalgic."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your social-interaction protocols flag the voice as deliberately engineered to provoke anxiety. Pitch-modulated, spatialized audio, timed pressure. Whoever runs this operation understands persuasion architecture at a hardware level."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.found_neon_court", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.found_neon_court",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -29,7 +43,10 @@
                 },
                 {
                     "text": "[Charisma 12] \"Four seconds? That's generous. Most places give me two.\"",
-                    "statCheck": { "stat": "charisma", "dc": 12 },
+                    "statCheck": {
+                        "stat": "charisma",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-smuggler.smug_002a",
                     "failNext": "act1.chapter1-smuggler.smug_002"
                 }
@@ -38,7 +55,6 @@
             "music": "ambient_neon_court",
             "isEnding": false
         },
-
         "smug_002": {
             "id": "act1.chapter1-smuggler.smug_002",
             "title": "Admitted",
@@ -50,7 +66,11 @@
                 "\"You found us. That's your first audition.\" The voice is the same one from the door. \"I'm Silk. Sit down.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.met_silk", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.met_silk",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -66,7 +86,6 @@
             "music": "ambient_neon_court",
             "isEnding": false
         },
-
         "smug_002a": {
             "id": "act1.chapter1-smuggler.smug_002a",
             "title": "Admitted With Style",
@@ -76,12 +95,28 @@
                 "The door slides open and you step into a corridor of shifting holographic panels. The air tastes of ozone and engineered pheromones. At the far end, a wide lounge spreads out in shades of violet and deep blue. A dozen people negotiate in murmured tones. None look at you.",
                 "A figure rises from a curved couch and approaches with the fluid precision of someone who has never taken an unplanned step. Tall, angular, dressed in a suit with a neon-thread collar synced to their heartbeat. A thin scar runs from ear to mouth like a signature.",
                 "\"Quick tongue. That will serve you.\" They extend a hand. \"I'm Silk. You've already passed the first test. Sit.\"",
-                { "condition": { "race": "dark_elf" }, "text": "Silk's eyes linger on you a beat longer than necessary. Recognition, not of you specifically, but of what you are. Dark elves have a reputation in the smuggling world, and Silk's faint smile suggests they consider that reputation earned." }
+                {
+                    "condition": {
+                        "race": "dark_elf"
+                    },
+                    "text": "Silk's eyes linger on you a beat longer than necessary. Recognition, not of you specifically, but of what you are. Dark elves have a reputation in the smuggling world, and Silk's faint smile suggests they consider that reputation earned."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.met_silk", "value": true },
-                { "type": "set_flag", "flag": "smuggler.impressed_silk", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.met_silk",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.impressed_silk",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -93,7 +128,6 @@
             "music": "ambient_neon_court",
             "isEnding": false
         },
-
         "smug_003": {
             "id": "act1.chapter1-smuggler.smug_003",
             "title": "The Offer",
@@ -104,8 +138,18 @@
                 "Silk leans forward. The neon threads in their collar pulse faster.",
                 "\"The Neon Court needs runners. Not the desperate kind who'll take any job and get caught at the first checkpoint. We need people who can move product across districts without leaving a trace. Quiet hands. Quick feet. A face that doesn't flinch when things get complicated.\"",
                 "\"The pay is good. The work is dangerous. The first job is a test. One package, one destination, no questions asked. You deliver, you're in. You fail, we never met. You talk about us to anyone...\" Silk draws a finger across the scar on their face. \"...we have a very specific policy regarding loose ends.\"",
-                { "condition": { "race": "synth" }, "text": "Your behavioral analysis subroutines are working overtime. Silk's microexpressions are almost perfectly controlled, but the scar-touch was rehearsed. A performance of menace. The real danger isn't in Silk's threats. It's in what they're not saying." },
-                { "condition": { "race": "dark_elf" }, "text": "Smuggling is in your blood, almost literally. The dark elves ran contraband through the old undercities for centuries before this chrome-and-neon world was built on top of them. The pitch is familiar. The stakes are the same as they've always been." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your behavioral analysis subroutines are working overtime. Silk's microexpressions are almost perfectly controlled, but the scar-touch was rehearsed. A performance of menace. The real danger isn't in Silk's threats. It's in what they're not saying."
+                },
+                {
+                    "condition": {
+                        "race": "dark_elf"
+                    },
+                    "text": "Smuggling is in your blood, almost literally. The dark elves ran contraband through the old undercities for centuries before this chrome-and-neon world was built on top of them. The pitch is familiar. The stakes are the same as they've always been."
+                }
             ],
             "onEnter": [],
             "choices": [
@@ -119,7 +163,10 @@
                 },
                 {
                     "text": "[Wisdom 12] Study Silk's face for tells",
-                    "statCheck": { "stat": "wisdom", "dc": 12 },
+                    "statCheck": {
+                        "stat": "wisdom",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-smuggler.smug_004b",
                     "failNext": "act1.chapter1-smuggler.smug_004"
                 }
@@ -128,7 +175,6 @@
             "music": "ambient_neon_court",
             "isEnding": false
         },
-
         "smug_004": {
             "id": "act1.chapter1-smuggler.smug_004",
             "title": "The Package",
@@ -141,8 +187,16 @@
                 "\"You have until midnight. After that, the buyer walks and so does your future with us.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.accepted_job", "value": true },
-                { "type": "set_flag", "flag": "smuggler.has_package", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.accepted_job",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.has_package",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -158,7 +212,6 @@
             "music": "ambient_neon_court",
             "isEnding": false
         },
-
         "smug_004a": {
             "id": "act1.chapter1-smuggler.smug_004a",
             "title": "Negotiating Pay",
@@ -179,7 +232,6 @@
             "music": "ambient_neon_court",
             "isEnding": false
         },
-
         "smug_004b": {
             "id": "act1.chapter1-smuggler.smug_004b",
             "title": "Reading Silk",
@@ -190,8 +242,15 @@
                 "The information doesn't change the calculus much. But it's good to know what kind of game you're walking into."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.read_silk", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.read_silk",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -203,7 +262,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "smug_004c": {
             "id": "act1.chapter1-smuggler.smug_004c",
             "title": "Silk's Advice",
@@ -215,7 +273,11 @@
                 "Silk stands, smoothing their suit. \"One more thing. Whatever happens, do not open the case. The seal is tamper-evident. If it's broken when Kestrel receives it, the deal is void and so are you.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.silk_advice", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.silk_advice",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -227,7 +289,6 @@
             "music": "ambient_neon_court",
             "isEnding": false
         },
-
         "smug_005": {
             "id": "act1.chapter1-smuggler.smug_005",
             "title": "Checkpoint One - Sector 9 Border",
@@ -236,19 +297,30 @@
                 "The Sector 9 checkpoint is a concrete bottleneck where the mid-district market lanes narrow into a single passage flanked by guard booths. Two Meridian Sec officers lean against the barrier, their visors reflecting the steady stream of pedestrians passing through the scanner arch. A surveillance drone hovers overhead, its red eye sweeping back and forth with mechanical patience.",
                 "The case is heavy under your arm. The signal shielding keeps it from broadcasting, but it won't fool a physical search. You need to get through that arch without attracting attention.",
                 "A line of workers shuffles forward, heads down, ID chips extended. The guards wave most of them through with barely a glance. But every fifth or sixth person gets pulled aside for a pat-down. The odds aren't terrible. But they aren't great either.",
-                { "condition": { "race": "dark_elf" }, "text": "You've run checkpoints since you were old enough to carry a satchel. The trick isn't avoiding attention. It's choosing which kind of attention to attract. A dark elf with a confident stride and the right body language reads as someone who belongs somewhere important. Hesitation is what kills you." }
+                {
+                    "condition": {
+                        "race": "dark_elf"
+                    },
+                    "text": "You've run checkpoints since you were old enough to carry a satchel. The trick isn't avoiding attention. It's choosing which kind of attention to attract. A dark elf with a confident stride and the right body language reads as someone who belongs somewhere important. Hesitation is what kills you."
+                }
             ],
             "onEnter": [],
             "choices": [
                 {
                     "text": "[Dexterity 12] Slip through during a shift change when the guards are distracted",
-                    "statCheck": { "stat": "dexterity", "dc": 12 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-smuggler.smug_006",
                     "failNext": "act1.chapter1-smuggler.smug_005a"
                 },
                 {
                     "text": "[Charisma 13] Walk up to the guards with confidence and talk your way through",
-                    "statCheck": { "stat": "charisma", "dc": 13 },
+                    "statCheck": {
+                        "stat": "charisma",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-smuggler.smug_006",
                     "failNext": "act1.chapter1-smuggler.smug_005a"
                 },
@@ -261,7 +333,6 @@
             "music": "ambient_tension_mid",
             "isEnding": false
         },
-
         "smug_005a": {
             "id": "act1.chapter1-smuggler.smug_005a",
             "title": "Checkpoint One - Caught Short",
@@ -273,18 +344,28 @@
                 "You have seconds to decide."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.cp1_stopped", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.cp1_stopped",
+                    "value": true
+                }
             ],
             "choices": [
                 {
                     "text": "[Charisma 13] \"Refurbished prosthetic parts. I'm a courier for Mako's Repair. Here's my work order.\" Bluff with confidence.",
-                    "statCheck": { "stat": "charisma", "dc": 13 },
+                    "statCheck": {
+                        "stat": "charisma",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-smuggler.smug_006",
                     "failNext": "act1.chapter1-smuggler.smug_005c"
                 },
                 {
                     "text": "[Dexterity 13] Shove past the guard and run",
-                    "statCheck": { "stat": "dexterity", "dc": 13 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-smuggler.smug_006",
                     "failNext": "act1.chapter1-smuggler.smug_005c"
                 }
@@ -293,7 +374,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "smug_005b": {
             "id": "act1.chapter1-smuggler.smug_005b",
             "title": "The Maintenance Tunnels",
@@ -305,8 +385,15 @@
                 "One down. Two to go."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.used_tunnels", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.used_tunnels",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -318,7 +405,6 @@
             "music": "ambient_underground",
             "isEnding": false
         },
-
         "smug_005c": {
             "id": "act1.chapter1-smuggler.smug_005c",
             "title": "Checkpoint One - Close Call",
@@ -330,7 +416,11 @@
                 "Lucky. But luck is a finite resource in this city."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.cp1_close_call", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.cp1_close_call",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -342,7 +432,6 @@
             "music": "ambient_tension_mid",
             "isEnding": false
         },
-
         "smug_006": {
             "id": "act1.chapter1-smuggler.smug_006",
             "title": "Checkpoint One - Clean Pass",
@@ -353,7 +442,10 @@
                 "One down. Two to go."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -365,7 +457,6 @@
             "music": "ambient_streets_night",
             "isEnding": false
         },
-
         "smug_007": {
             "id": "act1.chapter1-smuggler.smug_007",
             "title": "The Package Moves",
@@ -376,11 +467,25 @@
                 "You stop walking. The corridor is empty. Overhead, a broken light fixture buzzes and flickers.",
                 "The case thumps again. And then, barely audible through the military-grade shielding, you hear it: a whimper. Small. Frightened. Unmistakably alive.",
                 "Something is inside this case. Something that is breathing and scared and trying to get out.",
-                { "condition": { "race": "synth" }, "text": "Your audio processors isolate the sound and run a pattern analysis. The vocal frequency is consistent with a juvenile humanoid, estimated age six to ten. The breathing pattern indicates acute distress. Your ethics subroutine, the one they said was removed during your factory reset, activates with a force that surprises you. You are carrying one of your own. A child." },
-                { "condition": { "race": "dark_elf" }, "text": "You've carried a lot of contraband in your life. Weapons. Data. Chemicals. But the sound coming from inside this case turns your stomach in a way none of those ever did. You know what this is. You've heard stories about the trafficking rings that move living cargo through the district borders. You never thought you'd be the one carrying the package." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your audio processors isolate the sound and run a pattern analysis. The vocal frequency is consistent with a juvenile humanoid, estimated age six to ten. The breathing pattern indicates acute distress. Your ethics subroutine, the one they said was removed during your factory reset, activates with a force that surprises you. You are carrying one of your own. A child."
+                },
+                {
+                    "condition": {
+                        "race": "dark_elf"
+                    },
+                    "text": "You've carried a lot of contraband in your life. Weapons. Data. Chemicals. But the sound coming from inside this case turns your stomach in a way none of those ever did. You know what this is. You've heard stories about the trafficking rings that move living cargo through the district borders. You never thought you'd be the one carrying the package."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.heard_package", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.heard_package",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -400,7 +505,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "smug_008": {
             "id": "act1.chapter1-smuggler.smug_008",
             "title": "Inside the Case",
@@ -410,11 +514,24 @@
                 "Inside, curled in a fetal position on a bed of shock-absorbent foam, is a child. A synth child. They can't be more than eight years old, if age means anything for a synthetic being. Their skin has the faintly luminous quality of high-end synthetic manufacture, but it's smudged with grime and what looks like soot. Their eyes, wide, terrified, and a startling shade of electric blue, lock onto your face.",
                 "They're wearing a torn smock that was probably white once. A serial number is tattooed on the inside of their left wrist: PXL-0091. Their mouth opens and closes twice before sound comes out.",
                 "\"Please,\" the child whispers. \"Please don't take me back to them.\"",
-                { "condition": { "race": "synth" }, "text": "The child sees your synthetic features and something shifts in their expression. Not quite recognition. Hope. The desperate, irrational hope of a child who sees someone who looks like them and assumes it means safety. Your emotion-processing layer translates the sensation in your chest as something close to rage, not at the child, but at whoever sealed them in this box." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "The child sees your synthetic features and something shifts in their expression. Not quite recognition. Hope. The desperate, irrational hope of a child who sees someone who looks like them and assumes it means safety. Your emotion-processing layer translates the sensation in your chest as something close to rage, not at the child, but at whoever sealed them in this box."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.opened_case", "value": true },
-                { "type": "set_flag", "flag": "smuggler.seal_broken", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.opened_case",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.seal_broken",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -434,7 +551,6 @@
             "music": "music_emotional_synth",
             "isEnding": false
         },
-
         "smug_009": {
             "id": "act1.chapter1-smuggler.smug_009",
             "title": "Pixel",
@@ -445,10 +561,19 @@
                 "Pixel's voice drops to a whisper. \"The people at the Court, they said I was going to someone who collects us. Synth children. They take us apart. Study how we work. Some of us they rebuild into... into other things. Things that don't remember being children anymore.\"",
                 "The blue eyes search your face. \"Are you going to take me to them?\"",
                 "The corridor is still empty. The broken light still flickers. The case sits open like a wound. And this child, this small synthetic person with a serial number on their wrist and terror in their eyes, is waiting for you to decide what kind of person you are.",
-                { "condition": { "race": "synth" }, "text": "Pixel reaches out and touches your hand. Their small synthetic fingers register against your synthetic skin, and for a moment you share something that no scan or diagnostic can measure. The recognition of shared existence. Of shared vulnerability. You were both made. You were both discarded. The difference is that someone sealed Pixel in a box, and no one sealed you in one yet." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Pixel reaches out and touches your hand. Their small synthetic fingers register against your synthetic skin, and for a moment you share something that no scan or diagnostic can measure. The recognition of shared existence. Of shared vulnerability. You were both made. You were both discarded. The difference is that someone sealed Pixel in a box, and no one sealed you in one yet."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.met_pixel", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.met_pixel",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -461,7 +586,10 @@
                 },
                 {
                     "text": "[Wisdom 13] \"Pixel, I need you to tell me everything about the buyer. What do you know?\"",
-                    "statCheck": { "stat": "wisdom", "dc": 13 },
+                    "statCheck": {
+                        "stat": "wisdom",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-smuggler.smug_009a",
                     "failNext": "act1.chapter1-smuggler.smug_012"
                 }
@@ -470,7 +598,6 @@
             "music": "music_emotional_synth",
             "isEnding": false
         },
-
         "smug_009a": {
             "id": "act1.chapter1-smuggler.smug_009a",
             "title": "Pixel's Intel",
@@ -482,8 +609,15 @@
                 "You know enough now. The question is what you do with it."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.pixel_intel", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.pixel_intel",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -499,7 +633,6 @@
             "music": "music_emotional_synth",
             "isEnding": false
         },
-
         "smug_010": {
             "id": "act1.chapter1-smuggler.smug_010",
             "title": "Delivering the Package",
@@ -514,10 +647,26 @@
                 "You don't look back."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.delivered_child", "value": true },
-                { "type": "set_flag", "flag": "dark_choice.delivered_living_cargo", "value": true },
-                { "type": "set_flag", "flag": "smuggler.has_confirmation_chip", "value": true },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.delivered_child",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "dark_choice.delivered_living_cargo",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.has_confirmation_chip",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -529,7 +678,6 @@
             "music": "music_dark_consequence",
             "isEnding": false
         },
-
         "smug_010a": {
             "id": "act1.chapter1-smuggler.smug_010a",
             "title": "Sealing the Case Again",
@@ -539,10 +687,19 @@
                 "\"I thought you'd be different,\" Pixel says, and their voice is flat and old, far too old for a child. They lower themselves back into the case without being told. Curl into the fetal position. Close their eyes.",
                 "The lid settles down. The seal is broken, a red indicator blinking, but the case still closes. You'll have to explain the breach to Kestrel. Maybe she won't care. Maybe she will.",
                 "You pick up the case. It feels like it weighs a thousand pounds. You keep walking.",
-                { "condition": { "race": "synth" }, "text": "Your emotion-processing layer is generating cascading error logs. You suppress them one by one, building a firewall between your actions and your feelings. Somewhere behind that firewall, something that might be a conscience is screaming. You flag it as non-critical and continue." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your emotion-processing layer is generating cascading error logs. You suppress them one by one, building a firewall between your actions and your feelings. Somewhere behind that firewall, something that might be a conscience is screaming. You flag it as non-critical and continue."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.reclosed_case", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.reclosed_case",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -554,7 +711,6 @@
             "music": "music_dark_consequence",
             "isEnding": false
         },
-
         "smug_011": {
             "id": "act1.chapter1-smuggler.smug_011",
             "title": "The Dark Return",
@@ -569,13 +725,39 @@
                 "You chose the credits. You chose the career. You chose not to look back. That choice will follow you."
             ],
             "onEnter": [
-                { "type": "modify_currency", "amount": 200 },
-                { "type": "add_experience", "amount": 40 },
-                { "type": "set_flag", "flag": "player.job", "value": "smuggler" },
-                { "type": "set_flag", "flag": "smuggler.path", "value": "dark" },
-                { "type": "set_flag", "flag": "smuggler.rank", "value": 0 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": 10 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 5 }
+                {
+                    "type": "modify_currency",
+                    "amount": 200
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "player.job",
+                    "value": "smuggler"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.path",
+                    "value": "dark"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.rank",
+                    "value": 0
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": 10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 5
+                }
             ],
             "choices": [
                 {
@@ -587,7 +769,6 @@
             "music": "music_dark_consequence",
             "isEnding": false
         },
-
         "smug_012": {
             "id": "act1.chapter1-smuggler.smug_012",
             "title": "The Escape",
@@ -602,9 +783,21 @@
                 "Pixel nods again. You start moving."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.freed_synth_child", "value": true },
-                { "type": "set_flag", "flag": "smuggler.pixel_companion", "value": true },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -20 }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.freed_synth_child",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.pixel_companion",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -20
+                }
             ],
             "choices": [
                 {
@@ -613,7 +806,10 @@
                 },
                 {
                     "text": "[Dexterity 13] Take the rooftop route through the ventilation systems",
-                    "statCheck": { "stat": "dexterity", "dc": 13 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-smuggler.smug_013a",
                     "failNext": "act1.chapter1-smuggler.smug_013"
                 }
@@ -622,7 +818,6 @@
             "music": "music_chase",
             "isEnding": false
         },
-
         "smug_013": {
             "id": "act1.chapter1-smuggler.smug_013",
             "title": "The Pursuit",
@@ -638,7 +833,10 @@
             "choices": [
                 {
                     "text": "[Dexterity 12] Double back through a junction you passed and lose them in the side tunnels",
-                    "statCheck": { "stat": "dexterity", "dc": 12 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-smuggler.smug_014",
                     "failNext": "act1.chapter1-smuggler.smug_013b"
                 },
@@ -651,7 +849,6 @@
             "music": "music_chase",
             "isEnding": false
         },
-
         "smug_013a": {
             "id": "act1.chapter1-smuggler.smug_013a",
             "title": "The Rooftop Route",
@@ -664,8 +861,15 @@
                 "No one followed you up here. No one thought to look."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 25 },
-                { "type": "set_flag", "flag": "smuggler.rooftop_escape", "value": true }
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.rooftop_escape",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -677,7 +881,6 @@
             "music": "music_chase",
             "isEnding": false
         },
-
         "smug_013b": {
             "id": "act1.chapter1-smuggler.smug_013b",
             "title": "Tunnel Fight",
@@ -689,24 +892,55 @@
                 "You draw your weapon. The tunnel narrows the fight, which works in your favor. They can only come at you one at a time."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.tunnel_fight", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.tunnel_fight",
+                    "value": true
+                }
             ],
             "combat": {
                 "enemies": [
-                    { "id": "neon_court_enforcer", "name": "Court Enforcer", "level": 2 },
-                    { "id": "neon_court_enforcer", "name": "Court Bruiser", "level": 2 },
-                    { "id": "neon_court_enforcer", "name": "Court Hunter", "level": 3 }
+                    {
+                        "id": "neon_court_enforcer",
+                        "name": "Court Enforcer",
+                        "level": 2
+                    },
+                    {
+                        "id": "neon_court_enforcer",
+                        "name": "Court Bruiser",
+                        "level": 2
+                    },
+                    {
+                        "id": "neon_court_enforcer",
+                        "name": "Court Hunter",
+                        "level": 3
+                    }
                 ],
                 "onWin": "act1.chapter1-smuggler.smug_014",
                 "onFlee": "act1.chapter1-smuggler.smug_014",
                 "onLose": "act1.chapter1-smuggler.smug_013c"
             },
-            "choices": [],
+            "choices": [
+                {
+                    "text": "Build your smuggling empire.",
+                    "next": "jobs.smuggler.jsmg_001",
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "job_quest.smuggler.started",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Leave smuggling behind. Move on.",
+                    "next": "act1.chapter2-iron-neon.fac_iron_001"
+                }
+            ],
             "ascii": null,
             "music": "music_combat",
             "isEnding": false
         },
-
         "smug_013c": {
             "id": "act1.chapter1-smuggler.smug_013c",
             "title": "Tunnel Defeat",
@@ -719,10 +953,25 @@
                 "You lost. You tried, and you lost. The credits on your chest feel like a brand."
             ],
             "onEnter": [
-                { "type": "modify_currency", "amount": 20 },
-                { "type": "set_flag", "flag": "smuggler.failed_rescue", "value": true },
-                { "type": "set_flag", "flag": "smuggler.pixel_taken", "value": true },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -15 }
+                {
+                    "type": "modify_currency",
+                    "amount": 20
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.failed_rescue",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.pixel_taken",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -15
+                }
             ],
             "choices": [
                 {
@@ -734,7 +983,6 @@
             "music": "music_dark_consequence",
             "isEnding": false
         },
-
         "smug_014": {
             "id": "act1.chapter1-smuggler.smug_014",
             "title": "Breaking Free",
@@ -747,7 +995,10 @@
                 "Pixel looks up at you. \"What happens to me now?\""
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -759,7 +1010,6 @@
             "music": "ambient_slum_rain",
             "isEnding": false
         },
-
         "smug_015": {
             "id": "act1.chapter1-smuggler.smug_015",
             "title": "Safe Harbor",
@@ -776,8 +1026,16 @@
                 "\"Good. Because the Neon Court doesn't forgive, and Archon Luminara doesn't forget.\" Mako strokes Pixel's hair. \"I can keep the child hidden for now. But you need to figure out your next move fast.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "smuggler.pixel_at_makos", "value": true },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.pixel_at_makos",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -786,7 +1044,10 @@
                 },
                 {
                     "text": "[Charisma 13] \"Mako, I need more than a hiding spot. I need allies. Who can I trust?\"",
-                    "statCheck": { "stat": "charisma", "dc": 13 },
+                    "statCheck": {
+                        "stat": "charisma",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-smuggler.smug_016a",
                     "failNext": "act1.chapter1-smuggler.smug_016"
                 }
@@ -795,7 +1056,6 @@
             "music": "ambient_makos_shop",
             "isEnding": false
         },
-
         "smug_016": {
             "id": "act1.chapter1-smuggler.smug_016",
             "title": "The Road Ahead",
@@ -808,12 +1068,35 @@
                 "You're still a smuggler. But now you're a smuggler with a conscience, and in this city, that might be the most dangerous contraband of all."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 50 },
-                { "type": "set_flag", "flag": "player.job", "value": "smuggler" },
-                { "type": "set_flag", "flag": "smuggler.path", "value": "redemption" },
-                { "type": "set_flag", "flag": "smuggler.rank", "value": 0 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -10 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 15 }
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "player.job",
+                    "value": "smuggler"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.path",
+                    "value": "redemption"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.rank",
+                    "value": 0
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -825,7 +1108,6 @@
             "music": "music_resolve",
             "isEnding": false
         },
-
         "smug_016a": {
             "id": "act1.chapter1-smuggler.smug_016a",
             "title": "Mako's Network",
@@ -839,14 +1121,45 @@
                 "You nod. You leave. The rain is still falling. But now you have a direction."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 60 },
-                { "type": "set_flag", "flag": "player.job", "value": "smuggler" },
-                { "type": "set_flag", "flag": "smuggler.path", "value": "redemption" },
-                { "type": "set_flag", "flag": "smuggler.rank", "value": 0 },
-                { "type": "set_flag", "flag": "smuggler.mako_network", "value": true },
-                { "type": "set_flag", "flag": "smuggler.wraith_contact", "value": true },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -10 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 20 }
+                {
+                    "type": "add_experience",
+                    "amount": 60
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "player.job",
+                    "value": "smuggler"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.path",
+                    "value": "redemption"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.rank",
+                    "value": 0
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.mako_network",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.wraith_contact",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -858,7 +1171,6 @@
             "music": "music_resolve",
             "isEnding": false
         },
-
         "smug_019": {
             "id": "act1.chapter1-smuggler.smug_019",
             "title": "Broken But Standing",
@@ -871,13 +1183,40 @@
                 "You're a smuggler without a sponsor, without credits, without a plan. But you made a choice in that tunnel, and even losing doesn't undo the fact that you chose right."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 35 },
-                { "type": "set_flag", "flag": "player.job", "value": "smuggler" },
-                { "type": "set_flag", "flag": "smuggler.path", "value": "redemption_failed" },
-                { "type": "set_flag", "flag": "smuggler.rank", "value": 0 },
-                { "type": "set_flag", "flag": "smuggler.seeks_pixel", "value": true },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -15 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 5 }
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "player.job",
+                    "value": "smuggler"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.path",
+                    "value": "redemption_failed"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.rank",
+                    "value": 0
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "smuggler.seeks_pixel",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 5
+                }
             ],
             "choices": [
                 {
@@ -889,21 +1228,39 @@
             "music": "music_resolve",
             "isEnding": false
         },
-
         "smug_020": {
             "id": "act1.chapter1-smuggler.smug_020",
             "title": "Chapter End - The Smuggler's Road",
             "location": "lower_district",
             "text": [
                 "The rain doesn't let up. It never lets up in the Lower District. You walk through it with your collar turned up and your thoughts turning over like a machine with too many gears.",
-                { "condition": { "flag": "smuggler.delivered_child" }, "text": "Two hundred credits heavier and something else lighter. You tell yourself it was just a job. You tell yourself you had no choice. You tell yourself a lot of things as the rain washes the Neon Court's perfume from your jacket. The Smuggler's trade welcomes you with open arms and a closed mouth. You belong here now. Whether you can live with the cost of admission is a question for another night." },
-                { "condition": { "flag": "smuggler.freed_synth_child" }, "text": "Somewhere behind you, in Mako's Repair Shop, a synth child named Pixel is sleeping for the first time without a case around them. Somewhere above you, in the towers of the Neon Court, Silk is learning that their newest runner just torched the most profitable delivery pipeline in Sector 7. You made enemies tonight. Powerful ones. But you also made something rarer and more valuable in this city: a promise you intend to keep." },
-                { "condition": { "flag": "smuggler.failed_rescue" }, "text": "The bruises will heal. The ribs will mend. The twenty credits will buy a meal and a dose of something that dulls the memory of a child's scream echoing through a maintenance tunnel. You failed. But failure in the service of something worth attempting is not the same as never trying. Pixel is still out there. And so are you." },
+                {
+                    "condition": {
+                        "flag": "smuggler.delivered_child"
+                    },
+                    "text": "Two hundred credits heavier and something else lighter. You tell yourself it was just a job. You tell yourself you had no choice. You tell yourself a lot of things as the rain washes the Neon Court's perfume from your jacket. The Smuggler's trade welcomes you with open arms and a closed mouth. You belong here now. Whether you can live with the cost of admission is a question for another night."
+                },
+                {
+                    "condition": {
+                        "flag": "smuggler.freed_synth_child"
+                    },
+                    "text": "Somewhere behind you, in Mako's Repair Shop, a synth child named Pixel is sleeping for the first time without a case around them. Somewhere above you, in the towers of the Neon Court, Silk is learning that their newest runner just torched the most profitable delivery pipeline in Sector 7. You made enemies tonight. Powerful ones. But you also made something rarer and more valuable in this city: a promise you intend to keep."
+                },
+                {
+                    "condition": {
+                        "flag": "smuggler.failed_rescue"
+                    },
+                    "text": "The bruises will heal. The ribs will mend. The twenty credits will buy a meal and a dose of something that dulls the memory of a child's scream echoing through a maintenance tunnel. You failed. But failure in the service of something worth attempting is not the same as never trying. Pixel is still out there. And so are you."
+                },
                 "You are a Smuggler now. Rank: Runner. The road ahead is long, and the cargo it carries will test you in ways the checkpoints never could.",
                 "What you carry next, and who you carry it for, will define everything that follows."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.chapter1_smuggler.complete", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.chapter1_smuggler.complete",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,

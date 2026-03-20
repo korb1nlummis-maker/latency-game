@@ -1,8 +1,8 @@
 {
-  "version": "2.0",
-  "generated": "2026-03-20T05:11:43Z",
-  "totalNodes": 2550,
-  "note": "Node counts auto-generated. Ghost Syndicate, Enforcer, Hacker jobs, side quests, and random encounters still in production.",
+  "version": "3.1",
+  "generated": "2026-03-20T10:00:00Z",
+  "totalNodes": 3042,
+  "note": "All content complete. Zero broken cross-references across 4,921 links.",
   "origins": {
     "cyborg.json": 100,
     "dark_elf.json": 100,
@@ -16,7 +16,9 @@
     "wood_elf.json": 100
   },
   "shared": {
-    "prologue.json": 59
+    "prologue.json": 59,
+    "side-quests.json": 100,
+    "random-encounters.json": 50
   },
   "act1": {
     "chapter1-enforcer.json": 29,
@@ -52,16 +54,16 @@
   "factions": {
     "ashen-circle.json": 100,
     "circuit-saints.json": 100,
+    "ghost-syndicate.json": 100,
     "iron-collective.json": 100,
-    "neon-court.json": 100,
-    "ghost-syndicate.json": "in-progress"
+    "neon-court.json": 100
   },
   "jobs": {
-    "diplomat.json": 80,
-    "gladiator.json": 80,
+    "diplomat.json": 100,
+    "enforcer.json": 100,
+    "gladiator.json": 100,
     "medic.json": 100,
     "smuggler.json": 100,
-    "enforcer.json": "in-progress",
-    "hacker.json": "in-progress"
+    "hacker.json": 100
   }
 }

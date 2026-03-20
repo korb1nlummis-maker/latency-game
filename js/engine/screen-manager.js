@@ -193,9 +193,7 @@ window.Latency.ScreenManager = (function () {
         }
 
         if (_screens[name]) {
-            console.warn(
-                '[ScreenManager] Overwriting existing screen "' + name + '".'
-            );
+            return; // Already registered, skip silently
         }
 
         _screens[name] = screenObject;

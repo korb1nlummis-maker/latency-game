@@ -1,0 +1,2610 @@
+{
+    "meta": {
+        "file": "jobs/gladiator",
+        "act": "1-5",
+        "job": "gladiator",
+        "description": "Gladiator career questline — from desperate pit fighter to Arena Master, 100 nodes spanning blood sport, corporate corruption, stack harvesting, the Grand Championship tournament, and the question of what violence means when death isn't permanent",
+        "nodeCount": 100,
+        "totalNodes": 100
+    },
+    "nodes": {
+        "jgld_001": {
+            "id": "jobs.gladiator.jgld_001",
+            "title": "The Pit",
+            "location": "the_arena",
+            "text": [
+                "The Arena doesn't look like much from the outside. A converted warehouse in the industrial sector, unmarked except for the bass vibration of crowd noise that you feel in your teeth before you hear it with your ears. The entrance is a service door propped open with a cinderblock, attended by a man whose neck is thicker than your thigh.",
+                "Inside, the pit is exactly what the name suggests: a sunken floor surrounded by elevated seating, lit by industrial floods that turn the fighting surface into a stage. The floor is concrete, stained with patterns that you don't examine too closely. The walls are high enough to keep fighters in and spectators safe, lined with padding that was once white and is now the color of old rust.",
+                "\"First time?\" The man at the door reads your hesitation like a language he speaks fluently. \"Fighters enter through the back. Spectators pay at the gate. Which are you?\"",
+                "The question is more than logistical. It's existential. Are you someone who watches violence or someone who participates in it? In the Lower District, the distinction defines your place in the economy of pain."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.started",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.rank",
+                    "value": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Fighter. Point me to the back.\"",
+                    "next": "jobs.gladiator.jgld_002"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_002": {
+            "id": "jobs.gladiator.jgld_002",
+            "title": "The Locker Room",
+            "location": "the_arena",
+            "text": [
+                "The locker room is a converted office, its cubicle walls torn out to create an open space where fighters prepare. The smell hits you first: sweat, liniment, adrenaline, and the metallic tang of old blood. Fighters sit on benches or lean against walls, wrapping their hands, stretching muscles, staring at nothing with the particular focus of people about to do damage and receive it.",
+                "The fight card is posted on the wall. Your name is at the bottom — the newcomer slot, the fight that happens before the crowd is properly drunk and the stakes are too low for the bookmakers to care. Your opponent is listed as 'Brick.' No last name. Fighters in the pit don't need last names.",
+                "A manager named Volkov finds you. He's a heavy man with soft hands and hard eyes, wearing a suit that was expensive three years ago and has been maintained by hope and careful pressing. He manages the lower-card fighters — the newcomers, the desperate, the ones who fight because the alternative is worse.",
+                "\"Rules are simple,\" Volkov says. \"Fight until someone can't. No weapons, no biting, no eye-gouging. Everything else is fair. Winner gets fifty credits. Loser gets nothing. Dead gets cremated.\"",
+                "\"People die in there?\"",
+                "\"Not often. But yes.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.met_volkov",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Prepare yourself. Focus on the fight ahead",
+                    "next": "jobs.gladiator.jgld_003"
+                },
+                {
+                    "text": "Ask about Brick — know your opponent",
+                    "next": "jobs.gladiator.jgld_003"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_003": {
+            "id": "jobs.gladiator.jgld_003",
+            "title": "First Blood",
+            "location": "the_arena",
+            "text": [
+                "Brick is everything his name implies: square, solid, immovable. He stands in the pit waiting for you, rolling his shoulders, his fists already clenched. The crowd is sparse and inattentive — a newcomer fight doesn't merit their full attention. In the pit, you are background noise.",
+                "The bell sounds. Brick charges. He is faster than he looks, which is a lesson you learn with your ribs as he connects with a body blow that drives the air from your lungs like a bellows compressed. The pain is immediate, total, clarifying.",
+                "You fight back. Not with technique — you don't have enough of that yet — but with the desperate ferocity of someone who has decided that being hit is acceptable as long as you hit back harder. Brick is stronger. You are faster. The fight becomes an equation of damage, each exchange trading injury for injury.",
+                "Three minutes in, your vision narrows. Everything outside the pit — the crowd, the lights, the smell — disappears. There is only Brick, and you, and the ancient arithmetic of two people trying to break each other."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Fight through the pain — overwhelm him with aggression",
+                    "next": "jobs.gladiator.jgld_004"
+                },
+                {
+                    "text": "Stay defensive — wait for him to make a mistake",
+                    "next": "jobs.gladiator.jgld_005"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_004": {
+            "id": "jobs.gladiator.jgld_004",
+            "title": "The Storm",
+            "location": "the_arena",
+            "text": [
+                "You choose violence. Pure, unfiltered, animal aggression that surprises Brick and surprises you more. You wade into his range, absorbing punches that would stop a lesser person, and you hit him with everything you have — fists, elbows, knees, the full inventory of weapons that a human body provides when survival is the only consideration.",
+                "Brick goes down. Not gracefully — he crumbles, the way buildings crumble, structural failure cascading from the point of impact outward. He hits the concrete floor and doesn't get up.",
+                "The crowd, barely watching a moment ago, is suddenly alert. A newcomer dropping Brick in the first round is noteworthy. You feel their attention shift toward you, and the feeling is electric and terrifying — the realization that you have just made yourself visible in a world where visibility is both currency and target.",
+                "Volkov is at the pit's edge, and for the first time, his expression carries something beyond professional calculation. Interest. \"Not bad,\" he says. \"Not bad at all.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 50,
+                    "reason": "First fight winnings"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.first_win",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Help Brick up. No reason to make enemies",
+                    "next": "jobs.gladiator.jgld_006"
+                },
+                {
+                    "text": "Walk away. The fight's over",
+                    "next": "jobs.gladiator.jgld_006"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_005": {
+            "id": "jobs.gladiator.jgld_005",
+            "title": "The Patience",
+            "location": "the_arena",
+            "text": [
+                "You let Brick come to you. He swings, you move. He charges, you redirect. Every fighter has a pattern — a rhythm built from training and habit — and Brick's pattern is simple: power, power, power. He throws everything with full force, and full force has a cost: recovery time.",
+                "You learn his rhythm. Swing, reset, swing. Three-count recovery between combinations. On the fourth count, he's open — left side unguarded, weight on his front foot, balance committed to the next attack that hasn't started yet.",
+                "You hit him on the fourth count. One precise strike to the jaw, leveraging his own momentum against him. Brick's head snaps sideways and his eyes go blank and he falls with the heavy finality of a machine switching off.",
+                "The crowd notices. Not with cheering — this was too quiet, too clinical for cheering. They notice the way professionals notice: a newcomer who fights with patience and precision rather than desperation. That's unusual. That's worth watching."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 50,
+                    "reason": "First fight winnings"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.first_win",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.technical_fighter",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Check on Brick. Make sure he's okay",
+                    "next": "jobs.gladiator.jgld_006"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_006": {
+            "id": "jobs.gladiator.jgld_006",
+            "title": "After the Fight",
+            "location": "the_arena",
+            "text": [
+                "The aftermath is anticlimactic in the way that violence's aftermath always is. You sit in the locker room with ice on your knuckles and fifty credits in your pocket and the knowledge that you just beat a man unconscious for money. The credits feel exactly as heavy as they should.",
+                "Brick recovers. He sits on the opposite bench with a bag of ice against his jaw and regards you with the professional assessment of a man who has been beaten by many people and holds no particular grudge about this latest addition to the list. \"Good fight,\" he says. It's not a compliment. It's an observation.",
+                "Volkov appears with a datapad. \"I can book you for next week. Different opponent, higher on the card. Better money.\" He pauses. \"You've got something. I've seen a lot of fighters come through this pit, and most of them are just desperate. You fight like you're making a point.\"",
+                "\"What point?\"",
+                "\"That's for you to figure out.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"Book me. I'll fight anyone you put in front of me.\"",
+                    "next": "jobs.gladiator.jgld_007"
+                },
+                {
+                    "text": "\"Who's the best fighter in this place? I want to know where the ceiling is.\"",
+                    "next": "jobs.gladiator.jgld_007"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_007": {
+            "id": "jobs.gladiator.jgld_007",
+            "title": "The Climb",
+            "location": "the_arena",
+            "text": [
+                "You fight every week. The opponents get harder. After Brick comes Razor — fast, lean, with hands that cut like blades. After Razor comes Tank — a woman built like a demolition vehicle who absorbs punishment like it's nutrition. After Tank comes a synth fighter called Chrome, whose artificial reflexes make every exchange a lesson in timing.",
+                "You win some. You lose some. The losses teach you more than the victories, because defeat in the pit comes with immediate physical consequences that reinforce the lesson permanently. A broken nose from Razor teaches you to keep your guard up. A cracked rib from Tank teaches you to avoid grappling with someone stronger. A concussion from Chrome teaches you that speed is a weapon you haven't fully developed.",
+                "Over two months, your body changes. Not just muscle and conditioning — the deeper changes. Your reflexes sharpen. Your pain threshold rises. Your relationship with violence shifts from something external and frightening to something internal and familiar. You are becoming a fighter in the cellular sense, your body adapting to the environment of the pit the way organisms adapt to any environment: by becoming what the environment demands."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 120,
+                    "reason": "Fight earnings over two months"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Keep climbing the fight card",
+                    "next": "jobs.gladiator.jgld_008"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_008": {
+            "id": "jobs.gladiator.jgld_008",
+            "title": "The First Kill",
+            "location": "the_arena",
+            "text": [
+                "His name is Dex and he fights like a cornered animal because that's what he is. Desperate, wild, unpredictable. He comes at you with a ferocity that goes beyond competition, beyond sport, into the territory of survival itself.",
+                "The fight is brutal. Dex doesn't defend — he attacks with both fists simultaneously, trading blow for blow, willing to absorb anything you throw as long as he can throw something back. The crowd loves it. The crowd always loves mutual destruction.",
+                "You hit him. A knee strike to the body as he charges in, followed by an elbow to the temple. The combination is textbook — something you've practiced dozens of times. The elbow lands with a sound you will never forget: the sound of a skull accepting force it wasn't designed to absorb.",
+                "Dex drops. Not like Brick — not a controlled descent. He drops like something turned off, like a machine whose power has been cut. He hits the concrete and doesn't move and the silence that follows is the loudest thing you've ever heard.",
+                "The medic reaches him in thirty seconds. The declaration comes in sixty: dead on arrival. Acute subdural hemorrhage. A bleed in the brain caused by an elbow strike from a fighter who hit precisely where training taught them to hit."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.first_kill",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Stay in the pit. Face what you've done",
+                    "next": "jobs.gladiator.jgld_009"
+                },
+                {
+                    "text": "Go to the locker room. You need to be alone",
+                    "next": "jobs.gladiator.jgld_009"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_009": {
+            "id": "jobs.gladiator.jgld_009",
+            "title": "The Weight of Death",
+            "location": "the_arena",
+            "text": [
+                "The pit clears. The next fight starts. The crowd moves on. In the Arena, death is a scheduling inconvenience.",
+                "Volkov finds you afterward. He is businesslike and not unkind. \"It happens,\" he says. \"Not often, but it happens. The pit is dangerous. Everyone who steps in knows the risk. Dex knew the risk.\"",
+                "\"Did he have a stack?\"",
+                "\"No. Lower District. No insurance. He's gone.\" Volkov pauses. \"If that's too much for you, this isn't your sport. The pit kills. That's the truth of it. Every fighter who enters that pit is one bad angle, one unlucky strike, one millisecond of imprecision away from being carried out.\"",
+                "You look at your hands. The knuckles are swollen, split along the ridges, caked with blood that is not all yours. These hands killed a man. Not in self-defense, not in war, not in any context that society considers justifiable. In a pit, for money, for entertainment.",
+                "You have to decide if these hands will enter the pit again."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 75,
+                    "reason": "Fight earnings (Dex match)"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Keep fighting. Dex chose the pit the same as you",
+                    "next": "jobs.gladiator.jgld_010"
+                },
+                {
+                    "text": "The killing changes nothing. You fight because you must",
+                    "next": "jobs.gladiator.jgld_010"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_010": {
+            "id": "jobs.gladiator.jgld_010",
+            "title": "Rising Star",
+            "location": "the_arena",
+            "text": [
+                "You fight. The killing doesn't stop you — nothing stops you, you discover, which is itself a revelation about the person you're becoming. You win more than you lose. The crowd learns your name. The bookmakers adjust their odds. You climb the fight card from the bottom to the middle to the edge of the upper tier where the real money fights happen.",
+                "The pit develops a narrative around you — the fighter who killed Dex and kept going, the one who fights with precision instead of rage, the one who could be champion if the current champion ever retires or dies or runs out of opponents willing to face them.",
+                "The current champion is a fighter called Kova. She has held the title for eight months, which in pit fighting is an geological era. She fights with a style that combines overwhelming strength with strategic intelligence, and she has never been knocked down. Not once. Not ever.",
+                "\"You want the top?\" Volkov asks. \"You go through Kova. And nobody goes through Kova.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"Get me a fight with Kova. I'm ready.\"",
+                    "next": "jobs.gladiator.jgld_011"
+                },
+                {
+                    "text": "\"Not yet. I need more experience first.\"",
+                    "next": "jobs.gladiator.jgld_011"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_011": {
+            "id": "jobs.gladiator.jgld_011",
+            "title": "Training",
+            "location": "the_arena",
+            "text": [
+                "You train with religious intensity. The pit becomes your temple — early mornings on the heavy bag, afternoons sparring with anyone willing, evenings watching Kova's fights on recorded footage, studying her patterns the way you once studied Brick's.",
+                "Kova is a puzzle. Her style has no obvious weakness. She adapts to each opponent, switching between aggression and defense with a fluidity that suggests not just physical skill but an intuitive understanding of combat that goes beyond training. She reads her opponents the way some people read books — thoroughly, with comprehension, and with the ability to anticipate what comes next.",
+                "An old fighter named Sato offers to train you. He's sixty, retired from the pit, with hands that are permanently swollen and a left eye that doesn't track anymore. He was champion once, twenty years ago, before the sport was corporate and the stakes were even more primitive than they are now.",
+                "\"Kova is the best fighter I've ever seen,\" Sato says. \"But the best fighter can be beaten. Everyone can be beaten. The question is: what are you willing to sacrifice to do it?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.training_with_sato",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Whatever it takes.\"",
+                    "next": "jobs.gladiator.jgld_012"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_012": {
+            "id": "jobs.gladiator.jgld_012",
+            "title": "The Challenge",
+            "location": "the_arena",
+            "text": [
+                "You challenge Kova. The fight is set for three weeks out — enough time for the bookmakers to build their books and the crowd to build their anticipation. Your odds are 4:1 against, which is better than most challengers get and worse than you'd like.",
+                "In the weeks before the fight, you train until your body protests and then train past the protest. Sato pushes you to the edge of collapse — not to build strength but to build familiarity with the edge itself. \"In the fight,\" he says, \"you will reach a point where your body tells you to stop. Your muscles will scream, your lungs will burn, your brain will beg for mercy. That is the moment that decides the fight. Not skill. Not speed. Not strength. The willingness to stay at the edge when everything inside you says step back.\"",
+                "Fight night arrives. The Arena is packed — standing room only, the crowd vibrating with energy that you feel through the concrete floor. Kova is already in the pit, warming up with the casual confidence of someone who has never been beaten and doesn't intend to start tonight."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Enter the pit. Face the champion",
+                    "next": "jobs.gladiator.jgld_013"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_013": {
+            "id": "jobs.gladiator.jgld_013",
+            "title": "Kova",
+            "location": "the_arena",
+            "text": [
+                "Kova hits like a thunderstorm — sudden, overwhelming, and from every direction at once. In the first thirty seconds, she reads your style and adapts, shifting her approach to counter your strengths and exploit your weaknesses. She is everything Sato warned about: intelligent, powerful, and possessed of an instinct for violence that transcends training.",
+                "You survive the first round by refusing to fall. Every blow she lands — and she lands many — pushes you closer to the edge that Sato trained you to inhabit. The pain becomes a landscape, something you move through rather than something that moves through you.",
+                "In the second round, you find something. A hesitation. A fraction of a second where Kova pauses between combinations — not fatigue, but habit. A microsecond gap in her rhythm that opens like a door.",
+                "You step through the door. One strike, perfectly timed, to the nerve junction below her ear. Kova's head snaps sideways. Her balance shifts. For the first time in eight months, Kova stumbles.",
+                "The crowd goes silent. Then the crowd goes mad."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Press the advantage — don't let her recover",
+                    "next": "jobs.gladiator.jgld_014"
+                },
+                {
+                    "text": "Stay disciplined — wait for the gap to open again",
+                    "next": "jobs.gladiator.jgld_014"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_014": {
+            "id": "jobs.gladiator.jgld_014",
+            "title": "Champion",
+            "location": "the_arena",
+            "text": [
+                "The fight lasts eleven minutes. Eleven minutes that feel like a lifetime compressed into a series of violent exchanges, each one carrying the weight of everything you've built and everything Kova stands to lose. She recovers from your strike and comes back harder, adjusting her rhythm to close the gap you found.",
+                "But the gap was a symptom of something deeper — a fundamental assumption in Kova's fighting style, a belief that she would never be hit cleanly enough to stumble. The stumble broke that assumption, and without it, her confidence — the foundation of her dominance — shows cracks.",
+                "You hit the cracks. Not with power but with precision, the way water erodes stone: relentlessly, inevitably, exploiting each opening that her damaged confidence creates. By the ninth minute, Kova is defending. By the tenth, she's retreating. At eleven minutes, she goes down — not from a single blow but from accumulation, the sum of a hundred impacts adding up to a weight her body can no longer carry.",
+                "She stays down. The bell sounds. You are the champion.",
+                "The crowd screams your name, and the sound is unlike anything you've experienced — a wave of noise that passes through you like electricity, like validation, like hunger being fed."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Championship fight purse"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.champion",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.rank1_complete",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the championship and everything it brings",
+                    "next": "jobs.gladiator.jgld_015"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_015": {
+            "id": "jobs.gladiator.jgld_015",
+            "title": "Rank 2: The Champion",
+            "location": "the_arena",
+            "text": [
+                "Championship changes everything. The money triples. The attention multiplies. Sponsors appear — not the legitimate kind, but the Lower District's version: gang leaders who want their name associated with yours, black market dealers who want your endorsement, fixers who want your presence at their events.",
+                "The fights continue but the stakes escalate. You're no longer fighting for fifty credits and a bruised ego. You're fighting for thousands, for reputation, for the invisible currency of status that determines your place in the district's hierarchy.",
+                "And the crowds. The crowds are the thing you didn't expect. They know your name. They chant it. They bet on you, root for you, build their entertainment around your violence. You are simultaneously a person and a product, a fighter and a brand, and the distinction between the two erodes with every fight.",
+                "Rank 2. Champion. The cheers are louder than the silence, but the silence is still there, underneath, where Dex died and will always be dying."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.rank",
+                    "value": 2
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Embrace the champion's life and all it offers",
+                    "next": "jobs.gladiator.jgld_016"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_016": {
+            "id": "jobs.gladiator.jgld_016",
+            "title": "Corporate Interest",
+            "location": "neon_strip",
+            "text": [
+                "The corporations take notice. A woman named Director Sable from Meridian Entertainment approaches you after a fight, flanked by assistants carrying datapads and wearing suits that cost more than your annual earnings.",
+                "\"You're wasted on the underground circuit,\" she says. \"Meridian Entertainment is developing a sanctioned combat league. Professional fights, professional venues, broadcast across the city. Real money. Real exposure. Real careers.\"",
+                "The offer is legitimate. A contract with guaranteed fights, guaranteed purses, medical coverage, and the infrastructure of a corporation behind your career. In exchange, you belong to them. Your fights are their fights. Your image is their brand. Your violence is their product.",
+                "\"Think about it,\" Sable says. \"The pit will grind you down. The league will build you up. The question is whether you want to be a fighter or a commodity.\"",
+                "The irony of a corporate executive offering to make you less of a commodity does not escape you."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.corporate_offer",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the corporate deal — better money, better conditions",
+                    "next": "jobs.gladiator.jgld_017"
+                },
+                {
+                    "text": "Refuse. You fight on your own terms",
+                    "next": "jobs.gladiator.jgld_018"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_017": {
+            "id": "jobs.gladiator.jgld_017",
+            "title": "The Corporate Fighter",
+            "location": "neon_strip",
+            "text": [
+                "You sign with Meridian Entertainment. The contract is thick with clauses that essentially make you property — exclusive fighting rights, image licensing, behavioral requirements. You read every word and sign anyway, because the alternative is the pit and the pit kills people and you've seen enough of that.",
+                "The corporate league is different. The venues are clean, well-lit, with medical teams on standby and safety protocols that the pit never had. The opponents are selected for entertainment value — matchups designed to produce exciting fights rather than simply pairing whoever's available. Your training improves: real facilities, real coaches, real nutrition.",
+                "But the fights are performances now. Not fake — the violence is real, the pain is real — but choreographed in the sense that outcomes are anticipated and sometimes encouraged. Sable never directly tells you to throw a fight, but the implication hangs in the air like smoke: the league needs narratives, and narratives require cooperation."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 150,
+                    "reason": "Corporate league signing bonus"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.corporate_fighter",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Fight clean — ignore the pressure to perform",
+                    "next": "jobs.gladiator.jgld_019"
+                },
+                {
+                    "text": "Play the game — the money is worth some compromise",
+                    "next": "jobs.gladiator.jgld_019"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_018": {
+            "id": "jobs.gladiator.jgld_018",
+            "title": "The Independent",
+            "location": "the_arena",
+            "text": [
+                "You refuse the corporate deal and Sable accepts the refusal with the composure of a woman who has many options and doesn't need yours. \"The offer stands,\" she says. \"When the pit breaks you — and it will — I'll be here.\"",
+                "You return to the pit and the pit welcomes you back the way it always does: with blood and noise and the particular democracy of violence where the only credential that matters is your willingness to fight. The money is less. The risk is more. The authenticity is everything.",
+                "Volkov, your manager, adjusts your fight schedule. Higher-profile opponents, bigger purses, more dangerous matches. \"You turned down the corporate deal,\" he says. \"That means you need to earn more here. And earning more here means fighting harder people.\"",
+                "The logic is clean and terrifying. You chose freedom, and freedom costs more."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.independent_fighter",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the harder fights. You chose this",
+                    "next": "jobs.gladiator.jgld_019"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_019": {
+            "id": "jobs.gladiator.jgld_019",
+            "title": "The Young Fighter",
+            "location": "the_arena",
+            "text": [
+                "A teenager appears at the Arena. Sixteen years old, lean and fast, with the particular intensity of someone who has been fighting since they could make a fist. His name is Remi, and he wants you to train him.",
+                "\"I watched you fight Kova,\" Remi says. \"I've watched every fight since. You're the best. I want to be the best.\"",
+                "He is talented. Even in a casual sparring session, you can see it — the reflexes, the instinct, the willingness to eat pain that marks a born fighter. But he is also sixteen, and the pit has no minimum age, and the things the pit does to people are not things that should happen to a child.",
+                "\"Go home,\" you tell him. \"Come back when you're old enough to understand what you're asking for.\"",
+                "\"I understand,\" he says, and the worst part is that he probably does. In the Lower District, sixteen-year-olds understand violence the way corporate kids understand mathematics: thoroughly, through constant exposure."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.met_remi",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Train him. Better he learns from you than from the pit",
+                    "next": "jobs.gladiator.jgld_020"
+                },
+                {
+                    "text": "Refuse. You won't be responsible for putting a kid in the ring",
+                    "next": "jobs.gladiator.jgld_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_020": {
+            "id": "jobs.gladiator.jgld_020",
+            "title": "The Student",
+            "location": "the_arena",
+            "text": [
+                "You train Remi the way Sato trained you: relentlessly, honestly, with a focus on survival over victory. You teach him to read opponents, to manage pain, to understand the difference between fighting to win and fighting to not lose.",
+                "But you also teach him something Sato never taught you: when to walk away. The skill of knowing when a fight isn't worth having. The discipline of refusing a match that will leave you broken for no purpose. The pit doesn't teach restraint — it rewards recklessness. You try to provide a counterweight.",
+                "Remi learns fast. His talent develops under your guidance into something refined, something that could carry him to the top of the fight card if he wants it. But you see something in him that worries you: the hunger. The same hunger you had. The need to prove something through violence that you've never been able to articulate.",
+                "You wonder if you're training a fighter or building a weapon, and whether there's a difference."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.training_remi",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue training Remi while defending your title",
+                    "next": "jobs.gladiator.jgld_022"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_021": {
+            "id": "jobs.gladiator.jgld_021",
+            "title": "The Refusal",
+            "location": "the_arena",
+            "text": [
+                "You send Remi away. He doesn't argue — he's grown up in the Lower District, where rejection is just another form of weather. He nods, says \"Okay,\" and leaves. But he doesn't stay gone.",
+                "You see him in the Arena crowds, watching every fight with those hungry eyes. You see him in the training areas, working the heavy bag after hours when he thinks nobody's watching. He's teaching himself, which is worse than having a teacher, because self-taught fighters develop habits that get them killed.",
+                "Three weeks later, Remi enters his first fight. You watch from the crowd. He wins — barely, messily, with a raw talent that hasn't been shaped by anything except desperation and the recorded footage of your fights. He takes hits he doesn't need to take. He leaves openings that a better opponent would exploit. He survives on instinct and speed.",
+                "He finds you after the fight, bleeding from a cut above his eye. \"I'm doing this whether you help me or not,\" he says. \"But I'd rather you helped.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"Fine. But you follow my rules.\"",
+                    "next": "jobs.gladiator.jgld_022"
+                },
+                {
+                    "text": "\"You've proven your point. Let's train.\"",
+                    "next": "jobs.gladiator.jgld_022"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_022": {
+            "id": "jobs.gladiator.jgld_022",
+            "title": "Title Defenses",
+            "location": "the_arena",
+            "text": [
+                "You defend your title four times. Each defense is harder than the last — the challengers study your style, prepare specifically for your patterns, come into the pit with strategies designed to exploit every weakness they've identified.",
+                "You beat them all. Not easily — the fourth defense goes fourteen minutes and leaves you with two cracked ribs and a concussion that takes a week to clear. But you beat them, and each victory cements your legend and raises the stakes for the next challenge.",
+                "The money flows. The crowds swell. The Arena expands — new seating, new lighting, a VIP section where corporate executives and gang leaders sit side by side, united by their appetite for controlled destruction. Your violence has become entertainment infrastructure.",
+                "And then Kova comes back. Healed, trained, hungry for the title you took from her. The rematch is announced and the Arena sells out in hours."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 300,
+                    "reason": "Championship defense purses"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Prepare for Kova's rematch",
+                    "next": "jobs.gladiator.jgld_023"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_023": {
+            "id": "jobs.gladiator.jgld_023",
+            "title": "The Rematch",
+            "location": "the_arena",
+            "text": [
+                "Kova is different. The loss changed her the way your first kill changed you — stripped something away and replaced it with something harder. She fights without the hesitation gap you exploited in your first match. She fights without the assumption of invincibility that was her weakness. She fights like someone who has tasted defeat and decided that the taste is unacceptable.",
+                "The fight is the best you've ever experienced. Not the most violent — violence is easy to produce — but the most complete. Two fighters at the peak of their ability, each one knowing the other's style as intimately as their own, each one adapting in real-time to the other's adaptations. The crowd is irrelevant. The money is irrelevant. For fifteen minutes, there is nothing in the world except you and Kova and the space between you.",
+                "At minute fifteen, you both go down. Simultaneously. A mutual exchange that leaves neither of you standing. The crowd holds its breath. The referee counts.",
+                "You get up at eight. Kova gets up at nine. Both standing, both swaying, both looking at each other with an understanding that goes beyond rivalry into something like respect."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Finish the fight",
+                    "next": "jobs.gladiator.jgld_024"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_024": {
+            "id": "jobs.gladiator.jgld_024",
+            "title": "Victory's Cost",
+            "location": "the_arena",
+            "text": [
+                "You win. Barely. A decision that could have gone either way, settled by the judges' assessment that your aggression in the final minutes was marginally more effective than Kova's defense. It is the least satisfying victory of your career and the most meaningful, because Kova forced you to fight at a level you didn't know you could reach.",
+                "Afterward, in the locker room, Kova sits next to you. Both of you are icing injuries, breathing through the kind of pain that will last weeks.",
+                "\"You're the best fighter I've ever faced,\" she says. It's not defeat speaking — it's assessment.",
+                "\"You made me the best fighter I've ever been,\" you reply.",
+                "\"Then we're even.\" She extends a hand. You shake it. The grip is firm despite the swelling, and in the handshake is an agreement that transcends the competition: two warriors acknowledging each other's worth.",
+                "Kova retires after the rematch. She's proven what she needed to prove, and the pit has nothing left to teach her. You, on the other hand, are about to discover that the pit has been hiding something."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Rematch purse"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.rank2_complete",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "What is the Arena hiding?",
+                    "next": "jobs.gladiator.jgld_025"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_025": {
+            "id": "jobs.gladiator.jgld_025",
+            "title": "Rank 3: The Legend",
+            "location": "the_arena",
+            "text": [
+                "It starts with a question: what happens to the fighters who lose badly?",
+                "You've been fighting in the Arena for months. You've seen fighters carried out on stretchers. You've seen fighters wheeled out in body bags. But there's a third category you never noticed until now: fighters who lose and simply disappear. Not killed — the medics confirm they survived. Not retired — no one sees them outside the Arena. They lose, they're taken to the Arena's medical wing, and they're never seen again.",
+                "You start counting. In the last three months, seven fighters have disappeared after losses. All seven had cortical stacks. All seven lost fights badly enough to require medical intervention. All seven were taken to the Arena's medical wing and never emerged.",
+                "The medical wing is in the basement level, behind a security door that fighters aren't authorized to access. You've never questioned it before. Champions don't ask questions about infrastructure. But now you're asking.",
+                "Rank 3. Legend. The title means something different now."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.rank",
+                    "value": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.legend",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Investigate the disappearances",
+                    "next": "jobs.gladiator.jgld_026"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_026": {
+            "id": "jobs.gladiator.jgld_026",
+            "title": "The Basement",
+            "location": "the_arena",
+            "text": [
+                "You access the basement after hours, using the champion's access codes that Volkov gave you — codes that were meant for the equipment room but work on more doors than they should. The basement is a surgical suite. Clean, well-equipped, with technology that has no place in an underground fighting venue.",
+                "Stack extraction equipment. Neural interface arrays. Cortical stack storage units, each containing a numbered chip. You count the chips: forty-seven. Forty-seven cortical stacks, extracted from forty-seven fighters, stored in a climate-controlled cabinet like wine bottles in a cellar.",
+                "The realization hits you with the force of Kova's best punch: the Arena is harvesting stacks. Fighters who lose badly — who are knocked unconscious, whose bodies are vulnerable, whose stacks can be extracted during 'medical treatment' — are having their cortical stacks ripped from their spines. Their consciousness, their identity, their immortality — stolen.",
+                "The fighters disappear because they wake up without stacks, without identity, without any way to prove who they are. In a city where your stack is your ID, losing it means losing everything."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.discovered_harvesting",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Confront Volkov about the stack harvesting",
+                    "next": "jobs.gladiator.jgld_027"
+                },
+                {
+                    "text": "Gather more evidence before confronting anyone",
+                    "next": "jobs.gladiator.jgld_028"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_027": {
+            "id": "jobs.gladiator.jgld_027",
+            "title": "Volkov's Truth",
+            "location": "the_arena",
+            "text": [
+                "Volkov doesn't deny it. He doesn't even try. When you confront him with what you found, his expression shifts from surprise to resignation — the face of a man who knew this moment was coming and had been dreading it.",
+                "\"The Arena isn't mine,\" he says. \"I manage the fights. The building, the operation, the business — that belongs to Director Sable. Meridian Entertainment. They built the Arena as a front for stack harvesting. The fights are real, the fighters are real, the crowd is real. But the purpose was never entertainment. It was procurement.\"",
+                "\"Procurement of what?\"",
+                "\"Cortical stacks. Fresh ones, from healthy hosts. The black market for stacks is enormous — corporate employees who need replacement stacks, identity thieves who need blank stacks to overwrite, research labs that need test subjects. The Arena provides the supply, and nobody questions the source because everybody's watching the fights.\"",
+                "Volkov looks at his hands. \"I've been part of this for three years. I told myself I was just managing fighters. But I knew. I always knew.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.volkov_confession",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"How do we stop it?\"",
+                    "next": "jobs.gladiator.jgld_029"
+                },
+                {
+                    "text": "\"You're as guilty as they are, Volkov.\"",
+                    "next": "jobs.gladiator.jgld_029"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_028": {
+            "id": "jobs.gladiator.jgld_028",
+            "title": "The Evidence Trail",
+            "location": "data_haven",
+            "text": [
+                "You take what you found to the Data Haven, where information brokers can verify and contextualize the evidence. The picture that emerges is worse than you imagined.",
+                "The Arena is one of three fighting venues operated by Meridian Entertainment across the district. All three harvest stacks. The total extraction count across all venues exceeds two hundred in the last year. The stacks are sold through a network of intermediaries to corporate clients, black market dealers, and — most disturbingly — a research division within Meridian itself that is experimenting with consciousness transfer.",
+                "The fighters whose stacks are harvested are dumped in the streets, stackless and identity-less. Some become unregistered — joining the Lower District's population of invisible people. Others simply disappear, their consciousness lost, their bodies still walking but their selves erased.",
+                "You are the champion of a slave market. The fights are the procurement process. The losses are the harvest. And every victory you've celebrated was a performance staged to keep the crowd entertained while the real business happened in the basement."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.evidence_gathered",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Plan your response carefully",
+                    "next": "jobs.gladiator.jgld_029"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_029": {
+            "id": "jobs.gladiator.jgld_029",
+            "title": "The Fighter's Dilemma",
+            "location": "the_arena",
+            "text": [
+                "You face the same question that defines every pivotal moment in the Arena: fight or flee. But this time, the fight isn't in the pit. It's against the system that built the pit.",
+                "Director Sable and Meridian Entertainment have resources, connections, and the legal infrastructure to bury anyone who threatens their operation. Exposing the stack harvesting means exposing a corporate subsidiary, which means corporate retaliation — the kind that involves lawyers, enforcers, and the systematic destruction of everything you've built.",
+                "But the alternative is complicity. Every fight you participate in, every crowd you draw, every victory you celebrate feeds the machine that harvests people's souls. Your legend is built on a foundation of stolen consciousness.",
+                "Sato, your old trainer, gives you the fighter's answer: \"In the ring, you have one choice: fight until you can't. Outside the ring, the choice is the same. The only difference is what you're fighting for.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Fight. Expose the harvesting operation from inside the Arena",
+                    "next": "jobs.gladiator.jgld_030"
+                },
+                {
+                    "text": "Gather allies first — you can't fight a corporation alone",
+                    "next": "jobs.gladiator.jgld_031"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_030": {
+            "id": "jobs.gladiator.jgld_030",
+            "title": "The Arena Rebellion",
+            "location": "the_arena",
+            "text": [
+                "You choose the fighter's way: direct action. On fight night, in front of a packed Arena, you step into the pit — not to fight but to speak. The crowd falls silent, confused. The champion standing in the pit without an opponent. The cameras roll.",
+                "You tell them everything. The basement surgical suite. The stack extractions. The forty-seven cortical stacks in their storage cabinet. The two hundred fighters across three venues who have had their souls stolen. You lay out the evidence with the precision of a fighter throwing combinations — each fact a blow, each revelation a strike against the Arena's legitimacy.",
+                "The crowd's reaction is volcanic. Some people rise in outrage. Others sit in stunned silence. Some leave, unable to reconcile their entertainment with the horror behind it. The Arena's security moves toward you, but the crowd pushes back — a wall of bodies between the champion who just exposed the truth and the system that wants to silence it.",
+                "Director Sable watches from the VIP section with an expression of controlled fury. She reaches for her comm device. The corporate machine is about to respond."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.public_exposure",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Hold the pit. Don't let them shut you down",
+                    "next": "jobs.gladiator.jgld_032"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_031": {
+            "id": "jobs.gladiator.jgld_031",
+            "title": "Building the Alliance",
+            "location": "sector_7_bar",
+            "text": [
+                "You build a coalition. Fighters first — Kova, who comes out of retirement for this. Brick, who never forgot your first fight. Chrome, whose synthetic perspective on consciousness makes the stack harvesting particularly horrifying. Remi, who is young enough to be outraged without reservation.",
+                "Then the community: the families of disappeared fighters, who have been searching for answers and finding silence. Community leaders who suspected the Arena was hiding something but lacked the evidence. Information brokers from the Data Haven who can amplify whatever you uncover.",
+                "The alliance is imperfect — fighters and community leaders have different priorities, different methods, different risk tolerances. But the cause unites them: people are being robbed of their souls in a basement, and the institution responsible wears the mask of entertainment.",
+                "\"When do we move?\" Kova asks. Her hands are wrapped. Her eyes are focused. She is ready for a fight that has nothing to do with the pit and everything to do with what the pit has been hiding."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.built_alliance",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Move now — before Sable realizes we know",
+                    "next": "jobs.gladiator.jgld_032"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_032": {
+            "id": "jobs.gladiator.jgld_032",
+            "title": "The Battle for the Arena",
+            "location": "the_arena",
+            "text": [
+                "Sable sends corporate security. Not the regular guards — a specialized extraction team, armed and armored, with orders to secure the Arena and detain everyone inside. The crowd scatters. The fighters don't.",
+                "What follows is not a pit fight. It's a war. The Arena's corridors become battlegrounds as fighters — trained combatants whose entire lives have prepared them for exactly this kind of violence — face corporate security in a building they know better than any outsider ever could.",
+                "You lead from the front because that's what champions do. The security team is professional but outnumbered and outmaneuvered. They know tactics. Your fighters know the Arena — every corridor, every doorway, every hiding place. The home advantage is decisive.",
+                "In the basement, you secure the stack storage unit. Forty-seven cortical stacks. Forty-seven stolen souls. Evidence that cannot be denied, cannot be suppressed, cannot be explained away."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Secure the evidence and call for reinforcements",
+                    "next": "jobs.gladiator.jgld_033"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_033": {
+            "id": "jobs.gladiator.jgld_033",
+            "title": "The Aftermath of War",
+            "location": "the_arena",
+            "text": [
+                "The Arena is yours. Corporate security withdraws after a three-hour standoff that ends when the community reinforcements arrive — hundreds of Lower District residents surrounding the building, creating a human shield that corporate forces can't breach without creating a public relations catastrophe.",
+                "The evidence goes public. The Data Haven broadcasts it across every network. The story is too big to suppress: a corporate entertainment subsidiary operating a slave market for human consciousness. The outrage is immediate, massive, and — for once — sustained.",
+                "Director Sable is arrested. Not by corporate security — by the community itself, which has decided that its justice system will handle this particular crime. The irony is not lost on anyone: a woman who profited from caging fighters is caged by the fighters she exploited.",
+                "But the victory is incomplete. Forty-seven stacks need to be returned to their original bodies, and the process of matching stacks to fighters — many of whom have been missing for months — is a logistical and emotional nightmare that will take months to resolve."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.arena_liberated",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.rank3_complete",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Begin the process of restoring the stolen stacks",
+                    "next": "jobs.gladiator.jgld_034"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_034": {
+            "id": "jobs.gladiator.jgld_034",
+            "title": "Rank 4: Arena Master",
+            "location": "the_arena",
+            "text": [
+                "The community asks you to run the Arena. Not as a corporate subsidiary — as a community institution. The fights will continue, because the district needs the revenue and the fighters need the work and the crowd needs the outlet. But the harvesting ends. The exploitation ends. The Arena becomes what it pretends to be: a place where fighters test themselves, earn a living, and take risks that are honest and visible.",
+                "Arena Master. The title comes with a weight that no championship belt ever carried. You are responsible not just for the fights but for the fighters — their safety, their fairness, their dignity. You are the person who ensures that what happened in the basement never happens again.",
+                "Rank 4. The final chapter of your career is not about fighting. It's about what fighting means."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.rank",
+                    "value": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.arena_master",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Arena Master establishment"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rebuild the Arena on honest foundations",
+                    "next": "jobs.gladiator.jgld_035"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_035": {
+            "id": "jobs.gladiator.jgld_035",
+            "title": "Rebuilding",
+            "location": "the_arena",
+            "text": [
+                "You rebuild the Arena from the inside out. The basement surgical suite is demolished. The stack storage unit is emptied and destroyed. In their place, you build a real medical facility — equipped for trauma care, staffed by actual medics, designed to treat fighters rather than harvest them.",
+                "Safety protocols are implemented. No fight continues if a fighter can't defend themselves. Medical evaluations before and after every bout. A limit on the number of fights per month to prevent cumulative damage. An insurance pool funded by ticket revenue to cover fighters' medical expenses.",
+                "The changes cost money. Revenue drops. Some fans leave, preferring the raw brutality of the old Arena to the regulated violence of the new one. But the fighters stay, because for the first time, the Arena treats them as people rather than products.",
+                "Kova joins you as head trainer, channeling her fighting genius into teaching the next generation. Sato advises from his stool at ringside, his one good eye watching everything with the patience of a man who has waited decades for the sport to become what he always wanted it to be."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Continue building the Arena's new identity",
+                    "next": "jobs.gladiator.jgld_036"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_036": {
+            "id": "jobs.gladiator.jgld_036",
+            "title": "The Last Challenge",
+            "location": "the_arena",
+            "text": [
+                "A challenger appears. Not for the championship — for the Arena itself. A corporate consortium, backed by Meridian's competitors, offers to buy the venue. They'll pay enough to fund the community's programs for a decade. But the Arena will return to corporate control, and the guarantees you've built — the safety protocols, the medical care, the dignity — will last exactly as long as they're profitable.",
+                "The community is divided. The money would transform the district — new housing, better infrastructure, funded clinics. But selling the Arena means selling the principle that some things should not be owned by corporations.",
+                "The four paths diverge here. Four endings, each one answering the question differently: what is the Arena for?"
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.approaching_endgame",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Keep the Arena — fight one last impossible battle to defend it",
+                    "next": "jobs.gladiator.jgld_037"
+                },
+                {
+                    "text": "Expose the corporate consortium's intentions publicly",
+                    "next": "jobs.gladiator.jgld_050"
+                },
+                {
+                    "text": "Sell the Arena and walk away — use the money for the community",
+                    "next": "jobs.gladiator.jgld_063"
+                },
+                {
+                    "text": "Transform the Arena into something new entirely",
+                    "next": "jobs.gladiator.jgld_075"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_037": {
+            "id": "jobs.gladiator.jgld_037",
+            "title": "The Last Fight — Part 1",
+            "location": "the_arena",
+            "text": [
+                "You choose to defend the Arena the only way you know how: by fighting. The corporate consortium's representative proposes a wager — a fight between their champion and yours. If you win, they withdraw. If they win, you sell.",
+                "Their champion is a corporate-trained fighter named Apex — a genetically optimized, neurally enhanced combat specialist created in Meridian's performance laboratories. Apex is not a person in the traditional sense. He is a weapon designed to look like a person, engineered for maximum violence with minimum risk, and he has never lost because he was built to make losing impossible.",
+                "\"This is insane,\" Kova says. \"You can't fight a lab-grown weapon. He'll kill you.\"",
+                "\"Maybe,\" you say. \"But I've fought things I couldn't beat before. The question was never whether I could win. The question was whether I was willing to fight.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Enter the pit one last time",
+                    "next": "jobs.gladiator.jgld_038"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_038": {
+            "id": "jobs.gladiator.jgld_038",
+            "title": "The Last Fight — Part 2",
+            "location": "the_arena",
+            "text": [
+                "Apex is everything the engineers promised. Faster than Chrome. Stronger than Tank. More precise than Kova at her peak. He moves with the mechanical perfection of something assembled rather than born, and his first combination sends you sprawling against the pit wall with stars in your vision and blood in your mouth.",
+                "The crowd is silent. Not the excited silence of a close fight — the dreadful silence of watching something inevitable. Apex advances. You retreat. Every exchange costs you more than it costs him, and the mathematics of the fight are clear: this is a contest you cannot win.",
+                "But you stay. You stay at the edge that Sato taught you about — the place where your body begs you to stop and your will refuses. You absorb punishment that would end most fighters. You find openings that shouldn't exist in Apex's engineered defense. You fight with everything a human body can produce against everything a laboratory can create.",
+                "And somewhere in the seventh minute, something shifts. Not in the fight — in Apex. His perfect rhythm stutters. His engineered confidence wavers. He has never faced an opponent who keeps getting up, who refuses the mathematics of defeat, who fights past the point where fighting should be possible."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Give everything you have left",
+                    "next": "jobs.gladiator.jgld_039"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_039": {
+            "id": "jobs.gladiator.jgld_039",
+            "title": "The Last Fight — Part 3",
+            "location": "the_arena",
+            "text": [
+                "The fight ends at minute twelve. You don't win — not in the conventional sense. You don't knock Apex out or force a submission or earn a decision. What you do is more important: you survive. Twelve minutes against a weapon designed to be unbeatable, and you're still standing.",
+                "Apex isn't built for twelve minutes of resistance. His performance profile assumes quick victories — overwhelming force, immediate resolution. Extended combat against a resilient opponent is outside his design parameters. By minute twelve, his engineered systems are overheating, his responses are slowing, his perfect form is degrading into something almost human.",
+                "The bell sounds — a time limit agreed upon before the fight. Both fighters standing. Both damaged. The judges declare a draw.",
+                "The corporate consortium's representative looks at the draw, looks at you — bloodied, broken, barely conscious, still standing — and makes a calculation. The fight proved something that statistics couldn't: the Arena's champion is the kind of person who doesn't stay beaten. Fighting someone like that is not a winning proposition.",
+                "\"We withdraw the offer,\" he says. And the Arena is yours."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 300,
+                    "reason": "Wager fight earnings"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The Arena stands. The fights continue. On your terms",
+                    "next": "jobs.gladiator.jgld_040"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_040": {
+            "id": "jobs.gladiator.jgld_040",
+            "title": "The Warrior's Legacy",
+            "location": "the_arena",
+            "text": [
+                "You never fight again. The battle against Apex takes everything your body has left — the cumulative damage of a career built on violence reaches its terminal point. Your hands, once weapons of precision and power, ache permanently. Your ribs carry fractures that will never fully heal. Your knees predict the weather with more accuracy than any forecast.",
+                "But the Arena stands. Community-owned, honestly operated, a place where fighters fight and the only thing at stake is what should be at stake: victory, defeat, and the particular respect that combatants earn from each other in the crucible of the pit.",
+                "Remi becomes champion. You watch from ringside — Sato's old stool, now yours — and see in Remi's fights the echoes of your own: the precision, the patience, the willingness to absorb pain in service of something larger. You taught him that. The legacy passes from hand to hand, from fighter to fighter, from generation to generation.",
+                "The Arena's walls still carry the stains of your blood, and Dex's blood, and Kova's blood, and the blood of every fighter who entered the pit and left something of themselves on the concrete floor. The stains are the Arena's history, written in the only language it understands.",
+                "You are the Arena Master who fought to keep the Arena free. The warrior who became a guardian. The fighter who learned that the most important fight is the one you wage for something other than yourself.",
+                "The crowd chants Remi's name, and the sound is familiar, and the silence underneath it — where Dex lives, where every loss lives — is familiar too. You carry both. You always will."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.ending_warrior",
+                    "value": true
+                }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": true
+        },
+        "jgld_041": {
+            "id": "jobs.gladiator.jgld_041",
+            "title": "Recovery",
+            "location": "stack_clinic",
+            "text": [
+                "The clinic patches you up after the Apex fight. Two broken ribs, a fractured orbital bone, internal bruising across your torso, and a concussion that makes the world swim for days. The medic looks at your scan and shakes his head. \"You should be dead,\" he says. \"Your body has absorbed more trauma than most people experience in a lifetime. How are you still functional?\"",
+                "\"Stubbornness,\" you say. \"And a high pain threshold.\"",
+                "\"Those aren't medical explanations.\"",
+                "\"They're fighter explanations. They're the only kind I have.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Rest and recover. The Arena needs you healthy",
+                    "next": "jobs.gladiator.jgld_042"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_042": {
+            "id": "jobs.gladiator.jgld_042",
+            "title": "The Arena's Future",
+            "location": "the_arena",
+            "text": [
+                "The Arena evolves under your management. You introduce training programs, youth outreach, fitness facilities open to the community. The pit is still the centerpiece — the fights still happen, still draw crowds, still produce champions — but the Arena becomes more than a fighting venue. It becomes a community center built around the oldest human activity: the controlled testing of one body against another.",
+                "Fighters train for skill, not just survival. Matches are competitive, not desperate. The audience watches with appreciation rather than bloodlust, understanding the artistry behind the violence.",
+                "It is not a perfect transformation. Violence is violence. People still get hurt. The risk of death, while reduced, never reaches zero. But the consent is real, the safety is genuine, and the exploitation is gone.",
+                "That is the Arena's future: honest violence in a world full of dishonest peace."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Continue shaping the Arena's identity",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_043": {
+            "id": "jobs.gladiator.jgld_043",
+            "title": "Remi's First Title Shot",
+            "location": "the_arena",
+            "text": [
+                "Remi challenges for the championship and you watch from ringside with the particular anxiety of a teacher watching their student's final exam. He fights with the style you taught him — patient, precise, devastating when the opening appears — but he adds something that is uniquely his: a creativity in combination that you never had.",
+                "He wins in the ninth minute. Clean knockout. The crowd erupts. Remi stands in the pit, arms raised, and looks at you. You nod. No words necessary.",
+                "The legacy continues."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.remi_champion",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Watch your student wear the crown you once held",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_044": {
+            "id": "jobs.gladiator.jgld_044",
+            "title": "Sato's Passing",
+            "location": "the_arena",
+            "text": [
+                "Sato dies in his sleep, in the room behind the locker room that he's occupied for longer than most fighters have been alive. He dies quietly, which is appropriate for a man who lived loudly — whose fists spoke a language of controlled violence that shaped generations of fighters.",
+                "You find him in the morning. His hands — those permanently swollen, retired weapons — are folded on his chest. His face is peaceful. Whatever fights remained in his dreams, he won them all.",
+                "The Arena holds a moment of silence before the next card. Every fighter, champion to newcomer, stands in the pit with heads bowed. The silence is the loudest ovation the Arena has ever produced."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.sato_dead",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Honor Sato's memory in the way the Arena knows best",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_045": {
+            "id": "jobs.gladiator.jgld_045",
+            "title": "The Exhibition",
+            "location": "the_arena",
+            "text": [
+                "You hold an exhibition match — not a real fight, but a demonstration of the art. Kova returns for it, and the two of you step into the pit together and show the crowd what fighting looks like when both combatants are performing at their peak, without the stakes of a real competition. It is beautiful. Two bodies in conversation, attack and defense woven into a pattern that is part combat, part dance.",
+                "The crowd watches with awe rather than hunger. For a moment, the Arena is what it could always be: a showcase of human capability, not a theatre of human destruction."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Let the exhibition speak for itself",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_046": {
+            "id": "jobs.gladiator.jgld_046",
+            "title": "Stack Return",
+            "location": "the_arena",
+            "text": [
+                "The process of returning stolen stacks to their original owners takes months. Each stack must be matched to a body through neural pattern comparison. Each restoration requires surgical intervention. Some of the fighters are found — homeless, identity-less, living in the tunnels beneath the district. Others are never found.",
+                "Twenty-three of the forty-seven stacks are successfully returned. Twenty-three people who had their souls stolen get them back. The other twenty-four remain in storage, waiting for bodies that may never be found.",
+                "Each restoration is a small miracle and a large tragedy. The fighters who get their stacks back are not the same people who lost them. Months of stackless existence have changed them in ways that no medical procedure can reverse."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Continue the restoration work, however long it takes",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_047": {
+            "id": "jobs.gladiator.jgld_047",
+            "title": "The Scars Map",
+            "location": "the_arena",
+            "text": [
+                "Your body is a record of every fight you've ever had. A scar on your cheek from Razor's fastest combination. A crooked finger from a break that healed wrong after the Chrome fight. The dent in your orbital bone from Apex's first punch. Each mark is a memory, a lesson, a story.",
+                "You look at your body in the locker room mirror and read it like a map. The geography of violence, written on skin and bone. This is what the pit costs. This is what fighting takes from you. Not just the things you can measure — health, mobility, years — but the things you can't: the version of yourself that existed before you learned to hurt people for a living."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Accept the scars. They're earned",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_048": {
+            "id": "jobs.gladiator.jgld_048",
+            "title": "The New Generation",
+            "location": "the_arena",
+            "text": [
+                "A new generation of fighters enters the Arena. They are different from your generation — younger, more technical, trained from childhood rather than forged by desperation. They fight with a sophistication that you never had at their age, and a few of them show potential that makes your championship reign look like a warm-up act.",
+                "You watch them and feel the particular pride of an elder who has built something worth inheriting. The Arena you created — honest, safe, dignified — produces better fighters than the Arena you entered. That is the proof that the transformation worked."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Guide the new generation from the sidelines",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_049": {
+            "id": "jobs.gladiator.jgld_049",
+            "title": "The Pit at Night",
+            "location": "the_arena",
+            "text": [
+                "You visit the pit at night sometimes, when the Arena is empty and dark. The concrete floor is clean — mopped after every card — but the stains are there if you know where to look. Your blood, Kova's blood, Dex's blood. The pit remembers everything.",
+                "You stand in the center and shadow-box. Your hands are slow now, your footwork stiff, your reflexes a fraction of what they were. But the muscle memory remains, encoded in your body like a language you can't forget. Left jab, right cross, slip, counter. The ghost of every fighter you've ever been, moving through the motions in the dark.",
+                "The pit is where you became who you are. For better and worse. For glory and guilt. For the championship and the killing. The pit holds all of it, and you keep coming back because some places are more than geography — they're identity."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Leave the pit. It'll be here when you come back",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "jgld_050": {
+            "id": "jobs.gladiator.jgld_050",
+            "title": "The Exposer Path — Part 1",
+            "location": "data_haven",
+            "text": [
+                "You choose exposure. The corporate consortium's bid for the Arena is not just a business transaction — it's an attempt to reinstate the exploitation you fought to end. You compile the evidence: the consortium's connections to the original harvesting operation, their financial ties to Meridian Entertainment, their plans for the Arena that include 'enhanced recovery protocols' — corporate code for stack extraction.",
+                "The Data Haven broadcasts the evidence. The story hits the networks with the force of a championship punch: a corporate consortium trying to buy back the slave market that the community liberated. The public reaction is immediate and furious."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Use the public outrage to protect the Arena permanently",
+                    "next": "jobs.gladiator.jgld_051"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_051": {
+            "id": "jobs.gladiator.jgld_051",
+            "title": "The Exposer Path — Part 2",
+            "location": "the_arena",
+            "text": [
+                "The exposure forces the consortium to withdraw. More importantly, it creates a public record that makes future corporate bids for the Arena politically toxic. No corporation wants to be associated with the venue that harvested souls, and no corporation wants to be the one trying to buy it back.",
+                "You use the momentum to establish the Arena as a legal community trust — an institutional structure that prevents any future sale to corporate interests. The fighters, the staff, and the community share ownership. The Arena belongs to everyone and no one.",
+                "The fights continue. The blood continues. The risk continues. But the consent is real, the safety is genuine, and the souls in the basement are returned instead of stolen.",
+                "You stand in the pit after the last fight of the season and look at the empty seats and the stained floor and the lights that have witnessed a thousand battles, and you think: this is enough. Not perfect. Not pure. But honest. And in a city built on lies, honesty is the rarest kind of victory."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.ending_exposer",
+                    "value": true
+                }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": true
+        },
+        "jgld_052": {
+            "id": "jobs.gladiator.jgld_052",
+            "title": "Legal Battles",
+            "location": "market_district",
+            "text": [
+                "The legal fallout from the exposure is extensive. Corporate lawyers challenge the community trust's legitimacy. Counter-suits are filed. The legal system — designed by and for corporate interests — resists the precedent of community ownership.",
+                "You fight the legal battles with the same determination you brought to the pit. Different arena, same principle: refuse to stay down. The lawyers are your new opponents, and while you can't knock them out, you can outlast them."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Keep fighting the legal battles",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_053": {
+            "id": "jobs.gladiator.jgld_053",
+            "title": "The Fighter's Code",
+            "location": "the_arena",
+            "text": [
+                "You establish a fighter's code — a formal set of principles that govern combat in the Arena. Consent. Safety. Respect. The code is posted on the locker room wall, visible to every fighter who enters, a constant reminder that the violence they practice is bounded by agreements that make it something other than mere brutality.",
+                "Not every fighter agrees with the code. Some see it as soft — a champion who fought in the old pit imposing restrictions on those who want the raw experience. But the majority embrace it, recognizing that dignity and danger are not mutually exclusive."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "The code stands. It defines the Arena's identity",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_054": {
+            "id": "jobs.gladiator.jgld_054",
+            "title": "Kova's Legacy",
+            "location": "the_arena",
+            "text": [
+                "Kova's training program produces fighters of extraordinary quality. Her method is different from yours — where you teach patience, she teaches adaptation. Where you emphasize defense, she emphasizes reading. Her students are flexible, intelligent fighters who can adjust mid-bout in ways that make them unpredictable and dangerous.",
+                "Together, your philosophies create a complete training system. The Arena's fighters are regarded as the best in the district, not because of raw talent but because of training that respects both the art and the artist."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Continue building the training program with Kova",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_055": {
+            "id": "jobs.gladiator.jgld_055",
+            "title": "Revenue and Principle",
+            "location": "the_arena",
+            "text": [
+                "The Arena's finances are a constant battle. Without corporate backing, revenue depends on ticket sales, betting commissions, and community contributions. The numbers are tight — tighter than you'd like — and every financial decision is a choice between principle and pragmatism.",
+                "Some months, the choice is easy: fund the medical wing, maintain the safety equipment, pay the fighters fairly. Other months, the choice is harder: cut the training program or raise ticket prices? Reduce fighter pay or reduce safety staffing?",
+                "You make the choices with the same discipline you brought to the pit: assess, decide, act. No regrets. No second-guessing. Forward motion, always."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Keep the Arena solvent without sacrificing principles",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_056": {
+            "id": "jobs.gladiator.jgld_056",
+            "title": "Remembering Dex",
+            "location": "the_arena",
+            "text": [
+                "You install a memorial in the locker room. Not just for Dex — for every fighter who died in the pit. A simple plaque with names, dates, and the single word: REMEMBERED.",
+                "Fighters touch the plaque before their bouts. It becomes a ritual — a moment of connection with those who came before, a reminder that the pit has taken lives and that each living fighter carries the weight of that history.",
+                "Dex's name is first on the list. You touch it each time you pass. The metal is warm from other hands, other touches, other fighters who understand what the memorial means. The dead are not forgotten. In the Arena, nothing is."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "The memorial stands. The names are remembered",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_057": {
+            "id": "jobs.gladiator.jgld_057",
+            "title": "Inter-District Matches",
+            "location": "the_arena",
+            "text": [
+                "You establish inter-district matches, bringing fighters from across the city to compete in the Arena. The events draw larger crowds and generate revenue that sustains the community programs. More importantly, they create connections between districts — fighters who might otherwise be strangers discovering mutual respect through shared combat.",
+                "The fights are excellent. Different training philosophies, different styles, different backgrounds — all converging in the pit. The Arena becomes a meeting place, a neutral ground where the city's divisions dissolve in the universal language of controlled violence."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Build the inter-district program into something permanent",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_058": {
+            "id": "jobs.gladiator.jgld_058",
+            "title": "The Old Champion",
+            "location": "the_arena",
+            "text": [
+                "An old fighter visits the Arena — a man named Torren, who fought in the pit decades ago, before your time, before even Sato's championship. He walks slowly, hands swollen, back bent from years of accumulated damage. He asks to see the pit.",
+                "You take him down. He stands in the center of the fighting surface and looks around with eyes that see not what is but what was — a lifetime of fights, a career's worth of blood, the ghosts of opponents who are long dead.",
+                "\"It's cleaner than I remember,\" he says.",
+                "\"We cleaned it up.\"",
+                "\"Good.\" He touches the pit wall. \"This place owes a lot of people a lot of things. Don't let it forget.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"We won't. I promise.\"",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_059": {
+            "id": "jobs.gladiator.jgld_059",
+            "title": "The Question of Violence",
+            "location": "the_arena",
+            "text": [
+                "A community leader questions the Arena's existence. \"Why do we celebrate violence?\" she asks at a council meeting. \"Why do we build institutions around people hurting each other? The Arena might be honestly run, but it's still a place where people get hurt for entertainment.\"",
+                "It's a fair question, and you don't have a comfortable answer. The Arena is violence, refined and regulated and bounded by rules, but violence nonetheless. The blood on the concrete is real. The injuries are real. The risk of death, while reduced, is real.",
+                "Your answer is not a justification but a description: \"People fight. They always have. The Arena gives that fighting a structure that minimizes harm and maximizes choice. It's not a solution to violence. It's a container for it. And containers are better than chaos.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Let the question stand. It deserves to be asked",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_060": {
+            "id": "jobs.gladiator.jgld_060",
+            "title": "Dawn at the Arena",
+            "location": "the_arena",
+            "text": [
+                "You arrive at the Arena at dawn, before anyone else. The building is quiet — no crowd noise, no announcer, no music. Just the hum of the lighting system and the faint smell of sweat and leather that has permeated every surface.",
+                "You walk through the empty venue — the entrance, the concourse, the locker rooms, the pit. Each space holds memories. The first fight against Brick. The championship win over Kova. The discovery of the basement horror. The battle against corporate security. The impossible fight against Apex.",
+                "The Arena is more than a building. It's a record of your life, written in concrete and steel and blood. Everything you became, you became here. Every lesson you learned, you learned in the pit.",
+                "The lights come on fully. The staff begins to arrive. Another day at the Arena begins. You stand at the edge of the pit and watch the surface brighten under the floods, and you think: this is mine. Not because I own it. Because I bled for it."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Begin another day",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "jgld_061": {
+            "id": "jobs.gladiator.jgld_061",
+            "title": "The Final Bell",
+            "location": "the_arena",
+            "text": [
+                "At the end of every fight night, the bell sounds one final time. Not for a fight — for the closing. The crowd files out, the fighters retreat to the locker room, the medics pack their equipment. The Arena empties.",
+                "The final bell is a sound you've heard thousands of times, but it never loses its meaning. It marks the boundary between the violence of the pit and the ordinary world outside. Fighters cross that boundary with relief, with pride, with pain, with the particular exhaustion of people who have tested their limits and survived.",
+                "You listen to the bell and you think about boundaries — the ones between fighting and peace, between violence and dignity, between what the Arena was and what you've made it become. The bell is the boundary. The bell says: enough. The bell says: the fighting is over, for now.",
+                "Until next time."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "The bell sounds. The Arena sleeps. Until next time",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_062": {
+            "id": "jobs.gladiator.jgld_062",
+            "title": "The Crowd",
+            "location": "the_arena",
+            "text": [
+                "You stand in the crowd for the first time since becoming Arena Master. Not in the VIP section, not at ringside — in the crowd itself, surrounded by the people who come to watch the fights. You want to see what they see. Feel what they feel.",
+                "The crowd is many things: excited, drunk, hopeful, angry, entertained, alive. They cheer for fighters whose names they know. They gasp at near-misses and knockdowns. They participate in the ritual of violence with the same intensity that people bring to any shared experience.",
+                "And underneath the excitement, you sense something else: release. The crowd comes to the Arena not just for entertainment but for catharsis. The controlled violence of the pit provides an outlet for the uncontrolled violence of the world outside. Here, the fighting has rules. Here, the fighting ends. Here, the bell sounds and everyone goes home.",
+                "The Arena is therapy disguised as sport. You're not sure whether that makes it better or worse."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Return to your post. The fights continue",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_063": {
+            "id": "jobs.gladiator.jgld_063",
+            "title": "The Walk-Away Path — Part 1",
+            "location": "the_arena",
+            "text": [
+                "You sell the Arena. The corporate consortium pays enough to fund community programs for a decade — clinics, housing, education, infrastructure. The money transforms the district in ways that the Arena, as a single venue, never could.",
+                "The fighters are given severance — enough to transition to other work if they choose, or to find other venues if they don't. The staff is relocated. The community programs are funded and operational before the keys are handed over.",
+                "The decision is pragmatic and heartbreaking. The Arena was your life's work, the thing you fought and bled and killed to build. And you're handing it to the people you fought against because the money serves the community better than the building."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 500,
+                    "reason": "Arena sale proceeds for community"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Walk away from the Arena",
+                    "next": "jobs.gladiator.jgld_064"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_064": {
+            "id": "jobs.gladiator.jgld_064",
+            "title": "The Walk-Away Path — Part 2",
+            "location": "lower_slums",
+            "text": [
+                "You walk away. The Arena continues under corporate management — sanitized, commercialized, stripped of the raw authenticity that made it what it was. The fights are entertainment now, pure and simple, without the community ownership and fighter dignity that you built. The stack harvesting doesn't return — the exposure made that too risky — but the exploitation finds new forms: exclusive contracts, mandatory performance protocols, a points system that treats fighters as content rather than competitors.",
+                "The money, though. The money works. Three new clinics open in the Lower District. A housing project provides stable shelter for two hundred families. An education center offers training programs that give young people alternatives to the pit.",
+                "Remi asks you why you did it. Why you sold the thing you loved to the people you hated.",
+                "\"Because the people who live in this district need clinics more than they need a fighting venue,\" you say. \"Because the money does more good in a hundred directions than the Arena ever did in one. Because a fighter who can't walk away from the ring is as trapped as a fighter who was never allowed to leave.\"",
+                "\"And because I needed to prove that I could leave. That the pit doesn't own me. That I'm a person, not a fighter. Or at least, that I'm a person first.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.ending_walker",
+                    "value": true
+                }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": true
+        },
+        "jgld_065": {
+            "id": "jobs.gladiator.jgld_065",
+            "title": "After the Arena",
+            "location": "lower_slums",
+            "text": [
+                "Life after the Arena is quiet in a way that fighting never was. No crowd noise. No bell. No adrenaline surge before a bout. Just the ordinary sounds of the Lower District — rain, traffic, voices, the mundane symphony of a community going about its business.",
+                "You take a job. Nothing dramatic — logistics work at one of the community centers funded by the Arena sale. You organize supply deliveries and manage schedules and do nothing that involves hitting people. Your hands, freed from their role as weapons, learn new skills: typing, organizing, the gentle grip required to hand a cup of soup to someone who is shaking from hunger.",
+                "The transition is harder than any fight you've ever had."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Adjust to the quiet life",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_066": {
+            "id": "jobs.gladiator.jgld_066",
+            "title": "The Shadow of the Pit",
+            "location": "the_arena",
+            "text": [
+                "You pass the Arena occasionally. The corporate management has added a marquee, neon lighting, a branded entrance. The fights are advertised on data screens throughout the district: 'MERIDIAN COMBAT LEAGUE — LIVE EVERY FRIDAY.' The production values are higher. The soul is different.",
+                "You don't go inside. Going inside would be either an act of masochism or an admission that you can't let go. You've let go. The Arena is not yours anymore. The pit is not yours. The sound of the bell, the smell of the locker room, the weight of the championship belt — none of it is yours.",
+                "But the scars are. The memories are. The lessons are. And the person you became in that pit — the fighter, the champion, the legend, the master — that person walks with you through every ordinary day, a ghost in the machinery of a quiet life."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Keep walking. Don't look back",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_067": {
+            "id": "jobs.gladiator.jgld_067",
+            "title": "Teaching Kids",
+            "location": "lower_slums",
+            "text": [
+                "You start a self-defense class at the community center. Not fighting — self-defense. The distinction matters. You teach children and teenagers how to protect themselves without teaching them to seek out violence. How to block. How to escape. How to de-escalate. How to fight only when every other option has failed.",
+                "The children look at your scarred hands and your crooked nose and they know you've been in places they don't want to go. That knowledge gives your words authority that no credential could match.",
+                "\"Fighting is the last option,\" you tell them. \"Not the first. The best fighter in the world is the one who never has to fight.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Continue teaching. It matters more than championships",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_068": {
+            "id": "jobs.gladiator.jgld_068",
+            "title": "Remi's Visit",
+            "location": "lower_slums",
+            "text": [
+                "Remi visits you at the community center. He's the Arena's champion now — the corporate Arena's champion — and the tension between his success and your departure hangs in the air like humidity.",
+                "\"They want me to fight Apex's successor,\" he says. \"Another lab-grown weapon. The purse is a hundred times what you ever earned.\"",
+                "\"Will you take it?\"",
+                "\"I don't know. That's why I'm here.\" He looks at you. \"You taught me to fight. You also taught me to know when to walk away. I need to know which lesson applies.\"",
+                "You look at your student — strong, talented, standing at the same crossroads you once stood at — and you give him the only honest answer: \"I can't make that choice for you. But I can tell you that whatever you choose, make sure it's your choice. Not the Arena's. Not the corporation's. Yours.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Let Remi make his own decision",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_069": {
+            "id": "jobs.gladiator.jgld_069",
+            "title": "Peace",
+            "location": "lower_slums",
+            "text": [
+                "Months pass. The quiet life develops its own rhythm: morning routines, afternoon classes, evening walks through a district that is slowly changing thanks to the money your sacrifice provided. The clinics treat patients. The housing shelters families. The education center opens doors.",
+                "You are not a fighter anymore. You are a person who used to fight. The distinction is subtle and enormous — the difference between an identity and a history. The history shapes you. The identity doesn't define you.",
+                "One evening, walking home through a rain-slicked street, you see a teenager in an alley, shadow-boxing against a wall with the intensity that you recognize. The hunger. The need. The desire to test yourself against something harder than the world you were given.",
+                "You watch for a moment. Then you walk on. Not every fight is yours."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Walk home. Let the rain wash the day away",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "jgld_070": {
+            "id": "jobs.gladiator.jgld_070",
+            "title": "The Championship Invitation",
+            "location": "the_arena",
+            "text": [
+                "The invitation arrives on embossed cardstock — real paper, the kind only corporations use. The Inter-District Championship, hosted by the Meridian Combat League. Sixteen fighters from across the city. Four rounds of elimination. The purse is enough to fund the Arena's community programs for three years.",
+                "Kova reads the invitation twice. \"This is corporate territory. Their rules, their refs, their venue. We'd be fighting on hostile ground.\"",
+                "\"We'd also be fighting for enough money to keep the clinics open without scraping every month,\" you reply.",
+                "The decision isn't about pride or legacy. It's about whether the Arena can afford to say no to an opportunity that could secure its financial future — even if that opportunity comes wrapped in corporate packaging."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.championship_invited",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the invitation. Send your best fighter",
+                    "next": "jobs.gladiator.jgld_071"
+                },
+                {
+                    "text": "Enter the championship yourself. One last fight",
+                    "condition": {
+                        "stat_check": {
+                            "stat": "combat",
+                            "dc": 16
+                        }
+                    },
+                    "next": "jobs.gladiator.jgld_072"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_071": {
+            "id": "jobs.gladiator.jgld_071",
+            "title": "Remi's Championship",
+            "location": "the_arena",
+            "text": [
+                "Remi is the obvious choice. He has your technique, Kova's adaptability, and a hunger that hasn't dimmed despite years of training. He is, by every measurable standard, the best fighter the Arena has produced since you retired from the pit.",
+                "You train him for the championship with an intensity that borders on obsession. Six weeks of preparation: conditioning, strategy, film study of every fighter in the bracket. You watch recordings of their bouts, cataloguing tendencies, weaknesses, the unconscious patterns that every fighter develops and few recognize.",
+                "\"You're preparing me like I'm going to war,\" Remi says after a particularly grueling session.",
+                "\"You are going to war. A corporate-sanctioned, referee-supervised, pay-per-view war. But war nonetheless. The only difference is that this one has a bell.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.remi_championship",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue Remi's preparation",
+                    "next": "jobs.gladiator.jgld_073"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_072": {
+            "id": "jobs.gladiator.jgld_072",
+            "title": "The Return",
+            "location": "the_arena",
+            "text": [
+                "The locker room goes silent when you wrap your hands. Fighters who have only known you as the Arena Master watch you transform into something older, more dangerous — the fighter who built this place with blood and stubbornness.",
+                "Your body protests. The knees creak. The shoulders carry scar tissue that limits rotation. The hands, broken and rebroken over years of fighting, ache when you close them into fists. You are not the fighter you were. You are slower, stiffer, more fragile.",
+                "But you are smarter. Decades of watching fights, training fighters, studying the art of combat have given you a knowledge that younger fighters can't match. You know what's coming before it's thrown. You know where the openings are before they appear.",
+                "Kova watches you shadow-box, her expression caught between admiration and concern. \"You're going to get hurt,\" she says.",
+                "\"I've been getting hurt my entire career. At least this time, it's my choice.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.personal_return",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "combat",
+                    "amount": 2,
+                    "reason": "Championship preparation"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Step into the pit one more time",
+                    "next": "jobs.gladiator.jgld_073"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_073": {
+            "id": "jobs.gladiator.jgld_073",
+            "title": "The First Round",
+            "location": "the_arena",
+            "text": [
+                "The Meridian Combat Arena is everything the Lower District's pit isn't: polished, branded, spectacular. Holographic displays project fighter stats. Corporate logos cover every surface. The crowd is upper-level — well-fed, well-dressed, watching violence as entertainment rather than survival.",
+                "The first-round opponent is a fighter from District Nine named Cortez. Fast hands, good footwork, trained in the corporate gyms where equipment is plentiful and nutrition is optimized. On paper, Cortez is superior in every measurable way.",
+                "On paper doesn't account for the pit. The Lower District's fighter — whether it's you or Remi — carries something the corporate fighters don't: the memory of fighting when losing means starving. The desperation that no training program can replicate.",
+                "The bell rings. The fight begins. And within thirty seconds, Cortez discovers that corporate training prepares you for opponents, not for survivors."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 25,
+                    "reason": "Championship first round"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Win the first round",
+                    "next": "jobs.gladiator.jgld_074"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_074": {
+            "id": "jobs.gladiator.jgld_074",
+            "title": "The Semifinal",
+            "location": "the_arena",
+            "text": [
+                "The semifinal opponent is different. A woman named Siege, from the Industrial Sector — not corporate-trained but forged in the same kind of underground fighting that produced the Arena's best. She is scarred, focused, and fights with a patience that suggests she has studied the same lessons you teach.",
+                "The fight lasts the full distance. No early knockouts, no dramatic finishes. Just two fighters who understand each other's art, trading technique for technique, adaptation for adaptation. The crowd, accustomed to quick violence, grows restless. But the fighters in the audience — and there are fighters in the audience, watching with professional attention — recognize what they're seeing: mastery.",
+                "The decision goes to the Lower District's fighter. Barely. Siege nods in acknowledgment — the particular nod of a fighter who respects the outcome because she respects the opponent. No argument. No protest. Just recognition.",
+                "\"Good fight,\" she says.",
+                "\"The best I've had in years.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Semifinal purse"
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30,
+                    "reason": "Championship semifinal"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Prepare for the final",
+                    "next": "jobs.gladiator.jgld_084"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_075": {
+            "id": "jobs.gladiator.jgld_075",
+            "title": "The Transformation Path — Part 1",
+            "location": "the_arena",
+            "text": [
+                "You choose to transform the Arena into something that has never existed: a training academy. Not just for fighters — for everyone. Self-defense, fitness, discipline, conflict resolution. A place that uses the infrastructure of violence to teach the alternatives to violence.",
+                "The pit remains at the center — fights still happen, for those who choose them. But surrounding the pit, the Arena becomes a campus: training halls, classrooms, a medical clinic, a counseling center for fighters dealing with the psychological aftermath of combat.",
+                "\"You're turning a fighting venue into a school?\" Kova asks, incredulous.",
+                "\"I'm turning a fighting venue into a community center that happens to have a fighting venue in it. The fights fund the programs. The programs give people options. Options reduce the number of people who end up in the pit because they have nowhere else to go.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Build the academy",
+                    "next": "jobs.gladiator.jgld_076"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_076": {
+            "id": "jobs.gladiator.jgld_076",
+            "title": "The Transformation Path — Part 2",
+            "location": "the_arena",
+            "text": [
+                "The transformation takes six months. The Arena Academy opens with sixty students and four programs: combat training (for those who choose the path), self-defense (for everyone), fitness (open to the community), and conflict mediation (taught by a former diplomat who understands that not all fights require fists).",
+                "The fighters grumble. Some leave, heading to other venues where the pure fighting culture is preserved. But others stay, recognizing that the Academy offers something the old Arena never did: a future beyond the pit. Fighters who age out of competition become instructors. Fighters who are injured find roles in the programs. The Arena stops being a place where careers end and becomes a place where they evolve.",
+                "Remi teaches the advanced combat class. Kova runs the training program. Sato's legacy lives in the curriculum — every student learns his techniques, his philosophy, his insistence that fighting is an art first and a sport second.",
+                "And in the pit, on fight nights, the bell still rings and the crowd still cheers and the blood still stains the concrete. Because some things don't change. Some things shouldn't."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.ending_transformer",
+                    "value": true
+                }
+            ],
+            "choices": [],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": true
+        },
+        "jgld_077": {
+            "id": "jobs.gladiator.jgld_077",
+            "title": "Academy Life",
+            "location": "the_arena",
+            "text": [
+                "The Academy develops a culture that blends discipline with compassion. Students learn to throw punches and to manage anger. They study combat technique and conflict resolution. They spar with each other and then sit in circles discussing what fighting means and why people do it.",
+                "The results are measurable. Violent incidents in the blocks surrounding the Arena decrease by forty percent. Youth enrollment in gang activity drops. Emergency room visits from assault go down. The Academy doesn't eliminate violence — nothing can — but it channels it, redirects it, gives it a container."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "The Academy thrives. The community benefits",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_078": {
+            "id": "jobs.gladiator.jgld_078",
+            "title": "The Next Fight",
+            "location": "the_arena",
+            "text": [
+                "A new challenger arrives at the Academy, looking for a fight. She is young, fierce, carrying the same hunger you brought to the pit years ago. She wants to test herself against the best, and the best, she's been told, trained here.",
+                "You watch her spar. She's raw but talented, aggressive but undisciplined, passionate but uncontrolled. Everything you were. Everything Sato saw in you.",
+                "\"I want to be a champion,\" she says.",
+                "\"Champions are made in the pit,\" you tell her. \"But they're prepared in the gym. And the gym starts with fundamentals. Can you throw a proper jab?\"",
+                "She can. Barely. You adjust her form — hand position, weight distribution, follow-through. The same corrections Sato made for you, passed down through generations of fighters, an inheritance of violence shaped by care.",
+                "The cycle continues. The fights continue. The Arena continues. And somewhere in the pit, the concrete remembers every drop of blood that was ever spilled on it, and holds it, and waits for the next."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Train the next generation. The circle remains unbroken",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_079": {
+            "id": "jobs.gladiator.jgld_079",
+            "title": "Closing Time",
+            "location": "the_arena",
+            "text": [
+                "At the end of every day, you close the Arena yourself. Lock the doors, dim the lights, check the pit one last time. The ritual is meditative — a moment of quiet after the noise of the day, a chance to stand in the place where everything happened and feel the weight of it.",
+                "The pit is empty. The concrete floor is clean. The lights dim to emergency level, casting shadows that look like fighters in the red glow. Ghosts of bouts past, moving through remembered combinations, throwing phantom punches at opponents who are long gone.",
+                "You watch the shadows and you think about fighting. About what it costs and what it gives. About the person who walked through the Arena's service door for the first time and the person who stands here now, closing up, carrying the weight of everything in between.",
+                "The lights go dark. The Arena sleeps. Tomorrow, the fights continue."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Lock the door. Tomorrow comes soon enough",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "jgld_080": {
+            "id": "jobs.gladiator.jgld_080",
+            "title": "Blood Memory",
+            "location": "the_arena",
+            "text": [
+                "The concrete remembers. Every fight, every fall, every drop of blood leaves a trace that no amount of cleaning can fully remove. The pit's floor is a palimpsest of violence — layers of history written in iron and sweat, visible only to those who know where to look.",
+                "You know where to look. This stain is from your first fight. That scratch is from Kova's championship. The darker patch in the northwest corner is where Dex fell and didn't get up. Each mark is a story, a lesson, a memory that the concrete holds so that you don't have to carry it alone."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "The pit remembers. So do you",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_081": {
+            "id": "jobs.gladiator.jgld_081",
+            "title": "The Arena's Heartbeat",
+            "location": "the_arena",
+            "text": [
+                "Fight night. The Arena is full. The crowd pulses with a collective heartbeat — excitement, anticipation, the particular energy that builds when people gather to witness physical conflict. The fighters backstage are focused, wrapped, ready. The medics are on standby. The bell waits.",
+                "You stand at the edge of the pit and feel the heartbeat in the floor, in the walls, in the air. This is the Arena's pulse — not the violence itself but the anticipation of it. The moment before the bell, before the first punch, before the blood. The moment when everything is possible and nothing has been decided.",
+                "The bell rings. The fighters clash. The crowd roars. And you watch from the edge, no longer fighting but forever part of the fight, forever connected to the pit that made you."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Watch the fight. Feel the heartbeat. Continue",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_082": {
+            "id": "jobs.gladiator.jgld_082",
+            "title": "Volkov Redeemed",
+            "location": "the_arena",
+            "text": [
+                "Volkov stays. You expected him to leave — or to be driven out by the community that now knows his role in the harvesting operation. Instead, he stays, accepting whatever judgment comes, working in whatever capacity you'll allow.",
+                "You assign him to fighter welfare: managing the insurance pool, coordinating medical care, handling the administrative work that keeps fighters safe. The same organizational skills that once facilitated exploitation now serve protection. It's not redemption — nothing can undo what was done — but it's the closest thing available.",
+                "Volkov never complains. He works with the quiet diligence of a man who has been given a second chance and is determined not to waste it."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Let Volkov's work speak for itself",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_083": {
+            "id": "jobs.gladiator.jgld_083",
+            "title": "Morning Training",
+            "location": "the_arena",
+            "text": [
+                "You still train every morning. Not fight training — the kind of training that keeps a body functional, mobile, resilient. Shadow boxing with careful form. Stretching that acknowledges the joints' complaints. Light bag work that satisfies the muscle memory without aggravating the injuries.",
+                "The training is a conversation with your body — a daily negotiation between what you want to do and what your accumulated damage allows. Your body speaks in the language of aches, creaks, and the particular stiffness that comes from too many years of being hit.",
+                "You listen. You adapt. You continue."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Finish training. Start the day",
+                    "next": "jobs.gladiator.jgld_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_084": {
+            "id": "jobs.gladiator.jgld_084",
+            "title": "The Final Opponent",
+            "location": "the_arena",
+            "text": [
+                "The final opponent is a nightmare wearing human skin. They call him Monarch — a fighter from Meridian's private stable, enhanced with military-grade combat augmentations that are technically illegal in sanctioned competition and practically impossible to detect. Faster reflexes, denser bone structure, synthetic muscle fiber woven through natural tissue.",
+                "You've seen this before. Apex was the prototype. Monarch is the production model — sleeker, more refined, the corporate answer to every problem distilled into a single weapon-shaped person.",
+                "\"They're going to cheat,\" Kova says, studying the fight footage. \"They built this tournament to showcase their weapon. We're here to lose convincingly.\"",
+                "\"Then let's lose unconvincingly.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.facing_monarch",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Study Monarch's augmentations for weaknesses",
+                    "condition": {
+                        "stat_check": {
+                            "stat": "hacking",
+                            "dc": 14
+                        }
+                    },
+                    "next": "jobs.gladiator.jgld_085"
+                },
+                {
+                    "text": "Fight with pure technique. No shortcuts",
+                    "next": "jobs.gladiator.jgld_086"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_085": {
+            "id": "jobs.gladiator.jgld_085",
+            "title": "The Augmentation Flaw",
+            "location": "the_arena",
+            "text": [
+                "Every system has vulnerabilities. The Ghost Network's hackers analyze Monarch's augmentation specs — leaked from a Meridian subsidiary by a sympathetic technician who believes that corporate weapons shouldn't be disguised as athletes.",
+                "The flaw is in the heat dissipation. Monarch's synthetic muscles generate more thermal energy than natural tissue, and the cooling system has a lag — a two-second window after sustained exertion where the augmentations throttle down to prevent overheating. During that window, Monarch fights like a normal human.",
+                "\"Force him to work hard for six minutes straight,\" you tell the fighter. \"Then, in the seventh minute, he'll slow down. That's when you hit him with everything.\"",
+                "It's not cheating. It's understanding the opponent's weakness. The same skill that won every fight in the pit. The only difference is that this opponent's weakness was engineered in a lab instead of developed in a gym."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.found_flaw",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20,
+                    "reason": "Tactical analysis"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Enter the final with the knowledge advantage",
+                    "next": "jobs.gladiator.jgld_087"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_086": {
+            "id": "jobs.gladiator.jgld_086",
+            "title": "Pure Fighting",
+            "location": "the_arena",
+            "text": [
+                "No shortcuts. No intelligence gathering. No exploitation of technical vulnerabilities. The fight against Monarch will be fought the way every fight in the pit was fought: with skill, with heart, with the accumulated wisdom of a career spent in the oldest form of human competition.",
+                "\"You're bringing fists to a weapons fight,\" Volkov says, the old pragmatism surfacing despite his reformed role.",
+                "\"I'm bringing a fighter to a fight. That's what we do. If the other side has to cheat to win, the victory is ours regardless of the scorecard.\"",
+                "The philosophy is impractical and possibly suicidal. It is also the only philosophy that makes the Arena — and everything it represents — meaningful. If you fight augmentation with augmentation, you become the thing you oppose. If you fight augmentation with skill, you make a statement that transcends the result."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Enter the final as a pure fighter",
+                    "next": "jobs.gladiator.jgld_087"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "jgld_087": {
+            "id": "jobs.gladiator.jgld_087",
+            "title": "The Championship Final",
+            "location": "the_arena",
+            "text": [
+                "The arena is full. Forty thousand spectators, millions more watching on feeds. The Lower District's fighter against Meridian's weapon. David and Goliath, if David had scars and Goliath had corporate sponsorship.",
+                "Monarch enters first. The crowd roars — he is their fighter, their product, their entertainment investment. He moves with the fluid precision of augmented muscle, every gesture calculated for maximum visual impact.",
+                "The Lower District's fighter enters to a different sound — smaller but fiercer. The Lower District crowd, packed into the cheap seats, produces a wall of noise that is less polished and more primal than the corporate cheering. It is the sound of people who need this victory, not for entertainment but for survival.",
+                "The bell rings. The final begins."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Fight the fight of your life",
+                    "next": "jobs.gladiator.jgld_088"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_088": {
+            "id": "jobs.gladiator.jgld_088",
+            "title": "Seven Minutes of Hell",
+            "location": "the_arena",
+            "text": [
+                "Monarch is everything the footage promised and more. His punches arrive faster than natural reflexes can track. His defense is a wall of augmented reaction time. Every exchange costs the Lower District's fighter more than it costs Monarch, the mathematics of attrition tilting steadily toward the corporate weapon.",
+                "But the pit teaches endurance. The pit teaches you to take punishment and keep moving forward. The pit teaches you that pain is information, not instruction — it tells you what's happening, but it doesn't tell you what to do about it.",
+                "Seven minutes pass. Seven minutes of the most intense combat the championship has ever seen. The Lower District's fighter absorbs punishment that would have ended most bouts, returning enough offense to keep Monarch working, forcing the augmented fighter to maintain maximum output.",
+                "And then, in the seventh minute, something changes. Monarch's combinations lose a fraction of their speed. His footwork becomes marginally less precise. The augmentations throttle down, and for a window — narrow, precious, fleeting — the fight becomes fair."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 35,
+                    "reason": "Enduring the championship final"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Exploit the window. Strike now with everything remaining",
+                    "condition": {
+                        "stat_check": {
+                            "stat": "combat",
+                            "dc": 18
+                        }
+                    },
+                    "next": "jobs.gladiator.jgld_089"
+                },
+                {
+                    "text": "Keep fighting. Survive to the bell",
+                    "next": "jobs.gladiator.jgld_090"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_089": {
+            "id": "jobs.gladiator.jgld_089",
+            "title": "The Knockout",
+            "location": "the_arena",
+            "text": [
+                "The combination is three punches. Left hook to the body — Monarch's guard drops to protect his ribs. Right cross to the jaw — his head snaps sideways, the augmented neck muscles absorbing most of the impact but not all. Left uppercut, thrown from the floor with every remaining ounce of strength, connecting with the chin at the precise angle that the human body — augmented or not — cannot withstand.",
+                "Monarch goes down. The arena goes silent. Forty thousand people who expected a corporate victory watch in stunned disbelief as the Lower District's fighter stands over Meridian's weapon, bleeding, broken, victorious.",
+                "The silence lasts three seconds. Then the cheap seats erupt. The sound is not cheering — it is something older, more primal, the collective roar of people who have been told they are less and have just proven they are not.",
+                "The bell rings. The fight is over. The Lower District wins."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.championship_won",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 500,
+                    "reason": "Championship purse"
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50,
+                    "reason": "Championship victory"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Raise the belt. The pit made this moment",
+                    "next": "jobs.gladiator.jgld_091"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false
+        },
+        "jgld_090": {
+            "id": "jobs.gladiator.jgld_090",
+            "title": "The Decision",
+            "location": "the_arena",
+            "text": [
+                "The fight goes to decision. Twelve rounds of brutal, beautiful, relentless combat. Monarch wins most of the early rounds on technical superiority. The Lower District's fighter takes the later rounds on heart, on endurance, on the stubborn refusal to fall that the pit breeds into everyone who survives it.",
+                "The judges deliberate. The arena holds its breath. The decision is split — two judges for Monarch, one for the Lower District. The corporate fighter wins on the scorecards.",
+                "But the crowd knows what they saw. The Lower District's fighter went twelve rounds with a military-grade combat weapon and was standing at the final bell. The loss on paper is a victory in practice — proof that augmentation can be matched by heart, that corporate engineering can be fought to a standstill by a fighter from the pit.",
+                "Monarch raises the belt. The Lower District raises something more valuable: proof."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.championship_lost",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Championship runner-up purse"
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40,
+                    "reason": "Championship runner-up"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the loss. The fight was the message",
+                    "next": "jobs.gladiator.jgld_091"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_091": {
+            "id": "jobs.gladiator.jgld_091",
+            "title": "After the Championship",
+            "location": "the_arena",
+            "text": [
+                "The championship changes everything and nothing. The money — whether the full purse or the runner-up's share — funds the Arena's programs for years. The visibility brings attention, sponsors, opportunities that the Lower District's Arena never had access to before.",
+                "But the pit is still the pit. The concrete is still stained. The locker room still smells like sweat and liniment. The fighters still wrap their hands and stare at the wall before their bouts. The fundamental nature of what happens in the Arena — two people testing themselves against each other — doesn't change because a bigger audience is watching.",
+                "You stand at the edge of the pit on the first fight night after the championship and listen to the bell. The same bell. The same sound. The same ancient signal that violence is about to begin and will eventually end.",
+                "The Arena endures. That is enough."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "The Arena endures. What comes next?",
+                    "next": "jobs.gladiator.jgld_092"
+                },
+                {
+                    "text": "Take stock of everything you've built",
+                    "next": "jobs.gladiator.jgld_093"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_092": {
+            "id": "jobs.gladiator.jgld_092",
+            "title": "The Expansion",
+            "location": "the_arena",
+            "text": [
+                "The championship money enables expansion. A second training facility in the Industrial Sector. A youth program that catches at-risk teenagers before they end up in the pit out of desperation. A fighter's pension fund — the first of its kind — that ensures no retired fighter ends up destitute.",
+                "The Arena becomes more than a venue. It becomes a network, a system, an institution that serves the fighting community the way the fighting community has always deserved to be served. Fighters are athletes, not commodities. Their bodies are their own. Their stacks are inviolable. Their careers have arcs that end in dignity, not in the gutter.",
+                "\"You built a union,\" Kova observes, reviewing the organizational structure.",
+                "\"I built a family. Unions negotiate. Families protect.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.arena_expanded",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Expansion investment returns"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The Arena grows. The mission stays the same",
+                    "next": "jobs.gladiator.jgld_094"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_093": {
+            "id": "jobs.gladiator.jgld_093",
+            "title": "The Inventory of Scars",
+            "location": "lower_slums",
+            "text": [
+                "You stand before a mirror and take inventory. The scar above the left eye from Brick's elbow in the second fight. The crooked nose, broken three times, set twice, never quite right. The knuckles — swollen, calcified, permanently enlarged from thousands of impacts against bone and concrete.",
+                "The body is a record. Every scar is a story. Every ache is a lesson. The left knee that predicts rain. The right shoulder that protests overhead movements. The ribs that never fully healed from Kova's body shot in the championship bout.",
+                "You earned every mark. Some through skill, some through stubbornness, some through the particular stupidity of a young fighter who believed they were indestructible. None through cowardice. None through surrender.",
+                "The mirror shows a fighter who fought. That is enough. That has always been enough."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Accept the scars. They are the price of admission",
+                    "next": "jobs.gladiator.jgld_094"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_094": {
+            "id": "jobs.gladiator.jgld_094",
+            "title": "The Last Student",
+            "location": "the_arena",
+            "text": [
+                "A fighter comes to you with a question that every fighter eventually asks: \"When do I stop?\"",
+                "She is thirty-two. Old for a pit fighter, young for anything else. Her reflexes are starting to slow — imperceptible to spectators but obvious to her, the way a musician notices when their fingers hesitate on familiar notes.",
+                "You give her the answer that nobody gave you: \"You stop when the risk outweighs the reward. Not the financial reward — the personal reward. When stepping into the pit costs more than it gives you. When the fear is bigger than the hunger. When you start fighting to prove something instead of fighting to discover something.\"",
+                "\"How will I know?\"",
+                "\"You'll know. The pit tells you everything, if you listen.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 20,
+                    "reason": "Mentoring wisdom"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Watch her return to training. She's not done yet",
+                    "next": "jobs.gladiator.jgld_095"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "jgld_095": {
+            "id": "jobs.gladiator.jgld_095",
+            "title": "The Arena at Night",
+            "location": "the_arena",
+            "text": [
+                "After everyone leaves — the fighters, the staff, the trainers, the last stragglers from the crowd — you walk the Arena alone. The lights are on emergency power, casting the venue in amber and shadow. The pit is empty, the concrete floor clean but never truly clean, the history of a thousand fights preserved in stains that no mop can reach.",
+                "You hear the ghosts. Not literally — you don't believe in ghosts. But the Arena's acoustics hold echoes: the thud of impacts, the roar of crowds, the particular silence that follows a knockout. The sounds layer on each other, a palimpsest of violence and courage and desperation that fills the empty space the way water fills a vessel.",
+                "This is your cathedral. Built not on faith but on the fundamental human truth that testing yourself against another person reveals something that nothing else can. The pit is honest. The pit is fair. The pit asks one question and accepts any answer.",
+                "The question is: what are you made of?",
+                "You've spent a lifetime answering."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Turn off the lights. The Arena sleeps",
+                    "next": "jobs.gladiator.jgld_096"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "jgld_096": {
+            "id": "jobs.gladiator.jgld_096",
+            "title": "The Arena Master's Legacy",
+            "location": "the_arena",
+            "text": [
+                "The Arena will outlast you. The thought is comforting and terrifying in equal measure. Comforting because the institution you built will continue serving fighters and community long after you're gone. Terrifying because institutions, without their founders, drift — toward compromise, toward corruption, toward the path of least resistance that leads back to exploitation.",
+                "You write the Arena's charter. Not a legal document — a statement of principles, etched into a metal plate and mounted at the entrance to the pit. Every fighter who enters will see it. Every Arena Master who follows will be bound by it.",
+                "FIGHTERS OWN THEIR BODIES. FIGHTERS OWN THEIR STACKS. THE ARENA SERVES THE FIGHTER, NOT THE PROFIT. THE BELL ENDS THE FIGHT. THE FIGHT DOES NOT END THE FIGHTER.",
+                "Simple words. Heavy words. Words that carry the weight of every injustice you witnessed and every reform you implemented. Words that future Arena Masters will either honor or betray, and that the fighters will hold them accountable for either way."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.charter_written",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40,
+                    "reason": "Establishing the Arena charter"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Mount the charter. Let it speak for you when you can't",
+                    "next": "jobs.gladiator.jgld_097"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_097": {
+            "id": "jobs.gladiator.jgld_097",
+            "title": "The Passing of the Bell",
+            "location": "the_arena",
+            "text": [
+                "You choose your successor. Not the best fighter — the best leader. A woman named Thorne who came to the Arena as a medic and stayed because she understood something most fighters don't: the Arena is a community first and a venue second.",
+                "Thorne has never fought in the pit. She has stitched together every fighter who has. She knows the cost of combat not from inflicting it but from repairing it. Her perspective — the healer's perspective — is exactly what the Arena needs after decades of leadership by fighters.",
+                "\"I'm not a fighter,\" she says when you offer her the role.",
+                "\"That's why I'm choosing you. The Arena has had enough fighters running it. It needs someone who sees the fighters as people first and competitors second.\"",
+                "You hand her the bell — the original bell from the old pit, the one that rang your first fight and every fight since. It is heavy, tarnished, dented from decades of use. It is the Arena's heart.",
+                "\"Ring it when you mean it,\" you tell her. \"And stop the fight when it needs stopping. That's the whole job.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.successor_chosen",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Hand over the bell. The Arena belongs to Thorne now",
+                    "next": "jobs.gladiator.jgld_098"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false
+        },
+        "jgld_098": {
+            "id": "jobs.gladiator.jgld_098",
+            "title": "The Fighter Goes Home",
+            "location": "lower_slums",
+            "text": [
+                "You leave the Arena for the last time as its master. The door closes behind you with the particular finality of endings that are chosen rather than imposed. The street outside is ordinary — rain-slicked, neon-lit, populated by people going about the business of living.",
+                "You walk home. Your hands are empty for the first time in decades — no wraps, no gloves, no bell, no responsibility. The weight you've carried since you first walked through the Arena's service door lifts from your shoulders, and in its absence you feel simultaneously lighter and diminished.",
+                "At home — a small apartment above a noodle shop, unremarkable in every way — you sit by the window and listen to the rain. Somewhere across the district, the Arena's lights are on. Somewhere, a bell is ringing. Somewhere, two fighters are stepping into the pit to answer the oldest question.",
+                "You close your eyes. You hear the bell. You always hear the bell.",
+                "The fighter goes home. The fight goes on. The Arena endures. And the pit — patient, honest, eternal — remembers everyone who ever stood on its concrete floor and chose to fight.",
+                "Including you. Especially you."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.ending_arena_master_legacy",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 300,
+                    "reason": "Lifetime Arena earnings"
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 75,
+                    "reason": "The Arena Master's complete legacy"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The bell rings. The fighter rests. The Arena endures",
+                    "next": "shared.prologue.node_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": true
+        },
+        "jgld_099": {
+            "id": "jobs.gladiator.jgld_099",
+            "title": "The Bell",
+            "location": "the_arena",
+            "text": [
+                "The bell sounds. In the Arena, the bell is everything — beginning and ending, signal and symbol, the boundary between violence and peace. Every fighter knows the bell. Every fighter responds to it. The bell is the first thing you hear when the fight starts and the last thing you hear when it ends.",
+                "You hear the bell now, standing at the edge of the pit, watching a new generation of fighters test themselves against each other and against themselves. The bell sounds and the fight begins, and two people who have chosen this path step forward into the light and the noise and the ancient, irreducible confrontation of body against body.",
+                "This is the Arena. This is what you built. Not a place of exploitation or cruelty but a place of choice — difficult, painful, honest choice. Fighters choose to enter. Fighters choose to fight. Fighters choose to risk. And the Arena holds their choices with the same impartiality that the pit holds their blood.",
+                "The bell sounds. The crowd roars. The fight begins.",
+                "And somewhere inside you — deep in the muscle memory, deep in the scar tissue, deep in the part of you that will always be a fighter — you feel the old fire, the old hunger, the old willingness to step forward when everything says step back.",
+                "You don't step forward. You don't need to. The fight is not yours anymore. But the bell is. The bell is always yours."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.gladiator.complete",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Return to the streets.",
+                    "next": "act1.chapter2-iron-neon.fac_iron_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": true
+        },
+        "jgld_100": {
+            "id": "jobs.gladiator.jgld_100",
+            "title": "After the Bell",
+            "location": "the_arena",
+            "text": [
+                "After the bell, there is silence. Not the absence of sound — the Arena is never truly silent — but the particular quiet that follows the end of combat. The fighters leave the pit. The crowd disperses. The medics pack their equipment. The janitors mop the floor.",
+                "In that silence, the Arena reveals itself for what it truly is: not a temple of violence but a mirror. Every fighter who enters the pit sees themselves reflected in the combat — their strengths, their weaknesses, their limits, their potential. The pit doesn't create fighters. It reveals them.",
+                "You were revealed in this pit. The street kid with steady hands became a killer became a champion became a legend became a guardian became an Arena Master. Each transformation happened in the ring, under the lights, with the crowd watching. Each transformation cost blood. Each transformation was chosen.",
+                "The Arena will continue after you. Other fighters will enter the pit. Other champions will rise and fall. Other masters will shape the institution. The bell will sound and the fights will begin and the blood will stain the concrete and the crowd will roar.",
+                "But your name will be on the wall. Your scars will be in the story. Your voice will echo in the training of fighters who never met you but who fight with the style you taught and the principles you established.",
+                "The bell sounds. The fight is over. The fighter goes home.",
+                "And somewhere in the Arena, in the quiet after the crowd has gone, the pit remembers."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Return to the streets.",
+                    "next": "act1.chapter2-iron-neon.fac_iron_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": true
+        }
+    }
+}

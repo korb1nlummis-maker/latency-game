@@ -15,13 +15,36 @@
                 "The job board listing was bare-bones: DIGITAL WORK. DEEP NET CAFE. BOOTH 7. ASK FOR ZERO. The address led you to a basement three levels below street grade, past a door with no sign and a bouncer whose eyes were fully replaced with matte-black optics that tracked you like gun turrets.",
                 "The Deep Net Cafe is less cafe and more bunker. The air is cold and smells of ozone and solder. Rows of privacy booths line the walls, each one shielded with signal-dampening mesh. The ambient lighting is ultraviolet, turning every white surface into a glowing bruise. Half the patrons are jacked directly into terminals, bodies slack, minds elsewhere. The other half watch everyone who enters with the practiced wariness of people who have something to hide.",
                 "Booth 7 is in the back corner, positioned with sightlines to both exits. Someone is already sitting there.",
-                { "condition": { "race": "cyborg" }, "text": "Your internal scanner picks up the booth's shielding immediately. Military-grade Faraday mesh, the kind that costs more than this entire block earns in a month. Whoever set this up has access to serious hardware. Your augmented eyes adjust to the UV lighting automatically, pulling details from the shadows that baseline vision would miss." },
-                { "condition": { "race": "synth" }, "text": "The cafe's signal dampening hits your wireless systems like a wall of static. For a moment your sensory input stutters, and you experience something your emotion-processing layer classifies as claustrophobia. You're cut off from the network. For a synth, that's like losing a limb. Whoever chose this meeting place knows exactly how to make digital beings uncomfortable." },
-                { "condition": { "race": "orc" }, "text": "You have to duck through the doorway, and the privacy booth was clearly not designed for someone your size. Two patrons at nearby terminals stare openly. An orc in a hacker den is like finding a warhammer in a watchmaker's toolkit. You crack your knuckles. Their loss for underestimating you." }
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "Your internal scanner picks up the booth's shielding immediately. Military-grade Faraday mesh, the kind that costs more than this entire block earns in a month. Whoever set this up has access to serious hardware. Your augmented eyes adjust to the UV lighting automatically, pulling details from the shadows that baseline vision would miss."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "The cafe's signal dampening hits your wireless systems like a wall of static. For a moment your sensory input stutters, and you experience something your emotion-processing layer classifies as claustrophobia. You're cut off from the network. For a synth, that's like losing a limb. Whoever chose this meeting place knows exactly how to make digital beings uncomfortable."
+                },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "You have to duck through the doorway, and the privacy booth was clearly not designed for someone your size. Two patrons at nearby terminals stare openly. An orc in a hacker den is like finding a warhammer in a watchmaker's toolkit. You crack your knuckles. Their loss for underestimating you."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.entered_deep_net_cafe", "value": true },
-                { "type": "set_flag", "flag": "hacker.chapter", "value": 1 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.entered_deep_net_cafe",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.chapter",
+                    "value": 1
+                }
             ],
             "choices": [
                 {
@@ -37,7 +60,6 @@
             "music": "ambient_deep_net",
             "isEnding": false
         },
-
         "hack_001a": {
             "id": "act1.chapter1-hacker.hack_001a",
             "title": "Casing the Joint",
@@ -48,8 +70,15 @@
                 "You've seen enough. Booth 7."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.cased_cafe", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.cased_cafe",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -61,7 +90,6 @@
             "music": "ambient_deep_net",
             "isEnding": false
         },
-
         "hack_002": {
             "id": "act1.chapter1-hacker.hack_002",
             "title": "Zero",
@@ -71,12 +99,31 @@
                 "Zero doesn't stand. Doesn't offer a hand. Their fingers are already moving across three holographic displays projected from the booth's terminal, closing windows and encrypting files before you can see what's on them.",
                 "\"Scanning.\" Zero's voice has the clipped cadence of someone who treats words like bandwidth — every one costs something. \"No active transmitters. No corporate tracking tags. Your signal profile is...\" A pause. \"...acceptably paranoid. Sit.\"",
                 "They gesture to the seat across from them. The booth's privacy screen activates the moment you sit down, encasing both of you in a bubble of white noise and signal death.",
-                { "condition": { "race": "cyborg" }, "text": "Zero's white eyes fix on your augmentations. \"Legacy Kessler-Tanaka hardware. Civilian grade, but the firmware has been modified.\" It's not a question. They can read your specs the way a human reads a face. \"Interesting. Someone taught you to customize. Or you taught yourself. Either way, relevant.\"" },
-                { "condition": { "race": "synth" }, "text": "Zero regards you with an expression that, on a synth, passes for recognition. \"Another displaced unit. Your registration codes are forged. Layer three encryption, not bad, but I can see the seams.\" Their white eyes dim briefly — the synth equivalent of a knowing look. \"We're the same make, different model. That means I can almost trust you. Almost.\"" },
-                { "condition": { "race": "orc" }, "text": "Zero's head tilts at a precise fifteen-degree angle as you fold yourself into the booth seat. \"Unexpected phenotype for a hacking candidate. Cross-referencing.\" A beat. \"Statistical anomaly. Orc applicants for digital work represent zero-point-three percent of intake. You are either lost, or significantly more interesting than the average applicant. Calculating probability.\" Another beat. \"Sit. I am intrigued.\"" }
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "Zero's white eyes fix on your augmentations. \"Legacy Kessler-Tanaka hardware. Civilian grade, but the firmware has been modified.\" It's not a question. They can read your specs the way a human reads a face. \"Interesting. Someone taught you to customize. Or you taught yourself. Either way, relevant.\""
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Zero regards you with an expression that, on a synth, passes for recognition. \"Another displaced unit. Your registration codes are forged. Layer three encryption, not bad, but I can see the seams.\" Their white eyes dim briefly — the synth equivalent of a knowing look. \"We're the same make, different model. That means I can almost trust you. Almost.\""
+                },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Zero's head tilts at a precise fifteen-degree angle as you fold yourself into the booth seat. \"Unexpected phenotype for a hacking candidate. Cross-referencing.\" A beat. \"Statistical anomaly. Orc applicants for digital work represent zero-point-three percent of intake. You are either lost, or significantly more interesting than the average applicant. Calculating probability.\" Another beat. \"Sit. I am intrigued.\""
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.met_zero", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.met_zero",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -92,7 +139,6 @@
             "music": "ambient_deep_net",
             "isEnding": false
         },
-
         "hack_003a": {
             "id": "act1.chapter1-hacker.hack_003a",
             "title": "Zero's Assessment",
@@ -102,7 +148,10 @@
                 "They fold their hands on the table with mechanical precision. \"I know enough to determine that you are desperate, that someone is covering your tracks without your knowledge, and that you chose a hacking job despite having no established reputation in the field. This tells me you are either foolish or confident. I am here to determine which.\""
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -114,7 +163,6 @@
             "music": "ambient_deep_net",
             "isEnding": false
         },
-
         "hack_003": {
             "id": "act1.chapter1-hacker.hack_003",
             "title": "The Job",
@@ -125,10 +173,19 @@
                 "Zero's fingers dance across the display, pulling up building schematics, network topology diagrams, security rotation schedules. This is not a casual request. This is a planned operation.",
                 "\"The payroll data itself is worth four hundred credits to my client. Your cut is one-fifty plus whatever you can skim during the breach without triggering alarms. The operation is remote. You will not leave this booth. I provide the hardware, you provide the skill.\"",
                 "Their white eyes fix on you. \"Questions.\"",
-                { "condition": { "race": "orc" }, "text": "You lean forward to study the schematics, and your elbow accidentally sends one of Zero's displays spinning. Zero catches it without looking. \"I will adjust the interface scale,\" they say, with what might be the faintest trace of amusement." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "You lean forward to study the schematics, and your elbow accidentally sends one of Zero's displays spinning. Zero catches it without looking. \"I will adjust the interface scale,\" they say, with what might be the faintest trace of amusement."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.heard_job_briefing", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.heard_job_briefing",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -152,7 +209,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "hack_004a": {
             "id": "act1.chapter1-hacker.hack_004a",
             "title": "The Client",
@@ -163,7 +219,11 @@
                 "\"Your involvement is deniable,\" Zero continues. \"If you are caught, the Syndicate does not know you. If you succeed, the Syndicate remembers. There is significant value in being remembered by the right people.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.knows_client", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.knows_client",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -179,7 +239,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "hack_004b": {
             "id": "act1.chapter1-hacker.hack_004b",
             "title": "Security Briefing",
@@ -188,11 +247,25 @@
                 "Zero expands the network diagram. Nodes light up in red, amber, and green. \"Helion's digital security is competent but not exceptional. Three-layer firewall. Intrusion detection system with a seven-second response window. Two on-site system administrators, one of whom is currently on leave. The remaining admin runs a predictable maintenance cycle at 02:00 hours.\"",
                 "They highlight a node on the diagram. \"This is the payroll server. It sits behind the second firewall layer. You will need to breach the outer firewall, spoof credentials to bypass the intrusion detection, and extract the database before the seven-second window closes. If you trigger the IDS, the server locks down and the on-site admin is alerted.\"",
                 "Zero looks at you levelly. \"This requires skill, not brute force. Can you operate at this level?\"",
-                { "condition": { "race": "cyborg" }, "text": "Your internal systems are already mapping the network topology, running predictive models on firewall response patterns. The seven-second window is tight, but your neural interface gives you a direct connection advantage that pure meatware hackers don't have. You feel your augmented fingers twitch with anticipation." },
-                { "condition": { "race": "synth" }, "text": "Your processing cores spin up as you analyze the diagram. Network intrusion is functionally native to your architecture. You were built to interface with systems. The firewall is just a locked door, and you are a key that can reshape itself." }
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "Your internal systems are already mapping the network topology, running predictive models on firewall response patterns. The seven-second window is tight, but your neural interface gives you a direct connection advantage that pure meatware hackers don't have. You feel your augmented fingers twitch with anticipation."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your processing cores spin up as you analyze the diagram. Network intrusion is functionally native to your architecture. You were built to interface with systems. The firewall is just a locked door, and you are a key that can reshape itself."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.heard_security_briefing", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.heard_security_briefing",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -208,7 +281,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "hack_004c": {
             "id": "act1.chapter1-hacker.hack_004c",
             "title": "Negotiation",
@@ -219,7 +291,11 @@
                 "\"However. Confidence in negotiation correlates with competence in execution at a rate of sixty-seven percent. I will offer one hundred and seventy-five. Non-negotiable. Prove your value tonight and future contracts will reflect it.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.negotiated_pay", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.negotiated_pay",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -235,7 +311,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "hack_005": {
             "id": "act1.chapter1-hacker.hack_005",
             "title": "Jacking In",
@@ -245,17 +320,39 @@
                 "\"The connection is routed through fourteen proxy nodes across six districts,\" Zero says, plugging a hardline cable from the terminal into the booth's encrypted uplink. \"Trace-back time is approximately nine minutes. The operation should take four. Do not exceed the window.\"",
                 "The Helion Industries network blooms across your displays. You can see the firewall layers rendered as concentric walls of scrolling code. Beyond them, the prize: the payroll server, glowing like a coal in the dark.",
                 "Your fingers settle on the interface. The clock starts now.",
-                { "condition": { "race": "cyborg" }, "text": "You jack the neural cable directly into your cranial port. The network explodes across your consciousness, overlaying reality with streams of data. You can feel the firewalls as pressure, the intrusion detection system as heat. Your augmented nervous system was made for this — the boundary between your mind and the machine thins to nothing." },
-                { "condition": { "race": "synth" }, "text": "You don't need the holographic displays. You interface with the terminal directly through your palm uplink, and the network becomes an extension of your own consciousness. You are no longer sitting in a booth. You are inside the machine, and the machine is inside you. For a synth, there is no more natural state." },
-                { "condition": { "race": "orc" }, "text": "Your fingers are almost too large for the haptic interface. Almost. You've spent years adapting, learning to coax precision from hands built for crushing. The first keystrokes are deliberate, methodical. What you lack in finesse you compensate for with a stubbornness that no firewall was programmed to handle." }
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "You jack the neural cable directly into your cranial port. The network explodes across your consciousness, overlaying reality with streams of data. You can feel the firewalls as pressure, the intrusion detection system as heat. Your augmented nervous system was made for this — the boundary between your mind and the machine thins to nothing."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You don't need the holographic displays. You interface with the terminal directly through your palm uplink, and the network becomes an extension of your own consciousness. You are no longer sitting in a booth. You are inside the machine, and the machine is inside you. For a synth, there is no more natural state."
+                },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Your fingers are almost too large for the haptic interface. Almost. You've spent years adapting, learning to coax precision from hands built for crushing. The first keystrokes are deliberate, methodical. What you lack in finesse you compensate for with a stubbornness that no firewall was programmed to handle."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.jacked_in", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.jacked_in",
+                    "value": true
+                }
             ],
             "choices": [
                 {
                     "text": "[Tech 12] Probe the outer firewall for vulnerabilities",
-                    "statCheck": { "stat": "tech", "dc": 12 },
+                    "statCheck": {
+                        "stat": "tech",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-hacker.hack_006",
                     "failNext": "act1.chapter1-hacker.hack_006f"
                 }
@@ -264,7 +361,6 @@
             "music": "music_hacking_sequence",
             "isEnding": false
         },
-
         "hack_006": {
             "id": "act1.chapter1-hacker.hack_006",
             "title": "Outer Wall Breached",
@@ -276,13 +372,23 @@
                 "Zero's voice comes through on a secure audio channel, flat and clipped. \"Outer wall clear. IDS ahead. You have the timing data. Proceed when ready.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.outer_firewall_clean", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.outer_firewall_clean",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
                     "text": "[Tech 13] Time the IDS gap and slip through",
-                    "statCheck": { "stat": "tech", "dc": 13 },
+                    "statCheck": {
+                        "stat": "tech",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-hacker.hack_007",
                     "failNext": "act1.chapter1-hacker.hack_007f"
                 }
@@ -291,7 +397,6 @@
             "music": "music_hacking_sequence",
             "isEnding": false
         },
-
         "hack_006f": {
             "id": "act1.chapter1-hacker.hack_006f",
             "title": "Firewall Resistance",
@@ -303,13 +408,23 @@
                 "The intrusion detection system looms ahead, its sweep pattern faster than you expected."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.outer_firewall_noisy", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.outer_firewall_noisy",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
                     "text": "[Tech 14] Push through the IDS with extra caution",
-                    "statCheck": { "stat": "tech", "dc": 14 },
+                    "statCheck": {
+                        "stat": "tech",
+                        "dc": 14
+                    },
                     "next": "act1.chapter1-hacker.hack_007",
                     "failNext": "act1.chapter1-hacker.hack_007f"
                 }
@@ -318,7 +433,6 @@
             "music": "music_hacking_tense",
             "isEnding": false
         },
-
         "hack_007": {
             "id": "act1.chapter1-hacker.hack_007",
             "title": "Past the Watchers",
@@ -330,9 +444,20 @@
                 "A secondary database, hidden behind the payroll system. Shadow accounts. Payments flowing out of Helion to entities that don't match any known vendor or contractor. The amounts are massive — ten times what the company's legitimate revenue could support. And the routing codes trace back to shell companies that you recognize from Ghost Syndicate intel bulletins. Neon Court front operations."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.ids_bypassed_clean", "value": true },
-                { "type": "set_flag", "flag": "hacker.discovered_laundering", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.ids_bypassed_clean",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.discovered_laundering",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -348,7 +473,6 @@
             "music": "music_discovery",
             "isEnding": false
         },
-
         "hack_007f": {
             "id": "act1.chapter1-hacker.hack_007f",
             "title": "Caught in the Sweep",
@@ -360,9 +484,20 @@
                 "In the scramble, you nearly miss it. A secondary database sitting behind the payroll system. Shadow accounts. Massive payments flowing to Neon Court shell companies. Helion Industries is laundering money. A lot of money."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.ids_triggered", "value": true },
-                { "type": "set_flag", "flag": "hacker.discovered_laundering", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.ids_triggered",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.discovered_laundering",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -378,7 +513,6 @@
             "music": "music_hacking_tense",
             "isEnding": false
         },
-
         "hack_008": {
             "id": "act1.chapter1-hacker.hack_008",
             "title": "Zero's Interest",
@@ -391,8 +525,16 @@
                 "The primary payroll extraction completes alongside it. Job done. But the extra data changes everything."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.told_zero_immediately", "value": true },
-                { "type": "set_flag", "flag": "hacker.has_shadow_data", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.told_zero_immediately",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.has_shadow_data",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -404,7 +546,6 @@
             "music": "music_discovery",
             "isEnding": false
         },
-
         "hack_008a": {
             "id": "act1.chapter1-hacker.hack_008a",
             "title": "Quiet Hands",
@@ -418,9 +559,20 @@
                 "\"Good. Disconnecting.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.copied_data_secretly", "value": true },
-                { "type": "set_flag", "flag": "hacker.has_shadow_data", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.copied_data_secretly",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.has_shadow_data",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -432,7 +584,6 @@
             "music": "music_discovery",
             "isEnding": false
         },
-
         "hack_009": {
             "id": "act1.chapter1-hacker.hack_009",
             "title": "The Haul",
@@ -443,11 +594,23 @@
                 "Then Zero pauses. Their white eyes focus on something in the data stream — or maybe on you. It's hard to tell with a synth. \"The extraction was efficient. Minimal footprint. You have aptitude.\"",
                 "Coming from Zero, that's practically a marriage proposal.",
                 "But the real question is what to do with the shadow data. Helion Industries is laundering money for the Neon Court. That information is worth more than a hundred payroll heists. It's leverage. Currency. A weapon. And depending on who you give it to, it could reshape the balance of power in the district.",
-                { "condition": { "race": "orc" }, "text": "You flex your fingers, working out the tension from the cramped interface. The data is good. The data is power. And where you come from, power is the only thing that keeps you breathing. The Neon Court laundering money through a corp like Helion means someone, somewhere, is getting crushed under the weight of it. Probably people who look like you." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "You flex your fingers, working out the tension from the cramped interface. The data is good. The data is power. And where you come from, power is the only thing that keeps you breathing. The Neon Court laundering money through a corp like Helion means someone, somewhere, is getting crushed under the weight of it. Probably people who look like you."
+                }
             ],
             "onEnter": [
-                { "type": "modify_currency", "amount": 150 },
-                { "type": "set_flag", "flag": "hacker.payroll_extracted", "value": true }
+                {
+                    "type": "modify_currency",
+                    "amount": 150
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.payroll_extracted",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -467,7 +630,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "hack_010a": {
             "id": "act1.chapter1-hacker.hack_010a",
             "title": "Syndicate Payday",
@@ -480,11 +642,29 @@
                 "Additional credits hit your datapad. Two hundred more. And something else — a tag in your datapad's address book. A direct contact line to Zero. In the Ghost Syndicate, that's worth more than money."
             ],
             "onEnter": [
-                { "type": "modify_currency", "amount": 200 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 25 },
-                { "type": "set_flag", "flag": "hacker.sold_data_syndicate", "value": true },
-                { "type": "set_flag", "flag": "hacker.zero_contact", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "modify_currency",
+                    "amount": 200
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.sold_data_syndicate",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.zero_contact",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -496,7 +676,6 @@
             "music": "music_reward",
             "isEnding": false
         },
-
         "hack_010b": {
             "id": "act1.chapter1-hacker.hack_010b",
             "title": "Private Arsenal",
@@ -506,12 +685,28 @@
                 "But you have something none of them know about. Proof that Helion Industries is a Neon Court laundromat. Transaction records that could embarrass, extort, or destroy multiple organizations depending on how and when they're deployed. It's the kind of leverage that keeps you alive in a city built on secrets.",
                 "Zero transfers your payment and nods. \"The contract is fulfilled. You performed adequately. If you wish to continue working with the Syndicate, this terminal can reach me through the cafe's encrypted relay.\"",
                 "Adequate. You'll take it. Especially since 'adequate' is what Zero sees, and the reality sitting in your hidden data partition is considerably more than adequate.",
-                { "condition": { "race": "synth" }, "text": "You compress the shadow data into a nested encryption layer within your own memory architecture. It sits there like a second heartbeat, invisible to external scans, accessible only through a cognitive key sequence that you've distributed across three separate memory partitions. Even Zero's scans won't find it." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You compress the shadow data into a nested encryption layer within your own memory architecture. It sits there like a second heartbeat, invisible to external scans, accessible only through a cognitive key sequence that you've distributed across three separate memory partitions. Even Zero's scans won't find it."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.kept_data_leverage", "value": true },
-                { "type": "set_flag", "flag": "hacker.has_neon_court_leverage", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.kept_data_leverage",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.has_neon_court_leverage",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -523,7 +718,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "hack_010c": {
             "id": "act1.chapter1-hacker.hack_010c",
             "title": "The Saints' Due",
@@ -536,10 +730,25 @@
                 "\"Contract complete,\" Zero says. \"Adequate work. The Syndicate may have further use for you.\""
             ],
             "onEnter": [
-                { "type": "modify_reputation", "faction": "circuitSaints", "amount": 20 },
-                { "type": "set_flag", "flag": "hacker.reported_to_saints", "value": true },
-                { "type": "set_flag", "flag": "hacker.saints_have_laundering_data", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 20
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.reported_to_saints",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.saints_have_laundering_data",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -551,7 +760,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "hack_011": {
             "id": "act1.chapter1-hacker.hack_011",
             "title": "Something Wrong",
@@ -563,12 +771,30 @@
                 "\"The observer did not attempt to block the intrusion. They logged your entry vector, your methodology, your extraction pattern, and your exit route. They have a complete profile of your operational signature.\"",
                 "Zero meets your eyes. \"You have been cataloged. Someone with significant resources now knows how you work. They chose not to stop you. That means they want you operational. For now.\"",
                 "The booth's privacy screen suddenly feels less like protection and more like a cage.",
-                { "condition": { "race": "cyborg" }, "text": "Your threat-assessment subroutine has gone to red. Full red. The kind of red that makes your combat augmentations start pre-charging and your emergency beacon arm itself. Someone with tier-one counterintelligence capability profiled your cybernetic signature. They know your hardware. They know your firmware. They know your weaknesses." },
-                { "condition": { "race": "synth" }, "text": "A cold pulse runs through your processing cores — the synthetic equivalent of dread. Your operational signature isn't just your technique. For a synth, it includes your unique processing patterns, your decision-making algorithms, the fundamental architecture of how you think. Whoever profiled you doesn't just know what you did. They know how your mind works." }
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "Your threat-assessment subroutine has gone to red. Full red. The kind of red that makes your combat augmentations start pre-charging and your emergency beacon arm itself. Someone with tier-one counterintelligence capability profiled your cybernetic signature. They know your hardware. They know your firmware. They know your weaknesses."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "A cold pulse runs through your processing cores — the synthetic equivalent of dread. Your operational signature isn't just your technique. For a synth, it includes your unique processing patterns, your decision-making algorithms, the fundamental architecture of how you think. Whoever profiled you doesn't just know what you did. They know how your mind works."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker_traced", "value": true },
-                { "type": "set_flag", "flag": "hacker.unknown_observer", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker_traced",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.unknown_observer",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -584,7 +810,6 @@
             "music": "music_danger",
             "isEnding": false
         },
-
         "hack_012": {
             "id": "act1.chapter1-hacker.hack_012",
             "title": "The Unknown Watcher",
@@ -598,8 +823,15 @@
                 "Zero stands, and without another word, walks toward the service corridor and is gone."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.zero_contact_chip", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.zero_contact_chip",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -611,7 +843,6 @@
             "music": "music_danger",
             "isEnding": false
         },
-
         "hack_012a": {
             "id": "act1.chapter1-hacker.hack_012a",
             "title": "Tactical Exit",
@@ -624,9 +855,20 @@
                 "The service corridor is clear. You take it."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.zero_contact_chip", "value": true },
-                { "type": "set_flag", "flag": "hacker.tactical_exit", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.zero_contact_chip",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.tactical_exit",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -638,7 +880,6 @@
             "music": "music_danger",
             "isEnding": false
         },
-
         "hack_013": {
             "id": "act1.chapter1-hacker.hack_013",
             "title": "New Reality",
@@ -649,22 +890,71 @@
                 "And someone was watching. Someone let you do it. Someone profiled you and chose not to intervene. That question will keep you awake tonight, and probably every night until you find the answer.",
                 "Your datapad buzzes. A message from an address you don't recognize, routed through so many proxies it could have come from anywhere. Two words: WELL PLAYED.",
                 "The message deletes itself before you can reply.",
-                { "condition": { "race": "orc" }, "text": "You crack your neck and roll your shoulders as you walk. Hacker. The word doesn't fit comfortably yet, like a jacket cut for someone else's frame. But you've never been what people expect, and you've never let anyone else define the shape of your survival. If the digital world wants to underestimate an orc sitting at a terminal, that's their vulnerability. Not yours." },
-                { "condition": { "race": "cyborg" }, "text": "Your augmented systems are still buzzing with residual data from the hack. Neural pathways that hadn't been exercised in years are firing again, and it feels like waking up. You were built to interface with machines. Tonight, you remembered what that means." },
-                { "condition": { "race": "synth" }, "text": "The network's absence presses against your consciousness as you walk the physical streets. But something has changed. You touched the inside of a corporate system tonight and bent it to your will. For a synth discarded by the system, there is a particular satisfaction in learning how to dismantle it from within." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "You crack your neck and roll your shoulders as you walk. Hacker. The word doesn't fit comfortably yet, like a jacket cut for someone else's frame. But you've never been what people expect, and you've never let anyone else define the shape of your survival. If the digital world wants to underestimate an orc sitting at a terminal, that's their vulnerability. Not yours."
+                },
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "Your augmented systems are still buzzing with residual data from the hack. Neural pathways that hadn't been exercised in years are firing again, and it feels like waking up. You were built to interface with machines. Tonight, you remembered what that means."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "The network's absence presses against your consciousness as you walk the physical streets. But something has changed. You touched the inside of a corporate system tonight and bent it to your will. For a synth discarded by the system, there is a particular satisfaction in learning how to dismantle it from within."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "hacker.job_assigned", "value": true },
-                { "type": "set_flag", "flag": "player.job", "value": "hacker" },
-                { "type": "set_flag", "flag": "hacker.rank", "value": 0 },
-                { "type": "set_flag", "flag": "hacker_traced", "value": true },
-                { "type": "add_experience", "amount": 50 },
-                { "type": "set_flag", "flag": "hacker.chapter1_complete", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.job_assigned",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "player.job",
+                    "value": "hacker"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.rank",
+                    "value": 0
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker_traced",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "hacker.chapter1_complete",
+                    "value": true
+                }
             ],
             "choices": [
                 {
+                    "text": "Pursue the underground hacker network.",
+                    "next": "jobs.hacker.hack_001",
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "job_quest.hacker.started",
+                            "value": true
+                        }
+                    ]
+                },
+                {
                     "text": "Head home. Tomorrow, the real work begins.",
-                    "next": "act1.chapter2-iron-neon.start"
+                    "next": "act1.chapter2-iron-neon.fac_iron_001"
                 }
             ],
             "ascii": null,

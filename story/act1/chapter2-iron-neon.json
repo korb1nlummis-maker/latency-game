@@ -6,21 +6,39 @@
         "description": "Faction first contact - Iron Collective and Neon Court recruitment arcs. Moral weight: clinic sabotage kills innocents, Neon Court drugging and manipulation. Player chooses allegiance or walks away."
     },
     "nodes": {
-
         "fac_iron_001": {
             "id": "act1.chapter2-iron-neon.fac_iron_001",
             "title": "Summons in Rust",
             "location": "lower_slums",
             "text": [
                 "The message arrives scratched into a bullet casing, dropped into your pocket by a child who vanishes into the crowd before you can speak. Five words etched into brass: THE FOUNDRY. TONIGHT. ALONE.",
-                "You turn the casing over. On the base, stamped where the primer should be, is a clenched fist — the mark of the Iron Collective. Everyone in the lower city knows that symbol. Some pray to it. Some run from it.",
+                "You turn the casing over. On the base, stamped where the primer should be, is a clenched fist â€” the mark of the Iron Collective. Everyone in the lower city knows that symbol. Some pray to it. Some run from it.",
                 "The child is already gone. The crowd flows around you like water around a stone, faces averted, shoulders hunched. Nobody saw anything. In the lower slums, blindness is a survival skill.",
-                { "condition": { "race": "human" }, "text": "You're one of them. Born down here, raised in the smoke and noise. The Collective has been watching you since before you knew what watching meant." },
-                { "condition": { "race": "orc" }, "text": "Your size draws eyes even in the lower slums, where people train themselves not to look. The Collective recruits muscle. You represent a considerable amount of muscle." },
-                { "condition": { "race": "synth" }, "text": "A synthetic in the lower slums is either a runaway or a spy. The fact that you've survived this long without a faction suggests you're something more interesting than either." }
+                {
+                    "condition": {
+                        "race": "human"
+                    },
+                    "text": "You're one of them. Born down here, raised in the smoke and noise. The Collective has been watching you since before you knew what watching meant."
+                },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Your size draws eyes even in the lower slums, where people train themselves not to look. The Collective recruits muscle. You represent a considerable amount of muscle."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "A synthetic in the lower slums is either a runaway or a spy. The fact that you've survived this long without a faction suggests you're something more interesting than either."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.iron_contact_started", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.iron_contact_started",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -36,19 +54,22 @@
             "music": "ambient_industrial",
             "isEnding": false
         },
-
         "fac_iron_002": {
             "id": "act1.chapter2-iron-neon.fac_iron_002",
             "title": "The Foundry",
             "location": "the_foundry",
             "text": [
                 "The Foundry was a munitions factory once, back when the corporations still made things instead of just owning them. Now it's a cathedral of rust and defiance. Blast furnaces cold for decades serve as meeting halls. Assembly lines have been repurposed into barricades, sleeping quarters, field hospitals.",
-                "Armed workers stand at every junction, watching you pass with eyes that have forgotten how to trust. Their weapons are cobbled together from scrap — pipe rifles, vibro-blades made from industrial cutters, armor beaten from factory plate. Ugly gear. Functional gear. The kind of gear that says we built this ourselves and we will use it.",
+                "Armed workers stand at every junction, watching you pass with eyes that have forgotten how to trust. Their weapons are cobbled together from scrap â€” pipe rifles, vibro-blades made from industrial cutters, armor beaten from factory plate. Ugly gear. Functional gear. The kind of gear that says we built this ourselves and we will use it.",
                 "They lead you deep into the complex, past walls covered in hand-painted slogans and memorial lists of the dead. The names go on for a very long time. Hundreds of them. Thousands.",
                 "The heart of the Foundry is the old foreman's office, elevated above the factory floor on a steel platform. The woman standing there looks down at you with the gaze of someone who has weighed your soul and is still calculating."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.visited_foundry", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.visited_foundry",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -60,13 +81,12 @@
             "music": "iron_collective_theme",
             "isEnding": false
         },
-
         "fac_iron_003": {
             "id": "act1.chapter2-iron-neon.fac_iron_003",
             "title": "You Can't Ignore the Iron",
             "location": "lower_slums",
             "text": [
-                "You toss the casing into the gutter and walk on. You have your own problems. Your own survival to manage. The factions are meat grinders and you've seen what comes out the other side — broken people with broken causes, bleeding for leaders who sleep in better beds than they do.",
+                "You toss the casing into the gutter and walk on. You have your own problems. Your own survival to manage. The factions are meat grinders and you've seen what comes out the other side â€” broken people with broken causes, bleeding for leaders who sleep in better beds than they do.",
                 "Two blocks later, a man steps out of an alley. Rust, the veteran scavenger, one arm missing, face mapped with old scars. He doesn't block your path. He just stands there, looking at you the way a disappointed father looks at a child who should know better.",
                 "\"Vex doesn't send invitations twice,\" he says quietly. \"She sent one to you because she thinks you're worth something. If you don't show, the next person who contacts you from the Collective won't be this polite.\"",
                 "He turns and walks back into the alley. The shadows swallow him like he was never there."
@@ -81,7 +101,11 @@
                     "text": "Walk away. For real this time.",
                     "next": "act1.chapter2-iron-neon.fac_iron_015",
                     "onSelect": [
-                        { "type": "set_flag", "flag": "chapter2.refused_iron", "value": true }
+                        {
+                            "type": "set_flag",
+                            "flag": "chapter2.refused_iron",
+                            "value": true
+                        }
                     ]
                 }
             ],
@@ -89,7 +113,6 @@
             "music": "ambient_industrial",
             "isEnding": false
         },
-
         "fac_iron_004": {
             "id": "act1.chapter2-iron-neon.fac_iron_004",
             "title": "Commander Vex",
@@ -97,7 +120,7 @@
             "text": [
                 "Commander Vex is smaller than you expected. That surprises you until she speaks, and then nothing about her seems small again.",
                 "\"I lost forty-seven workers in the Sector Nine collapse,\" she says, no preamble, no greeting. \"The shaft supports were rotted through. Meridian knew. They ran the numbers and decided replacement workers were cheaper than structural repairs. Forty-seven people, and a spreadsheet killed them.\"",
-                "She comes down the stairs. Each step rings on the metal grating. Up close, you can see the scars — burn marks across her forearms, a chemical splash pattern up the left side of her neck. Factory wounds. The kind the corps call acceptable losses.",
+                "She comes down the stairs. Each step rings on the metal grating. Up close, you can see the scars â€” burn marks across her forearms, a chemical splash pattern up the left side of her neck. Factory wounds. The kind the corps call acceptable losses.",
                 "\"My entire shift crew. My friends. People who trusted me to keep them safe.\" Her voice doesn't waver. It has gone past wavering into something harder. \"The stack-lords live forever in their towers. They download into fresh bodies while we die in their factories and their mines and their refineries. One death per person, permanent and final, while they sip champagne in their hundredth sleeve.\"",
                 "She stops in front of you. Her eyes are dark iron.",
                 "\"The Iron Collective exists because that equation is wrong. We're going to balance it. The question is whether you're going to help.\""
@@ -117,21 +140,24 @@
             "music": "iron_collective_theme",
             "isEnding": false
         },
-
         "fac_iron_005": {
             "id": "act1.chapter2-iron-neon.fac_iron_005",
             "title": "The Mission",
             "location": "the_foundry",
             "text": [
-                "A ghost of approval crosses Vex's face — there and gone, like heat lightning.",
+                "A ghost of approval crosses Vex's face â€” there and gone, like heat lightning.",
                 "\"There's a Stack Clinic in Sector Twelve. Officially it provides cortical maintenance for mid-tier citizens. Backup services, memory defragmentation, consciousness insurance. Clean hallways and smiling doctors.\"",
                 "She pulls up a holographic display from a battered projector. Blueprints. Security rotations. Internal memos with Meridian letterheads.",
-                "\"Unofficially, the basement levels run a harvesting operation. They take people from the lower city — the unregistered, the homeless, the ones nobody counts. They strip their organs for the stack-lord body market. Hearts, lungs, kidneys, neural tissue. Everything a fresh sleeve needs, pulled from living people who never consented and never survive the process.\"",
+                "\"Unofficially, the basement levels run a harvesting operation. They take people from the lower city â€” the unregistered, the homeless, the ones nobody counts. They strip their organs for the stack-lord body market. Hearts, lungs, kidneys, neural tissue. Everything a fresh sleeve needs, pulled from living people who never consented and never survive the process.\"",
                 "The holographic display flickers. You see autopsy photos. Hollowed-out bodies on steel tables. Faces frozen in expressions that will follow you into your sleep.",
                 "\"We're going to shut it down. Permanently.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.iron_mission_accepted", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.iron_mission_accepted",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -147,18 +173,17 @@
             "music": "tension_building",
             "isEnding": false
         },
-
         "fac_iron_006": {
             "id": "act1.chapter2-iron-neon.fac_iron_006",
             "title": "The Pitch",
             "location": "the_foundry",
             "text": [
-                "Vex doesn't flinch. If anything, the question earns you something — a nod, slight, acknowledging that you think before you follow.",
+                "Vex doesn't flinch. If anything, the question earns you something â€” a nod, slight, acknowledging that you think before you follow.",
                 "\"Every faction in this city wants something from you. The Neon Court wants your obedience dressed up as admiration. The Ghost Syndicate wants your skills priced by the hour. The Circuit Saints want your faith. The Ashen Circle wants your despair.\"",
-                "She gestures at the Foundry around her — the sleeping quarters, the meal hall where workers share rations, the medical bay where Doc Rivet patches wounds without asking for payment.",
+                "She gestures at the Foundry around her â€” the sleeping quarters, the meal hall where workers share rations, the medical bay where Doc Rivet patches wounds without asking for payment.",
                 "\"We want your anger. Because anger is the only honest response to a system that lets the rich live forever while the poor die in their factories. We don't promise you paradise. We promise you a fight worth fighting.\"",
                 "\"No gods. No stacks. Only iron.\"",
-                "The workers on the factory floor below have stopped to listen. Hammers still. Conversations pause. In the silence, you can hear the city's machinery grinding beyond the walls — the vast indifferent engine that chews up the lower city and spits out profit.",
+                "The workers on the factory floor below have stopped to listen. Hammers still. Conversations pause. In the silence, you can hear the city's machinery grinding beyond the walls â€” the vast indifferent engine that chews up the lower city and spits out profit.",
                 "\"Now. Let me tell you what the fight looks like today.\""
             ],
             "onEnter": [],
@@ -172,17 +197,16 @@
             "music": "iron_collective_theme",
             "isEnding": false
         },
-
         "fac_iron_007": {
             "id": "act1.chapter2-iron-neon.fac_iron_007",
             "title": "The Complication",
             "location": "the_foundry",
             "text": [
-                "\"Charges are planted at the structural supports. One detonation and the basement levels collapse — the harvesting labs, the operating theaters, the cold storage where they keep the... inventory.\" Vex's jaw tightens on the last word.",
+                "\"Charges are planted at the structural supports. One detonation and the basement levels collapse â€” the harvesting labs, the operating theaters, the cold storage where they keep the... inventory.\" Vex's jaw tightens on the last word.",
                 "\"You go in, confirm the charges are in position, and set the timer. My people handle extraction of any prisoners still alive down there. Thirty minutes. In and out.\"",
                 "Doc Rivet appears at the edge of the briefing, arms folded, face troubled. She waits until Vex finishes, then speaks.",
                 "\"Tell them the rest, Commander.\"",
-                "Vex's expression hardens. \"The upper floors of the clinic are legitimate. Stack maintenance, consciousness backup, neural therapy. There are patients up there. Civilians receiving real medical care. Some of them are from the lower city — people who saved for years to afford a single cortical checkup.\"",
+                "Vex's expression hardens. \"The upper floors of the clinic are legitimate. Stack maintenance, consciousness backup, neural therapy. There are patients up there. Civilians receiving real medical care. Some of them are from the lower city â€” people who saved for years to afford a single cortical checkup.\"",
                 "\"If we blow the basement, the structural damage will reach the upper floors. The evac window is tight. We might not get everyone out.\"",
                 "Doc Rivet's voice is quiet and precise: \"We will almost certainly not get everyone out.\"",
                 "The silence that follows is the kind that settles into your bones."
@@ -202,7 +226,6 @@
             "music": "moral_weight",
             "isEnding": false
         },
-
         "fac_iron_008": {
             "id": "act1.chapter2-iron-neon.fac_iron_008",
             "title": "The Weight of It",
@@ -229,22 +252,43 @@
             "music": "moral_weight",
             "isEnding": false
         },
-
         "fac_iron_009": {
             "id": "act1.chapter2-iron-neon.fac_iron_009",
-            "title": "Into the Clinic — Full Sabotage",
+            "title": "Into the Clinic â€” Full Sabotage",
             "location": "stack_clinic",
             "text": [
-                "The Stack Clinic gleams in the Sector Twelve night like a clean tooth in a rotten mouth. White walls, soft lighting, the gentle hum of medical-grade electronics. The waiting room could be in any upper-city hospital — padded chairs, calming holographic displays, a reception desk staffed by a synth with a programmed smile.",
+                "The Stack Clinic gleams in the Sector Twelve night like a clean tooth in a rotten mouth. White walls, soft lighting, the gentle hum of medical-grade electronics. The waiting room could be in any upper-city hospital â€” padded chairs, calming holographic displays, a reception desk staffed by a synth with a programmed smile.",
                 "Below, in the basement you can't see from here, people are being carved apart while they're still breathing.",
-                "You enter through the service corridor Vex's team mapped. The security is corporate standard — camera sweeps, badge-locked doors, two armed guards on the basement level. Nothing a determined person with the right tools can't handle.",
+                "You enter through the service corridor Vex's team mapped. The security is corporate standard â€” camera sweeps, badge-locked doors, two armed guards on the basement level. Nothing a determined person with the right tools can't handle.",
                 "The charges are where Vex said they'd be, pre-planted by a Collective operative who works janitorial. Small grey blocks of thermite composite fixed to the load-bearing columns. You count twelve. Enough to bring the basement down and then some.",
-                { "condition": { "stat": { "STR": 12 } }, "text": "You shoulder through a jammed maintenance hatch without slowing, the metal shrieking against your weight. The noise doesn't matter. You're past stealth now." },
-                { "condition": { "stat": { "CON": 12 } }, "text": "The air in the lower levels is thick with chemical preservatives and something worse — the copper-sweet smell of old blood. Your stomach turns but holds. You've breathed worse." }
+                {
+                    "condition": {
+                        "stat": {
+                            "STR": 12
+                        }
+                    },
+                    "text": "You shoulder through a jammed maintenance hatch without slowing, the metal shrieking against your weight. The noise doesn't matter. You're past stealth now."
+                },
+                {
+                    "condition": {
+                        "stat": {
+                            "CON": 12
+                        }
+                    },
+                    "text": "The air in the lower levels is thick with chemical preservatives and something worse â€” the copper-sweet smell of old blood. Your stomach turns but holds. You've breathed worse."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.clinic_entered", "value": true },
-                { "type": "set_flag", "flag": "chapter2.full_sabotage_path", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.clinic_entered",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.full_sabotage_path",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -260,15 +304,14 @@
             "music": "infiltration_tense",
             "isEnding": false
         },
-
         "fac_iron_010": {
             "id": "act1.chapter2-iron-neon.fac_iron_010",
-            "title": "Into the Clinic — Selective Approach",
+            "title": "Into the Clinic â€” Selective Approach",
             "location": "stack_clinic",
             "text": [
-                "Vex stares at you. For a long moment, her expression is unreadable. Then something shifts — not anger, not approval, but the grudging acknowledgment that you might be a different kind of tool than the one she expected.",
+                "Vex stares at you. For a long moment, her expression is unreadable. Then something shifts â€” not anger, not approval, but the grudging acknowledgment that you might be a different kind of tool than the one she expected.",
                 "\"Explain.\"",
-                "\"The charges are in the basement. If I can isolate the detonation to the sub-levels — seal the structural bulkheads between basement and ground floor — the upper clinic takes damage but doesn't collapse. The patients upstairs survive. The harvesting operation still burns.\"",
+                "\"The charges are in the basement. If I can isolate the detonation to the sub-levels â€” seal the structural bulkheads between basement and ground floor â€” the upper clinic takes damage but doesn't collapse. The patients upstairs survive. The harvesting operation still burns.\"",
                 "\"That requires sealing four bulkhead doors manually while inside a building you're about to blow up,\" Vex says flatly.",
                 "\"Yes.\"",
                 "\"And fighting through whatever security is between you and those bulkheads.\"",
@@ -278,8 +321,16 @@
                 "Another silence. Then Vex nods, once. \"Do it your way. But the charges go off on schedule. If you're not out when the timer hits zero, we're not coming back for you.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.clinic_entered", "value": true },
-                { "type": "set_flag", "flag": "chapter2.selective_sabotage_path", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.clinic_entered",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.selective_sabotage_path",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -291,21 +342,37 @@
             "music": "infiltration_tense",
             "isEnding": false
         },
-
         "fac_iron_011": {
             "id": "act1.chapter2-iron-neon.fac_iron_011",
             "title": "Basement Level",
             "location": "stack_clinic",
             "text": [
                 "The basement is worse than the photos. The photos were static. The basement is alive with the sound of machinery and the wet noise of things you don't want to identify.",
-                "Operating theaters line the corridor like cells. Through reinforced glass, you see surgical rigs working on figures strapped to tables — automated systems, no human surgeons, just mechanical arms and suction tubes and the steady beep of monitors tracking vitals that are slowly declining.",
-                "The patients — the victims — are sedated. Their eyes are open but empty, staring at ceilings they'll never remember seeing. Some of them are already hollowed. Chest cavities spread wide, organs removed with mechanical precision, the bodies still breathing because the machines haven't finished yet.",
+                "Operating theaters line the corridor like cells. Through reinforced glass, you see surgical rigs working on figures strapped to tables â€” automated systems, no human surgeons, just mechanical arms and suction tubes and the steady beep of monitors tracking vitals that are slowly declining.",
+                "The patients â€” the victims â€” are sedated. Their eyes are open but empty, staring at ceilings they'll never remember seeing. Some of them are already hollowed. Chest cavities spread wide, organs removed with mechanical precision, the bodies still breathing because the machines haven't finished yet.",
                 "A security guard rounds the corner. Corporate muscle, armored vest, shock baton, sidearm. He sees you and his hand goes to his weapon.",
-                { "condition": { "stat": { "STR": 13 } }, "text": "You close the distance before he clears the holster. Your fist connects with his jaw like a piston, and he drops. STR check: PASSED." },
-                { "condition": { "stat": { "CON": 13 } }, "text": "He fires. The round catches your shoulder — a white-hot punch that spins you sideways. You stay on your feet. You've taken worse. You keep moving. CON check: PASSED." }
+                {
+                    "condition": {
+                        "stat": {
+                            "STR": 13
+                        }
+                    },
+                    "text": "You close the distance before he clears the holster. Your fist connects with his jaw like a piston, and he drops. STR check: PASSED."
+                },
+                {
+                    "condition": {
+                        "stat": {
+                            "CON": 13
+                        }
+                    },
+                    "text": "He fires. The round catches your shoulder â€” a white-hot punch that spins you sideways. You stay on your feet. You've taken worse. You keep moving. CON check: PASSED."
+                }
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -317,18 +384,37 @@
             "music": "combat_urgent",
             "isEnding": false
         },
-
         "fac_iron_012": {
             "id": "act1.chapter2-iron-neon.fac_iron_012",
             "title": "The Detonator",
             "location": "stack_clinic",
             "text": [
                 "The central control room sits at the junction of all four basement wings. This is where the charges converge. This is where you end it.",
-                "The detonator is a crude thing — Collective engineering, function over form. A metal box with a dial timer and a red switch. Thirty minutes was the plan. You have nineteen left.",
-                { "condition": { "flag": "chapter2.selective_sabotage_path" }, "text": "Four bulkhead doors. You can see the manual controls on the wall — heavy red levers behind safety glass. Each one seals a section of the basement from the ground floor above. Close all four and the explosion stays contained. The clinic takes structural damage but doesn't collapse. The patients upstairs walk out alive." },
-                { "condition": { "flag": "chapter2.selective_sabotage_path" }, "text": "Two of the bulkheads are on the far side of active operating theaters. To reach them, you'll have to cross through the harvesting floor. Past the machines. Past the bodies. Past whatever security is still between you and the levers." },
-                { "condition": { "flag": "chapter2.full_sabotage_path" }, "text": "You set the timer. Nineteen minutes. The dial clicks under your fingers with the finality of a cell door closing. Somewhere above you, fifty people are receiving medical care. They have nineteen minutes to leave a building they don't know is about to die." },
-                { "condition": { "flag": "chapter2.full_sabotage_path" }, "text": "Vex's extraction team is supposed to trigger the fire alarm. Supposed to clear the upper floors. But supposed to is the most dangerous phrase in any language." },
+                "The detonator is a crude thing â€” Collective engineering, function over form. A metal box with a dial timer and a red switch. Thirty minutes was the plan. You have nineteen left.",
+                {
+                    "condition": {
+                        "flag": "chapter2.selective_sabotage_path"
+                    },
+                    "text": "Four bulkhead doors. You can see the manual controls on the wall â€” heavy red levers behind safety glass. Each one seals a section of the basement from the ground floor above. Close all four and the explosion stays contained. The clinic takes structural damage but doesn't collapse. The patients upstairs walk out alive."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.selective_sabotage_path"
+                    },
+                    "text": "Two of the bulkheads are on the far side of active operating theaters. To reach them, you'll have to cross through the harvesting floor. Past the machines. Past the bodies. Past whatever security is still between you and the levers."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.full_sabotage_path"
+                    },
+                    "text": "You set the timer. Nineteen minutes. The dial clicks under your fingers with the finality of a cell door closing. Somewhere above you, fifty people are receiving medical care. They have nineteen minutes to leave a building they don't know is about to die."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.full_sabotage_path"
+                    },
+                    "text": "Vex's extraction team is supposed to trigger the fire alarm. Supposed to clear the upper floors. But supposed to is the most dangerous phrase in any language."
+                },
                 "A second guard finds you. Then a third. The alarm is already shrieking."
             ],
             "onEnter": [],
@@ -336,28 +422,49 @@
                 {
                     "text": "Fight through the guards.",
                     "next": "act1.chapter2-iron-neon.fac_iron_013",
-                    "skillCheck": { "stat": "STR", "dc": 13, "failNext": "act1.chapter2-iron-neon.fac_iron_013" }
+                    "skillCheck": {
+                        "stat": "STR",
+                        "dc": 13,
+                        "failNext": "act1.chapter2-iron-neon.fac_iron_013"
+                    }
                 }
             ],
             "ascii": null,
             "music": "combat_urgent",
             "isEnding": false
         },
-
         "fac_iron_013": {
             "id": "act1.chapter2-iron-neon.fac_iron_013",
             "title": "The Detonation",
             "location": "stack_clinic",
             "text": [
                 "You fight. Pipe against baton, flesh against armor, the desperate mathematics of violence in a narrow corridor. A guard's shock baton catches your ribs and the world goes white for a second that stretches into forever. You come back swinging.",
-                { "condition": { "flag": "chapter2.selective_sabotage_path" }, "text": "Three bulkheads sealed. One left. The last lever is behind you, on the other side of two guards who don't care that you're trying to save the people above them. They have orders. Orders are simple. You are not." },
-                { "condition": { "flag": "chapter2.selective_sabotage_path" }, "text": "You reach the last lever with blood running into your eyes and seven minutes on the timer. The safety glass shatters under your elbow. The lever groans as you haul it down. The bulkhead door crashes shut with a sound like the world ending. All four sealed. The basement is isolated." },
-                { "condition": { "flag": "chapter2.full_sabotage_path" }, "text": "The fire alarm blares above. You hear running footsteps, shouting, the sounds of evacuation. Vex's team triggered it. Whether everyone makes it out in time is a question you won't be able to answer until it's too late to change anything." },
-                "You run. The timer counts down. The corridors blur into a smear of fluorescent light and concrete. Behind you, the charges speak in a language older than words — the deep tectonic vocabulary of things breaking apart.",
+                {
+                    "condition": {
+                        "flag": "chapter2.selective_sabotage_path"
+                    },
+                    "text": "Three bulkheads sealed. One left. The last lever is behind you, on the other side of two guards who don't care that you're trying to save the people above them. They have orders. Orders are simple. You are not."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.selective_sabotage_path"
+                    },
+                    "text": "You reach the last lever with blood running into your eyes and seven minutes on the timer. The safety glass shatters under your elbow. The lever groans as you haul it down. The bulkhead door crashes shut with a sound like the world ending. All four sealed. The basement is isolated."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.full_sabotage_path"
+                    },
+                    "text": "The fire alarm blares above. You hear running footsteps, shouting, the sounds of evacuation. Vex's team triggered it. Whether everyone makes it out in time is a question you won't be able to answer until it's too late to change anything."
+                },
+                "You run. The timer counts down. The corridors blur into a smear of fluorescent light and concrete. Behind you, the charges speak in a language older than words â€” the deep tectonic vocabulary of things breaking apart.",
                 "The explosion lifts you off your feet and throws you through a doorway you didn't know was there. Dust and debris rain down. The building screams. And then silence, thick and absolute, fills the space where the harvesting labs used to be."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [
                 {
@@ -369,39 +476,91 @@
             "music": "explosion_aftermath",
             "isEnding": false
         },
-
         "fac_iron_014": {
             "id": "act1.chapter2-iron-neon.fac_iron_014",
             "title": "Aftermath",
             "location": "the_foundry",
             "text": [
-                { "condition": { "flag": "chapter2.full_sabotage_path" }, "text": "Vex meets you at the extraction point. Her face is a mask. Behind her, the clinic burns against the Sector Twelve skyline, black smoke rising like a funeral pyre." },
-                { "condition": { "flag": "chapter2.full_sabotage_path" }, "text": "\"Eleven,\" she says. \"Eleven patients who didn't make it out of the upper floors. Three nurses. One doctor who went back for a patient in a wheelchair.\" She pauses. \"The harvesting operation is gone. Sixty-three victims freed from the basement. The equipment is slag.\"" },
-                { "condition": { "flag": "chapter2.full_sabotage_path" }, "text": "She doesn't say whether it was worth it. The math doesn't work that way. Sixty-three saved against fifteen dead, and every one of those fifteen had a name and a life that ended because you turned a dial." },
-                { "condition": { "flag": "chapter2.selective_sabotage_path" }, "text": "Vex meets you at the extraction point. You can barely stand. Blood soaks through your clothes in three places and your left arm doesn't move right anymore. But you're alive. And the clinic is still standing." },
-                { "condition": { "flag": "chapter2.selective_sabotage_path" }, "text": "\"The upper floors held,\" she says. The words come grudgingly, as though each one costs her something. \"All patients evacuated. Zero civilian casualties above ground level. The basement is rubble. Sixty-three victims recovered, most still alive.\"" },
-                { "condition": { "flag": "chapter2.selective_sabotage_path" }, "text": "\"You took a stupid risk.\" She looks at the blood soaking your shirt. \"But it worked. I won't forget that. Neither will the Collective.\"" },
+                {
+                    "condition": {
+                        "flag": "chapter2.full_sabotage_path"
+                    },
+                    "text": "Vex meets you at the extraction point. Her face is a mask. Behind her, the clinic burns against the Sector Twelve skyline, black smoke rising like a funeral pyre."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.full_sabotage_path"
+                    },
+                    "text": "\"Eleven,\" she says. \"Eleven patients who didn't make it out of the upper floors. Three nurses. One doctor who went back for a patient in a wheelchair.\" She pauses. \"The harvesting operation is gone. Sixty-three victims freed from the basement. The equipment is slag.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.full_sabotage_path"
+                    },
+                    "text": "She doesn't say whether it was worth it. The math doesn't work that way. Sixty-three saved against fifteen dead, and every one of those fifteen had a name and a life that ended because you turned a dial."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.selective_sabotage_path"
+                    },
+                    "text": "Vex meets you at the extraction point. You can barely stand. Blood soaks through your clothes in three places and your left arm doesn't move right anymore. But you're alive. And the clinic is still standing."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.selective_sabotage_path"
+                    },
+                    "text": "\"The upper floors held,\" she says. The words come grudgingly, as though each one costs her something. \"All patients evacuated. Zero civilian casualties above ground level. The basement is rubble. Sixty-three victims recovered, most still alive.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.selective_sabotage_path"
+                    },
+                    "text": "\"You took a stupid risk.\" She looks at the blood soaking your shirt. \"But it worked. I won't forget that. Neither will the Collective.\""
+                },
                 "\"Welcome to the fight, comrade. No gods. No stacks. Only iron.\""
             ],
             "onEnter": [
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 15 },
-                { "type": "set_flag", "flag": "chapter2.iron_complete", "value": true },
-                { "type": "add_experience", "amount": 75 }
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 15
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.iron_complete",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 75
+                }
             ],
             "choices": [
                 {
                     "text": "Accept the Iron Collective's mark.",
                     "next": "act1.chapter2-iron-neon.fac_iron_015",
                     "onSelect": [
-                        { "type": "set_flag", "flag": "faction.iron_joined", "value": true },
-                        { "type": "modify_reputation", "faction": "ironCollective", "amount": 10 }
+                        {
+                            "type": "set_flag",
+                            "flag": "faction.iron_joined",
+                            "value": true
+                        },
+                        {
+                            "type": "modify_reputation",
+                            "faction": "ironCollective",
+                            "amount": 10
+                        }
                     ]
                 },
                 {
                     "text": "Walk away. The mission is done. You owe them nothing more.",
                     "next": "act1.chapter2-iron-neon.fac_iron_015",
                     "onSelect": [
-                        { "type": "set_flag", "flag": "chapter2.iron_walked_away", "value": true }
+                        {
+                            "type": "set_flag",
+                            "flag": "chapter2.iron_walked_away",
+                            "value": true
+                        }
                     ]
                 }
             ],
@@ -409,24 +568,91 @@
             "music": "iron_collective_theme",
             "isEnding": false
         },
-
         "fac_iron_015": {
             "id": "act1.chapter2-iron-neon.fac_iron_015",
             "title": "Iron Ledger",
             "location": "lower_slums",
             "text": [
-                { "condition": { "flag": "faction.iron_joined" }, "text": "Vex clasps your forearm. Her grip is forge-hot and unbreakable. Around you, the workers of the Foundry raise their fists. Not cheering — they don't cheer, these people — but acknowledging. You are one of them now. The clenched fist is yours to carry. The weight of it will only grow." },
-                { "condition": { "flag": "faction.iron_joined" }, "text": "The Iron Collective has gained a soldier. The revolution has gained a weapon. Whether that weapon points in the right direction is a question for another day." },
-                { "condition": { "flag": "chapter2.iron_walked_away" }, "text": "You leave the Foundry the way you came — through the rust and the dark and the ranks of armed workers who watch you go. Vex doesn't stop you. She doesn't need to. The image of those bodies on the tables will follow you further than any faction summons." },
-                { "condition": { "flag": "chapter2.iron_walked_away" }, "text": "You are not Iron Collective. But the Collective remembers those who bled for the cause, even the ones who walked away." },
-                { "condition": { "flag": "chapter2.refused_iron" }, "text": "You kept walking. Past the bullet casing. Past Rust's disappointed stare. Past the Foundry and everything it represents. The lower slums fold around you again — familiar, dangerous, indifferent to causes and revolutions." },
-                { "condition": { "flag": "chapter2.refused_iron" }, "text": "Somewhere in Sector Twelve, a clinic continues to operate. Its upper floors save lives. Its basement takes them. You know about it now. That knowledge is a weight you'll carry whether you wanted it or not." },
+                {
+                    "condition": {
+                        "flag": "faction.iron_joined"
+                    },
+                    "text": "Vex clasps your forearm. Her grip is forge-hot and unbreakable. Around you, the workers of the Foundry raise their fists. Not cheering â€” they don't cheer, these people â€” but acknowledging. You are one of them now. The clenched fist is yours to carry. The weight of it will only grow."
+                },
+                {
+                    "condition": {
+                        "flag": "faction.iron_joined"
+                    },
+                    "text": "The Iron Collective has gained a soldier. The revolution has gained a weapon. Whether that weapon points in the right direction is a question for another day."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.iron_walked_away"
+                    },
+                    "text": "You leave the Foundry the way you came â€” through the rust and the dark and the ranks of armed workers who watch you go. Vex doesn't stop you. She doesn't need to. The image of those bodies on the tables will follow you further than any faction summons."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.iron_walked_away"
+                    },
+                    "text": "You are not Iron Collective. But the Collective remembers those who bled for the cause, even the ones who walked away."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.refused_iron"
+                    },
+                    "text": "You kept walking. Past the bullet casing. Past Rust's disappointed stare. Past the Foundry and everything it represents. The lower slums fold around you again â€” familiar, dangerous, indifferent to causes and revolutions."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.refused_iron"
+                    },
+                    "text": "Somewhere in Sector Twelve, a clinic continues to operate. Its upper floors save lives. Its basement takes them. You know about it now. That knowledge is a weight you'll carry whether you wanted it or not."
+                },
                 "The city grinds on. The stacks endure. But something has shifted. In the Foundry, in the lower slums, in the marrow of your bones. Something that feels like the first tremor before an earthquake."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.iron_arc_complete", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.iron_arc_complete",
+                    "value": true
+                }
             ],
             "choices": [
+                {
+                    "text": "Dive deeper into Iron Collective operations.",
+                    "next": "factions.iron-collective.ic_001",
+                    "conditions": [
+                        {
+                            "type": "flag",
+                            "flag": "faction.iron_joined"
+                        }
+                    ],
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "faction_quest.iron.started",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Dive deeper into Iron Collective operations.",
+                    "next": "factions.iron-collective.ic_001",
+                    "conditions": [
+                        {
+                            "type": "flag",
+                            "flag": "faction.iron_joined"
+                        }
+                    ],
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "faction_quest.iron.started",
+                            "value": true
+                        }
+                    ]
+                },
                 {
                     "text": "Continue to the Neon Court arc.",
                     "next": "act1.chapter2-iron-neon.fac_neon_001"
@@ -436,22 +662,35 @@
             "music": "ambient_industrial",
             "isEnding": false
         },
-
         "fac_neon_001": {
             "id": "act1.chapter2-iron-neon.fac_neon_001",
             "title": "The Invitation",
             "location": "neon_strip",
             "text": [
-                "The invitation arrives on paper. Real paper — the kind that costs more than your monthly rent. Cream-white, thick as skin, embossed with a holographic seal that shifts between violet and gold when you tilt it. The seal is a crown of light. The Neon Court.",
+                "The invitation arrives on paper. Real paper â€” the kind that costs more than your monthly rent. Cream-white, thick as skin, embossed with a holographic seal that shifts between violet and gold when you tilt it. The seal is a crown of light. The Neon Court.",
                 "The text is handwritten in ink that smells faintly of synthetic roses:",
-                "You are cordially invited to an evening of refinement at The Spire. Cocktails at midnight. Dress to inspire. — A.L.",
-                "A.L. Archon Luminara. The Radiant Queen herself. The woman — if that word still applies after seventeen body transfers — who rules the city's entertainment, media, and cultural apparatus with a smile that could cut glass.",
-                { "condition": { "race": "synth" }, "text": "The invitation is unusual. The Neon Court values beauty and artistry above all else, and they typically see synthetics as tools, not guests. Someone has taken a specific interest in you." },
-                { "condition": { "race": "orc" }, "text": "An orc receiving a Neon Court invitation is unheard of. The Court considers itself the apex of refinement, and orcs are not what they consider refined. This is either a trap or something stranger." },
+                "You are cordially invited to an evening of refinement at The Spire. Cocktails at midnight. Dress to inspire. â€” A.L.",
+                "A.L. Archon Luminara. The Radiant Queen herself. The woman â€” if that word still applies after seventeen body transfers â€” who rules the city's entertainment, media, and cultural apparatus with a smile that could cut glass.",
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "The invitation is unusual. The Neon Court values beauty and artistry above all else, and they typically see synthetics as tools, not guests. Someone has taken a specific interest in you."
+                },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "An orc receiving a Neon Court invitation is unheard of. The Court considers itself the apex of refinement, and orcs are not what they consider refined. This is either a trap or something stranger."
+                },
                 "On the back of the invitation, in smaller script: Come alone. Tell no one. There is no RSVP. Your attendance is already confirmed."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.neon_contact_started", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.neon_contact_started",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -467,20 +706,23 @@
             "music": "neon_court_theme",
             "isEnding": false
         },
-
         "fac_neon_002": {
             "id": "act1.chapter2-iron-neon.fac_neon_002",
             "title": "The Spire",
             "location": "the_spire",
             "text": [
                 "The Spire rises from the upper city like a needle threaded with starlight. A hundred stories of glass and chrome and engineered beauty, every surface designed to make you feel small and hungry and desperate to belong. The elevator alone is worth more than the building you live in.",
-                "The doors open on the penthouse level and the party hits you like a wave. Music that vibrates in your chest cavity. Light that comes from everywhere and nowhere. Bodies moving in choreographed pleasure — dancers, acrobats, figures in clothes so expensive they look like liquid — swirling around tables laden with food you've never seen and drinks that glow in colors the lower city doesn't have names for.",
-                "Everyone is beautiful. Not naturally beautiful — engineered, sculpted, augmented until the line between human and artwork dissolves. Porcelain skin. Eyes that shift color with mood. Limbs that move with inhuman grace. This is the Neon Court in its element. This is what immortality buys when it gets bored.",
+                "The doors open on the penthouse level and the party hits you like a wave. Music that vibrates in your chest cavity. Light that comes from everywhere and nowhere. Bodies moving in choreographed pleasure â€” dancers, acrobats, figures in clothes so expensive they look like liquid â€” swirling around tables laden with food you've never seen and drinks that glow in colors the lower city doesn't have names for.",
+                "Everyone is beautiful. Not naturally beautiful â€” engineered, sculpted, augmented until the line between human and artwork dissolves. Porcelain skin. Eyes that shift color with mood. Limbs that move with inhuman grace. This is the Neon Court in its element. This is what immortality buys when it gets bored.",
                 "A server appears at your elbow with a drink on a hovering tray. The liquid is the color of a sunset you've never seen. It smells like everything you've ever wanted.",
                 "\"Compliments of the Archon,\" the server says. \"She'll join you shortly.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.entered_spire", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.entered_spire",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -490,14 +732,17 @@
                 {
                     "text": "Decline politely. You didn't survive the lower city by accepting drinks from strangers.",
                     "next": "act1.chapter2-iron-neon.fac_neon_005",
-                    "skillCheck": { "stat": "CHA", "dc": 13, "failNext": "act1.chapter2-iron-neon.fac_neon_004" }
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13,
+                        "failNext": "act1.chapter2-iron-neon.fac_neon_004"
+                    }
                 }
             ],
             "ascii": "assets/ascii/locations/spire.txt",
             "music": "neon_court_theme",
             "isEnding": false
         },
-
         "fac_neon_003": {
             "id": "act1.chapter2-iron-neon.fac_neon_003",
             "title": "The Invitation Persists",
@@ -519,7 +764,11 @@
                     "text": "Leave town tonight. This is above your pay grade.",
                     "next": "act1.chapter2-iron-neon.fac_neon_015",
                     "onSelect": [
-                        { "type": "set_flag", "flag": "chapter2.refused_neon", "value": true }
+                        {
+                            "type": "set_flag",
+                            "flag": "chapter2.refused_neon",
+                            "value": true
+                        }
                     ]
                 }
             ],
@@ -527,21 +776,24 @@
             "music": "neon_court_theme",
             "isEnding": false
         },
-
         "fac_neon_004": {
             "id": "act1.chapter2-iron-neon.fac_neon_004",
             "title": "The Drug",
             "location": "the_spire",
             "text": [
-                "The drink tastes like liquid gold and forgotten summers. For a moment — a perfect, crystalline moment — you feel like you belong here. Like the lights are for you. Like the music knows your name.",
-                "Then the room tilts. Not violently — gently, like a ship finding its angle in calm water. The colors smear. The faces around you stretch and blur. Someone is laughing, and the laughter has texture, and the texture has weight, and the weight is pressing down on your eyelids with fingers made of warm velvet.",
+                "The drink tastes like liquid gold and forgotten summers. For a moment â€” a perfect, crystalline moment â€” you feel like you belong here. Like the lights are for you. Like the music knows your name.",
+                "Then the room tilts. Not violently â€” gently, like a ship finding its angle in calm water. The colors smear. The faces around you stretch and blur. Someone is laughing, and the laughter has texture, and the texture has weight, and the weight is pressing down on your eyelids with fingers made of warm velvet.",
                 "You've been drugged.",
-                "The realization arrives too late, wrapped in cotton, muffled by whatever designer compound they put in the glass. Not poison. Nothing so crude. This is a Neon Court cocktail — precision-engineered to lower inhibitions, enhance suggestibility, and make the next twelve hours feel like a dream you chose to have.",
+                "The realization arrives too late, wrapped in cotton, muffled by whatever designer compound they put in the glass. Not poison. Nothing so crude. This is a Neon Court cocktail â€” precision-engineered to lower inhibitions, enhance suggestibility, and make the next twelve hours feel like a dream you chose to have.",
                 "The last thing you see before the dark closes in is a face hovering above you. Perfect. Porcelain. Centuries old and eternally young. The Radiant Queen smiles down at you the way a collector smiles at a new acquisition.",
                 "\"Sleep now,\" Luminara whispers. \"We have so much to discuss when you wake.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.neon_drugged", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.neon_drugged",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -553,23 +805,29 @@
             "music": "neon_dreamy_haze",
             "isEnding": false
         },
-
         "fac_neon_005": {
             "id": "act1.chapter2-iron-neon.fac_neon_005",
-            "title": "The Refusal — Barely",
+            "title": "The Refusal â€” Barely",
             "location": "the_spire",
             "text": [
-                "You wave the drink away with a smile that costs you more effort than any fight. The server's expression doesn't change — a professional's mask — but something flickers behind their eyes. Surprise. Nobody refuses the Archon's hospitality.",
+                "You wave the drink away with a smile that costs you more effort than any fight. The server's expression doesn't change â€” a professional's mask â€” but something flickers behind their eyes. Surprise. Nobody refuses the Archon's hospitality.",
                 "\"How refreshing.\"",
-                "The voice comes from behind you. You turn, and there she is. Archon Luminara. Centuries of existence refined into a single, devastating presence. Her current sleeve is a masterwork — biosculpted cheekbones, eyes that shift between violet and gold to match her Court's colors, skin that seems to generate its own light.",
+                "The voice comes from behind you. You turn, and there she is. Archon Luminara. Centuries of existence refined into a single, devastating presence. Her current sleeve is a masterwork â€” biosculpted cheekbones, eyes that shift between violet and gold to match her Court's colors, skin that seems to generate its own light.",
                 "She is the most beautiful person you have ever seen, and every atom of that beauty is a lie she tells on purpose.",
                 "\"Most people take the drink,\" she says, tilting her head like a bird examining something small and interesting. \"The ones who don't are either boring or clever. You don't look boring.\"",
                 "She takes the drink from the server's tray and sips it herself. \"Perfectly safe, incidentally. I would never drug a guest at a first meeting. That comes later, once we're friends.\"",
                 "Her smile is the most honest threat you've ever seen."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.neon_resisted_drug", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.neon_resisted_drug",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -579,14 +837,17 @@
                 {
                     "text": "\"Flattery and poison. You sure know how to welcome a guest.\"",
                     "next": "act1.chapter2-iron-neon.fac_neon_007",
-                    "skillCheck": { "stat": "CHA", "dc": 14, "failNext": "act1.chapter2-iron-neon.fac_neon_007" }
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 14,
+                        "failNext": "act1.chapter2-iron-neon.fac_neon_007"
+                    }
                 }
             ],
             "ascii": "assets/ascii/npcs/luminara.txt",
             "music": "neon_court_theme",
             "isEnding": false
         },
-
         "fac_neon_006": {
             "id": "act1.chapter2-iron-neon.fac_neon_006",
             "title": "Waking in Debt",
@@ -595,14 +856,18 @@
                 "You wake in a room made of light. Soft white walls that pulse gently, a bed that conforms to your body like it was grown for you, air that tastes clean in a way that air in the lower city never does. For three seconds, you forget where you are and who you are and what was done to you.",
                 "Then memory returns, and with it, rage.",
                 "A holographic display floats above the bed. Your face, your biometrics, and a document. A contract, written in the Court's flowing legal script. At the bottom: your thumbprint, pressed during the twelve hours you can't remember.",
-                "The door opens. Luminara enters wearing a different outfit — silk and chrome, casual elegance that probably costs more than your entire apartment block.",
-                "\"Good morning,\" she says pleasantly. \"You signed a favor contract last night. One task, to be named by me, to be completed at my convenience. Standard Court terms. Entirely voluntary — you were quite enthusiastic about it, actually.\"",
+                "The door opens. Luminara enters wearing a different outfit â€” silk and chrome, casual elegance that probably costs more than your entire apartment block.",
+                "\"Good morning,\" she says pleasantly. \"You signed a favor contract last night. One task, to be named by me, to be completed at my convenience. Standard Court terms. Entirely voluntary â€” you were quite enthusiastic about it, actually.\"",
                 "\"I was drugged.\"",
                 "\"You were liberated from your inhibitions. There's a philosophical difference, though I admit the legal distinction is thin.\" She sits on the edge of the bed. \"Everyone wants something. We simply have the honesty to admit it. You wanted to belong somewhere. I want someone who owes me a favor. The universe balances.\"",
                 "\"Now. Let me tell you about your favor.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.neon_favor_owed", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.neon_favor_owed",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -618,18 +883,17 @@
             "music": "neon_tension",
             "isEnding": false
         },
-
         "fac_neon_007": {
             "id": "act1.chapter2-iron-neon.fac_neon_007",
             "title": "The Archon's Proposition",
             "location": "the_spire",
             "text": [
-                "Luminara leads you through the party like a boat cutting through water — everyone parts for her, heads bowing, smiles sharpening with ambition and fear. She brings you to a private balcony overlooking the city. From up here, the lower slums are just a dark smear at the edge of the lights.",
+                "Luminara leads you through the party like a boat cutting through water â€” everyone parts for her, heads bowing, smiles sharpening with ambition and fear. She brings you to a private balcony overlooking the city. From up here, the lower slums are just a dark smear at the edge of the lights.",
                 "\"I need a messenger,\" she says, swirling a drink she has no intention of finishing. \"Someone unaffiliated. Someone the Iron Collective won't shoot on sight. Someone who can carry a message to Commander Vex and walk out alive.\"",
                 "She pauses, letting the city fill the silence.",
                 "\"The message is simple: a proposed trade agreement between the Court and the Collective. Luxury goods for raw materials. A ceasefire in the entertainment district. Mutual non-aggression in the transit corridors. Perfectly civilized.\"",
                 "Her smile widens. \"I would be so grateful if you could deliver it. Gratitude, from the Neon Court, is a very valuable currency.\"",
-                "The way she says grateful makes your skin prickle. The way she says valuable makes your wallet twitch. And something about the whole arrangement — the private balcony, the careful framing, the fact that she chose you — feels like a trap wearing a ballgown."
+                "The way she says grateful makes your skin prickle. The way she says valuable makes your wallet twitch. And something about the whole arrangement â€” the private balcony, the careful framing, the fact that she chose you â€” feels like a trap wearing a ballgown."
             ],
             "onEnter": [],
             "choices": [
@@ -640,29 +904,46 @@
                 {
                     "text": "\"Why can't you send your own people?\"",
                     "next": "act1.chapter2-iron-neon.fac_neon_008",
-                    "skillCheck": { "stat": "CHA", "dc": 13, "failNext": "act1.chapter2-iron-neon.fac_neon_008" }
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 13,
+                        "failNext": "act1.chapter2-iron-neon.fac_neon_008"
+                    }
                 }
             ],
             "ascii": null,
             "music": "neon_court_theme",
             "isEnding": false
         },
-
         "fac_neon_008": {
             "id": "act1.chapter2-iron-neon.fac_neon_008",
             "title": "The Message",
             "location": "the_spire",
             "text": [
-                "Luminara produces a sealed data chip. Neon Court encryption — military grade, biometrically locked to the intended recipient. You can't open it. You can't read it. You can only carry it.",
+                "Luminara produces a sealed data chip. Neon Court encryption â€” military grade, biometrically locked to the intended recipient. You can't open it. You can't read it. You can only carry it.",
                 "\"Commander Vex's eyes only,\" Luminara says. \"The encryption ensures that. You are simply the vessel. A beautiful, expendable vessel.\"",
-                { "condition": { "flag": "chapter2.neon_drugged" }, "text": "\"This is your favor,\" she adds, and the word favor lands like a stone. \"Deliver the chip. Return to me with Vex's response. Then your debt is cleared and we can discuss a more... equitable arrangement.\"" },
-                { "condition": { "flag": "chapter2.neon_resisted_drug" }, "text": "\"No obligation, of course. You resisted the drink, which means you have more willpower than most. I respect that. But willpower doesn't pay rent, and the Court's friendship opens doors that stay locked for everyone else.\"" },
+                {
+                    "condition": {
+                        "flag": "chapter2.neon_drugged"
+                    },
+                    "text": "\"This is your favor,\" she adds, and the word favor lands like a stone. \"Deliver the chip. Return to me with Vex's response. Then your debt is cleared and we can discuss a more... equitable arrangement.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.neon_resisted_drug"
+                    },
+                    "text": "\"No obligation, of course. You resisted the drink, which means you have more willpower than most. I respect that. But willpower doesn't pay rent, and the Court's friendship opens doors that stay locked for everyone else.\""
+                },
                 "\"One delivery. One response. And the Neon Court remembers its friends.\"",
                 "She presses the chip into your palm. It's warm, like a living thing. The encryption seal pulses faintly against your skin.",
-                "Something about this feels wrong. A trade agreement doesn't need military-grade encryption. A ceasefire proposal doesn't need to be hand-delivered by a stranger. And Luminara — the Radiant Queen, who has survived centuries of politics — doesn't do anything without three layers of motive underneath."
+                "Something about this feels wrong. A trade agreement doesn't need military-grade encryption. A ceasefire proposal doesn't need to be hand-delivered by a stranger. And Luminara â€” the Radiant Queen, who has survived centuries of politics â€” doesn't do anything without three layers of motive underneath."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.neon_message_received", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.neon_message_received",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -672,14 +953,17 @@
                 {
                     "text": "Try to crack the encryption before delivering it.",
                     "next": "act1.chapter2-iron-neon.fac_neon_010",
-                    "skillCheck": { "stat": "INT", "dc": 15, "failNext": "act1.chapter2-iron-neon.fac_neon_009" }
+                    "skillCheck": {
+                        "stat": "INT",
+                        "dc": 15,
+                        "failNext": "act1.chapter2-iron-neon.fac_neon_009"
+                    }
                 }
             ],
             "ascii": null,
             "music": "neon_tension",
             "isEnding": false
         },
-
         "fac_neon_009": {
             "id": "act1.chapter2-iron-neon.fac_neon_009",
             "title": "The Delivery",
@@ -690,12 +974,16 @@
                 "Her expression doesn't change. It freezes. And the absence of expression is worse than any anger could be.",
                 "\"Do you know what this says?\" Her voice is quiet. The kind of quiet that comes before industrial explosions.",
                 "\"It's a trade agreement. A ceasefire proposal.\"",
-                "\"It's a threat.\" Vex turns the screen toward you. The decrypted text is not a trade agreement. It's a detailed intelligence dossier — names, locations, and schedules of every Iron Collective operative in the upper city. Safe houses. Weapons caches. Medical supply routes. Everything the Neon Court would need to dismantle the Collective's presence above the lower slums.",
-                "And at the bottom, in Luminara's handwriting: Withdraw from my territory, or I will use this. Your choice. — A.L.",
+                "\"It's a threat.\" Vex turns the screen toward you. The decrypted text is not a trade agreement. It's a detailed intelligence dossier â€” names, locations, and schedules of every Iron Collective operative in the upper city. Safe houses. Weapons caches. Medical supply routes. Everything the Neon Court would need to dismantle the Collective's presence above the lower slums.",
+                "And at the bottom, in Luminara's handwriting: Withdraw from my territory, or I will use this. Your choice. â€” A.L.",
                 "Vex looks at you. \"You carried this. Willingly.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.neon_threat_revealed", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.neon_threat_revealed",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -705,29 +993,39 @@
                 {
                     "text": "\"I suspected. I brought it anyway so you'd know what she has on you.\"",
                     "next": "act1.chapter2-iron-neon.fac_neon_011",
-                    "skillCheck": { "stat": "CHA", "dc": 15, "failNext": "act1.chapter2-iron-neon.fac_neon_011" }
+                    "skillCheck": {
+                        "stat": "CHA",
+                        "dc": 15,
+                        "failNext": "act1.chapter2-iron-neon.fac_neon_011"
+                    }
                 }
             ],
             "ascii": "assets/ascii/npcs/vex.txt",
             "music": "iron_collective_theme",
             "isEnding": false
         },
-
         "fac_neon_010": {
             "id": "act1.chapter2-iron-neon.fac_neon_010",
             "title": "The Truth Inside",
             "location": "lower_slums",
             "text": [
-                "You find Zero in the Deep Net Cafe — the Ghost Syndicate's tech operative, a synth with enough processing power to crack corporate encryption in their sleep. It costs you a favor and a data chip worth three months' rent, but the encryption breaks.",
+                "You find Zero in the Deep Net Cafe â€” the Ghost Syndicate's tech operative, a synth with enough processing power to crack corporate encryption in their sleep. It costs you a favor and a data chip worth three months' rent, but the encryption breaks.",
                 "What spills out of the chip is not a trade agreement.",
-                "It's an intelligence dossier. Names, locations, operational schedules — every Iron Collective operative working in the upper city. Safe houses. Weapons caches. Medical supply lines. The entire Collective network above the lower slums, mapped and catalogued with Neon Court precision.",
-                "At the bottom, a handwritten note in digital script: Withdraw from my territory, or I will use this. Your choice. — A.L.",
+                "It's an intelligence dossier. Names, locations, operational schedules â€” every Iron Collective operative working in the upper city. Safe houses. Weapons caches. Medical supply lines. The entire Collective network above the lower slums, mapped and catalogued with Neon Court precision.",
+                "At the bottom, a handwritten note in digital script: Withdraw from my territory, or I will use this. Your choice. â€” A.L.",
                 "Luminara didn't send you with a peace offer. She sent you with a declaration of war, disguised as diplomacy, delivered by a dupe who wouldn't know the difference.",
                 "You stare at the data on Zero's screen. The cursor blinks. The Cafe's neon signs hum. And you realize that you are standing at a crossroads that will define which faction considers you a friend and which considers you a corpse."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.neon_cracked_encryption", "value": true },
-                { "type": "add_experience", "amount": 40 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.neon_cracked_encryption",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                }
             ],
             "choices": [
                 {
@@ -741,14 +1039,17 @@
                 {
                     "text": "Play both sides. Deliver a modified version to Vex and tell Luminara you completed the job.",
                     "next": "act1.chapter2-iron-neon.fac_neon_013",
-                    "skillCheck": { "stat": "DEX", "dc": 14, "failNext": "act1.chapter2-iron-neon.fac_neon_012" }
+                    "skillCheck": {
+                        "stat": "DEX",
+                        "dc": 14,
+                        "failNext": "act1.chapter2-iron-neon.fac_neon_012"
+                    }
                 }
             ],
             "ascii": null,
             "music": "tension_building",
             "isEnding": false
         },
-
         "fac_neon_011": {
             "id": "act1.chapter2-iron-neon.fac_neon_011",
             "title": "Vex's Judgment",
@@ -758,7 +1059,7 @@
                 "\"The Neon Court used you as a weapon and you didn't even know it. That makes you either innocent or stupid. In the lower city, there's not much difference.\"",
                 "She pulls the chip from the reader and crushes it in her fist. The fragments fall like black snow.",
                 "\"Luminara now knows our network in the upper city. That intelligence is already copied to her servers. Destroying the chip changes nothing except denying her the satisfaction.\"",
-                "\"So now you have a choice. You carried the blade that cut us. You can walk away and pretend you didn't. You can go back to Luminara and tell her the job is done — collect your reward, join her Court of painted parasites. Or...\"",
+                "\"So now you have a choice. You carried the blade that cut us. You can walk away and pretend you didn't. You can go back to Luminara and tell her the job is done â€” collect your reward, join her Court of painted parasites. Or...\"",
                 "She leans in close. Her breath smells of forge smoke.",
                 "\"You can help us burn her intelligence to the ground. New safe houses. New routes. New identities for every operative she compromised. Hard work. Dangerous work. The kind of work that makes enemies.\""
             ],
@@ -768,18 +1069,42 @@
                     "text": "Help the Iron Collective rebuild their network. You owe them that much.",
                     "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
-                        { "type": "modify_reputation", "faction": "ironCollective", "amount": 10 },
-                        { "type": "modify_reputation", "faction": "neonCourt", "amount": -15 },
-                        { "type": "set_flag", "flag": "chapter2.sided_with_iron_over_neon", "value": true }
+                        {
+                            "type": "modify_reputation",
+                            "faction": "ironCollective",
+                            "amount": 10
+                        },
+                        {
+                            "type": "modify_reputation",
+                            "faction": "neonCourt",
+                            "amount": -15
+                        },
+                        {
+                            "type": "set_flag",
+                            "flag": "chapter2.sided_with_iron_over_neon",
+                            "value": true
+                        }
                     ]
                 },
                 {
                     "text": "Return to Luminara. You delivered the message. She owes you.",
                     "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
-                        { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
-                        { "type": "modify_reputation", "faction": "ironCollective", "amount": -10 },
-                        { "type": "set_flag", "flag": "chapter2.sided_with_neon", "value": true }
+                        {
+                            "type": "modify_reputation",
+                            "faction": "neonCourt",
+                            "amount": 15
+                        },
+                        {
+                            "type": "modify_reputation",
+                            "faction": "ironCollective",
+                            "amount": -10
+                        },
+                        {
+                            "type": "set_flag",
+                            "flag": "chapter2.sided_with_neon",
+                            "value": true
+                        }
                     ]
                 }
             ],
@@ -787,13 +1112,12 @@
             "music": "moral_weight",
             "isEnding": false
         },
-
         "fac_neon_012": {
             "id": "act1.chapter2-iron-neon.fac_neon_012",
             "title": "Choosing Sides",
             "location": "the_foundry",
             "text": [
-                "You bring the truth to the Foundry. Vex receives it in silence — the data, the threat, and the fact that you cracked Luminara's encryption to find it. That last part earns you something that might, in better light, be called respect.",
+                "You bring the truth to the Foundry. Vex receives it in silence â€” the data, the threat, and the fact that you cracked Luminara's encryption to find it. That last part earns you something that might, in better light, be called respect.",
                 "\"You could have delivered it blind,\" she says. \"You could have walked away. Instead you spent your own coin to find out what the Court was really saying.\"",
                 "She looks at the data. The names. Her people, exposed and vulnerable because a woman in a tower decided to flex.",
                 "\"I won't forget this. The Collective won't forget this.\"",
@@ -801,17 +1125,36 @@
                 "\"Luminara will know you betrayed her delivery. The Court doesn't forgive. But the Collective protects its own. If you want protection, you know where we are.\""
             ],
             "onEnter": [
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 15 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -20 },
-                { "type": "set_flag", "flag": "chapter2.warned_iron_about_neon", "value": true },
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -20
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.warned_iron_about_neon",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [
                 {
                     "text": "Accept the Collective's protection.",
                     "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
-                        { "type": "set_flag", "flag": "chapter2.iron_protection", "value": true }
+                        {
+                            "type": "set_flag",
+                            "flag": "chapter2.iron_protection",
+                            "value": true
+                        }
                     ]
                 },
                 {
@@ -823,37 +1166,66 @@
             "music": "iron_collective_theme",
             "isEnding": false
         },
-
         "fac_neon_013": {
             "id": "act1.chapter2-iron-neon.fac_neon_013",
             "title": "Playing Both Sides",
             "location": "lower_slums",
             "text": [
-                "Zero helps you forge the chip. It costs more than you want to think about, but the synth's work is flawless — a duplicate data chip with modified contents. The threat is stripped out, replaced with a genuine-looking trade proposal. Same encryption signature. Same biometric lock. To anyone without the original for comparison, it's indistinguishable.",
+                "Zero helps you forge the chip. It costs more than you want to think about, but the synth's work is flawless â€” a duplicate data chip with modified contents. The threat is stripped out, replaced with a genuine-looking trade proposal. Same encryption signature. Same biometric lock. To anyone without the original for comparison, it's indistinguishable.",
                 "You deliver the forged chip to Vex. She reads a reasonable ceasefire proposal and responds with cautious interest. You carry her response back to Luminara, who hears that the Collective is open to negotiation and smiles like a cat with a mouse that doesn't know it's been caught.",
-                "Both factions believe you served them faithfully. Neither knows you hold the real intelligence dossier — the list of Collective operatives that Luminara intended as a weapon. That data sits in your pocket like a grenade with the pin half-pulled.",
+                "Both factions believe you served them faithfully. Neither knows you hold the real intelligence dossier â€” the list of Collective operatives that Luminara intended as a weapon. That data sits in your pocket like a grenade with the pin half-pulled.",
                 "You've bought time. You've bought leverage. You've also bought yourself a position on a knife's edge where one slip means two factions want you dead instead of one.",
-                { "condition": { "stat": { "DEX": 14 } }, "text": "Your hands don't shake. Your story didn't waver. You walked between two predators and neither one bit. DEX check: PASSED. But how long can you keep this up?" }
+                {
+                    "condition": {
+                        "stat": {
+                            "DEX": 14
+                        }
+                    },
+                    "text": "Your hands don't shake. Your story didn't waver. You walked between two predators and neither one bit. DEX check: PASSED. But how long can you keep this up?"
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.played_both_sides", "value": true },
-                { "type": "add_experience", "amount": 75 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": 5 },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 5 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.played_both_sides",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 75
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 5
+                }
             ],
             "choices": [
                 {
                     "text": "Pocket the real data. It might be useful later.",
                     "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
-                        { "type": "set_flag", "flag": "chapter2.has_neon_intelligence", "value": true }
+                        {
+                            "type": "set_flag",
+                            "flag": "chapter2.has_neon_intelligence",
+                            "value": true
+                        }
                     ]
                 },
                 {
                     "text": "Destroy the original data. Some leverage is too dangerous to hold.",
                     "next": "act1.chapter2-iron-neon.fac_neon_014",
                     "onSelect": [
-                        { "type": "set_flag", "flag": "chapter2.destroyed_neon_intel", "value": true }
+                        {
+                            "type": "set_flag",
+                            "flag": "chapter2.destroyed_neon_intel",
+                            "value": true
+                        }
                     ]
                 }
             ],
@@ -861,21 +1233,48 @@
             "music": "ghost_syndicate_theme",
             "isEnding": false
         },
-
         "fac_neon_014": {
             "id": "act1.chapter2-iron-neon.fac_neon_014",
             "title": "The Court Remembers",
             "location": "neon_strip",
             "text": [
-                { "condition": { "flag": "chapter2.sided_with_neon" }, "text": "Luminara receives you in her private chambers at The Spire — a room that smells of synthetic roses and cold ambition. She takes your report with the satisfied expression of a woman whose chess piece moved exactly as predicted." },
-                { "condition": { "flag": "chapter2.sided_with_neon" }, "text": "\"You delivered. You returned. You chose the winning side.\" She produces a sigil — a holographic badge that marks you as Neon Court favored. The light of it plays across your face like a brand. \"Welcome to the Court, darling. You'll find that our rewards are considerably more pleasant than our punishments.\"" },
-                { "condition": { "flag": "chapter2.sided_with_iron_over_neon" }, "text": "Word travels fast in the upper city. Within hours of your decision, a Neon Court courier delivers a small black box to your door. Inside: a single wilted rose and a note in Luminara's hand: Disappointing. But not unexpected. The Court remembers, darling. And the Court's memory is very, very long." },
-                { "condition": { "flag": "chapter2.warned_iron_about_neon" }, "text": "The Neon Court's response arrives not as a threat but as an absence. Doors that used to open for you stay locked. Vendors in the entertainment district quote triple prices. A contact in the upper city stops returning your messages. The Court doesn't rage. It subtracts. It diminishes. It makes you smaller, one closed door at a time." },
-                { "condition": { "flag": "chapter2.played_both_sides" }, "text": "Both factions smile at you. The Iron Collective sees a potential ally. The Neon Court sees a useful tool. Neither sees the whole picture. You walk between them like a person crossing a frozen river — confident on the surface, listening for cracks with every step." },
-                "The factions are in motion now. The Iron Collective sharpens its weapons. The Neon Court adjusts its mirrors. And you — whatever you chose, whoever you sided with — have stepped onto the board. There is no stepping off."
+                {
+                    "condition": {
+                        "flag": "chapter2.sided_with_neon"
+                    },
+                    "text": "Luminara receives you in her private chambers at The Spire â€” a room that smells of synthetic roses and cold ambition. She takes your report with the satisfied expression of a woman whose chess piece moved exactly as predicted."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.sided_with_neon"
+                    },
+                    "text": "\"You delivered. You returned. You chose the winning side.\" She produces a sigil â€” a holographic badge that marks you as Neon Court favored. The light of it plays across your face like a brand. \"Welcome to the Court, darling. You'll find that our rewards are considerably more pleasant than our punishments.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.sided_with_iron_over_neon"
+                    },
+                    "text": "Word travels fast in the upper city. Within hours of your decision, a Neon Court courier delivers a small black box to your door. Inside: a single wilted rose and a note in Luminara's hand: Disappointing. But not unexpected. The Court remembers, darling. And the Court's memory is very, very long."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.warned_iron_about_neon"
+                    },
+                    "text": "The Neon Court's response arrives not as a threat but as an absence. Doors that used to open for you stay locked. Vendors in the entertainment district quote triple prices. A contact in the upper city stops returning your messages. The Court doesn't rage. It subtracts. It diminishes. It makes you smaller, one closed door at a time."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.played_both_sides"
+                    },
+                    "text": "Both factions smile at you. The Iron Collective sees a potential ally. The Neon Court sees a useful tool. Neither sees the whole picture. You walk between them like a person crossing a frozen river â€” confident on the surface, listening for cracks with every step."
+                },
+                "The factions are in motion now. The Iron Collective sharpens its weapons. The Neon Court adjusts its mirrors. And you â€” whatever you chose, whoever you sided with â€” have stepped onto the board. There is no stepping off."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [
                 {
@@ -887,25 +1286,90 @@
             "music": "neon_court_theme",
             "isEnding": false
         },
-
         "fac_neon_015": {
             "id": "act1.chapter2-iron-neon.fac_neon_015",
             "title": "Two Factions, One City",
             "location": "lower_slums",
             "text": [
-                { "condition": { "flag": "chapter2.refused_neon" }, "text": "You left. Packed what you could carry and walked away from the invitation, the Court, and the whole glittering machine. The lower slums took you back without comment. The lower slums always take you back. That's both their virtue and their curse." },
-                { "condition": { "flag": "chapter2.refused_neon" }, "text": "But the invitation sits in your memory like a splinter. The Neon Court saw something in you worth recruiting. That means they'll look again. And next time, the invitation might not come on paper." },
-                { "condition": { "flag": "faction.iron_joined" }, "text": "The Iron Collective's mark sits heavy on your arm — a tattoo of a clenched fist, inked by a worker whose hands were steady despite the tremor in her voice. You belong to something now. Something that will demand everything you have and promise nothing except the fight." },
-                { "condition": { "flag": "chapter2.sided_with_neon" }, "text": "The Neon Court's sigil glows faintly against your skin, a holographic badge that marks you as favored. Doors open. People smile. The upper city tolerates your presence. And somewhere beneath the glamour, you can feel the strings attached to every gift, every smile, every opened door." },
-                { "condition": { "flag": "chapter2.played_both_sides" }, "text": "No mark. No sigil. No allegiance that anyone can see. You walk between the factions carrying secrets that could topple either one. The most dangerous people in this city are the ones nobody can categorize. You are becoming very dangerous." },
-                "The city breathes around you. Smoke from the Foundry. Neon from the Spire. The lower slums groaning under the weight of a system that was never designed to carry them. Two factions have shown you their faces — the Iron fist and the Neon mask — and the city has more faces still.",
+                {
+                    "condition": {
+                        "flag": "chapter2.refused_neon"
+                    },
+                    "text": "You left. Packed what you could carry and walked away from the invitation, the Court, and the whole glittering machine. The lower slums took you back without comment. The lower slums always take you back. That's both their virtue and their curse."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.refused_neon"
+                    },
+                    "text": "But the invitation sits in your memory like a splinter. The Neon Court saw something in you worth recruiting. That means they'll look again. And next time, the invitation might not come on paper."
+                },
+                {
+                    "condition": {
+                        "flag": "faction.iron_joined"
+                    },
+                    "text": "The Iron Collective's mark sits heavy on your arm â€” a tattoo of a clenched fist, inked by a worker whose hands were steady despite the tremor in her voice. You belong to something now. Something that will demand everything you have and promise nothing except the fight."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.sided_with_neon"
+                    },
+                    "text": "The Neon Court's sigil glows faintly against your skin, a holographic badge that marks you as favored. Doors open. People smile. The upper city tolerates your presence. And somewhere beneath the glamour, you can feel the strings attached to every gift, every smile, every opened door."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter2.played_both_sides"
+                    },
+                    "text": "No mark. No sigil. No allegiance that anyone can see. You walk between the factions carrying secrets that could topple either one. The most dangerous people in this city are the ones nobody can categorize. You are becoming very dangerous."
+                },
+                "The city breathes around you. Smoke from the Foundry. Neon from the Spire. The lower slums groaning under the weight of a system that was never designed to carry them. Two factions have shown you their faces â€” the Iron fist and the Neon mask â€” and the city has more faces still.",
                 "This is only the beginning."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter2.factions_arc_complete", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter2.factions_arc_complete",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
+                {
+                    "text": "Accept Luminara's invitation to the inner court.",
+                    "next": "factions.neon-court.nc_001",
+                    "conditions": [
+                        {
+                            "type": "flag",
+                            "flag": "chapter2.sided_with_neon"
+                        }
+                    ],
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "faction_quest.neon.started",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Accept Luminara's invitation to the inner court.",
+                    "next": "factions.neon-court.nc_001",
+                    "conditions": [
+                        {
+                            "type": "flag",
+                            "flag": "chapter2.sided_with_neon"
+                        }
+                    ],
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "faction_quest.neon.started",
+                            "value": true
+                        }
+                    ]
+                },
                 {
                     "text": "Step into whatever comes next.",
                     "next": "act1.chapter3.stack_001"

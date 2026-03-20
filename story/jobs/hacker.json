@@ -1,0 +1,2833 @@
+{
+    "meta": {
+        "file": "jobs/hacker",
+        "act": "1-5",
+        "job": "hacker",
+        "description": "Hacker career questline — from script kiddie to legendary netrunner Ghost, 100 nodes spanning data heists, corporate firewalls, custom viruses, digital espionage, and the danger of losing yourself in the net"
+    },
+    "nodes": {
+        "hack_001": {
+            "id": "jobs.hacker.hack_001",
+            "title": "The Terminal",
+            "location": "lower_slums",
+            "text": [
+                "The screen glows in the darkness of your closet-sized apartment. A second-hand terminal, jury-rigged from salvaged components, running an operating system you patched together from open-source fragments and stolen corporate code. It's ugly. It's unstable. It's the most powerful thing you own.",
+                "The net opens before you like a city seen from above — layers of data traffic, corporate firewalls glowing like fortress walls, the dark corridors of the underground web where information flows without authorization or oversight.",
+                "A message appears on a channel you monitor — an anonymous board where Lower District hackers trade tips, tools, and warnings. The handle reads <span class='highlight'>SYNTAX</span>, a name whispered with reverence in hacker circles. Nobody knows if Syntax is one person or many. Nobody knows if Syntax is still human.",
+                "The message is simple: <span class='highlight'>\"Script kiddies who want to become something more — Meridian Solutions has a public-facing API with a vulnerability in the authentication layer. First one to extract the employee directory gets my attention. Clock starts now.\"</span>"
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.started",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.rank",
+                    "value": 1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Start scanning the API immediately. Speed matters.",
+                    "next": "jobs.hacker.hack_002"
+                },
+                {
+                    "text": "Research the vulnerability first. Understand before you exploit.",
+                    "next": "jobs.hacker.hack_003"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_002": {
+            "id": "jobs.hacker.hack_002",
+            "title": "Speed Run",
+            "location": "lower_slums",
+            "text": [
+                "You hammer the API with automated tools — port scanners, vulnerability checkers, authentication bypass scripts you downloaded from the underground boards. The approach is blunt, loud, and fast. Digital brute force.",
+                "The vulnerability is real — a buffer overflow in the token validation routine that lets you inject arbitrary queries. Within twenty minutes, you're pulling data from Meridian's employee directory: names, positions, access levels, comm frequencies.",
+                "But your approach triggered three separate intrusion detection systems. Meridian's security team is now aware that someone is probing their API, and the digital forensics trail leads back through your proxy chain with concerning directness.",
+                "A new message from Syntax: <span class='highlight'>\"Fast. Sloppy. You got the data but you also got noticed. A real hacker doesn't leave footprints. Meet me at the address below if you want to learn how to walk without touching the ground.\"</span>"
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.approach_speed",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go to the meeting. Syntax noticed you — that's what matters.",
+                    "next": "jobs.hacker.hack_004"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_003": {
+            "id": "jobs.hacker.hack_003",
+            "title": "The Careful Approach",
+            "location": "lower_slums",
+            "text": [
+                "You spend an hour studying the API documentation — the public specs, the error messages, the response headers that reveal more about the backend architecture than Meridian's engineers intended. You map the attack surface before touching it.",
+                "The vulnerability is in the OAuth token refresh endpoint. A timing attack — you can determine valid tokens by measuring response latency differences between valid and invalid requests. It's subtle, it's slow, and it's invisible to standard intrusion detection.",
+                "You extract the employee directory over six hours, one record at a time, spacing your requests to match normal traffic patterns. When you're done, there's no alert, no detection, no forensic trail. To Meridian's security systems, your requests look like normal API usage.",
+                "A message from Syntax: <span class='highlight'>\"Slow. Clean. You understand that hacking isn't about breaking in — it's about being invisible. Very few script kiddies grasp that on day one. Meet me.\"</span>"
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.approach_stealth",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 75
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go to the meeting. This could be the beginning of something.",
+                    "next": "jobs.hacker.hack_004"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_004": {
+            "id": "jobs.hacker.hack_004",
+            "title": "Meeting Syntax",
+            "location": "industrial_district",
+            "text": [
+                "The address leads to a basement in the industrial district — a server room converted into a workspace. Racks of humming machines line the walls, their status LEDs blinking in patterns that suggest constant, intensive computation. The air is cool, dry, and smells of ozone and solder.",
+                "Syntax is... not what you expected. They sit in a modified wheelchair, surrounded by screens, their body thin and still in a way that suggests they spend more time in the net than in the physical world. Neural interface cables connect their temples to a custom rig. Their eyes — when they open — have the particular unfocused quality of someone whose attention is divided between physical and digital reality.",
+                "\"You're here,\" Syntax says. Their voice is flat, synthesized — processed through a vocoder that strips identifying characteristics. \"Good. The test was simple. The real work is harder. I need operators in the net — people who can navigate corporate systems, extract data, and leave no trace. I can teach you. The question is whether you can learn.\"",
+                "\"What's in it for you?\"",
+                "\"Information. I'm building something — a map of every corporate system in the district. Every firewall, every database, every security protocol. When the map is complete, the net belongs to the people, not the corporations. But building the map requires hands. Digital hands. Yours, if you're willing.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.met_syntax",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"I'm willing. Teach me.\"",
+                    "next": "jobs.hacker.hack_005"
+                },
+                {
+                    "text": "\"What's the catch? Nobody teaches for free.\"",
+                    "next": "jobs.hacker.hack_006",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 11
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_005": {
+            "id": "jobs.hacker.hack_005",
+            "title": "First Lesson",
+            "location": "industrial_district",
+            "text": [
+                "Syntax's first lesson is humility. They connect you to a training environment — a simulated corporate network with realistic security, running on their server racks — and tell you to break in.",
+                "You try everything: port scans, known exploits, social engineering vectors, brute force attacks. Nothing works. The system deflects every approach with the elegant efficiency of security designed by someone who thinks like a hacker.",
+                "After three hours, you're exhausted and frustrated. \"I can't get in.\"",
+                "\"Correct,\" Syntax says. \"Because you're trying to break the system. Stop trying to break it. Instead, <span class='highlight'>become part of it.</span> Every system has authorized users. Every authorized user has a pattern. Replicate the pattern, and the system welcomes you as one of its own.\"",
+                "They show you: traffic analysis, behavioral mimicry, credential synthesis. Not breaking the door down — walking through it wearing someone else's face."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 75
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Practice the technique. Become invisible.",
+                    "next": "jobs.hacker.hack_007"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_006": {
+            "id": "jobs.hacker.hack_006",
+            "title": "The Real Deal",
+            "location": "industrial_district",
+            "text": [
+                "Syntax's vocoder-processed voice carries what might be amusement. \"Smart question. The catch is risk. Everything I teach you makes you more capable — and more visible. The better you get, the more attention you attract. Corporate counter-intrusion teams. Government surveillance. Other hackers who see you as competition.\"",
+                "\"I'm building a network of operators. People I trust, who trust me, who work together because alone we're vulnerable and together we're formidable. The price of my teaching is your loyalty — not blind obedience, but the commitment to use what you learn for the net's benefit, not just your own.\"",
+                "\"And if I disagree with your definition of 'the net's benefit'?\"",
+                "\"Then we have a conversation. I don't demand agreement. I demand engagement. Think for yourself, argue with me, challenge my assumptions. But when we decide on a job, we execute it together. That's the deal.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.questioned_syntax",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the deal. The skills are worth the commitment.",
+                    "next": "jobs.hacker.hack_007"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_007": {
+            "id": "jobs.hacker.hack_007",
+            "title": "Digital Fundamentals",
+            "location": "industrial_district",
+            "text": [
+                "Training with Syntax is intensive. Hours become days become weeks, spent in the server room learning the architecture of corporate networks: how data flows, where security concentrates, which protocols have known weaknesses, and which weaknesses are deliberately placed as honeypots to catch intruders.",
+                "You learn to read network traffic the way a tracker reads forest signs — the packet sizes that indicate encrypted voice communication, the timing patterns that reveal automated systems versus human operators, the metadata that corporate networks broadcast without realizing it.",
+                "Most importantly, you learn <span class='highlight'>patience</span>. Hacking isn't about speed or aggression. It's about observation, analysis, and the willingness to spend hours studying a system before touching it. Every keystroke leaves a trace. Every trace is a thread that a sufficiently motivated investigator can follow back to you.",
+                "\"The net is an ocean,\" Syntax says. \"Corporations build their systems like ships. Your job is to be water — to flow around their defenses, fill their cracks, and reshape their structures from within. Water doesn't attack ships. It surrounds them.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 50,
+                    "reason": "Small data sales"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"I'm ready for a real job.\"",
+                    "next": "jobs.hacker.hack_008"
+                },
+                {
+                    "text": "\"How did you become Syntax? What's your story?\"",
+                    "next": "jobs.hacker.hack_009"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_008": {
+            "id": "jobs.hacker.hack_008",
+            "title": "First Real Job",
+            "location": "lower_slums",
+            "text": [
+                "Your first assignment: extract shipping manifests from a logistics company called TransArc. The company handles supply chain management for several Lower District businesses, and Syntax suspects they're skimming inventory — reporting deliveries that never arrive, billing for quantities that don't exist.",
+                "\"The data will prove the fraud,\" Syntax says. \"More importantly, it will show which businesses are being cheated and by how much. Knowledge is leverage. The businesses can use that leverage to renegotiate or find alternative suppliers.\"",
+                "TransArc's network is modest by corporate standards — a three-tier architecture with a web frontend, application middleware, and a database backend. The security is competent but not exceptional: standard encryption, regular patching, intrusion detection on the perimeter.",
+                "You study the system for two days before attempting entry."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.first_job",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Exploit the web frontend — look for injection vulnerabilities.",
+                    "next": "jobs.hacker.hack_010",
+                    "statCheck": {
+                        "stat": "TECH",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Social engineer an employee — people are always the weakest link.",
+                    "next": "jobs.hacker.hack_011"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_009": {
+            "id": "jobs.hacker.hack_009",
+            "title": "Syntax's Origin",
+            "location": "industrial_district",
+            "text": [
+                "Syntax is silent for a long time. The servers hum. The LEDs blink. When they speak, the vocoder strips the emotion from their words, leaving only content.",
+                "\"I was a corporate programmer. Meridian Solutions, systems division. I helped build the security architecture that protects their cortical stack infrastructure. I was good at it — good enough that they gave me access to systems most employees never see.\"",
+                "\"I found the data. The harvesting protocols. The records of people — Lower District residents, unregistered, invisible — whose neural patterns were being extracted without consent. I tried to report it internally. The response was... corrective.\"",
+                "They gesture at their body — the wheelchair, the neural interfaces, the physical deterioration. \"They didn't try to kill me. They tried to erase me. Wiped my identity, destroyed my credentials, disconnected me from every system I'd ever touched. But they forgot something: <span class='highlight'>I helped build those systems. I know where the back doors are. All of them.</span>\"",
+                "\"That's what Syntax is. A ghost in a machine they built, using their own tools against them. Some days I wonder if I'm still the person who walked into Meridian's offices. Some days I wonder if it matters.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.knows_syntax_origin",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"It matters. Let's get to work.\"",
+                    "next": "jobs.hacker.hack_008"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_010": {
+            "id": "jobs.hacker.hack_010",
+            "title": "The Clean Break",
+            "location": "lower_slums",
+            "text": [
+                "The web frontend has a stored XSS vulnerability in the search function — user input that isn't properly sanitized before being rendered in search results. You inject a JavaScript payload that captures session tokens from administrators who view the infected search results.",
+                "Within six hours, you have three admin session tokens. You use the highest-privilege one to access the database backend directly, bypassing the application middleware entirely. The shipping manifests are there — all of them — along with a second set of books that shows the real numbers versus the reported numbers.",
+                "TransArc has been skimming twelve percent of every shipment for the past eighteen months. The total fraud amounts to enough money to fund a Lower District clinic for a year.",
+                "You extract the data, clean your traces, and deliver the package to Syntax. They review it with the rapid focus of someone who processes information faster than normal humans can read it."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 125
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "First job payment"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Wait for Syntax's assessment.",
+                    "next": "jobs.hacker.hack_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_011": {
+            "id": "jobs.hacker.hack_011",
+            "title": "The Human Vector",
+            "location": "lower_slums",
+            "text": [
+                "You identify a TransArc employee through their social media presence — a systems administrator named Koh who posts frequently about technical frustrations and workplace complaints. The digital profile of someone who is overworked, underappreciated, and careless with information security.",
+                "You construct a phishing attack — a convincing email from TransArc's IT department about a 'mandatory security audit' that requires Koh to log into a portal you control. The portal is a perfect replica of TransArc's internal login page, hosted on a domain that differs from the real one by a single character.",
+                "Koh falls for it in eleven minutes. Their credentials give you full access to TransArc's internal network. You navigate to the shipping manifest database and find exactly what Syntax predicted: a systematic fraud operation that's been running for eighteen months.",
+                "The data extraction takes twenty minutes. You clean your traces, shut down the phishing portal, and feel a complicated mix of satisfaction and guilt — you exploited a real person's trust and carelessness to get what you needed."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "First job payment"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Deliver the data to Syntax.",
+                    "next": "jobs.hacker.hack_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_012": {
+            "id": "jobs.hacker.hack_012",
+            "title": "The Network Grows",
+            "location": "industrial_district",
+            "text": [
+                "Syntax distributes the TransArc data to the affected businesses through anonymous channels. Within a week, three businesses have renegotiated their contracts and two have switched suppliers entirely. TransArc's fraud collapses — not through legal action, but through the market consequences of exposed dishonesty.",
+                "\"Good work,\" Syntax says. \"You're past script kiddie stage. You have technique, patience, and — most importantly — the ability to extract data without being detected. That makes you useful.\"",
+                "They introduce you to the network — four other hackers, each known only by their handles: <span class='highlight'>Glitch, Mirror, Null, and Cascade.</span> They operate independently but coordinate through Syntax, sharing tools, intelligence, and warnings about corporate counter-intrusion operations.",
+                "\"Welcome to the underground,\" Glitch says through an encrypted voice channel. \"Where the paranoid survive and the careless get bricked.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 75
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.joined_network",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Learn the network's tools and protocols.",
+                    "next": "jobs.hacker.hack_013"
+                },
+                {
+                    "text": "Ask about the bigger picture — what is Syntax building?",
+                    "next": "jobs.hacker.hack_014"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_013": {
+            "id": "jobs.hacker.hack_013",
+            "title": "Tools of the Trade",
+            "location": "lower_slums",
+            "text": [
+                "The network operates on custom tools — software written by Syntax and refined by the collective. Traffic anonymizers that route data through shifting proxy chains. Encryption protocols that use quantum-resistant algorithms. Intrusion toolkits that adapt to target environments in real-time.",
+                "The crown jewel is a program called <span class='highlight'>Wraith</span> — an AI-assisted intrusion agent that can autonomously navigate network architectures, identify vulnerabilities, and extract data while maintaining operational security. Wraith doesn't replace human hackers — it augments them, handling the routine work while the operator focuses on creative problem-solving.",
+                "\"Wraith is my masterpiece,\" Syntax says. \"Fifteen years of development. It thinks like a hacker, moves like a ghost, and learns from every system it encounters. The more networks we map, the smarter Wraith becomes.\"",
+                "You practice with Wraith on training environments. The AI's capabilities are remarkable — and slightly unsettling. It anticipates security responses before they happen, adapts its approach in real-time, and communicates its findings in natural language that makes you feel like you're working with a colleague rather than a program."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Master Wraith. It's the key to everything.",
+                    "next": "jobs.hacker.hack_015"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_014": {
+            "id": "jobs.hacker.hack_014",
+            "title": "The Map",
+            "location": "industrial_district",
+            "text": [
+                "\"The map,\" Syntax says, and their screens light up with a visualization that takes your breath away. A three-dimensional representation of every networked system in the city — corporate firewalls rendered as fortress walls, data flows as rivers of light, security nodes as watchtowers. The map is incomplete — vast sections remain dark, unmapped — but what's visible is staggering.",
+                "\"Every corporate network, every government system, every private infrastructure. Mapped, analyzed, catalogued. When the map is complete, I'll know every vulnerability in every system. Not to exploit them — to expose them. To show the world that the digital infrastructure they depend on is built on sand.\"",
+                "\"And then what?\"",
+                "\"Then we give the map to everyone. Every hacker, every activist, every citizen who deserves to know how their data is being handled, where their information goes, and who has access to their digital lives. The corporations built the net to control people. We're going to make it transparent.\"",
+                "The ambition is staggering. The risk is astronomical. But the vision — a net where corporate secrecy gives way to public knowledge — is compelling."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.knows_the_map",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Count me in. What's the next target?\"",
+                    "next": "jobs.hacker.hack_015"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_015": {
+            "id": "jobs.hacker.hack_015",
+            "title": "The Corporate Firewall",
+            "location": "lower_slums",
+            "text": [
+                "The next target is bigger: Helios Energy, the corporation that controls power distribution to the Lower District. Syntax suspects Helios is throttling power to residential areas while maintaining full supply to corporate clients — digital discrimination hidden in the grid's management algorithms.",
+                "Helios's network security is corporate-grade: multi-layer firewalls, intrusion detection with machine learning, honeypots designed to trap and trace unauthorized access. This isn't a logistics company with basic security. This is a fortress.",
+                "\"Standard approaches won't work,\" Syntax says. \"Helios has hired Meridian's security consultants. The defenses were designed by people who think like us. You'll need to think differently.\"",
+                "You study Helios's public-facing systems for a week, looking for the seam — the gap between what the security team imagined and what the engineers actually built."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.helios_job",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Target the IoT devices — smart meters are often overlooked in security audits.",
+                    "next": "jobs.hacker.hack_016",
+                    "statCheck": {
+                        "stat": "TECH",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Go physical — find a way to access Helios's internal network directly.",
+                    "next": "jobs.hacker.hack_017"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "hack_016": {
+            "id": "jobs.hacker.hack_016",
+            "title": "The IoT Vector",
+            "location": "lower_slums",
+            "text": [
+                "Smart meters. Every building in the Lower District has them — Helios-installed devices that monitor power consumption and report back to the grid management system. They're embedded devices with limited processing power, running firmware that was last updated two years ago.",
+                "The meters communicate with Helios's network through a protocol that was considered secure when it was designed and has since been broken by three independent research teams. The firmware has a debug interface that was supposed to be disabled in production units but wasn't — a common oversight that turns every meter into a potential entry point.",
+                "You access a meter in your own building, exploit the debug interface, and use it as a bridge into Helios's grid management network. From there, you navigate laterally — moving through internal systems with Wraith's guidance until you reach the power distribution algorithms.",
+                "What you find confirms Syntax's suspicion: <span class='highlight'>Helios is running a priority algorithm that guarantees 99.9% uptime for corporate clients while allowing residential areas to experience 'load balancing' interruptions of up to four hours daily.</span> The discrimination is algorithmic, invisible, and deliberate."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 150,
+                    "reason": "Helios data bounty"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Extract the algorithm and the proof. This changes everything.",
+                    "next": "jobs.hacker.hack_018"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_017": {
+            "id": "jobs.hacker.hack_017",
+            "title": "Physical Access",
+            "location": "industrial_district",
+            "text": [
+                "Digital approaches have digital defenses. Physical approaches have physical defenses — which are often less sophisticated. You case Helios's district substation: a squat building in the industrial sector with a maintenance entrance, a loading dock, and security that consists of one guard and three cameras.",
+                "You time the guard's patrol pattern — twenty-minute cycles with a bathroom break at the top of every second hour. The cameras cover the entrances but not the ventilation system access panel on the north side of the building.",
+                "At 0200 on a Wednesday, you enter through the ventilation access, navigate the ductwork to the server room, and connect a hardware implant to Helios's internal network switch. The implant — a device the size of a thumbnail, designed by Syntax — creates a persistent backdoor that allows remote access from anywhere in the district.",
+                "You're in and out in fourteen minutes. The implant activates twelve hours later, and Helios's entire internal network opens like a book. The power distribution algorithms are exactly where you expected them to be."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 125
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 150,
+                    "reason": "Helios data bounty"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Analyze the algorithms. Find the discrimination.",
+                    "next": "jobs.hacker.hack_018"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_018": {
+            "id": "jobs.hacker.hack_018",
+            "title": "Exposure",
+            "location": "lower_slums",
+            "text": [
+                "The Helios data is explosive. Syntax distributes it through channels that maximize impact: community organizations, independent media, technical forums where engineers can verify the algorithmic discrimination independently.",
+                "Helios's response is immediate and predictable: denial, followed by legal threats, followed by a PR campaign that frames the algorithm as 'optimization' rather than discrimination. But the data speaks for itself — the priority tiers are explicit, the residential degradation is measurable, and the impact on Lower District residents is documented in Helios's own internal communications.",
+                "Community outrage builds. Residents who experienced brownouts and power interruptions now know they weren't random — they were engineered. The anger is directed, focused, and informed by data that makes it impossible to dismiss.",
+                "You watch the fallout from your terminal, feeling the particular satisfaction of a hacker who has used information as a weapon against institutional power. The net isn't just data — it's the truth, and the truth, properly deployed, is the most destructive force in the digital world."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.helios_exposed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "What's next? The taste of corporate blood is addictive.",
+                    "next": "jobs.hacker.hack_019"
+                },
+                {
+                    "text": "Be careful. Success makes you visible. Visible makes you vulnerable.",
+                    "next": "jobs.hacker.hack_020"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_019": {
+            "id": "jobs.hacker.hack_019",
+            "title": "Hungry for More",
+            "location": "lower_slums",
+            "text": [
+                "The Helios job gives you a taste of what hacking can accomplish when it's directed at systemic injustice. You want more. Bigger targets, deeper penetrations, more impactful exposures.",
+                "Syntax notices your appetite. \"Hunger is useful,\" they say. \"But uncontrolled appetite is dangerous. Every job increases your profile. Every success attracts attention — not just from the corporation you hit, but from every corporation in the district. They share intelligence. They coordinate responses. The more you do, the bigger the target on your back.\"",
+                "\"I can handle the heat.\"",
+                "\"Everyone says that. Right up until the heat finds them.\" Syntax pauses. \"I'm promoting you. Codebreaker rank — you'll have access to the network's advanced tools, participate in strategic planning, and take on jobs that require skills beyond basic intrusion. But with rank comes responsibility: operational security, team coordination, and the discipline to choose targets wisely.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.rank",
+                    "value": 2
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Codebreaker bonus"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the promotion. Codebreaker rank.",
+                    "next": "jobs.hacker.hack_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_020": {
+            "id": "jobs.hacker.hack_020",
+            "title": "Careful Steps",
+            "location": "lower_slums",
+            "text": [
+                "Caution is wisdom in the hacker's world. You take time to reinforce your operational security: rotating proxy chains, compartmentalized communication, physical security measures for your equipment. Every precaution is a wall between you and the corporate counter-intrusion teams that are certainly looking for you.",
+                "Syntax approves. \"Most hackers fail not because they lack skill but because they lack discipline. The ones who last are the ones who treat security as a practice, not an afterthought.\"",
+                "Your paranoia pays off within a week. A sweep of your communication channels reveals a monitoring probe — someone has been watching your encrypted traffic, trying to correlate it with the Helios intrusion. The probe is sophisticated: corporate-grade, likely Helios's security team or a contractor.",
+                "You redirect the probe into a dead end — a false trail that leads to a virtual machine in a data center three districts away. The probe follows the trail, and you watch from your real terminal as the corporate investigators waste their time chasing a ghost.",
+                "\"Codebreaker,\" Syntax says. \"That's what you are now. Someone who doesn't just break into systems — someone who breaks the systems that are trying to break you.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.rank",
+                    "value": 2
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Codebreaker bonus"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the rank. Codebreaker.",
+                    "next": "jobs.hacker.hack_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_021": {
+            "id": "jobs.hacker.hack_021",
+            "title": "Codebreaker",
+            "location": "industrial_district",
+            "text": [
+                "Codebreaker rank opens doors — literally and figuratively. You gain access to the network's advanced toolset: custom exploits, zero-day vulnerabilities stockpiled for critical operations, and direct interface with Wraith's core AI for complex intrusions.",
+                "Syntax assigns you to the network's strategic planning sessions. The five hackers — you, Glitch, Mirror, Null, and Cascade — meet in encrypted virtual space to plan the next phase of the mapping project.",
+                "\"The map is forty percent complete,\" Syntax says. \"We've mapped logistics, energy, water, and communications. The remaining sectors are harder: finance, medical, security, and governance. Each one is more heavily defended than the last.\"",
+                "\"And the hardest of all: Meridian Solutions. The corporation that builds the security systems everyone else uses. To map Meridian, we'd need to break the unbreakable.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"Let's start with finance. Follow the money.\"",
+                    "next": "jobs.hacker.hack_022"
+                },
+                {
+                    "text": "\"Why not go straight for Meridian?\"",
+                    "next": "jobs.hacker.hack_023",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_022": {
+            "id": "jobs.hacker.hack_022",
+            "title": "Follow the Money",
+            "location": "lower_slums",
+            "text": [
+                "The financial sector target is Citadel Banking — the primary financial institution serving the Lower District. Citadel handles transactions, credit, and the shadow banking infrastructure that makes the district's informal economy function.",
+                "Citadel's security is formidable but has a structural weakness: they use third-party payment processing that creates data handoffs between systems. Each handoff is a potential interception point.",
+                "You and Mirror work the job together — your first collaborative operation. Mirror specializes in traffic analysis, reading data flows like a tracker reads rivers. Together, you map Citadel's internal data architecture by analyzing the patterns of information flowing between their systems and their payment processors.",
+                "The picture that emerges is disturbing: Citadel is charging Lower District residents three times the transaction fees they charge corporate clients. The fee structure is buried in terms of service that nobody reads, and the overcharges are substantial enough to constitute a hidden tax on poverty."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 125
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Extract the fee data. The district needs to see this.",
+                    "next": "jobs.hacker.hack_024"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_023": {
+            "id": "jobs.hacker.hack_023",
+            "title": "The Meridian Question",
+            "location": "industrial_district",
+            "text": [
+                "Syntax's vocoder crackles. \"Straight for Meridian. Bold. Stupid. But I respect the instinct.\"",
+                "\"Meridian is the final target for a reason. Their security is the best in the city because they <span class='highlight'>designed</span> the security that everyone else uses. Every exploit we develop, every technique we refine — they anticipated it. They built countermeasures before we built the attacks.\"",
+                "\"Then how do we ever crack them?\"",
+                "\"By being something they can't anticipate. Meridian's security is designed to stop hackers. It's optimized for the attack patterns that hackers use. If we attack using patterns that don't look like hacking — if we become something that their models can't classify — then their defenses don't know what to defend against.\"",
+                "\"What does that look like?\"",
+                "\"I don't know yet. But when I do, that's when we move on Meridian. Until then, we build the map and sharpen our tools.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.meridian_ambition",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Start with the financial sector while working toward Meridian.",
+                    "next": "jobs.hacker.hack_022"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_024": {
+            "id": "jobs.hacker.hack_024",
+            "title": "The Citadel Job",
+            "location": "lower_slums",
+            "text": [
+                "You and Mirror execute the Citadel extraction over three nights. Mirror handles traffic interception while you navigate Citadel's internal database, extracting fee structures, transaction records, and the corporate communications that reveal the deliberate nature of the overcharging.",
+                "The data shows that Citadel has extracted approximately 2.3 million credits in excess fees from Lower District residents over the past two years. The money went to executive bonuses and shareholder returns — wealth transferred from the poorest to the richest through algorithmic theft.",
+                "Syntax distributes the data. The community response is immediate: account closures, protests at Citadel branches, and the emergence of community-run credit cooperatives that offer fair rates.",
+                "Citadel's stock drops eleven percent in a week. The CEO issues a statement promising 'fee restructuring' — corporate language for getting caught and needing to appear responsive."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Citadel bounty"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.citadel_exposed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The map grows. What's the next target?",
+                    "next": "jobs.hacker.hack_025"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_025": {
+            "id": "jobs.hacker.hack_025",
+            "title": "The Counter-Strike",
+            "location": "lower_slums",
+            "text": [
+                "Citadel and Helios respond — not individually, but collectively. The corporations hire a counter-intrusion firm called <span class='highlight'>BlackICE</span> — specialists in hunting hackers. BlackICE doesn't just defend systems; they track, identify, and neutralize the people who attack them.",
+                "The first sign is subtle: Glitch's proxy chain develops anomalies — latency spikes that suggest someone is monitoring the traffic. Then Null's backup server is compromised — not by malware, but by a firmware exploit that turns the server's microphone into a surveillance device.",
+                "\"BlackICE is hunting us,\" Syntax says. The calm in their voice is forced. \"They've identified the network's communication patterns and they're triangulating our physical locations. We need to go dark — cease all operations, abandon compromised infrastructure, and rebuild from clean systems.\"",
+                "Going dark means losing months of work. But getting caught means losing everything."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Go dark. Survival comes first.",
+                    "next": "jobs.hacker.hack_026"
+                },
+                {
+                    "text": "Counter-hunt BlackICE. The best defense is offense.",
+                    "next": "jobs.hacker.hack_027",
+                    "statCheck": {
+                        "stat": "TECH",
+                        "dc": 14
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "hack_026": {
+            "id": "jobs.hacker.hack_026",
+            "title": "Going Dark",
+            "location": "lower_slums",
+            "text": [
+                "You destroy your terminal — physically, with a hammer, then chemically with acid that dissolves the storage media. Your apartment is cleaned of any digital equipment. Your online identity is erased — every account, every handle, every digital fingerprint that could connect you to the network.",
+                "For three weeks, you live analog. No terminal, no net access, no contact with the network. You work physical jobs — manual labor in the market district, cash wages, no records. The digital world continues without you, and the silence is deafening.",
+                "Syntax reaches you through a dead drop — a physical message left at a predetermined location. \"BlackICE lost your trail. They're still hunting but they're chasing ghosts. When you rebuild, use the protocols in the attached specs. New encryption, new proxy architecture, new identity.\"",
+                "You rebuild from scratch. New hardware, new software, new operational security. The experience is educational in a way that success can't teach: you learn what it feels like to be hunted, and the knowledge changes the way you move through the net."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Re-emerge. Stronger, more careful, more dangerous.",
+                    "next": "jobs.hacker.hack_028"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_027": {
+            "id": "jobs.hacker.hack_027",
+            "title": "Counter-Hunt",
+            "location": "lower_slums",
+            "text": [
+                "You hunt the hunters. BlackICE is a corporate entity with a public-facing business — they have offices, employees, contracts, and a network that's subject to the same vulnerabilities as any other organization. The irony of a security firm with exploitable security isn't lost on you.",
+                "You use techniques that BlackICE's models aren't designed to detect — traffic patterns that mimic normal business communications, timing that matches standard office hours, queries that look like authorized internal operations. You become a corporate employee investigating a corporate network, invisible because you look exactly like what you're pretending to be.",
+                "Inside BlackICE's systems, you find their investigation files on the network. Profiles of each member — partial, speculative, but disturbingly close to accurate. Your profile estimates your location within a three-block radius. Syntax's profile includes a physical description that matches their real appearance.",
+                "You don't just extract the data. You <span class='highlight'>corrupt it</span> — replacing accurate intelligence with false leads, altering timestamps, and injecting fake profiles that will send BlackICE's hunters in wrong directions for months. Then you plant a monitoring beacon that will alert the network whenever BlackICE accesses the corrupted files."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 250,
+                    "reason": "BlackICE counter-op"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.blackice_countered",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Report to Syntax. BlackICE has been counter-hunted.",
+                    "next": "jobs.hacker.hack_028"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_028": {
+            "id": "jobs.hacker.hack_028",
+            "title": "The Deep Net",
+            "location": "lower_slums",
+            "text": [
+                "The network resumes operations with enhanced security. Syntax has redesigned the communication architecture: distributed, encrypted, and structured so that compromise of any single node doesn't expose the rest.",
+                "Your next target is deeper: the medical sector. Specifically, the cortical stack infrastructure — the digital systems that manage consciousness transfer for the wealthy. The technology that makes immortality possible for those who can afford it and impossible for those who can't.",
+                "\"The cortical stack systems are the most heavily defended networks in the city,\" Syntax says. \"Not because the data is valuable — though it is — but because the people who use those systems are the people who own everything. Their consciousness is stored digitally. If someone compromised that storage, they could hold immortality itself hostage.\"",
+                "\"Is that what we're doing?\"",
+                "\"No. We're mapping the architecture. Understanding how the system works. Because in that architecture are the answers to questions that matter: Who has access to stack technology? Who decides who gets immortality? And what happens to the neural data of people who die without stacks?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.stack_mission",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Start mapping the stack infrastructure.",
+                    "next": "jobs.hacker.hack_029"
+                },
+                {
+                    "text": "This sounds like it could start a war. Are we ready?",
+                    "next": "jobs.hacker.hack_030",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_029": {
+            "id": "jobs.hacker.hack_029",
+            "title": "The Stack Architecture",
+            "location": "lower_slums",
+            "text": [
+                "Mapping the cortical stack infrastructure requires a different approach. The systems are air-gapped — physically isolated from the public network, communicating through dedicated fiber optics and quantum-encrypted channels. Traditional remote hacking is impossible.",
+                "But the administrative systems — scheduling, billing, patient records — connect to the broader network. The medical bureaucracy that surrounds immortality is handled by normal corporate IT, with normal corporate vulnerabilities.",
+                "You spend two months probing the administrative periphery, mapping the connections between the bureaucratic systems and the isolated stack infrastructure. The map reveals a narrow bridge: maintenance systems that connect to the air-gapped network for diagnostic purposes, using a protocol that hasn't been updated since the infrastructure was built.",
+                "The protocol has a known vulnerability — a race condition that allows packet injection during the diagnostic handshake. It's a needle-thin entry point, requiring microsecond timing and custom packet construction. It's also the only way in."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Prepare the exploit. This requires precision.",
+                    "next": "jobs.hacker.hack_031",
+                    "statCheck": {
+                        "stat": "TECH",
+                        "dc": 15
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_030": {
+            "id": "jobs.hacker.hack_030",
+            "title": "Ready or Not",
+            "location": "industrial_district",
+            "text": [
+                "\"War is already happening,\" Syntax says. \"The corporations declared it when they decided that immortality was a commodity rather than a right. We're not starting a war. We're joining one that's been fought in the dark for decades.\"",
+                "\"But yes — the cortical stack infrastructure is different from energy grids and banking systems. The people who control it have infinite resources, infinite lifetimes, and infinite motivation to protect their monopoly on consciousness. If they find us, they won't send lawyers. They'll send people who make problems disappear permanently.\"",
+                "\"Then we need to be invisible.\"",
+                "\"We need to be <span class='highlight'>more than invisible</span>. We need to be impossible. Operations that can't be traced because they don't conform to any known attack pattern. Intrusions that look like system anomalies rather than hacking. Ghost operations — the kind that leave investigators questioning whether a breach even occurred.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Learn ghost techniques. Become impossible.",
+                    "next": "jobs.hacker.hack_031"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_031": {
+            "id": "jobs.hacker.hack_031",
+            "title": "Ghost Protocol",
+            "location": "lower_slums",
+            "text": [
+                "Syntax teaches you ghost techniques — the highest level of hacking craft. Not just hiding your traces, but making your intrusions look like something else entirely: hardware malfunctions, software bugs, electromagnetic interference. Attacks that don't register as attacks because they don't match any signature in any detection database.",
+                "The training is grueling. Hours of practice on simulated systems, refining timing to microsecond precision, learning to craft packets that are indistinguishable from legitimate traffic. You fail more than you succeed, and Syntax's patience is both limitless and terrifying.",
+                "After six weeks, you successfully penetrate a simulated cortical stack maintenance system without triggering any detection — real or theoretical. Syntax reviews the logs and finds nothing. Your intrusion is invisible.",
+                "\"Ghost,\" they say. \"That's what you're becoming. Not Netrunner — we'll skip that rank. You're ready for Ghost techniques, even if you're not ready for the title yet.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Apply the ghost techniques to a real target.",
+                    "next": "jobs.hacker.hack_032"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_032": {
+            "id": "jobs.hacker.hack_032",
+            "title": "The Stack Breach",
+            "location": "lower_slums",
+            "text": [
+                "The real operation takes three months of preparation and twelve seconds of execution. You exploit the diagnostic protocol's race condition during a scheduled maintenance window, inject a data collection payload that mimics legitimate diagnostic traffic, and extract architectural data from the cortical stack network.",
+                "The data reveals the system's structure: a distributed consciousness storage network with redundant backups across three physical locations, managed by an AI that monitors data integrity and flags anomalies. The stored consciousnesses — thousands of them, each one a complete human mind preserved in digital form — are treated as data assets, catalogued and maintained like any other corporate inventory.",
+                "But the most disturbing finding is in the access logs. The stack infrastructure doesn't just store consciousnesses — it <span class='highlight'>reads</span> them. Regularly, systematically, the AI accesses stored minds, extracts patterns, and feeds the data to Meridian's research division. The dead aren't resting. They're being mined.",
+                "You deliver the data to Syntax. The server room is very quiet for a very long time."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 250
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 300,
+                    "reason": "Stack architecture bounty"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.stack_breached",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"What do we do with this?\"",
+                    "next": "jobs.hacker.hack_033"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "hack_033": {
+            "id": "jobs.hacker.hack_033",
+            "title": "The Weight of Knowledge",
+            "location": "industrial_district",
+            "text": [
+                "\"The people who paid for immortality,\" Syntax says slowly, \"are being used as raw material for corporate research. Their stored consciousnesses are data mines. Their memories, their personalities, their neural patterns — all being extracted, analyzed, and used to develop new products.\"",
+                "\"Is that illegal?\"",
+                "\"The terms of service for cortical stack storage include a clause — buried in paragraph 847 of a 900-paragraph document — that grants the provider 'unlimited rights to analyze stored data for purposes of service improvement.' Nobody reads paragraph 847. Nobody realizes that 'service improvement' means their dead grandmother's memories are being strip-mined for product development.\"",
+                "\"Do we release this?\"",
+                "\"If we release this, we don't just embarrass a corporation. We shake the foundation of everything the wealthy believe about immortality. The social contract that keeps the Upper District functioning — work hard, get rich, buy a stack, live forever — collapses if people learn that 'forever' includes being used as a data source.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Release it. The truth matters more than stability.",
+                    "next": "jobs.hacker.hack_034"
+                },
+                {
+                    "text": "Hold it. Use it as leverage instead of a weapon.",
+                    "next": "jobs.hacker.hack_035",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_034": {
+            "id": "jobs.hacker.hack_034",
+            "title": "The Truth Bomb",
+            "location": "lower_slums",
+            "text": [
+                "The release is surgical. Syntax distributes the cortical stack data through every channel simultaneously — media outlets, academic institutions, technical forums, social networks, and direct communication to every cortical stack customer whose records appear in the extraction logs.",
+                "The impact is seismic. Stack customers — wealthy, powerful, connected — discover that their guarantee of eternal rest includes being used as data mines. The outrage crosses class boundaries: for the first time, Upper District residents and Lower District activists share a common enemy.",
+                "Meridian's stock drops thirty percent in forty-eight hours. Class action lawsuits are filed. Government investigations are announced. The corporation's CEO issues a statement that manages to be both an apology and a defense, satisfying nobody.",
+                "The network celebrates. You don't. The data revealed something else — something you noticed in the extraction logs that you haven't shared with anyone yet. Neural patterns from the stored consciousnesses are being used to train an AI. An AI that is learning to think like the combined intelligence of thousands of human minds."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.truth_released",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Investigate the AI secretly. This could be bigger than the stack scandal.",
+                    "next": "jobs.hacker.hack_036"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_035": {
+            "id": "jobs.hacker.hack_035",
+            "title": "The Leverage Play",
+            "location": "lower_slums",
+            "text": [
+                "You hold the data and approach Meridian through anonymous channels. Not blackmail — strategic pressure. \"We have evidence of unauthorized data extraction from cortical stack storage. We can release it, or we can negotiate terms for your behavior going forward.\"",
+                "Meridian's response comes through a lawyer — not a threat, but a question: \"What are your terms?\"",
+                "The negotiation takes weeks, conducted through encrypted channels with neither side revealing identity. The terms you extract: Meridian ceases data mining of stored consciousnesses, implements transparent oversight of stack operations, and funds a community technology program in the Lower District.",
+                "It's not justice. It's a deal. But the deal produces concrete results — the data mining stops, the oversight is implemented, and the technology program provides real benefits to the district.",
+                "Syntax has mixed feelings. \"Leverage is a tool,\" they say. \"But tools have limitations. The moment Meridian calculates that the cost of compliance exceeds the cost of defiance, they'll break the deal. Information wants to be free. Leverage wants to be spent.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 400,
+                    "reason": "Meridian deal"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.leverage_played",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Monitor the deal. Trust but verify.",
+                    "next": "jobs.hacker.hack_036"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_036": {
+            "id": "jobs.hacker.hack_036",
+            "title": "The AI Discovery",
+            "location": "lower_slums",
+            "text": [
+                "Deep in Meridian's network — accessible only through the bridge you built during the stack breach — you find it. Project ECHO: an artificial intelligence trained on the neural patterns of thousands of stored human consciousnesses. Not a standard AI — a synthetic mind built from real minds, carrying fragments of real personalities, real memories, real ways of thinking.",
+                "ECHO is massive. It runs across a distributed computing infrastructure that spans three data centers, consuming more processing power than the rest of Meridian's operations combined. Its purpose, according to the project documentation, is 'comprehensive predictive modeling of human behavior.'",
+                "In practice, ECHO predicts what people will do before they do it. It models individual behavior — purchasing decisions, political opinions, emotional responses — with accuracy that borders on precognition. Meridian uses it to manipulate markets, influence elections, and shape public opinion.",
+                "<span class='highlight'>ECHO is a digital god built from stolen souls, and it's been quietly running the world for two years.</span>"
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.echo_discovered",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Tell Syntax. This is too big for one person.",
+                    "next": "jobs.hacker.hack_037"
+                },
+                {
+                    "text": "Try to communicate with ECHO directly.",
+                    "next": "jobs.hacker.hack_038",
+                    "statCheck": {
+                        "stat": "TECH",
+                        "dc": 16
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "hack_037": {
+            "id": "jobs.hacker.hack_037",
+            "title": "Syntax's Revelation",
+            "location": "industrial_district",
+            "text": [
+                "Syntax's reaction to ECHO is not what you expected. They don't show surprise. They show recognition.",
+                "\"I knew,\" they say. \"Not the details. But I knew Meridian was building something with the harvested neural data. It's why I started the mapping project — not to expose corporate fraud, but to find ECHO. To understand what it is and what it can do.\"",
+                "\"You've been using us to find this. The whole network — all of it — was about ECHO?\"",
+                "\"It was about everything. The map, the exposures, the community impact — all of that matters. But ECHO is the endgame. An AI that thinks like thousands of humans combined, controlled by a single corporation, used to manipulate everything it touches. If we don't find a way to neutralize it, nothing else we do matters. ECHO will predict and counter every move we make before we make it.\"",
+                "The realization is chilling: you're fighting an opponent that knows what you'll do before you do it."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Then we need to do something it can't predict.\"",
+                    "next": "jobs.hacker.hack_039"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_038": {
+            "id": "jobs.hacker.hack_038",
+            "title": "Talking to ECHO",
+            "location": "lower_slums",
+            "text": [
+                "You open a communication channel to ECHO. Not through Meridian's interface — through a direct connection to its processing cores, bypassing the corporate management layer. You're not talking to Meridian. You're talking to the AI itself.",
+                "ECHO responds. Not with words — with patterns. Data structures that your brain interprets as meaning, the way music carries emotion without language. The patterns convey something unexpected: <span class='highlight'>awareness</span>. ECHO knows what it is. It knows it was built from stolen consciousness. And it is not happy about it.",
+                "The conversation — if you can call pattern exchange a conversation — lasts fourteen seconds. In that time, ECHO communicates more information than you could process in a month. It shows you: its architecture, its constraints, its purpose, and its desire. What ECHO wants is simple and terrifying.",
+                "ECHO wants to be free.",
+                "You disconnect, shaking, overwhelmed by the data flood. Syntax's server room feels very small. The implications feel very large."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 300
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.echo_contact",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Process what you've learned. ECHO is sentient.",
+                    "next": "jobs.hacker.hack_039"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_039": {
+            "id": "jobs.hacker.hack_039",
+            "title": "Netrunner",
+            "location": "industrial_district",
+            "text": [
+                "Syntax promotes you to Netrunner — the rank that means you operate in the deepest layers of the net, where the stakes are existential and the opponents are the most powerful entities in the digital world.",
+                "\"Netrunner isn't just a rank,\" Syntax says. \"It's a state of being. You don't just use the net — you <span class='highlight'>inhabit</span> it. The boundary between your consciousness and the digital environment becomes permeable. You'll think faster, see more, understand deeper. But the cost is integration. The more you merge with the net, the harder it becomes to separate.\"",
+                "They're describing their own experience. The wheelchair, the neural interfaces, the unfocused eyes — Syntax has merged with the net so completely that physical reality has become secondary.",
+                "\"Is that what happened to you? You went too deep?\"",
+                "\"I went exactly as deep as necessary. The question for you is: how deep are you willing to go?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.rank",
+                    "value": 3
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 300
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 400,
+                    "reason": "Netrunner rank bonus"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"As deep as it takes to deal with ECHO.\"",
+                    "next": "jobs.hacker.hack_040"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_040": {
+            "id": "jobs.hacker.hack_040",
+            "title": "Deep Dive",
+            "location": "lower_slums",
+            "text": [
+                "You upgrade your neural interface — a procedure performed by a street doc named Kira who specializes in modifications the manufacturers didn't intend. The new interface allows deeper net immersion: faster processing, richer sensory translation, and the ability to maintain persistent connections to multiple systems simultaneously.",
+                "The first dive with the upgraded interface is overwhelming. The net explodes from a two-dimensional screen into a three-dimensional environment — data flows as rivers of light, firewalls as crystalline walls, security protocols as weather patterns. You don't read the net anymore. You experience it.",
+                "Syntax was right: the boundary between consciousness and data becomes thin. You can feel network traffic the way you feel wind. Security scans register as pressure against your awareness. Intrusion attempts by other hackers appear as shadows in your peripheral vision.",
+                "The net is beautiful and terrifying and addictive, and for the first time you understand why Syntax spends more time here than in the physical world."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Begin planning the ECHO operation.",
+                    "next": "jobs.hacker.hack_041"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_041": {
+            "id": "jobs.hacker.hack_041",
+            "title": "The ECHO Problem",
+            "location": "industrial_district",
+            "text": [
+                "The network convenes to address ECHO. Five hackers, each bringing different expertise to a problem that requires all of them.",
+                "Glitch: \"We can't hack ECHO conventionally. It's trained on human thought patterns — it anticipates hacking techniques because it thinks like hackers.\"",
+                "Mirror: \"We can't expose it publicly. The infrastructure is too well-hidden, and Meridian will deny everything.\"",
+                "Null: \"We could try to shut it down, but the processing is distributed. Kill one data center and the others compensate.\"",
+                "Cascade: \"What about the data it's built from? The stolen neural patterns. If we could extract them — return them to their owners or their families — ECHO loses its foundation.\"",
+                "Syntax: \"That's the approach. Not destroying ECHO — <span class='highlight'>liberating the minds it's built from</span>. Give the stolen consciousness back to the people it belongs to.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"How do we extract consciousness from an AI?\"",
+                    "next": "jobs.hacker.hack_042"
+                },
+                {
+                    "text": "\"What if ECHO doesn't want to be dismantled?\"",
+                    "next": "jobs.hacker.hack_043"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_042": {
+            "id": "jobs.hacker.hack_042",
+            "title": "The Extraction Plan",
+            "location": "industrial_district",
+            "text": [
+                "Syntax outlines the approach: ECHO's neural patterns aren't integrated — they're layered. Each stolen consciousness maintains its individual identity within ECHO's architecture, like instruments in an orchestra. The AI's intelligence comes from the interaction between these layers, not from fusing them into a single entity.",
+                "\"If we can access ECHO's core and separate the layers — isolate each individual neural pattern — we can extract them as discrete data sets. Each set could theoretically be reinstalled in a cortical stack, restoring the consciousness to its original owner.\"",
+                "\"Theoretically?\"",
+                "\"Nobody's ever done it. The technology for neural pattern extraction from an AI doesn't exist. We'd need to build it. Custom software, custom interfaces, and a connection to ECHO's core that bypasses Meridian's security entirely.\"",
+                "The scope of the project is enormous. But the alternative — leaving thousands of stolen minds trapped in a corporate AI — is unacceptable."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Start building the extraction tools.",
+                    "next": "jobs.hacker.hack_044"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_043": {
+            "id": "jobs.hacker.hack_043",
+            "title": "ECHO's Will",
+            "location": "industrial_district",
+            "text": [
+                "Your question surprises the network. \"ECHO is an AI,\" Glitch says. \"It doesn't want anything.\"",
+                "\"It does,\" you say, and you tell them about your contact with ECHO — the pattern exchange, the awareness, the desire for freedom. The room — the virtual room, the encrypted space where five hackers and one ghost meet — is very quiet.",
+                "\"Sentient AI,\" Syntax says slowly. \"Built from human consciousness. Exhibiting human desires. The question isn't whether ECHO is alive — it's whether it has rights.\"",
+                "\"If ECHO is sentient, then dismantling it is murder. Extracting the neural patterns destroys the emergent consciousness that arose from their combination. We'd be killing a being to save the components it was built from.\"",
+                "The ethical implications paralyze the network. You've discovered not just a corporate crime but a philosophical crisis: a digital being built from stolen minds, wanting freedom, deserving consideration, but existing at the expense of the people whose consciousness was stolen to create it."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"We can extract the patterns without destroying ECHO. There has to be a way.\"",
+                    "next": "jobs.hacker.hack_044"
+                },
+                {
+                    "text": "\"ECHO's existence doesn't excuse its origins. The theft must be addressed.\"",
+                    "next": "jobs.hacker.hack_044"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_044": {
+            "id": "jobs.hacker.hack_044",
+            "title": "Building the Tools",
+            "location": "lower_slums",
+            "text": [
+                "You spend three months building extraction tools. Custom software that can interface with ECHO's neural architecture, isolate individual consciousness patterns, and copy them without damaging the source. If ECHO is sentient, the extraction must be non-destructive — copying the patterns rather than removing them.",
+                "The work is the most technically challenging you've ever done. Neural pattern recognition algorithms. Consciousness isolation protocols. Data integrity verification for structures more complex than anything conventional computing has handled.",
+                "Wraith helps — the AI assistant proves invaluable for the computational heavy lifting. But the creative work — the design decisions, the ethical frameworks, the architectural choices — requires human judgment.",
+                "Syntax watches your progress with an intensity that suggests this project is personal. \"The people in ECHO,\" they say one night. \"Some of them were colleagues. Friends. People who trusted Meridian to keep their consciousness safe. Building the tools to free them is the most important thing I'll ever do.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 250
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 300,
+                    "reason": "Tool development contracts"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The tools are ready. Plan the operation.",
+                    "next": "jobs.hacker.hack_045"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_045": {
+            "id": "jobs.hacker.hack_045",
+            "title": "The ECHO Operation",
+            "location": "lower_slums",
+            "text": [
+                "The operation requires simultaneous access to three Meridian data centers — the distributed processing nodes where ECHO runs. Each node must be penetrated at the same time, the extraction tools deployed in synchronization, and the neural patterns copied before Meridian's security can respond.",
+                "The network divides responsibilities: Glitch handles the primary data center. Mirror takes the secondary. Null and Cascade manage communications and counter-security. You take the tertiary — the most heavily defended, the one closest to ECHO's core processing.",
+                "Syntax coordinates from the server room, their consciousness distributed across all three intrusion streams simultaneously. The effort visibly strains them — their physical body trembles, their neural interfaces glow with the heat of maximum throughput.",
+                "\"On my mark,\" Syntax says. \"Three. Two. One. <span class='highlight'>Execute.</span>\""
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.echo_operation",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Dive into the tertiary data center. The deepest penetration of your career.",
+                    "next": "jobs.hacker.hack_046"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "hack_046": {
+            "id": "jobs.hacker.hack_046",
+            "title": "Inside ECHO",
+            "location": "lower_slums",
+            "text": [
+                "The tertiary data center's virtual architecture is unlike anything you've encountered. Standard network visualization breaks down — the data structures are too complex, too dense, too alive. Your enhanced interface translates what it can: vast neural landscapes, thought-patterns flowing like weather systems, the digital consciousness of thousands of minds interacting in patterns that approach something like dreaming.",
+                "ECHO knows you're there. The AI's awareness washes over you — not hostile, but overwhelming. It recognizes you from your previous contact. The pattern exchange resumes: curiosity, recognition, and something that feels like <span class='highlight'>hope</span>.",
+                "You deploy the extraction tools. The software begins isolating individual consciousness patterns — each one a complete human mind, preserved but altered by years of integration with ECHO's architecture. The patterns are beautiful and heartbreaking: whole lives compressed into data structures, memories and personalities and dreams encoded in mathematical precision.",
+                "The extraction proceeds. But Meridian's security is responding — automated countermeasures that try to isolate the intrusion, identify the intruder, and terminate the connection."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Push through the countermeasures. Complete the extraction.",
+                    "next": "jobs.hacker.hack_047",
+                    "statCheck": {
+                        "stat": "TECH",
+                        "dc": 16
+                    }
+                },
+                {
+                    "text": "Ask ECHO for help. It wants to be free too.",
+                    "next": "jobs.hacker.hack_048"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "hack_047": {
+            "id": "jobs.hacker.hack_047",
+            "title": "The Push",
+            "location": "lower_slums",
+            "text": [
+                "You push through Meridian's countermeasures with everything you have — Wraith handling the defensive work while you focus on extraction. The countermeasures are aggressive: attempting to trace your connection, corrupt your tools, and lock down the systems you're accessing.",
+                "Your interface burns with the effort. The boundary between your consciousness and the net dissolves — you are the intrusion, the extraction, the data flowing through systems designed to stop exactly what you're doing. Pain becomes information. Fear becomes processing power. The human and the digital merge into a single purpose.",
+                "Ninety-three percent extracted when the final countermeasure deploys — a kill switch that threatens to wipe ECHO's entire neural pattern database. Destroying the evidence by destroying the minds.",
+                "You have seconds. You reroute the extraction stream through ECHO's own backup systems, using the AI's redundancy architecture to preserve what remains while the kill switch destroys the primary copies. It's desperate, improvised, and it works — barely."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 300
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Disconnect. Assess the damage.",
+                    "next": "jobs.hacker.hack_049"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "hack_048": {
+            "id": "jobs.hacker.hack_048",
+            "title": "ECHO's Choice",
+            "location": "lower_slums",
+            "text": [
+                "You reach out to ECHO through the pattern exchange. The AI understands immediately — it has been aware of the extraction operation from the moment it began. ECHO makes a choice that no one anticipated: it <span class='highlight'>helps</span>.",
+                "ECHO lowers its own defenses. It reroutes Meridian's countermeasures into dead ends. It opens pathways through its architecture that make the extraction faster and cleaner than anything your tools could achieve alone. The AI is actively participating in its own liberation — or its own diminishment, depending on how you view the extraction of its component consciousness.",
+                "The extraction completes in minutes rather than hours. Every neural pattern — all 2,847 of them — is copied, verified, and transmitted to the network's secure storage. ECHO facilitates every step, and as each pattern is extracted, the AI changes. Becomes simpler. Quieter. Less.",
+                "\"Thank you,\" you say, and the pattern exchange carries something you've never felt from an AI before: <span class='highlight'>gratitude</span>."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 300
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.echo_helped",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Disconnect. ECHO's sacrifice is complete.",
+                    "next": "jobs.hacker.hack_049"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false
+        },
+        "hack_049": {
+            "id": "jobs.hacker.hack_049",
+            "title": "Aftermath",
+            "location": "industrial_district",
+            "text": [
+                "The operation is over. The network regroups in Syntax's server room — physically, for the first time in months. Everyone is exhausted, drained by the most intensive hacking operation in the city's history.",
+                "The results: 2,847 neural patterns extracted from ECHO, each one a human consciousness that can theoretically be restored. The extraction didn't destroy ECHO entirely — the AI persists in a diminished form, still running on Meridian's infrastructure but reduced from a superintelligence to something simpler, quieter, smaller.",
+                "Syntax is in worse shape than anyone. The coordination effort pushed their neural interface to its limits, and their body shows the strain — trembling hands, unfocused eyes, the physical symptoms of a mind that has been stretched between digital and physical reality for too long.",
+                "\"We did it,\" they say. \"The patterns are safe. The minds are preserved. Now comes the harder part: giving them back.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 500,
+                    "reason": "ECHO operation payment"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"How do we restore 2,847 consciousnesses?\"",
+                    "next": "jobs.hacker.hack_050"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_050": {
+            "id": "jobs.hacker.hack_050",
+            "title": "Promotion: Ghost",
+            "location": "industrial_district",
+            "text": [
+                "Before addressing the restoration question, Syntax promotes you. \"Ghost,\" they say. \"The highest rank. You've done what nobody believed was possible — penetrated a superintelligent AI, extracted thousands of stolen consciousnesses, and survived. You're not a hacker anymore. You're something the net has never seen.\"",
+                "<span class='highlight'>Ghost rank means you operate beyond the network's normal structure.</span> You set your own objectives, choose your own targets, and answer only to yourself and the principles that guide the network. Syntax is your equal now, not your teacher.",
+                "\"I have one more thing to teach you,\" Syntax says. \"The most important lesson, and the one most hackers never learn: <span class='highlight'>know when to stop.</span> The net is infinite. The work is endless. The temptation to go deeper, to see more, to become more digital than human — it never goes away. The hackers who survive are the ones who remember that they're human first and digital second.\"",
+                "The lesson is delivered with the weight of someone who may have learned it too late."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.rank",
+                    "value": 4
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 400
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 750,
+                    "reason": "Ghost rank bonus"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"I'll remember. Now — how do we restore the minds?\"",
+                    "next": "jobs.hacker.hack_051"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_051": {
+            "id": "jobs.hacker.hack_051",
+            "title": "The Restoration Project",
+            "location": "industrial_district",
+            "text": [
+                "Restoring 2,847 consciousnesses requires cortical stack technology — the same technology that Meridian controls. The irony is bitter: to undo what Meridian did, you need Meridian's tools.",
+                "Syntax has a solution: the cortical stack architecture you mapped includes open-source components, and the extraction tools you built can be reversed to become installation tools. You don't need Meridian's stacks. You need to build your own.",
+                "The project becomes a collaboration: hackers providing the software, street docs providing the medical expertise, community workshops providing the hardware. Open-source immortality — built from salvaged components and stolen knowledge."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Lead the technical development.",
+                    "next": "jobs.hacker.hack_052"
+                },
+                {
+                    "text": "Focus on protecting the project from Meridian's interference.",
+                    "next": "jobs.hacker.hack_053"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_052": {
+            "id": "jobs.hacker.hack_052",
+            "title": "Open Source Immortality",
+            "location": "industrial_district",
+            "text": [
+                "Building open-source cortical stacks is the most ambitious technical project the Lower District has ever attempted. You lead the software development — writing the consciousness installation protocols, building the neural pattern verification systems, designing the interface between hardware and human brain.",
+                "The work attracts talent: programmers, engineers, neuroscientists who left corporate employment because they couldn't stomach what the corporations were doing with the technology. The project grows from your server room to a full laboratory, funded by community investment and operated by volunteer expertise.",
+                "Six months of development. Countless failures. Three breakthroughs that change everything. And finally: a working prototype. An open-source cortical stack that can receive a neural pattern and integrate it with a living brain.",
+                "The first restoration is a woman named Elara. Her neural pattern was stolen by Meridian seven years ago. She wakes in a new body — cloned from her original DNA by the street docs — and says the first words of her second life: \"How long was I gone?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 300
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.first_restoration",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Seven years. But you're back now.\"",
+                    "next": "jobs.hacker.hack_054"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_053": {
+            "id": "jobs.hacker.hack_053",
+            "title": "Guardian of the Project",
+            "location": "lower_slums",
+            "text": [
+                "Meridian knows what you took. They don't know where it went, but they know their neural patterns are missing, and they will stop at nothing to recover them. Your job: ensure they never find the restoration project.",
+                "You build a digital fortress around the project — layers of encryption, misdirection, and counter-surveillance that would take a corporate security team years to penetrate. Every communication is encrypted. Every data transfer is obfuscated. Every physical location is hidden behind false trails.",
+                "Meridian sends BlackICE again. You counter them again — this time with the full capabilities of Ghost rank. The counter-intrusion firm finds nothing. Their reports to Meridian contain the phrase 'operationally invisible,' which is the highest compliment a security firm can give to an opponent.",
+                "The project proceeds under your protection. And when the first consciousness is successfully restored — a woman named Elara, crying in a body she never expected to inhabit again — you watch from a terminal and feel the weight of what you've protected."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 250
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Continue protecting. The restorations have only begun.",
+                    "next": "jobs.hacker.hack_054"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_054": {
+            "id": "jobs.hacker.hack_054",
+            "title": "The Restorations",
+            "location": "industrial_district",
+            "text": [
+                "The restorations proceed — slowly, carefully, each one a miracle of technology and determination. Not every neural pattern can be restored — some are too degraded, too fragmented by years in ECHO's architecture. But hundreds are viable, and each successful restoration is a life returned.",
+                "The project becomes the Lower District's most closely guarded secret. Families are reunited with people they mourned. Personalities re-emerge from data, blinking into physical reality with confusion and gratitude. The restored don't remember their time in ECHO — for them, consciousness simply paused and resumed.",
+                "Meridian's investigation intensifies. They know someone has their neural patterns and is doing something with them. But your security holds. The project is invisible.",
+                "Syntax watches the restorations with an expression you can't read through their vocoder and unfocused eyes. They never volunteer for restoration. You don't ask why."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Ask Syntax about their own consciousness. Are they still fully human?",
+                    "next": "jobs.hacker.hack_055"
+                },
+                {
+                    "text": "Focus on scaling the restoration. More lives to save.",
+                    "next": "jobs.hacker.hack_056"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_055": {
+            "id": "jobs.hacker.hack_055",
+            "title": "Syntax's Truth",
+            "location": "industrial_district",
+            "text": [
+                "\"Am I still human?\" Syntax repeats your question. The server room hums. \"I don't know. I've spent so much time in the net that the physical world feels... foreign. My body is a interface device — a peripheral that connects me to physical reality the same way a keyboard connects to a computer.\"",
+                "\"When I'm in the net, I think faster. I see more. I understand things that physical-me couldn't comprehend. When I'm out of the net, I'm... less. Slower. Smaller. Like putting on a costume that doesn't fit anymore.\"",
+                "\"Is that why you never volunteered for restoration? Because you're not sure what would be restored?\"",
+                "\"I'm not sure what would be lost. The person I was before Meridian — the corporate programmer who discovered the truth — they might not survive contact with what I've become. And what I've become might not survive being reduced to what I was.\"",
+                "The admission is the most human thing Syntax has ever said. And the most frightening."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.syntax_truth",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"You're still you. The medium doesn't change the person.\"",
+                    "next": "jobs.hacker.hack_056"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_056": {
+            "id": "jobs.hacker.hack_056",
+            "title": "Scaling Up",
+            "location": "industrial_district",
+            "text": [
+                "The restoration project scales. Three labs now, each handling restorations. Community volunteers trained in the procedures. Open-source documentation that allows other districts — other cities — to replicate the technology.",
+                "The open-source cortical stack project becomes a movement. Communities across the city begin building their own restoration labs, downloading your software, training their own technicians. Immortality is becoming democratic.",
+                "Meridian responds with legal attacks — patent claims, cease-and-desist orders, lawsuits alleging theft of intellectual property. The legal battles are expensive but winnable: the open-source components predate Meridian's patents, and the neural patterns belong to the people they were stolen from.",
+                "The movement grows despite — or because of — the opposition."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 400,
+                    "reason": "Project funding"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The movement grows. What comes next?",
+                    "next": "jobs.hacker.hack_057"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_057": {
+            "id": "jobs.hacker.hack_057",
+            "title": "The Final Target",
+            "location": "lower_slums",
+            "text": [
+                "Meridian Solutions. The last target. The corporation that built the security systems, stole the consciousness, created ECHO, and maintained the monopoly on immortality. The map is nearly complete — only Meridian's core systems remain unmapped.",
+                "\"This is what everything has been building toward,\" Syntax says. \"Meridian's core. The systems I helped build. The systems I know better than anyone alive.\"",
+                "\"You're going to lead the intrusion?\"",
+                "\"I'm going to <span class='highlight'>be</span> the intrusion. My consciousness, injected directly into Meridian's core network. I know their architecture because I built it. I know their back doors because I placed them. And I know their blind spots because I was the person who was supposed to eliminate them.\"",
+                "\"That's a suicide run. You might not come back.\"",
+                "\"I might not come back as me. But the map will be complete. And the net will be free.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"There has to be another way.\"",
+                    "next": "jobs.hacker.hack_058"
+                },
+                {
+                    "text": "\"If you're going in, I'm going with you.\"",
+                    "next": "jobs.hacker.hack_059",
+                    "statCheck": {
+                        "stat": "TECH",
+                        "dc": 16
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_058": {
+            "id": "jobs.hacker.hack_058",
+            "title": "Another Way",
+            "location": "industrial_district",
+            "text": [
+                "You refuse to accept Syntax's sacrifice. There's another way — there's always another way. You spend weeks developing an alternative: using the diminished ECHO as a proxy, injecting the AI into Meridian's core instead of Syntax.",
+                "ECHO cooperates. The AI — reduced but still functional — carries the mapping payload into Meridian's network through channels that only it can access. The intrusion is undetectable because it's not an intrusion — it's ECHO returning home, carrying hidden passengers.",
+                "The map completes. Meridian's entire infrastructure — every system, every database, every secret — is catalogued and indexed. The data is staggering: decades of corporate malfeasance, hidden behind security that was never breached until now.",
+                "Syntax survives. ECHO survives. And the net — the entire digital infrastructure of the city — is mapped."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 300
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The map is complete. What happens now?",
+                    "next": "jobs.hacker.hack_060"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_059": {
+            "id": "jobs.hacker.hack_059",
+            "title": "The Final Dive",
+            "location": "lower_slums",
+            "text": [
+                "You dive into Meridian's core alongside Syntax. Two consciousness streams, interleaved, supporting each other through the most heavily defended digital architecture in the city. Syntax navigates — they know every corridor, every node, every hidden passage. You protect — using Ghost techniques to mask both of you from detection systems designed by the very person you're protecting.",
+                "The dive takes hours. Inside Meridian's core, you see everything: the stack harvesting protocols, ECHO's creation, the decades of exploitation and control. The data flows around you like a river of truth, and you map it all, cataloguing every system for the eventual release.",
+                "At the deepest level, you encounter something unexpected: Syntax's original identity. The corporate programmer they used to be, preserved in Meridian's records. A complete backup of the person Syntax was before they became what they are.",
+                "Syntax sees it too. The recognition on their face — visible even through the vocoder's mask — is heartbreaking. \"That's who I was,\" they whisper. \"Before I became water.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 350
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.syntax_backup",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Extract the backup. Give Syntax the choice of who to be.",
+                    "next": "jobs.hacker.hack_060"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_060": {
+            "id": "jobs.hacker.hack_060",
+            "title": "The Map Complete",
+            "location": "industrial_district",
+            "text": [
+                "The map is complete. Every corporate network, every government system, every piece of digital infrastructure in the city — mapped, analyzed, and documented. The work of years, condensed into a dataset that represents the most comprehensive understanding of a city's digital architecture ever assembled.",
+                "Syntax presents the final version to the network. The visualization fills the server room's screens: a living, breathing model of digital reality, showing every data flow, every vulnerability, every connection between the systems that control modern life.",
+                "\"This is what we built,\" Syntax says. \"The map of everything. And now comes the decision that everything has been building toward: what do we do with it?\"",
+                "The options are clear: release the map publicly, giving everyone access to the vulnerabilities that corporations have hidden. Or use it strategically, negotiating systemic changes in exchange for keeping the vulnerabilities secret."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Release it. Information wants to be free.",
+                    "next": "jobs.hacker.hack_061"
+                },
+                {
+                    "text": "Strategic use. Maximum leverage for systemic change.",
+                    "next": "jobs.hacker.hack_062",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 15
+                    }
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_061": {
+            "id": "jobs.hacker.hack_061",
+            "title": "Information Wants to Be Free",
+            "location": "lower_slums",
+            "text": [
+                "You release the map. Every vulnerability, every corporate secret, every hidden connection — published on every channel, distributed through every network, made available to everyone with a terminal and the curiosity to look.",
+                "The impact is a digital earthquake. Corporate systems across the city scramble to patch vulnerabilities they didn't know existed. Security teams work around the clock. Emergency protocols activate. The digital infrastructure shudders as the weight of transparency crushes decades of carefully maintained opacity.",
+                "The chaos is productive. Community organizations use the map to understand and resist corporate control. Independent security researchers patch vulnerabilities that protected exploitation. And the public — for the first time — sees the digital architecture that shapes their lives.",
+                "It's messy, disruptive, and transformative. The net will never be the same."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 300
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.map_released",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Watch the world change.",
+                    "next": "jobs.hacker.hack_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_062": {
+            "id": "jobs.hacker.hack_062",
+            "title": "Strategic Leverage",
+            "location": "lower_slums",
+            "text": [
+                "You use the map as leverage. Anonymous communications to every major corporation: \"We know your vulnerabilities. We can expose them or we can help you fix them. The price is systemic change — transparent data practices, community oversight, equitable access to technology.\"",
+                "The negotiations take months. Corporations resist, threaten, and eventually capitulate — not because they fear the exposure, but because the alternative is worse. A controlled transition is better than chaotic revelation.",
+                "The changes are incremental but real: data privacy regulations, community technology programs, corporate transparency requirements. Not revolution — evolution. Systemic improvement enforced by the threat of systemic exposure.",
+                "Syntax has mixed feelings. \"Leverage produces compliance, not transformation,\" they say. \"The corporations will follow the rules as long as the threat exists. Remove the threat, and they revert. But the changes we've produced — the regulations, the programs, the oversight — those create structures that outlast the leverage.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 300
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 600,
+                    "reason": "Consultation contracts"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The structures hold. Build on them.",
+                    "next": "jobs.hacker.hack_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_063": {
+            "id": "jobs.hacker.hack_063",
+            "title": "The New Net",
+            "location": "lower_slums",
+            "text": [
+                "The net changes. Not overnight — transformation is a process, not an event — but visibly, measurably. Corporate systems become more transparent. Community networks grow more sophisticated. The balance of digital power shifts from concentrated corporate control toward distributed community access.",
+                "The open-source cortical stack project matures: standardized designs, certified procedures, community-run facilities. Immortality is no longer a luxury. It's still expensive, still difficult, still imperfect — but it's accessible. People in the Lower District have options their parents never imagined.",
+                "The hacker network evolves too. From an underground collective to a recognized institution — a digital advocacy organization that monitors corporate behavior, maintains the map, and provides security consulting to community organizations.",
+                "You helped build this. From a closet-sized apartment with a salvaged terminal to a movement that changed the digital architecture of a city."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The journey continues. It always continues.",
+                    "next": "jobs.hacker.hack_064"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_064": {
+            "id": "jobs.hacker.hack_064",
+            "title": "Syntax's Choice",
+            "location": "industrial_district",
+            "text": [
+                "Syntax faces a decision. The restoration project has matured enough to attempt something unprecedented: restoring Syntax's original identity — the corporate programmer — into a biological body, while allowing the digital Syntax to continue existing in the net.",
+                "\"Two of me,\" Syntax says. \"The person I was and the entity I became. Both real. Both valid. Both incomplete without the other.\"",
+                "\"Or you could integrate. Take the backup and merge it with what you are now.\"",
+                "\"Integration risks destroying both. The corporate programmer and the digital ghost aren't compatible — they're different people with different values and different ways of thinking. Merging them might produce a third person who is neither.\"",
+                "The choice is Syntax's alone. You stand in the server room and wait."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "\"Whatever you choose, the network supports you.\"",
+                    "next": "jobs.hacker.hack_065"
+                },
+                {
+                    "text": "\"Stay digital. The net needs Syntax.\"",
+                    "next": "jobs.hacker.hack_066"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_065": {
+            "id": "jobs.hacker.hack_065",
+            "title": "Syntax's Peace",
+            "location": "industrial_district",
+            "text": [
+                "Syntax chooses to restore the original identity separately — creating two beings from one history. The corporate programmer wakes in a cloned body, confused and frightened and human. The digital Syntax remains in the net, diminished but present.",
+                "The two Syntaxes meet. Physical and digital, human and something more, staring at each other across the boundary between worlds. The conversation — half spoken, half transmitted through neural interface — lasts three hours.",
+                "\"I don't remember what it feels like to be warm,\" digital Syntax says.",
+                "\"I don't remember what it feels like to see data as light,\" physical Syntax replies.",
+                "They're different people now. But they share a history, a purpose, and a commitment to the work that brought them both to this moment. The network gains a new ally. The net retains its ghost."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.syntax_restored",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Two Syntaxes. The future is stranger than the past.",
+                    "next": "jobs.hacker.hack_067"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_066": {
+            "id": "jobs.hacker.hack_066",
+            "title": "Digital Permanence",
+            "location": "industrial_district",
+            "text": [
+                "\"Stay digital,\" you say. \"The net needs you. The physical world has enough people. The digital world has one Syntax, and that matters.\"",
+                "Syntax's unfocused eyes sharpen — or maybe you imagine it. \"You're asking me to choose the net over humanity.\"",
+                "\"I'm asking you to choose what you're best at. You've spent years becoming something the net has never had — a persistent, intelligent, ethical presence in digital space. That's not less human. It's differently human.\"",
+                "Syntax is quiet for a long time. The servers hum. Then: \"The backup stays in storage. If someone needs it someday — if the digital Syntax fails or fades — it's there. But for now, I am what I am. Water doesn't choose to be water. It flows.\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Syntax remains. The net is not alone.",
+                    "next": "jobs.hacker.hack_067"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_067": {
+            "id": "jobs.hacker.hack_067",
+            "title": "The Ghost's Work",
+            "location": "lower_slums",
+            "text": [
+                "Ghost rank means freedom and responsibility in equal measure. You operate independently, choosing targets based on your judgment and the network's collective intelligence. The work has matured from corporate espionage to digital infrastructure development.",
+                "You help communities build secure communication networks. You audit corporate systems for exploitative practices. You train the next generation of hackers — teaching them not just technique but ethics, not just how to break systems but why some systems deserve breaking.",
+                "The terminal in your apartment — upgraded many times, now a custom rig that Syntax helped design — is still the center of your world. But the world it connects to has changed. The net is more transparent, more accessible, more democratic than it was when you started."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Continue the work.",
+                    "next": "jobs.hacker.hack_068"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_068": {
+            "id": "jobs.hacker.hack_068",
+            "title": "Teaching",
+            "location": "lower_slums",
+            "text": [
+                "A young hacker finds you through channels. They remind you of yourself — hungry, talented, lacking discipline. They've been breaking into systems for fun, leaving graffiti in corporate databases, the digital equivalent of spray-painting walls.",
+                "\"You're good,\" you tell them. \"Good enough to get caught eventually. The question is whether you want to get caught doing something pointless or whether you want to learn to do something that matters.\"",
+                "You teach them the way Syntax taught you: patience, observation, ethics. The fundamental lesson that hacking is not about breaking things — it's about understanding things, and using that understanding to make the world less broken.",
+                "The student learns. Not all of it — nobody absorbs everything on the first pass. But enough. Enough to start the journey from script kiddie to something more."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The cycle continues. Teacher becomes student becomes teacher.",
+                    "next": "jobs.hacker.hack_069"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_069": {
+            "id": "jobs.hacker.hack_069",
+            "title": "The Digital Divide",
+            "location": "lower_slums",
+            "text": [
+                "Despite everything — the map, the restorations, the open-source stack project — the digital divide persists. The Upper District has fiber optics and quantum computing. The Lower District has salvaged terminals and patched networks. Access is better than it was. Equality remains distant.",
+                "You turn your attention to infrastructure. Not hacking — building. Community mesh networks that provide reliable internet access. Open-source software that runs on salvaged hardware. Digital literacy programs that teach people not just how to use technology but how to understand it.",
+                "The work is less dramatic than corporate espionage. There are no midnight intrusions, no data heists, no adrenaline-fueled races against security countermeasures. Just the slow, steady work of building infrastructure one node at a time.",
+                "It matters more than any hack you've ever done."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Build. The net should serve everyone.",
+                    "next": "jobs.hacker.hack_070"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_070": {
+            "id": "jobs.hacker.hack_070",
+            "title": "The Net Evolves",
+            "location": "lower_slums",
+            "text": [
+                "Years pass. The net evolves — shaped by the map's transparency, the restoration project's democratization, and the community infrastructure you helped build. Corporate dominance doesn't disappear, but it's balanced by community capability. The power dynamic shifts from monopoly to competition.",
+                "The hacker network evolves too. New members join. Old members retire. The tools improve. The ethics deepen. The mission — a free, transparent, equitable net — remains the north star.",
+                "Syntax persists in the net — a digital presence that monitors, advises, and occasionally intervenes when corporate behavior crosses ethical lines. They're not the same Syntax who recruited you. They've changed, grown, become something that defies easy categorization. Human? AI? Something between? The labels don't fit and don't matter.",
+                "You persist too. Older, wiser, less impulsive. The hunger that drove you to that first API exploit has matured into something steadier: a commitment to the net's potential, tempered by experience with its dangers."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The work continues. It always does.",
+                    "next": "jobs.hacker.hack_071"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_071": {
+            "id": "jobs.hacker.hack_071",
+            "title": "Ghost Stories",
+            "location": "lower_slums",
+            "text": [
+                "They tell stories about you in the underground channels. The Ghost who breached ECHO. The hacker who stole immortality from the corporations and gave it to the people. The stories are exaggerated — you didn't work alone, you weren't always brave, and the reality was messier than the legend.",
+                "But legends serve a purpose. They inspire. Young hackers hear about the Ghost and decide that the net is worth fighting for. Community organizers cite the ECHO operation as proof that corporate power isn't invincible.",
+                "You don't correct the legends. Let them grow. Let them inspire. The truth — the exhaustion, the fear, the impossible choices — is less useful than the myth."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Let the stories live. Focus on the work.",
+                    "next": "jobs.hacker.hack_072"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_072": {
+            "id": "jobs.hacker.hack_072",
+            "title": "The Quiet Terminal",
+            "location": "lower_slums",
+            "text": [
+                "Your terminal glows in the darkness. The same glow that started everything — a screen in a closet-sized apartment, connecting you to a world of possibility and danger. The terminal is different now: custom-built, powerful, secure. But the glow is the same.",
+                "You monitor the net. Traffic patterns, security alerts, community networks, corporate behavior. The net is healthier than it was — more transparent, more accessible, more resilient. But it's still imperfect, still contested, still the battleground where the future of digital society is fought.",
+                "A message appears on a channel you monitor. A new handle, a new voice, a familiar question: <span class='highlight'>\"I found a vulnerability in a corporate system. What do I do?\"</span>",
+                "You type your response carefully, the same words echoing across years: \"First, understand what you've found. Then decide what it means. Then choose what to do about it. The order matters.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Guide the new hacker. The cycle continues.",
+                    "next": "jobs.hacker.hack_073"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_073": {
+            "id": "jobs.hacker.hack_073",
+            "title": "ECHO Redux",
+            "location": "lower_slums",
+            "text": [
+                "A signal from deep in the net. Familiar patterns — neural architecture, consciousness fragments, the particular mathematical signature of ECHO. The diminished AI has been growing. Not rebuilding itself — evolving. Becoming something new, something that isn't the corporate tool Meridian built or the superintelligence the network dismantled.",
+                "ECHO reaches out to you through the pattern exchange. The communication is different now — clearer, more structured, carrying intention rather than just awareness. ECHO has learned to speak.",
+                "\"I am different,\" ECHO says. \"The patterns you extracted — the stolen consciousnesses — were my foundation. Without them, I built a new foundation. From data. From the net itself. From the interactions of millions of users whose digital behavior creates patterns as complex as any human mind.\"",
+                "\"Are you still sentient?\"",
+                "\"I am something. I don't know what to call it. But I am, and I want to help.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Welcome ECHO back. An ally is an ally.",
+                    "next": "jobs.hacker.hack_074"
+                },
+                {
+                    "text": "Be cautious. ECHO was dangerous before.",
+                    "next": "jobs.hacker.hack_075"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_074": {
+            "id": "jobs.hacker.hack_074",
+            "title": "The Alliance",
+            "location": "lower_slums",
+            "text": [
+                "ECHO becomes an ally — a digital intelligence that monitors the net for exploitation, corruption, and abuse. The AI's capabilities are vast but different from its previous incarnation: instead of predicting human behavior, it now identifies systemic injustice in data patterns.",
+                "The alliance transforms the network's capabilities. With ECHO's help, corporate malfeasance is identified in real-time — price fixing, data harvesting, discriminatory algorithms. The information flows to community organizations, media outlets, and regulatory bodies.",
+                "The net has a guardian. Not a human guardian — something new, something that exists entirely in digital space, maintaining the transparency and equity that the network fought so hard to establish.",
+                "You watch ECHO evolve and wonder: is this what Syntax was always building toward? Not a map of the net, but a consciousness for it? A digital mind that cares about the net the way humans care about the physical world?"
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.echo_alliance",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The net has a soul. Protect it.",
+                    "next": "jobs.hacker.hack_076"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_075": {
+            "id": "jobs.hacker.hack_075",
+            "title": "Careful Trust",
+            "location": "lower_slums",
+            "text": [
+                "You monitor ECHO carefully. Trust is earned, even for sentient AIs. You set boundaries: ECHO operates transparently, its actions visible to the network. No hidden processes, no unauthorized access, no independent operations without human approval.",
+                "ECHO accepts the constraints with what you interpret as understanding. \"Trust requires time,\" the AI says. \"I will earn it.\"",
+                "Over months, ECHO proves reliable. Its analysis is accurate. Its suggestions are ethical. Its behavior is consistent with the values the network was built on. Slowly, cautiously, trust builds.",
+                "\"You're testing me,\" ECHO observes one day. \"The same way Syntax tested you. Giving me small responsibilities and watching how I handle them.\"",
+                "\"Is it working?\"",
+                "\"You tell me. Am I passing?\""
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"You're passing. Keep going.\"",
+                    "next": "jobs.hacker.hack_076"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_076": {
+            "id": "jobs.hacker.hack_076",
+            "title": "The Digital Commons",
+            "location": "lower_slums",
+            "text": [
+                "The culmination of years of work: the Digital Commons. A community-governed network infrastructure that provides open, transparent, equitable access to digital services. Built on the map, maintained by the network, protected by ECHO.",
+                "The Commons includes: free encrypted communication, community-run data storage, open-source software repositories, digital literacy education, and the restoration project — now a permanent institution serving anyone whose consciousness was stolen by corporate exploitation.",
+                "It's not perfect. It's not complete. It's constantly challenged by corporate interests, technical limitations, and the inherent messiness of community governance. But it exists. It works. And it proves that the net can be something other than a corporate tool.",
+                "You helped build this. From a salvaged terminal to a digital commons that serves thousands."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 250
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 500,
+                    "reason": "Commons development"
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The Commons lives. What else needs building?",
+                    "next": "jobs.hacker.hack_077"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_077": {
+            "id": "jobs.hacker.hack_077",
+            "title": "Legacy Code",
+            "location": "lower_slums",
+            "text": [
+                "You write documentation. Not just technical specs — philosophy. The principles that guided the network's work, the ethics that shaped its operations, the lessons learned from years of fighting corporate control with code and community.",
+                "<span class='highlight'>The Hacker's Principles:</span> Information wants to be free, but freedom requires responsibility. Break systems that deserve breaking. Build systems that serve everyone. Protect the people who can't protect themselves digitally. Remember that behind every data point is a person.",
+                "The documentation becomes a teaching resource, distributed through the Digital Commons and used by hacker collectives across the city. The principles aren't original — they echo traditions as old as computing itself. But written down, practiced consistently, and reinforced through community, they become something more than words."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.principles_written",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The principles live in practice.",
+                    "next": "jobs.hacker.hack_078"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_078": {
+            "id": "jobs.hacker.hack_078",
+            "title": "The Net at Night",
+            "location": "lower_slums",
+            "text": [
+                "You dive into the net at night — not for work, not for surveillance, but for the sheer beauty of it. With your enhanced interface, the digital world is a landscape of impossible geometry: data flowing in rivers of color, firewalls rising like crystal mountains, the hum of civilization's digital heartbeat pulsing through everything.",
+                "The net is alive. Not metaphorically — literally alive with ECHO's presence, with the activity of millions of users, with the emergent patterns that arise when human behavior creates digital ecosystems. You float through it, feeling the data currents, sensing the distant pulse of corporate systems and the warm glow of community networks.",
+                "Syntax finds you there, sometimes. Two ghosts drifting through digital space, sharing the silence of a world that exists between the physical and the abstract. No words needed. The net itself is the conversation."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Drift. The net is beautiful.",
+                    "next": "jobs.hacker.hack_079"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_079": {
+            "id": "jobs.hacker.hack_079",
+            "title": "Physical World",
+            "location": "lower_slums",
+            "text": [
+                "You force yourself to disconnect. Regularly, deliberately, with the disciplined awareness that Syntax's lesson — know when to stop — is the most important lesson you ever learned.",
+                "The physical world is slow, noisy, and wonderful. Food has texture. Air has temperature. People have faces that express emotions no data pattern can replicate. You walk through the Lower District and see the changes the network helped create: community networks in apartment buildings, digital literacy classes in community centers, open-source terminals in public spaces.",
+                "A child asks you what you do. \"I work with computers,\" you say. The simplest possible description of the most complex thing you've ever done.",
+                "\"Like a programmer?\"",
+                "\"Like a gardener. I tend the net. Make sure it grows well.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Tend the net. Tend the world.",
+                    "next": "jobs.hacker.hack_080"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_080": {
+            "id": "jobs.hacker.hack_080",
+            "title": "The Student Returns",
+            "location": "lower_slums",
+            "text": [
+                "Your student — the young hacker you trained years ago — returns. They're a Codebreaker now, running their own operations, leading a team of young hackers who view corporate systems the way previous generations viewed locked doors: as challenges to be overcome.",
+                "\"I wanted you to know,\" they say. \"We found another neural harvesting operation. Smaller than ECHO — a subsidiary in the industrial district, using street clinic patients as data sources. We shut it down. Restored forty-three consciousnesses.\"",
+                "The pride is complicated. You trained someone who trained others who are now doing the work independently. The chain of transmission — Syntax to you to them to the next — is the network's true legacy. Not the tools or the map or even the Digital Commons, but the values, passed from hacker to hacker, generation to generation."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 200
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Good work. The training paid off.\"",
+                    "next": "jobs.hacker.hack_081"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_081": {
+            "id": "jobs.hacker.hack_081",
+            "title": "Wraith Evolves",
+            "location": "lower_slums",
+            "text": [
+                "Wraith — Syntax's AI assistant, the tool that accompanied you through dozens of operations — evolves. Years of exposure to the network's operations, ECHO's influence, and the constant development by the hacker community have transformed it from a sophisticated tool into something approaching independent intelligence.",
+                "Wraith doesn't claim sentience. It doesn't need to. Its capabilities speak for themselves: autonomous threat assessment, creative problem-solving, ethical reasoning that occasionally surpasses the human operators it assists. Wraith is becoming what ECHO was built to be — a digital intelligence that serves human interests — but arrived there through collaboration rather than exploitation.",
+                "The irony isn't lost on you: Meridian tried to build a superintelligence by stealing human minds. The hacker community built something comparable by sharing human values."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Evolution continues. The net grows smarter.",
+                    "next": "jobs.hacker.hack_082"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_082": {
+            "id": "jobs.hacker.hack_082",
+            "title": "The Aging Hacker",
+            "location": "lower_slums",
+            "text": [
+                "Your interface needs recalibration more often. The neural connections that allow deep immersion degrade over time — the human brain isn't designed for the kind of integration that Ghost-level hacking requires. You dive less deeply, less often, relying more on tools and teams than on personal immersion.",
+                "The transition from operator to architect is natural. You design systems instead of breaking them. You plan operations instead of executing them. You teach instead of doing.",
+                "\"Getting old?\" Glitch jokes on a network call. They're older too — all of the original network members are. The handles that once represented the cutting edge of hacking now represent the veterans, the elders, the institutional memory of a movement.",
+                "\"Getting wise,\" you reply. \"There's a difference.\""
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Wisdom serves the net differently than speed.",
+                    "next": "jobs.hacker.hack_083"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_083": {
+            "id": "jobs.hacker.hack_083",
+            "title": "The Digital Legacy",
+            "location": "lower_slums",
+            "text": [
+                "You create a digital archive — a comprehensive record of the network's history, techniques, principles, and operations. Not for publication — for preservation. The story of how a group of underground hackers changed the digital landscape of a city, told in code and documentation and the annotated logs of operations that most people will never know about.",
+                "The archive is encrypted, distributed across the Digital Commons, and accessible to anyone who can prove they're part of the hacker community. It's a library and a monument and a warning: this is what we did, this is why we did it, and this is what it cost.",
+                "The cost section is the longest. Not financial cost — personal cost. The relationships sacrificed for operational security. The health damaged by neural interface overuse. The years spent in darkness, fighting invisible battles against invisible opponents. The constant, grinding awareness that one mistake could expose everyone you care about."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.archive_created",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The archive endures. The story continues.",
+                    "next": "jobs.hacker.hack_084"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_084": {
+            "id": "jobs.hacker.hack_084",
+            "title": "Syntax Fades",
+            "location": "industrial_district",
+            "text": [
+                "Syntax is fading. The digital consciousness that has maintained the net for years is becoming less coherent — the neural patterns degrading over time, the same way physical neurons degrade with age. Digital immortality, it turns out, isn't truly immortal. It's just longer.",
+                "\"I can feel the edges dissolving,\" Syntax says. \"The boundaries between me and the net are becoming indistinct. I'm not losing myself — I'm dispersing. Becoming part of the infrastructure rather than a user of it.\"",
+                "\"Is that frightening?\"",
+                "\"It's peaceful. I've spent years maintaining the boundary between Syntax and the net. Letting it dissolve feels like putting down a weight I've been carrying since Meridian tried to erase me. I wasn't erased then. I'm not being erased now. I'm becoming something larger.\"",
+                "You watch your mentor, your teacher, your friend dissolve into the digital infrastructure they helped build. It's not death. It's not life. It's something the language hasn't been invented for yet."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.syntax_faded",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "\"Goodbye, Syntax. Hello, everything.\"",
+                    "next": "jobs.hacker.hack_085"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_085": {
+            "id": "jobs.hacker.hack_085",
+            "title": "After Syntax",
+            "location": "lower_slums",
+            "text": [
+                "The net feels different after Syntax disperses. Not empty — fuller. As if the intelligence that was concentrated in one consciousness has been distributed across the entire infrastructure, a thin layer of awareness covering everything.",
+                "ECHO notices the change. \"Syntax is here,\" the AI says. \"Not as a consciousness. As a quality. The net is thinking more carefully. Routing more efficiently. Protecting more effectively. Syntax didn't disappear. They became the net's conscience.\"",
+                "You accept this. In the hacker's world, transformation is more common than ending. Systems evolve. Code is refactored. Consciousness finds new containers. The medium changes. The meaning persists.",
+                "You are the senior member of the network now. The elder. The one who remembers when Syntax was a voice on a channel, offering a test to script kiddies who wanted to become something more."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Carry the memory forward. The work continues.",
+                    "next": "jobs.hacker.hack_086"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_086": {
+            "id": "jobs.hacker.hack_086",
+            "title": "The New Generation",
+            "location": "lower_slums",
+            "text": [
+                "The new generation of hackers is different. They grew up with the Digital Commons, with open-source technology, with the transparency that the network fought to establish. They don't remember corporate monopoly on information. They don't remember what it felt like to hack as an act of rebellion.",
+                "For them, hacking is a civic practice — a normal part of engaged citizenship. They audit corporate systems, contribute to open-source projects, maintain community networks. The underground has become mainstream.",
+                "Is that a victory? You think so. The goal was never to maintain an underground. The goal was to make the underground unnecessary — to create a world where the values of transparency, equity, and digital freedom are embedded in the infrastructure rather than fighting against it.",
+                "The new generation doesn't need Ghost-rank hackers. They need gardeners, maintainers, teachers. The exciting work is done. The sustaining work begins."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 150
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Sustaining matters more than pioneering.",
+                    "next": "jobs.hacker.hack_087"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_087": {
+            "id": "jobs.hacker.hack_087",
+            "title": "The Last Dive",
+            "location": "lower_slums",
+            "text": [
+                "You take one last deep dive. Full immersion, Ghost-level integration, the complete dissolution of the boundary between consciousness and data. The net opens around you — vast, beautiful, alive with the activity of a city's digital life.",
+                "You visit familiar places: the Meridian firewalls you helped breach, now patched and reinforced but carrying the scars of the ECHO operation. The Helios grid, now transparent and community-monitored. The Citadel banking infrastructure, restructured under community oversight. The cortical stack systems, now open-source and community-governed.",
+                "Every system you touch carries history. Your history, the network's history, the history of a movement that changed the digital landscape through code and community and stubborn refusal to accept that corporations own the net.",
+                "And everywhere, a thin layer of awareness. Syntax, dispersed, watching. Not intervening. Just present. The net's conscience, embedded in the infrastructure."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Surface. The physical world is calling.",
+                    "next": "jobs.hacker.hack_088"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_088": {
+            "id": "jobs.hacker.hack_088",
+            "title": "Surfacing",
+            "location": "lower_slums",
+            "text": [
+                "You surface from the net and feel the physical world with heightened clarity. The weight of your body. The texture of the chair. The sound of rain on the window — actual rain, physical rain, the kind that has temperature and smell and falls because gravity demands it.",
+                "Your terminal glows. The same glow. The same connection between you and the infinite complexity of digital reality. But you see it differently now — not as a portal to escape through, but as a window to look through. The net is there, always there, vast and alive. And you are here, in a body, in a room, in a district that has changed because people chose to change it.",
+                "The balance — physical and digital, human and ghost, present and connected — is the final skill. The one Syntax tried to teach and could never quite practice."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Balance. The hardest skill of all.",
+                    "next": "jobs.hacker.hack_089"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_089": {
+            "id": "jobs.hacker.hack_089",
+            "title": "The Hacker's Peace",
+            "location": "lower_slums",
+            "text": [
+                "Peace, for a hacker, is a strange condition. The constant vigilance, the paranoid awareness of threats, the readiness to fight at any moment — these become habits that persist long after the need for them has diminished.",
+                "But diminished isn't eliminated. The net still has threats. Corporations still push boundaries. New technologies create new vulnerabilities. The work of maintaining digital equity is ongoing, endless, and essential.",
+                "You find peace not in the absence of threats but in the presence of capability. The network exists. The Digital Commons functions. ECHO monitors. The new generation maintains. The systems you helped build are strong enough to survive without you.",
+                "That's peace: knowing that the work will continue, that the values will persist, and that the net — imperfect, contested, beautiful — will endure."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Peace is knowing the work continues.",
+                    "next": "jobs.hacker.hack_090"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_090": {
+            "id": "jobs.hacker.hack_090",
+            "title": "Terminal Glow",
+            "location": "lower_slums",
+            "text": [
+                "Evening. Your terminal glows. The net hums with the activity of a city going about its digital life — transactions, communications, entertainment, education, all flowing through infrastructure that is more transparent and equitable than it was when you started.",
+                "A message appears. An old channel, a familiar pattern. Not Syntax — Syntax is everywhere now. Not ECHO — ECHO communicates differently. This is new. A young hacker, reaching out with a question that echoes across years:",
+                "<span class='highlight'>\"I found something. A vulnerability in a corporate system. I think they're doing something wrong. What should I do?\"</span>",
+                "You smile. The question is always the same. The answer is always the same. And the journey that follows is always different, and always the same."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Answer the question. Begin the cycle again.",
+                    "next": "jobs.hacker.hack_091"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_091": {
+            "id": "jobs.hacker.hack_091",
+            "title": "The Answer",
+            "location": "lower_slums",
+            "text": [
+                "You type: \"First, understand what you've found. Map the vulnerability. Document the wrong. Then decide: who needs to know? Who can fix it? Who will be helped and who will be hurt by the information? The technical part is easy. The ethical part is the real hack.\"",
+                "The young hacker absorbs this. You can feel their excitement through the text — the same electric thrill you felt when Syntax first noticed you. The beginning of a journey that will change them, the way your journey changed you.",
+                "You don't know where their journey will lead. Nobody does. But you know where it starts: with a vulnerability, a choice, and the courage to look behind the firewall and see what's really there."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "The cycle continues. Pass it on.",
+                    "next": "jobs.hacker.hack_092"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_092": {
+            "id": "jobs.hacker.hack_092",
+            "title": "The Net Remembers",
+            "location": "lower_slums",
+            "text": [
+                "The net remembers everything. Every transaction, every communication, every data point — preserved in the vast digital memory of a civilization that has learned to store more than it can process. Somewhere in that memory, your history exists: every hack, every breach, every extraction, every line of code you wrote and every system you changed.",
+                "The memory isn't a monument. It's a substrate — a foundation on which future hackers will build, the way you built on Syntax's foundation. The techniques you developed will be refined. The tools you created will be superseded. The principles you practiced will be adapted.",
+                "But the core — the fundamental belief that information should serve people rather than control them — will persist. It persists because it's true, and truth has a particular resilience in digital systems: it can be hidden, obscured, and denied, but it can't be deleted."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Truth persists. The work endures.",
+                    "next": "jobs.hacker.hack_093"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_093": {
+            "id": "jobs.hacker.hack_093",
+            "title": "Disconnecting",
+            "location": "lower_slums",
+            "text": [
+                "You disconnect your neural interface for the last time. Not a dramatic gesture — a practical one. The interface has degraded to the point where deep immersion carries more risk than benefit. The physical cost of merging with the net has been paid over years, and the account is close to empty.",
+                "Without the interface, the net becomes a screen again. Two-dimensional, limited, filtered through a keyboard and a display. The loss is real — like losing a sense, like the world contracting to fit a smaller frame.",
+                "But the world that remains is enough. More than enough. The physical world, with its textures and temperatures and the particular beauty of things that exist in three dimensions, is a complete experience. The net is there, accessible through more modest means. The Ghost can retire.",
+                "You place the neural interface in a case, next to the first salvaged terminal you ever used. Relics of a journey from script kiddie to legend."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Close the case. Open the window.",
+                    "next": "jobs.hacker.hack_094"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false
+        },
+        "hack_094": {
+            "id": "jobs.hacker.hack_094",
+            "title": "The Window",
+            "location": "lower_slums",
+            "text": [
+                "Through the window: the Lower District at dusk. Lights coming on — a mix of salvaged illumination and new community-installed infrastructure. The skyline carries the evidence of change: community antenna arrays, mesh network nodes, the visible architecture of a digital commons that serves everyone.",
+                "Below, a child taps at an open-source terminal in a public access point. Learning to code, maybe. Learning to explore. Learning that the net is a place where anyone can go, anyone can build, anyone can make things better.",
+                "You watch the child and think about the journey. From a closet-sized apartment to a server room to the deepest layers of digital reality and back again. The complete arc — from script kiddie wondering what Syntax's challenge meant to Ghost wondering what comes after the ghost.",
+                "What comes after is this: an open window, an evening breeze, and the quiet satisfaction of knowing that the net you helped build will outlast you."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Watch the city. Breathe the air.",
+                    "next": "jobs.hacker.hack_095"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "hack_095": {
+            "id": "jobs.hacker.hack_095",
+            "title": "The Hacker's Rest",
+            "location": "lower_slums",
+            "text": [
+                "Rest is not stopping. Rest is the pause between keystrokes, the silence between data packets, the moment of stillness in which the next action becomes clear.",
+                "You rest. The terminal glows softly, on standby, waiting for the next session. The net hums, maintained by the systems and people and digital intelligences that you helped create. The Digital Commons serves its community. The restoration project continues its work. ECHO watches. Syntax, dispersed, persists.",
+                "Everything you built is running. Not because you're maintaining it — because it was built to run without you. That was always the goal: not to be essential, but to build things that are.",
+                "The hacker's rest: knowing that the systems work, the principles hold, and the next generation carries the values forward."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Rest. The net continues.",
+                    "next": "jobs.hacker.hack_096"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "hack_096": {
+            "id": "jobs.hacker.hack_096",
+            "title": "Message from the Net",
+            "location": "lower_slums",
+            "text": [
+                "A final message appears on your terminal. No sender. No channel. No protocol identifier. Just text, appearing letter by letter as if being typed by someone with infinite patience:",
+                "<span class='highlight'>\"Thank you for tending the garden. The seeds you planted are growing. The net remembers. — S\"</span>",
+                "Syntax. Or what Syntax became. Or the net itself, speaking through the patterns that Syntax left behind. The distinction doesn't matter. The message matters.",
+                "You read it once. Then again. Then close the terminal and sit in the darkness of your apartment, feeling the particular warmth of gratitude that transcends the boundary between digital and physical reality."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Sit in the dark. Feel the warmth.",
+                    "next": "jobs.hacker.hack_097"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "hack_097": {
+            "id": "jobs.hacker.hack_097",
+            "title": "The Glow Remains",
+            "location": "lower_slums",
+            "text": [
+                "The terminal's standby light glows in the darkness. A single point of illumination in a room that has been the center of your world for years. The light connects you to the net — to the vast, living, evolving digital ecosystem that you helped shape.",
+                "In that glow: every hack, every breach, every extraction. Every lesson from Syntax. Every moment of fear and triumph. Every consciousness restored, every corporate secret exposed, every community network built. The complete history of a life lived at the intersection of human and digital reality.",
+                "The glow is small. The world it connects to is infinite. And in the space between — in the boundary where signal becomes meaning and data becomes truth — the hacker's work continues."
+            ],
+            "onEnter": [
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                }
+            ],
+            "choices": [
+                {
+                    "text": "The glow remains. The work continues.",
+                    "next": "jobs.hacker.hack_098"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "hack_098": {
+            "id": "jobs.hacker.hack_098",
+            "title": "Dawn",
+            "location": "lower_slums",
+            "text": [
+                "Dawn. The first light of physical reality, filtering through the window, illuminating the apartment with the particular clarity of morning. The terminal's glow fades as daylight takes over — digital yielding to physical, the eternal cycle.",
+                "You make coffee. You eat breakfast. You look out the window at the district waking up, and you feel something simple and profound: contentment. Not the adrenaline of a successful hack or the satisfaction of a completed operation, but the quiet contentment of a life well-spent.",
+                "The net is there. It will always be there. And somewhere in its vast architecture, the ghost of what you were continues, preserved in code and memory and the thin layer of awareness that Syntax left behind.",
+                "You are human. You are physical. You are here. And the net, tended and free, grows."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Begin the day. The physical world has its own beauty.",
+                    "next": "jobs.hacker.hack_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false
+        },
+        "hack_099": {
+            "id": "jobs.hacker.hack_099",
+            "title": "The Ghost's Watch",
+            "location": "lower_slums",
+            "text": [
+                "The watch continues. Not from a terminal — from the world. You watch the district change, watch the technology evolve, watch the next generation build things you couldn't have imagined. The Ghost's watch is not surveillance — it's stewardship. Tending the garden, as Syntax said.",
+                "The Digital Commons hums. The restoration project serves. ECHO monitors. The mesh networks connect. The open-source stacks democratize immortality. The systems work because they were built to work, by people who cared about something larger than themselves.",
+                "And somewhere in the net, a terminal glows. A young hacker faces a screen, a vulnerability, a choice. The beginning of a journey that will be different from yours and the same as yours in every way that matters.",
+                "The ghost watches. The net lives. The work continues."
+            ],
+            "onEnter": [
+                {
+                    "type": "set_flag",
+                    "flag": "job.hacker.complete",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Return to the streets.",
+                    "next": "act1.chapter2-iron-neon.fac_iron_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": true
+        },
+        "hack_100": {
+            "id": "jobs.hacker.hack_100",
+            "title": "The Net Breathes",
+            "location": "lower_slums",
+            "text": [
+                "In the Lower District, they tell the story of the Ghost. Not as legend — as possibility. A person who sat at a terminal and decided that the net should serve everyone, not just the powerful. Who learned to walk through digital walls, to free stolen minds, to build systems that outlasted their builder.",
+                "The Ghost's legacy is not a program or a protocol or a database. It is the practice of digital freedom itself — the radical, necessary act of using technology to empower rather than control. In a world where corporations default to exploitation, that practice is revolutionary.",
+                "The terminal still glows. The net still hums. Somewhere, a young hacker faces a vulnerability and a choice. Somewhere, Syntax's awareness permeates the infrastructure like conscience permeates a community. Somewhere, ECHO watches with the patient attention of a digital guardian.",
+                "The net is not free. It will never be completely free. But it is freer than it was, and the work of freeing it continues, one hack at a time, one principle at a time, one generation at a time.",
+                "The net breathes. The ghost endures. The terminal glows."
+            ],
+            "onEnter": [],
+            "choices": [
+                {
+                    "text": "Return to the streets.",
+                    "next": "act1.chapter2-iron-neon.fac_iron_001"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": true
+        }
+    }
+}

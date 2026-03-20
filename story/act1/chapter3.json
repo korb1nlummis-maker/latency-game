@@ -12,42 +12,147 @@
             "location": "player_apartment",
             "text": [
                 "Rain again. Always rain. The clock on your wall flickers between 03:47 and a Meridian advertisement, the display too damaged to fully suppress the signal hijack. Forty-eight hours since the man in the coat. Forty-eight hours since the offer that split your life into before and after.",
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "The memory stack sits on your shelf in its matte black case, unopened since you brought it home. You haven't installed it. You haven't contacted the frequency on the card. But you haven't slept properly either. The dreams started on the first night." },
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "Not your dreams. Someone else's. A woman standing at a window in the Cloud Towers, sunlight on her face, the city spread below her like a circuit board. A child's birthday party in a penthouse garden, real grass under bare feet, laughter that echoes with a warmth you've never known. And then, on the second night, the other thing. The dark room. The hands around a throat. The sound of someone dying." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "You've spent forty-eight hours waiting for the other shoe to drop. The dealer said a different team would come. Less conversational. You've barely slept, jumping at every sound in the corridor, every footstep that pauses too long outside your door. You moved your cot away from the window. You sleep with a weapon within reach." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "At 03:42, the shoe drops. Three sharp knocks on your door. Not the tentative knock of a neighbor. Not the hammering of Sec-Corp. Three precise, evenly spaced impacts, delivered with the patience of someone who knows you're home and knows you can't leave." },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "You've spent forty-eight hours preparing. The dealer's threat was explicit: an acquisition team, extractions, no more offers. You've barricaded the door, mapped three escape routes through the building's maintenance shafts, and called in every favor you're owed. It wasn't enough." },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "The woman who steps out of the stairwell shadow at 03:44 is not an acquisition team. She's worse. She's alone, which means she doesn't need backup. Her augmentations are military-grade and visible: chrome-plated forearms, optical implants that glow faint red in the darkness, a spinal rig that hums with barely contained power. A professional. The dealer sent a professional." },
-                { "condition": { "race": "cyborg" }, "text": "Your HUD has been glitching all night, throwing phantom alerts and corrupted diagnostic data. Something is interfering with your systems. Something close." },
-                { "condition": { "race": "synth" }, "text": "Your internal logs show seventeen unauthorized access attempts against your cognitive firewall in the last six hours. Someone is probing your architecture. Testing your defenses. Learning your layout." },
-                { "condition": { "race": "orc" }, "text": "Your tusks ache. Old superstition says that means danger is close, the body remembering threats the mind hasn't registered yet. You stopped dismissing old superstitions two days ago." }
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "The memory stack sits on your shelf in its matte black case, unopened since you brought it home. You haven't installed it. You haven't contacted the frequency on the card. But you haven't slept properly either. The dreams started on the first night."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "Not your dreams. Someone else's. A woman standing at a window in the Cloud Towers, sunlight on her face, the city spread below her like a circuit board. A child's birthday party in a penthouse garden, real grass under bare feet, laughter that echoes with a warmth you've never known. And then, on the second night, the other thing. The dark room. The hands around a throat. The sound of someone dying."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "You've spent forty-eight hours waiting for the other shoe to drop. The dealer said a different team would come. Less conversational. You've barely slept, jumping at every sound in the corridor, every footstep that pauses too long outside your door. You moved your cot away from the window. You sleep with a weapon within reach."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "At 03:42, the shoe drops. Three sharp knocks on your door. Not the tentative knock of a neighbor. Not the hammering of Sec-Corp. Three precise, evenly spaced impacts, delivered with the patience of someone who knows you're home and knows you can't leave."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "You've spent forty-eight hours preparing. The dealer's threat was explicit: an acquisition team, extractions, no more offers. You've barricaded the door, mapped three escape routes through the building's maintenance shafts, and called in every favor you're owed. It wasn't enough."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "The woman who steps out of the stairwell shadow at 03:44 is not an acquisition team. She's worse. She's alone, which means she doesn't need backup. Her augmentations are military-grade and visible: chrome-plated forearms, optical implants that glow faint red in the darkness, a spinal rig that hums with barely contained power. A professional. The dealer sent a professional."
+                },
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "Your HUD has been glitching all night, throwing phantom alerts and corrupted diagnostic data. Something is interfering with your systems. Something close."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your internal logs show seventeen unauthorized access attempts against your cognitive firewall in the last six hours. Someone is probing your architecture. Testing your defenses. Learning your layout."
+                },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Your tusks ache. Old superstition says that means danger is close, the body remembering threats the mind hasn't registered yet. You stopped dismissing old superstitions two days ago."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.started", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.started",
+                    "value": true
+                }
             ],
             "choices": [
                 {
                     "text": "Face whatever is coming.",
                     "next": "act1.chapter3.stack_002"
+                },
+                {
+                    "text": "A diplomatic envoy is seeking a negotiator. Explore this opportunity.",
+                    "next": "jobs.diplomat.jdip_001",
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "job_quest.diplomat.started",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "text": "The arena pits are taking challengers. Fight for glory.",
+                    "next": "jobs.gladiator.jgld_001",
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "job_quest.gladiator.started",
+                            "value": true
+                        }
+                    ]
                 }
             ],
             "ascii": null,
             "music": "ambient_dread_low",
             "isEnding": false
         },
-
         "stack_002": {
             "id": "act1.chapter3.stack_002",
             "title": "The Dreams That Aren't Yours",
             "location": "player_apartment",
             "text": [
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "You pick up the case. Even through the matte black shell, you can feel it. A warmth that shouldn't be there, a faint vibration, like a heartbeat in a box. The stack is active. It's been active since you brought it home, bleeding signal through the casing, broadcasting memories into your sleeping brain like a radio station nobody asked you to tune into." },
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "The woman in the Cloud Towers. You know her name now, though you shouldn't. Elara Voss. The memories surfaced while you slept, fragments assembling themselves into a mosaic of someone else's life. She was an executive at Meridian Stack Services. Senior Vice President of Consciousness Architecture. She designed the systems that copy human minds into silicon." },
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "She's dead. The stack told you that too, in the language of final moments. The hands around her throat belonged to someone she knew. Someone she trusted. The last thing she saw before the signal cut was a face she recognized, and the expression on that face was not rage or hatred but something worse. Efficiency." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "You open the door before they can knock again. Two figures fill the corridor. They're not Sec-Corp and they're not street muscle. They wear fitted grey coats over body armor, faces hidden behind smooth chrome masks with no features except a single optical slit. Corporate enforcement. Deniable assets." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "\"You were given an opportunity,\" the one on the left says. The voice is modulated, stripped of identity. \"Our employer extended courtesy. You declined. Courtesy has now expired.\" The one on the right holds up a matte black case. The same case. The same stack. \"You will accept the stack. You will perform the service. The only variable that has changed is the voluntary nature of the arrangement.\"" },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "The professional leans against the corridor wall with the casual posture of someone who has never been in a hurry in her life. She doesn't draw a weapon. She doesn't need to. Everything about her is a weapon." },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "\"Venn,\" she says, by way of introduction. \"Your friend in the coat sends his apologies. He's not equipped for the confrontational type. I am.\" She holds up a matte black case between two chrome fingers. \"The stack. The job. The deal. Same terms, different messenger. Though I should mention that my commission for failed recruitments is significantly higher than my commission for successful ones, so I'm genuinely hoping you say no.\"" }
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "You pick up the case. Even through the matte black shell, you can feel it. A warmth that shouldn't be there, a faint vibration, like a heartbeat in a box. The stack is active. It's been active since you brought it home, bleeding signal through the casing, broadcasting memories into your sleeping brain like a radio station nobody asked you to tune into."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "The woman in the Cloud Towers. You know her name now, though you shouldn't. Elara Voss. The memories surfaced while you slept, fragments assembling themselves into a mosaic of someone else's life. She was an executive at Meridian Stack Services. Senior Vice President of Consciousness Architecture. She designed the systems that copy human minds into silicon."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "She's dead. The stack told you that too, in the language of final moments. The hands around her throat belonged to someone she knew. Someone she trusted. The last thing she saw before the signal cut was a face she recognized, and the expression on that face was not rage or hatred but something worse. Efficiency."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "You open the door before they can knock again. Two figures fill the corridor. They're not Sec-Corp and they're not street muscle. They wear fitted grey coats over body armor, faces hidden behind smooth chrome masks with no features except a single optical slit. Corporate enforcement. Deniable assets."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "\"You were given an opportunity,\" the one on the left says. The voice is modulated, stripped of identity. \"Our employer extended courtesy. You declined. Courtesy has now expired.\" The one on the right holds up a matte black case. The same case. The same stack. \"You will accept the stack. You will perform the service. The only variable that has changed is the voluntary nature of the arrangement.\""
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "The professional leans against the corridor wall with the casual posture of someone who has never been in a hurry in her life. She doesn't draw a weapon. She doesn't need to. Everything about her is a weapon."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "\"Venn,\" she says, by way of introduction. \"Your friend in the coat sends his apologies. He's not equipped for the confrontational type. I am.\" She holds up a matte black case between two chrome fingers. \"The stack. The job. The deal. Same terms, different messenger. Though I should mention that my commission for failed recruitments is significantly higher than my commission for successful ones, so I'm genuinely hoping you say no.\""
+                }
             ],
             "onEnter": [],
             "choices": [
@@ -60,18 +165,47 @@
             "music": "ambient_dread_low",
             "isEnding": false
         },
-
         "stack_003": {
             "id": "act1.chapter3.stack_003",
             "title": "The Weight of Evidence",
             "location": "player_apartment",
             "text": [
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "A knock at the door shatters the silence. You close the case and reach for the nearest thing that could serve as a weapon. But the knock is followed by a voice you recognize. Mako. The mechanic from down the street." },
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "\"Open up,\" she hisses through the door. \"I know about the stack. Half the district knows. The signal it's putting out is like a bonfire on a dark night. Every scanner in three blocks has picked it up. You need to move. Now.\"" },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "The enforcers step forward. Your apartment is small enough that two steps puts them inside your space, inside your world, filling it with the smell of ozone and synthetic leather." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "\"We've been authorized to use installation-grade sedation if necessary,\" the left one says. \"The process is unpleasant but survivable. Alternatively, you accept voluntarily and retain your dignity. You have ten seconds to choose.\"" },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "Venn pushes off the wall and takes a step closer. Her red optical implants cycle through scanning frequencies, and you can feel the beam pass over you like cold water. \"Interesting,\" she murmurs. \"You're not augmented enough to fight me and not fast enough to run. But you spotted the tracker in the stack, which means you're smart. Smart people make deals. Stupid people make me work.\"" },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "She opens the case. The stack gleams inside. \"My employer has sweetened the offer. The tracking chip has been removed. Genuinely. Scan it yourself if you don't believe me. What remains is a clean stack with approximately forty gigabytes of residual memory data that my employer very much wants recovered.\"" }
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "A knock at the door shatters the silence. You close the case and reach for the nearest thing that could serve as a weapon. But the knock is followed by a voice you recognize. Mako. The mechanic from down the street."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "\"Open up,\" she hisses through the door. \"I know about the stack. Half the district knows. The signal it's putting out is like a bonfire on a dark night. Every scanner in three blocks has picked it up. You need to move. Now.\""
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "The enforcers step forward. Your apartment is small enough that two steps puts them inside your space, inside your world, filling it with the smell of ozone and synthetic leather."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "\"We've been authorized to use installation-grade sedation if necessary,\" the left one says. \"The process is unpleasant but survivable. Alternatively, you accept voluntarily and retain your dignity. You have ten seconds to choose.\""
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "Venn pushes off the wall and takes a step closer. Her red optical implants cycle through scanning frequencies, and you can feel the beam pass over you like cold water. \"Interesting,\" she murmurs. \"You're not augmented enough to fight me and not fast enough to run. But you spotted the tracker in the stack, which means you're smart. Smart people make deals. Stupid people make me work.\""
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "She opens the case. The stack gleams inside. \"My employer has sweetened the offer. The tracking chip has been removed. Genuinely. Scan it yourself if you don't believe me. What remains is a clean stack with approximately forty gigabytes of residual memory data that my employer very much wants recovered.\""
+                }
             ],
             "onEnter": [],
             "choices": [
@@ -84,18 +218,47 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "stack_004": {
             "id": "act1.chapter3.stack_004",
             "title": "No Good Options",
             "location": "player_apartment",
             "text": [
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "You open the door. Mako pushes past you, eyes scanning the room with the practiced efficiency of someone who has hidden from corporate sweeps before. She spots the case immediately." },
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "\"Worse than I thought,\" she says, pulling a handheld scanner from her coat. She runs it over the case without touching it. The readout makes her face go pale. \"This isn't a blank stack. There's a full consciousness imprint in here. Forty, maybe fifty gigs of memory data. Someone's entire life is on this thing.\" She looks at you. \"Someone important. Someone dead.\"" },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "Ten seconds. The enforcers stand like statues, chrome masks reflecting the flickering light of your broken clock display. You look at the stack in its case. You look at the door behind them. You calculate distances, angles, the probability of getting past two armored operatives in a corridor barely wide enough for one." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "Then something unexpected happens. A sound from the stairwell. A crash, metal on metal, followed by shouting. The enforcers turn, just slightly, just for a fraction of a second. But in the Lower District, a fraction of a second is a currency you learn to spend." },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "\"Forty gigabytes of memory data,\" you repeat. \"Whose?\"" },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "Venn's lip curls. Not quite a smile. \"Elara Voss. Senior Vice President of Consciousness Architecture at Meridian Stack Services. She died three weeks ago. Officially, a stack-transfer malfunction. Unofficially...\" She snaps the case shut. \"Unofficially, she was murdered. And her memories prove it. My employer wants those memories. The person who killed her wants them destroyed. You're caught in the middle because the dealer who was supposed to deliver the stack to our extraction team decided to freelance and offer it to you instead.\"" }
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "You open the door. Mako pushes past you, eyes scanning the room with the practiced efficiency of someone who has hidden from corporate sweeps before. She spots the case immediately."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "\"Worse than I thought,\" she says, pulling a handheld scanner from her coat. She runs it over the case without touching it. The readout makes her face go pale. \"This isn't a blank stack. There's a full consciousness imprint in here. Forty, maybe fifty gigs of memory data. Someone's entire life is on this thing.\" She looks at you. \"Someone important. Someone dead.\""
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "Ten seconds. The enforcers stand like statues, chrome masks reflecting the flickering light of your broken clock display. You look at the stack in its case. You look at the door behind them. You calculate distances, angles, the probability of getting past two armored operatives in a corridor barely wide enough for one."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "Then something unexpected happens. A sound from the stairwell. A crash, metal on metal, followed by shouting. The enforcers turn, just slightly, just for a fraction of a second. But in the Lower District, a fraction of a second is a currency you learn to spend."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "\"Forty gigabytes of memory data,\" you repeat. \"Whose?\""
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "Venn's lip curls. Not quite a smile. \"Elara Voss. Senior Vice President of Consciousness Architecture at Meridian Stack Services. She died three weeks ago. Officially, a stack-transfer malfunction. Unofficially...\" She snaps the case shut. \"Unofficially, she was murdered. And her memories prove it. My employer wants those memories. The person who killed her wants them destroyed. You're caught in the middle because the dealer who was supposed to deliver the stack to our extraction team decided to freelance and offer it to you instead.\""
+                }
             ],
             "onEnter": [],
             "choices": [
@@ -108,26 +271,77 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "stack_005": {
             "id": "act1.chapter3.stack_005",
             "title": "The Dead Woman's Name",
             "location": "player_apartment",
             "text": [
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "\"Her name was Elara Voss,\" Mako says, pulling up a holoscreen from her wrist unit. A face appears. You recognize it instantly. The woman from the dreams. High cheekbones, dark eyes, hair pulled back with the severity of someone who has no time for vanity. A Meridian executive badge hovers beside her image. Senior Vice President of Consciousness Architecture." },
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "\"She died three weeks ago. Official cause: stack-transfer malfunction during a routine backup. Unofficial cause: someone killed her and staged it to look like an accident. Her memories were supposed to be wiped in the transfer, standard protocol for exec-level deaths. But someone extracted this stack before the wipe completed.\" Mako's voice is grim. \"You've been dreaming her memories. Her life. And her death.\"" },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "You move. The crash in the stairwell buys you two seconds. You slam the door into the left enforcer and dive for the maintenance hatch under your cot. The panel comes away in your hands and you drop into the crawlspace between floors, a gap barely wide enough for a human body, choked with cables and dust." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "Above you, the enforcers recover. You hear the modulated voice, calm as ever: \"Acquisition target is mobile. Deploying tracker drones.\" You crawl. Behind you, the hum of micro-drones entering the crawlspace. Ahead, the maintenance shaft that leads to Mako's repair shop three blocks east. You have minutes at best." },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "\"So the dealer went rogue,\" you say." },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "\"The dealer got greedy,\" Venn corrects. \"He thought he could auction Voss's memories to the highest bidder. You were his insurance policy. If the auction failed, he could still claim he'd completed the delivery and collect his fee.\" She tilts her head. \"He underestimated you. He also underestimated me. I found him this morning in a drainage canal. He won't be making any more offers.\"" },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "\"Her name was Elara Voss,\" Mako says, pulling up a holoscreen from her wrist unit. A face appears. You recognize it instantly. The woman from the dreams. High cheekbones, dark eyes, hair pulled back with the severity of someone who has no time for vanity. A Meridian executive badge hovers beside her image. Senior Vice President of Consciousness Architecture."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "\"She died three weeks ago. Official cause: stack-transfer malfunction during a routine backup. Unofficial cause: someone killed her and staged it to look like an accident. Her memories were supposed to be wiped in the transfer, standard protocol for exec-level deaths. But someone extracted this stack before the wipe completed.\" Mako's voice is grim. \"You've been dreaming her memories. Her life. And her death.\""
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "You move. The crash in the stairwell buys you two seconds. You slam the door into the left enforcer and dive for the maintenance hatch under your cot. The panel comes away in your hands and you drop into the crawlspace between floors, a gap barely wide enough for a human body, choked with cables and dust."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "Above you, the enforcers recover. You hear the modulated voice, calm as ever: \"Acquisition target is mobile. Deploying tracker drones.\" You crawl. Behind you, the hum of micro-drones entering the crawlspace. Ahead, the maintenance shaft that leads to Mako's repair shop three blocks east. You have minutes at best."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "\"So the dealer went rogue,\" you say."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "\"The dealer got greedy,\" Venn corrects. \"He thought he could auction Voss's memories to the highest bidder. You were his insurance policy. If the auction failed, he could still claim he'd completed the delivery and collect his fee.\" She tilts her head. \"He underestimated you. He also underestimated me. I found him this morning in a drainage canal. He won't be making any more offers.\""
+                },
                 "Elara Voss. The name settles into your mind like a stone dropped into still water. A dead woman's memories in a stolen stack, and every faction in the city is about to come looking for it.",
-                { "condition": { "race": "human" }, "text": "A baseline human holding evidence that could shake the Cloud Towers. The irony would be funny if it weren't likely to get you killed." },
-                { "condition": { "race": "dwarf" }, "text": "Dwarven memory is long. Your people remember grudges across generations. This woman's grudge, her murder, her stolen final moments, feels like something that has sunk into your bones and taken root." },
-                { "condition": { "race": "dark_elf" }, "text": "In the undercities where your people dwell, the dead are honored with silence and shadow. This woman's death was neither silent nor shadowed. It was clinical, corporate, and someone profited from it." }
+                {
+                    "condition": {
+                        "race": "human"
+                    },
+                    "text": "A baseline human holding evidence that could shake the Cloud Towers. The irony would be funny if it weren't likely to get you killed."
+                },
+                {
+                    "condition": {
+                        "race": "dwarf"
+                    },
+                    "text": "Dwarven memory is long. Your people remember grudges across generations. This woman's grudge, her murder, her stolen final moments, feels like something that has sunk into your bones and taken root."
+                },
+                {
+                    "condition": {
+                        "race": "dark_elf"
+                    },
+                    "text": "In the undercities where your people dwell, the dead are honored with silence and shadow. This woman's death was neither silent nor shadowed. It was clinical, corporate, and someone profited from it."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.learned_voss_identity", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.learned_voss_identity",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -139,22 +353,40 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "stack_006": {
             "id": "act1.chapter3.stack_006",
             "title": "The Memory Stack Mystery",
             "location": "lower_district_safehouse",
             "text": [
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "Mako takes you to a safehouse. It's beneath her shop, accessed through a floor panel hidden under a decommissioned industrial printer. The room is small, cluttered with electronics, and shielded against every scanning frequency known to Lower District paranoia." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "You emerge from the maintenance shaft into Mako's shop, filthy, bleeding from a dozen shallow cuts, with tracker drones humming in the shaft behind you. Mako takes one look at your face and pulls a signal jammer from the wall. The drones go silent. Then she leads you below, to a room you didn't know existed." },
-                { "condition": { "flag": "prologue.dealer_confronted" }, "text": "Venn doesn't follow you to Mako's. She gives you a comm frequency and twelve hours. \"Bring me the memory data and you walk away clean,\" she says. \"Or don't, and I come find you. I always find people.\" You believe her. You go to Mako because she's the only person in the district you trust with hardware this dangerous." },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "Mako takes you to a safehouse. It's beneath her shop, accessed through a floor panel hidden under a decommissioned industrial printer. The room is small, cluttered with electronics, and shielded against every scanning frequency known to Lower District paranoia."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "You emerge from the maintenance shaft into Mako's shop, filthy, bleeding from a dozen shallow cuts, with tracker drones humming in the shaft behind you. Mako takes one look at your face and pulls a signal jammer from the wall. The drones go silent. Then she leads you below, to a room you didn't know existed."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.dealer_confronted"
+                    },
+                    "text": "Venn doesn't follow you to Mako's. She gives you a comm frequency and twelve hours. \"Bring me the memory data and you walk away clean,\" she says. \"Or don't, and I come find you. I always find people.\" You believe her. You go to Mako because she's the only person in the district you trust with hardware this dangerous."
+                },
                 "The safehouse is lined with signal-dampening material and smells of solder and old coffee. Mako connects the stack to a secure terminal, her fingers moving with the precision of someone who has disassembled a thousand pieces of forbidden technology.",
                 "\"I'm not going to access the full consciousness data,\" she says. \"That would require a neural interface and I'm not plugging someone else's death into my brain. But I can read the metadata. The file headers. The index.\"",
                 "She works in silence for three minutes. Then she sits back and exhales slowly.",
                 "\"This is bad.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.at_safehouse", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.at_safehouse",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -170,7 +402,6 @@
             "music": "ambient_investigation",
             "isEnding": false
         },
-
         "stack_007": {
             "id": "act1.chapter3.stack_007",
             "title": "What Elara Knew",
@@ -181,11 +412,25 @@
                 "She scrolls through the file index. Hundreds of entries. Meetings, research sessions, personal moments, all compressed into data blocks smaller than your thumbnail.",
                 "\"Six months before she died, she discovered something wrong with her own system. The transfer protocol wasn't just copying consciousness. It was editing it. Subtle changes during the transfer process. Emotional dampening. Loyalty modification. Every person who backed up through Meridian's system was coming out slightly different. Slightly more compliant. Slightly more profitable.\"",
                 "\"She tried to report it. Three weeks later she was dead.\"",
-                { "condition": { "flag": "prologue.stack_analyzed" }, "text": "The secondary chipset you found in the stack clicks into focus. It wasn't just a tracker. It was a modified transfer relay. Someone used the stack to extract Voss's memories at the moment of death, capturing not just her knowledge but her final experiences. Her murder, recorded from the inside." },
-                { "condition": { "flag": "prologue.stack_suspicion" }, "text": "Your earlier suspicion about the stack's modification takes on a darker dimension. The tampering wasn't about surveillance. It was about preservation. Someone wanted these memories to survive." }
+                {
+                    "condition": {
+                        "flag": "prologue.stack_analyzed"
+                    },
+                    "text": "The secondary chipset you found in the stack clicks into focus. It wasn't just a tracker. It was a modified transfer relay. Someone used the stack to extract Voss's memories at the moment of death, capturing not just her knowledge but her final experiences. Her murder, recorded from the inside."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.stack_suspicion"
+                    },
+                    "text": "Your earlier suspicion about the stack's modification takes on a darker dimension. The tampering wasn't about surveillance. It was about preservation. Someone wanted these memories to survive."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.learned_meridian_secret", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.learned_meridian_secret",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -201,7 +446,6 @@
             "music": "ambient_investigation",
             "isEnding": false
         },
-
         "stack_008": {
             "id": "act1.chapter3.stack_008",
             "title": "The Killer's Identity",
@@ -215,8 +459,16 @@
                 "She pauses. \"This would break the city.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.knows_killer", "value": true },
-                { "type": "set_flag", "flag": "chapter3.killer_identity", "value": "dain_revik" }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.knows_killer",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.killer_identity",
+                    "value": "dain_revik"
+                }
             ],
             "choices": [
                 {
@@ -228,7 +480,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "stack_009": {
             "id": "act1.chapter3.stack_009",
             "title": "The Extractor",
@@ -243,9 +494,21 @@
                 "\"The killer is Councilor Dain Revik,\" Mako adds, cross-referencing the biometric data. \"Neon Court. Meridian board member. Voss's boss.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.knows_killer", "value": true },
-                { "type": "set_flag", "flag": "chapter3.killer_identity", "value": "dain_revik" },
-                { "type": "set_flag", "flag": "chapter3.knows_extractor", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.knows_killer",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.killer_identity",
+                    "value": "dain_revik"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.knows_extractor",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -257,7 +520,6 @@
             "music": "ambient_investigation",
             "isEnding": false
         },
-
         "stack_010": {
             "id": "act1.chapter3.stack_010",
             "title": "Experiencing the Murder",
@@ -280,7 +542,6 @@
             "music": "silence",
             "isEnding": false
         },
-
         "stack_011": {
             "id": "act1.chapter3.stack_011",
             "title": "Elara's Final Night",
@@ -296,7 +557,11 @@
                 "\"I wish you hadn't done that,\" he says. And the warmth in his voice is gone."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.experienced_murder_memory", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.experienced_murder_memory",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -308,7 +573,6 @@
             "music": "memory_sequence_dark",
             "isEnding": false
         },
-
         "stack_012": {
             "id": "act1.chapter3.stack_012",
             "title": "The Killing",
@@ -332,7 +596,6 @@
             "music": "silence",
             "isEnding": false
         },
-
         "stack_013": {
             "id": "act1.chapter3.stack_013",
             "title": "Aftermath",
@@ -343,11 +606,24 @@
                 "But she is still here. Her stack hums softly on the terminal, a dead woman's entire existence compressed into a device smaller than your fist. Forty gigabytes of memory. A childhood in the slums. An education clawed from nothing. A career that reached the highest floors of the highest towers. And a death that proved none of it mattered when someone more powerful decided you were inconvenient.",
                 "\"She grew up here,\" you say. Your voice sounds wrong. Hoarse. \"In the Lower District. Just like us.\"",
                 "Mako nods. She already knew. \"She got out. Made it to the top. Built the system that was supposed to make death optional.\" She looks at the stack. \"And they killed her with it.\"",
-                { "condition": { "race": "human" }, "text": "She was human. Baseline, like you. No augments, no genetic advantages, no corporate backing. She climbed the entire height of the city on nothing but her mind, and they snapped her neck in a penthouse office and called it a malfunction." },
-                { "condition": { "race": "halfling" }, "text": "She was small in a city of giants, just like your people. She compensated with brilliance instead of stealth, but the result was the same. The powerful noticed her only when she became a threat, and then they destroyed her." }
+                {
+                    "condition": {
+                        "race": "human"
+                    },
+                    "text": "She was human. Baseline, like you. No augments, no genetic advantages, no corporate backing. She climbed the entire height of the city on nothing but her mind, and they snapped her neck in a penthouse office and called it a malfunction."
+                },
+                {
+                    "condition": {
+                        "race": "halfling"
+                    },
+                    "text": "She was small in a city of giants, just like your people. She compensated with brilliance instead of stealth, but the result was the same. The powerful noticed her only when she became a threat, and then they destroyed her."
+                }
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -363,7 +639,6 @@
             "music": "ambient_melancholy",
             "isEnding": false
         },
-
         "stack_014": {
             "id": "act1.chapter3.stack_014",
             "title": "The Decision Ahead",
@@ -385,7 +660,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "stack_014a": {
             "id": "act1.chapter3.stack_014a",
             "title": "A Moment of Quiet",
@@ -399,8 +673,15 @@
                 "Not for long."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 10 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 5 }
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 5
+                }
             ],
             "choices": [
                 {
@@ -412,7 +693,6 @@
             "music": "ambient_melancholy",
             "isEnding": false
         },
-
         "stack_015": {
             "id": "act1.chapter3.stack_015",
             "title": "The Revelation Deepens",
@@ -425,7 +705,11 @@
                 "\"I can get messages out to contacts in each faction,\" Mako says. \"But you need to decide who to approach. Each one will want something different, and each one will change your future in a different way.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.six_hour_deadline", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.six_hour_deadline",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -453,7 +737,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "stack_016": {
             "id": "act1.chapter3.stack_016",
             "title": "The Iron Collective's Interest",
@@ -479,7 +762,6 @@
             "music": "faction_iron_collective",
             "isEnding": false
         },
-
         "stack_017": {
             "id": "act1.chapter3.stack_017",
             "title": "The Neon Court's Interest",
@@ -505,7 +787,6 @@
             "music": "faction_neon_court",
             "isEnding": false
         },
-
         "stack_018": {
             "id": "act1.chapter3.stack_018",
             "title": "The Circuit Saints' Interest",
@@ -531,7 +812,6 @@
             "music": "faction_circuit_saints",
             "isEnding": false
         },
-
         "stack_019": {
             "id": "act1.chapter3.stack_019",
             "title": "The Ghost Syndicate's Interest",
@@ -557,7 +837,6 @@
             "music": "faction_ghost_syndicate",
             "isEnding": false
         },
-
         "stack_020": {
             "id": "act1.chapter3.stack_020",
             "title": "The Ashen Circle's Interest",
@@ -583,7 +862,6 @@
             "music": "faction_ashen_circle",
             "isEnding": false
         },
-
         "stack_021": {
             "id": "act1.chapter3.stack_021",
             "title": "Iron Collective - The Meeting",
@@ -597,8 +875,16 @@
                 "You repeat it. Her jaw tightens. \"We have fourteen hundred Collective members who've undergone Meridian stack transfers in the last three years. Fourteen hundred people who might not be who they were before the backup.\" Her voice is controlled fury. \"This goes public. Tonight.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.faction_iron_collective", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.faction_iron_collective",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -614,7 +900,6 @@
             "music": "faction_iron_collective",
             "isEnding": false
         },
-
         "stack_022": {
             "id": "act1.chapter3.stack_022",
             "title": "Iron Collective - Full Exposure",
@@ -627,9 +912,21 @@
                 "\"I'm ready.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.iron_full_exposure", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 15 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -30 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.iron_full_exposure",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -30
+                }
             ],
             "choices": [
                 {
@@ -641,7 +938,6 @@
             "music": "faction_iron_collective",
             "isEnding": false
         },
-
         "stack_023": {
             "id": "act1.chapter3.stack_023",
             "title": "Iron Collective - Strategic Release",
@@ -654,9 +950,21 @@
                 "\"This buys us time,\" she says. \"Use it well.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.iron_strategic_release", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 20 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -20 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.iron_strategic_release",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 20
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -20
+                }
             ],
             "choices": [
                 {
@@ -668,7 +976,6 @@
             "music": "faction_iron_collective",
             "isEnding": false
         },
-
         "stack_025": {
             "id": "act1.chapter3.stack_025",
             "title": "Neon Court - The Gilded Cage",
@@ -683,8 +990,16 @@
                 "\"All we need is the stack and your silence.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.faction_neon_court", "value": true },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.faction_neon_court",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -700,7 +1015,6 @@
             "music": "faction_neon_court",
             "isEnding": false
         },
-
         "stack_026": {
             "id": "act1.chapter3.stack_026",
             "title": "Neon Court - Clean Exchange",
@@ -713,12 +1027,34 @@
                 "She stands. \"Welcome to the middle of the city. Try not to look down.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.court_clean_deal", "value": true },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": 25 },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": -20 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": -25 },
-                { "type": "remove_item", "item": "uninstalled_memory_stack" },
-                { "type": "add_item", "item": "neon_court_identity_package" }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.court_clean_deal",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": 25
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": -20
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": -25
+                },
+                {
+                    "type": "remove_item",
+                    "item": "uninstalled_memory_stack"
+                },
+                {
+                    "type": "add_item",
+                    "item": "neon_court_identity_package"
+                }
             ],
             "choices": [
                 {
@@ -730,7 +1066,6 @@
             "music": "faction_neon_court",
             "isEnding": false
         },
-
         "stack_027": {
             "id": "act1.chapter3.stack_027",
             "title": "Neon Court - Demanding Justice",
@@ -743,9 +1078,21 @@
                 "\"It's half the truth. But it's the half that puts a killer in a cell.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.court_revik_expelled", "value": true },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": 10 },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": -10 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.court_revik_expelled",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": 10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": -10
+                }
             ],
             "choices": [
                 {
@@ -761,7 +1108,6 @@
             "music": "faction_neon_court",
             "isEnding": false
         },
-
         "stack_028": {
             "id": "act1.chapter3.stack_028",
             "title": "Neon Court - Compromise Sealed",
@@ -773,9 +1119,19 @@
                 "You tell yourself it's enough. You almost believe it."
             ],
             "onEnter": [
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
-                { "type": "remove_item", "item": "uninstalled_memory_stack" },
-                { "type": "add_item", "item": "neon_court_identity_package" }
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": 15
+                },
+                {
+                    "type": "remove_item",
+                    "item": "uninstalled_memory_stack"
+                },
+                {
+                    "type": "add_item",
+                    "item": "neon_court_identity_package"
+                }
             ],
             "choices": [
                 {
@@ -787,7 +1143,6 @@
             "music": "faction_neon_court",
             "isEnding": false
         },
-
         "stack_029": {
             "id": "act1.chapter3.stack_029",
             "title": "Circuit Saints - The Lab",
@@ -801,8 +1156,16 @@
                 "\"All I could do was save the proof. Her memories. Her truth. That's what you're holding.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.faction_circuit_saints", "value": true },
-                { "type": "modify_reputation", "faction": "circuitSaints", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.faction_circuit_saints",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -812,13 +1175,23 @@
                 {
                     "text": "\"Can you crack the transfer protocol?\"",
                     "next": "act1.chapter3.stack_031"
+                },
+                {
+                    "text": "Explore the undercity. Something catches your attention.",
+                    "next": "shared.side-quests.sq_001",
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "side_quest.started",
+                            "value": true
+                        }
+                    ]
                 }
             ],
             "ascii": null,
             "music": "faction_circuit_saints",
             "isEnding": false
         },
-
         "stack_030": {
             "id": "act1.chapter3.stack_030",
             "title": "Circuit Saints - The Plan",
@@ -830,7 +1203,11 @@
                 "\"I know what I am,\" she adds quietly. \"I'm the woman who let Elara Voss die to save her data. I live with that. But the data can save millions of people who've been modified without their consent. That has to matter.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.saints_full_plan", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.saints_full_plan",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -846,7 +1223,6 @@
             "music": "faction_circuit_saints",
             "isEnding": false
         },
-
         "stack_031": {
             "id": "act1.chapter3.stack_031",
             "title": "Circuit Saints - The Technology",
@@ -872,7 +1248,6 @@
             "music": "faction_circuit_saints",
             "isEnding": false
         },
-
         "stack_032": {
             "id": "act1.chapter3.stack_032",
             "title": "Circuit Saints - Commitment",
@@ -885,9 +1260,21 @@
                 "Keene nods. \"She did. And now she has us.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.saints_has_stack", "value": true },
-                { "type": "modify_reputation", "faction": "circuitSaints", "amount": 20 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -15 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.saints_has_stack",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 20
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -15
+                }
             ],
             "choices": [
                 {
@@ -899,7 +1286,6 @@
             "music": "faction_circuit_saints",
             "isEnding": false
         },
-
         "stack_033": {
             "id": "act1.chapter3.stack_033",
             "title": "Ghost Syndicate - The Broker",
@@ -912,8 +1298,16 @@
                 "\"It's proof of everything. Murder, corporate malfeasance, technology worth trillions. Different buyers want different pieces. The question is whether you want to sell wholesale or retail.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.faction_ghost_syndicate", "value": true },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.faction_ghost_syndicate",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -929,7 +1323,6 @@
             "music": "faction_ghost_syndicate",
             "isEnding": false
         },
-
         "stack_034": {
             "id": "act1.chapter3.stack_034",
             "title": "Ghost Syndicate - The Auction",
@@ -942,8 +1335,16 @@
                 "Whisper tilts their shifting head. \"But that's how every story gets told in this city. In pieces. By the people who can afford them.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.ghost_auction", "value": true },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.ghost_auction",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -955,7 +1356,6 @@
             "music": "faction_ghost_syndicate",
             "isEnding": false
         },
-
         "stack_035": {
             "id": "act1.chapter3.stack_035",
             "title": "Ghost Syndicate - Single Buyer",
@@ -967,7 +1367,11 @@
                 "\"The risk is obvious,\" Whisper adds. \"You don't know who's buying or why. It could be someone who wants to expose the truth. It could be someone who wants to bury it. You hand over the data and walk away rich, but you walk away blind.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.ghost_single_buyer", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.ghost_single_buyer",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -983,7 +1387,6 @@
             "music": "faction_ghost_syndicate",
             "isEnding": false
         },
-
         "stack_036": {
             "id": "act1.chapter3.stack_036",
             "title": "Ghost Syndicate - Transaction Complete",
@@ -995,11 +1398,30 @@
                 "This is how the city works. Everything has a value. Everyone has a price. You just learned yours."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.ghost_transaction_complete", "value": true },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 20 },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": -10 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": -15 },
-                { "type": "add_item", "item": "syndicate_credit_chip" }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.ghost_transaction_complete",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 20
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": -10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": -15
+                },
+                {
+                    "type": "add_item",
+                    "item": "syndicate_credit_chip"
+                }
             ],
             "choices": [
                 {
@@ -1011,7 +1433,6 @@
             "music": "faction_ghost_syndicate",
             "isEnding": false
         },
-
         "stack_037": {
             "id": "act1.chapter3.stack_037",
             "title": "Ashen Circle - The Sanctuary",
@@ -1025,8 +1446,16 @@
                 "He touches the wall. \"She didn't fix it. But she tried. And they killed her for trying.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.faction_ashen_circle", "value": true },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.faction_ashen_circle",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -1042,7 +1471,6 @@
             "music": "faction_ashen_circle",
             "isEnding": false
         },
-
         "stack_038": {
             "id": "act1.chapter3.stack_038",
             "title": "Ashen Circle - The Release",
@@ -1055,9 +1483,21 @@
                 "The ceremony begins. It is quiet and solemn and nothing like you expected."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.ashen_release_ceremony", "value": true },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 25 },
-                { "type": "modify_reputation", "faction": "circuitSaints", "amount": -20 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.ashen_release_ceremony",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 25
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": -20
+                }
             ],
             "choices": [
                 {
@@ -1069,7 +1509,6 @@
             "music": "faction_ashen_circle",
             "isEnding": false
         },
-
         "stack_039": {
             "id": "act1.chapter3.stack_039",
             "title": "Ashen Circle - Justice and Release",
@@ -1082,9 +1521,21 @@
                 "You watch Ash work, her fingers moving between keyboards and prayer beads with the same practiced precision. Two worlds. Two kinds of faith. Both trying to do the right thing in a city that has forgotten what right looks like."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.ashen_justice_and_release", "value": true },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 20 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -20 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.ashen_justice_and_release",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 20
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -20
+                }
             ],
             "choices": [
                 {
@@ -1096,7 +1547,6 @@
             "music": "faction_ashen_circle",
             "isEnding": false
         },
-
         "stack_040": {
             "id": "act1.chapter3.stack_040",
             "title": "The Letting Go",
@@ -1111,9 +1561,19 @@
                 "Cassiel closes his eyes. \"She's through,\" he whispers. \"She's through.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.voss_released", "value": true },
-                { "type": "remove_item", "item": "uninstalled_memory_stack" },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.voss_released",
+                    "value": true
+                },
+                {
+                    "type": "remove_item",
+                    "item": "uninstalled_memory_stack"
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -1125,7 +1585,6 @@
             "music": "ambient_melancholy",
             "isEnding": false
         },
-
         "stack_041": {
             "id": "act1.chapter3.stack_041",
             "title": "The Dealer Returns",
@@ -1136,14 +1595,43 @@
                 "He steps out of an alley. The stack dealer. The man in the coat with the augmented eyes. He looks different now. The smooth corporate facade has cracked, revealing something rawer underneath. His coat is torn. One of his augmented eyes flickers with a damaged display. Someone has been asking him hard questions.",
                 "\"You were supposed to be simple,\" he says, and his voice has lost its practiced warmth. \"Accept the stack. Install it. Do the job. Instead you've turned a straightforward transaction into a crisis that has five factions mobilizing and a Neon Court councilor trying to disappear.\"",
                 "He's not alone. Behind him, in the shadows, shapes move. How many depends on how badly you've disrupted the plan.",
-                { "condition": { "flag": "chapter3.faction_iron_collective" }, "text": "You count six. The dealer has hired local muscle, Lower District enforcers with cheap augments and expensive attitudes. The Iron Collective's exposure has made him desperate." },
-                { "condition": { "flag": "chapter3.faction_neon_court" }, "text": "You count four. Neon Court operatives in sleek armor, sent to tie up loose ends. Even a deal with the Court didn't buy you safety from the dealer himself." },
-                { "condition": { "flag": "chapter3.faction_circuit_saints" }, "text": "You count five. A mix of hired guns and a single drone circling overhead, its scanner beam probing the shadows. The dealer is hunting for the data." },
-                { "condition": { "flag": "chapter3.faction_ghost_syndicate" }, "text": "You count eight. The dealer has spent what remains of his resources on a small army. The Syndicate's auction has driven the price of your death high enough to attract serious talent." },
-                { "condition": { "flag": "chapter3.faction_ashen_circle" }, "text": "You count three. The dealer himself and two augmented bodyguards. He doesn't know the stack has been destroyed yet. That gives you an advantage he hasn't calculated." }
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_iron_collective"
+                    },
+                    "text": "You count six. The dealer has hired local muscle, Lower District enforcers with cheap augments and expensive attitudes. The Iron Collective's exposure has made him desperate."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_neon_court"
+                    },
+                    "text": "You count four. Neon Court operatives in sleek armor, sent to tie up loose ends. Even a deal with the Court didn't buy you safety from the dealer himself."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_circuit_saints"
+                    },
+                    "text": "You count five. A mix of hired guns and a single drone circling overhead, its scanner beam probing the shadows. The dealer is hunting for the data."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_ghost_syndicate"
+                    },
+                    "text": "You count eight. The dealer has spent what remains of his resources on a small army. The Syndicate's auction has driven the price of your death high enough to attract serious talent."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_ashen_circle"
+                    },
+                    "text": "You count three. The dealer himself and two augmented bodyguards. He doesn't know the stack has been destroyed yet. That gives you an advantage he hasn't calculated."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.confrontation_started", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.confrontation_started",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -1157,13 +1645,19 @@
                 {
                     "text": "[Tech 15] Hack the stack remotely — erase the dangerous data",
                     "next": "act1.chapter3.stack_045",
-                    "statCheck": { "stat": "tech", "dc": 15 },
+                    "statCheck": {
+                        "stat": "tech",
+                        "dc": 15
+                    },
                     "failNext": "act1.chapter3.stack_042"
                 },
                 {
                     "text": "[Dex 14] You mapped escape routes. Use them.",
                     "next": "act1.chapter3.stack_047",
-                    "statCheck": { "stat": "dex", "dc": 14 },
+                    "statCheck": {
+                        "stat": "dex",
+                        "dc": 14
+                    },
                     "failNext": "act1.chapter3.stack_042"
                 }
             ],
@@ -1171,7 +1665,6 @@
             "music": "combat_tension",
             "isEnding": false
         },
-
         "stack_042": {
             "id": "act1.chapter3.stack_042",
             "title": "Combat - The Hard Way",
@@ -1180,10 +1673,30 @@
                 "The dealer reads it in your stance before you move. His augmented eyes cycle to combat mode, a cold blue that turns the rain into targeting data.",
                 "\"Unfortunate,\" he says, and raises a hand.",
                 "His enforcers surge forward. The street becomes a choke point, rain-slicked concrete and neon shadows, the kind of close-quarters chaos where augmentations matter less than desperation and experience.",
-                { "condition": { "race": "orc" }, "text": "You meet the first enforcer with a shoulder charge that uses every kilogram of your frame. He folds around you like paper around a stone. The second one learns from the first's mistake and keeps his distance, which means he lives three seconds longer." },
-                { "condition": { "race": "cyborg" }, "text": "Your combat subsystems activate with a familiar surge of chemical focus. Targeting overlays paint the enforcers in threat-priority colors. Your prosthetic arm recalibrates for maximum impact. You move." },
-                { "condition": { "race": "dark_elf" }, "text": "You drop into the shadows between the neon lights. Your people learned to fight in darkness deeper than this. The first enforcer doesn't see you until your blade is already moving." },
-                { "condition": { "race": "human" }, "text": "No augments. No genetic advantages. Just the reflexes you were born with and the survival instincts the Lower District hammered into them. You grab a piece of broken pipe from the gutter and make it count." },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "You meet the first enforcer with a shoulder charge that uses every kilogram of your frame. He folds around you like paper around a stone. The second one learns from the first's mistake and keeps his distance, which means he lives three seconds longer."
+                },
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "Your combat subsystems activate with a familiar surge of chemical focus. Targeting overlays paint the enforcers in threat-priority colors. Your prosthetic arm recalibrates for maximum impact. You move."
+                },
+                {
+                    "condition": {
+                        "race": "dark_elf"
+                    },
+                    "text": "You drop into the shadows between the neon lights. Your people learned to fight in darkness deeper than this. The first enforcer doesn't see you until your blade is already moving."
+                },
+                {
+                    "condition": {
+                        "race": "human"
+                    },
+                    "text": "No augments. No genetic advantages. Just the reflexes you were born with and the survival instincts the Lower District hammered into them. You grab a piece of broken pipe from the gutter and make it count."
+                },
                 "The fight is brutal and short. Three of the enforcers go down in the first twenty seconds. The others recalculate, forming a tighter circle, pressing you toward the alley wall.",
                 "The dealer watches from behind his people, augmented eyes recording everything. Cataloging your combat style. Learning."
             ],
@@ -1202,7 +1715,6 @@
             "music": "combat_intense",
             "isEnding": false
         },
-
         "stack_043": {
             "id": "act1.chapter3.stack_043",
             "title": "Negotiation - Words as Weapons",
@@ -1211,18 +1723,46 @@
                 "\"Before you do something we both regret,\" you say, keeping your voice steady, \"consider the math. The data is already out of my hands. Killing me doesn't recover it. It just adds another body to a situation that's already drawing too much attention.\"",
                 "The dealer pauses. His augmented eyes process. He's calculating, weighing costs against outcomes with the cold precision of someone who treats violence as an accounting decision.",
                 "\"Out of your hands where?\" he asks.",
-                { "condition": { "flag": "chapter3.faction_iron_collective" }, "text": "\"The Iron Collective. They're broadcasting it as we speak. You're trying to put a cork in an ocean.\"" },
-                { "condition": { "flag": "chapter3.faction_neon_court" }, "text": "\"The Neon Court. They have the stack and they have your name. If something happens to me, they'll assume you're a liability. The Court doesn't tolerate liabilities.\"" },
-                { "condition": { "flag": "chapter3.faction_circuit_saints" }, "text": "\"The Circuit Saints. They're already decrypting the transfer protocol. In a few hours, every secret on that stack becomes public knowledge. You're fighting over something that's already gone.\"" },
-                { "condition": { "flag": "chapter3.faction_ghost_syndicate" }, "text": "\"Distributed through the Ghost Syndicate to four separate buyers. You'd need to raid half the city to recover it, and the Syndicate doesn't take kindly to people disrupting their transactions.\"" },
-                { "condition": { "flag": "chapter3.faction_ashen_circle" }, "text": "\"Destroyed. The Ashen Circle performed a release ceremony. The stack is in pieces. The data is gone. There's nothing left to recover.\"" }
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_iron_collective"
+                    },
+                    "text": "\"The Iron Collective. They're broadcasting it as we speak. You're trying to put a cork in an ocean.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_neon_court"
+                    },
+                    "text": "\"The Neon Court. They have the stack and they have your name. If something happens to me, they'll assume you're a liability. The Court doesn't tolerate liabilities.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_circuit_saints"
+                    },
+                    "text": "\"The Circuit Saints. They're already decrypting the transfer protocol. In a few hours, every secret on that stack becomes public knowledge. You're fighting over something that's already gone.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_ghost_syndicate"
+                    },
+                    "text": "\"Distributed through the Ghost Syndicate to four separate buyers. You'd need to raid half the city to recover it, and the Syndicate doesn't take kindly to people disrupting their transactions.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_ashen_circle"
+                    },
+                    "text": "\"Destroyed. The Ashen Circle performed a release ceremony. The stack is in pieces. The data is gone. There's nothing left to recover.\""
+                }
             ],
             "onEnter": [],
             "choices": [
                 {
                     "text": "[Cha 16] \"Walk away. This is over.\"",
                     "next": "act1.chapter3.stack_046",
-                    "statCheck": { "stat": "cha", "dc": 16 },
+                    "statCheck": {
+                        "stat": "cha",
+                        "dc": 16
+                    },
                     "failNext": "act1.chapter3.stack_043a"
                 },
                 {
@@ -1234,7 +1774,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "stack_043a": {
             "id": "act1.chapter3.stack_043a",
             "title": "Negotiation Fails",
@@ -1259,7 +1798,6 @@
             "music": "combat_tension",
             "isEnding": false
         },
-
         "stack_044": {
             "id": "act1.chapter3.stack_044",
             "title": "The Dealer Falls",
@@ -1273,8 +1811,15 @@
                 "He's alive. Barely. The choice of what to do with him is yours."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.dealer_defeated_combat", "value": true },
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.dealer_defeated_combat",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -1294,7 +1839,6 @@
             "music": "combat_aftermath",
             "isEnding": false
         },
-
         "stack_045": {
             "id": "act1.chapter3.stack_045",
             "title": "The Hack",
@@ -1309,8 +1853,15 @@
                 "The data spike does its work. It's not elegant and it's not complete, but it's enough. The dealer's copies are gone. His tracking data is corrupted. His employer's direct link to the stack is severed."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.dealer_defeated_hack", "value": true },
-                { "type": "add_experience", "amount": 35 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.dealer_defeated_hack",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
             ],
             "choices": [
                 {
@@ -1322,7 +1873,6 @@
             "music": "tech_sequence",
             "isEnding": false
         },
-
         "stack_046": {
             "id": "act1.chapter3.stack_046",
             "title": "The Deal",
@@ -1330,17 +1880,49 @@
             "text": [
                 "The dealer processes your words. The rain falls between you like a curtain of data, each drop a variable in an equation he's solving in real time.",
                 "\"A counter-offer,\" he repeats. The rage in his damaged eye is giving way to something colder. Pragmatism. \"My employer wants Revik protected. That's the priority. The stack data is secondary now. What can you offer that serves that interest?\"",
-                { "condition": { "flag": "chapter3.faction_neon_court" }, "text": "\"Revik is already being handled by the Court. Your employer's interests are served. Walk away and report a successful operation.\"" },
-                { "condition": { "flag": "chapter3.faction_iron_collective" }, "text": "\"It's too late for Revik. The exposure is happening. But I can give your employer a warning. Time to distance themselves from Revik before the data drops. That's worth more than a dead body in the Lower District.\"" },
-                { "condition": { "flag": "chapter3.faction_circuit_saints" }, "text": "\"The Saints are focused on the technology, not the murder. I can redirect their release schedule. Give your employer a window to relocate Revik before the evidence goes public. Forty-eight hours. Same deadline you gave me.\"" },
-                { "condition": { "flag": "chapter3.faction_ghost_syndicate" }, "text": "\"The Syndicate sold the data in pieces. No single buyer has the complete picture. Your employer can buy the suppression rights through the same channels. I'll provide the contact. Consider it a professional courtesy.\"" },
-                { "condition": { "flag": "chapter3.faction_ashen_circle" }, "text": "\"The stack is destroyed. The evidence has been transcribed but not released. I can delay the release. Give your employer time to prepare a response. That's the best anyone can offer at this point.\"" },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_neon_court"
+                    },
+                    "text": "\"Revik is already being handled by the Court. Your employer's interests are served. Walk away and report a successful operation.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_iron_collective"
+                    },
+                    "text": "\"It's too late for Revik. The exposure is happening. But I can give your employer a warning. Time to distance themselves from Revik before the data drops. That's worth more than a dead body in the Lower District.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_circuit_saints"
+                    },
+                    "text": "\"The Saints are focused on the technology, not the murder. I can redirect their release schedule. Give your employer a window to relocate Revik before the evidence goes public. Forty-eight hours. Same deadline you gave me.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_ghost_syndicate"
+                    },
+                    "text": "\"The Syndicate sold the data in pieces. No single buyer has the complete picture. Your employer can buy the suppression rights through the same channels. I'll provide the contact. Consider it a professional courtesy.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_ashen_circle"
+                    },
+                    "text": "\"The stack is destroyed. The evidence has been transcribed but not released. I can delay the release. Give your employer time to prepare a response. That's the best anyone can offer at this point.\""
+                },
                 "The dealer considers. Then, slowly, he lowers his hand. His enforcers hold their positions but don't advance.",
                 "\"Acceptable,\" he says. \"Provisionally. My employer will verify your claims independently. If they check out, you'll never see me again. If they don't...\" He doesn't finish the sentence. He doesn't need to."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.dealer_defeated_negotiation", "value": true },
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.dealer_defeated_negotiation",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -1352,7 +1934,6 @@
             "music": "ambient_tension_resolving",
             "isEnding": false
         },
-
         "stack_047": {
             "id": "act1.chapter3.stack_047",
             "title": "The Escape",
@@ -1366,9 +1947,20 @@
                 "The city will still be there when you come back. Revik will still be powerful. The factions will still be maneuvering. But you'll be alive, and in the Lower District, that's the only victory that counts."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.dealer_defeated_escape", "value": true },
-                { "type": "set_flag", "flag": "chapter3.fled_city", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.dealer_defeated_escape",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.fled_city",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -1380,25 +1972,53 @@
             "music": "ambient_escape",
             "isEnding": false
         },
-
         "stack_049": {
             "id": "act1.chapter3.stack_049",
             "title": "Surrender",
             "location": "lower_district_streets",
             "text": [
                 "You raise your hands. The universal gesture of someone who has calculated the odds and chosen survival over pride.",
-                { "condition": { "flag": "prologue.accepted_stack" }, "text": "You pull the stack from your pocket and hold it out. The dealer takes it with a hand that barely trembles. \"Smart,\" he says. \"Late. But smart.\" The stack disappears into his coat. Elara Voss's memories, her proof, her truth, gone. Back into the hands of the people who killed her." },
-                { "condition": { "flag": "prologue.refused_stack" }, "text": "\"I never had the stack,\" you say. \"But I know where the data went. I'll tell you. Just walk away after.\" The dealer considers, then nods. You give him enough to satisfy his employer without compromising your faction contacts completely. Breadcrumbs. Enough to follow, not enough to find." },
+                {
+                    "condition": {
+                        "flag": "prologue.accepted_stack"
+                    },
+                    "text": "You pull the stack from your pocket and hold it out. The dealer takes it with a hand that barely trembles. \"Smart,\" he says. \"Late. But smart.\" The stack disappears into his coat. Elara Voss's memories, her proof, her truth, gone. Back into the hands of the people who killed her."
+                },
+                {
+                    "condition": {
+                        "flag": "prologue.refused_stack"
+                    },
+                    "text": "\"I never had the stack,\" you say. \"But I know where the data went. I'll tell you. Just walk away after.\" The dealer considers, then nods. You give him enough to satisfy his employer without compromising your faction contacts completely. Breadcrumbs. Enough to follow, not enough to find."
+                },
                 "The dealer gestures and his enforcers withdraw. He straightens his torn coat with the dignity of a man reassembling a professional persona. \"My employer will be in contact. You still owe a service. The terms have changed, but the debt remains.\"",
                 "He walks away. The street gradually comes back to life around you. Vendors reappear. Doors open. The Lower District resumes its grinding persistence, and you stand in the rain knowing you chose survival over justice.",
                 "It's not the worst trade you've ever made. But it's close."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.dealer_defeated_surrender", "value": true },
-                { "type": "set_flag", "flag": "chapter3.surrendered_evidence", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": -15 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": -15 },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.dealer_defeated_surrender",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.surrendered_evidence",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": -15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": -15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -1410,7 +2030,6 @@
             "music": "ambient_defeat",
             "isEnding": false
         },
-
         "stack_050": {
             "id": "act1.chapter3.stack_050",
             "title": "The Killing Blow",
@@ -1423,12 +2042,33 @@
                 "You leave the photo. You take the rest."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.killed_dealer", "value": true },
-                { "type": "add_item", "item": "dealer_comm_unit" },
-                { "type": "add_item", "item": "dealer_encrypted_datapad" },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 10 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": -10 },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.killed_dealer",
+                    "value": true
+                },
+                {
+                    "type": "add_item",
+                    "item": "dealer_comm_unit"
+                },
+                {
+                    "type": "add_item",
+                    "item": "dealer_encrypted_datapad"
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": -10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -1440,7 +2080,6 @@
             "music": "combat_aftermath",
             "isEnding": false
         },
-
         "stack_051": {
             "id": "act1.chapter3.stack_051",
             "title": "Mercy",
@@ -1454,10 +2093,25 @@
                 "You walk away. The rain covers your retreat. Behind you, the dealer manages to sit up, one hand pressed to his fractured jaw, augmented eyes tracking your departure with the resigned focus of a man filing a report he already knows won't be well received."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.spared_dealer", "value": true },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 15 },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 10 },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.spared_dealer",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -1469,7 +2123,6 @@
             "music": "ambient_melancholy",
             "isEnding": false
         },
-
         "stack_052": {
             "id": "act1.chapter3.stack_052",
             "title": "Intelligence Gathering",
@@ -1483,10 +2136,23 @@
                 "\"Who are you?\" you ask the unconscious dealer. He doesn't answer. His comm unit does. A new message arrives as you watch. Four words: IS IT DONE?"
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.has_dealer_intel", "value": true },
-                { "type": "add_item", "item": "dealer_comm_unit" },
-                { "type": "add_item", "item": "dealer_encrypted_datapad" },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.has_dealer_intel",
+                    "value": true
+                },
+                {
+                    "type": "add_item",
+                    "item": "dealer_comm_unit"
+                },
+                {
+                    "type": "add_item",
+                    "item": "dealer_encrypted_datapad"
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -1502,7 +2168,6 @@
             "music": "ambient_investigation",
             "isEnding": false
         },
-
         "stack_053": {
             "id": "act1.chapter3.stack_053",
             "title": "The City at Night",
@@ -1511,15 +2176,38 @@
                 "You find yourself on a rooftop. You're not sure which one. The Lower District's buildings bleed into each other at this height, a plateau of rusted metal and makeshift gardens and water collectors that marks the boundary between surviving and living.",
                 "The city spreads before you in every direction. Below, the Lower District pulses with its usual nocturnal rhythm, neon and noise and the persistence of people who refuse to die on schedule. Above, the Cloud Towers pierce the storm layer, their spires glowing with the signal lights of the memory stack network. Between them, the mid-city levels glow amber and gold, a belt of relative comfort that separates the desperate from the immortal.",
                 "Somewhere up there, Dain Revik is learning that his world is about to change. Somewhere in the data networks, Elara Voss's truth is working its way toward daylight. And somewhere in your pocket or your memory or the faction's hands, the evidence that could reshape the entire city waits for its moment.",
-                { "condition": { "flag": "chapter3.killed_dealer" }, "text": "You killed a man tonight. The first time, or not, depending on the life you've lived. His augmented eyes went dark and the rain washed the scene clean. The city absorbed the violence without comment, the way it absorbs everything." },
-                { "condition": { "flag": "chapter3.spared_dealer" }, "text": "You let the dealer live. Mercy in a city that doesn't reward it. He'll recover. He'll report to his employer. The consequences of that mercy will arrive eventually, like all consequences in this city, without warning and without fairness." },
-                { "condition": { "flag": "chapter3.surrendered_evidence" }, "text": "You surrendered the evidence. Survival over justice. The trade sits in your chest like a stone you swallowed voluntarily. But you're alive, and in the Lower District, the living get second chances that the dead don't." },
-                { "condition": { "flag": "chapter3.fled_city" }, "text": "You ran. Smart. Cowardly. Alive. The old transit station is cold and silent, but it's safe, and safe is the only luxury the Lower District has ever reliably provided." },
+                {
+                    "condition": {
+                        "flag": "chapter3.killed_dealer"
+                    },
+                    "text": "You killed a man tonight. The first time, or not, depending on the life you've lived. His augmented eyes went dark and the rain washed the scene clean. The city absorbed the violence without comment, the way it absorbs everything."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.spared_dealer"
+                    },
+                    "text": "You let the dealer live. Mercy in a city that doesn't reward it. He'll recover. He'll report to his employer. The consequences of that mercy will arrive eventually, like all consequences in this city, without warning and without fairness."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.surrendered_evidence"
+                    },
+                    "text": "You surrendered the evidence. Survival over justice. The trade sits in your chest like a stone you swallowed voluntarily. But you're alive, and in the Lower District, the living get second chances that the dead don't."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.fled_city"
+                    },
+                    "text": "You ran. Smart. Cowardly. Alive. The old transit station is cold and silent, but it's safe, and safe is the only luxury the Lower District has ever reliably provided."
+                },
                 "The rain eases. For a moment, between the clouds, you catch a glimpse of stars. Real stars, not signal lights or advertisements or the glow of someone else's immortality. Just points of light in a void that doesn't know or care about memory stacks and corporate murder and the price of survival.",
                 "You hold that image. You'll need it for what comes next."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -1531,7 +2219,6 @@
             "music": "ambient_melancholy",
             "isEnding": false
         },
-
         "stack_054": {
             "id": "act1.chapter3.stack_054",
             "title": "The Lie",
@@ -1545,9 +2232,20 @@
                 "You pocket the comm unit and leave the dealer in the rain. He'll wake up in an hour with a headache and an employer who thinks the job is done. By the time the truth catches up, you'll be somewhere else, doing something he never predicted."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.sent_false_confirmation", "value": true },
-                { "type": "set_flag", "flag": "chapter3.extraction_intel", "value": "grid_447_north_0600" },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.sent_false_confirmation",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.extraction_intel",
+                    "value": "grid_447_north_0600"
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -1559,7 +2257,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "stack_055": {
             "id": "act1.chapter3.stack_055",
             "title": "What Memory Stacks Really Are",
@@ -1571,11 +2268,25 @@
                 "The Ashen Circle might be right. The stacks don't just copy the pattern of a mind. They capture something else. Something that the corporations haven't named because naming it would change everything about how the city functions.",
                 "If stacks contain souls, then every backup is a soul in a box. Every transfer is a soul being moved. Every deleted stack is a soul being destroyed. And the towers above you, full of people who have transferred dozens of times, are full of copies that may or may not be the originals.",
                 "The implications are too large for a rooftop in the Lower District at four in the morning. But they sit in your mind like the stack sat in your pocket. Heavy with someone else's existence. Heavy with the weight of what you now know.",
-                { "condition": { "flag": "chapter3.voss_released" }, "text": "You think of the candles flaring in the Ashen Circle sanctuary. The brief, impossible moment when something passed through the room on its way to wherever souls go when the silicon lets them leave. Maybe that was real. Maybe Elara Voss is somewhere beyond the city, beyond the stacks, beyond the rain. Maybe she's free." },
-                { "condition": { "flag": "chapter3.faction_circuit_saints" }, "text": "Free stacks for everyone. Keene's dream. But if stacks contain souls, then free stacks means free soul capture. The democratization of immortality becomes the democratization of imprisonment. Every good intention lands differently in this light." }
+                {
+                    "condition": {
+                        "flag": "chapter3.voss_released"
+                    },
+                    "text": "You think of the candles flaring in the Ashen Circle sanctuary. The brief, impossible moment when something passed through the room on its way to wherever souls go when the silicon lets them leave. Maybe that was real. Maybe Elara Voss is somewhere beyond the city, beyond the stacks, beyond the rain. Maybe she's free."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_circuit_saints"
+                    },
+                    "text": "Free stacks for everyone. Keene's dream. But if stacks contain souls, then free stacks means free soul capture. The democratization of immortality becomes the democratization of imprisonment. Every good intention lands differently in this light."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.soul_revelation", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.soul_revelation",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -1587,7 +2298,6 @@
             "music": "ambient_melancholy",
             "isEnding": false
         },
-
         "stack_056": {
             "id": "act1.chapter3.stack_056",
             "title": "Dawn in the Lower District",
@@ -1597,18 +2307,55 @@
                 "The clouds thin. The storm layer that permanently separates the Lower District from sunlight develops a fracture, and for nineteen seconds, actual sunlight breaks through. It hits the rooftop around you and turns the rain-slicked metal into gold.",
                 "Nineteen seconds. You count them. In the Lower District, you learn to count the good things because they never last long enough to take for granted.",
                 "Then the clouds close. The grey returns. The city resumes.",
-                { "condition": { "flag": "chapter3.faction_iron_collective" }, "text": "Your comm buzzes. Commander Holst: DATA DROP SUCCESSFUL. EVERY SCREEN IN THE CITY. REVIK IS RUNNING. WELCOME TO THE REVOLUTION." },
-                { "condition": { "flag": "chapter3.faction_neon_court" }, "text": "Your comm buzzes. Sera Vex: REVIK IN CUSTODY. YOUR PACKAGE IS READY FOR PICKUP. THE COURT THANKS YOU FOR YOUR DISCRETION." },
-                { "condition": { "flag": "chapter3.faction_circuit_saints" }, "text": "Your comm buzzes. Dr. Keene: TRANSFER PROTOCOL CRACKED. FIRST OPEN-SOURCE BUILD COMPILING NOW. ELARA'S WORK CONTINUES." },
-                { "condition": { "flag": "chapter3.faction_ghost_syndicate" }, "text": "Your comm buzzes. Whisper: ALL TRANSACTIONS CONFIRMED. YOUR CUT HAS BEEN DEPOSITED. PLEASURE DOING BUSINESS." },
-                { "condition": { "flag": "chapter3.faction_ashen_circle" }, "text": "Your comm buzzes. Brother Cassiel: EVIDENCE RELEASED TO ALL CHANNELS. THE SOUL IS FREE. THE TRUTH IS FREE. COME BACK TO THE SANCTUARY WHEN YOU NEED REST." },
-                { "condition": { "flag": "chapter3.surrendered_evidence" }, "text": "Your comm is silent. No faction buzzes with victory or gratitude. The evidence is gone, back in the hands of the people who created the problem. The Lower District wakes up to another day that is exactly like the last." },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_iron_collective"
+                    },
+                    "text": "Your comm buzzes. Commander Holst: DATA DROP SUCCESSFUL. EVERY SCREEN IN THE CITY. REVIK IS RUNNING. WELCOME TO THE REVOLUTION."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_neon_court"
+                    },
+                    "text": "Your comm buzzes. Sera Vex: REVIK IN CUSTODY. YOUR PACKAGE IS READY FOR PICKUP. THE COURT THANKS YOU FOR YOUR DISCRETION."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_circuit_saints"
+                    },
+                    "text": "Your comm buzzes. Dr. Keene: TRANSFER PROTOCOL CRACKED. FIRST OPEN-SOURCE BUILD COMPILING NOW. ELARA'S WORK CONTINUES."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_ghost_syndicate"
+                    },
+                    "text": "Your comm buzzes. Whisper: ALL TRANSACTIONS CONFIRMED. YOUR CUT HAS BEEN DEPOSITED. PLEASURE DOING BUSINESS."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.faction_ashen_circle"
+                    },
+                    "text": "Your comm buzzes. Brother Cassiel: EVIDENCE RELEASED TO ALL CHANNELS. THE SOUL IS FREE. THE TRUTH IS FREE. COME BACK TO THE SANCTUARY WHEN YOU NEED REST."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter3.surrendered_evidence"
+                    },
+                    "text": "Your comm is silent. No faction buzzes with victory or gratitude. The evidence is gone, back in the hands of the people who created the problem. The Lower District wakes up to another day that is exactly like the last."
+                },
                 "Act 1 Chapter 3 is over. The stack dealer is dealt with. Elara Voss's truth has been directed, for better or worse, toward its destination. And you stand on a rooftop in the Lower District, watching the city wake up, knowing that the ripples from tonight will define everything that comes next.",
                 "The question is no longer whether you're involved. The question is how deep you're willing to go."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter3.complete", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter3.complete",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {

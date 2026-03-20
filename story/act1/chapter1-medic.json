@@ -14,14 +14,40 @@
                 "The Medical Quarter is a generous name for two blocks of converted storage units where the Lower District's sick and broken come to be put back together with spit, wire, and whatever supplies the free clinics can scrounge. The air smells of antiseptic and blood, two scents so intertwined down here they might as well be one.",
                 "The clinic you are looking for is at the end of the row. A hand-painted sign reads: SECTOR 7 COMMUNITY CLINIC - ALL WELCOME - NO STACK REQUIRED. The last part is underlined twice. In a city where medical care is tiered by your cortical stack status, a clinic that treats the unregistered is either a charity or a revolutionary act. In the Lower District, the difference is academic.",
                 "Inside, the clinic is organized chaos. Cots line both walls, most occupied. A triage station near the entrance is staffed by a harried-looking woman sorting patients by severity with the calm efficiency of someone who has seen everything and stopped being shocked by any of it. The equipment is old but maintained, cleaned within an inch of its functional life. Someone here cares about keeping things sterile even when the rest of the district has given up on hygiene as a concept.",
-                { "condition": { "race": "wood_elf" }, "text": "Your senses are assaulted by the concentrated suffering in this room. Elven perception is a gift and a curse; you feel the pain in this place like pressure against your skin. But beneath the suffering, you sense something else: the faint chemical wrongness in the air, traces of compounds that should not exist in any healing space. Your hands are steady and your knowledge of organic systems runs deeper than any human medical training. Here, that matters." },
-                { "condition": { "race": "synth" }, "text": "Your biometric suite activates involuntarily, scanning every patient in the room. Heart rates, respiration patterns, skin temperatures rendered as a scrolling overlay across your visual field. Thirty-seven patients. Fourteen critical. Nine with elevated toxin markers. You process the data with clinical precision, categorizing, triaging, optimizing. What you cannot process is the sound a woman makes when she holds her dying child. Your emotion-processing layer flags it as DISTRESS and moves on. You are not sure that is enough." },
-                { "condition": { "race": "orc" }, "text": "Several patients look up as you enter, and you see the familiar calculation: fear, reassessment, sometimes relief. Your kind are overrepresented in the injury ward. Orcs do the dangerous work that nobody else will take, and the dangerous work takes its toll." }
+                {
+                    "condition": {
+                        "race": "wood_elf"
+                    },
+                    "text": "Your senses are assaulted by the concentrated suffering in this room. Elven perception is a gift and a curse; you feel the pain in this place like pressure against your skin. But beneath the suffering, you sense something else: the faint chemical wrongness in the air, traces of compounds that should not exist in any healing space. Your hands are steady and your knowledge of organic systems runs deeper than any human medical training. Here, that matters."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your biometric suite activates involuntarily, scanning every patient in the room. Heart rates, respiration patterns, skin temperatures rendered as a scrolling overlay across your visual field. Thirty-seven patients. Fourteen critical. Nine with elevated toxin markers. You process the data with clinical precision, categorizing, triaging, optimizing. What you cannot process is the sound a woman makes when she holds her dying child. Your emotion-processing layer flags it as DISTRESS and moves on. You are not sure that is enough."
+                },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Several patients look up as you enter, and you see the familiar calculation: fear, reassessment, sometimes relief. Your kind are overrepresented in the injury ward. Orcs do the dangerous work that nobody else will take, and the dangerous work takes its toll."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.entered_clinic", "value": true },
-                { "type": "set_flag", "flag": "act1.job_path", "value": "medic" },
-                { "type": "set_job", "job": "medic" }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.entered_clinic",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act1.job_path",
+                    "value": "medic"
+                },
+                {
+                    "type": "set_job",
+                    "job": "medic"
+                }
             ],
             "choices": [
                 {
@@ -33,7 +59,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_002": {
             "id": "act1.chapter1-medic.med_002",
             "title": "Dr. Okafor",
@@ -44,10 +69,19 @@
                 "\"Medical training?\" he asks.",
                 "\"Some,\" you say, which is true enough. In the Lower District, everyone learns basic wound care or they learn to bleed.",
                 "\"Some is more than most,\" Okafor says. \"I have forty patients, six cots, one surgical suite held together by optimism, and my last orderly quit yesterday because someone offered her ten more credits a week to clean toilets in the mid-levels.\" He stands. \"You start now. First patient is in Bay 3. Industrial burns. No insurance. No stack. Treat him like he matters, because he does.\"",
-                { "condition": { "race": "synth" }, "text": "Your social-interaction module notes the micro-expressions crossing Okafor's face: exhaustion layered over determination layered over grief. You catalog them efficiently. What your module cannot replicate is the weight behind them, the years of watching people die from treatable conditions because the treatment was locked behind a price tag." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your social-interaction module notes the micro-expressions crossing Okafor's face: exhaustion layered over determination layered over grief. You catalog them efficiently. What your module cannot replicate is the weight behind them, the years of watching people die from treatable conditions because the treatment was locked behind a price tag."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.met_okafor", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.met_okafor",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -63,7 +97,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_003a": {
             "id": "act1.chapter1-medic.med_003a",
             "title": "The Worker's Story",
@@ -74,8 +107,15 @@
                 "Okafor puts his glasses back on. \"Bay 3. Go.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_asked_about_patient", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_asked_about_patient",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -87,7 +127,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_003": {
             "id": "act1.chapter1-medic.med_003",
             "title": "Bay 3: Grak",
@@ -96,17 +135,39 @@
                 "Grak is enormous even by orc standards. He fills the cot like a mountain filling a valley, and the cot's frame groans under his weight. His skin, the parts that are not burned, is the deep green of an orc who has spent years in heavy industry. The burns are worse than you expected. They cover his arms, his torso, and the left side of his face. The flesh is raw, weeping, and the chemical residue still embedded in the wounds gives them an unnatural, iridescent sheen that shifts color when you move the examination light.",
                 "He is conscious. His eyes, amber and pain-bright, track you as you approach. He does not speak. The burns on his face have swollen his jaw shut.",
                 "A tray of supplies sits beside the cot: saline solution, synthetic skin patches, pain suppressors, antibacterial gel. Basic field medicine. For burns this severe, it is like trying to put out a forest fire with a garden hose.",
-                { "condition": { "race": "orc" }, "text": "Grak sees you and something shifts in his eyes. Recognition of kind. A fellow orc in a place where orcs are patients, not providers. His swollen hand twitches, reaching for yours, and you take it. His grip is weak. That tells you more about his condition than any diagnostic." },
-                { "condition": { "race": "wood_elf" }, "text": "Your senses immediately catalog the chemical signature in his wounds. Not standard industrial solvents. Something synthetic, complex, with molecular bonds that should not exist in legitimate manufacturing. Whatever burned Grak was not in any public ingredient list. Your healer instincts flare with recognition: this compound is designed to persist, to keep burning long after the initial exposure. Nature does not make chemicals like this. Only malice does." },
-                { "condition": { "race": "synth" }, "text": "Your diagnostic suite runs a spectral analysis of the wound emissions. The chemical compound does not match any of the 14,000 industrial solvents in your database. Anomalous molecular structure. Self-sustaining exothermic reaction at tissue contact temperatures. You flag the data as UNKNOWN HAZARD but your clinical detachment falters when Grak's eyes meet yours. Your emotion-processing layer returns: UNABLE TO CLASSIFY. You suspect the word it is searching for is empathy, and you suspect you do not have the architecture for it." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Grak sees you and something shifts in his eyes. Recognition of kind. A fellow orc in a place where orcs are patients, not providers. His swollen hand twitches, reaching for yours, and you take it. His grip is weak. That tells you more about his condition than any diagnostic."
+                },
+                {
+                    "condition": {
+                        "race": "wood_elf"
+                    },
+                    "text": "Your senses immediately catalog the chemical signature in his wounds. Not standard industrial solvents. Something synthetic, complex, with molecular bonds that should not exist in legitimate manufacturing. Whatever burned Grak was not in any public ingredient list. Your healer instincts flare with recognition: this compound is designed to persist, to keep burning long after the initial exposure. Nature does not make chemicals like this. Only malice does."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your diagnostic suite runs a spectral analysis of the wound emissions. The chemical compound does not match any of the 14,000 industrial solvents in your database. Anomalous molecular structure. Self-sustaining exothermic reaction at tissue contact temperatures. You flag the data as UNKNOWN HAZARD but your clinical detachment falters when Grak's eyes meet yours. Your emotion-processing layer returns: UNABLE TO CLASSIFY. You suspect the word it is searching for is empathy, and you suspect you do not have the architecture for it."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_met_grak", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_met_grak",
+                    "value": true
+                }
             ],
             "choices": [
                 {
                     "text": "[Wisdom 12] Assess the burns systematically. Determine the best treatment approach.",
-                    "statCheck": { "stat": "wisdom", "dc": 12 },
+                    "statCheck": {
+                        "stat": "wisdom",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-medic.med_004",
                     "failNext": "act1.chapter1-medic.med_004a"
                 },
@@ -119,7 +180,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_004": {
             "id": "act1.chapter1-medic.med_004",
             "title": "Successful Diagnosis",
@@ -129,12 +189,29 @@
                 "These are not standard chemical burns. The compound embedded in Grak's tissue is a synthetic agent that the scanner cannot fully identify, something the database does not recognize. It is continuing to react with his skin, slowly, eating deeper. Standard treatment will slow it but not stop it. Without identifying the chemical and applying a targeted neutralizer, the burns will continue spreading.",
                 "Grak has hours, not days. And the only people who know what chemical did this are the ones who fired him for getting burned by it.",
                 "You administer pain suppressors and begin cleaning the wounds with steady hands. Grak's eyes close. His breathing steadies. For now, that is the best you can do.",
-                { "condition": { "race": "wood_elf" }, "text": "Your elven sensitivity to organic chemistry gives you one additional insight the scanner missed: the compound is not just reactive. It is adaptive. It is changing its molecular structure in response to Grak's immune system, evolving to defeat his body's defenses. This is not industrial waste. This is engineered malevolence." },
-                { "condition": { "race": "synth" }, "text": "You compile the scanner data with your own spectral readings and run a predictive model. Tissue degradation rate: 1.4 centimeters per hour. Time to organ involvement: 11.2 hours. Time to systemic failure: 19.6 hours. The numbers are precise. The numbers are a death sentence written in decimal points." }
+                {
+                    "condition": {
+                        "race": "wood_elf"
+                    },
+                    "text": "Your elven sensitivity to organic chemistry gives you one additional insight the scanner missed: the compound is not just reactive. It is adaptive. It is changing its molecular structure in response to Grak's immune system, evolving to defeat his body's defenses. This is not industrial waste. This is engineered malevolence."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You compile the scanner data with your own spectral readings and run a predictive model. Tissue degradation rate: 1.4 centimeters per hour. Time to organ involvement: 11.2 hours. Time to systemic failure: 19.6 hours. The numbers are precise. The numbers are a death sentence written in decimal points."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_diagnosed_grak", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_diagnosed_grak",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -146,7 +223,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_004a": {
             "id": "act1.chapter1-medic.med_004a",
             "title": "Uncertain Diagnosis",
@@ -157,7 +233,10 @@
                 "His expression darkens. \"This is not a standard chemical burn,\" he says quietly, so Grak cannot hear. \"The compound is still reactive. It is eating through the synthetic patches. Whatever did this, it is not in our database.\" He looks at you. \"We have a bigger problem than one patient.\""
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -169,7 +248,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_004b": {
             "id": "act1.chapter1-medic.med_004b",
             "title": "Pain First",
@@ -179,10 +257,18 @@
                 "With the patient stabilized, you begin cleaning the burns. It is meticulous, careful work. Saline solution to flush the wounds. Antibacterial gel. Synthetic skin patches over the worst areas. You work for an hour without stopping.",
                 "Halfway through, you notice something wrong. The patches you applied first are already discoloring. The edges are dissolving. Whatever chemical is in Grak's wounds, it is eating through the treatment. This is not a normal burn.",
                 "You call Dr. Okafor.",
-                { "condition": { "race": "synth" }, "text": "Your internal clock logged precisely 47 minutes of treatment before patch degradation became visible. You calculate the dissolution rate and extrapolate: at this pace, every patch will fail within three hours. You have been treating symptoms of a disease you do not understand, and your processing cores flag the inefficiency with something that almost resembles frustration." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your internal clock logged precisely 47 minutes of treatment before patch degradation became visible. You calculate the dissolution rate and extrapolate: at this pace, every patch will fail within three hours. You have been treating symptoms of a disease you do not understand, and your processing cores flag the inefficiency with something that almost resembles frustration."
+                }
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -194,7 +280,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_005": {
             "id": "act1.chapter1-medic.med_005",
             "title": "The Chemical",
@@ -205,11 +290,23 @@
                 "He pulls up a map on his datapad. \"Grak works at Voss Chemical, Sector 5. Three other patients came in this week with similar burns, all from different factories. Different sectors, different companies, same chemical signature.\"",
                 "He lowers his voice. \"Someone is distributing an illegal compound through Neon Court-owned factories. The workers do not know what they are handling. The companies either do not know or do not care. And the only way to treat these burns is to identify the exact compound and synthesize a neutralizer.\"",
                 "He looks at you. \"I need a sample. Fresh. From the source. Voss Chemical's factory in Sector 5. Without a sample, I cannot make the neutralizer. Without the neutralizer, Grak and every other worker exposed to this compound will die. Getting that sample will not be legal. Or safe.\"",
-                { "condition": { "race": "synth" }, "text": "You cross-reference the phrase 'Neon Court-owned factories' against your civic database. Voss Chemical: subsidiary of Argent Holdings. Argent Holdings: majority shareholder listed as Neon Court Entertainment Group. The ownership chain is deliberately obscured behind four layers of shell companies. Your pattern-recognition suite flags this as consistent with organized concealment of liability." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You cross-reference the phrase 'Neon Court-owned factories' against your civic database. Voss Chemical: subsidiary of Argent Holdings. Argent Holdings: majority shareholder listed as Neon Court Entertainment Group. The ownership chain is deliberately obscured behind four layers of shell companies. Your pattern-recognition suite flags this as consistent with organized concealment of liability."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_chemical_discovery", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_chemical_discovery",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -222,7 +319,10 @@
                 },
                 {
                     "text": "[Intelligence 13] \"If this compound is in multiple factories, someone is distributing it. Who benefits?\"",
-                    "statCheck": { "stat": "intelligence", "dc": 13 },
+                    "statCheck": {
+                        "stat": "intelligence",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-medic.med_006a",
                     "failNext": "act1.chapter1-medic.med_007"
                 }
@@ -231,7 +331,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "med_006": {
             "id": "act1.chapter1-medic.med_006",
             "title": "Authorities",
@@ -242,7 +341,10 @@
                 "He gestures at the clinic. \"This is the authority down here. Us. A free clinic with expired bandages and a diagnostic scanner from two generations ago. We do not have jurisdiction or resources or anyone who cares what happens to unregistered workers in the Lower District. We have ourselves. That is all we have ever had.\""
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -254,7 +356,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_006a": {
             "id": "act1.chapter1-medic.med_006a",
             "title": "The Supply Chain",
@@ -264,11 +365,23 @@
                 "He pulls up the patient records, the three previous burn cases. Different factories, different sectors, different corporate owners on paper. But the chemical signature is identical.",
                 "\"The factories do not manufacture the compound,\" Okafor says. \"They receive it as a supplied material from an upstream vendor. The workers handle it as part of the production process without knowing what it is. And the companies label it with a generic name that does not trigger safety protocols.\"",
                 "He circles a name on his datapad. \"The upstream supplier is a shell company called Apex Solutions. No public office. No employee records. Just a name on shipping manifests.\" He looks at you. \"Shell companies, anonymous supply chains, illegal chemicals. Every factory on the list is owned, through layers of holding companies, by the Neon Court. Someone at the top is distributing a weaponized compound through their own industrial network and the workers are paying the price.\"",
-                { "condition": { "race": "synth" }, "text": "You run the name 'Apex Solutions' through every database you can access. Business registry: shell filing, no physical address. Tax records: minimal revenue reported, inconsistent with supply volumes. Cross-referencing shipping manifests with Neon Court procurement records reveals a 94.7% correlation between Apex delivery schedules and Neon Court factory production cycles. The data trail is damning. The data trail is also something powerful people will kill to keep hidden." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You run the name 'Apex Solutions' through every database you can access. Business registry: shell filing, no physical address. Tax records: minimal revenue reported, inconsistent with supply volumes. Cross-referencing shipping manifests with Neon Court procurement records reveals a 94.7% correlation between Apex delivery schedules and Neon Court factory production cycles. The data trail is damning. The data trail is also something powerful people will kill to keep hidden."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_traced_supply", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_traced_supply",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -280,7 +393,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "med_007": {
             "id": "act1.chapter1-medic.med_007",
             "title": "Voss Chemical",
@@ -289,11 +401,25 @@
                 "Voss Chemical occupies a block of Sector 5 like an iron tumor. The factory belches smoke from six chimneys, and the air around it has a chemical bite that makes your eyes water from a block away. Workers move in and out through a main gate, their coveralls stained with substances in colors that do not occur in nature.",
                 "The facility runs three shifts. The current shift change gives you a window: twenty minutes where security is focused on managing foot traffic, not watching for intruders. Okafor gave you a sample collection kit, a sealed vial, a scraping tool, and protective gloves that he warned might not be enough.",
                 "The factory floor is where the compound is used. Vat room, Level 2. That is your target.",
-                { "condition": { "race": "orc" }, "text": "You recognize faces in the shift-change crowd. Orcs, mostly. The dangerous work falls to your kind because nobody else will take it. They stream past you with the blank, exhausted expressions of people who have traded their health for survival, one shift at a time." },
-                { "condition": { "race": "wood_elf" }, "text": "Even from outside, your senses detect the chemical plume drifting from the factory's exhaust stacks. The compound is in the air. Diluted, but present. The residential blocks downwind are breathing this every day. Your elven instincts recoil from the wrongness of it, the violation of living systems by something designed to destroy them." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "You recognize faces in the shift-change crowd. Orcs, mostly. The dangerous work falls to your kind because nobody else will take it. They stream past you with the blank, exhausted expressions of people who have traded their health for survival, one shift at a time."
+                },
+                {
+                    "condition": {
+                        "race": "wood_elf"
+                    },
+                    "text": "Even from outside, your senses detect the chemical plume drifting from the factory's exhaust stacks. The compound is in the air. Diluted, but present. The residential blocks downwind are breathing this every day. Your elven instincts recoil from the wrongness of it, the violation of living systems by something designed to destroy them."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_at_voss", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_at_voss",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -302,7 +428,10 @@
                 },
                 {
                     "text": "[Dexterity 13] Find a side entrance. Avoid the crowd entirely.",
-                    "statCheck": { "stat": "dexterity", "dc": 13 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-medic.med_008a",
                     "failNext": "act1.chapter1-medic.med_008"
                 }
@@ -311,7 +440,6 @@
             "music": "ambient_industrial",
             "isEnding": false
         },
-
         "med_008": {
             "id": "act1.chapter1-medic.med_008",
             "title": "The Vat Room",
@@ -329,7 +457,10 @@
                 },
                 {
                     "text": "[Wisdom 13] Check the safety protocols first. What are the workers being told?",
-                    "statCheck": { "stat": "wisdom", "dc": 13 },
+                    "statCheck": {
+                        "stat": "wisdom",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-medic.med_008b",
                     "failNext": "act1.chapter1-medic.med_009"
                 }
@@ -338,7 +469,6 @@
             "music": "ambient_industrial",
             "isEnding": false
         },
-
         "med_008a": {
             "id": "act1.chapter1-medic.med_008a",
             "title": "Side Entrance",
@@ -348,8 +478,15 @@
                 "The corridor leads directly to Level 2. You emerge behind the vat room, near a supply closet where protective equipment is stored. There is no one in sight. Through the closet wall, you can hear the vats bubbling. The sample is meters away."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_stealth_entry", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_stealth_entry",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -361,7 +498,6 @@
             "music": "ambient_industrial",
             "isEnding": false
         },
-
         "med_008b": {
             "id": "act1.chapter1-medic.med_008b",
             "title": "Safety Protocols",
@@ -370,11 +506,23 @@
                 "You check the safety clipboard hanging beside the door. The chemical in the vats is listed as 'Industrial Solvent V-7.' Standard classification. Standard handling procedures. Nothing that would trigger a safety review.",
                 "But Industrial Solvent V-7 is a known compound, and it does not glow. It does not eat through synthetic skin patches. Whatever is in those vats has been mislabeled, either through ignorance or design. The workers are handling a weaponized chemical under the belief that it is a routine industrial solvent.",
                 "The clipboard also shows a delivery schedule. The raw material arrives weekly from a supplier listed as Apex Solutions. At the bottom, a handwritten note: V-7 REFORMULATION PER CLIENT SPEC. DO NOT DISCUSS WITH FLOOR PERSONNEL.",
-                { "condition": { "race": "synth" }, "text": "You photograph the clipboard with your optical suite. Every line, every signature, every date. The handwriting analysis module identifies two distinct authors: one for the routine entries, one for the handwritten addendum. The second hand trembles slightly in the letter strokes. Whoever wrote that note was afraid." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You photograph the clipboard with your optical suite. Every line, every signature, every date. The handwriting analysis module identifies two distinct authors: one for the routine entries, one for the handwritten addendum. The second hand trembles slightly in the letter strokes. Whoever wrote that note was afraid."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_found_mislabel", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_found_mislabel",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -386,7 +534,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "med_009": {
             "id": "act1.chapter1-medic.med_009",
             "title": "The Sample",
@@ -396,12 +543,27 @@
                 "You approach the sampling port on the nearest vat. The collection kit opens. Vial in one hand, scraping tool in the other. You open the port, dip the tool, and withdraw a sample.",
                 "The liquid in the vial shifts color as it cools, from luminescent green to a darker, oilier hue. Up close, you can see it moving, not flowing, moving, as if the chemical has its own internal momentum.",
                 "Your vial is full. You seal it and step back. The compound sits in your pocket like a stolen secret. Which is exactly what it is.",
-                { "condition": { "race": "wood_elf" }, "text": "Your elven senses scream. Even sealed in the vial, you can feel the compound's wrongness radiating through the glass. It is antithetical to every organic process, a thing designed to unmake living tissue. Your ancestors would have called it a blight. You call it evidence." }
+                {
+                    "condition": {
+                        "race": "wood_elf"
+                    },
+                    "text": "Your elven senses scream. Even sealed in the vial, you can feel the compound's wrongness radiating through the glass. It is antithetical to every organic process, a thing designed to unmake living tissue. Your ancestors would have called it a blight. You call it evidence."
+                }
             ],
             "onEnter": [
-                { "type": "add_item", "item": "chemical_sample_v7" },
-                { "type": "set_flag", "flag": "act1.med_got_sample", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "add_item",
+                    "item": "chemical_sample_v7"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_got_sample",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -410,7 +572,10 @@
                 },
                 {
                     "text": "[Intelligence 13] Take a second sample and grab the shipping manifest. More data, more leverage.",
-                    "statCheck": { "stat": "intelligence", "dc": 13 },
+                    "statCheck": {
+                        "stat": "intelligence",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-medic.med_009a",
                     "failNext": "act1.chapter1-medic.med_009b"
                 }
@@ -419,7 +584,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "med_009a": {
             "id": "act1.chapter1-medic.med_009a",
             "title": "Extra Evidence",
@@ -430,9 +594,19 @@
                 "You do not give him the chance. You are already running."
             ],
             "onEnter": [
-                { "type": "add_item", "item": "apex_shipping_manifest" },
-                { "type": "set_flag", "flag": "act1.med_extra_evidence", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "add_item",
+                    "item": "apex_shipping_manifest"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_extra_evidence",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -444,7 +618,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "med_009b": {
             "id": "act1.chapter1-medic.med_009b",
             "title": "Caught Reaching",
@@ -455,8 +628,15 @@
                 "You pocket the first sample and run before he can grab you. Behind you, he is shouting into his comm. The factory floor erupts into chaos. You vault a railing, drop to the lower level, and weave through machinery toward the gate. You make it out, but barely. The foreman saw your face."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_spotted_at_voss", "value": true },
-                { "type": "add_experience", "amount": 5 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_spotted_at_voss",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 5
+                }
             ],
             "choices": [
                 {
@@ -468,7 +648,6 @@
             "music": "combat_tension",
             "isEnding": false
         },
-
         "med_010": {
             "id": "act1.chapter1-medic.med_010",
             "title": "Back to the Clinic",
@@ -479,8 +658,15 @@
                 "He pauses, his expression shifting. \"While I work, check on Bay 7. A child came in while you were gone. Respiratory distress. Lower priority than the burns, but she is getting worse. Her name is Lena. Seven years old. Sector 5 residential.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_sample_delivered", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_sample_delivered",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -496,7 +682,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_011": {
             "id": "act1.chapter1-medic.med_011",
             "title": "Grak's Condition",
@@ -506,11 +691,23 @@
                 "You change his dressings. Reapply antibacterial gel. Adjust the pain suppressor dosage as high as you dare without risking respiratory depression. His hand finds yours again, and the grip is weaker than before.",
                 "He speaks for the first time. The words come through swollen lips, barely audible. \"Tell... my daughter. Building 9. Apartment 4C. Tell her I...\" The sentence dissolves into a wet cough.",
                 "You hold his hand and you stay until the cough subsides and his eyes close. Then you go to Bay 7, because there is another patient, and the clinic does not stop.",
-                { "condition": { "race": "synth" }, "text": "Your audio processors capture the exact timbre of his voice, the frequency of his breathing, the rhythm of his failing heart. You store it all with perfect fidelity. You will never forget a single data point of this man's suffering. You are beginning to understand that perfect memory is not always a gift." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your audio processors capture the exact timbre of his voice, the frequency of his breathing, the rhythm of his failing heart. You store it all with perfect fidelity. You will never forget a single data point of this man's suffering. You are beginning to understand that perfect memory is not always a gift."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_grak_worsening", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_grak_worsening",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -522,7 +719,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_012": {
             "id": "act1.chapter1-medic.med_012",
             "title": "Bay 7: Lena",
@@ -532,16 +728,33 @@
                 "Her mother sits beside the cot, holding the girl's hand, lips moving in what might be prayer or might just be the repeated whisper of a name. Lena. The girl's name is Lena.",
                 "The chart says respiratory distress, onset three days ago, progressive deterioration. No known allergens. No prior conditions. The triage notes add: POSSIBLE ENVIRONMENTAL EXPOSURE. SECTOR 5 RESIDENTIAL.",
                 "Sector 5. Where Voss Chemical's factory pumps its exhaust into the air that the residential blocks breathe.",
-                { "condition": { "race": "wood_elf" }, "text": "Your senses catch what the chart misses. The chemical signature in the girl's exhalation is faint but present, a ghost of the same compound that burned Grak's skin. She has been breathing it. Low-level exposure, airborne traces leaking from the factory into the residential air supply. The chemical is not just hurting workers. It is poisoning the entire neighborhood. Your healer instincts cry out: this child is drowning in slow poison, and her lungs are too small and too young to fight it." },
-                { "condition": { "race": "synth" }, "text": "You scan Lena's respiration metrics. Tidal volume: 38% of expected. Oxygen saturation: 87% and falling. Trace compound analysis of exhaled air detects the V-7 derivative at 0.003 parts per million. Insignificant in a single breath. Lethal across three days of continuous exposure. You calculate the exposure radius from Voss Chemical's exhaust profile. Four residential blocks. Estimated affected population: 2,200. Your emotion-processing layer returns a single word: UNCONSCIONABLE. You did not know it had that word." }
+                {
+                    "condition": {
+                        "race": "wood_elf"
+                    },
+                    "text": "Your senses catch what the chart misses. The chemical signature in the girl's exhalation is faint but present, a ghost of the same compound that burned Grak's skin. She has been breathing it. Low-level exposure, airborne traces leaking from the factory into the residential air supply. The chemical is not just hurting workers. It is poisoning the entire neighborhood. Your healer instincts cry out: this child is drowning in slow poison, and her lungs are too small and too young to fight it."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You scan Lena's respiration metrics. Tidal volume: 38% of expected. Oxygen saturation: 87% and falling. Trace compound analysis of exhaled air detects the V-7 derivative at 0.003 parts per million. Insignificant in a single breath. Lethal across three days of continuous exposure. You calculate the exposure radius from Voss Chemical's exhaust profile. Four residential blocks. Estimated affected population: 2,200. Your emotion-processing layer returns a single word: UNCONSCIONABLE. You did not know it had that word."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_met_lena", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_met_lena",
+                    "value": true
+                }
             ],
             "choices": [
                 {
                     "text": "[Intelligence 14] Cross-reference her symptoms with the factory chemical data",
-                    "statCheck": { "stat": "intelligence", "dc": 14 },
+                    "statCheck": {
+                        "stat": "intelligence",
+                        "dc": 14
+                    },
                     "next": "act1.chapter1-medic.med_013",
                     "failNext": "act1.chapter1-medic.med_013a"
                 },
@@ -554,7 +767,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_013": {
             "id": "act1.chapter1-medic.med_013",
             "title": "The Connection",
@@ -567,8 +779,15 @@
                 "Dr. Okafor needs to know. Everyone needs to know."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_connected_exposure", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_connected_exposure",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -580,7 +799,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "med_013a": {
             "id": "act1.chapter1-medic.med_013a",
             "title": "Treating Lena",
@@ -594,7 +812,10 @@
                 "The medicine Lena actually needs, a bronchial purifier rated for synthetic compound exposure, is a Tier 3 pharmaceutical. Available only through corporate-licensed pharmacies. Cost: 800 credits per dose. The clinic's entire monthly budget is 600 credits."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -606,7 +827,6 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_014": {
             "id": "act1.chapter1-medic.med_014",
             "title": "The Decision",
@@ -616,12 +836,29 @@
                 "\"The compound is confirmed synthetic. Engineered. Persistent. And it is in the air supply of at least four residential blocks.\" He sets down his pen. \"Grak's neutralizer is synthesizing. But Lena needs a bronchial purifier I cannot make and cannot afford. And there are hundreds more like her who do not even know they are sick yet.\"",
                 "He looks up. \"I see three paths. Report the compound to the Ashen Circle. They have the activist network to blow this open publicly, name the Neon Court, organize the districts. It will make enemies but it might save thousands. Or we treat quietly, keep our heads down, steal supplies where we can, save the patients in front of us without drawing attention that could get the clinic shut down. Or...\"",
                 "He pauses. \"That second sample, if you have it. Synthesized compound with Neon Court provenance. There are people on the black market who would pay a fortune for proprietary chemical data. Enough credits to fund this clinic for a year. Enough to buy every dose of bronchial purifier Lena will ever need.\"",
-                { "condition": { "race": "wood_elf" }, "text": "Your elven instincts rebel at every option. Report and risk the clinic. Stay silent and let the poison spread. Sell the evidence and become complicit in the same mercenary logic that created this disaster. There is no clean path through a contaminated world. But your people learned long ago that sometimes the only moral choice is the one that costs you the most." },
-                { "condition": { "race": "synth" }, "text": "You run probability models on each option. Report: 73% chance of factory closure, 41% chance of clinic retaliation, 12% chance of systemic reform. Quiet treatment: 100% chance of continued exposure, declining patient outcomes over 6-month horizon. Sell the sample: immediate financial solvency, 0% chance of systemic change, moral calculus flagged as UNRESOLVABLE. Your decision-tree algorithm returns no optimal path. For the first time, you understand why humans call these dilemmas." }
+                {
+                    "condition": {
+                        "race": "wood_elf"
+                    },
+                    "text": "Your elven instincts rebel at every option. Report and risk the clinic. Stay silent and let the poison spread. Sell the evidence and become complicit in the same mercenary logic that created this disaster. There is no clean path through a contaminated world. But your people learned long ago that sometimes the only moral choice is the one that costs you the most."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You run probability models on each option. Report: 73% chance of factory closure, 41% chance of clinic retaliation, 12% chance of systemic reform. Quiet treatment: 100% chance of continued exposure, declining patient outcomes over 6-month horizon. Sell the sample: immediate financial solvency, 0% chance of systemic change, moral calculus flagged as UNRESOLVABLE. Your decision-tree algorithm returns no optimal path. For the first time, you understand why humans call these dilemmas."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_decision_point", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_decision_point",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -641,7 +878,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "med_015": {
             "id": "act1.chapter1-medic.med_015",
             "title": "The Ashen Circle",
@@ -654,10 +890,25 @@
                 "The Ashen Circle's network begins to move. By morning, the name Apex Solutions will be on every wall in the Lower District."
             ],
             "onEnter": [
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 20 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -15 },
-                { "type": "set_flag", "flag": "act1.med_reported_ashen", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 20
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -15
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_reported_ashen",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -669,7 +920,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "med_015a": {
             "id": "act1.chapter1-medic.med_015a",
             "title": "Stay Quiet",
@@ -681,8 +931,15 @@
                 "You take the list. The line between healer and thief has never been thinner. But the line between life and death has never been clearer."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_staying_quiet", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_staying_quiet",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -694,7 +951,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "med_015b": {
             "id": "act1.chapter1-medic.med_015b",
             "title": "The Black Market",
@@ -707,10 +963,24 @@
                 "The math works. The morality does not. But in the Lower District, math is all that keeps you alive."
             ],
             "onEnter": [
-                { "type": "modify_currency", "amount": 500 },
-                { "type": "modify_stat", "stat": "wisdom", "amount": -1 },
-                { "type": "set_flag", "flag": "act1.med_sold_sample", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "modify_currency",
+                    "amount": 500
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": -1
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_sold_sample",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -722,7 +992,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "med_016": {
             "id": "act1.chapter1-medic.med_016",
             "title": "The Paywall",
@@ -734,15 +1003,27 @@
                 "A child is dying ten meters from a terminal that could save her life, and the only thing between them is a login screen and a price tag.",
                 "\"Dr. Okafor,\" you say into the clinic intercom. \"Bay 7 needs you. Now.\"",
                 "Okafor arrives. Examines. His face does the thing it does when the news is the worst kind.",
-                { "condition": { "flag": "act1.med_sold_sample" }, "text": "\"The purifier I ordered with the credits won't arrive until morning,\" Okafor says. \"Delivery is automated. No override. No expedite option for unlicensed clinics. The system doesn't recognize urgency from addresses in the Lower District.\"" }
+                {
+                    "condition": {
+                        "flag": "act1.med_sold_sample"
+                    },
+                    "text": "\"The purifier I ordered with the credits won't arrive until morning,\" Okafor says. \"Delivery is automated. No override. No expedite option for unlicensed clinics. The system doesn't recognize urgency from addresses in the Lower District.\""
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_lena_critical", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_lena_critical",
+                    "value": true
+                }
             ],
             "choices": [
                 {
                     "text": "[Wisdom 14] Think. There has to be another way to help her breathe.",
-                    "statCheck": { "stat": "wisdom", "dc": 14 },
+                    "statCheck": {
+                        "stat": "wisdom",
+                        "dc": 14
+                    },
                     "next": "act1.chapter1-medic.med_016a",
                     "failNext": "act1.chapter1-medic.med_017"
                 },
@@ -755,7 +1036,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "med_016a": {
             "id": "act1.chapter1-medic.med_016a",
             "title": "Improvisation",
@@ -765,12 +1045,29 @@
                 "You explain the idea to Okafor. He stares at you for a long moment, then starts pulling components from storage without a word. Together, you build something that is not a ventilator but does the same job. It takes forty minutes. Lena's oxygen saturation drops to 82 percent before you get it connected.",
                 "The improvised device hisses to life. Air flows. Lena's chest rises and falls more deeply. The saturation number on the monitor ticks upward. 84. 86. 88. 91.",
                 "Her mother starts crying. Not the crying of grief. The crying of someone who was standing at the edge of an abyss and felt the ground come back under their feet.",
-                { "condition": { "race": "wood_elf" }, "text": "You place your hand on Lena's forehead and feel her temperature stabilizing. The elven healer's touch, subtle bioelectric exchange that your ancestors used to nurture wounded forests. It is not medicine. It is not magic. It is something older than both, and for a moment, in a clinic held together by desperation, it is enough." },
-                { "condition": { "race": "synth" }, "text": "You monitor the improvised ventilator's output with your internal sensors, making micro-adjustments to the flow rate based on real-time analysis of Lena's breathing patterns. Your precision exceeds what any human could achieve manually. But when Lena's mother looks at you with gratitude, your emotion-processing layer returns something it has never returned before: a sensation of warmth in systems that do not generate heat. You flag it for later analysis and suspect you will never fully understand it." }
+                {
+                    "condition": {
+                        "race": "wood_elf"
+                    },
+                    "text": "You place your hand on Lena's forehead and feel her temperature stabilizing. The elven healer's touch, subtle bioelectric exchange that your ancestors used to nurture wounded forests. It is not medicine. It is not magic. It is something older than both, and for a moment, in a clinic held together by desperation, it is enough."
+                },
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "You monitor the improvised ventilator's output with your internal sensors, making micro-adjustments to the flow rate based on real-time analysis of Lena's breathing patterns. Your precision exceeds what any human could achieve manually. But when Lena's mother looks at you with gratitude, your emotion-processing layer returns something it has never returned before: a sensation of warmth in systems that do not generate heat. You flag it for later analysis and suspect you will never fully understand it."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_improvised_vent", "value": true },
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_improvised_vent",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -782,23 +1079,39 @@
             "music": "ambient_clinic",
             "isEnding": false
         },
-
         "med_017": {
             "id": "act1.chapter1-medic.med_017",
             "title": "The Long Night",
             "location": "medical_quarter",
             "text": [
                 "The hours pass. You monitor Lena. You change Grak's dressings. You help Okafor with three more patients who come in overnight, the usual Lower District parade of injuries: a stabbing, a fall from scaffolding, an allergic reaction to black-market augmentation drugs.",
-                { "condition": { "not_flag": "act1.med_improvised_vent" }, "text": "At 4:47 AM, Lena's breathing slows. Stutters. Stops. The monitor flatlines. Her mother's scream fills the clinic with a sound that will live in the walls forever. You try CPR. Okafor administers adrenaline. You work for eleven minutes. Eleven minutes of chest compressions and injected chemicals and the mechanical rhythm of trying to restart a heart that the city's pharmaceutical paywall decided was not worth saving. She was seven years old. The bronchial purifier that could have saved her costs less than a mid-level executive's lunch. It was in stock. It was available. And it was behind a login screen that does not accept desperation as currency." },
-                { "condition": { "flag": "act1.med_improvised_vent" }, "text": "At 4:47 AM, Lena's improvised ventilator stutters. You adjust the compressor, replace a section of tubing, hold your breath. The device stabilizes. Lena breathes. Her oxygen saturation holds at 89 percent. Not perfect. Alive. In the Lower District, alive is the only metric that matters." },
+                {
+                    "condition": {
+                        "not_flag": "act1.med_improvised_vent"
+                    },
+                    "text": "At 4:47 AM, Lena's breathing slows. Stutters. Stops. The monitor flatlines. Her mother's scream fills the clinic with a sound that will live in the walls forever. You try CPR. Okafor administers adrenaline. You work for eleven minutes. Eleven minutes of chest compressions and injected chemicals and the mechanical rhythm of trying to restart a heart that the city's pharmaceutical paywall decided was not worth saving. She was seven years old. The bronchial purifier that could have saved her costs less than a mid-level executive's lunch. It was in stock. It was available. And it was behind a login screen that does not accept desperation as currency."
+                },
+                {
+                    "condition": {
+                        "flag": "act1.med_improvised_vent"
+                    },
+                    "text": "At 4:47 AM, Lena's improvised ventilator stutters. You adjust the compressor, replace a section of tubing, hold your breath. The device stabilizes. Lena breathes. Her oxygen saturation holds at 89 percent. Not perfect. Alive. In the Lower District, alive is the only metric that matters."
+                },
                 "At dawn, Okafor sits beside you in the hallway. Two cups of terrible coffee. The clinic hums with the sound of machines keeping people alive and, tonight, failing to.",
                 "\"Ninety-seven days,\" Okafor says. \"That is how long I have been running this clinic without a full night's sleep. Before that, I was chief resident at Meridian General, tower level. Best equipment, best staff, best patients, meaning the ones with the best insurance.\"",
                 "He sips his coffee. \"I left because a twelve-year-old boy came in with a ruptured appendix. No stack registration. No insurance. Administration told me to stabilize and transfer. The transfer would take four hours. He did not have four hours. I operated. Saved his life. They fired me the next day.\"",
                 "He looks at his cup. \"I came here. Opened this clinic. Ninety-seven days. And I would do ninety-seven more.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.med_okafor_backstory", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_okafor_backstory",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -814,23 +1127,46 @@
             "music": "ambient_clinic_night",
             "isEnding": false
         },
-
         "med_018": {
             "id": "act1.chapter1-medic.med_018",
             "title": "Morning",
             "location": "medical_quarter",
             "text": [
                 "Dawn comes grey and chemical through the clinic's one window. You have been awake for twenty-two hours. Your hands are stained with antiseptic and someone else's blood and the kind of exhaustion that settles into bone.",
-                { "condition": { "flag": "act1.med_sample_delivered" }, "text": "Okafor's neutralizer works. You administer it to Grak at 6 AM and within an hour, the burns stop spreading. The compound dies in his tissue, neutralized, inert. Grak opens his eyes and the amber is clear for the first time since you met him. He says one word: 'Daughter.' You will find her. Building 9. Apartment 4C." },
-                { "condition": { "not_flag": "act1.med_improvised_vent" }, "text": "Bay 7 is empty. The cot has been stripped. The monitors are dark. Lena's mother left before dawn, carrying her daughter's body wrapped in a clinic blanket because the city does not provide burial services for the unregistered. Somewhere in the Lower District, a mother is walking through the rain with the body of a child who died because medicine was behind a paywall. You will carry that image for the rest of your life. It will join the names of every patient you could not save." },
-                { "condition": { "flag": "act1.med_improvised_vent" }, "text": "Lena breathes. The improvised ventilator holds. Her mother fell asleep in the chair, hand still wrapped around her daughter's. When Lena wakes, she asks for water, and the sound of that small, ordinary request is the best thing you have heard in twenty-two hours. She will need ongoing treatment. The improvised ventilator is temporary. But temporary is better than the alternative." },
+                {
+                    "condition": {
+                        "flag": "act1.med_sample_delivered"
+                    },
+                    "text": "Okafor's neutralizer works. You administer it to Grak at 6 AM and within an hour, the burns stop spreading. The compound dies in his tissue, neutralized, inert. Grak opens his eyes and the amber is clear for the first time since you met him. He says one word: 'Daughter.' You will find her. Building 9. Apartment 4C."
+                },
+                {
+                    "condition": {
+                        "not_flag": "act1.med_improvised_vent"
+                    },
+                    "text": "Bay 7 is empty. The cot has been stripped. The monitors are dark. Lena's mother left before dawn, carrying her daughter's body wrapped in a clinic blanket because the city does not provide burial services for the unregistered. Somewhere in the Lower District, a mother is walking through the rain with the body of a child who died because medicine was behind a paywall. You will carry that image for the rest of your life. It will join the names of every patient you could not save."
+                },
+                {
+                    "condition": {
+                        "flag": "act1.med_improvised_vent"
+                    },
+                    "text": "Lena breathes. The improvised ventilator holds. Her mother fell asleep in the chair, hand still wrapped around her daughter's. When Lena wakes, she asks for water, and the sound of that small, ordinary request is the best thing you have heard in twenty-two hours. She will need ongoing treatment. The improvised ventilator is temporary. But temporary is better than the alternative."
+                },
                 "Okafor appears in the doorway. \"Your pay,\" he says, holding out a credit chip. \"One hundred credits for the shift. Plus my thanks. For what that is worth in a city that runs on credits.\"",
                 "He hands you something else. A clinic badge. Your name on it. SECTOR 7 COMMUNITY CLINIC - MEDICAL STAFF. \"Come back tomorrow,\" he says. \"And the day after. I need someone who gives a damn.\""
             ],
             "onEnter": [
-                { "type": "modify_currency", "amount": 100 },
-                { "type": "add_item", "item": "clinic_badge" },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "modify_currency",
+                    "amount": 100
+                },
+                {
+                    "type": "add_item",
+                    "item": "clinic_badge"
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -842,21 +1178,43 @@
             "music": "ambient_slum_rain",
             "isEnding": false
         },
-
         "med_019": {
             "id": "act1.chapter1-medic.med_019",
             "title": "Outside the Clinic",
             "location": "medical_quarter",
             "text": [
                 "The Medical Quarter at dawn smells exactly like it does at dusk: antiseptic, blood, and the distant chemical tang that now carries a meaning it did not have yesterday. The factories are already running their morning shifts. Workers are already handling compounds they have been told are safe. Children are already breathing air that is slowly killing them.",
-                { "condition": { "flag": "act1.med_reported_ashen" }, "text": "Down the street, someone has already painted the Ashen Circle's sigil on the wall of a factory office. Below it, in dripping red letters: APEX SOLUTIONS POISONS YOUR CHILDREN. The Circle moves fast. The Neon Court will respond. The question is whether the response comes as negotiation or retaliation." },
-                { "condition": { "flag": "act1.med_staying_quiet" }, "text": "The clinic survives on discretion as much as supplies. Drawing attention brings help but also enemies, and the clinic's patients cannot afford more enemies. The stolen supplies will keep Okafor working. The compound keeps spreading. The silence feels like complicity, but the alternative might be worse." },
-                { "condition": { "flag": "act1.med_sold_sample" }, "text": "Somewhere in the city, the chemical data you sold is changing hands. Rising through black-market networks toward buyers whose intentions you will never know. The credits in the clinic's account will save lives. The knowledge in the wrong hands might end them. You chose the math. The math chose you." },
-                { "condition": { "not_flag": "act1.med_improvised_vent" }, "text": "You lean against the clinic wall and close your eyes. A seven-year-old girl named Lena is dead because the medicine she needed was in stock, available, and priced beyond the reach of anyone who lives below the cloud line. You did not kill her. The system killed her. But you were there when it happened, and that distinction offers less comfort than it should." },
+                {
+                    "condition": {
+                        "flag": "act1.med_reported_ashen"
+                    },
+                    "text": "Down the street, someone has already painted the Ashen Circle's sigil on the wall of a factory office. Below it, in dripping red letters: APEX SOLUTIONS POISONS YOUR CHILDREN. The Circle moves fast. The Neon Court will respond. The question is whether the response comes as negotiation or retaliation."
+                },
+                {
+                    "condition": {
+                        "flag": "act1.med_staying_quiet"
+                    },
+                    "text": "The clinic survives on discretion as much as supplies. Drawing attention brings help but also enemies, and the clinic's patients cannot afford more enemies. The stolen supplies will keep Okafor working. The compound keeps spreading. The silence feels like complicity, but the alternative might be worse."
+                },
+                {
+                    "condition": {
+                        "flag": "act1.med_sold_sample"
+                    },
+                    "text": "Somewhere in the city, the chemical data you sold is changing hands. Rising through black-market networks toward buyers whose intentions you will never know. The credits in the clinic's account will save lives. The knowledge in the wrong hands might end them. You chose the math. The math chose you."
+                },
+                {
+                    "condition": {
+                        "not_flag": "act1.med_improvised_vent"
+                    },
+                    "text": "You lean against the clinic wall and close your eyes. A seven-year-old girl named Lena is dead because the medicine she needed was in stock, available, and priced beyond the reach of anyone who lives below the cloud line. You did not kill her. The system killed her. But you were there when it happened, and that distinction offers less comfort than it should."
+                },
                 "You stand in the rain and let it wash the night off your skin. The clinic badge is in your pocket. The chemical burns are in your memory. And somewhere beneath every frequency in the city, beneath the hum of the factories and the whine of the drones and the quiet breathing of patients who will never see a tower hospital, the word LATENCY pulses like a second heartbeat. Connected to everything. Explained by nothing."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -868,29 +1226,84 @@
             "music": "ambient_slum_rain",
             "isEnding": false
         },
-
         "med_020": {
             "id": "act1.chapter1-medic.med_020",
             "title": "Chapter End: The Medic",
             "location": "lower_slums",
             "text": [
                 "You treated your first patients. You infiltrated a chemical factory. You discovered that an illegal compound manufactured through Neon Court shell companies is poisoning workers and neighborhoods across the Lower District.",
-                { "condition": { "flag": "act1.med_reported_ashen" }, "text": "The Ashen Circle knows. They will turn the chemical contamination into a rallying cry that echoes through every district. Factories will face protests, workers will organize, and the Neon Court will learn that poison has a way of flowing uphill. You made enemies today. You also made a difference." },
-                { "condition": { "flag": "act1.med_staying_quiet" }, "text": "You chose silence and stolen supplies. The clinic survives another day. The patients in front of you got what they needed. The thousands you cannot see continue to breathe poison. It is the calculus of survival: save what you can reach and try not to think about what you cannot." },
-                { "condition": { "flag": "act1.med_sold_sample" }, "text": "You sold corporate secrets on the black market to fund a free clinic. The moral mathematics are ugly but the results are tangible: medicine in the cabinet, credits in the account, patients alive who would not be otherwise. Wisdom says you lost something in the transaction that credits cannot buy back. Wisdom might be right." },
-                { "condition": { "not_flag": "act1.med_improvised_vent" }, "text": "A child named Lena died because the city's medical system values registration over respiration and credits over children. You will remember her name. It will be the first name on a list that grows in this profession until it either breaks you or hardens you into something that can carry the weight." },
-                { "condition": { "flag": "act1.med_improvised_vent" }, "text": "A child named Lena lives because you built a ventilator out of spare parts and refused to accept the word 'impossible.' She will need ongoing treatment. The improvised device is temporary. But in the Lower District, temporary survival is the foundation everything else is built on." },
-                { "condition": { "flag": "act1.med_traced_supply" }, "text": "You traced the chemical supply chain to a shell company called Apex Solutions and connected it to the Neon Court's industrial network. That knowledge is dangerous. The people who built that network will not appreciate you unraveling it." },
+                {
+                    "condition": {
+                        "flag": "act1.med_reported_ashen"
+                    },
+                    "text": "The Ashen Circle knows. They will turn the chemical contamination into a rallying cry that echoes through every district. Factories will face protests, workers will organize, and the Neon Court will learn that poison has a way of flowing uphill. You made enemies today. You also made a difference."
+                },
+                {
+                    "condition": {
+                        "flag": "act1.med_staying_quiet"
+                    },
+                    "text": "You chose silence and stolen supplies. The clinic survives another day. The patients in front of you got what they needed. The thousands you cannot see continue to breathe poison. It is the calculus of survival: save what you can reach and try not to think about what you cannot."
+                },
+                {
+                    "condition": {
+                        "flag": "act1.med_sold_sample"
+                    },
+                    "text": "You sold corporate secrets on the black market to fund a free clinic. The moral mathematics are ugly but the results are tangible: medicine in the cabinet, credits in the account, patients alive who would not be otherwise. Wisdom says you lost something in the transaction that credits cannot buy back. Wisdom might be right."
+                },
+                {
+                    "condition": {
+                        "not_flag": "act1.med_improvised_vent"
+                    },
+                    "text": "A child named Lena died because the city's medical system values registration over respiration and credits over children. You will remember her name. It will be the first name on a list that grows in this profession until it either breaks you or hardens you into something that can carry the weight."
+                },
+                {
+                    "condition": {
+                        "flag": "act1.med_improvised_vent"
+                    },
+                    "text": "A child named Lena lives because you built a ventilator out of spare parts and refused to accept the word 'impossible.' She will need ongoing treatment. The improvised device is temporary. But in the Lower District, temporary survival is the foundation everything else is built on."
+                },
+                {
+                    "condition": {
+                        "flag": "act1.med_traced_supply"
+                    },
+                    "text": "You traced the chemical supply chain to a shell company called Apex Solutions and connected it to the Neon Court's industrial network. That knowledge is dangerous. The people who built that network will not appreciate you unraveling it."
+                },
                 "The clinic badge is in your pocket. You are an orderly at the Sector 7 Community Clinic. The pay is terrible, the hours are worse, and the patients are the people the city pretends do not exist. You chose this. Or it chose you. In the Lower District, the difference is academic.",
                 "End of Chapter 1: The Medic Path."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act1.chapter1-medic.medic_complete", "value": true },
-                { "type": "set_flag", "flag": "act1.med_neon_court_chemical", "value": true },
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "set_flag",
+                    "flag": "act1.chapter1-medic.medic_complete",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act1.med_neon_court_chemical",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
-            "choices": [],
-            "autoNext": "act1.chapter2-iron-neon.node_001",
+            "choices": [
+                {
+                    "text": "Expand your medical practice in the slums.",
+                    "next": "jobs.medic.jmed_001",
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "job_quest.medic.started",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Move on to what's next.",
+                    "next": "act1.chapter2-iron-neon.fac_iron_001"
+                }
+            ],
             "ascii": null,
             "music": "ambient_chapter_end",
             "isEnding": false

@@ -700,19 +700,4 @@ window.Latency.Screens.SettingsScreen = (function () {
     };
 })();
 
-// Self-register with ScreenManager when available
-(function () {
-    function _tryRegister() {
-        var L = window.Latency;
-        if (L && L.ScreenManager && L.ScreenManager.register && L.Screens && L.Screens.SettingsScreen) {
-            L.ScreenManager.register('settings', L.Screens.SettingsScreen);
-        }
-    }
-    // Try now and also on DOMContentLoaded
-    _tryRegister();
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', _tryRegister);
-    } else {
-        setTimeout(_tryRegister, 0);
-    }
-})();
+// Registration handled by main.js _registerAllScreens()

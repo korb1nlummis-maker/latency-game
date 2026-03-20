@@ -16,12 +16,30 @@
                 "The Foundry announces itself long before you see it. The rhythmic clang of hammer on steel. The smell of molten metal and chemical propellant. The bass thrum of generators powerful enough to light a city block. When the building finally looms into view, it's a fortress of corrugated iron and reinforced concrete, bristling with jury-rigged turrets and salvaged searchlights.",
                 "Two guards stand at the main gate, both wearing welded plate armor over industrial work clothes. One holds a pipe wrench the size of your forearm. The other cradles a modified nail gun that looks like it could pin a person to a wall from fifty meters.",
                 "\"Name and business,\" the wrench guard says. She doesn't look up from the battered datapad clipped to her belt.",
-                { "condition": { "race": "orc" }, "text": "The guards look up when they see you. The wrench guard's posture shifts, not to hostility but to something like recognition. Orcs have been the backbone of the Collective's muscle since the beginning. Your kind built this place, bled for it. The nail gun guard gives you a short nod. \"Another one for the cause,\" she murmurs." },
-                { "condition": { "race": "half_giant" }, "text": "Both guards have to tilt their heads back to look at you. The wrench guard lets out a low whistle. \"Haven't seen one of your kind down here in a while. Last half-giant who came through the gates could bench-press a transit car.\" The nail gun guard grins. \"Vasquez is going to love this one.\"" }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "The guards look up when they see you. The wrench guard's posture shifts, not to hostility but to something like recognition. Orcs have been the backbone of the Collective's muscle since the beginning. Your kind built this place, bled for it. The nail gun guard gives you a short nod. \"Another one for the cause,\" she murmurs."
+                },
+                {
+                    "condition": {
+                        "race": "half_giant"
+                    },
+                    "text": "Both guards have to tilt their heads back to look at you. The wrench guard lets out a low whistle. \"Haven't seen one of your kind down here in a while. Last half-giant who came through the gates could bench-press a transit car.\" The nail gun guard grins. \"Vasquez is going to love this one.\""
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.enforcer_path_started", "value": true },
-                { "type": "set_flag", "flag": "chapter1.location", "value": "foundry_gate" }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.enforcer_path_started",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.location",
+                    "value": "foundry_gate"
+                }
             ],
             "choices": [
                 {
@@ -37,7 +55,6 @@
             "music": "ambient_foundry",
             "isEnding": false
         },
-
         "enf_002": {
             "id": "act1.chapter1-enforcer.enf_002",
             "title": "Inside the Foundry",
@@ -47,11 +64,25 @@
                 "The walls are covered in propaganda. Hand-painted murals of workers breaking chains. Stenciled slogans in red paint: NO GODS. NO STACKS. ONLY IRON. A massive banner hangs from the ceiling rafters bearing the Collective's sigil, a clenched fist wrapped in barbed wire.",
                 "The sound is overwhelming. Metal on metal. Boots on concrete. The bark of drill sergeants and the answering shouts of recruits. This is a place that manufactures purpose out of anger.",
                 "A young recruit jogs up to you, breathless. \"You the new intake? Sergeant Vasquez wants you in the back office. Through the yard, past the armory, second door on the left. Don't keep her waiting. She hates that.\"",
-                { "condition": { "race": "orc" }, "text": "Several of the drilling soldiers glance your way as you cross the yard. You see other orcs among them, more than you've seen in one place since the camps. A few raise fists in greeting. This is the closest thing to belonging you've felt since arriving in the city." },
-                { "condition": { "race": "half_giant" }, "text": "You have to duck under support beams as you cross the factory floor. The training equipment here was built for average-sized bodies. But you notice a reinforced heavy bag in one corner, its chain thick as a man's wrist, its surface dented and patched. Someone your size has been here before." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Several of the drilling soldiers glance your way as you cross the yard. You see other orcs among them, more than you've seen in one place since the camps. A few raise fists in greeting. This is the closest thing to belonging you've felt since arriving in the city."
+                },
+                {
+                    "condition": {
+                        "race": "half_giant"
+                    },
+                    "text": "You have to duck under support beams as you cross the factory floor. The training equipment here was built for average-sized bodies. But you notice a reinforced heavy bag in one corner, its chain thick as a man's wrist, its surface dented and patched. Someone your size has been here before."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.location", "value": "foundry_interior" }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.location",
+                    "value": "foundry_interior"
+                }
             ],
             "choices": [
                 {
@@ -67,7 +98,6 @@
             "music": "ambient_foundry",
             "isEnding": false
         },
-
         "enf_002a": {
             "id": "act1.chapter1-enforcer.enf_002a",
             "title": "The Training Yard",
@@ -79,8 +109,15 @@
                 "You've seen enough. Vasquez is waiting."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.observed_training", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.observed_training",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -92,7 +129,6 @@
             "music": "ambient_foundry",
             "isEnding": false
         },
-
         "enf_003": {
             "id": "act1.chapter1-enforcer.enf_003",
             "title": "Sergeant Vasquez",
@@ -102,11 +138,25 @@
                 "Sergeant Vasquez sits behind the desk. She's built like a loader drone, wide shoulders tapering to scarred hands resting flat on the table. Her hair is shaved to stubble on the sides with a short crop on top. A jagged scar runs from her left temple to the corner of her jaw, pulling her mouth into a permanent quarter-sneer. Her eyes are dark, steady, and entirely unimpressed.",
                 "She looks you over the way a butcher examines a carcass. Professionally. Without sentiment.",
                 "\"So. Another body from the job board.\" Her voice is a rasp, like something rusted and sharp. \"Sit down. Don't touch anything.\"",
-                { "condition": { "race": "orc" }, "text": "Vasquez's gaze lingers on you a half-second longer than it would on a human. \"Orc,\" she says. Not a question. \"Good. I've got six orcs on my roster and every one of them is worth three baseline recruits. Don't take that as a compliment. It means I'll expect three times the work.\"" },
-                { "condition": { "race": "half_giant" }, "text": "Vasquez stands to look at you properly, and even standing she barely reaches your chest. She doesn't seem bothered. \"Half-giant. Heard there were a few of you drifting through the Lower District.\" She circles you once, appraising. \"You'll need custom armor. And you won't fit through half the doors in this building. But what you will do is make people reconsider their life choices just by showing up.\"" }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Vasquez's gaze lingers on you a half-second longer than it would on a human. \"Orc,\" she says. Not a question. \"Good. I've got six orcs on my roster and every one of them is worth three baseline recruits. Don't take that as a compliment. It means I'll expect three times the work.\""
+                },
+                {
+                    "condition": {
+                        "race": "half_giant"
+                    },
+                    "text": "Vasquez stands to look at you properly, and even standing she barely reaches your chest. She doesn't seem bothered. \"Half-giant. Heard there were a few of you drifting through the Lower District.\" She circles you once, appraising. \"You'll need custom armor. And you won't fit through half the doors in this building. But what you will do is make people reconsider their life choices just by showing up.\""
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.met_vasquez", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.met_vasquez",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -122,7 +172,6 @@
             "music": "ambient_foundry_office",
             "isEnding": false
         },
-
         "enf_004": {
             "id": "act1.chapter1-enforcer.enf_004",
             "title": "The Test of Patience",
@@ -148,7 +197,6 @@
             "music": "ambient_foundry_office",
             "isEnding": false
         },
-
         "enf_004a": {
             "id": "act1.chapter1-enforcer.enf_004a",
             "title": "Standing Your Ground",
@@ -160,8 +208,15 @@
                 "\"The Collective doesn't hire soldiers. We forge them. First assignment determines if you're iron or slag.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.talked_back_vasquez", "value": true },
-                { "type": "add_experience", "amount": 5 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.talked_back_vasquez",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 5
+                }
             ],
             "choices": [
                 {
@@ -173,7 +228,6 @@
             "music": "ambient_foundry_office",
             "isEnding": false
         },
-
         "enf_005": {
             "id": "act1.chapter1-enforcer.enf_005",
             "title": "The Assignment",
@@ -186,8 +240,16 @@
                 "You take the armband. The fabric is rough, heavy, like everything the Collective makes."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.assignment_received", "value": true },
-                { "type": "set_flag", "flag": "chapter1.has_iron_armband", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.assignment_received",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.has_iron_armband",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -207,7 +269,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "enf_005a": {
             "id": "act1.chapter1-enforcer.enf_005a",
             "title": "Intelligence Briefing",
@@ -218,8 +279,15 @@
                 "\"As for resistance, most squatters fold when they see the Collective's colors. They know what happens if they don't. But there's always somebody who thinks they're brave. That's where you come in.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.asked_intel", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.asked_intel",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -231,7 +299,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "enf_005b": {
             "id": "act1.chapter1-enforcer.enf_005b",
             "title": "Rules of Engagement",
@@ -243,7 +310,11 @@
                 "It's the closest thing to mercy you're likely to hear from Sergeant Vasquez."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.asked_about_force", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.asked_about_force",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -255,7 +326,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "enf_006": {
             "id": "act1.chapter1-enforcer.enf_006",
             "title": "Building 4-17",
@@ -265,12 +335,30 @@
                 "But it isn't abandoned. Light leaks through gaps in the window coverings. You can hear sounds from inside: muffled voices, the scrape of furniture, a child's laugh that cuts off suddenly as if someone covered their mouth. The air smells like cooking. Someone has a camp stove running on the second floor, and the scent of reconstituted protein and synthetic spices drifts out through a cracked window.",
                 "The front entrance is a set of double doors, one hanging from a single hinge. Beside it, someone has drawn a symbol in chalk: a circle with a line through it. Squatter's mark. Means the building is claimed.",
                 "You tie the Collective armband around your bicep and approach.",
-                { "condition": { "race": "orc" }, "text": "You catch movement in a third-floor window. A small face appears, disappears. Then a whisper drifts down, just barely audible: \"Mama, it's an orc.\" The fear in that small voice hits you somewhere you didn't expect." },
-                { "condition": { "race": "half_giant" }, "text": "You have to turn sideways to approach the entrance. The doorframe won't accommodate your shoulders. Somewhere above, you hear a gasp and the rapid patter of small feet retreating from a window. Your size announces you before any armband could." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "You catch movement in a third-floor window. A small face appears, disappears. Then a whisper drifts down, just barely audible: \"Mama, it's an orc.\" The fear in that small voice hits you somewhere you didn't expect."
+                },
+                {
+                    "condition": {
+                        "race": "half_giant"
+                    },
+                    "text": "You have to turn sideways to approach the entrance. The doorframe won't accommodate your shoulders. Somewhere above, you hear a gasp and the rapid patter of small feet retreating from a window. Your size announces you before any armband could."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.location", "value": "building_417" },
-                { "type": "set_flag", "flag": "chapter1.arrived_building", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.location",
+                    "value": "building_417"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.arrived_building",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -286,7 +374,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "enf_006a": {
             "id": "act1.chapter1-enforcer.enf_006a",
             "title": "Scouting the Perimeter",
@@ -298,9 +385,20 @@
                 "You also spot something that makes the hair on the back of your neck stand up. On the fifth floor, partially hidden behind blackout curtains, you see the dull gleam of metal. Not scrap. Something manufactured. Something weapon-shaped."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.scouted_building", "value": true },
-                { "type": "set_flag", "flag": "chapter1.spotted_weapons_fifth", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.scouted_building",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.spotted_weapons_fifth",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -316,7 +414,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "enf_006b": {
             "id": "act1.chapter1-enforcer.enf_006b",
             "title": "The Fifth Floor",
@@ -328,8 +425,15 @@
                 "These aren't squatters. Or rather, not all of them are. Somebody is using the families on the lower floors as cover for an operation. The people sleeping on mats downstairs probably have no idea what's above their heads."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.discovered_cache", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.discovered_cache",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -345,7 +449,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "enf_007": {
             "id": "act1.chapter1-enforcer.enf_007",
             "title": "The Squatters",
@@ -356,11 +459,25 @@
                 "\"No,\" he says. Just that. A flat, exhausted syllable.",
                 "Behind him, a woman appears carrying a child on her hip. The child is maybe three, clinging to her mother with both fists. Further back, you can see more faces. An elderly man in a wheelchair. Two teenagers pressed against the wall. A pregnant woman sitting on a crate.",
                 "\"Please.\" The thin man's voice doesn't waver, but his hands are shaking. \"We have nowhere else to go. The shelters are full. The hostels won't take families. We just need walls and a roof. We're not hurting anyone.\"",
-                { "condition": { "race": "orc" }, "text": "An orc woman emerges from the group behind the thin man. She's holding a toddler with small nubs where tusks will grow. She looks at you, at the armband, and her expression is something between rage and despair. She doesn't say a word. She doesn't have to." },
-                { "condition": { "race": "half_giant" }, "text": "You fill the hallway like a wall of muscle and shadow. The child on the woman's hip starts crying. Not from anything you did. Just from your size, your presence, the sheer physicality of what you represent. The thin man positions himself between you and the families, which is brave and futile and makes this worse." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "An orc woman emerges from the group behind the thin man. She's holding a toddler with small nubs where tusks will grow. She looks at you, at the armband, and her expression is something between rage and despair. She doesn't say a word. She doesn't have to."
+                },
+                {
+                    "condition": {
+                        "race": "half_giant"
+                    },
+                    "text": "You fill the hallway like a wall of muscle and shadow. The child on the woman's hip starts crying. Not from anything you did. Just from your size, your presence, the sheer physicality of what you represent. The thin man positions himself between you and the families, which is brave and futile and makes this worse."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.confronted_squatters", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.confronted_squatters",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -373,7 +490,10 @@
                 },
                 {
                     "text": "[Charisma 12] \"Look, there's a building two blocks south. Structurally sound, no Collective claim. I'll give you time to relocate.\"",
-                    "statCheck": { "stat": "charisma", "dc": 12 },
+                    "statCheck": {
+                        "stat": "charisma",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-enforcer.enf_009",
                     "failNext": "act1.chapter1-enforcer.enf_009a"
                 },
@@ -386,7 +506,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "enf_008a": {
             "id": "act1.chapter1-enforcer.enf_008a",
             "title": "The Eviction - Hard Line",
@@ -400,14 +519,29 @@
                 "The building empties floor by floor. Second, third, fourth. But when you reach the fifth floor, the stairwell door is locked from inside. And you can hear movement. Not the movement of people packing. The movement of people preparing."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.eviction_violent", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 10 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": -10 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.eviction_violent",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": -10
+                }
             ],
             "choices": [
                 {
                     "text": "[Strength 13] Kick the door in",
-                    "statCheck": { "stat": "strength", "dc": 13 },
+                    "statCheck": {
+                        "stat": "strength",
+                        "dc": 13
+                    },
                     "next": "act1.chapter1-enforcer.enf_011",
                     "failNext": "act1.chapter1-enforcer.enf_011a"
                 },
@@ -420,7 +554,6 @@
             "music": "combat_tension",
             "isEnding": false
         },
-
         "enf_008b": {
             "id": "act1.chapter1-enforcer.enf_008b",
             "title": "Asking Questions",
@@ -433,8 +566,15 @@
                 "The thin man thinks. \"Three, maybe four. Hard types. Brought crates in at night. I thought they were scavengers. Told them community rules. They told me to mind my business.\" His expression sours. \"Should have pushed harder. But they didn't bother anyone, and we had enough problems.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.questioned_squatters", "value": true },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.questioned_squatters",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -450,7 +590,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "enf_009": {
             "id": "act1.chapter1-enforcer.enf_009",
             "title": "The Quiet Relocation",
@@ -464,10 +603,25 @@
                 "But the upper floors don't empty. The locked doors on five remain locked. And now you're alone in a building with whoever's behind them."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.eviction_quiet", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": -5 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 10 },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.eviction_quiet",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": -5
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -479,7 +633,6 @@
             "music": "ambient_tension_medium",
             "isEnding": false
         },
-
         "enf_009a": {
             "id": "act1.chapter1-enforcer.enf_009a",
             "title": "Failed Negotiation",
@@ -508,7 +661,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "enf_009b": {
             "id": "act1.chapter1-enforcer.enf_009b",
             "title": "Protective Evacuation",
@@ -523,9 +675,20 @@
                 "He nods once and disappears into the alley. You're alone. The building creaks around you. From above, the sound of movement."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.protective_evacuation", "value": true },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 5 },
-                { "type": "add_experience", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.protective_evacuation",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 5
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -537,7 +700,6 @@
             "music": "combat_tension",
             "isEnding": false
         },
-
         "enf_010": {
             "id": "act1.chapter1-enforcer.enf_010",
             "title": "The Lie",
@@ -551,11 +713,30 @@
                 "You still have the fifth floor to deal with. Whatever's up there, it isn't families. And it isn't going to go quietly."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.betrayed_iron_early", "value": true },
-                { "type": "set_flag", "flag": "chapter1.lied_to_vasquez", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": -15 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 15 },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.betrayed_iron_early",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.lied_to_vasquez",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": -15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -567,7 +748,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "enf_011": {
             "id": "act1.chapter1-enforcer.enf_011",
             "title": "Fifth Floor Confrontation",
@@ -577,22 +757,42 @@
                 "You try the handle. Locked. From inside, the voices go silent.",
                 "Then the door explodes outward.",
                 "A man comes through fast, built like a demolition frame, with a shaved head and military-grade augmentations running up both arms. Chrome pistons where his elbows should be. His fist catches the edge of the door and tears it off the remaining hinge, swinging it at you like a battering ram.",
-                { "condition": { "race": "orc" }, "text": "Your combat instincts kick in before your conscious mind catches up. You drop your shoulder and take the door on the armored ridge of your brow, the impact ringing through your skull but deflecting the worst of it. Orc bone density has its advantages." },
-                { "condition": { "race": "half_giant" }, "text": "The door bounces off your chest like it hit a concrete pillar. The augmented man's eyes widen. He's used to being the biggest thing in the room. Not today." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Your combat instincts kick in before your conscious mind catches up. You drop your shoulder and take the door on the armored ridge of your brow, the impact ringing through your skull but deflecting the worst of it. Orc bone density has its advantages."
+                },
+                {
+                    "condition": {
+                        "race": "half_giant"
+                    },
+                    "text": "The door bounces off your chest like it hit a concrete pillar. The augmented man's eyes widen. He's used to being the biggest thing in the room. Not today."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.combat_started", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.combat_started",
+                    "value": true
+                }
             ],
             "choices": [
                 {
                     "text": "[Strength 12] Meet his charge head-on",
-                    "statCheck": { "stat": "strength", "dc": 12 },
+                    "statCheck": {
+                        "stat": "strength",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-enforcer.enf_012",
                     "failNext": "act1.chapter1-enforcer.enf_012a"
                 },
                 {
                     "text": "[Dexterity 12] Dodge sideways and let momentum carry him past",
-                    "statCheck": { "stat": "dexterity", "dc": 12 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-enforcer.enf_012b",
                     "failNext": "act1.chapter1-enforcer.enf_012a"
                 }
@@ -601,7 +801,6 @@
             "music": "combat_intense",
             "isEnding": false
         },
-
         "enf_011a": {
             "id": "act1.chapter1-enforcer.enf_011a",
             "title": "Standoff at the Door",
@@ -612,18 +811,28 @@
                 "The door explodes outward. A man comes through fast, augmented arms swinging a length of rebar like a mace. He's big, shaved head, chrome pistons in his arms. Behind him, you catch a glimpse of two more figures scrambling to grab weapons from the crates."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.combat_started", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.combat_started",
+                    "value": true
+                }
             ],
             "choices": [
                 {
                     "text": "[Strength 12] Block the rebar and counter",
-                    "statCheck": { "stat": "strength", "dc": 12 },
+                    "statCheck": {
+                        "stat": "strength",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-enforcer.enf_012",
                     "failNext": "act1.chapter1-enforcer.enf_012a"
                 },
                 {
                     "text": "[Dexterity 12] Duck under the swing",
-                    "statCheck": { "stat": "dexterity", "dc": 12 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 12
+                    },
                     "next": "act1.chapter1-enforcer.enf_012b",
                     "failNext": "act1.chapter1-enforcer.enf_012a"
                 }
@@ -632,7 +841,6 @@
             "music": "combat_intense",
             "isEnding": false
         },
-
         "enf_012": {
             "id": "act1.chapter1-enforcer.enf_012",
             "title": "Brute Force",
@@ -646,7 +854,10 @@
                 "The augmented man looks at his fallen comrades, then at you. He spits blood and puts his fists up. But his eyes say he knows how this ends."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -662,7 +873,6 @@
             "music": "combat_intense",
             "isEnding": false
         },
-
         "enf_012a": {
             "id": "act1.chapter1-enforcer.enf_012a",
             "title": "Taking a Hit",
@@ -676,8 +886,15 @@
                 "The fight is ugly and desperate. The woman takes a shot that grazes your shoulder. You throw a crate lid at the baton man, buying seconds, then close distance and put him down with a combination that leaves your knuckles raw. The augmented man comes back for more and you give it to him, blow for blow, until he finally drops."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 20 },
-                { "type": "set_flag", "flag": "chapter1.took_damage_combat", "value": true }
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.took_damage_combat",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -689,7 +906,6 @@
             "music": "combat_intense",
             "isEnding": false
         },
-
         "enf_012b": {
             "id": "act1.chapter1-enforcer.enf_012b",
             "title": "Speed and Precision",
@@ -702,7 +918,10 @@
                 "One arm down. He looks at the dead limb hanging at his side, then at you. The rage fades. Calculation replaces it."
             ],
             "onEnter": [
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -718,7 +937,6 @@
             "music": "combat_intense",
             "isEnding": false
         },
-
         "enf_013": {
             "id": "act1.chapter1-enforcer.enf_013",
             "title": "Aftermath - Standing Down",
@@ -732,8 +950,16 @@
                 "The augmented man smiles with bloody teeth. \"Nobody you want to know. And nobody who'll be happy about this.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.combat_won", "value": true },
-                { "type": "set_flag", "flag": "chapter1.showed_mercy_combat", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.combat_won",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.showed_mercy_combat",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -749,7 +975,6 @@
             "music": "combat_aftermath",
             "isEnding": false
         },
-
         "enf_013a": {
             "id": "act1.chapter1-enforcer.enf_013a",
             "title": "Aftermath - No Quarter",
@@ -760,9 +985,21 @@
                 "You grab a handful of documents from the map board and stuff them in your jacket. Evidence. Proof that this wasn't just a squatter clearance. Vasquez will want to see this."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.combat_won", "value": true },
-                { "type": "set_flag", "flag": "chapter1.brutal_finish", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 5 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.combat_won",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.brutal_finish",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 5
+                }
             ],
             "choices": [
                 {
@@ -774,7 +1011,6 @@
             "music": "combat_aftermath",
             "isEnding": false
         },
-
         "enf_014": {
             "id": "act1.chapter1-enforcer.enf_014",
             "title": "Evidence",
@@ -786,8 +1022,15 @@
                 "The walk back to the Foundry takes twenty minutes. Long enough to decide how much of the truth you're going to tell."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.gathered_evidence", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.gathered_evidence",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -799,7 +1042,6 @@
             "music": "ambient_tension_low",
             "isEnding": false
         },
-
         "enf_015": {
             "id": "act1.chapter1-enforcer.enf_015",
             "title": "The Report",
@@ -811,13 +1053,37 @@
                 "\"Where did you find this?\" Her voice is quiet. The dangerous kind of quiet.",
                 "\"Fifth floor. Three operatives running a weapons cache. Used the squatter families on the lower floors as cover. The cache included stolen Collective gear and maps of our supply routes.\"",
                 "Vasquez looks up from the documents. \"Our supply routes.\" She notices the pronoun. You notice that you used it without thinking.",
-                { "condition": { "flag": "chapter1.eviction_violent" }, "text": "\"And the families?\" she asks. \"Cleared out,\" you say. She nods. \"Good. Clean building, hostile operatives neutralized, and intelligence recovered. That's three wins on a one-win assignment.\"" },
-                { "condition": { "flag": "chapter1.eviction_quiet" }, "text": "\"And the squatters?\" she asks. You meet her gaze. \"Relocated. Quietly. Building is clear.\" She studies you for a long moment. \"Relocated,\" she repeats, tasting the word. \"Softer than I would have done it. But the building's empty and the cache is ours. I'll take results over method.\"" },
-                { "condition": { "flag": "chapter1.lied_to_vasquez" }, "text": "\"And the squatters?\" she asks. \"Cleared out,\" you say. The lie comes easier than you expected. Vasquez nods, satisfied. \"Clean work.\" The words feel like a blade between your ribs. You chose a side. Not the one she thinks you chose." },
-                { "condition": { "flag": "chapter1.protective_evacuation" }, "text": "\"The squatters?\" she asks. \"Evacuated them before I engaged the fifth floor. Didn't want civilians in a crossfire.\" Vasquez considers this. \"Tactical thinking. I'll allow it. The building is empty?\" \"Empty.\" She nods. \"Good enough.\"" }
+                {
+                    "condition": {
+                        "flag": "chapter1.eviction_violent"
+                    },
+                    "text": "\"And the families?\" she asks. \"Cleared out,\" you say. She nods. \"Good. Clean building, hostile operatives neutralized, and intelligence recovered. That's three wins on a one-win assignment.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter1.eviction_quiet"
+                    },
+                    "text": "\"And the squatters?\" she asks. You meet her gaze. \"Relocated. Quietly. Building is clear.\" She studies you for a long moment. \"Relocated,\" she repeats, tasting the word. \"Softer than I would have done it. But the building's empty and the cache is ours. I'll take results over method.\""
+                },
+                {
+                    "condition": {
+                        "flag": "chapter1.lied_to_vasquez"
+                    },
+                    "text": "\"And the squatters?\" she asks. \"Cleared out,\" you say. The lie comes easier than you expected. Vasquez nods, satisfied. \"Clean work.\" The words feel like a blade between your ribs. You chose a side. Not the one she thinks you chose."
+                },
+                {
+                    "condition": {
+                        "flag": "chapter1.protective_evacuation"
+                    },
+                    "text": "\"The squatters?\" she asks. \"Evacuated them before I engaged the fifth floor. Didn't want civilians in a crossfire.\" Vasquez considers this. \"Tactical thinking. I'll allow it. The building is empty?\" \"Empty.\" She nods. \"Good enough.\""
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.reported_to_vasquez", "value": true }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.reported_to_vasquez",
+                    "value": true
+                }
             ],
             "choices": [
                 {
@@ -829,7 +1095,6 @@
             "music": "ambient_foundry_office",
             "isEnding": false
         },
-
         "enf_016": {
             "id": "act1.chapter1-enforcer.enf_016",
             "title": "Forged in Iron",
@@ -840,22 +1105,70 @@
                 "She opens a drawer and pulls out a folded piece of red cloth. She sets it on the desk between you. It's an Enforcer's patch, the Iron Collective's fist sigil over crossed hammers, with a single black stripe beneath it. Rank: Thug. The lowest rung. But it's a rung.",
                 "\"Welcome to the Iron Collective, Enforcer.\" Vasquez's voice is formal. Ritual. She's said these words before. \"You work for me now. You follow orders, you protect your comrades, and you fight for every worker in this city who can't fight for themselves. The pay is ten credits a cycle. The work is hard, ugly, and thankless. And if you betray the Collective, I will find you personally.\"",
                 "She extends a hand across the desk. Her grip, when you take it, could crush stone.",
-                { "condition": { "flag": "chapter1.betrayed_iron_early" }, "text": "Her hand closes around yours like a vice. You wonder if she can feel the deception in your pulse. If the calluses on her palm can read the lie in yours. She can't. Not yet. But the secret sits in your chest like a live grenade, and you know it's only a matter of time before someone pulls the pin." },
-                { "condition": { "race": "orc" }, "text": "\"One more thing,\" Vasquez says as she releases your hand. \"The Collective has always had orcs among its best. Don't let that reputation down. You people built this movement with blood and iron before anyone else believed in it.\"" },
-                { "condition": { "race": "half_giant" }, "text": "\"One more thing,\" Vasquez says, looking up at you. Way up. \"I'm going to need you to stop hitting the doorframes. We just reinforced those. And report to Hammer for custom armor. I'm not sending you out there in clothes that fit like a tent on a mountain.\"" }
+                {
+                    "condition": {
+                        "flag": "chapter1.betrayed_iron_early"
+                    },
+                    "text": "Her hand closes around yours like a vice. You wonder if she can feel the deception in your pulse. If the calluses on her palm can read the lie in yours. She can't. Not yet. But the secret sits in your chest like a live grenade, and you know it's only a matter of time before someone pulls the pin."
+                },
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "\"One more thing,\" Vasquez says as she releases your hand. \"The Collective has always had orcs among its best. Don't let that reputation down. You people built this movement with blood and iron before anyone else believed in it.\""
+                },
+                {
+                    "condition": {
+                        "race": "half_giant"
+                    },
+                    "text": "\"One more thing,\" Vasquez says, looking up at you. Way up. \"I'm going to need you to stop hitting the doorframes. We just reinforced those. And report to Hammer for custom armor. I'm not sending you out there in clothes that fit like a tent on a mountain.\""
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "chapter1.enforcer_complete", "value": true },
-                { "type": "set_flag", "flag": "player.job", "value": "enforcer" },
-                { "type": "set_flag", "flag": "player.job_rank", "value": 0 },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 15 },
-                { "type": "add_experience", "amount": 50 },
-                { "type": "modify_currency", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "chapter1.enforcer_complete",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "player.job",
+                    "value": "enforcer"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "player.job_rank",
+                    "value": 0
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
+                    "text": "Take on deeper enforcer work before moving on.",
+                    "next": "jobs.enforcer.enf_001",
+                    "effects": [
+                        {
+                            "type": "flag",
+                            "flag": "job_quest.enforcer.started",
+                            "value": true
+                        }
+                    ]
+                },
+                {
                     "text": "Take the patch and head out. Chapter 2 awaits.",
-                    "next": "act1.chapter2-iron-neon.node_001"
+                    "next": "act1.chapter2-iron-neon.fac_iron_001"
                 }
             ],
             "ascii": null,

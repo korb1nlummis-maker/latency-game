@@ -77,9 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Register now, and again after a tick to catch any late-loaded screens
+    // Register all screens once
     _registerAllScreens();
-    setTimeout(_registerAllScreens, 0);
 
     // ── 5. State Machine ──
     if (L.StateMachine && L.StateMachine.init) {
