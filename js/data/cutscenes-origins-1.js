@@ -19,7 +19,7 @@ window.Latency.CutsceneData['origin_human'] = {
     music: 1,
     slides: [
         {
-            art: 'assets/ascii/races/human.txt',
+            art: 'assets/images/races/human.jpg',
             text: 'You are born without fanfare in a lower-district clinic that smells of recycled air and antiseptic. No one sends flowers. The nurse logs your weight, your blood type, your species — human — and moves on to the next delivery. You are unremarkable from your very first breath.',
             mood: 'dark',
             duration: 0
@@ -60,7 +60,8 @@ window.Latency.CutsceneData['origin_human'] = {
             duration: 0
         },
         {
-            art: 'assets/ascii/cutscenes/city-skyline-night.txt',
+            art: 'assets/images/scenes/city-skyline-night.jpg',
+            artAnim: 'alt',
             text: 'You stand at the threshold of your housing block as the district lights cycle to their pale imitation of dawn. The megacity stretches above you, tier upon tier of steel and light and indifference. Millions of souls stacked like cargo, and somewhere in that vertical maze, there is a version of your life that is not this.',
             mood: 'neutral',
             duration: 0
@@ -85,7 +86,7 @@ window.Latency.CutsceneData['origin_orc'] = {
     music: 3,
     slides: [
         {
-            art: 'assets/ascii/races/orc.txt',
+            art: 'assets/images/races/orc.jpg',
             text: 'The foundry heat hits you before you are old enough to remember your own name. Your mother works the smelting line at Helios Foundry Six, pouring molten slag sixteen hours a day with hands that have long since lost their fingerprints. She carries you strapped to her back because there is no childcare for orc labor crews. The foremen do not care. One more body near the furnace means nothing to them.',
             mood: 'red',
             duration: 0
@@ -136,6 +137,7 @@ window.Latency.CutsceneData['origin_orc'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/slum-street.jpg',
             text: 'You walk out through the main gate with the foreman\'s blood drying on your knuckles and your mother\'s worker number burned into your memory. Behind you, the foundry sirens begin to wail. Ahead of you, the megacity spreads like an open wound. You are done being raw material. Whatever comes next, it will be on your terms, paid for in someone else\'s blood.',
             mood: 'determination',
             duration: 0
@@ -155,7 +157,7 @@ window.Latency.CutsceneData['origin_wood_elf'] = {
     music: 0,
     slides: [
         {
-            art: 'assets/ascii/races/wood_elf.txt',
+            art: 'assets/images/races/wood_elf.jpg',
             text: 'You grow up in the green silence of Sector 41, where the megacity\'s concrete bones have cracked open and the earth has pushed through. Vines thick as cable conduits strangle the rusted scaffolding. Ferns unfurl from shattered windows thirty stories high. Your mother teaches you to read the forest\'s language — the way moss grows toward clean water, the way birdsong changes when predators are near. This is home. This is the only world that matters.',
             mood: 'peaceful',
             duration: 0
@@ -181,6 +183,7 @@ window.Latency.CutsceneData['origin_wood_elf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/wasteland.jpg',
             text: 'The clearing begins at the outer ring. You hear it before you see it — a sound like bones breaking, amplified a thousandfold, as the industrial cutters chew through trunks that took thirty years to grow. The canopy shudders. Birds explode from the treetops in panicked clouds. The air fills with the smell of sap and sawdust and diesel exhaust, and something deep in your chest begins to scream without making a sound.',
             mood: 'dark',
             duration: 0
@@ -225,7 +228,7 @@ window.Latency.CutsceneData['origin_dark_elf'] = {
     music: 2,
     slides: [
         {
-            art: 'assets/ascii/races/dark_elf.txt',
+            art: 'assets/images/races/dark_elf.jpg',
             text: 'You are born underground, in a chamber carved from bedrock so deep that the concept of sky is an abstraction you will not encounter for years. The tunnel air is cool and still and tastes of limestone. Your mother holds you for exactly one hour — the traditional bonding period — then hands you to the crèche keeper. Attachment is a vulnerability. This is the first lesson, taught before you can understand words.',
             mood: 'dark',
             duration: 0
@@ -276,6 +279,7 @@ window.Latency.CutsceneData['origin_dark_elf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/underground-market.jpg',
             text: 'You emerge from the tunnel mouth into the sodium-lit sprawl of the lower districts. The surface world is loud and bright and full of people who wear their intentions on their faces like open books. Somewhere up here is the other student in Yvenne\'s locket. Somewhere up here is a debt that needs settling. You pull your hood forward, adjust the blade at your hip, and step into the crowd. The tunnels made you. The surface will learn what that means.',
             mood: 'determination',
             duration: 0
@@ -295,7 +299,7 @@ window.Latency.CutsceneData['origin_dwarf'] = {
     music: 1,
     slides: [
         {
-            art: 'assets/ascii/races/dwarf.txt',
+            art: 'assets/images/races/dwarf.jpg',
             text: 'Your grandmother\'s hands are your first memory. Broad, scarred, permanently blackened around the nails from decades of machine grease that no soap can fully remove. She holds a wrench the way a surgeon holds a scalpel — with absolute precision and a steadiness that belies her seventy years. She is showing you how to calibrate a pressure valve on a water reclamation unit, and her voice is patient and warm and certain. This is the work, she says. This is what we do.',
             mood: 'warm',
             duration: 0
@@ -341,6 +345,7 @@ window.Latency.CutsceneData['origin_dwarf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/stack-tower.jpg',
             text: 'On the way back to Deephold, soaked and exhausted, you pass through a market district. A wallscreen is playing a news segment about infrastructure investment. A human executive in a tailored suit is explaining how his company\'s innovative engineering solutions keep the city running. Behind him, you can see the maker\'s mark on the junction box over his shoulder. It belongs to your grandmother. You stop and stare at the screen until it cycles to the next story.',
             mood: 'melancholy',
             duration: 0

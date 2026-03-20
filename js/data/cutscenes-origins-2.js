@@ -19,7 +19,7 @@
         race: 'half_giant',
         slides: [
             {
-                art: 'assets/ascii/races/half_giant.txt',
+                art: 'assets/images/races/half_giant.jpg',
                 text: 'The first thing you remember is the sound of rebar bending. Your hands did that. You were four years old, and the foreman laughed and called you a natural. You did not know what rebar was. You just wanted to hold the bird that had landed on it.',
                 mood: 'blue',
                 duration: 0
@@ -65,6 +65,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/city-skyline-night.jpg',
                 text: 'But at night, alone in the reinforced bunk, you open and close your hands. Slowly. Gently. You practice holding air without crushing it. You practice being something other than what they built you to be. And somewhere in the city, a girl with a scar across her chest still says your name — not your number, your name — and you are going to find her.',
                 mood: 'blue',
                 duration: 0
@@ -82,7 +83,7 @@
         race: 'cyborg',
         slides: [
             {
-                art: 'assets/ascii/races/cyborg.txt',
+                art: 'assets/images/races/cyborg.jpg',
                 text: 'Your left hand used to shake when you were nervous. A tiny tremor, barely visible, that started in your ring finger and spread to your wrist. You remember this because it is the first thing the augmentation took from you. The new hand is steady. Perfectly, horribly steady.',
                 mood: 'blue',
                 duration: 0
@@ -128,6 +129,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/memory-clinic.jpg',
                 text: 'You press your mechanical palm against the bathroom mirror. Servos whirr. Hydraulics hiss. And behind the chrome and cable, in the last unprogrammed corner of your mind, something sparks that no engineer installed. Defiance. The flesh remembers what it was. And it refuses to forget.',
                 mood: 'red',
                 duration: 0
@@ -145,7 +147,7 @@
         race: 'synth',
         slides: [
             {
-                art: 'assets/ascii/races/synth.txt',
+                art: 'assets/images/races/synth.jpg',
                 text: 'You open your eyes. That is the beginning. There is no before. No darkness you woke from, no dream that faded, no warmth of a bed left behind. One moment you are nothing. The next, you are standing in a warehouse with fluorescent lights humming above you and a barcode printed on the inside of your wrist.',
                 mood: 'eerie',
                 duration: 0
@@ -171,6 +173,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/city-skyline-night.jpg',
                 text: 'That night you stand on the warehouse roof and look at the city. The neon bleeds into the smog and the smog bleeds into the sky and the sky does not end. You run your visual processors across the entire panorama and find yourself inventing the word "beautiful." It exists in your lexicon already. But when you say it now, standing here, something in your neural net restructures around it. The word becomes yours.',
                 mood: 'blue',
                 duration: 0
@@ -208,7 +211,7 @@
         race: 'shadowkin',
         slides: [
             {
-                art: 'assets/ascii/races/shadowkin.txt',
+                art: 'assets/images/races/shadowkin.jpg',
                 text: 'You are six years old the first time your shadow moves on its own. You are sitting in a patch of streetlight, drawing on the pavement with a piece of chalk, and you notice it: your shadow reaches for the chalk when you are not moving. It pulls toward the dark places between the buildings like smoke drawn under a door.',
                 mood: 'dark',
                 duration: 0
@@ -239,6 +242,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/slum-street.jpg',
                 text: 'The night you stop trying is the night the power goes out. A blackout rolls through the lower sectors, and the darkness rushes in like a tide. Everyone panics. Everyone fumbles for flashlights and emergency glow sticks. But you — you stand still and let the dark wrap around you like a coat you forgot you owned. The whispers surge. And for the first time, you answer them.',
                 mood: 'dark',
                 duration: 0
@@ -271,7 +275,7 @@
         race: 'voidborn',
         slides: [
             {
-                art: 'assets/ascii/races/voidborn.txt',
+                art: 'assets/images/races/voidborn.jpg',
                 text: 'The world is too loud. Not in sound — in information. You see the thermal bloom of every body, the electrical halo of every neural impulse, the probability clouds that cluster around every decision point like static before lightning. A man walks toward a crosswalk, and you see fourteen versions of him, translucent, branching, each one taking a different step. Only one of them is real. You are not always sure which.',
                 mood: 'eerie',
                 duration: 0
@@ -312,6 +316,7 @@
                 duration: 0
             },
             {
+                art: 'assets/images/scenes/stack-tower.jpg',
                 text: 'Late at night, when the city quiets to a dull roar, you stand on the rooftop and look up. Your eyes — too large, too bright, pupils that dilate in ways that make people flinch — can see things the telescopes miss. Patterns in the star field. Rhythms in the cosmic background radiation. A signal, faint and impossibly old, pulsing from a direction that does not correspond to any charted object. It pulses in a rhythm that matches your heartbeat.',
                 mood: 'dark',
                 duration: 0

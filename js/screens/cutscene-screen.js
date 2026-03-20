@@ -371,6 +371,7 @@ window.Latency.Screens.CutsceneScreen = (function () {
             if (_els.slideContainer) {
                 _els.slideContainer.classList.remove('cs-fade-out');
                 _els.slideContainer.classList.add('cs-fade-in');
+                console.log('[CutsceneScreen] Removed cs-fade-out, added cs-fade-in');
             }
 
             _setTimeout(function () {
@@ -443,12 +444,14 @@ window.Latency.Screens.CutsceneScreen = (function () {
                           artPath.endsWith('.jpeg') || artPath.endsWith('.webp');
 
             if (isImage) {
-                // Render as <img> with cyberpunk styling
+                // Render as <img> with cyberpunk styling + Ken Burns animation
                 var imgContainer = _el('div', 'cs-art-image');
                 var img = document.createElement('img');
                 img.src = slide.art;
                 img.alt = slide.speaker ? slide.speaker : 'Cutscene';
-                img.className = 'ascii-art-image';
+                // Alternate Ken Burns direction for visual variety
+                var useAlt = slide.artAnim === 'alt' || (_currentSlideIndex % 2 === 1);
+                img.className = 'ascii-art-image' + (useAlt ? ' ken-burns-alt' : '');
                 img.onload = function () {
                     img.style.opacity = '1';
                 };

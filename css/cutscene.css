@@ -659,6 +659,118 @@
 }
 
 /* ----------------------------------------------------------
+ * Cutscene image support (.cs-art-image & .ascii-art-image)
+ * ---------------------------------------------------------- */
+
+/* Container for cutscene images — overflow hidden for Ken Burns effect */
+.cs-art-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 640px;
+    max-height: 420px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid rgba(0, 255, 136, 0.15);
+}
+
+/* Scanline overlay on images to maintain cyberpunk aesthetic */
+.cs-art-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 4px;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.08) 2px,
+        rgba(0, 0, 0, 0.08) 4px
+    );
+    z-index: 1;
+}
+
+/* Image element inside cutscene and AsciiRenderer */
+.ascii-art-image {
+    width: 110%;           /* slightly oversized for Ken Burns movement */
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0;
+    opacity: 0;
+    animation:
+        ascii-art-image-fade-in 0.8s ease-out forwards,
+        ascii-art-ken-burns 20s ease-in-out infinite alternate;
+    box-shadow:
+        0 0 8px var(--accent-primary, #00ff88),
+        0 0 20px var(--accent-primary, #00ff88),
+        0 0 40px rgba(0, 255, 136, 0.3);
+    filter: brightness(1.05) contrast(1.15) saturate(1.1);
+}
+
+/* Fade in with slight blur-to-focus */
+@keyframes ascii-art-image-fade-in {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+        filter: blur(6px) brightness(1.05) contrast(1.15);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.0);
+        filter: blur(0) brightness(1.05) contrast(1.15);
+    }
+}
+
+/* Slow Ken Burns zoom + pan — subtle cinematic movement */
+@keyframes ascii-art-ken-burns {
+    0% {
+        transform: scale(1.0) translate(0%, 0%);
+    }
+    100% {
+        transform: scale(1.08) translate(-1.5%, -1%);
+    }
+}
+
+/* Alternate Ken Burns direction for variety (applied via CSS or JS class) */
+.cs-art-image:nth-child(odd) .ascii-art-image,
+.ascii-art-image.ken-burns-alt {
+    animation:
+        ascii-art-image-fade-in 0.8s ease-out forwards,
+        ascii-art-ken-burns-alt 22s ease-in-out infinite alternate;
+}
+
+@keyframes ascii-art-ken-burns-alt {
+    0% {
+        transform: scale(1.0) translate(0%, 0%);
+    }
+    100% {
+        transform: scale(1.06) translate(1.5%, -0.5%);
+    }
+}
+
+/* Subtle vignette on the image container */
+.cs-art-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%);
+}
+
+/* ----------------------------------------------------------
  * Responsive adjustments
  * ---------------------------------------------------------- */
 
@@ -686,5 +798,14 @@
 
     .cs-data-stream {
         display: none;
+    }
+
+    .cs-art-image {
+        max-width: 100%;
+        max-height: 280px;
+    }
+
+    .ascii-art-image {
+        max-height: 280px;
     }
 }

@@ -147,6 +147,11 @@ window.Latency.AsciiRenderer = (function () {
      * @returns {Promise<HTMLPreElement>} The created <pre> element.
      */
     async function renderFromFile(container, filePath, options) {
+        // Auto-detect image files by extension — render as <img> instead
+        if (_isImageFile(filePath)) {
+            return renderImage(container, filePath, options);
+        }
+
         if (!window.Latency.AssetLoader) {
             console.error('[AsciiRenderer] AssetLoader not available.');
             return null;
@@ -164,8 +169,92 @@ window.Latency.AsciiRenderer = (function () {
         }
     }
 
+    // -----------------------------------------------------------------------
+    // Image file extension detection
+    // -----------------------------------------------------------------------
+
+    /** Image extensions that should be rendered as <img> instead of <pre>. */
+    var IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp'];
+
+    /**
+     * Check whether a file path points to a supported image format.
+     * @param {string} filePath
+     * @returns {boolean}
+     */
+    function _isImageFile(filePath) {
+        if (!filePath) return false;
+        var lower = filePath.toLowerCase();
+        for (var i = 0; i < IMAGE_EXTENSIONS.length; i++) {
+            if (lower.endsWith(IMAGE_EXTENSIONS[i])) return true;
+        }
+        return false;
+    }
+
+    // -----------------------------------------------------------------------
+    // renderImage — creates an <img> element with cyberpunk styling
+    // -----------------------------------------------------------------------
+
+    /**
+     * Render an image file into a container element with cyberpunk styling.
+     *
+     * Creates an <img> element styled to fit within the cutscene art area,
+     * with a neon glow effect and fade-in animation.
+     *
+     * @param {HTMLElement} container - DOM element to append the image into.
+     * @param {string} src - Path / URL to the image file.
+     * @param {Object} [options] - Display options.
+     * @param {string} [options.color='#00ff88'] - Glow colour for box-shadow.
+     * @param {boolean} [options.glow=true] - Apply a neon glow box-shadow.
+     * @param {string} [options.className] - Additional CSS class(es) for the <img>.
+     * @param {string} [options.alt] - Alt text for the image.
+     * @returns {HTMLImageElement} The created <img> element.
+     */
+    function renderImage(container, src, options) {
+        if (!container) {
+            console.error('[AsciiRenderer] No container element provided.');
+            return null;
+        }
+
+        var opts = options || {};
+        var color = opts.color || '#00ff88';
+        var glow = opts.glow !== undefined ? !!opts.glow : true;
+        var className = opts.className || '';
+        var alt = opts.alt || 'Cutscene image';
+
+        var img = document.createElement('img');
+        img.className = 'ascii-art-image' + (className ? ' ' + className : '');
+        img.src = src;
+        img.alt = alt;
+
+        // Core styles — fit within container
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '400px';
+        img.style.objectFit = 'contain';
+        img.style.display = 'block';
+        img.style.margin = '0 auto';
+        img.style.borderRadius = '4px';
+
+        // Cyberpunk glow via filter and box-shadow
+        if (glow) {
+            img.style.boxShadow =
+                '0 0 8px ' + color + ', ' +
+                '0 0 20px ' + color + ', ' +
+                '0 0 40px rgba(0, 255, 136, 0.3)';
+            img.style.filter = 'brightness(1.05) contrast(1.1)';
+        }
+
+        // Fade-in animation
+        img.style.animation = 'ascii-art-image-fade-in 0.8s ease-out forwards';
+        img.style.opacity = '0';
+
+        container.appendChild(img);
+
+        return img;
+    }
+
     return {
         render: render,
-        renderFromFile: renderFromFile
+        renderFromFile: renderFromFile,
+        renderImage: renderImage
     };
 })();
