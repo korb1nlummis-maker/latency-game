@@ -638,9 +638,11 @@ window.Latency.Narrative = (function () {
         });
 
         // 9. Handle music change if the node specifies one
-        if (rawNode.music !== undefined && window.Latency.MusicManager) {
+        if (rawNode.music !== undefined && rawNode.music !== null && window.Latency.MusicManager) {
             if (typeof rawNode.music === 'number') {
                 window.Latency.MusicManager.skipTo(rawNode.music);
+            } else if (typeof rawNode.music === 'string' && window.Latency.MusicManager.playByCategory) {
+                window.Latency.MusicManager.playByCategory(rawNode.music);
             }
         }
 

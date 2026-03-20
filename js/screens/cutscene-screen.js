@@ -413,9 +413,11 @@ window.Latency.Screens.CutsceneScreen = (function () {
         }
 
         // Handle music cue on this slide
-        if (slide.music !== undefined && slide.music !== null) {
-            if (window.Latency.MusicManager && window.Latency.MusicManager.play) {
-                window.Latency.MusicManager.play(slide.music);
+        if (slide.music !== undefined && slide.music !== null && window.Latency.MusicManager) {
+            if (typeof slide.music === 'number') {
+                window.Latency.MusicManager.skipTo(slide.music);
+            } else if (typeof slide.music === 'string' && window.Latency.MusicManager.playByCategory) {
+                window.Latency.MusicManager.playByCategory(slide.music);
             }
         }
 
@@ -598,8 +600,12 @@ window.Latency.Screens.CutsceneScreen = (function () {
     function _startMusic() {
         if (!_cutsceneData || _cutsceneData.music === undefined || _cutsceneData.music === null) return;
 
-        if (window.Latency.MusicManager && window.Latency.MusicManager.play) {
-            window.Latency.MusicManager.play(_cutsceneData.music);
+        if (window.Latency.MusicManager) {
+            if (typeof _cutsceneData.music === 'number') {
+                window.Latency.MusicManager.skipTo(_cutsceneData.music);
+            } else if (typeof _cutsceneData.music === 'string' && window.Latency.MusicManager.playByCategory) {
+                window.Latency.MusicManager.playByCategory(_cutsceneData.music);
+            }
         }
     }
 

@@ -9,1022 +9,2391 @@
         "nc_001": {
             "text": "The elevator climbs for what feels like minutes. Through the glass walls, you watch the city fall away beneath you — the smog layer, the mid-district sprawl, the tangled infrastructure of a million desperate lives shrinking into abstraction. Then you break through the cloud ceiling and everything changes. Sunlight. Actual, unfiltered sunlight, the kind you haven't felt in years. The Cloud Towers rise around you like crystalline pillars, their surfaces catching the light and throwing prismatic rainbows across platforms connected by glass skywalks. This is where the immortals live. This is the <span class='highlight'>Neon Court</span>.",
             "choices": [
-                { "text": "Step out into the light", "next": "factions.neon-court.nc_002" },
-                { "text": "Take a moment to compose yourself", "next": "factions.neon-court.nc_003" }
+                {
+                    "text": "Step out into the light",
+                    "next": "factions.neon-court.nc_002"
+                },
+                {
+                    "text": "Take a moment to compose yourself",
+                    "next": "factions.neon-court.nc_003"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.entered_cloud_towers", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.entered_cloud_towers",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_002": {
             "text": "The platform is white marble veined with luminescent circuitry. People pass you in clothes that cost more than a Lower District apartment block — silk woven with active fiber displays, jewelry that pulses with contained bioluminescence. Nobody looks at you. You are beneath notice, a smudge on their pristine world. A servant drone hovers at your elbow, scanning you. <span class='highlight'>'Guest identification not recognized. Please state your business or you will be escorted to the departure level.'</span>",
             "choices": [
-                { "text": "\"I'm here to see Duchess Seraphina Lux. She's expecting me.\"", "next": "factions.neon-court.nc_004" },
-                { "text": "\"I was invited. Check the guest registry.\"", "next": "factions.neon-court.nc_005", "statCheck": { "stat": "CHA", "dc": 11 } },
-                { "text": "Ignore the drone and walk forward with confidence", "next": "factions.neon-court.nc_006", "statCheck": { "stat": "CHA", "dc": 14 } }
-            ]
+                {
+                    "text": "\"I'm here to see Duchess Seraphina Lux. She's expecting me.\"",
+                    "next": "factions.neon-court.nc_004"
+                },
+                {
+                    "text": "\"I was invited. Check the guest registry.\"",
+                    "next": "factions.neon-court.nc_005",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 11
+                    }
+                },
+                {
+                    "text": "Ignore the drone and walk forward with confidence",
+                    "next": "factions.neon-court.nc_006",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                }
+            ],
+            "music": "epic"
         },
         "nc_003": {
             "text": "You close your eyes and breathe. The air is clean — impossibly clean, filtered and temperature-controlled, carrying the faint scent of something floral that you can't identify because flowers don't grow where you come from. When you open your eyes, you notice the details: the subtle shimmer of personal shield generators on the passing aristocrats, the way the light seems to bend around certain individuals as if reality itself defers to their importance. A holographic fountain plays in the center of the platform, its water replaced by streams of pure light that flow upward.",
             "choices": [
-                { "text": "Step forward and announce yourself", "next": "factions.neon-court.nc_002" }
+                {
+                    "text": "Step forward and announce yourself",
+                    "next": "factions.neon-court.nc_002"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 10 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 10
+                }
+            ],
+            "music": "epic"
         },
         "nc_004": {
             "text": "The drone pauses, its optic flickering rapidly. After a moment that stretches uncomfortably, a holographic seal appears in the air — the Lux family crest, a stylized sun with circuit-board rays. <span class='highlight'>'Confirmed. Guest of the Duchess. Please follow the guide path.'</span> A line of golden light appears on the marble floor, leading toward the tallest tower on the platform. The people around you suddenly take notice. Being a guest of the Duchess changes your invisibility into something much more uncomfortable: scrutiny.",
             "choices": [
-                { "text": "Follow the guide path", "next": "factions.neon-court.nc_007" },
-                { "text": "Take the scenic route — observe the Court first", "next": "factions.neon-court.nc_008" }
+                {
+                    "text": "Follow the guide path",
+                    "next": "factions.neon-court.nc_007"
+                },
+                {
+                    "text": "Take the scenic route — observe the Court first",
+                    "next": "factions.neon-court.nc_008"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.guest_of_duchess", "value": true },
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.guest_of_duchess",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_005": {
             "text": "The drone scans you again, deeper this time, cross-referencing databases. You hold your breath. Then: <span class='highlight'>'Guest status confirmed. Provisional access granted. Welcome to the Nimbus Platform. Please be advised that all guests are subject to behavioral monitoring. Enjoy your stay.'</span> The threat hidden inside the hospitality is so perfectly calibrated you almost admire it.",
             "choices": [
-                { "text": "Ask for directions to the Duchess", "next": "factions.neon-court.nc_004" },
-                { "text": "Explore the platform freely", "next": "factions.neon-court.nc_008" }
+                {
+                    "text": "Ask for directions to the Duchess",
+                    "next": "factions.neon-court.nc_004"
+                },
+                {
+                    "text": "Explore the platform freely",
+                    "next": "factions.neon-court.nc_008"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_006": {
             "text": "You walk past the drone without breaking stride. It follows, sputtering warnings, but your posture — shoulders back, chin up, the walk of someone who belongs — confuses its behavioral algorithms. In the Cloud Towers, confidence is its own credential. The drone falls back, reclassifying you as PRESUMED AUTHORIZED. The trick won't last forever, but it buys you time to move freely.",
             "choices": [
-                { "text": "Find your way to Duchess Lux's tower", "next": "factions.neon-court.nc_007" },
-                { "text": "Explore while you can", "next": "factions.neon-court.nc_008" }
+                {
+                    "text": "Find your way to Duchess Lux's tower",
+                    "next": "factions.neon-court.nc_007"
+                },
+                {
+                    "text": "Explore while you can",
+                    "next": "factions.neon-court.nc_008"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 30 },
-                { "type": "modify_stat", "stat": "CHA", "amount": 1 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "CHA",
+                    "amount": 1
+                }
+            ],
+            "music": "epic"
         },
         "nc_007": {
             "text": "The Lux Tower is a spire of black glass that absorbs light rather than reflecting it. Inside, the lobby is a study in controlled opulence — living walls of genetically modified plants that glow in soft blues and purples, a floor that seems to be made of still water but supports your weight, and at the center, a reception desk staffed by a synth so perfectly human-looking that you can only tell by the faint seam at the jawline. <span class='highlight'>'The Duchess will see you in the Solarium. Forty-seventh floor. The lift is to your right.'</span>",
             "choices": [
-                { "text": "Take the lift to the Solarium", "next": "factions.neon-court.nc_009" },
-                { "text": "Ask the receptionist about the Duchess", "next": "factions.neon-court.nc_010" }
-            ]
+                {
+                    "text": "Take the lift to the Solarium",
+                    "next": "factions.neon-court.nc_009"
+                },
+                {
+                    "text": "Ask the receptionist about the Duchess",
+                    "next": "factions.neon-court.nc_010"
+                }
+            ],
+            "music": "epic"
         },
         "nc_008": {
             "text": "The Nimbus Platform is a world unto itself. Boutiques sell memory stack accessories — decorative casings, performance enhancers, personality modulators that can adjust your emotional baseline. A restaurant serves food grown in actual soil, a luxury so extreme down below that it borders on myth. You pass a salon where a woman is having her consciousness temporarily transferred to a younger clone body for the evening. <span class='highlight'>'Just for the gala, darling,'</span> she tells a friend. <span class='highlight'>'I'll be back in my regular body by morning.'</span>",
             "choices": [
-                { "text": "Head to Duchess Lux's tower", "next": "factions.neon-court.nc_007" },
-                { "text": "Visit the memory stack boutique", "next": "factions.neon-court.nc_011" },
-                { "text": "Eavesdrop on the salon conversation", "next": "factions.neon-court.nc_012" }
+                {
+                    "text": "Head to Duchess Lux's tower",
+                    "next": "factions.neon-court.nc_007"
+                },
+                {
+                    "text": "Visit the memory stack boutique",
+                    "next": "factions.neon-court.nc_011"
+                },
+                {
+                    "text": "Eavesdrop on the salon conversation",
+                    "next": "factions.neon-court.nc_012"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.explored_platform", "value": true },
-                { "type": "add_experience", "amount": 15 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.explored_platform",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "music": "epic"
         },
         "nc_009": {
             "text": "The Solarium occupies the entire forty-seventh floor. One wall is entirely glass, offering a view that stretches to the curve of the Earth. The room is filled with actual trees — not synthetic, not holographic, but living trees with root systems that must cost a fortune to maintain at this altitude. And there, sitting in a chair that floats two inches above the floor, backlit by the setting sun, is <span class='highlight'>Duchess Seraphina Lux</span>. She's younger than you expected — or rather, her body is. Her eyes tell a different story. They hold the patient, calculating weight of someone who has lived multiple lifetimes across multiple bodies.",
             "choices": [
-                { "text": "Bow formally", "next": "factions.neon-court.nc_013" },
-                { "text": "Meet her gaze as an equal", "next": "factions.neon-court.nc_014", "statCheck": { "stat": "CHA", "dc": 13 } },
-                { "text": "\"You wanted to see me. Here I am.\"", "next": "factions.neon-court.nc_015" }
+                {
+                    "text": "Bow formally",
+                    "next": "factions.neon-court.nc_013"
+                },
+                {
+                    "text": "Meet her gaze as an equal",
+                    "next": "factions.neon-court.nc_014",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"You wanted to see me. Here I am.\"",
+                    "next": "factions.neon-court.nc_015"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.met_duchess", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.met_duchess",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_010": {
             "text": "The synth receptionist smiles — a perfect, practiced expression. <span class='highlight'>'Duchess Seraphina Lux is the current head of the Lux family, one of the seven founding houses of the Neon Court. She oversees Meridian's cultural division and chairs the Memory Stack Ethics Committee.'</span> The receptionist pauses. <span class='highlight'>'She is also known for her... particular interest in talented individuals from the lower districts. You are the third such guest this month.'</span> The implication hangs in the air like perfume.",
             "choices": [
-                { "text": "\"What happened to the other two?\"", "next": "factions.neon-court.nc_016" },
-                { "text": "Take the lift to the Solarium", "next": "factions.neon-court.nc_009" }
+                {
+                    "text": "\"What happened to the other two?\"",
+                    "next": "factions.neon-court.nc_016"
+                },
+                {
+                    "text": "Take the lift to the Solarium",
+                    "next": "factions.neon-court.nc_009"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.knows_other_recruits", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.knows_other_recruits",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_011": {
             "text": "The boutique is called ETERNAL AESTHETICS. Inside, memory stacks are displayed like jewelry — chrome and gold casings, some encrusted with synthetic gems, others sleek and minimalist. A sales associate approaches, their smile dimming slightly as they assess your clothing. <span class='highlight'>'The base models start at fifty thousand credits. Our premium line begins at two hundred thousand. Financing is... not available at this location.'</span> Behind the counter, you notice something interesting: a locked display case containing stacks that look different — matte black, military-grade, with no visible branding.",
             "choices": [
-                { "text": "Ask about the military-grade stacks", "next": "factions.neon-court.nc_017", "statCheck": { "stat": "INT", "dc": 13 } },
-                { "text": "Leave and head to the Duchess", "next": "factions.neon-court.nc_007" }
+                {
+                    "text": "Ask about the military-grade stacks",
+                    "next": "factions.neon-court.nc_017",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Leave and head to the Duchess",
+                    "next": "factions.neon-court.nc_007"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 15 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "music": "epic"
         },
         "nc_012": {
             "text": "You linger near the salon, feigning interest in a display window. The woman in the consciousness transfer chair is Lady Aurelis Vane — you recognize the name from news broadcasts. She's a board member of three Meridian subsidiaries. Her friend, draped in living fabric that shifts colors with her mood, is discussing the upcoming Ascension Gala. <span class='highlight'>'I heard the Duchess is scouting again. Found some Lower District creature with potential. She does love her projects.'</span> Lady Vane laughs. <span class='highlight'>'Remember the last one? That delightful little enforcer? Such a shame about the accident.'</span>",
             "choices": [
-                { "text": "File this information away and head to the Duchess", "next": "factions.neon-court.nc_007" },
-                { "text": "Approach the women and introduce yourself", "next": "factions.neon-court.nc_018", "statCheck": { "stat": "CHA", "dc": 15 } }
+                {
+                    "text": "File this information away and head to the Duchess",
+                    "next": "factions.neon-court.nc_007"
+                },
+                {
+                    "text": "Approach the women and introduce yourself",
+                    "next": "factions.neon-court.nc_018",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.overheard_salon", "value": true },
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.overheard_salon",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_013": {
             "text": "You bow, and Seraphina watches you the way a collector examines a new acquisition. <span class='highlight'>'Polite. That's either genuine respect or excellent survival instincts. Either one is useful.'</span> She rises from her floating chair with fluid grace. She's wearing a gown that seems to be made of liquid mercury, shifting and flowing around her body. <span class='highlight'>'I've been watching you. Your work in the lower districts has been... noticeable. You have a talent for navigating complex situations. I have complex situations that need navigating.'</span>",
             "choices": [
-                { "text": "\"I'm listening.\"", "next": "factions.neon-court.nc_019" },
-                { "text": "\"Why would someone like you need someone like me?\"", "next": "factions.neon-court.nc_020" }
+                {
+                    "text": "\"I'm listening.\"",
+                    "next": "factions.neon-court.nc_019"
+                },
+                {
+                    "text": "\"Why would someone like you need someone like me?\"",
+                    "next": "factions.neon-court.nc_020"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_014": {
             "text": "You hold her gaze. It's like staring into a furnace that burns cold — immense power, perfectly controlled. Most people would look away. You don't. Something shifts in Seraphina's expression. Not displeasure — interest. <span class='highlight'>'Oh,'</span> she says softly. <span class='highlight'>'You have spine. How refreshing. Everyone who comes up here either grovels or postures. You're doing neither.'</span> She stands, her mercury gown rippling. <span class='highlight'>'I think you and I are going to have a very productive relationship.'</span>",
             "choices": [
-                { "text": "\"That depends on what you're offering.\"", "next": "factions.neon-court.nc_019" },
-                { "text": "\"I don't commit to relationships I don't understand.\"", "next": "factions.neon-court.nc_020" }
+                {
+                    "text": "\"That depends on what you're offering.\"",
+                    "next": "factions.neon-court.nc_019"
+                },
+                {
+                    "text": "\"I don't commit to relationships I don't understand.\"",
+                    "next": "factions.neon-court.nc_020"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 30 },
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 10 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 10
+                }
+            ],
+            "music": "epic"
         },
         "nc_015": {
             "text": "Seraphina's eyebrow arches — a micro-expression on a face that reveals nothing by accident. <span class='highlight'>'Direct. Unpolished, but direct.'</span> She waves a hand and the floating chair drifts aside. She walks toward you on heels that click against the floor with deliberate rhythm. <span class='highlight'>'I appreciate efficiency, even when it lacks finesse. You'll learn finesse. Or you won't survive up here long enough for it to matter.'</span>",
             "choices": [
-                { "text": "\"I've survived worse than manners. What do you want?\"", "next": "factions.neon-court.nc_019" },
-                { "text": "\"Teach me, then. I'm a fast learner.\"", "next": "factions.neon-court.nc_021" }
+                {
+                    "text": "\"I've survived worse than manners. What do you want?\"",
+                    "next": "factions.neon-court.nc_019"
+                },
+                {
+                    "text": "\"Teach me, then. I'm a fast learner.\"",
+                    "next": "factions.neon-court.nc_021"
+                }
             ],
             "actions": [
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 5 }
-            ]
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 5
+                }
+            ],
+            "music": "epic"
         },
         "nc_016": {
             "text": "The receptionist's smile doesn't waver, but something flickers in their eyes — a warning, perhaps, from whatever consciousness runs behind the synthetic face. <span class='highlight'>'The first accepted the Duchess's patronage and now serves as her personal attache. A considerable advancement.'</span> A pause. <span class='highlight'>'The second declined the Duchess's offer. They returned to the lower districts. I believe they experienced some... difficulties with their identity documentation shortly afterward. A bureaucratic error, I'm told.'</span>",
             "choices": [
-                { "text": "Take the lift to the Solarium, forewarned", "next": "factions.neon-court.nc_009" }
+                {
+                    "text": "Take the lift to the Solarium, forewarned",
+                    "next": "factions.neon-court.nc_009"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.warned_about_duchess", "value": true },
-                { "type": "add_experience", "amount": 25 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.warned_about_duchess",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "music": "epic"
         },
         "nc_017": {
             "text": "The associate's smile drops entirely. <span class='highlight'>'Those are not for general sale. They're reserved for authorized Meridian security personnel only.'</span> But you've already noticed the model number etched into the casing — the same designation as the prototypes rumored to be in development at Meridian's military division. Stacks designed not just for consciousness transfer, but for consciousness copying. Duplication. The implications are staggering: an army of copies, each one expendable because the original consciousness persists.",
             "choices": [
-                { "text": "File this away for later and head to the Duchess", "next": "factions.neon-court.nc_007" }
+                {
+                    "text": "File this away for later and head to the Duchess",
+                    "next": "factions.neon-court.nc_007"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.knows_copy_stacks", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.knows_copy_stacks",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_018": {
             "text": "You approach with the kind of casual confidence that money usually buys. <span class='highlight'>'Ladies. I couldn't help overhearing — the Ascension Gala sounds fascinating.'</span> Lady Vane turns, her expression cycling through confusion, amusement, and something like predatory interest. <span class='highlight'>'My, my. The Duchess's new project speaks.'</span> Her friend covers a smile. Vane's eyes rake over you. <span class='highlight'>'Tell me, pet — what district do you crawl from?'</span>",
             "choices": [
-                { "text": "\"The kind of district that teaches you to spot a predator.\"", "next": "factions.neon-court.nc_022", "statCheck": { "stat": "CHA", "dc": 14 } },
-                { "text": "\"Sector Seven. The Lower District.\"", "next": "factions.neon-court.nc_023" },
-                { "text": "Smile and excuse yourself — you've learned enough", "next": "factions.neon-court.nc_007" }
+                {
+                    "text": "\"The kind of district that teaches you to spot a predator.\"",
+                    "next": "factions.neon-court.nc_022",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"Sector Seven. The Lower District.\"",
+                    "next": "factions.neon-court.nc_023"
+                },
+                {
+                    "text": "Smile and excuse yourself — you've learned enough",
+                    "next": "factions.neon-court.nc_007"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.met_lady_vane", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.met_lady_vane",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_019": {
             "text": "Seraphina gestures and a holographic display blooms in the air between you — names, faces, organizational charts. <span class='highlight'>'The Neon Court operates on influence. Seven founding houses, each controlling different sectors of the city's economy. The balance of power between them determines policy, law, even who lives and who dies.'</span> She highlights one name: <span class='highlight'>Lord Cassius Thorne</span>. <span class='highlight'>'Thorne controls the security division. He's been consolidating power, buying loyalty, positioning himself for a move against the other houses. Against me, specifically. I need someone outside the Court's power structure — someone invisible — to gather information on his operations.'</span>",
             "choices": [
-                { "text": "\"Espionage. You want a spy.\"", "next": "factions.neon-court.nc_024" },
-                { "text": "\"What do I get in return?\"", "next": "factions.neon-court.nc_025" },
-                { "text": "\"Why should I care about your political games?\"", "next": "factions.neon-court.nc_026" }
+                {
+                    "text": "\"Espionage. You want a spy.\"",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "\"What do I get in return?\"",
+                    "next": "factions.neon-court.nc_025"
+                },
+                {
+                    "text": "\"Why should I care about your political games?\"",
+                    "next": "factions.neon-court.nc_026"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.knows_thorne", "value": true },
-                { "type": "add_experience", "amount": 25 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.knows_thorne",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "music": "epic"
         },
         "nc_020": {
             "text": "Seraphina smiles — a real smile, not the practiced mask she wears for the Court. <span class='highlight'>'Because the people up here are predictable. They scheme within known parameters, follow patterns I can anticipate in my sleep. You, however, are a variable. You think differently, act differently, come from a world where the rules I know don't apply.'</span> She pours two glasses of amber liquid from a crystal decanter. <span class='highlight'>'I collect rare things. People of unusual capability are the rarest of all.'</span>",
             "choices": [
-                { "text": "\"I'm not a collectible.\"", "next": "factions.neon-court.nc_026" },
-                { "text": "Accept the drink and hear her out", "next": "factions.neon-court.nc_019" },
-                { "text": "\"Flattery noted. What's the job?\"", "next": "factions.neon-court.nc_019" }
+                {
+                    "text": "\"I'm not a collectible.\"",
+                    "next": "factions.neon-court.nc_026"
+                },
+                {
+                    "text": "Accept the drink and hear her out",
+                    "next": "factions.neon-court.nc_019"
+                },
+                {
+                    "text": "\"Flattery noted. What's the job?\"",
+                    "next": "factions.neon-court.nc_019"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 15 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "music": "epic"
         },
         "nc_021": {
             "text": "Something warms in Seraphina's eyes. <span class='highlight'>'A fast learner. Good. You'll need to be.'</span> She claps once and a wardrobe drone descends from the ceiling, scanning your body dimensions. <span class='highlight'>'First lesson: in the Neon Court, appearance isn't superficial — it's armor. You'll be fitted for proper attire. You'll learn the names, the allegiances, the feuds. And then you'll attend the Ascension Gala at my side.'</span> She smiles. <span class='highlight'>'Consider it your debut.'</span>",
             "choices": [
-                { "text": "\"I'll play the part. But I need to know the game first.\"", "next": "factions.neon-court.nc_019" }
+                {
+                    "text": "\"I'll play the part. But I need to know the game first.\"",
+                    "next": "factions.neon-court.nc_019"
+                }
             ],
             "actions": [
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 15 },
-                { "type": "add_experience", "amount": 25 },
-                { "type": "set_flag", "flag": "nc.wardrobe_fitted", "value": true }
-            ]
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 15
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.wardrobe_fitted",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_022": {
             "text": "Lady Vane's smile freezes. Her friend inhales sharply. Then Vane laughs — a genuine sound that transforms her face from imperious to almost human. <span class='highlight'>'Oh, the Duchess found a live one this time.'</span> She extends her hand, not to shake but to be kissed — an old Court custom. <span class='highlight'>'I'm Aurelis Vane. And you, my sharp-tongued friend, just made my afternoon considerably more interesting. Tell the Duchess I said you'll do.'</span>",
             "choices": [
-                { "text": "Kiss her hand and play the game", "next": "factions.neon-court.nc_007" },
-                { "text": "Shake her hand instead — your own customs", "next": "factions.neon-court.nc_007" }
+                {
+                    "text": "Kiss her hand and play the game",
+                    "next": "factions.neon-court.nc_007"
+                },
+                {
+                    "text": "Shake her hand instead — your own customs",
+                    "next": "factions.neon-court.nc_007"
+                }
             ],
             "actions": [
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 10 },
-                { "type": "add_experience", "amount": 25 }
-            ]
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "music": "epic"
         },
         "nc_023": {
             "text": "The women exchange a glance loaded with meaning you can't fully decode. <span class='highlight'>'Sector Seven,'</span> Vane repeats, as if tasting something exotic. <span class='highlight'>'How wonderfully grim. The Duchess does love her reclamation projects.'</span> She turns back to her consciousness transfer. You've been dismissed. But her friend lingers, catching your eye with an expression that might be sympathy. <span class='highlight'>'A word of advice,'</span> she whispers. <span class='highlight'>'Don't tell anyone else where you're from. Up here, origins are liabilities.'</span>",
             "choices": [
-                { "text": "Thank her and head to the Duchess", "next": "factions.neon-court.nc_007" }
+                {
+                    "text": "Thank her and head to the Duchess",
+                    "next": "factions.neon-court.nc_007"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.origins_warning", "value": true },
-                { "type": "add_experience", "amount": 15 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.origins_warning",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "music": "epic"
         },
         "nc_024": {
             "text": "<span class='highlight'>'I want an operative,'</span> Seraphina corrects. <span class='highlight'>'A spy watches. An operative acts.'</span> She brings up Thorne's profile — a severe man with silver temples and augmented eyes that glow ice-blue. <span class='highlight'>'Thorne is hosting a private auction tomorrow night at his estate. Officially, it's art and antiquities. Unofficially, he's selling weaponized memory stack technology to off-world buyers. I need you inside that auction. I need proof of what he's selling. And I need it before the Sector Council meets on Friday.'</span>",
             "choices": [
-                { "text": "\"Get me an invitation and I'll get you proof.\"", "next": "factions.neon-court.nc_027" },
-                { "text": "\"I'll need equipment, cover identity, and backup.\"", "next": "factions.neon-court.nc_028" },
-                { "text": "\"Why not just report him to the Council yourself?\"", "next": "factions.neon-court.nc_029" }
+                {
+                    "text": "\"Get me an invitation and I'll get you proof.\"",
+                    "next": "factions.neon-court.nc_027"
+                },
+                {
+                    "text": "\"I'll need equipment, cover identity, and backup.\"",
+                    "next": "factions.neon-court.nc_028"
+                },
+                {
+                    "text": "\"Why not just report him to the Council yourself?\"",
+                    "next": "factions.neon-court.nc_029"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.accepted_thorne_mission", "value": true },
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 10 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.accepted_thorne_mission",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 10
+                }
+            ],
+            "music": "epic"
         },
         "nc_025": {
             "text": "Seraphina's eyes glitter. <span class='highlight'>'In return, you receive my patronage. In the Neon Court, that means protection, resources, access. I can give you a residence in the Cloud Towers. Credits that would take you three lifetimes to earn. Medical care that the lower districts can only dream of.'</span> She pauses, letting the weight of it settle. <span class='highlight'>'And, eventually, a memory stack. A real one. Not the consumer garbage they sell on financing plans. A Lux-grade stack with full consciousness preservation and transfer capability. Immortality, in other words. The one thing money can't always buy.'</span>",
             "choices": [
-                { "text": "\"You're offering me immortality for espionage?\"", "next": "factions.neon-court.nc_030" },
-                { "text": "\"Deal. Where do I start?\"", "next": "factions.neon-court.nc_024" },
-                { "text": "\"What's the catch?\"", "next": "factions.neon-court.nc_031" }
+                {
+                    "text": "\"You're offering me immortality for espionage?\"",
+                    "next": "factions.neon-court.nc_030"
+                },
+                {
+                    "text": "\"Deal. Where do I start?\"",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "\"What's the catch?\"",
+                    "next": "factions.neon-court.nc_031"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "emotional"
         },
         "nc_026": {
             "text": "Seraphina sets down her glass. The warmth drains from her expression, leaving something harder beneath. <span class='highlight'>'You should care because Thorne's endgame isn't just taking my seat. He wants to militarize memory stack technology. He wants to create an army of consciousness-copied soldiers — expendable, replaceable, infinitely obedient. And when he controls the military and the security apparatus, the lower districts won't just be neglected. They'll be controlled. Every person, every thought, every memory — his to monitor and modify.'</span> She meets your eyes. <span class='highlight'>'This isn't my political game. This is everyone's survival.'</span>",
             "choices": [
-                { "text": "\"If what you're saying is true, I'll help.\"", "next": "factions.neon-court.nc_024" },
-                { "text": "\"How do I know you're not just as bad as Thorne?\"", "next": "factions.neon-court.nc_032" }
+                {
+                    "text": "\"If what you're saying is true, I'll help.\"",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "\"How do I know you're not just as bad as Thorne?\"",
+                    "next": "factions.neon-court.nc_032"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 },
-                { "type": "set_flag", "flag": "nc.knows_thorne_plan", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.knows_thorne_plan",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_027": {
             "text": "Seraphina produces a holographic card — an invitation to the Thorne Estate, made out in a false name. <span class='highlight'>'You'll attend as Lysander Vale, a private collector from the orbital habitats. The identity is backstopped — employment history, financial records, social media presence. Splicer's people helped with that.'</span> She gives you a meaningful look. <span class='highlight'>'Yes, I have contacts in the lower districts too. The Court's reach is longer than most people imagine.'</span> She hands you a data-crystal. <span class='highlight'>'Your recording device. It captures everything — audio, video, biometric data. Get close to the auction items. Get proof. Get out.'</span>",
             "choices": [
-                { "text": "Take the invitation and prepare for the auction", "next": "factions.neon-court.nc_033" }
+                {
+                    "text": "Take the invitation and prepare for the auction",
+                    "next": "factions.neon-court.nc_033"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.has_cover_identity", "value": true },
-                { "type": "set_flag", "flag": "nc.has_recording_device", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.has_cover_identity",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.has_recording_device",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_028": {
             "text": "<span class='highlight'>'Professional,'</span> Seraphina approves. She snaps her fingers and a panel in the wall slides open, revealing a room that looks like a high-end spy thriller's prop department. Tailored suits with hidden pockets, recording devices disguised as jewelry, micro-weapons concealed in accessories. A full cover identity loads onto a data-pad: Lysander Vale, private collector. Financial history, social connections, even a falsified memory stack registration. <span class='highlight'>'As for backup — I'm assigning you my personal aide, Marcus. He's former military intelligence. He'll be your extraction if things go wrong.'</span>",
             "choices": [
-                { "text": "Gear up and prepare for the Thorne auction", "next": "factions.neon-court.nc_033" }
+                {
+                    "text": "Gear up and prepare for the Thorne auction",
+                    "next": "factions.neon-court.nc_033"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.fully_equipped", "value": true },
-                { "type": "set_flag", "flag": "nc.has_marcus_backup", "value": true },
-                { "type": "add_experience", "amount": 35 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.fully_equipped",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.has_marcus_backup",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ],
+            "music": "mystery"
         },
         "nc_029": {
             "text": "Seraphina's laugh is cold and perfect, like crystal breaking. <span class='highlight'>'The Sector Council. Three of the seven council members are in Thorne's pocket. Two more owe him favors they can't afford to default on. Reporting him through official channels would accomplish nothing except alerting him that I'm aware of his activities.'</span> She turns to the window, her reflection ghosting over the sunset. <span class='highlight'>'The Court doesn't operate on law. It operates on leverage. I need proof not for a trial, but for a negotiation. The kind where Thorne understands that his secrets are no longer his alone.'</span>",
             "choices": [
-                { "text": "\"Blackmail, then. I can work with that.\"", "next": "factions.neon-court.nc_027" },
-                { "text": "\"This is getting dirtier than I expected.\"", "next": "factions.neon-court.nc_031" }
+                {
+                    "text": "\"Blackmail, then. I can work with that.\"",
+                    "next": "factions.neon-court.nc_027"
+                },
+                {
+                    "text": "\"This is getting dirtier than I expected.\"",
+                    "next": "factions.neon-court.nc_031"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_030": {
             "text": "<span class='highlight'>'I'm offering you immortality for loyalty,'</span> Seraphina corrects. <span class='highlight'>'The espionage is simply the first test. Succeed, and you'll find that the Neon Court rewards competence extravagantly. Fail, and... well.'</span> She sips her drink. <span class='highlight'>'The lower districts are always accepting returns.'</span> The threat is delivered so gracefully it almost sounds like concern.",
             "choices": [
-                { "text": "\"Then I'd better not fail. Brief me.\"", "next": "factions.neon-court.nc_024" },
-                { "text": "\"I don't respond well to threats.\"", "next": "factions.neon-court.nc_032" }
-            ]
+                {
+                    "text": "\"Then I'd better not fail. Brief me.\"",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "\"I don't respond well to threats.\"",
+                    "next": "factions.neon-court.nc_032"
+                }
+            ],
+            "music": "epic"
         },
         "nc_031": {
             "text": "Seraphina studies you with something approaching honesty. <span class='highlight'>'The catch is loyalty. Complete, unwavering loyalty to the Lux house. You work for me. Not for the Court, not for Meridian, not for whatever principles you brought with you from below. My interests become your interests.'</span> She lets that sink in. <span class='highlight'>'In exchange, you receive everything I promised. But make no mistake — you belong to the Court. And in the Court, belonging has a very specific meaning.'</span>",
             "choices": [
-                { "text": "\"I can work with that. For now.\"", "next": "factions.neon-court.nc_024" },
-                { "text": "\"I don't belong to anyone.\"", "next": "factions.neon-court.nc_032" },
-                { "text": "\"Define 'specific meaning.'\"", "next": "factions.neon-court.nc_034" }
+                {
+                    "text": "\"I can work with that. For now.\"",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "\"I don't belong to anyone.\"",
+                    "next": "factions.neon-court.nc_032"
+                },
+                {
+                    "text": "\"Define 'specific meaning.'\"",
+                    "next": "factions.neon-court.nc_034"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 15 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "music": "epic"
         },
         "nc_032": {
             "text": "Seraphina's mask slips — just for a heartbeat. Beneath the poise, the elegance, the centuries of accumulated charm, you glimpse something raw: exhaustion, loneliness, and a determination that borders on desperation. <span class='highlight'>'I'm not Thorne,'</span> she says quietly. <span class='highlight'>'I don't want to control people. I want to preserve a system that, however imperfect, still allows for choice. Thorne's vision is total control. Mine is... managed freedom.'</span> She catches herself, rebuilds the mask. <span class='highlight'>'Make your choice. I won't ask again.'</span>",
             "choices": [
-                { "text": "\"Managed freedom isn't freedom. But it's better than total control. I'm in.\"", "next": "factions.neon-court.nc_024" },
-                { "text": "\"I'll help you stop Thorne. But I won't be owned.\"", "next": "factions.neon-court.nc_024" },
-                { "text": "Walk away from the Neon Court", "next": "shared.prologue.node_001" }
+                {
+                    "text": "\"Managed freedom isn't freedom. But it's better than total control. I'm in.\"",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "\"I'll help you stop Thorne. But I won't be owned.\"",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "Walk away from the Neon Court",
+                    "next": "shared.prologue.node_001"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 },
-                { "type": "set_flag", "flag": "nc.saw_real_seraphina", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.saw_real_seraphina",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_033": {
             "text": "The Thorne Estate sits on its own platform, connected to the main Cloud Tower cluster by a private skywalk. The building is aggressively angular — all sharp edges and dark metal, more fortress than mansion. Security is visible and deliberate: armed guards in formal wear, drone overwatch, and guests who submit to biometric scans at the entrance with practiced ease. You arrive as Lysander Vale, dressed in clothes that cost more than your old apartment. The scanner reads your falsified biometrics and the door opens.",
             "choices": [
-                { "text": "Enter and mingle with the guests", "next": "factions.neon-court.nc_035" },
-                { "text": "Study the security layout as you enter", "next": "factions.neon-court.nc_036", "statCheck": { "stat": "INT", "dc": 12 } },
-                { "text": "Look for the auction room immediately", "next": "factions.neon-court.nc_037" }
+                {
+                    "text": "Enter and mingle with the guests",
+                    "next": "factions.neon-court.nc_035"
+                },
+                {
+                    "text": "Study the security layout as you enter",
+                    "next": "factions.neon-court.nc_036",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Look for the auction room immediately",
+                    "next": "factions.neon-court.nc_037"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.entered_thorne_estate", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.entered_thorne_estate",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_034": {
             "text": "<span class='highlight'>'It means that your memory stack — when you receive one — will be keyed to the Lux network. Your consciousness, your very self, will be stored on Lux servers. If you betray the house, your stack can be... archived.'</span> She says the word delicately. <span class='highlight'>'Not destroyed. That would be crude. Simply... stored indefinitely. A consciousness without a body, without sensation, without time. Functionally immortal, functionally imprisoned.'</span> She pours herself another drink. <span class='highlight'>'It's the Court's standard loyalty guarantee. Every house does it.'</span>",
             "choices": [
-                { "text": "\"That's monstrous.\"", "next": "factions.neon-court.nc_032" },
-                { "text": "\"I accept the terms. Let's proceed.\"", "next": "factions.neon-court.nc_024" },
-                { "text": "\"And if I never take the stack?\"", "next": "factions.neon-court.nc_035" }
+                {
+                    "text": "\"That's monstrous.\"",
+                    "next": "factions.neon-court.nc_032"
+                },
+                {
+                    "text": "\"I accept the terms. Let's proceed.\"",
+                    "next": "factions.neon-court.nc_024"
+                },
+                {
+                    "text": "\"And if I never take the stack?\"",
+                    "next": "factions.neon-court.nc_035"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.knows_archive_threat", "value": true },
-                { "type": "add_experience", "amount": 25 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.knows_archive_threat",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "music": "epic"
         },
         "nc_035": {
             "text": "The main hall of the Thorne Estate is a showcase of excess. Champagne that bubbles with bioluminescent organisms. A string quartet of synths playing instruments made from reclaimed spacecraft hulls. Guests drip with wealth — augmented bodies sculpted to inhuman perfection, clothing that costs more than most people earn in a decade. You recognize faces from news feeds: corporate titans, political figures, military brass. They all orbit one figure — Lord Cassius Thorne himself, holding court near a fireplace that burns with actual flame, a grotesque luxury in a city powered by fusion.",
             "choices": [
-                { "text": "Approach Thorne directly", "next": "factions.neon-court.nc_038", "statCheck": { "stat": "CHA", "dc": 14 } },
-                { "text": "Work the room — gather intelligence from other guests", "next": "factions.neon-court.nc_039" },
-                { "text": "Find the auction room", "next": "factions.neon-court.nc_040" }
-            ]
+                {
+                    "text": "Approach Thorne directly",
+                    "next": "factions.neon-court.nc_038",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Work the room — gather intelligence from other guests",
+                    "next": "factions.neon-court.nc_039"
+                },
+                {
+                    "text": "Find the auction room",
+                    "next": "factions.neon-court.nc_040"
+                }
+            ],
+            "music": "epic"
         },
         "nc_036": {
             "text": "Your trained eyes catalog the security: eight guards on the main floor, four on the upper gallery, two at every exit. Drones disguised as decorative light fixtures hover near the ceiling — their weapon mounts are concealed but detectable if you know what to look for. The auction room is behind a reinforced door on the north wall, guarded by two men whose bearing screams military. There's a service corridor on the east side used by the catering staff. It might connect to the auction room's rear entrance.",
             "choices": [
-                { "text": "Mingle with guests while looking for an opportunity", "next": "factions.neon-court.nc_039" },
-                { "text": "Check the service corridor", "next": "factions.neon-court.nc_041" }
+                {
+                    "text": "Mingle with guests while looking for an opportunity",
+                    "next": "factions.neon-court.nc_039"
+                },
+                {
+                    "text": "Check the service corridor",
+                    "next": "factions.neon-court.nc_041"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 },
-                { "type": "set_flag", "flag": "nc.mapped_security", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.mapped_security",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_037": {
             "text": "You move through the crowd with purpose, heading for the north wall where a reinforced door separates the social function from the real business. Two guards block the way. One holds up a hand. <span class='highlight'>'The auction begins in one hour. Registered bidders only.'</span> He checks a list. <span class='highlight'>'Lysander Vale? You're registered. But the viewing room won't open for another forty-five minutes.'</span>",
             "choices": [
-                { "text": "\"I'll wait. Patience is a virtue.\"", "next": "factions.neon-court.nc_039" },
-                { "text": "Try to talk your way in early", "next": "factions.neon-court.nc_042", "statCheck": { "stat": "CHA", "dc": 15 } },
-                { "text": "Use the waiting time to explore the estate", "next": "factions.neon-court.nc_041" }
-            ]
+                {
+                    "text": "\"I'll wait. Patience is a virtue.\"",
+                    "next": "factions.neon-court.nc_039"
+                },
+                {
+                    "text": "Try to talk your way in early",
+                    "next": "factions.neon-court.nc_042",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Use the waiting time to explore the estate",
+                    "next": "factions.neon-court.nc_041"
+                }
+            ],
+            "music": "epic"
         },
         "nc_038": {
             "text": "You approach the gravitational center of the room. Thorne is taller than his profile suggested, with the kind of stillness that comes from absolute confidence. His augmented eyes — ice-blue, capable of seeing in spectrums beyond human range — lock onto you immediately. <span class='highlight'>'Mr. Vale.'</span> His voice is a precision instrument. <span class='highlight'>'The orbital collector. I've reviewed your portfolio. Impressive acquisitions for someone so... young.'</span> The pause carries a weight of suspicion you can't quite read.",
             "choices": [
-                { "text": "\"Youth is relative when you've been in the acquisition business as long as I have.\"", "next": "factions.neon-court.nc_043", "statCheck": { "stat": "CHA", "dc": 13 } },
-                { "text": "\"I have a discerning eye and deep pockets. That's all it takes.\"", "next": "factions.neon-court.nc_044" },
-                { "text": "Deflect the suspicion — ask him about the auction", "next": "factions.neon-court.nc_045" }
+                {
+                    "text": "\"Youth is relative when you've been in the acquisition business as long as I have.\"",
+                    "next": "factions.neon-court.nc_043",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "\"I have a discerning eye and deep pockets. That's all it takes.\"",
+                    "next": "factions.neon-court.nc_044"
+                },
+                {
+                    "text": "Deflect the suspicion — ask him about the auction",
+                    "next": "factions.neon-court.nc_045"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.met_thorne", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.met_thorne",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_039": {
             "text": "You circulate, drink in hand, ears open. The guests talk freely around you — or rather, they talk in the coded language of the Court, where every compliment conceals a dagger and every laugh marks a territory. You catch fragments: a deal between two houses involving memory stack distribution rights; a whispered rumor about a lower-district uprising being funded by a Court faction; and, most interesting, a woman in a silver mask mentioning that Thorne has <span class='highlight'>'something special for the final lot — something that will change the balance entirely.'</span>",
             "choices": [
-                { "text": "Approach the woman in the silver mask", "next": "factions.neon-court.nc_046", "statCheck": { "stat": "CHA", "dc": 13 } },
-                { "text": "Report the intelligence to Marcus via hidden comm", "next": "factions.neon-court.nc_047" },
-                { "text": "Head to the auction room when it opens", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "Approach the woman in the silver mask",
+                    "next": "factions.neon-court.nc_046",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Report the intelligence to Marcus via hidden comm",
+                    "next": "factions.neon-court.nc_047"
+                },
+                {
+                    "text": "Head to the auction room when it opens",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 },
-                { "type": "set_flag", "flag": "nc.gathered_intel", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.gathered_intel",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_040": {
             "text": "You push past the social niceties and head straight for the north wall. The auction room door is guarded, but as a registered bidder, you're waved through into a holding area — a smaller room with comfortable chairs and complimentary drinks. Three other early arrivals are already here: an off-world arms dealer with chrome-plated skin modifications, an elderly woman whose memory stack port is visible at her temple (she's clearly on at least her third body), and a quiet man in black whose eyes never stop moving.",
             "choices": [
-                { "text": "Talk to the arms dealer", "next": "factions.neon-court.nc_049" },
-                { "text": "Talk to the elderly woman", "next": "factions.neon-court.nc_050" },
-                { "text": "Watch the quiet man", "next": "factions.neon-court.nc_051" }
-            ]
+                {
+                    "text": "Talk to the arms dealer",
+                    "next": "factions.neon-court.nc_049"
+                },
+                {
+                    "text": "Talk to the elderly woman",
+                    "next": "factions.neon-court.nc_050"
+                },
+                {
+                    "text": "Watch the quiet man",
+                    "next": "factions.neon-court.nc_051"
+                }
+            ],
+            "music": "epic"
         },
         "nc_041": {
             "text": "The service corridor is plain — white walls, fluorescent lighting, a stark contrast to the opulence of the main hall. Catering staff move through with trays and bottles, too busy to question your presence. You follow the corridor past a kitchen, a storage room, and find what you're looking for: a door marked RESTRICTED that connects to the auction room's rear section. The lock is electronic, keycard-operated.",
             "choices": [
-                { "text": "Try to pick the electronic lock", "next": "factions.neon-court.nc_052", "statCheck": { "stat": "DEX", "dc": 14 } },
-                { "text": "Steal a keycard from a staff member", "next": "factions.neon-court.nc_053", "statCheck": { "stat": "DEX", "dc": 12 } },
-                { "text": "Return to the main hall and wait for the auction to start", "next": "factions.neon-court.nc_039" }
-            ]
+                {
+                    "text": "Try to pick the electronic lock",
+                    "next": "factions.neon-court.nc_052",
+                    "statCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Steal a keycard from a staff member",
+                    "next": "factions.neon-court.nc_053",
+                    "statCheck": {
+                        "stat": "DEX",
+                        "dc": 12
+                    }
+                },
+                {
+                    "text": "Return to the main hall and wait for the auction to start",
+                    "next": "factions.neon-court.nc_039"
+                }
+            ],
+            "music": "epic"
         },
         "nc_042": {
             "text": "You lean in conspiratorially. <span class='highlight'>'I've traveled from the orbital habitats specifically for this auction. My client has very specific needs and very little patience. If I could preview the lots ahead of the general viewing...'</span> You let the implication hang. The guard's partner glances at his colleague. A moment later, the door opens. <span class='highlight'>'Five minutes. Don't touch anything.'</span>",
             "choices": [
-                { "text": "Enter the auction room and scan the lots", "next": "factions.neon-court.nc_054" }
+                {
+                    "text": "Enter the auction room and scan the lots",
+                    "next": "factions.neon-court.nc_054"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_043": {
             "text": "Thorne studies you. His augmented eyes scan you in ways you can feel — thermal, biometric, probably running your face through every database he has access to. After a moment that feels eternal, he smiles. It doesn't reach his eyes. <span class='highlight'>'Indeed. The orbital market does age people quickly, I'm told. All that recycled air.'</span> He gestures to the north wall. <span class='highlight'>'The auction begins shortly. I think you'll find Lot Seven particularly interesting for your... collection.'</span>",
             "choices": [
-                { "text": "\"I look forward to it.\"", "next": "factions.neon-court.nc_048" },
-                { "text": "\"What makes Lot Seven special?\"", "next": "factions.neon-court.nc_055" }
+                {
+                    "text": "\"I look forward to it.\"",
+                    "next": "factions.neon-court.nc_048"
+                },
+                {
+                    "text": "\"What makes Lot Seven special?\"",
+                    "next": "factions.neon-court.nc_055"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_044": {
             "text": "Thorne nods, seemingly satisfied. <span class='highlight'>'A pragmatist. Good. I have too many idealists in my circle already — they're exhausting.'</span> He introduces you to a cluster of guests: a weapons manufacturer, a genetic engineering CEO, and a woman whose title translates roughly to 'Minister of Information.' These are the people who shape the world from above. They welcome you with the easy warmth of predators recognizing another predator.",
             "choices": [
-                { "text": "Network with the group while gathering intel", "next": "factions.neon-court.nc_039" },
-                { "text": "Excuse yourself when the auction is announced", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "Network with the group while gathering intel",
+                    "next": "factions.neon-court.nc_039"
+                },
+                {
+                    "text": "Excuse yourself when the auction is announced",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 10 },
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 10
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_045": {
             "text": "<span class='highlight'>'Tonight's offerings are curated from my personal development division,'</span> Thorne says with a showman's pride. <span class='highlight'>'Advanced stack technology, security systems, and one or two items that push the boundaries of what most people consider possible.'</span> He lowers his voice. <span class='highlight'>'The final lot is invitation-only. Select bidders. If your interests align with ours, you may receive an invitation during the evening.'</span> His augmented eyes flash with something cold and calculating.",
             "choices": [
-                { "text": "\"I'm sure my interests will align perfectly.\"", "next": "factions.neon-court.nc_048" },
-                { "text": "\"What kind of interests are we talking about?\"", "next": "factions.neon-court.nc_056", "statCheck": { "stat": "CHA", "dc": 14 } }
-            ]
+                {
+                    "text": "\"I'm sure my interests will align perfectly.\"",
+                    "next": "factions.neon-court.nc_048"
+                },
+                {
+                    "text": "\"What kind of interests are we talking about?\"",
+                    "next": "factions.neon-court.nc_056",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                }
+            ],
+            "music": "epic"
         },
         "nc_046": {
             "text": "The woman in the silver mask turns out to be <span class='highlight'>Lady Isolde Krenn</span>, head of House Krenn, the Court's intelligence-gathering family. Behind the mask, her face is ageless and unreadable. <span class='highlight'>'You're the Duchess's new piece,'</span> she says without preamble. <span class='highlight'>'Don't bother denying it. I know everything that happens in this city.'</span> She sips her drink. <span class='highlight'>'I'm going to tell you something for free, because I like to see what people do with information: Thorne's final auction lot is a consciousness-transfer override. It can forcibly copy anyone's mind without their consent. Think about what that means.'</span>",
             "choices": [
-                { "text": "\"Why are you telling me this?\"", "next": "factions.neon-court.nc_057" },
-                { "text": "\"That's a weapon, not a product.\"", "next": "factions.neon-court.nc_058" },
-                { "text": "Share this with Marcus immediately", "next": "factions.neon-court.nc_047" }
+                {
+                    "text": "\"Why are you telling me this?\"",
+                    "next": "factions.neon-court.nc_057"
+                },
+                {
+                    "text": "\"That's a weapon, not a product.\"",
+                    "next": "factions.neon-court.nc_058"
+                },
+                {
+                    "text": "Share this with Marcus immediately",
+                    "next": "factions.neon-court.nc_047"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.knows_override_device", "value": true },
-                { "type": "add_experience", "amount": 35 },
-                { "type": "set_flag", "flag": "nc.met_isolde", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.knows_override_device",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.met_isolde",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_047": {
             "text": "You step into a quiet alcove and activate the micro-comm hidden in your collar. Marcus's voice is calm, professional. <span class='highlight'>'Received. The Duchess will want to know about the final lot immediately. Continue gathering evidence. Your recording device should be capturing everything within three meters. Get close to the auction items and let the crystal do its work.'</span> A pause. <span class='highlight'>'I'm positioned on the skywalk. If you need extraction, the code phrase is \"the view is disappointing.\"'</span>",
             "choices": [
-                { "text": "Head to the auction room", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "Head to the auction room",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.marcus_updated", "value": true },
-                { "type": "add_experience", "amount": 15 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.marcus_updated",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
+            ],
+            "music": "mystery"
         },
         "nc_048": {
             "text": "The auction room is intimate — thirty seats arranged in a semicircle around a raised platform. Display cases line the walls, each containing a piece of technology that gleams with dark purpose. A holographic auctioneer — Thorne doesn't trust human auctioneers, apparently — materializes on the platform. <span class='highlight'>'Welcome, distinguished guests. Tonight's auction features seven lots of proprietary Thorne Industries technology.'</span> The first case opens, revealing a memory stack modification system. <span class='highlight'>'Lot One: the Mnemonist — capable of selectively editing stored memories in any compatible stack.'</span>",
             "choices": [
-                { "text": "Record everything with the data-crystal", "next": "factions.neon-court.nc_059" },
-                { "text": "Bid on Lot One to maintain cover", "next": "factions.neon-court.nc_060" },
-                { "text": "Watch the other bidders — learn who's buying what", "next": "factions.neon-court.nc_061" }
-            ]
+                {
+                    "text": "Record everything with the data-crystal",
+                    "next": "factions.neon-court.nc_059"
+                },
+                {
+                    "text": "Bid on Lot One to maintain cover",
+                    "next": "factions.neon-court.nc_060"
+                },
+                {
+                    "text": "Watch the other bidders — learn who's buying what",
+                    "next": "factions.neon-court.nc_061"
+                }
+            ],
+            "music": "epic"
         },
         "nc_049": {
             "text": "The chrome-plated arms dealer introduces himself as <span class='highlight'>Volkov</span>. His handshake could crush steel. <span class='highlight'>'Lysander Vale. Orbital market. I know the name — you bought the Helios collection last quarter.'</span> He doesn't know that the Helios collection purchase was fabricated by Seraphina's people three days ago. <span class='highlight'>'I'm here for Lot Five. Thorne's new neural disruption array. Perfect for... crowd management in the colonies.'</span> He means crowd suppression. He means weapons for putting down workers.",
             "choices": [
-                { "text": "Play along — \"Crowd management is a growing market.\"", "next": "factions.neon-court.nc_048" },
-                { "text": "Probe for more details about his interests", "next": "factions.neon-court.nc_062", "statCheck": { "stat": "CHA", "dc": 12 } }
+                {
+                    "text": "Play along — \"Crowd management is a growing market.\"",
+                    "next": "factions.neon-court.nc_048"
+                },
+                {
+                    "text": "Probe for more details about his interests",
+                    "next": "factions.neon-court.nc_062",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 12
+                    }
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.met_volkov", "value": true },
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.met_volkov",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_050": {
             "text": "The elderly woman — her third or fourth body, you estimate — has the serene confidence of someone who has literally seen centuries. She introduces herself as <span class='highlight'>Matriarch Yun</span>, representative of an eastern consortium. <span class='highlight'>'I've attended fifty-seven auctions in this tower. Thorne's father ran them before him. Less ambition, more taste.'</span> She studies you over her glass. <span class='highlight'>'You have the look of someone who's here for more than shopping. Be careful, young one. The walls in this house listen, and they report what they hear.'</span>",
             "choices": [
-                { "text": "\"Thank you for the warning.\"", "next": "factions.neon-court.nc_048" },
-                { "text": "\"What can you tell me about the final lot?\"", "next": "factions.neon-court.nc_063", "statCheck": { "stat": "CHA", "dc": 14 } }
+                {
+                    "text": "\"Thank you for the warning.\"",
+                    "next": "factions.neon-court.nc_048"
+                },
+                {
+                    "text": "\"What can you tell me about the final lot?\"",
+                    "next": "factions.neon-court.nc_063",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.met_matriarch_yun", "value": true },
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.met_matriarch_yun",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_051": {
             "text": "The quiet man notices you watching and meets your gaze. His eyes are dark, unaugmented — unusual in this company. After a moment, he nods once and looks away. But in that brief exchange, you recognize something: the watchfulness of a professional operative. He's here for the same reason you are — gathering intelligence. The question is: for whom?",
             "choices": [
-                { "text": "Approach him carefully", "next": "factions.neon-court.nc_064", "statCheck": { "stat": "INT", "dc": 13 } },
-                { "text": "Keep your distance and attend the auction", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "Approach him carefully",
+                    "next": "factions.neon-court.nc_064",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Keep your distance and attend the auction",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.spotted_operative", "value": true },
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.spotted_operative",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_052": {
             "text": "The electronic lock is high-end but not military-grade. Your tools — hidden in the lining of your jacket — make short work of it. The door clicks open, revealing the back of the auction room. Display cases line the walls, each containing technology that makes your stomach drop. Memory editing systems. Consciousness extraction rigs. And in the final case, behind reinforced glass: a device about the size of a fist, pulsing with a cold blue light. The label reads: <span class='highlight'>PROJECT SOVEREIGN — CONSCIOUSNESS OVERRIDE PROTOTYPE.</span>",
             "choices": [
-                { "text": "Record everything with the data-crystal", "next": "factions.neon-court.nc_065" },
-                { "text": "Try to steal the override prototype", "next": "factions.neon-court.nc_066", "statCheck": { "stat": "DEX", "dc": 16 } }
+                {
+                    "text": "Record everything with the data-crystal",
+                    "next": "factions.neon-court.nc_065"
+                },
+                {
+                    "text": "Try to steal the override prototype",
+                    "next": "factions.neon-court.nc_066",
+                    "statCheck": {
+                        "stat": "DEX",
+                        "dc": 16
+                    }
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 35 },
-                { "type": "set_flag", "flag": "nc.found_sovereign", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.found_sovereign",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_053": {
             "text": "You bump into a catering staff member carrying a tray, timing it perfectly. Your hand slips into his pocket and emerges with a keycard as you apologize profusely. He doesn't notice. The keycard reads STAFF ACCESS — LEVEL 2, which should be enough for the rear corridor door.",
             "choices": [
-                { "text": "Use the keycard on the restricted door", "next": "factions.neon-court.nc_052" }
+                {
+                    "text": "Use the keycard on the restricted door",
+                    "next": "factions.neon-court.nc_052"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 },
-                { "type": "set_flag", "flag": "nc.has_staff_keycard", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.has_staff_keycard",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_054": {
             "text": "Five minutes. You move fast, your data-crystal recording everything. The lots are laid out in order: memory editing tech, neural disruption arrays, enhanced surveillance stacks. Each one is a tool of control, refined and weaponized. But it's the final display that stops you cold. A small device, heavily shielded, with a label that reads <span class='highlight'>PROJECT SOVEREIGN</span>. The technical specifications describe a consciousness-transfer override: it can forcibly extract, copy, or implant consciousness in any stack-equipped individual. Within range, no one's mind is their own.",
             "choices": [
-                { "text": "Record everything and get out before time's up", "next": "factions.neon-court.nc_065" }
+                {
+                    "text": "Record everything and get out before time's up",
+                    "next": "factions.neon-court.nc_065"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 40 },
-                { "type": "set_flag", "flag": "nc.found_sovereign", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.found_sovereign",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_055": {
             "text": "Thorne's smile sharpens. <span class='highlight'>'Lot Seven is a prototype that solves the fundamental problem of consciousness technology: consent. Currently, a stack transfer requires the subject's willing participation. Lot Seven eliminates that requirement.'</span> He lets the implication settle. <span class='highlight'>'For security purposes, of course. Extracting consciousness from criminals, terrorists, threats to stability. Nothing sinister.'</span> His augmented eyes tell a different story — they gleam with the excitement of a man who sees the end of all resistance to his will.",
             "choices": [
-                { "text": "\"Fascinating. I'll be bidding.\"", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "\"Fascinating. I'll be bidding.\"",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.thorne_revealed_sovereign", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.thorne_revealed_sovereign",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_056": {
             "text": "Thorne leans closer. You can smell cologne that probably costs more per ounce than medical-grade nanites. <span class='highlight'>'The kind of interests that understand the future belongs to those who can control consciousness itself. Not just preserve it — control it. Shape it. Deploy it.'</span> His voice drops. <span class='highlight'>'The old model — people living, dying, transferring — is inefficient. The new model will be streamlined. I'm looking for partners who understand that efficiency sometimes requires... flexibility with ethics.'</span>",
             "choices": [
-                { "text": "\"Ethics are a luxury. Efficiency is survival.\"", "next": "factions.neon-court.nc_048" },
-                { "text": "\"That's a bold vision. I'd like to hear more at the auction.\"", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "\"Ethics are a luxury. Efficiency is survival.\"",
+                    "next": "factions.neon-court.nc_048"
+                },
+                {
+                    "text": "\"That's a bold vision. I'd like to hear more at the auction.\"",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.thorne_confided", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.thorne_confided",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_057": {
             "text": "Isolde tilts her head, her silver mask catching the light. <span class='highlight'>'Because Thorne with a consciousness override is bad for everyone — including my house. The balance of power in the Court depends on no single house having absolute leverage. That device would give Thorne the ability to extract anyone's memories, copy anyone's consciousness, puppet anyone's body.'</span> She finishes her drink. <span class='highlight'>'I don't need the Duchess to win. I need Thorne to lose. You're the instrument for both. Use the information wisely.'</span>",
             "choices": [
-                { "text": "\"An enemy of my enemy. I understand.\"", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "\"An enemy of my enemy. I understand.\"",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 },
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 5 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 5
+                }
+            ],
+            "music": "epic"
         },
         "nc_058": {
             "text": "<span class='highlight'>'Of course it's a weapon,'</span> Isolde says. <span class='highlight'>'Everything Thorne creates is a weapon. He just sells them as products.'</span> She adjusts her mask. <span class='highlight'>'The question is whether you're going to let that weapon leave this building. The Duchess sent you to gather proof. I'm suggesting you might want to gather the device itself.'</span> She pauses. <span class='highlight'>'But then, that's a decision above my pay grade. Or below it, depending on perspective.'</span>",
             "choices": [
-                { "text": "Head to the auction with a plan forming", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "Head to the auction with a plan forming",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.isolde_suggested_theft", "value": true },
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.isolde_suggested_theft",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_059": {
             "text": "You palm the data-crystal and let it work, its surface warming against your skin as it records audio, video, and the electromagnetic signatures of the auction items. Each lot is more disturbing than the last. Lot Three: a system for implanting false memories. Lot Five: a neural disruption field that can incapacitate every stack-equipped person within a kilometer. The bidding is fierce, conducted in subtle gestures and coded phrases. Credits move in quantities that could feed the Lower District for years.",
             "choices": [
-                { "text": "Continue recording through the final lot", "next": "factions.neon-court.nc_067" }
+                {
+                    "text": "Continue recording through the final lot",
+                    "next": "factions.neon-court.nc_067"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_060": {
             "text": "You raise your hand when the bidding opens. <span class='highlight'>'Fifty thousand credits.'</span> The room takes notice. You're the unknown quantity, the orbital collector nobody's seen before. The bidding climbs: sixty, eighty, one hundred thousand. You bow out at one-twenty — high enough to seem serious, low enough to preserve Seraphina's operational budget. The Mnemonist sells to the chrome-plated arms dealer for two hundred thousand credits. Memory editing technology, sold like furniture.",
             "choices": [
-                { "text": "Continue watching the auction", "next": "factions.neon-court.nc_067" }
+                {
+                    "text": "Continue watching the auction",
+                    "next": "factions.neon-court.nc_067"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 },
-                { "type": "set_flag", "flag": "nc.bid_on_lot", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.bid_on_lot",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_061": {
             "text": "You watch hands and faces instead of the platform. The chrome arms dealer bids aggressively on weapons tech. Matriarch Yun bids selectively, only on items with consciousness-preservation applications. The quiet operative bids on nothing — he's recording, just like you. And a new figure you hadn't noticed before sits in the back row, face shadowed, bidding through an intermediary on every single lot. Someone with very deep pockets and very broad interests.",
             "choices": [
-                { "text": "Try to identify the shadowed figure", "next": "factions.neon-court.nc_068", "statCheck": { "stat": "INT", "dc": 14 } },
-                { "text": "Focus on recording the final lot", "next": "factions.neon-court.nc_067" }
+                {
+                    "text": "Try to identify the shadowed figure",
+                    "next": "factions.neon-court.nc_068",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "Focus on recording the final lot",
+                    "next": "factions.neon-court.nc_067"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "music": "epic"
         },
         "nc_062": {
             "text": "Volkov opens up after his second drink — the universal solvent. <span class='highlight'>'The colonies are restless. Workers striking, synths demanding rights, people asking questions about who deserves immortality. My clients need tools to maintain order.'</span> He leans in. <span class='highlight'>'Between us, the real prize tonight is the final lot. Thorne calls it Project Sovereign. A consciousness override. My clients would pay any price for that. Imagine: an entire workforce whose minds you can reset at will. No strikes. No dissent. No problems.'</span> He grins, and you fight to keep your expression neutral.",
             "choices": [
-                { "text": "\"Sounds like the future of labor management.\"", "next": "factions.neon-court.nc_048" },
-                { "text": "Excuse yourself — you've heard enough", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "\"Sounds like the future of labor management.\"",
+                    "next": "factions.neon-court.nc_048"
+                },
+                {
+                    "text": "Excuse yourself — you've heard enough",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.volkov_intel", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.volkov_intel",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_063": {
             "text": "Matriarch Yun's ancient eyes — her own originals, transplanted through four bodies — study you carefully. <span class='highlight'>'The final lot. Yes. I've heard whispers.'</span> She lowers her voice. <span class='highlight'>'Consciousness override technology. The ability to extract, copy, or implant a mind without consent. Thorne's been developing it for three years in a black-site laboratory. If it works as promised, it will make every other weapon in this room obsolete.'</span> She touches your arm with papery fingers. <span class='highlight'>'Whoever buys it will control not just bodies, but souls. That should terrify you.'</span>",
             "choices": [
-                { "text": "\"It does. Thank you for the warning.\"", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "\"It does. Thank you for the warning.\"",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.knows_override_device", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.knows_override_device",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_064": {
             "text": "You take the seat beside him. Up close, you notice details: calloused hands that speak of combat training, a micro-earpiece barely visible, and a slight bulge at the ankle that suggests a concealed weapon. He meets your eyes. <span class='highlight'>'You're not a collector,'</span> he says, barely moving his lips. <span class='highlight'>'Neither am I. Whoever you work for, we probably want the same thing tonight.'</span> He slides a card across the armrest. It reads: GHOST MARKET INTELLIGENCE DIVISION. <span class='highlight'>'If things go sideways, find me. Professional courtesy.'</span>",
             "choices": [
-                { "text": "Pocket the card and attend the auction", "next": "factions.neon-court.nc_048" },
-                { "text": "\"What does Ghost Market Intelligence want with Thorne?\"", "next": "factions.neon-court.nc_069" }
+                {
+                    "text": "Pocket the card and attend the auction",
+                    "next": "factions.neon-court.nc_048"
+                },
+                {
+                    "text": "\"What does Ghost Market Intelligence want with Thorne?\"",
+                    "next": "factions.neon-court.nc_069"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.ghost_market_contact", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.ghost_market_contact",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_065": {
             "text": "The data-crystal captures everything — schematics, specifications, the electromagnetic signatures of each device. Project Sovereign's file alone is worth more than everything else in the room combined. The override device's specifications are chilling: range of fifty meters, capable of affecting any stack-equipped individual, with options for memory extraction, consciousness copying, or full personality replacement. In Thorne's hands, this device could puppet anyone in the Court. Anyone in the city.",
             "choices": [
-                { "text": "Get out with the recording — this is enough proof", "next": "factions.neon-court.nc_070" },
-                { "text": "Try to disable or destroy the Sovereign prototype", "next": "factions.neon-court.nc_071", "statCheck": { "stat": "DEX", "dc": 15 } }
+                {
+                    "text": "Get out with the recording — this is enough proof",
+                    "next": "factions.neon-court.nc_070"
+                },
+                {
+                    "text": "Try to disable or destroy the Sovereign prototype",
+                    "next": "factions.neon-court.nc_071",
+                    "statCheck": {
+                        "stat": "DEX",
+                        "dc": 15
+                    }
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 40 },
-                { "type": "set_flag", "flag": "nc.has_sovereign_data", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.has_sovereign_data",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_066": {
             "text": "You disable the display case's alarm using a frequency jammer hidden in your cufflink — Marcus's gadget, worth every credit. The glass lifts silently. The Sovereign prototype is heavier than it looks, warm and pulsing with energy. You slip it into the shielded pocket of your jacket. The display case's weight sensor registers the change, but you've already placed a decoy — a maintenance tool of similar weight that you grabbed from the service corridor. You have maybe twenty minutes before someone notices.",
             "choices": [
-                { "text": "Get out immediately", "next": "factions.neon-court.nc_070" }
+                {
+                    "text": "Get out immediately",
+                    "next": "factions.neon-court.nc_070"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 50 },
-                { "type": "set_flag", "flag": "nc.stole_sovereign", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.stole_sovereign",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_067": {
             "text": "The holographic auctioneer announces the final lot. The room goes quiet. Even the professional cynics lean forward. <span class='highlight'>'Lot Seven: Project Sovereign. A consciousness-override system capable of non-consensual memory extraction, consciousness duplication, and personality implantation. Bidding begins at five million credits.'</span> The room erupts. Volkov bids immediately. Matriarch Yun counters. The shadowed figure in the back raises the bid by a million without flinching. The price climbs: eight million, twelve, fifteen. This device will sell for more than most districts are worth.",
             "choices": [
-                { "text": "Record the bidding war — this is crucial evidence", "next": "factions.neon-court.nc_072" },
-                { "text": "Bid to stall the sale and create chaos", "next": "factions.neon-court.nc_073", "statCheck": { "stat": "CHA", "dc": 15 } },
-                { "text": "Slip away during the excitement to steal the prototype", "next": "factions.neon-court.nc_074", "statCheck": { "stat": "DEX", "dc": 14 } }
-            ]
+                {
+                    "text": "Record the bidding war — this is crucial evidence",
+                    "next": "factions.neon-court.nc_072"
+                },
+                {
+                    "text": "Bid to stall the sale and create chaos",
+                    "next": "factions.neon-court.nc_073",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                },
+                {
+                    "text": "Slip away during the excitement to steal the prototype",
+                    "next": "factions.neon-court.nc_074",
+                    "statCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                }
+            ],
+            "music": "epic"
         },
         "nc_068": {
             "text": "You focus, filtering out the auction noise, studying the shadowed figure's movements. The intermediary receives instructions through an earpiece. You trace the signal — your data-crystal has passive scanning capabilities — and catch a fragment of the encrypted transmission. The voice giving orders is synthesized, disguised, but the encoding pattern is distinctive. It's a Meridian corporate encryption standard. Someone within Meridian itself is bidding on Thorne's illegal technology. The corruption goes deeper than a rogue house lord.",
             "choices": [
-                { "text": "Focus on recording the final lot", "next": "factions.neon-court.nc_067" }
+                {
+                    "text": "Focus on recording the final lot",
+                    "next": "factions.neon-court.nc_067"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 35 },
-                { "type": "set_flag", "flag": "nc.identified_meridian_bidder", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.identified_meridian_bidder",
+                    "value": true
+                }
+            ],
+            "music": "mystery"
         },
         "nc_069": {
             "text": "The operative glances around, then speaks quickly. <span class='highlight'>'Thorne's technology threatens the free market. If one entity controls consciousness itself, trade becomes meaningless — you can just rewrite someone's mind to give you what you want. The Ghost Market exists because consciousness is sovereign. Thorne wants to end that sovereignty.'</span> He pauses. <span class='highlight'>'We're here to ensure the Sovereign prototype doesn't leave this building. By any means necessary.'</span>",
             "choices": [
-                { "text": "\"We might be able to help each other.\"", "next": "factions.neon-court.nc_048" },
-                { "text": "\"I work alone. But good luck.\"", "next": "factions.neon-court.nc_048" }
+                {
+                    "text": "\"We might be able to help each other.\"",
+                    "next": "factions.neon-court.nc_048"
+                },
+                {
+                    "text": "\"I work alone. But good luck.\"",
+                    "next": "factions.neon-court.nc_048"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "music": "epic"
         },
         "nc_070": {
             "text": "You move through the estate with calculated calm, heading for the main exit. The party continues around you, oblivious. You're thirty meters from the door when a hand closes on your shoulder. You turn to face a Thorne security officer, his expression flat and professional. <span class='highlight'>'Mr. Vale. Lord Thorne requests your presence in his private study. He has a... personal offer he'd like to discuss.'</span> The grip on your shoulder tightens imperceptibly.",
             "choices": [
-                { "text": "Go with the guard — you can't blow your cover", "next": "factions.neon-court.nc_075" },
-                { "text": "\"The view is disappointing.\" (Extraction code)", "next": "factions.neon-court.nc_076", "condition": { "type": "flag", "flag": "nc.has_marcus_backup", "value": true } },
-                { "text": "Fight your way out", "next": "factions.neon-court.nc_077", "statCheck": { "stat": "STR", "dc": 15 } }
-            ]
+                {
+                    "text": "Go with the guard — you can't blow your cover",
+                    "next": "factions.neon-court.nc_075"
+                },
+                {
+                    "text": "\"The view is disappointing.\" (Extraction code)",
+                    "next": "factions.neon-court.nc_076",
+                    "condition": {
+                        "type": "flag",
+                        "flag": "nc.has_marcus_backup",
+                        "value": true
+                    }
+                },
+                {
+                    "text": "Fight your way out",
+                    "next": "factions.neon-court.nc_077",
+                    "statCheck": {
+                        "stat": "STR",
+                        "dc": 15
+                    }
+                }
+            ],
+            "music": "epic"
         },
         "nc_071": {
             "text": "You pull the Sovereign prototype from its case and press it against the floor. Your heel comes down hard, once, twice, three times. The casing cracks. Blue light leaks from the fractures. A sound fills the room — not an alarm, but something worse: a scream, high and electronic, as the consciousness-override circuits die. The device was partially alive, you realize with horror. Some component of it was built from extracted neural tissue. It was screaming because, on some level, it could feel pain.",
             "choices": [
-                { "text": "Get out — now", "next": "factions.neon-court.nc_076" }
+                {
+                    "text": "Get out — now",
+                    "next": "factions.neon-court.nc_076"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 50 },
-                { "type": "set_flag", "flag": "nc.destroyed_sovereign", "value": true },
-                { "type": "set_flag", "flag": "nc.sovereign_was_alive", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.destroyed_sovereign",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.sovereign_was_alive",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_072": {
             "text": "Your data-crystal captures every bid, every face, every amount. Twenty million. Twenty-five. The bidding war between Volkov, the shadow bidder, and Matriarch Yun is vicious. At thirty million credits, Yun drops out. At forty million, Volkov's jaw sets. The shadow bidder pushes to forty-five. Volkov goes to fifty. The room holds its breath. <span class='highlight'>'Fifty million credits,'</span> the auctioneer intones. <span class='highlight'>'Going once. Going twice.'</span>",
             "choices": [
-                { "text": "Let the sale complete — you have the evidence", "next": "factions.neon-court.nc_078" },
-                { "text": "Create a disruption to stop the sale", "next": "factions.neon-court.nc_079", "statCheck": { "stat": "CHA", "dc": 16 } }
-            ]
+                {
+                    "text": "Let the sale complete — you have the evidence",
+                    "next": "factions.neon-court.nc_078"
+                },
+                {
+                    "text": "Create a disruption to stop the sale",
+                    "next": "factions.neon-court.nc_079",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 16
+                    }
+                }
+            ],
+            "music": "epic"
         },
         "nc_073": {
             "text": "<span class='highlight'>'One hundred million credits.'</span> Your voice cuts through the room like a knife. Every head turns. Volkov's chrome jaw drops. The shadow bidder's intermediary touches his earpiece, confused. Even Thorne, watching from the gallery above, leans forward. The auctioneer processes. <span class='highlight'>'One hundred million credits. A new bidder. Do I hear one hundred and ten?'</span> Silence. Nobody in the room can match that number, and nobody believes you can either. But the hesitation buys you time.",
             "choices": [
-                { "text": "Use the chaos to slip out with your evidence", "next": "factions.neon-court.nc_070" },
-                { "text": "Maintain the bluff — force the auction to end without a sale", "next": "factions.neon-court.nc_080", "statCheck": { "stat": "CHA", "dc": 17 } }
+                {
+                    "text": "Use the chaos to slip out with your evidence",
+                    "next": "factions.neon-court.nc_070"
+                },
+                {
+                    "text": "Maintain the bluff — force the auction to end without a sale",
+                    "next": "factions.neon-court.nc_080",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 17
+                    }
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 35 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
+            ],
+            "music": "epic"
         },
         "nc_074": {
             "text": "While every eye is fixed on the bidding war, you ease out of your seat and toward the display platform. The Sovereign prototype sits in its case, pulsing with that cold blue light. The case lock is biometric — but the back panel is held by four standard screws, overlooked by engineers who assumed the biometric lock was sufficient. You work two screws free before a guard's patrol path turns toward you. You freeze, pretending to examine the display, and he passes. Two more screws. The back panel opens. You palm the device.",
             "choices": [
-                { "text": "Slip back to your seat with the prototype hidden", "next": "factions.neon-court.nc_070" }
+                {
+                    "text": "Slip back to your seat with the prototype hidden",
+                    "next": "factions.neon-court.nc_070"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 45 },
-                { "type": "set_flag", "flag": "nc.stole_sovereign", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 45
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.stole_sovereign",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_075": {
             "text": "Thorne's private study is a room of dark wood and cold metal. He's waiting, standing beside a desk that probably costs more than a combat shuttle. His augmented eyes scan you — really scan you, every spectrum. <span class='highlight'>'Your biometrics are interesting, Mr. Vale. Your stress response suggests you're not entirely comfortable here. That's reasonable — most people aren't comfortable in my home.'</span> He pauses. <span class='highlight'>'But your biometric pattern doesn't match any known orbital resident. Which makes me wonder: who are you really?'</span>",
             "choices": [
-                { "text": "Maintain the cover — \"My records are sealed for security reasons.\"", "next": "factions.neon-court.nc_081", "statCheck": { "stat": "CHA", "dc": 16 } },
-                { "text": "\"Someone who knows about Project Sovereign and its implications.\"", "next": "factions.neon-court.nc_082" },
-                { "text": "Attack Thorne and escape", "next": "factions.neon-court.nc_083", "statCheck": { "stat": "STR", "dc": 15 } }
-            ]
+                {
+                    "text": "Maintain the cover — \"My records are sealed for security reasons.\"",
+                    "next": "factions.neon-court.nc_081",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 16
+                    }
+                },
+                {
+                    "text": "\"Someone who knows about Project Sovereign and its implications.\"",
+                    "next": "factions.neon-court.nc_082"
+                },
+                {
+                    "text": "Attack Thorne and escape",
+                    "next": "factions.neon-court.nc_083",
+                    "statCheck": {
+                        "stat": "STR",
+                        "dc": 15
+                    }
+                }
+            ],
+            "music": "epic"
         },
         "nc_076": {
             "text": "You speak the code phrase and the response is immediate. The skywalk window to your left shatters inward as Marcus swings through on a grappling line, a compact assault weapon in his free hand. He fires three suppression rounds at the ceiling — non-lethal, but the sound is deafening. Guests scatter. Guards converge on the threat. In the chaos, Marcus grabs your arm and hauls you toward the broken window. <span class='highlight'>'Jump!'</span> You jump. The skywalk is fifteen meters below. Marcus's grappling line catches you both, and you swing in a stomach-dropping arc toward the adjacent tower.",
             "choices": [
-                { "text": "Escape to the Duchess with your evidence", "next": "factions.neon-court.nc_084" }
+                {
+                    "text": "Escape to the Duchess with your evidence",
+                    "next": "factions.neon-court.nc_084"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 40 },
-                { "type": "set_flag", "flag": "nc.dramatic_escape", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.dramatic_escape",
+                    "value": true
+                }
+            ],
+            "music": "action"
         },
         "nc_077": {
             "text": "You pivot, driving your elbow into the guard's solar plexus. He folds. A second guard reaches for his weapon and you take him down with a sweep kick and a palm strike to the jaw. The party erupts into screams. You sprint for the exit, shoulder-checking a third guard who tries to block the door. The skywalk stretches ahead of you — a hundred meters of glass and steel between you and escape. Behind you, Thorne's voice booms over the estate's speaker system: <span class='highlight'>'Lock the platforms. Nobody leaves.'</span>",
             "choices": [
-                { "text": "Run for the skywalk before it locks", "next": "factions.neon-court.nc_084" },
-                { "text": "Find an alternate exit", "next": "factions.neon-court.nc_085", "statCheck": { "stat": "DEX", "dc": 14 } }
+                {
+                    "text": "Run for the skywalk before it locks",
+                    "next": "factions.neon-court.nc_084"
+                },
+                {
+                    "text": "Find an alternate exit",
+                    "next": "factions.neon-court.nc_085",
+                    "statCheck": {
+                        "stat": "DEX",
+                        "dc": 14
+                    }
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 35 },
-                { "type": "modify_stat", "stat": "STR", "amount": 1 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "STR",
+                    "amount": 1
+                }
+            ],
+            "music": "action"
         },
         "nc_078": {
             "text": "<span class='highlight'>'Sold! Fifty million credits to the gentleman representing Volkov Industries.'</span> The gavel falls — holographic, but the sound is real. Volkov stands, triumphant, and shakes Thorne's hand. A consciousness-override device is now in the hands of a man who wants to use it for 'crowd management.' Your data-crystal holds everything: the sale, the buyers, the specifications, the proof that Thorne is selling weapons capable of enslaving minds. It's enough. Time to leave.",
             "choices": [
-                { "text": "Slip out during the post-auction celebration", "next": "factions.neon-court.nc_070" }
+                {
+                    "text": "Slip out during the post-auction celebration",
+                    "next": "factions.neon-court.nc_070"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 },
-                { "type": "set_flag", "flag": "nc.sovereign_sold", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.sovereign_sold",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_079": {
             "text": "You stand and point at the display case. <span class='highlight'>'That device was built using extracted neural tissue from unwilling donors. I have evidence.'</span> The room freezes. Thorne's expression goes from shock to fury in a microsecond. Matriarch Yun's eyes widen. Volkov's hand drifts toward a concealed weapon. The quiet operative in the back row is already on his feet, moving toward the exit. The auction is chaos now — accusations, denials, guards converging. In the confusion, you have seconds to act.",
             "choices": [
-                { "text": "Grab the prototype during the chaos", "next": "factions.neon-court.nc_074" },
-                { "text": "Use the chaos to escape with your recording", "next": "factions.neon-court.nc_070" }
+                {
+                    "text": "Grab the prototype during the chaos",
+                    "next": "factions.neon-court.nc_074"
+                },
+                {
+                    "text": "Use the chaos to escape with your recording",
+                    "next": "factions.neon-court.nc_070"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 30 },
-                { "type": "set_flag", "flag": "nc.caused_auction_chaos", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.caused_auction_chaos",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_080": {
             "text": "You hold the room's attention through sheer audacity. <span class='highlight'>'One hundred million. My client's authorization is verified through orbital banking — check the Helios trust. The funds are real.'</span> The auctioneer scrambles to verify. Thorne watches from above, his augmented eyes boring into you. After an agonizing thirty seconds, the auctioneer speaks: <span class='highlight'>'Verification pending. The auction is temporarily suspended until confirmation is received.'</span> Thorne is furious. But the sale is paused. You've bought time — and possibly made a very dangerous enemy.",
             "choices": [
-                { "text": "Use the delay to escape with your evidence", "next": "factions.neon-court.nc_070" }
+                {
+                    "text": "Use the delay to escape with your evidence",
+                    "next": "factions.neon-court.nc_070"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 50 },
-                { "type": "set_flag", "flag": "nc.bluffed_auction", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.bluffed_auction",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_081": {
             "text": "You hold Thorne's gaze without blinking. <span class='highlight'>'My biometric records are sealed under Orbital Privacy Act Section 44. My clients value discretion. If you have concerns about my identity, I suggest contacting the Helios Trust directly.'</span> The bluff is razor-thin, but you deliver it with absolute conviction. Thorne stares at you for a long moment. Then: <span class='highlight'>'My apologies, Mr. Vale. The orbital protocols are... different from what we're accustomed to. Please, enjoy the rest of the evening.'</span> He doesn't believe you. But he can't prove it. Yet.",
             "choices": [
-                { "text": "Leave the study and get out of the estate", "next": "factions.neon-court.nc_070" }
+                {
+                    "text": "Leave the study and get out of the estate",
+                    "next": "factions.neon-court.nc_070"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 40 },
-                { "type": "modify_stat", "stat": "CHA", "amount": 1 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "CHA",
+                    "amount": 1
+                }
+            ],
+            "music": "epic"
         },
         "nc_082": {
             "text": "Thorne goes very still. His augmented eyes dim — he's processing, calculating, reassessing everything about the evening. <span class='highlight'>'You're with the Duchess,'</span> he says flatly. Not a question. <span class='highlight'>'Of course you are. Seraphina always did prefer proxies to personal risk.'</span> He sits in his chair. <span class='highlight'>'So. You know about Sovereign. The question is whether the information leaves this room with you.'</span> Two guards step forward from the shadows, weapons drawn.",
             "choices": [
-                { "text": "\"Kill me and the Duchess releases everything. It's already uploaded.\"", "next": "factions.neon-court.nc_086", "statCheck": { "stat": "CHA", "dc": 14 } },
-                { "text": "\"The view is disappointing.\" (Extraction code)", "next": "factions.neon-court.nc_076", "condition": { "type": "flag", "flag": "nc.has_marcus_backup", "value": true } },
-                { "text": "Fight your way out", "next": "factions.neon-court.nc_083", "statCheck": { "stat": "STR", "dc": 15 } }
-            ]
+                {
+                    "text": "\"Kill me and the Duchess releases everything. It's already uploaded.\"",
+                    "next": "factions.neon-court.nc_086",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                },
+                {
+                    "text": "\"The view is disappointing.\" (Extraction code)",
+                    "next": "factions.neon-court.nc_076",
+                    "condition": {
+                        "type": "flag",
+                        "flag": "nc.has_marcus_backup",
+                        "value": true
+                    }
+                },
+                {
+                    "text": "Fight your way out",
+                    "next": "factions.neon-court.nc_083",
+                    "statCheck": {
+                        "stat": "STR",
+                        "dc": 15
+                    }
+                }
+            ],
+            "music": "epic"
         },
         "nc_083": {
             "text": "You flip the desk at Thorne, sending crystal decanters and data-pads flying. The first guard catches a crystal decanter to the face. You take the second's weapon during his moment of shock and put him down with a precise strike to the neck. Thorne himself is faster than he looks — augmented reflexes. He draws a compact rail pistol from his desk drawer. But you're already through the door, slamming it behind you. The lock engages — his own security, working against him for the three seconds it takes him to override it.",
             "choices": [
-                { "text": "Sprint for the exit", "next": "factions.neon-court.nc_084" }
+                {
+                    "text": "Sprint for the exit",
+                    "next": "factions.neon-court.nc_084"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 40 },
-                { "type": "modify_stat", "stat": "STR", "amount": 1 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "STR",
+                    "amount": 1
+                }
+            ],
+            "music": "action"
         },
         "nc_084": {
             "text": "You run through the Cloud Towers with the evidence — or the device itself — secured against your body. Marcus covers your retreat, professional and efficient. By the time Thorne's security mobilizes, you're three platforms away and descending through a maintenance shaft that leads to the Lux Tower's private transit system. A car is waiting. You collapse into the seat as it accelerates, the Cloud Towers falling away behind you. The data-crystal pulses against your chest, warm with captured secrets. You've just made one of the most powerful men in the city your enemy. And handed his secrets to one of the most powerful women.",
             "choices": [
-                { "text": "Return to Duchess Seraphina with the evidence", "next": "factions.neon-court.nc_087" }
+                {
+                    "text": "Return to Duchess Seraphina with the evidence",
+                    "next": "factions.neon-court.nc_087"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 40 },
-                { "type": "set_flag", "flag": "nc.escaped_thorne", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 40
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.escaped_thorne",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_085": {
             "text": "You spot a service access hatch in the floor — maintenance systems for the skywalk. You drop through it, landing on a narrow catwalk suspended above the clouds. The wind at this altitude is brutal, pulling at your clothes, threatening to tear you from the walkway. Below is nothing but cloud and a two-kilometer drop to the lower city. You edge along the catwalk toward the adjacent platform, each step a negotiation with vertigo. Behind you, Thorne's guards reach the hatch and hesitate — they're not paid enough for this.",
             "choices": [
-                { "text": "Keep moving along the catwalk to safety", "next": "factions.neon-court.nc_084" }
+                {
+                    "text": "Keep moving along the catwalk to safety",
+                    "next": "factions.neon-court.nc_084"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 35 },
-                { "type": "modify_stat", "stat": "DEX", "amount": 1 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "DEX",
+                    "amount": 1
+                }
+            ],
+            "music": "epic"
         },
         "nc_086": {
             "text": "Thorne's expression flickers — the first real uncertainty you've seen on his face. His augmented eyes scan every frequency, looking for a live data-stream, an active upload, anything to confirm your claim. <span class='highlight'>'You're bluffing,'</span> he says, but his voice lacks its usual precision. <span class='highlight'>'No upload could penetrate my signal shielding.'</span> You smile. <span class='highlight'>'The crystal doesn't upload through signal. It uses quantum entanglement with a paired crystal in the Lux Tower. Your shielding is irrelevant.'</span> It's a lie. But Thorne can't verify it in time. The guards lower their weapons a fraction. That fraction is enough.",
             "choices": [
-                { "text": "Walk out while Thorne processes the bluff", "next": "factions.neon-court.nc_084" }
+                {
+                    "text": "Walk out while Thorne processes the bluff",
+                    "next": "factions.neon-court.nc_084"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 45 },
-                { "type": "modify_stat", "stat": "CHA", "amount": 1 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 45
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "CHA",
+                    "amount": 1
+                }
+            ],
+            "music": "epic"
         },
         "nc_087": {
             "text": "Seraphina is waiting in the Solarium, silhouetted against the night sky. Stars are visible at this altitude — another luxury the lower districts never see. She takes the data-crystal and slots it into her personal terminal. As the evidence plays, her expression shifts through surprise, anger, and cold satisfaction. <span class='highlight'>'Consciousness override. Non-consensual extraction. And he was selling it.'</span> She turns to you. <span class='highlight'>'You've just handed me the weapon to destroy Cassius Thorne's position in the Court. This evidence goes before the Council tomorrow.'</span> She pauses. <span class='highlight'>'You've earned your place. Now the real work begins.'</span>",
             "choices": [
-                { "text": "\"What comes next?\"", "next": "factions.neon-court.nc_088" },
-                { "text": "\"I want to know what you plan to do with this power.\"", "next": "factions.neon-court.nc_089" }
+                {
+                    "text": "\"What comes next?\"",
+                    "next": "factions.neon-court.nc_088"
+                },
+                {
+                    "text": "\"I want to know what you plan to do with this power.\"",
+                    "next": "factions.neon-court.nc_089"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 50 },
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 25 },
-                { "type": "set_flag", "flag": "nc.evidence_delivered", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.evidence_delivered",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_088": {
             "text": "<span class='highlight'>'The Ascension Gala,'</span> Seraphina says. <span class='highlight'>'In three days, every house gathers for the annual celebration. It's where alliances are forged and broken, where the Court's power structure is renegotiated for the coming year. I will present the evidence against Thorne and call for his expulsion.'</span> She brings up a holographic display of the gala venue — a floating platform anchored above the highest tower, open to the stars. <span class='highlight'>'But Thorne will know it's coming. He'll make a move before the gala. I need you close, watching, ready to act.'</span>",
             "choices": [
-                { "text": "\"I'll be your shadow. He won't see me coming.\"", "next": "factions.neon-court.nc_090" },
-                { "text": "\"I want to attend the gala as your equal, not your servant.\"", "next": "factions.neon-court.nc_091", "statCheck": { "stat": "CHA", "dc": 14 } }
+                {
+                    "text": "\"I'll be your shadow. He won't see me coming.\"",
+                    "next": "factions.neon-court.nc_090"
+                },
+                {
+                    "text": "\"I want to attend the gala as your equal, not your servant.\"",
+                    "next": "factions.neon-court.nc_091",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 14
+                    }
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.gala_mission", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.gala_mission",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_089": {
             "text": "Seraphina regards you for a long moment. The mask is thinner now — you've proven yourself, and that earns you a degree of honesty. <span class='highlight'>'I plan to ensure that no single house controls consciousness technology. Memory stacks should remain voluntary, personal, inviolable. Thorne wants to weaponize the soul. I want to protect it.'</span> She pauses. <span class='highlight'>'Whether you believe me depends on how much cynicism the lower districts built into you. But I'll tell you this: I've lived four lifetimes across three bodies, and the one thing I've learned is that power unchecked destroys everything it touches. Including the powerful.'</span>",
             "choices": [
-                { "text": "\"I believe you. For now. What's next?\"", "next": "factions.neon-court.nc_088" },
-                { "text": "\"Actions prove more than words. Show me.\"", "next": "factions.neon-court.nc_090" }
+                {
+                    "text": "\"I believe you. For now. What's next?\"",
+                    "next": "factions.neon-court.nc_088"
+                },
+                {
+                    "text": "\"Actions prove more than words. Show me.\"",
+                    "next": "factions.neon-court.nc_090"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 },
-                { "type": "set_flag", "flag": "nc.seraphina_honest", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.seraphina_honest",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_090": {
             "text": "The three days before the gala pass in a blur of preparation. Seraphina's network feeds you intelligence: Thorne is moving assets, calling in favors, arming his personal guard. He knows something is coming. On the second night, one of Seraphina's informants goes dark — captured, most likely. On the third morning, a bomb is found in the Lux Tower's transit system, disarmed minutes before detonation. Thorne is playing for keeps. As you dress for the gala — clothes that could buy a Lower District block — you feel the weight of what's coming.",
             "choices": [
-                { "text": "Attend the gala, armed and watchful", "next": "factions.neon-court.nc_092" }
+                {
+                    "text": "Attend the gala, armed and watchful",
+                    "next": "factions.neon-court.nc_092"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.pre_gala_tension", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.pre_gala_tension",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_091": {
             "text": "Seraphina's eyes widen — then she laughs, a sound of genuine delight. <span class='highlight'>'My equal. Nobody in the Court has made that demand in decades.'</span> She studies you anew. <span class='highlight'>'Very well. You'll attend the Ascension Gala as my consort — not servant, not operative, but partner. The Court will talk. They always do. But it sends a message I rather like.'</span> She extends her hand. <span class='highlight'>'Welcome to the Neon Court. Officially, this time.'</span>",
             "choices": [
-                { "text": "Take her hand and prepare for the gala", "next": "factions.neon-court.nc_092" }
+                {
+                    "text": "Take her hand and prepare for the gala",
+                    "next": "factions.neon-court.nc_092"
+                }
             ],
             "actions": [
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 20 },
-                { "type": "add_experience", "amount": 35 },
-                { "type": "set_flag", "flag": "nc.consort_status", "value": true }
-            ]
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.consort_status",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_092": {
             "text": "The Ascension Gala is held on a floating platform anchored a kilometer above the Cloud Towers, open to the naked stars. The sky is a dome of infinite black studded with light. Below, the city sprawls in concentric rings of neon and shadow. Every house is represented: silk and chrome, perfume and power, centuries of accumulated wealth and ambition gathered in one place. Seraphina enters on your arm, and the room's attention shifts like a tide. Across the platform, Thorne watches. His ice-blue eyes find you. His expression promises nothing good.",
             "choices": [
-                { "text": "Stay close to Seraphina as she works the room", "next": "factions.neon-court.nc_093" },
-                { "text": "Circle the platform — look for Thorne's people", "next": "factions.neon-court.nc_094", "statCheck": { "stat": "INT", "dc": 13 } },
-                { "text": "Confront Thorne directly", "next": "factions.neon-court.nc_095", "statCheck": { "stat": "CHA", "dc": 15 } }
+                {
+                    "text": "Stay close to Seraphina as she works the room",
+                    "next": "factions.neon-court.nc_093"
+                },
+                {
+                    "text": "Circle the platform — look for Thorne's people",
+                    "next": "factions.neon-court.nc_094",
+                    "statCheck": {
+                        "stat": "INT",
+                        "dc": 13
+                    }
+                },
+                {
+                    "text": "Confront Thorne directly",
+                    "next": "factions.neon-court.nc_095",
+                    "statCheck": {
+                        "stat": "CHA",
+                        "dc": 15
+                    }
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.at_gala", "value": true }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.at_gala",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_093": {
             "text": "Seraphina moves through the gala like a queen among courtiers, dispensing smiles and whispered conversations. She's building her coalition in real-time, securing votes for the Council session that will determine Thorne's fate. Lady Isolde catches your eye from across the room and nods almost imperceptibly. Matriarch Yun raises her glass in salute. The numbers are shifting in Seraphina's favor. Then Thorne takes the stage, and everything stops.",
             "choices": [
-                { "text": "Listen to Thorne's address", "next": "factions.neon-court.nc_096" }
+                {
+                    "text": "Listen to Thorne's address",
+                    "next": "factions.neon-court.nc_096"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "music": "epic"
         },
         "nc_094": {
             "text": "You identify twelve of Thorne's operatives spread through the gala — security posing as guests, hands near concealed weapons, positioned at exits and near key Court members. They're not here for protection. They're in assault positions. Whatever Thorne is planning, it involves force. You also spot the quiet operative from the auction — the Ghost Market agent — leaning against a railing at the platform's edge, watching everything with that same professional stillness.",
             "choices": [
-                { "text": "Warn Seraphina about the assault positions", "next": "factions.neon-court.nc_096" },
-                { "text": "Coordinate with the Ghost Market operative", "next": "factions.neon-court.nc_097" }
+                {
+                    "text": "Warn Seraphina about the assault positions",
+                    "next": "factions.neon-court.nc_096"
+                },
+                {
+                    "text": "Coordinate with the Ghost Market operative",
+                    "next": "factions.neon-court.nc_097"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.spotted_assault_team", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.spotted_assault_team",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "epic"
         },
         "nc_095": {
             "text": "You approach Thorne where he stands at the platform's edge, staring out at the stars. Up close, the augmented eyes are less cold than you expected — they carry a zealot's fire. <span class='highlight'>'The Duchess's new weapon,'</span> he says without turning. <span class='highlight'>'You know, in my first life, I was a factory worker. Did she tell you that? I earned every credit, every position, every body through merit. She inherited hers.'</span> He faces you. <span class='highlight'>'Tonight, I will present the Court with a vision of the future. You can stand against it, or you can be part of it. Choose carefully.'</span>",
             "choices": [
-                { "text": "\"I've already chosen. Enjoy the gala.\"", "next": "factions.neon-court.nc_096" },
-                { "text": "\"What's your vision worth if it requires stealing people's minds?\"", "next": "factions.neon-court.nc_098" }
+                {
+                    "text": "\"I've already chosen. Enjoy the gala.\"",
+                    "next": "factions.neon-court.nc_096"
+                },
+                {
+                    "text": "\"What's your vision worth if it requires stealing people's minds?\"",
+                    "next": "factions.neon-court.nc_098"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 25 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
+            ],
+            "music": "epic"
         },
         "nc_096": {
             "text": "Thorne takes the central stage. The gala falls silent. <span class='highlight'>'Fellow members of the Court. We stand at the threshold of a new era.'</span> His voice fills the platform with practiced authority. <span class='highlight'>'Memory stack technology has given us immortality. But immortality without control is chaos. I propose a new order — unified consciousness management under a single authority. The Sovereign Protocol.'</span> Murmurs ripple through the crowd. <span class='highlight'>'No more rogue transfers. No more consciousness theft. One system, one standard, one network — overseen by those with the wisdom to manage it. Us.'</span> He pauses. <span class='highlight'>'And those who oppose progress will find that progress has a way of leaving them behind.'</span>",
             "choices": [
-                { "text": "Signal Seraphina — it's time to present the evidence", "next": "factions.neon-court.nc_099" },
-                { "text": "Watch the Court's reaction before acting", "next": "factions.neon-court.nc_099" }
+                {
+                    "text": "Signal Seraphina — it's time to present the evidence",
+                    "next": "factions.neon-court.nc_099"
+                },
+                {
+                    "text": "Watch the Court's reaction before acting",
+                    "next": "factions.neon-court.nc_099"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
+            ],
+            "music": "epic"
         },
         "nc_097": {
             "text": "The Ghost Market operative doesn't look surprised to see you. <span class='highlight'>'Twelve assault positions. Thorne's making a move tonight. Not just political — physical. My people intercepted a comm burst: if the Council votes against him, his security team has orders to seize the platform.'</span> He shows you a compact device. <span class='highlight'>'I have a signal jammer that can knock out his team's communications for ninety seconds. But I can only use it once, and the timing has to be perfect.'</span>",
             "choices": [
-                { "text": "\"Coordinate with me. We'll time it together.\"", "next": "factions.neon-court.nc_099" },
-                { "text": "\"I'll handle Thorne's people. You jam the signal when I give the word.\"", "next": "factions.neon-court.nc_099" }
+                {
+                    "text": "\"Coordinate with me. We'll time it together.\"",
+                    "next": "factions.neon-court.nc_099"
+                },
+                {
+                    "text": "\"I'll handle Thorne's people. You jam the signal when I give the word.\"",
+                    "next": "factions.neon-court.nc_099"
+                }
             ],
             "actions": [
-                { "type": "set_flag", "flag": "nc.ghost_market_alliance", "value": true },
-                { "type": "add_experience", "amount": 30 }
-            ]
+                {
+                    "type": "set_flag",
+                    "flag": "nc.ghost_market_alliance",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
+            ],
+            "music": "mystery"
         },
         "nc_098": {
             "text": "Something cracks in Thorne's composure. <span class='highlight'>'Stealing? I'm preserving. Every consciousness I've studied has contributed to a greater understanding of the human mind. The subjects were criminals, dissidents, people who chose to stand in the way of progress. Their sacrifice serves the greater good.'</span> His augmented eyes blaze. <span class='highlight'>'You think the Duchess is different? She hoards stack technology for her house. I want to use it to perfect humanity itself. Who is the real monster here?'</span>",
             "choices": [
-                { "text": "\"The one who decides other people's consciousness belongs to him.\"", "next": "factions.neon-court.nc_096" }
+                {
+                    "text": "\"The one who decides other people's consciousness belongs to him.\"",
+                    "next": "factions.neon-court.nc_096"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 20 },
-                { "type": "set_flag", "flag": "nc.thorne_confession", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.thorne_confession",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_099": {
             "text": "Seraphina takes the stage as Thorne steps down. <span class='highlight'>'The Court has heard Lord Thorne's vision. Now hear the truth behind it.'</span> She projects the evidence from your data-crystal — the auction footage, the specifications for Project Sovereign, the proof that Thorne has been forcibly extracting consciousness from unwilling subjects. The Court erupts. Thorne's face contorts with rage. He signals his operatives. Weapons appear. The gala becomes a flashpoint. <span class='highlight'>The moment of decision arrives: the Neon Court will either reform or shatter, and your choices have brought everyone to this edge.</span>",
             "choices": [
-                { "text": "Stand with Seraphina and defend the evidence", "next": "factions.neon-court.nc_100" },
-                { "text": "Activate the Ghost Market jammer to disable Thorne's team", "next": "factions.neon-court.nc_100", "condition": { "type": "flag", "flag": "nc.ghost_market_alliance", "value": true } },
-                { "text": "Confront Thorne yourself while the Court decides", "next": "factions.neon-court.nc_100" }
+                {
+                    "text": "Stand with Seraphina and defend the evidence",
+                    "next": "factions.neon-court.nc_100"
+                },
+                {
+                    "text": "Activate the Ghost Market jammer to disable Thorne's team",
+                    "next": "factions.neon-court.nc_100",
+                    "condition": {
+                        "type": "flag",
+                        "flag": "nc.ghost_market_alliance",
+                        "value": true
+                    }
+                },
+                {
+                    "text": "Confront Thorne yourself while the Court decides",
+                    "next": "factions.neon-court.nc_100"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 50 },
-                { "type": "set_flag", "flag": "nc.evidence_presented", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.evidence_presented",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         },
         "nc_100": {
             "text": "The gala platform burns with light and fury as the Neon Court fractures along lines you helped draw. Thorne's operatives are neutralized — by Marcus, by the Ghost Market agent, by Court security loyal to the remaining houses. Thorne himself stands surrounded, his ice-blue eyes still defiant but his power broken. The Sector Council votes: five to two, Thorne is expelled from the Court. His assets are seized. Project Sovereign is dismantled. Seraphina stands at the center of it all, radiant and ruthless. She catches your eye across the chaos. <span class='highlight'>'You've changed the balance of power in this city. The question now is what kind of power will replace what we've torn down.'</span> She raises a glass. <span class='highlight'>'To the future. Whatever it holds.'</span> The stars shine above the platform like cold, eternal witnesses to what you've built — and what you've become.",
             "choices": [
-                { "text": "\"To the future. And to the choices that shape it.\"", "next": "shared.prologue.node_001" },
-                { "text": "\"I'll hold you to your promise — managed freedom, not control.\"", "next": "shared.prologue.node_001" },
-                { "text": "\"This is only the beginning. The real work starts now.\"", "next": "shared.prologue.node_001" }
+                {
+                    "text": "\"To the future. And to the choices that shape it.\"",
+                    "next": "shared.prologue.node_001"
+                },
+                {
+                    "text": "\"I'll hold you to your promise — managed freedom, not control.\"",
+                    "next": "shared.prologue.node_001"
+                },
+                {
+                    "text": "\"This is only the beginning. The real work starts now.\"",
+                    "next": "shared.prologue.node_001"
+                }
             ],
             "actions": [
-                { "type": "add_experience", "amount": 100 },
-                { "type": "modify_reputation", "faction": "neon_court", "amount": 30 },
-                { "type": "set_flag", "flag": "nc.questline_complete", "value": true }
-            ]
+                {
+                    "type": "add_experience",
+                    "amount": 100
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neon_court",
+                    "amount": 30
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "nc.questline_complete",
+                    "value": true
+                }
+            ],
+            "music": "epic"
         }
     }
 }

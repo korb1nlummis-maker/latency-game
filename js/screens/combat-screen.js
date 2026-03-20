@@ -1010,6 +1010,11 @@ window.Latency.Screens.CombatScreen = (function () {
                 }
             }
 
+            // Switch to combat music
+            if (window.Latency.MusicManager && window.Latency.MusicManager.playByCategory) {
+                window.Latency.MusicManager.playByCategory('action');
+            }
+
             console.log('[CombatScreen] Mounted.');
         },
 

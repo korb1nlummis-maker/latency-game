@@ -480,6 +480,11 @@ window.Latency.Screens.EndingScreen = (function () {
             var dom = _buildScreen(params);
             _container.appendChild(dom);
 
+            // Switch to emotional music for endings
+            if (window.Latency.MusicManager && window.Latency.MusicManager.playByCategory) {
+                window.Latency.MusicManager.playByCategory('emotional');
+            }
+
             console.log('[EndingScreen] Mounted. Ending #' +
                 ((params && params.endingNumber) || '?'));
         },

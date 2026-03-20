@@ -692,7 +692,28 @@ window.Latency.MusicManager = (function () {
         fadeOut:           fadeOut,
         getState:         getState,
         restoreState:     restoreState,
-        playCue:          playCue
+        playCue:          playCue,
+
+        /**
+         * Play a random track from the given category.
+         * Categories: 'ambient', 'action', 'mystery', 'epic', 'emotional'
+         * @param {string} category
+         */
+        playByCategory: function (category) {
+            if (!_initialized || !category) return;
+            var matches = [];
+            for (var i = 0; i < _playlist.length; i++) {
+                if (_playlist[i].category === category) {
+                    matches.push(i);
+                }
+            }
+            if (matches.length === 0) return;
+            // Pick a random track from the category (avoid replaying current)
+            var filtered = matches.filter(function (idx) { return idx !== _currentIndex; });
+            var pool = filtered.length > 0 ? filtered : matches;
+            var pick = pool[Math.floor(Math.random() * pool.length)];
+            _loadAndPlay(pick);
+        }
     };
 
 })();
