@@ -207,7 +207,9 @@ window.Latency.Combat = (function () {
             playerDefending: false,
             playerStunned: false,
             enemyStunned: false,
-            returnNodeId: context.returnNodeId || null
+            returnNodeId: context.returnNodeId || null,
+            onFleeNodeId: context.onFleeNodeId || null,
+            onLoseNodeId: context.onLoseNodeId || null
         };
 
         // Roll initiative
@@ -498,7 +500,9 @@ window.Latency.Combat = (function () {
         }
 
         // Remove from inventory via Inventory API
-        Latency.Inventory.removeItem(itemId, 1);
+        if (window.Latency.Inventory && window.Latency.Inventory.removeItem) {
+            window.Latency.Inventory.removeItem(itemId, 1);
+        }
 
         _log('You use ' + itemData.name + '.', 'info');
 
@@ -1176,13 +1180,16 @@ window.Latency.Combat = (function () {
                 CS().addExperience(partialXp);
                 _log('Gained ' + partialXp + ' XP (partial).', 'info');
             }
+            _state.phase = 'victory';
+            _emitStateChange();
+            bus().emit('combat:action', { actor: 'system', action: 'victory', result: 'victory' });
             bus().emit('combat:end', {
                 result: 'victory',
                 xp: partialXp,
                 loot: [],
                 credits: 0
             });
-            _cleanup();
+            // State cleanup is handled by the CONTINUE button in the victory overlay
         } else {
             _log(enemy.name + ' fails to escape!', 'info');
             // Enemy wasted their turn trying to flee
@@ -1358,7 +1365,9 @@ window.Latency.Combat = (function () {
             var maxCredits = enemy.loot.credits[1] || 0;
             if (maxCredits > 0) {
                 credits = minCredits + Dice().roll(Math.max(1, maxCredits - minCredits + 1)) - 1;
-                Latency.Inventory.addCredits(credits);
+                if (window.Latency.Inventory && window.Latency.Inventory.addCredits) {
+                    window.Latency.Inventory.addCredits(credits);
+                }
                 if (credits > 0) {
                     _log('Found ' + credits + ' credits.', 'info');
                 }
@@ -1372,7 +1381,9 @@ window.Latency.Combat = (function () {
                 if (Math.random() < lootEntry.chance) {
                     lootItems.push(lootEntry.id);
                     // Add to player inventory via Inventory API
-                    Latency.Inventory.addItem(lootEntry.id, 1);
+                    if (window.Latency.Inventory && window.Latency.Inventory.addItem) {
+                        window.Latency.Inventory.addItem(lootEntry.id, 1);
+                    }
                     var itemData = window.Latency.Items ? window.Latency.Items[lootEntry.id] : null;
                     var itemName = itemData ? itemData.name : lootEntry.id;
                     _log('Found: ' + itemName + '!', 'info');

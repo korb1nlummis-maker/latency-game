@@ -247,7 +247,7 @@
                     "text": "Study the blueprint carefully before heading out",
                     "next": "factions.iron-collective.ic_017",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 10
                     }
                 }
@@ -365,7 +365,7 @@
                     "text": "Brief the team on approach strategy",
                     "next": "factions.iron-collective.ic_017",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 10
                     }
                 },
@@ -408,7 +408,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],
@@ -466,7 +466,7 @@
                     "text": "Have Splicer disable the sentry remotely",
                     "next": "factions.iron-collective.ic_024",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 12
                     }
                 },
@@ -488,7 +488,7 @@
                     "text": "\"The camera blind spot. Can you widen it?\"",
                     "next": "factions.iron-collective.ic_026",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -533,7 +533,7 @@
                     "text": "Move fast — sprint to Section B before the camera cycles",
                     "next": "factions.iron-collective.ic_029",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 13
                     }
                 },
@@ -575,7 +575,7 @@
                     "text": "Help Bray take down the guards",
                     "next": "factions.iron-collective.ic_033",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 12
                     }
                 }
@@ -663,7 +663,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "DEX",
+                    "stat": "dexterity",
                     "amount": 1
                 }
             ],
@@ -698,7 +698,7 @@
                     "text": "Ambush the guard from behind",
                     "next": "factions.iron-collective.ic_039",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 11
                     }
                 }
@@ -741,7 +741,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "STR",
+                    "stat": "strength",
                     "amount": 1
                 },
                 {
@@ -775,7 +775,7 @@
                     "text": "Knock out the technician quietly",
                     "next": "factions.iron-collective.ic_042",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 11
                     }
                 },
@@ -783,7 +783,7 @@
                     "text": "Have Splicer hack the console remotely through the vent",
                     "next": "factions.iron-collective.ic_043",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 }
@@ -801,7 +801,7 @@
                     "text": "Set up an ambush",
                     "next": "factions.iron-collective.ic_045",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 13
                     }
                 },
@@ -809,7 +809,7 @@
                     "text": "Hide and let them pass",
                     "next": "factions.iron-collective.ic_046",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 12
                     }
                 }
@@ -942,7 +942,7 @@
                     "text": "Download the security protocols for future use",
                     "next": "factions.iron-collective.ic_050",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 12
                     }
                 }
@@ -1007,7 +1007,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "DEX",
+                    "stat": "dexterity",
                     "amount": 1
                 }
             ],
@@ -1213,7 +1213,7 @@
                     "text": "\"I'm not here to cause trouble. I want to make a deal.\"",
                     "next": "factions.iron-collective.ic_062",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -1225,7 +1225,7 @@
                     "text": "Show strength — you won't be intimidated",
                     "next": "factions.iron-collective.ic_064",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 14
                     }
                 }
@@ -1259,7 +1259,7 @@
                     "text": "\"The Iron Collective wants to talk alliance.\"",
                     "next": "factions.iron-collective.ic_066",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 12
                     }
                 },
@@ -1288,7 +1288,7 @@
                     "text": "\"The Iron Collective fights for everyone Meridian exploits. That includes synths.\"",
                     "next": "factions.iron-collective.ic_069",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -1384,7 +1384,7 @@
                     "text": "\"This movement is different. We're going to win.\"",
                     "next": "factions.iron-collective.ic_078",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 15
                     }
                 }
@@ -1442,7 +1442,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "STR",
+                    "stat": "strength",
                     "amount": 1
                 }
             ],
@@ -1459,7 +1459,7 @@
                     "text": "\"Come with me now. We'll figure it out.\"",
                     "next": "factions.iron-collective.ic_081",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 }
@@ -1484,7 +1484,7 @@
                     "text": "\"Because Meridian will automate the docks next. You're on their list.\"",
                     "next": "factions.iron-collective.ic_082",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
@@ -1562,7 +1562,7 @@
                     "text": "\"Synth workers are workers. Period. No qualifications.\"",
                     "next": "factions.iron-collective.ic_087",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 13
                     }
                 }
@@ -1657,7 +1657,7 @@
                     "text": "Search for worker death records",
                     "next": "factions.iron-collective.ic_091",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 12
                     }
                 },
@@ -1665,7 +1665,7 @@
                     "text": "Search for financial records — follow the money",
                     "next": "factions.iron-collective.ic_092",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -1673,7 +1673,7 @@
                     "text": "Search for communications between Meridian executives",
                     "next": "factions.iron-collective.ic_093",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 }
@@ -1894,7 +1894,7 @@
                     "text": "\"What if I ran a job for you? Proved our worth in action?\"",
                     "next": "factions.iron-collective.ic_099",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 12
                     }
                 }
@@ -1979,7 +1979,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "CHA",
+                    "stat": "charisma",
                     "amount": 1
                 }
             ],
@@ -2094,7 +2094,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],
@@ -2120,7 +2120,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],
@@ -2179,7 +2179,7 @@
                     "text": "Navigate the laser grid carefully",
                     "next": "factions.iron-collective.ic_096",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 15
                     }
                 },
@@ -2187,7 +2187,7 @@
                     "text": "Find the emitter control panel and disable it",
                     "next": "factions.iron-collective.ic_097",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -2195,7 +2195,7 @@
                     "text": "Use brute force — smash through before lockdown triggers",
                     "next": "factions.iron-collective.ic_098",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 16
                     }
                 }
@@ -2213,7 +2213,7 @@
                     "text": "Search the terminal for additional data first",
                     "next": "factions.iron-collective.ic_099",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 }
@@ -2225,7 +2225,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "DEX",
+                    "stat": "dexterity",
                     "amount": 1
                 }
             ],
@@ -2246,7 +2246,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],

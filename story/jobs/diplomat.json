@@ -2087,14 +2087,10 @@
             "onEnter": [],
             "choices": [
                 {
-                    "text": "Choose Priya — her analytical mind will navigate corporate negotiations",
-                    "condition": {
-                        "stat_check": {
-                            "stat": "charisma",
-                            "dc": 14
-                        }
-                    },
-                    "next": "jobs.diplomat.jdip_086"
+                    "text": "[Charisma 13] Choose Priya — her analytical mind will navigate corporate negotiations",
+                    "statCheck": { "stat": "charisma", "dc": 13 },
+                    "next": "jobs.diplomat.jdip_086",
+                    "failNext": "jobs.diplomat.jdip_086"
                 },
                 {
                     "text": "Choose Lin — the district needs a listener more than a strategist",
@@ -2201,14 +2197,10 @@
             "onEnter": [],
             "choices": [
                 {
-                    "text": "\"Tell me about your community.\" The work calls you back",
-                    "condition": {
-                        "stat_check": {
-                            "stat": "charisma",
-                            "dc": 16
-                        }
-                    },
-                    "next": "jobs.diplomat.jdip_090"
+                    "text": "[Charisma 14] \"Tell me about your community.\" The work calls you back",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "next": "jobs.diplomat.jdip_090",
+                    "failNext": "jobs.diplomat.jdip_091"
                 },
                 {
                     "text": "\"I can train your people. But the work has to be theirs\"",
@@ -2473,14 +2465,10 @@
                     "next": "jobs.diplomat.jdip_094"
                 },
                 {
-                    "text": "Seek out the ones you failed. There may still be time",
-                    "condition": {
-                        "stat_check": {
-                            "stat": "charisma",
-                            "dc": 18
-                        }
-                    },
-                    "next": "jobs.diplomat.jdip_098"
+                    "text": "[Charisma 16] Seek out the ones you failed. There may still be time",
+                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "next": "jobs.diplomat.jdip_098",
+                    "failNext": "jobs.diplomat.jdip_098"
                 }
             ],
             "ascii": null,

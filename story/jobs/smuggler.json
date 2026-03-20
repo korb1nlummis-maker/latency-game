@@ -18,12 +18,26 @@
                 "She gives you an address. A time. A payment upon delivery: forty credits. Not much. But more than you've seen in a while, and the work doesn't require you to bleed for it. Probably."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.started", "value": true},
-                {"type": "set_flag", "flag": "job.smuggler.rank", "value": 1}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.started",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.rank",
+                    "value": 1
+                }
             ],
             "choices": [
-                {"text": "Take the run. Forty credits is forty credits", "next": "jobs.smuggler.jsmg_002"},
-                {"text": "Ask about the patrol schedules first", "next": "jobs.smuggler.jsmg_003"}
+                {
+                    "text": "Take the run. Forty credits is forty credits",
+                    "next": "jobs.smuggler.jsmg_002"
+                },
+                {
+                    "text": "Ask about the patrol schedules first",
+                    "next": "jobs.smuggler.jsmg_003"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -41,8 +55,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Find a side passage and wait them out", "next": "jobs.smuggler.jsmg_004"},
-                {"text": "Bluff — walk past like you belong here", "next": "jobs.smuggler.jsmg_005"}
+                {
+                    "text": "Find a side passage and wait them out",
+                    "next": "jobs.smuggler.jsmg_004"
+                },
+                {
+                    "text": "Bluff — walk past like you belong here",
+                    "next": "jobs.smuggler.jsmg_005"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -59,10 +79,17 @@
                 "She folds the datapad. \"Questions? No? Good. Don't die. You're the third runner I've hired this week and the first two are in a holding cell.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.studied_routes", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.studied_routes",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Head out on the route with the patrol schedule memorized", "next": "jobs.smuggler.jsmg_004"}
+                {
+                    "text": "Head out on the route with the patrol schedule memorized",
+                    "next": "jobs.smuggler.jsmg_004"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -79,11 +106,22 @@
                 "A hand takes the package. A credstick appears. Forty credits, as promised. The hand withdraws. The door closes. Transaction complete."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 40, "reason": "First smuggling run payment"},
-                {"type": "set_flag", "flag": "job.smuggler.first_run_complete", "value": true}
+                {
+                    "type": "modify_currency",
+                    "amount": 40,
+                    "reason": "First smuggling run payment"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.first_run_complete",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Return to Nix for another job", "next": "jobs.smuggler.jsmg_006"}
+                {
+                    "text": "Return to Nix for another job",
+                    "next": "jobs.smuggler.jsmg_006"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -102,10 +140,17 @@
                 "Nobody wants to see your gaskets. The officer waves you through. You walk past at a steady pace and do not look back and do not breathe until you're around the corner."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.bluffed_patrol", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.bluffed_patrol",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Complete the delivery and collect your pay", "next": "jobs.smuggler.jsmg_006"}
+                {
+                    "text": "Complete the delivery and collect your pay",
+                    "next": "jobs.smuggler.jsmg_006"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -123,11 +168,21 @@
                 "Over the next weeks, you run packages. Small at first — data chips, pharmaceutical containers, sealed electronics. Then larger — crates that require two people to carry, shipments that need vehicles, deliveries that span multiple districts. Each run teaches you something: a new route, a new contact, a new way to read a patrol's body language."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 60, "reason": "Multiple small runs"}
+                {
+                    "type": "modify_currency",
+                    "amount": 60,
+                    "reason": "Multiple small runs"
+                }
             ],
             "choices": [
-                {"text": "Keep running for Nix — she's reliable", "next": "jobs.smuggler.jsmg_007"},
-                {"text": "Start taking jobs from other contacts too", "next": "jobs.smuggler.jsmg_008"}
+                {
+                    "text": "Keep running for Nix — she's reliable",
+                    "next": "jobs.smuggler.jsmg_007"
+                },
+                {
+                    "text": "Start taking jobs from other contacts too",
+                    "next": "jobs.smuggler.jsmg_008"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -145,10 +200,17 @@
                 "\"Because the alternative is working in a foundry until my lungs give out. At least smuggling is interesting.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.nix_network", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.nix_network",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Ask about the bigger jobs — you're ready", "next": "jobs.smuggler.jsmg_009"}
+                {
+                    "text": "Ask about the bigger jobs — you're ready",
+                    "next": "jobs.smuggler.jsmg_009"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -165,11 +227,22 @@
                 "\"You're building a reputation,\" she finally says. \"Make sure it's the right one. In this business, your name is either an asset or a liability. There's no middle ground.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.freelance", "value": true},
-                {"type": "modify_currency", "amount": 80, "reason": "Freelance smuggling jobs"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.freelance",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 80,
+                    "reason": "Freelance smuggling jobs"
+                }
             ],
             "choices": [
-                {"text": "The freelance life suits you. Keep building connections", "next": "jobs.smuggler.jsmg_009"}
+                {
+                    "text": "The freelance life suits you. Keep building connections",
+                    "next": "jobs.smuggler.jsmg_009"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -187,9 +260,18 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Hand over the package — your life is worth more than any cargo", "next": "jobs.smuggler.jsmg_010"},
-                {"text": "\"You know whose cargo this is? Take it and find out.\"", "next": "jobs.smuggler.jsmg_011"},
-                {"text": "Drop to the floor and fight in the darkness", "next": "jobs.smuggler.jsmg_012"}
+                {
+                    "text": "Hand over the package — your life is worth more than any cargo",
+                    "next": "jobs.smuggler.jsmg_010"
+                },
+                {
+                    "text": "\"You know whose cargo this is? Take it and find out.\"",
+                    "next": "jobs.smuggler.jsmg_011"
+                },
+                {
+                    "text": "Drop to the floor and fight in the darkness",
+                    "next": "jobs.smuggler.jsmg_012"
+                }
             ],
             "ascii": null,
             "music": "combat_heavy",
@@ -207,10 +289,17 @@
                 "\"I know,\" she says. \"I've known for two weeks. I was using it to feed false information. But now they've escalated from surveillance to robbery, and that changes the equation.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.lost_cargo", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.lost_cargo",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Help Nix find the leak", "next": "jobs.smuggler.jsmg_013"}
+                {
+                    "text": "Help Nix find the leak",
+                    "next": "jobs.smuggler.jsmg_013"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -227,10 +316,17 @@
                 "\"Let's go,\" one of them says. The gun withdraws. Footsteps recede into darkness. You stand alone in the tunnel, heart hammering, package intact, having survived on nothing but the particular brand of confidence that smuggling teaches: the confidence that your words can stop a bullet."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.bluffed_hijackers", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.bluffed_hijackers",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Complete the delivery and report the ambush to Nix", "next": "jobs.smuggler.jsmg_013"}
+                {
+                    "text": "Complete the delivery and report the ambush to Nix",
+                    "next": "jobs.smuggler.jsmg_013"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -247,10 +343,17 @@
                 "The fight changes something in you. Not the violence — you've seen violence before. The knowledge that you chose to fight for cargo. That the package mattered more to you than your safety. That is the moment you became a real smuggler."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.fought_hijackers", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.fought_hijackers",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Complete the delivery and tell Nix about the ambush", "next": "jobs.smuggler.jsmg_013"}
+                {
+                    "text": "Complete the delivery and tell Nix about the ambush",
+                    "next": "jobs.smuggler.jsmg_013"
+                }
             ],
             "ascii": null,
             "music": "combat_heavy",
@@ -268,11 +371,21 @@
                 "\"Crane is a problem I'll handle. Ferris is a problem I'm asking you to handle. Consider it a promotion test.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.found_leak", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.found_leak",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Confront Ferris. Give him a chance to explain", "next": "jobs.smuggler.jsmg_014"},
-                {"text": "Cut Ferris out of the network. No conversation needed", "next": "jobs.smuggler.jsmg_015"}
+                {
+                    "text": "Confront Ferris. Give him a chance to explain",
+                    "next": "jobs.smuggler.jsmg_014"
+                },
+                {
+                    "text": "Cut Ferris out of the network. No conversation needed",
+                    "next": "jobs.smuggler.jsmg_015"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -290,8 +403,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "\"We'll find another way to protect your daughter. But the leaks stop now.\"", "next": "jobs.smuggler.jsmg_016"},
-                {"text": "\"I understand. But I can't let this continue. You're out, Ferris.\"", "next": "jobs.smuggler.jsmg_016"}
+                {
+                    "text": "\"We'll find another way to protect your daughter. But the leaks stop now.\"",
+                    "next": "jobs.smuggler.jsmg_016"
+                },
+                {
+                    "text": "\"I understand. But I can't let this continue. You're out, Ferris.\"",
+                    "next": "jobs.smuggler.jsmg_016"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -308,10 +427,17 @@
                 "Not asking keeps you safe. Not asking lets you move packages without knowing what's inside. Not asking protects you from truths that would make the work impossible. But not asking also makes you something less than fully human, and the trade-off sits in your stomach like a stone."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.cut_ferris_cold", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.cut_ferris_cold",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Focus on the next job. Sentiment is a liability", "next": "jobs.smuggler.jsmg_016"}
+                {
+                    "text": "Focus on the next job. Sentiment is a liability",
+                    "next": "jobs.smuggler.jsmg_016"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -331,11 +457,21 @@
                 "\"Someone who will die if they stay. That's all you need to know.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.human_cargo_offered", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.human_cargo_offered",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Take the job. If they'll die otherwise, you're saving a life", "next": "jobs.smuggler.jsmg_017"},
-                {"text": "Refuse. You move cargo, not people", "next": "jobs.smuggler.jsmg_018"}
+                {
+                    "text": "Take the job. If they'll die otherwise, you're saving a life",
+                    "next": "jobs.smuggler.jsmg_017"
+                },
+                {
+                    "text": "Refuse. You move cargo, not people",
+                    "next": "jobs.smuggler.jsmg_018"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -352,10 +488,17 @@
                 "You look at her and think: this is what cargo looks like when it has eyes. When it's afraid. When it's trusting you with the only thing it has left."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.smuggling_person", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.smuggling_person",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Plan the route carefully — this cargo can't be replaced if lost", "next": "jobs.smuggler.jsmg_019"}
+                {
+                    "text": "Plan the route carefully — this cargo can't be replaced if lost",
+                    "next": "jobs.smuggler.jsmg_019"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -373,10 +516,17 @@
                 "\"I knew you would. I just needed you to arrive there on your own.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.initially_refused_person", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.initially_refused_person",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Meet the passenger", "next": "jobs.smuggler.jsmg_019"}
+                {
+                    "text": "Meet the passenger",
+                    "next": "jobs.smuggler.jsmg_019"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -394,11 +544,22 @@
                 "You reach the skyport junction at 04:00. The contact is waiting — a dockworker with a maintenance badge and a cargo manifest that lists Adaeze as 'recycled electronics, non-hazardous.' She boards a freight shuttle without looking back, and you stand in the pre-dawn darkness and wonder if you just saved a life or enabled a fugitive, and whether there's really a difference."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 100, "reason": "Human smuggling payment"},
-                {"type": "set_flag", "flag": "job.smuggler.completed_human_run", "value": true}
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Human smuggling payment"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.completed_human_run",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Return to Nix. You've proven yourself for bigger work", "next": "jobs.smuggler.jsmg_020"}
+                {
+                    "text": "Return to Nix. You've proven yourself for bigger work",
+                    "next": "jobs.smuggler.jsmg_020"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -415,7 +576,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "You're ready for Rank 2. Ask Nix about the courier operations", "next": "jobs.smuggler.jsmg_021"}
+                {
+                    "text": "You're ready for Rank 2. Ask Nix about the courier operations",
+                    "next": "jobs.smuggler.jsmg_021"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -432,11 +596,22 @@
                 "Rank 2. Courier. The packages get bigger, the money gets better, and the consequences of failure get worse."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.rank", "value": 2},
-                {"type": "set_flag", "flag": "job.smuggler.courier", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.rank",
+                    "value": 2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.courier",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Plan the route for the neural interface delivery", "next": "jobs.smuggler.jsmg_022"}
+                {
+                    "text": "Plan the route for the neural interface delivery",
+                    "next": "jobs.smuggler.jsmg_022"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -452,11 +627,21 @@
                 "Weapons. Another line. You've moved medicine, electronics, people. Weapons add a layer of consequence that the other cargo didn't carry — the knowledge that whatever you deliver will be used to hurt someone, and the uncertainty about who that someone will be."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 120, "reason": "Neural interface delivery"}
+                {
+                    "type": "modify_currency",
+                    "amount": 120,
+                    "reason": "Neural interface delivery"
+                }
             ],
             "choices": [
-                {"text": "Take the weapons job — it's just cargo", "next": "jobs.smuggler.jsmg_023"},
-                {"text": "Refuse weapons — you have limits", "next": "jobs.smuggler.jsmg_024"}
+                {
+                    "text": "Take the weapons job — it's just cargo",
+                    "next": "jobs.smuggler.jsmg_023"
+                },
+                {
+                    "text": "Refuse weapons — you have limits",
+                    "next": "jobs.smuggler.jsmg_024"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -473,12 +658,26 @@
                 "Three days later, a gang fight in Block 11 involves pulse weapons for the first time. Two bystanders are killed by stray electromagnetic bursts that stop their hearts. You read about it on a public data terminal and feel nothing, which is worse than feeling something, because feeling nothing means the line has moved and you didn't notice."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 100, "reason": "Weapons delivery"},
-                {"type": "set_flag", "flag": "job.smuggler.moved_weapons", "value": true}
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Weapons delivery"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.moved_weapons",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "The deaths aren't your responsibility. You moved cargo, nothing more", "next": "jobs.smuggler.jsmg_025"},
-                {"text": "No more weapons. Find your line and hold it", "next": "jobs.smuggler.jsmg_025"}
+                {
+                    "text": "The deaths aren't your responsibility. You moved cargo, nothing more",
+                    "next": "jobs.smuggler.jsmg_025"
+                },
+                {
+                    "text": "No more weapons. Find your line and hold it",
+                    "next": "jobs.smuggler.jsmg_025"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -497,10 +696,17 @@
                 "\"The smuggler thinks there's a difference.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.refused_weapons", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.refused_weapons",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Accept the lower income and maintain your standards", "next": "jobs.smuggler.jsmg_025"}
+                {
+                    "text": "Accept the lower income and maintain your standards",
+                    "next": "jobs.smuggler.jsmg_025"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -518,9 +724,18 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Refuse. Drift kills people and you won't be part of it", "next": "jobs.smuggler.jsmg_026"},
-                {"text": "Take the job. The money is too good to pass up", "next": "jobs.smuggler.jsmg_027"},
-                {"text": "Accept, but plan to sabotage the shipment", "next": "jobs.smuggler.jsmg_028"}
+                {
+                    "text": "Refuse. Drift kills people and you won't be part of it",
+                    "next": "jobs.smuggler.jsmg_026"
+                },
+                {
+                    "text": "Take the job. The money is too good to pass up",
+                    "next": "jobs.smuggler.jsmg_027"
+                },
+                {
+                    "text": "Accept, but plan to sabotage the shipment",
+                    "next": "jobs.smuggler.jsmg_028"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -536,10 +751,17 @@
                 "But there are things you can live with and things you can't, and moving Drift falls on the wrong side of a line that keeps moving but hasn't moved that far. Not yet."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.refused_drift", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.refused_drift",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Find legitimate courier work to make up the lost income", "next": "jobs.smuggler.jsmg_029"}
+                {
+                    "text": "Find legitimate courier work to make up the lost income",
+                    "next": "jobs.smuggler.jsmg_029"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -556,12 +778,26 @@
                 "Not thinking about it is the job. You're getting very good at not thinking."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 200, "reason": "Drift smuggling payment"},
-                {"type": "set_flag", "flag": "job.smuggler.moved_drift", "value": true}
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Drift smuggling payment"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.moved_drift",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Never again. One run was enough", "next": "jobs.smuggler.jsmg_029"},
-                {"text": "The money is too good. Keep working for Vex", "next": "jobs.smuggler.jsmg_029"}
+                {
+                    "text": "Never again. One run was enough",
+                    "next": "jobs.smuggler.jsmg_029"
+                },
+                {
+                    "text": "The money is too good. Keep working for Vex",
+                    "next": "jobs.smuggler.jsmg_029"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -578,11 +814,22 @@
                 "You have perhaps a week before the reckoning arrives."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 200, "reason": "Drift job payment (sabotaged)"},
-                {"type": "set_flag", "flag": "job.smuggler.sabotaged_drift", "value": true}
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Drift job payment (sabotaged)"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.sabotaged_drift",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Prepare for Vex's retaliation", "next": "jobs.smuggler.jsmg_029"}
+                {
+                    "text": "Prepare for Vex's retaliation",
+                    "next": "jobs.smuggler.jsmg_029"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -600,10 +847,17 @@
                 "She finishes her drink. \"I'm retiring,\" she says. \"My network needs a new operator. I'm offering it to you.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.rank2_complete", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.rank2_complete",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Accept. Take over Nix's network", "next": "jobs.smuggler.jsmg_030"}
+                {
+                    "text": "Accept. Take over Nix's network",
+                    "next": "jobs.smuggler.jsmg_030"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -620,12 +874,27 @@
                 "Rank 3. Kingpin. The crown is heavy and it's made of compromise."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.rank", "value": 3},
-                {"type": "set_flag", "flag": "job.smuggler.kingpin", "value": true},
-                {"type": "modify_currency", "amount": 150, "reason": "Network takeover bonus"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.rank",
+                    "value": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.kingpin",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 150,
+                    "reason": "Network takeover bonus"
+                }
             ],
             "choices": [
-                {"text": "Establish your authority and reshape the operation", "next": "jobs.smuggler.jsmg_031"}
+                {
+                    "text": "Establish your authority and reshape the operation",
+                    "next": "jobs.smuggler.jsmg_031"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -644,8 +913,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Expand carefully — controlled growth", "next": "jobs.smuggler.jsmg_032"},
-                {"text": "Expand aggressively — take over new territory", "next": "jobs.smuggler.jsmg_033"}
+                {
+                    "text": "Expand carefully — controlled growth",
+                    "next": "jobs.smuggler.jsmg_032"
+                },
+                {
+                    "text": "Expand aggressively — take over new territory",
+                    "next": "jobs.smuggler.jsmg_033"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -663,8 +938,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Negotiate with Crane — divide the territory", "next": "jobs.smuggler.jsmg_034"},
-                {"text": "Confront Crane — this district isn't big enough for both of you", "next": "jobs.smuggler.jsmg_035"}
+                {
+                    "text": "Negotiate with Crane — divide the territory",
+                    "next": "jobs.smuggler.jsmg_034"
+                },
+                {
+                    "text": "Confront Crane — this district isn't big enough for both of you",
+                    "next": "jobs.smuggler.jsmg_035"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -681,10 +962,17 @@
                 "War is coming. The only question is when."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 100, "reason": "Aggressive expansion profits"}
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Aggressive expansion profits"
+                }
             ],
             "choices": [
-                {"text": "Prepare for the confrontation with Crane", "next": "jobs.smuggler.jsmg_035"}
+                {
+                    "text": "Prepare for the confrontation with Crane",
+                    "next": "jobs.smuggler.jsmg_035"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -703,8 +991,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Accept the partnership — strength in unity", "next": "jobs.smuggler.jsmg_036"},
-                {"text": "Insist on the territory division — independence matters more than power", "next": "jobs.smuggler.jsmg_036"}
+                {
+                    "text": "Accept the partnership — strength in unity",
+                    "next": "jobs.smuggler.jsmg_036"
+                },
+                {
+                    "text": "Insist on the territory division — independence matters more than power",
+                    "next": "jobs.smuggler.jsmg_036"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -722,8 +1016,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Propose a ceasefire — this war is killing both operations", "next": "jobs.smuggler.jsmg_036"},
-                {"text": "Escalate — hit Crane's personal assets, end this definitively", "next": "jobs.smuggler.jsmg_037"}
+                {
+                    "text": "Propose a ceasefire — this war is killing both operations",
+                    "next": "jobs.smuggler.jsmg_036"
+                },
+                {
+                    "text": "Escalate — hit Crane's personal assets, end this definitively",
+                    "next": "jobs.smuggler.jsmg_037"
+                }
             ],
             "ascii": null,
             "music": "combat_heavy",
@@ -740,11 +1040,22 @@
                 "You are now, by any reasonable definition, a power in the district."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.crane_accord", "value": true},
-                {"type": "modify_currency", "amount": 100, "reason": "Accord profits"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.crane_accord",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Accord profits"
+                }
             ],
             "choices": [
-                {"text": "Manage the combined operation and consolidate power", "next": "jobs.smuggler.jsmg_038"}
+                {
+                    "text": "Manage the combined operation and consolidate power",
+                    "next": "jobs.smuggler.jsmg_038"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -762,11 +1073,22 @@
                 "The silence on the channel lasts thirty seconds. \"Done,\" Crane says. And it is."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.defeated_crane", "value": true},
-                {"type": "modify_currency", "amount": 150, "reason": "Crane's network absorbed"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.defeated_crane",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 150,
+                    "reason": "Crane's network absorbed"
+                }
             ],
             "choices": [
-                {"text": "Absorb Crane's operation and consolidate your control", "next": "jobs.smuggler.jsmg_038"}
+                {
+                    "text": "Absorb Crane's operation and consolidate your control",
+                    "next": "jobs.smuggler.jsmg_038"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -784,7 +1106,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Prepare defenses against corporate attention", "next": "jobs.smuggler.jsmg_039"}
+                {
+                    "text": "Prepare defenses against corporate attention",
+                    "next": "jobs.smuggler.jsmg_039"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -802,8 +1127,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Outmaneuver them through superior local knowledge", "next": "jobs.smuggler.jsmg_040"},
-                {"text": "Find the team's weakness and exploit it", "next": "jobs.smuggler.jsmg_040"}
+                {
+                    "text": "Outmaneuver them through superior local knowledge",
+                    "next": "jobs.smuggler.jsmg_040"
+                },
+                {
+                    "text": "Find the team's weakness and exploit it",
+                    "next": "jobs.smuggler.jsmg_040"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -820,11 +1151,22 @@
                 "You've bought time. Not victory — Reis will be back — but time enough to reinforce your network and prepare for the next assault."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.beat_reis", "value": true},
-                {"type": "modify_currency", "amount": 75, "reason": "Resumed operations profit"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.beat_reis",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 75,
+                    "reason": "Resumed operations profit"
+                }
             ],
             "choices": [
-                {"text": "Use the breathing room to strengthen the network", "next": "jobs.smuggler.jsmg_041"}
+                {
+                    "text": "Use the breathing room to strengthen the network",
+                    "next": "jobs.smuggler.jsmg_041"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -840,11 +1182,21 @@
                 "\"This changes everything,\" Ghost says, and for once the quiet man's voice carries emotion. \"With this route, we can move cargo directly to the skyport. International shipping. Export. We go from district-level smuggling to global.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.found_skyport_route", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.found_skyport_route",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Develop the skyport route — go global", "next": "jobs.smuggler.jsmg_042"},
-                {"text": "Keep the route secret. A hidden exit is more valuable unused", "next": "jobs.smuggler.jsmg_043"}
+                {
+                    "text": "Develop the skyport route — go global",
+                    "next": "jobs.smuggler.jsmg_042"
+                },
+                {
+                    "text": "Keep the route secret. A hidden exit is more valuable unused",
+                    "next": "jobs.smuggler.jsmg_043"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -861,11 +1213,22 @@
                 "The Broker, for the first time, sounds genuinely interested. \"You've just become the most valuable smuggling operation in the city. Congratulations. Everyone is going to want what you have. And some of them will try to take it.\""
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 200, "reason": "First skyport export"},
-                {"type": "set_flag", "flag": "job.smuggler.global_operation", "value": true}
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "First skyport export"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.global_operation",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Secure the route and prepare for the attention it'll attract", "next": "jobs.smuggler.jsmg_044"}
+                {
+                    "text": "Secure the route and prepare for the attention it'll attract",
+                    "next": "jobs.smuggler.jsmg_044"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -882,10 +1245,17 @@
                 "The route remains your secret weapon, unused except when lives depend on it, its value measured not in credits but in the people who walk through it to safety."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.hidden_route", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.hidden_route",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Continue building the network with this ace up your sleeve", "next": "jobs.smuggler.jsmg_044"}
+                {
+                    "text": "Continue building the network with this ace up your sleeve",
+                    "next": "jobs.smuggler.jsmg_044"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -901,11 +1271,21 @@
                 "Forty-eight hours. The clock starts now."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.jade_betrayal", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.jade_betrayal",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Feed Jade false information to misdirect Reis", "next": "jobs.smuggler.jsmg_045"},
-                {"text": "Shut everything down. Go completely dark", "next": "jobs.smuggler.jsmg_046"}
+                {
+                    "text": "Feed Jade false information to misdirect Reis",
+                    "next": "jobs.smuggler.jsmg_045"
+                },
+                {
+                    "text": "Shut everything down. Go completely dark",
+                    "next": "jobs.smuggler.jsmg_046"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -922,10 +1302,17 @@
                 "Jade is arrested a week later, not by you but by Reis, who has realized that her informant was providing garbage intelligence. The irony is complete: the betrayer is punished by the entity she betrayed you to."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.outsmarted_reis", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.outsmarted_reis",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Rebuild the network with better security", "next": "jobs.smuggler.jsmg_047"}
+                {
+                    "text": "Rebuild the network with better security",
+                    "next": "jobs.smuggler.jsmg_047"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -943,11 +1330,22 @@
                 "It's smaller. It's slower. But it's unbreakable."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.went_dark", "value": true},
-                {"type": "modify_currency", "amount": -50, "reason": "Cost of shutdown and rebuild"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.went_dark",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -50,
+                    "reason": "Cost of shutdown and rebuild"
+                }
             ],
             "choices": [
-                {"text": "Begin the rebuilding process", "next": "jobs.smuggler.jsmg_047"}
+                {
+                    "text": "Begin the rebuilding process",
+                    "next": "jobs.smuggler.jsmg_047"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -965,10 +1363,17 @@
                 "Rank 3 is complete. The final rank approaches — and with it, the question of what your network becomes."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.rank3_complete", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.rank3_complete",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Enter the final phase. Decide the network's future", "next": "jobs.smuggler.jsmg_048"}
+                {
+                    "text": "Enter the final phase. Decide the network's future",
+                    "next": "jobs.smuggler.jsmg_048"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -985,12 +1390,27 @@
                 "Rank 4. Legend. The final chapter."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.rank", "value": 4},
-                {"type": "set_flag", "flag": "job.smuggler.legend", "value": true},
-                {"type": "modify_currency", "amount": 150, "reason": "Rank 4 bonus"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.rank",
+                    "value": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.legend",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 150,
+                    "reason": "Rank 4 bonus"
+                }
             ],
             "choices": [
-                {"text": "Consider the four paths before you", "next": "jobs.smuggler.jsmg_049"}
+                {
+                    "text": "Consider the four paths before you",
+                    "next": "jobs.smuggler.jsmg_049"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1009,10 +1429,22 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "The Trade Master — legitimize everything", "next": "jobs.smuggler.jsmg_050"},
-                {"text": "The Phantom — disappear into legend", "next": "jobs.smuggler.jsmg_060"},
-                {"text": "Burn it down — destroy the network", "next": "jobs.smuggler.jsmg_070"},
-                {"text": "The Emperor — expand and build an empire", "next": "jobs.smuggler.jsmg_080"}
+                {
+                    "text": "The Trade Master — legitimize everything",
+                    "next": "jobs.smuggler.jsmg_050"
+                },
+                {
+                    "text": "The Phantom — disappear into legend",
+                    "next": "jobs.smuggler.jsmg_060"
+                },
+                {
+                    "text": "Burn it down — destroy the network",
+                    "next": "jobs.smuggler.jsmg_070"
+                },
+                {
+                    "text": "The Emperor — expand and build an empire",
+                    "next": "jobs.smuggler.jsmg_080"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1029,7 +1461,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Continue making the case for legitimization", "next": "jobs.smuggler.jsmg_051"}
+                {
+                    "text": "Continue making the case for legitimization",
+                    "next": "jobs.smuggler.jsmg_051"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1046,7 +1481,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Push for full recognition of the trade network", "next": "jobs.smuggler.jsmg_052"}
+                {
+                    "text": "Push for full recognition of the trade network",
+                    "next": "jobs.smuggler.jsmg_052"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1064,8 +1502,16 @@
                 "The Conduit is gone. In their place stands the Trade Master — a title that means the same thing without the risk of imprisonment. The evolution is complete, and the district's economy, for the first time, belongs to the people who built it."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.ending_trade_master", "value": true},
-                {"type": "modify_currency", "amount": 300, "reason": "Trade Master establishment"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.ending_trade_master",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 300,
+                    "reason": "Trade Master establishment"
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1083,7 +1529,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Keep the balance between light and dark operations", "next": "jobs.smuggler.jsmg_054"}
+                {
+                    "text": "Keep the balance between light and dark operations",
+                    "next": "jobs.smuggler.jsmg_054"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1101,10 +1550,17 @@
                 "You don't have an answer. You have only the weight of the question, and it will stay with you for as long as you carry cargo through the dark."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.lost_runner", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.lost_runner",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Honor the runner's sacrifice and continue the work", "next": "jobs.smuggler.jsmg_055"}
+                {
+                    "text": "Honor the runner's sacrifice and continue the work",
+                    "next": "jobs.smuggler.jsmg_055"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1121,8 +1577,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Take the contract — the research could save lives", "next": "jobs.smuggler.jsmg_056"},
-                {"text": "Refuse — you don't move people or pieces of people", "next": "jobs.smuggler.jsmg_056"}
+                {
+                    "text": "Take the contract — the research could save lives",
+                    "next": "jobs.smuggler.jsmg_056"
+                },
+                {
+                    "text": "Refuse — you don't move people or pieces of people",
+                    "next": "jobs.smuggler.jsmg_056"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1139,10 +1601,17 @@
                 "Ghost approves. \"A network without a code is just organized crime,\" he says. \"A network with a code is... still organized crime, but the organized kind that helps people.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.ethical_code", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.ethical_code",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Enforce the code strictly as the network grows", "next": "jobs.smuggler.jsmg_057"}
+                {
+                    "text": "Enforce the code strictly as the network grows",
+                    "next": "jobs.smuggler.jsmg_057"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1159,11 +1628,21 @@
                 "She looks at you. \"I'm asking you.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.broker_revealed", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.broker_revealed",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Accept — become the new Broker", "next": "jobs.smuggler.jsmg_058"},
-                {"text": "Decline — you're a hands-on operator, not a coordinator", "next": "jobs.smuggler.jsmg_059"}
+                {
+                    "text": "Accept — become the new Broker",
+                    "next": "jobs.smuggler.jsmg_058"
+                },
+                {
+                    "text": "Decline — you're a hands-on operator, not a coordinator",
+                    "next": "jobs.smuggler.jsmg_059"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1180,10 +1659,17 @@
                 "The weight of that knowledge is staggering. You are not a smuggler anymore. You are the architecture that makes survival possible for a hundred thousand people."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 200, "reason": "Broker establishment"}
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Broker establishment"
+                }
             ],
             "choices": [
-                {"text": "Embrace the role and shape the underground economy", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Embrace the role and shape the underground economy",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1200,7 +1686,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Continue running. This is who you are", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Continue running. This is who you are",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1217,7 +1706,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Complete the disappearance", "next": "jobs.smuggler.jsmg_061"}
+                {
+                    "text": "Complete the disappearance",
+                    "next": "jobs.smuggler.jsmg_061"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1234,7 +1726,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Walk into a new life", "next": "jobs.smuggler.jsmg_062"}
+                {
+                    "text": "Walk into a new life",
+                    "next": "jobs.smuggler.jsmg_062"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1253,7 +1748,11 @@
                 "The Conduit is gone. The legend remains. And somewhere in the Lower District, cargo still flows through tunnels that bear no name and no signature, moved by hands that learned from yours."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.ending_phantom", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.ending_phantom",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1270,7 +1769,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "The routes endure. That is enough", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "The routes endure. That is enough",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1286,7 +1788,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Help from the shadows, then fade again", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Help from the shadows, then fade again",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1302,7 +1807,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Kite carries your legacy forward", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Kite carries your legacy forward",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1319,7 +1827,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Accept the quiet life. You've earned it", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Accept the quiet life. You've earned it",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1336,7 +1847,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Make peace with the distance", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Make peace with the distance",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1353,7 +1867,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Return to the surface. The tunnels remember you. That's enough", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Return to the surface. The tunnels remember you. That's enough",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -1370,7 +1887,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "The story is the best legacy", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "The story is the best legacy",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1388,7 +1908,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Begin the controlled demolition", "next": "jobs.smuggler.jsmg_071"}
+                {
+                    "text": "Begin the controlled demolition",
+                    "next": "jobs.smuggler.jsmg_071"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1406,7 +1929,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "See the demolition through to completion", "next": "jobs.smuggler.jsmg_072"}
+                {
+                    "text": "See the demolition through to completion",
+                    "next": "jobs.smuggler.jsmg_072"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1425,7 +1951,11 @@
                 "You walk away from the tunnels for the last time. The darkness behind you is just darkness now — no routes, no cargo, no legend. Just empty space, waiting to be filled with something better."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.ending_demolisher", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.ending_demolisher",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1443,7 +1973,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Stay on the sidelines. Let the community build its own way", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Stay on the sidelines. Let the community build its own way",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1460,7 +1993,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Help former network members find new paths", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Help former network members find new paths",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1477,7 +2013,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Begin the next chapter", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Begin the next chapter",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1494,7 +2033,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Accept both verdicts. They're both earned", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Accept both verdicts. They're both earned",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1511,7 +2053,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "\"It was worth it, Nix. All of it.\"", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "\"It was worth it, Nix. All of it.\"",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1530,7 +2075,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Walk out of the tunnels. Don't look back", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Walk out of the tunnels. Don't look back",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -1548,7 +2096,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Step forward into whatever comes next", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Step forward into whatever comes next",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -1565,7 +2116,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Continue expanding — fortune favors the bold", "next": "jobs.smuggler.jsmg_081"}
+                {
+                    "text": "Continue expanding — fortune favors the bold",
+                    "next": "jobs.smuggler.jsmg_081"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1583,7 +2137,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Fight for your empire", "next": "jobs.smuggler.jsmg_082"}
+                {
+                    "text": "Fight for your empire",
+                    "next": "jobs.smuggler.jsmg_082"
+                }
             ],
             "ascii": null,
             "music": "combat_heavy",
@@ -1603,10 +2160,17 @@
                 "He's right. You were."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 500, "reason": "Empire profits"}
+                {
+                    "type": "modify_currency",
+                    "amount": 500,
+                    "reason": "Empire profits"
+                }
             ],
             "choices": [
-                {"text": "Accept the crown's weight. This is what you chose", "next": "jobs.smuggler.jsmg_083"}
+                {
+                    "text": "Accept the crown's weight. This is what you chose",
+                    "next": "jobs.smuggler.jsmg_083"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1625,7 +2189,11 @@
                 "The Conduit became an Emperor. The packages became an empire. And the first rule — don't ask what's in the package — became the foundation of a legacy that will outlast its builder."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.ending_emperor", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.ending_emperor",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1642,7 +2210,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Use the information to protect, not exploit", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Use the information to protect, not exploit",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1658,7 +2229,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Accept the cost. This is what empires demand", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Accept the cost. This is what empires demand",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1674,7 +2248,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Prepare contingencies for the empire's eventual fall", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Prepare contingencies for the empire's eventual fall",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1690,7 +2267,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Train a successor anyway. Nobody is irreplaceable", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Train a successor anyway. Nobody is irreplaceable",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1706,7 +2286,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Build the international network into something lasting", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Build the international network into something lasting",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1724,7 +2307,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Return to the surface. The empire waits", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Return to the surface. The empire waits",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -1742,7 +2328,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Keep the credstick. Remember", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Keep the credstick. Remember",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1757,7 +2346,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Adapt and continue", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Adapt and continue",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1771,10 +2363,17 @@
                 "You train the next generation of runners the way Nix trained you: through practice, through failure, through the relentless education of running cargo through dark tunnels with patrols on your tail. You teach them the routes and the rules and the one truth that underlies everything: the package matters, but the person carrying it matters more."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.trained_next_gen", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.trained_next_gen",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Send them out. They'll learn the rest themselves", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Send them out. They'll learn the rest themselves",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1790,7 +2389,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "The creed stands. Pass it on", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "The creed stands. Pass it on",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1806,7 +2408,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Thank Ghost for everything. He earned his rest", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Thank Ghost for everything. He earned his rest",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1822,7 +2427,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Close the manifest. Tomorrow's shipments are waiting", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Close the manifest. Tomorrow's shipments are waiting",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1838,7 +2446,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Adapt. It's what smugglers do", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Adapt. It's what smugglers do",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1855,7 +2466,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Wait for the rain to stop. Then run", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Wait for the rain to stop. Then run",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -1872,7 +2486,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Keep carrying. Someone is always waiting", "next": "jobs.smuggler.jsmg_099"}
+                {
+                    "text": "Keep carrying. Someone is always waiting",
+                    "next": "jobs.smuggler.jsmg_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -1890,12 +2507,16 @@
                 "There is always another package. There is always another tunnel. There is always someone waiting on the other side."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.smuggler.complete", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.smuggler.complete",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
             "music": "ambient_slum_rain",
-            "isEnding": false
+            "isEnding": true
         },
         "jsmg_100": {
             "id": "jobs.smuggler.jsmg_100",
@@ -1912,7 +2533,7 @@
             "choices": [],
             "ascii": null,
             "music": "ambient_slum_rain",
-            "isEnding": false
+            "isEnding": true
         }
     }
 }

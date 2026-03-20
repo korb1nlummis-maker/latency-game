@@ -462,8 +462,8 @@
                     "next": "act1.chapter4.climax_019"
                 },
                 {
-                    "text": "[Charisma 15] \"The Court should play both sides. Support the protest publicly, deal with Meridian privately.\"",
-                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "text": "[Charisma 12] \"The Court should play both sides. Support the protest publicly, deal with Meridian privately.\"",
+                    "statCheck": { "stat": "charisma", "dc": 12 },
                     "next": "act1.chapter4.climax_020",
                     "failNext": "act1.chapter4.climax_018"
                 }
@@ -537,8 +537,8 @@
                     "next": "act1.chapter4.climax_016"
                 },
                 {
-                    "text": "[Wisdom 14] \"Commander, the Ashen Circle has operatives on the catwalks above. Something else is happening.\"",
-                    "statCheck": { "stat": "wisdom", "dc": 14 },
+                    "text": "[Wisdom 12] \"Commander, the Ashen Circle has operatives on the catwalks above. Something else is happening.\"",
+                    "statCheck": { "stat": "wisdom", "dc": 12 },
                     "condition": { "flag": "act1.spotted_factions_at_rally" },
                     "next": "act1.chapter4.climax_017",
                     "failNext": "act1.chapter4.climax_022"
@@ -762,8 +762,8 @@
                     "next": "act1.chapter4.climax_023"
                 },
                 {
-                    "text": "[Tech 13] \"Let me study the schematics first. I want to find a way past those turrets.\"",
-                    "statCheck": { "stat": "tech", "dc": 13 },
+                    "text": "[Tech 11] \"Let me study the schematics first. I want to find a way past those turrets.\"",
+                    "statCheck": { "stat": "tech", "dc": 11 },
                     "next": "act1.chapter4.climax_023",
                     "failNext": "act1.chapter4.climax_023"
                 }
@@ -795,14 +795,14 @@
                     "failNext": "act1.chapter4.climax_023a"
                 },
                 {
-                    "text": "[Tech 15] Hack the turret remotely using the building schematics",
-                    "statCheck": { "stat": "tech", "dc": 15 },
+                    "text": "[Tech 12] Hack the turret remotely using the building schematics",
+                    "statCheck": { "stat": "tech", "dc": 12 },
                     "next": "act1.chapter4.climax_024",
                     "failNext": "act1.chapter4.climax_023a"
                 },
                 {
-                    "text": "[Strength 16] Rip the turret off its mount before it can fire",
-                    "statCheck": { "stat": "strength", "dc": 16 },
+                    "text": "[Strength 13] Rip the turret off its mount before it can fire",
+                    "statCheck": { "stat": "strength", "dc": 13 },
                     "next": "act1.chapter4.climax_024",
                     "failNext": "act1.chapter4.climax_023a"
                 }
@@ -852,20 +852,20 @@
             ],
             "choices": [
                 {
-                    "text": "[Tech 14] Hack the biometric lock from the nearest terminal",
-                    "statCheck": { "stat": "tech", "dc": 14 },
+                    "text": "[Tech 12] Hack the biometric lock from the nearest terminal",
+                    "statCheck": { "stat": "tech", "dc": 12 },
                     "next": "act1.chapter4.climax_024a",
                     "failNext": "act1.chapter4.climax_024b"
                 },
                 {
-                    "text": "[Strength 17] Force the reinforced door open",
-                    "statCheck": { "stat": "strength", "dc": 17 },
+                    "text": "[Strength 13] Force the reinforced door open",
+                    "statCheck": { "stat": "strength", "dc": 13 },
                     "next": "act1.chapter4.climax_024a",
                     "failNext": "act1.chapter4.climax_024b"
                 },
                 {
                     "text": "Try to sneak past the combat synth while it's in standby",
-                    "statCheck": { "stat": "dexterity", "dc": 15 },
+                    "statCheck": { "stat": "dexterity", "dc": 12 },
                     "next": "act1.chapter4.climax_024a",
                     "failNext": "act1.chapter4.climax_024b"
                 }
@@ -1011,8 +1011,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Dexterity 14] Go for the remaining targets before time runs out",
-                    "statCheck": { "stat": "dexterity", "dc": 14 },
+                    "text": "[Dexterity 12] Go for the remaining targets before time runs out",
+                    "statCheck": { "stat": "dexterity", "dc": 12 },
                     "next": "act1.chapter4.climax_027",
                     "failNext": "act1.chapter4.climax_036"
                 },
@@ -1175,8 +1175,8 @@
                     "next": "act1.chapter4.climax_032"
                 },
                 {
-                    "text": "[Tech 15] \"Let me examine the tunnel architecture first. I want to know what I'm walking into.\"",
-                    "statCheck": { "stat": "tech", "dc": 15 },
+                    "text": "[Tech 12] \"Let me examine the tunnel architecture first. I want to know what I'm walking into.\"",
+                    "statCheck": { "stat": "tech", "dc": 12 },
                     "next": "act1.chapter4.climax_032",
                     "failNext": "act1.chapter4.climax_032"
                 }
@@ -1204,14 +1204,14 @@
             ],
             "choices": [
                 {
-                    "text": "[Tech 16] Navigate the data streams using stealth protocols",
-                    "statCheck": { "stat": "tech", "dc": 16 },
+                    "text": "[Tech 13] Navigate the data streams using stealth protocols",
+                    "statCheck": { "stat": "tech", "dc": 13 },
                     "next": "act1.chapter4.climax_033",
                     "failNext": "act1.chapter4.climax_032a"
                 },
                 {
-                    "text": "[Intelligence 15] Analyze the hunting programs' patrol patterns and find a gap",
-                    "statCheck": { "stat": "intelligence", "dc": 15 },
+                    "text": "[Intelligence 12] Analyze the hunting programs' patrol patterns and find a gap",
+                    "statCheck": { "stat": "intelligence", "dc": 12 },
                     "next": "act1.chapter4.climax_033",
                     "failNext": "act1.chapter4.climax_032a"
                 }
@@ -1299,8 +1299,8 @@
                     "next": "act1.chapter4.climax_035"
                 },
                 {
-                    "text": "[Charisma 14] Give Luminara enough real intel to be useful, but hold back the critical details",
-                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "text": "[Charisma 12] Give Luminara enough real intel to be useful, but hold back the critical details",
+                    "statCheck": { "stat": "charisma", "dc": 12 },
                     "next": "act1.chapter4.climax_035",
                     "failNext": "act1.chapter4.climax_035"
                 },
@@ -1436,8 +1436,8 @@
                     "next": "act1.chapter4.climax_041"
                 },
                 {
-                    "text": "[Dexterity 15] Grab Mako and the wounded, drag them to better cover",
-                    "statCheck": { "stat": "dexterity", "dc": 15 },
+                    "text": "[Dexterity 12] Grab Mako and the wounded, drag them to better cover",
+                    "statCheck": { "stat": "dexterity", "dc": 12 },
                     "next": "act1.chapter4.climax_041",
                     "failNext": "act1.chapter4.climax_042"
                 },
@@ -1472,8 +1472,8 @@
                     "next": "act1.chapter4.climax_039a"
                 },
                 {
-                    "text": "[Charisma 16] Bluff the retrieval team — claim Kira is already registered",
-                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "text": "[Charisma 13] Bluff the retrieval team — claim Kira is already registered",
+                    "statCheck": { "stat": "charisma", "dc": 13 },
                     "next": "act1.chapter4.climax_041",
                     "failNext": "act1.chapter4.climax_039a"
                 },
@@ -1529,14 +1529,14 @@
             ],
             "choices": [
                 {
-                    "text": "[Dexterity 14] Sprint through the chaos to the maintenance hatch",
-                    "statCheck": { "stat": "dexterity", "dc": 14 },
+                    "text": "[Dexterity 12] Sprint through the chaos to the maintenance hatch",
+                    "statCheck": { "stat": "dexterity", "dc": 12 },
                     "next": "act1.chapter4.climax_041",
                     "failNext": "act1.chapter4.climax_042"
                 },
                 {
-                    "text": "[Intelligence 13] Wait for a gap in the drone patrol pattern",
-                    "statCheck": { "stat": "intelligence", "dc": 13 },
+                    "text": "[Intelligence 11] Wait for a gap in the drone patrol pattern",
+                    "statCheck": { "stat": "intelligence", "dc": 11 },
                     "next": "act1.chapter4.climax_041",
                     "failNext": "act1.chapter4.climax_042"
                 },
@@ -1609,8 +1609,8 @@
                     "next": "act1.chapter4.climax_041"
                 },
                 {
-                    "text": "[Constitution 14] Fight through the taser aftereffects and keep moving",
-                    "statCheck": { "stat": "constitution", "dc": 14 },
+                    "text": "[Constitution 12] Fight through the taser aftereffects and keep moving",
+                    "statCheck": { "stat": "constitution", "dc": 12 },
                     "next": "act1.chapter4.climax_041",
                     "failNext": "act1.chapter4.ending_act1_001"
                 },
@@ -1638,14 +1638,14 @@
             ],
             "choices": [
                 {
-                    "text": "[Constitution 16] Endure the fire and reach cover",
-                    "statCheck": { "stat": "constitution", "dc": 16 },
+                    "text": "[Constitution 13] Endure the fire and reach cover",
+                    "statCheck": { "stat": "constitution", "dc": 13 },
                     "next": "act1.chapter4.climax_041",
                     "failNext": "act1.chapter4.climax_043a"
                 },
                 {
-                    "text": "[Luck 15] Trust to fate",
-                    "statCheck": { "stat": "luck", "dc": 15 },
+                    "text": "[Luck 12] Trust to fate",
+                    "statCheck": { "stat": "luck", "dc": 12 },
                     "next": "act1.chapter4.climax_041",
                     "failNext": "act1.chapter4.climax_043a"
                 }
@@ -1670,8 +1670,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Constitution 18] Refuse to die. Not here. Not like this.",
-                    "statCheck": { "stat": "constitution", "dc": 18 },
+                    "text": "[Constitution 14] Refuse to die. Not here. Not like this.",
+                    "statCheck": { "stat": "constitution", "dc": 14 },
                     "next": "act1.chapter4.climax_041",
                     "failNext": "act1.chapter4.ending_act1_006"
                 },

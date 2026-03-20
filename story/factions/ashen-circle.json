@@ -2541,10 +2541,10 @@
                     ]
                 },
                 {
-                    "text": "[Intelligence 19] \"None of these paths go far enough. The system that created the stacks must be dismantled from within — starting with the corporate networks.\"",
+                    "text": "[Intelligence 17] \"None of these paths go far enough. The system that created the stacks must be dismantled from within — starting with the corporate networks.\"",
                     "statCheck": {
                         "stat": "intelligence",
-                        "dc": 19
+                        "dc": 17
                     },
                     "next": "factions.ashen-circle.ac_100",
                     "failNext": "factions.ashen-circle.ac_055",

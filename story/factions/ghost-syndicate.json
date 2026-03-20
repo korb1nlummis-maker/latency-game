@@ -14,11 +14,11 @@
                     "next": "factions.ghost-syndicate.gs_002"
                 },
                 {
-                    "text": "Try to trace the message first",
+                    "text": "[Intelligence 12] Try to trace the message first",
                     "next": "factions.ghost-syndicate.gs_003",
-                    "skillCheck": {
-                        "stat": "INT",
-                        "dc": 15
+                    "statCheck": {
+                        "stat": "intelligence",
+                        "dc": 12
                     }
                 },
                 {
@@ -49,8 +49,8 @@
                 {
                     "text": "Stay alert — scan the room for threats",
                     "next": "factions.ghost-syndicate.gs_007",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 13
                     }
                 }
@@ -78,8 +78,8 @@
                 {
                     "text": "Set up counter-surveillance before going",
                     "next": "factions.ghost-syndicate.gs_008",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -107,8 +107,8 @@
                 {
                     "text": "Fine. Go to the address.",
                     "next": "factions.ghost-syndicate.gs_002",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 12
                     }
                 },
@@ -136,16 +136,16 @@
                 {
                     "text": "\"Why contact me?\"",
                     "next": "factions.ghost-syndicate.gs_010",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
                 {
                     "text": "\"Impressive speech. But everyone's someone.\"",
                     "next": "factions.ghost-syndicate.gs_011",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 14
                     }
                 },
@@ -177,8 +177,8 @@
                 {
                     "text": "\"I want to join.\"",
                     "next": "factions.ghost-syndicate.gs_012",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -214,8 +214,8 @@
                 {
                     "text": "\"Three guards, two exits, quantum hardware. Do I pass?\"",
                     "next": "factions.ghost-syndicate.gs_014",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 14
                     }
                 }
@@ -260,8 +260,8 @@
                 {
                     "text": "Go to the new address",
                     "next": "factions.ghost-syndicate.gs_002",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 13
                     }
                 },
@@ -289,8 +289,8 @@
                 {
                     "text": "\"What do you need me for specifically?\"",
                     "next": "factions.ghost-syndicate.gs_016",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
@@ -301,8 +301,8 @@
                 {
                     "text": "\"I'm listening. But I have conditions.\"",
                     "next": "factions.ghost-syndicate.gs_018",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 13
                     }
                 }
@@ -325,8 +325,8 @@
                 {
                     "text": "\"Who were you before?\"",
                     "next": "factions.ghost-syndicate.gs_019",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 16
                     }
                 },
@@ -347,7 +347,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "WIS",
+                    "stat": "wisdom",
                     "amount": 1
                 }
             ],
@@ -359,8 +359,8 @@
                 {
                     "text": "Take the ghost box",
                     "next": "factions.ghost-syndicate.gs_020",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -382,8 +382,8 @@
                 {
                     "text": "\"Fair point. How do I help?\"",
                     "next": "factions.ghost-syndicate.gs_012",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -494,16 +494,16 @@
                 {
                     "text": "\"Build your own media platform.\"",
                     "next": "factions.ghost-syndicate.gs_026",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
                 {
                     "text": "\"Maybe violent action is the only option.\"",
                     "next": "factions.ghost-syndicate.gs_027",
-                    "skillCheck": {
-                        "stat": "STR",
+                    "statCheck": {
+                        "stat": "strength",
                         "dc": 14
                     }
                 }
@@ -581,8 +581,8 @@
                 {
                     "text": "\"This is incredible. What's the first job?\"",
                     "next": "factions.ghost-syndicate.gs_016",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 12
                     }
                 },
@@ -593,8 +593,8 @@
                 {
                     "text": "Test the ghost box — walk past a scanner",
                     "next": "factions.ghost-syndicate.gs_033",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 12
                     }
                 }
@@ -642,8 +642,8 @@
                 {
                     "text": "\"Alright. I'll give you a chance.\"",
                     "next": "factions.ghost-syndicate.gs_012",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -678,8 +678,8 @@
                 {
                     "text": "\"I work alone. No handler.\"",
                     "next": "factions.ghost-syndicate.gs_036",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 15
                     }
                 }
@@ -722,8 +722,8 @@
                 {
                     "text": "\"Good team. Let's plan the heist.\"",
                     "next": "factions.ghost-syndicate.gs_034",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 12
                     }
                 },
@@ -784,8 +784,8 @@
                 {
                     "text": "\"You're right. The pen is mightier.\"",
                     "next": "factions.ghost-syndicate.gs_016",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 13
                     }
                 },
@@ -911,8 +911,8 @@
                 {
                     "text": "\"You have people inside Meridian?\"",
                     "next": "factions.ghost-syndicate.gs_043",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 }
@@ -935,8 +935,8 @@
                 {
                     "text": "Test the ghost box's limits",
                     "next": "factions.ghost-syndicate.gs_044",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 }
@@ -960,16 +960,16 @@
                 {
                     "text": "Gear up and go",
                     "next": "factions.ghost-syndicate.gs_045",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
                 {
                     "text": "\"I want to scout the building first.\"",
                     "next": "factions.ghost-syndicate.gs_046",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 13
                     }
                 },
@@ -1047,8 +1047,8 @@
                 {
                     "text": "\"Give me the details.\"",
                     "next": "factions.ghost-syndicate.gs_049",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 12
                     }
                 },
@@ -1080,16 +1080,16 @@
                 {
                     "text": "\"Good people. Let's plan the job.\"",
                     "next": "factions.ghost-syndicate.gs_034",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 12
                     }
                 },
                 {
                     "text": "Ask Wraith what she decided",
                     "next": "factions.ghost-syndicate.gs_052",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 15
                     }
                 },
@@ -1125,8 +1125,8 @@
                 {
                     "text": "\"Can we do both simultaneously?\"",
                     "next": "factions.ghost-syndicate.gs_055",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 }
@@ -1165,8 +1165,8 @@
                 {
                     "text": "\"Defensive capability only. Not offensive.\"",
                     "next": "factions.ghost-syndicate.gs_028",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -1222,8 +1222,8 @@
                 {
                     "text": "\"Can your inside agents help with the heist?\"",
                     "next": "factions.ghost-syndicate.gs_057",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -1255,8 +1255,8 @@
                 {
                     "text": "Try to fix the DNA gap yourself",
                     "next": "factions.ghost-syndicate.gs_059",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 16
                     }
                 },
@@ -1277,7 +1277,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],
@@ -1293,8 +1293,8 @@
                 {
                     "text": "Improvise — take the service elevator",
                     "next": "factions.ghost-syndicate.gs_061",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 },
@@ -1330,8 +1330,8 @@
                 {
                     "text": "\"Is there a way to disable the Maze?\"",
                     "next": "factions.ghost-syndicate.gs_064",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 }
@@ -1359,8 +1359,8 @@
                 {
                     "text": "\"We need a better backup plan.\"",
                     "next": "factions.ghost-syndicate.gs_065",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -1391,8 +1391,8 @@
                 {
                     "text": "\"Thirty percent.\"",
                     "next": "factions.ghost-syndicate.gs_067",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 15
                     }
                 }
@@ -1406,16 +1406,16 @@
                 {
                     "text": "\"I'll intercept during the walk.\"",
                     "next": "factions.ghost-syndicate.gs_050",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 13
                     }
                 },
                 {
                     "text": "\"Can we clone his palm print beforehand?\"",
                     "next": "factions.ghost-syndicate.gs_068",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -1438,24 +1438,24 @@
                 {
                     "text": "Bump into him — pickpocket the drive",
                     "next": "factions.ghost-syndicate.gs_070",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 15
                     }
                 },
                 {
                     "text": "Follow him to the tower entrance and strike there",
                     "next": "factions.ghost-syndicate.gs_071",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 },
                 {
                     "text": "Use a signal jammer to disable his comms first",
                     "next": "factions.ghost-syndicate.gs_072",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 }
@@ -1475,8 +1475,8 @@
                 {
                     "text": "\"This data needs to go public.\"",
                     "next": "factions.ghost-syndicate.gs_017",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 13
                     }
                 },
@@ -1538,16 +1538,16 @@
                 {
                     "text": "\"Can you crack its architecture?\"",
                     "next": "factions.ghost-syndicate.gs_074",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
                 {
                     "text": "\"How do we feed it false data?\"",
                     "next": "factions.ghost-syndicate.gs_075",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 },
@@ -1627,7 +1627,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],
@@ -1664,8 +1664,8 @@
                 {
                     "text": "\"Can she extend the gap?\"",
                     "next": "factions.ghost-syndicate.gs_077",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 14
                     }
                 }
@@ -1684,16 +1684,16 @@
                 {
                     "text": "\"I'll work around the limitation.\"",
                     "next": "factions.ghost-syndicate.gs_016",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
                 {
                     "text": "\"What if we approach it differently?\"",
                     "next": "factions.ghost-syndicate.gs_059",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 16
                     }
                 }
@@ -1731,7 +1731,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],
@@ -1743,16 +1743,16 @@
                 {
                     "text": "Ride to sublevel 2",
                     "next": "factions.ghost-syndicate.gs_078",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 13
                     }
                 },
                 {
                     "text": "Override the elevator to go directly to sublevel 6",
                     "next": "factions.ghost-syndicate.gs_079",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 16
                     }
                 }
@@ -1775,8 +1775,8 @@
                 {
                     "text": "Look for a ventilation shaft",
                     "next": "factions.ghost-syndicate.gs_080",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 }
@@ -1795,8 +1795,8 @@
                 {
                     "text": "Move now — through the gap",
                     "next": "factions.ghost-syndicate.gs_060",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 },
@@ -1807,8 +1807,8 @@
                 {
                     "text": "\"Can you take out the drones?\"",
                     "next": "factions.ghost-syndicate.gs_081",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 14
                     }
                 }
@@ -1827,8 +1827,8 @@
                 {
                     "text": "\"Null, can you navigate us through your own creation?\"",
                     "next": "factions.ghost-syndicate.gs_082",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -1913,7 +1913,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "CHA",
+                    "stat": "charisma",
                     "amount": 1
                 }
             ],
@@ -2092,7 +2092,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "WIS",
+                    "stat": "wisdom",
                     "amount": 1
                 }
             ],
@@ -2146,7 +2146,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],
@@ -2204,8 +2204,8 @@
                 {
                     "text": "Take the stairs down quickly",
                     "next": "factions.ghost-syndicate.gs_088",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 13
                     }
                 },
@@ -2216,8 +2216,8 @@
                 {
                     "text": "Proceed carefully, checking each floor",
                     "next": "factions.ghost-syndicate.gs_090",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 13
                     }
                 }
@@ -2240,8 +2240,8 @@
                 {
                     "text": "\"Specter, can you suppress the alerts?\"",
                     "next": "factions.ghost-syndicate.gs_092",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 }
@@ -2264,8 +2264,8 @@
                 {
                     "text": "Tap into the Maze's control cables from here",
                     "next": "factions.ghost-syndicate.gs_093",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 16
                     }
                 }
@@ -2300,8 +2300,8 @@
                 {
                     "text": "\"I'll fake confidence until it's real.\"",
                     "next": "factions.ghost-syndicate.gs_088",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -2349,8 +2349,8 @@
                 {
                     "text": "\"This goes public. Now.\"",
                     "next": "factions.ghost-syndicate.gs_094",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 14
                     }
                 },
@@ -2406,8 +2406,8 @@
                 {
                     "text": "\"Now hit them with MIRRORBREAK while they're confused.\"",
                     "next": "factions.ghost-syndicate.gs_045",
-                    "skillCheck": {
-                        "stat": "STR",
+                    "statCheck": {
+                        "stat": "strength",
                         "dc": 14
                     }
                 }
@@ -2457,16 +2457,16 @@
                 {
                     "text": "Enter the Looking Glass chamber",
                     "next": "factions.ghost-syndicate.gs_091",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 },
                 {
                     "text": "Check for additional security first",
                     "next": "factions.ghost-syndicate.gs_097",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 14
                     }
                 }
@@ -2514,7 +2514,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "WIS",
+                    "stat": "wisdom",
                     "amount": 1
                 }
             ],
@@ -2526,16 +2526,16 @@
                 {
                     "text": "Access the terminal — download the source code",
                     "next": "factions.ghost-syndicate.gs_098",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 },
                 {
                     "text": "Plant the backdoor first",
                     "next": "factions.ghost-syndicate.gs_099",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -2593,7 +2593,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "INT",
+                    "stat": "intelligence",
                     "amount": 1
                 }
             ],
@@ -2605,8 +2605,8 @@
                 {
                     "text": "\"Release it. People have a right to know now.\"",
                     "next": "factions.ghost-syndicate.gs_096",
-                    "skillCheck": {
-                        "stat": "CHA",
+                    "statCheck": {
+                        "stat": "charisma",
                         "dc": 15
                     }
                 },
@@ -2629,8 +2629,8 @@
                 {
                     "text": "\"Infiltrate and filter. Protect patients and stop harvesting.\"",
                     "next": "factions.ghost-syndicate.gs_086",
-                    "skillCheck": {
-                        "stat": "WIS",
+                    "statCheck": {
+                        "stat": "wisdom",
                         "dc": 14
                     }
                 },
@@ -2657,8 +2657,8 @@
                 {
                     "text": "\"Now — while they're reeling — we hit Looking Glass.\"",
                     "next": "factions.ghost-syndicate.gs_045",
-                    "skillCheck": {
-                        "stat": "STR",
+                    "statCheck": {
+                        "stat": "strength",
                         "dc": 14
                     }
                 },
@@ -2691,8 +2691,8 @@
                 {
                     "text": "Download the source code",
                     "next": "factions.ghost-syndicate.gs_098",
-                    "skillCheck": {
-                        "stat": "INT",
+                    "statCheck": {
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 },
@@ -2754,8 +2754,8 @@
                 {
                     "text": "Extract through the maintenance tunnels",
                     "next": "factions.ghost-syndicate.gs_100",
-                    "skillCheck": {
-                        "stat": "DEX",
+                    "statCheck": {
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 },

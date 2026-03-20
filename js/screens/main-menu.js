@@ -57,7 +57,17 @@ window.Latency.Screens.MainMenu = (function () {
     // --------------------------------------------------------
     function _hasSaveData() {
         try {
-            return localStorage.getItem('latency_save') !== null;
+            // Check autosave first (must have valid character)
+            var auto = localStorage.getItem('latency_autosave');
+            if (auto) {
+                var parsed = JSON.parse(auto);
+                if (parsed && parsed.character) return true;
+            }
+            // Check manual save slots
+            for (var i = 0; i < 5; i++) {
+                if (localStorage.getItem('latency_save_' + i)) return true;
+            }
+            return false;
         } catch (e) {
             return false;
         }
@@ -185,7 +195,7 @@ window.Latency.Screens.MainMenu = (function () {
         screen.appendChild(nav);
 
         // --- Version ---
-        var version = _el('div', 'menu-version', 'v0.3.0 — Phase 6');
+        var version = _el('div', 'menu-version', 'v1.0.0 — Release');
         screen.appendChild(version);
 
         frag.appendChild(screen);

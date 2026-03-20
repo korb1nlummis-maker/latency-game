@@ -13,7 +13,7 @@
                     "text": "Fight all three of them",
                     "next": "shared.random-encounters.re_002",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 13
                     }
                 },
@@ -21,7 +21,7 @@
                     "text": "Try to talk your way out",
                     "next": "shared.random-encounters.re_003",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 12
                     }
                 },
@@ -204,7 +204,7 @@
                     "text": "Try to bluff with fake credentials",
                     "next": "shared.random-encounters.re_013",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -212,7 +212,7 @@
                     "text": "Slip away before they get a good look at you",
                     "next": "shared.random-encounters.re_014",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 13
                     }
                 }
@@ -270,7 +270,7 @@
                     "text": "Stop and administer first aid",
                     "next": "shared.random-encounters.re_016",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 11
                     }
                 },
@@ -361,7 +361,7 @@
                     "text": "Chase them down",
                     "next": "shared.random-encounters.re_020",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 12
                     }
                 },
@@ -479,7 +479,7 @@
                     "text": "Wait for a lull and sprint across",
                     "next": "shared.random-encounters.re_026",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 },
@@ -491,7 +491,7 @@
                     "text": "Hit the ground and crawl through",
                     "next": "shared.random-encounters.re_028",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 12
                     }
                 }
@@ -554,7 +554,7 @@
                     "text": "Try to repair the bot's navigation system",
                     "next": "shared.random-encounters.re_030",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 11
                     }
                 },
@@ -562,7 +562,7 @@
                     "text": "Shove the bot aside with brute force",
                     "next": "shared.random-encounters.re_031",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 13
                     }
                 },
@@ -628,7 +628,7 @@
                     "text": "Try to decrypt the rest of the file",
                     "next": "shared.random-encounters.re_034",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
@@ -753,7 +753,7 @@
                     "text": "Navigate by comm light toward the nearest exit",
                     "next": "shared.random-encounters.re_041",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 11
                     }
                 },
@@ -761,7 +761,7 @@
                     "text": "Use the darkness to your advantage — move quickly",
                     "next": "shared.random-encounters.re_042",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 12
                     }
                 }

@@ -263,17 +263,13 @@
                 "The charges are where Vex said they'd be, pre-planted by a Collective operative who works janitorial. Small grey blocks of thermite composite fixed to the load-bearing columns. You count twelve. Enough to bring the basement down and then some.",
                 {
                     "condition": {
-                        "stat": {
-                            "STR": 12
-                        }
+                        "statMin": { "stat": "strength", "value": 12 }
                     },
                     "text": "You shoulder through a jammed maintenance hatch without slowing, the metal shrieking against your weight. The noise doesn't matter. You're past stealth now."
                 },
                 {
                     "condition": {
-                        "stat": {
-                            "CON": 12
-                        }
+                        "statMin": { "stat": "constitution", "value": 12 }
                     },
                     "text": "The air in the lower levels is thick with chemical preservatives and something worse â€” the copper-sweet smell of old blood. Your stomach turns but holds. You've breathed worse."
                 }
@@ -353,17 +349,13 @@
                 "A security guard rounds the corner. Corporate muscle, armored vest, shock baton, sidearm. He sees you and his hand goes to his weapon.",
                 {
                     "condition": {
-                        "stat": {
-                            "STR": 13
-                        }
+                        "statMin": { "stat": "strength", "value": 13 }
                     },
                     "text": "You close the distance before he clears the holster. Your fist connects with his jaw like a piston, and he drops. STR check: PASSED."
                 },
                 {
                     "condition": {
-                        "stat": {
-                            "CON": 13
-                        }
+                        "statMin": { "stat": "constitution", "value": 13 }
                     },
                     "text": "He fires. The round catches your shoulder â€” a white-hot punch that spins you sideways. You stay on your feet. You've taken worse. You keep moving. CON check: PASSED."
                 }
@@ -420,13 +412,10 @@
             "onEnter": [],
             "choices": [
                 {
-                    "text": "Fight through the guards.",
+                    "text": "[Strength 11] Fight through the guards.",
                     "next": "act1.chapter2-iron-neon.fac_iron_013",
-                    "skillCheck": {
-                        "stat": "STR",
-                        "dc": 13,
-                        "failNext": "act1.chapter2-iron-neon.fac_iron_013"
-                    }
+                    "statCheck": { "stat": "strength", "dc": 11 },
+                    "failNext": "act1.chapter2-iron-neon.fac_iron_013"
                 }
             ],
             "ascii": null,
@@ -730,13 +719,10 @@
                     "next": "act1.chapter2-iron-neon.fac_neon_004"
                 },
                 {
-                    "text": "Decline politely. You didn't survive the lower city by accepting drinks from strangers.",
+                    "text": "[Charisma 11] Decline politely. You didn't survive the lower city by accepting drinks from strangers.",
                     "next": "act1.chapter2-iron-neon.fac_neon_005",
-                    "skillCheck": {
-                        "stat": "CHA",
-                        "dc": 13,
-                        "failNext": "act1.chapter2-iron-neon.fac_neon_004"
-                    }
+                    "statCheck": { "stat": "charisma", "dc": 11 },
+                    "failNext": "act1.chapter2-iron-neon.fac_neon_004"
                 }
             ],
             "ascii": "assets/ascii/locations/spire.txt",
@@ -835,13 +821,10 @@
                     "next": "act1.chapter2-iron-neon.fac_neon_007"
                 },
                 {
-                    "text": "\"Flattery and poison. You sure know how to welcome a guest.\"",
+                    "text": "[Charisma 12] \"Flattery and poison. You sure know how to welcome a guest.\"",
                     "next": "act1.chapter2-iron-neon.fac_neon_007",
-                    "skillCheck": {
-                        "stat": "CHA",
-                        "dc": 14,
-                        "failNext": "act1.chapter2-iron-neon.fac_neon_007"
-                    }
+                    "statCheck": { "stat": "charisma", "dc": 12 },
+                    "failNext": "act1.chapter2-iron-neon.fac_neon_007"
                 }
             ],
             "ascii": "assets/ascii/npcs/luminara.txt",
@@ -902,13 +885,10 @@
                     "next": "act1.chapter2-iron-neon.fac_neon_008"
                 },
                 {
-                    "text": "\"Why can't you send your own people?\"",
+                    "text": "[Charisma 11] \"Why can't you send your own people?\"",
                     "next": "act1.chapter2-iron-neon.fac_neon_008",
-                    "skillCheck": {
-                        "stat": "CHA",
-                        "dc": 13,
-                        "failNext": "act1.chapter2-iron-neon.fac_neon_008"
-                    }
+                    "statCheck": { "stat": "charisma", "dc": 11 },
+                    "failNext": "act1.chapter2-iron-neon.fac_neon_008"
                 }
             ],
             "ascii": null,
@@ -951,13 +931,10 @@
                     "next": "act1.chapter2-iron-neon.fac_neon_009"
                 },
                 {
-                    "text": "Try to crack the encryption before delivering it.",
+                    "text": "[Intelligence 12] Try to crack the encryption before delivering it.",
                     "next": "act1.chapter2-iron-neon.fac_neon_010",
-                    "skillCheck": {
-                        "stat": "INT",
-                        "dc": 15,
-                        "failNext": "act1.chapter2-iron-neon.fac_neon_009"
-                    }
+                    "statCheck": { "stat": "intelligence", "dc": 12 },
+                    "failNext": "act1.chapter2-iron-neon.fac_neon_009"
                 }
             ],
             "ascii": null,
@@ -991,13 +968,10 @@
                     "next": "act1.chapter2-iron-neon.fac_neon_011"
                 },
                 {
-                    "text": "\"I suspected. I brought it anyway so you'd know what she has on you.\"",
+                    "text": "[Charisma 12] \"I suspected. I brought it anyway so you'd know what she has on you.\"",
                     "next": "act1.chapter2-iron-neon.fac_neon_011",
-                    "skillCheck": {
-                        "stat": "CHA",
-                        "dc": 15,
-                        "failNext": "act1.chapter2-iron-neon.fac_neon_011"
-                    }
+                    "statCheck": { "stat": "charisma", "dc": 12 },
+                    "failNext": "act1.chapter2-iron-neon.fac_neon_011"
                 }
             ],
             "ascii": "assets/ascii/npcs/vex.txt",
@@ -1037,13 +1011,10 @@
                     "next": "act1.chapter2-iron-neon.fac_neon_012"
                 },
                 {
-                    "text": "Play both sides. Deliver a modified version to Vex and tell Luminara you completed the job.",
+                    "text": "[Dexterity 12] Play both sides. Deliver a modified version to Vex and tell Luminara you completed the job.",
                     "next": "act1.chapter2-iron-neon.fac_neon_013",
-                    "skillCheck": {
-                        "stat": "DEX",
-                        "dc": 14,
-                        "failNext": "act1.chapter2-iron-neon.fac_neon_012"
-                    }
+                    "statCheck": { "stat": "dexterity", "dc": 12 },
+                    "failNext": "act1.chapter2-iron-neon.fac_neon_012"
                 }
             ],
             "ascii": null,
@@ -1177,9 +1148,7 @@
                 "You've bought time. You've bought leverage. You've also bought yourself a position on a knife's edge where one slip means two factions want you dead instead of one.",
                 {
                     "condition": {
-                        "stat": {
-                            "DEX": 14
-                        }
+                        "statMin": { "stat": "dexterity", "value": 14 }
                     },
                     "text": "Your hands don't shake. Your story didn't waver. You walked between two predators and neither one bit. DEX check: PASSED. But how long can you keep this up?"
                 }

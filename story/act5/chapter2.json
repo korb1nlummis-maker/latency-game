@@ -491,9 +491,10 @@
             ],
             "choices": [
                 {
-                    "text": "Storm Meridian Tower alone. End this at the source.",
-                    "condition": { "stat_check": { "stat": "combat", "dc": 20 } },
-                    "next": "act5.chapter2.ending_066"
+                    "text": "[Strength 18] Storm Meridian Tower alone. End this at the source.",
+                    "statCheck": { "stat": "strength", "dc": 18 },
+                    "next": "act5.chapter2.ending_066",
+                    "failNext": "act5.chapter2.ending_068"
                 },
                 {
                     "text": "Build something new. Your own faction. Your own rules.",
@@ -519,9 +520,10 @@
                     "next": "act5.chapter2.ending_071"
                 },
                 {
-                    "text": "Call a summit. Every faction, one table, one negotiation.",
-                    "condition": { "stat_check": { "stat": "charisma", "dc": 18 } },
-                    "next": "act5.chapter2.ending_072"
+                    "text": "[Charisma 18] Call a summit. Every faction, one table, one negotiation.",
+                    "statCheck": { "stat": "charisma", "dc": 18 },
+                    "next": "act5.chapter2.ending_072",
+                    "failNext": "act5.chapter2.ending_073"
                 },
                 {
                     "text": "Do nothing. Wait. Let time decide.",

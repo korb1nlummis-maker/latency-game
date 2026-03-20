@@ -869,8 +869,8 @@
                     "next": "act3.chapter1.act3_028"
                 },
                 {
-                    "text": "[TECH DC 18] Attempt the surgical modification. Cut LATENCY free without crashing the network.",
-                    "statCheck": { "stat": "tech", "dc": 18 },
+                    "text": "[Tech 16] Attempt the surgical modification. Cut LATENCY free without crashing the network.",
+                    "statCheck": { "stat": "tech", "dc": 16 },
                     "next": "act3.chapter1.act3_030",
                     "failNext": "act3.chapter1.act3_031"
                 },

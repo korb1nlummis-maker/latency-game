@@ -38,7 +38,7 @@
                     "text": "\"I was invited. Check the guest registry.\"",
                     "next": "factions.neon-court.nc_005",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 11
                     }
                 },
@@ -46,7 +46,7 @@
                     "text": "Ignore the drone and walk forward with confidence",
                     "next": "factions.neon-court.nc_006",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 }
@@ -133,7 +133,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "CHA",
+                    "stat": "charisma",
                     "amount": 1
                 }
             ],
@@ -193,7 +193,7 @@
                     "text": "Meet her gaze as an equal",
                     "next": "factions.neon-court.nc_014",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -239,7 +239,7 @@
                     "text": "Ask about the military-grade stacks",
                     "next": "factions.neon-court.nc_017",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
@@ -267,7 +267,7 @@
                     "text": "Approach the women and introduce yourself",
                     "next": "factions.neon-court.nc_018",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 15
                     }
                 }
@@ -400,7 +400,7 @@
                     "text": "\"The kind of district that teaches you to spot a predator.\"",
                     "next": "factions.neon-court.nc_022",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -776,7 +776,7 @@
                     "text": "Study the security layout as you enter",
                     "next": "factions.neon-court.nc_036",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 12
                     }
                 },
@@ -830,7 +830,7 @@
                     "text": "Approach Thorne directly",
                     "next": "factions.neon-court.nc_038",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -881,7 +881,7 @@
                     "text": "Try to talk your way in early",
                     "next": "factions.neon-court.nc_042",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 15
                     }
                 },
@@ -899,7 +899,7 @@
                     "text": "\"Youth is relative when you've been in the acquisition business as long as I have.\"",
                     "next": "factions.neon-court.nc_043",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -928,7 +928,7 @@
                     "text": "Approach the woman in the silver mask",
                     "next": "factions.neon-court.nc_046",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -979,7 +979,7 @@
                     "text": "Try to pick the electronic lock",
                     "next": "factions.neon-court.nc_052",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 },
@@ -987,7 +987,7 @@
                     "text": "Steal a keycard from a staff member",
                     "next": "factions.neon-court.nc_053",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 12
                     }
                 },
@@ -1070,7 +1070,7 @@
                     "text": "\"What kind of interests are we talking about?\"",
                     "next": "factions.neon-court.nc_056",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 }
@@ -1161,7 +1161,7 @@
                     "text": "Probe for more details about his interests",
                     "next": "factions.neon-court.nc_062",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 12
                     }
                 }
@@ -1190,7 +1190,7 @@
                     "text": "\"What can you tell me about the final lot?\"",
                     "next": "factions.neon-court.nc_063",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 }
@@ -1215,7 +1215,7 @@
                     "text": "Approach him carefully",
                     "next": "factions.neon-court.nc_064",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
@@ -1248,7 +1248,7 @@
                     "text": "Try to steal the override prototype",
                     "next": "factions.neon-court.nc_066",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 16
                     }
                 }
@@ -1440,7 +1440,7 @@
                     "text": "Try to identify the shadowed figure",
                     "next": "factions.neon-court.nc_068",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -1539,7 +1539,7 @@
                     "text": "Try to disable or destroy the Sovereign prototype",
                     "next": "factions.neon-court.nc_071",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 15
                     }
                 }
@@ -1589,7 +1589,7 @@
                     "text": "Bid to stall the sale and create chaos",
                     "next": "factions.neon-court.nc_073",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 15
                     }
                 },
@@ -1597,7 +1597,7 @@
                     "text": "Slip away during the excitement to steal the prototype",
                     "next": "factions.neon-court.nc_074",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 }
@@ -1665,7 +1665,7 @@
                     "text": "Fight your way out",
                     "next": "factions.neon-court.nc_077",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 15
                     }
                 }
@@ -1709,7 +1709,7 @@
                     "text": "Create a disruption to stop the sale",
                     "next": "factions.neon-court.nc_079",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 16
                     }
                 }
@@ -1727,7 +1727,7 @@
                     "text": "Maintain the bluff — force the auction to end without a sale",
                     "next": "factions.neon-court.nc_080",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 17
                     }
                 }
@@ -1768,7 +1768,7 @@
                     "text": "Maintain the cover — \"My records are sealed for security reasons.\"",
                     "next": "factions.neon-court.nc_081",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 16
                     }
                 },
@@ -1780,7 +1780,7 @@
                     "text": "Attack Thorne and escape",
                     "next": "factions.neon-court.nc_083",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 15
                     }
                 }
@@ -1819,7 +1819,7 @@
                     "text": "Find an alternate exit",
                     "next": "factions.neon-court.nc_085",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 }
@@ -1831,7 +1831,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "STR",
+                    "stat": "strength",
                     "amount": 1
                 }
             ],
@@ -1919,7 +1919,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "CHA",
+                    "stat": "charisma",
                     "amount": 1
                 }
             ],
@@ -1932,7 +1932,7 @@
                     "text": "\"Kill me and the Duchess releases everything. It's already uploaded.\"",
                     "next": "factions.neon-court.nc_086",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -1949,7 +1949,7 @@
                     "text": "Fight your way out",
                     "next": "factions.neon-court.nc_083",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 15
                     }
                 }
@@ -1971,7 +1971,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "STR",
+                    "stat": "strength",
                     "amount": 1
                 }
             ],
@@ -2013,7 +2013,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "DEX",
+                    "stat": "dexterity",
                     "amount": 1
                 }
             ],
@@ -2034,7 +2034,7 @@
                 },
                 {
                     "type": "modify_stat",
-                    "stat": "CHA",
+                    "stat": "charisma",
                     "amount": 1
                 }
             ],
@@ -2081,7 +2081,7 @@
                     "text": "\"I want to attend the gala as your equal, not your servant.\"",
                     "next": "factions.neon-court.nc_091",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 }
@@ -2178,7 +2178,7 @@
                     "text": "Circle the platform — look for Thorne's people",
                     "next": "factions.neon-court.nc_094",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
@@ -2186,7 +2186,7 @@
                     "text": "Confront Thorne directly",
                     "next": "factions.neon-court.nc_095",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 15
                     }
                 }

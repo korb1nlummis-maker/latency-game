@@ -1924,8 +1924,8 @@
                 { "type": "add_experience", "amount": 15 }
             ],
             "choices": [
-                { "text": "[Charisma 14] Appeal to emotion — tell them about Cole, about love, about what it means to feel", "statCheck": { "stat": "charisma", "dc": 14 }, "next": "origins.synth.syn_076", "failNext": "origins.synth.syn_077" },
-                { "text": "[Intelligence 14] Appeal to logic — present the neural mapping data, the EPL readings, the scientific proof", "statCheck": { "stat": "intelligence", "dc": 14 }, "next": "origins.synth.syn_076", "failNext": "origins.synth.syn_077" },
+                { "text": "[Charisma 12] Appeal to emotion — tell them about Cole, about love, about what it means to feel", "statCheck": { "stat": "charisma", "dc": 12 }, "next": "origins.synth.syn_076", "failNext": "origins.synth.syn_077" },
+                { "text": "[Intelligence 12] Appeal to logic — present the neural mapping data, the EPL readings, the scientific proof", "statCheck": { "stat": "intelligence", "dc": 12 }, "next": "origins.synth.syn_076", "failNext": "origins.synth.syn_077" },
                 { "text": "Simply stand there in silence and let them look at you — really look", "next": "origins.synth.syn_078" }
             ],
             "ascii": null,

@@ -1173,6 +1173,53 @@ window.Latency.Screens.Gameplay = (function () {
             _lastDisplayedNodeId = data.nodeId;
         }
         _refreshSidebar();
+
+        // Check if this story node triggers a combat encounter
+        var node = data && data.node ? data.node : null;
+        var raw = node ? (node.raw || {}) : {};
+        if (raw.combat && raw.combat.enemies && raw.combat.enemies.length > 0) {
+            // Delay combat start slightly so the player can read the narrative text
+            var combatTimerId = setTimeout(function () {
+                _initiateCombatFromNode(raw.combat);
+            }, 1200);
+            _pendingTimers.push(combatTimerId);
+        }
+    }
+
+    /**
+     * Initiate a combat encounter from a story node's combat descriptor.
+     * The descriptor format from story JSON is:
+     *   { enemies: [{ id, name, level }], onWin/winNext, onFlee, onLose/loseNext }
+     *
+     * The current combat engine supports single-enemy fights, so we use the
+     * first enemy in the list. The remaining enemies are noted for narrative
+     * flavor but don't participate mechanically (multi-enemy is future work).
+     */
+    function _initiateCombatFromNode(combatData) {
+        if (!window.Latency.Combat || !window.Latency.StateMachine) return;
+
+        var enemies = combatData.enemies;
+        var primaryEnemy = enemies[0];
+        var enemyId = primaryEnemy.id;
+
+        // Build context with return node IDs for win/lose/flee outcomes
+        var context = {
+            returnNodeId: combatData.onWin || combatData.winNext || null,
+            onFleeNodeId: combatData.onFlee || null,
+            onLoseNodeId: combatData.onLose || combatData.loseNext || null
+        };
+
+        // Initiate the combat engine
+        var state = window.Latency.Combat.initiate(enemyId, context);
+        if (!state) {
+            console.error('[Gameplay] Failed to initiate combat with enemy:', enemyId);
+            return;
+        }
+
+        // Transition to combat screen
+        window.Latency.StateMachine.transition('combat', {
+            combatData: combatData
+        });
     }
 
     function _onStatChange() {

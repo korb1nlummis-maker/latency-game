@@ -214,6 +214,11 @@ window.Latency.SaveManager = (function () {
     function autoSave() {
         var state = captureState();
 
+        // Don't overwrite autosave with empty character data
+        if (!state.character) {
+            return false;
+        }
+
         try {
             var json = JSON.stringify(state);
             localStorage.setItem(AUTO_SAVE_KEY, json);
@@ -309,12 +314,11 @@ window.Latency.SaveManager = (function () {
                 window.Latency.GameState = {};
             }
 
-            // If there's a Character constructor with a deserialize method, use it
-            if (window.Latency.Character && typeof window.Latency.Character.deserialize === 'function') {
-                window.Latency.GameState.character = window.Latency.Character.deserialize(state.character);
-            } else {
-                window.Latency.GameState.character = state.character;
+            // Restore via CharacterSystem.deserialize (sets internal _character)
+            if (window.Latency.CharacterSystem && typeof window.Latency.CharacterSystem.deserialize === 'function') {
+                window.Latency.CharacterSystem.deserialize(state.character);
             }
+            window.Latency.GameState.character = state.character;
         }
 
         // Restore story node
@@ -442,7 +446,7 @@ window.Latency.SaveManager = (function () {
             if (!json) return meta;
 
             var data = JSON.parse(json);
-            meta.isEmpty = false;
+            meta.isEmpty = !data.character;
             meta.timestamp = data.timestamp || null;
             meta.formattedDate = _formatTimestamp(data.timestamp);
             meta.playtime = _formatPlaytime(data.playtime);

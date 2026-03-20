@@ -159,7 +159,7 @@
                     "text": "Keep him pinned. Let Priya negotiate from strength.",
                     "next": "jobs.enforcer.enf_007",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 10
                     }
                 }
@@ -270,7 +270,7 @@
                     "text": "Rearrange the meeting point — use containers as cover.",
                     "next": "jobs.enforcer.enf_011",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 11
                     }
                 },
@@ -495,7 +495,7 @@
                     "text": "Explain your reasoning — you were investigating.",
                     "next": "jobs.enforcer.enf_019",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 13
                     }
                 }
@@ -604,7 +604,7 @@
                     "text": "Block the pursuit. The perimeter is absolute.",
                     "next": "jobs.enforcer.enf_022",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 12
                     }
                 }
@@ -705,7 +705,7 @@
                     "text": "Agree, on your security terms.",
                     "next": "jobs.enforcer.enf_025",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 12
                     }
                 },
@@ -842,7 +842,7 @@
                     "text": "Investigate the threats. Find the source.",
                     "next": "jobs.enforcer.enf_031",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 13
                     }
                 }
@@ -875,7 +875,7 @@
                     "text": "Show force. The outfit's territory is non-negotiable.",
                     "next": "jobs.enforcer.enf_033",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 14
                     }
                 }
@@ -908,7 +908,7 @@
                     "text": "Investigate quietly. Find the mole.",
                     "next": "jobs.enforcer.enf_035",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 14
                     }
                 }
@@ -973,7 +973,7 @@
                     "text": "Make it clear: Block 8 is ours. Back off.",
                     "next": "jobs.enforcer.enf_037",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 13
                     }
                 }
@@ -1036,7 +1036,7 @@
                     "text": "Set a trap. Feed each suspect unique info.",
                     "next": "jobs.enforcer.enf_039",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 14
                     }
                 }
@@ -1096,7 +1096,7 @@
                     "text": "Counter-offer: Vipers integrate entirely. No separate crew.",
                     "next": "jobs.enforcer.enf_042",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 13
                     }
                 }
@@ -1389,7 +1389,7 @@
                     "text": "Ask about the sub-basement team.",
                     "next": "jobs.enforcer.enf_048",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 14
                     }
                 },
@@ -1446,7 +1446,7 @@
                     "text": "Take the contract but investigate on your own.",
                     "next": "jobs.enforcer.enf_051",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 15
                     }
                 }
@@ -1556,7 +1556,7 @@
                     "text": "Sabotage directly. Free the subjects.",
                     "next": "jobs.enforcer.enf_054",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 15
                     }
                 }
@@ -1757,7 +1757,7 @@
                     "text": "Go on the offensive against Nexus.",
                     "next": "jobs.enforcer.enf_060",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 14
                     }
                 }
@@ -1956,7 +1956,7 @@
                     "text": "Fight strategically. Build alternatives.",
                     "next": "jobs.enforcer.enf_067",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 15
                     }
                 }
@@ -2092,7 +2092,7 @@
                     "text": "\"Make it community-governed. A democracy.\"",
                     "next": "jobs.enforcer.enf_072",
                     "statCheck": {
-                        "stat": "CON",
+                        "stat": "constitution",
                         "dc": 15
                     }
                 }

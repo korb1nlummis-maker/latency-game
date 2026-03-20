@@ -255,12 +255,12 @@ window.Latency.AchievementsData = (function() {
         var fn = FACTION_NAMES[fac];
 
         // Rep milestones (7 per faction = 35)
-        [-100, -50, 0, 25, 50, 75, 100].forEach(function(rep) {
-            var tier = rep <= -50 ? 'hostile' : rep < 0 ? 'unfriendly' : rep <= 10 ? 'neutral' : rep <= 50 ? 'friendly' : 'allied';
+        [-100, -50, 25, 50, 75, 100].forEach(function(rep) {
+            var tier = rep <= -50 ? 'hostile' : rep < 0 ? 'unfriendly' : rep <= 25 ? 'friendly' : rep <= 75 ? 'allied' : 'exalted';
             _add('faction_' + fac + '_rep_' + Math.abs(rep) + (rep < 0 ? 'neg' : 'pos'),
                 fn + ': ' + tier.charAt(0).toUpperCase() + tier.slice(1),
-                'Reach ' + tier + ' with ' + fn + '.', 'faction', false,
-                { type: 'faction', faction: fac, tier: tier },
+                (rep < 0 ? 'Drop to ' : 'Reach ') + rep + ' reputation with ' + fn + '.', 'faction', false,
+                { type: 'faction_rep', faction: fac, minRep: rep },
                 { xp: Math.abs(rep) + 25 }, Math.abs(rep) < 50 ? 'common' : Math.abs(rep) < 100 ? 'uncommon' : 'rare');
         });
 
@@ -531,7 +531,7 @@ window.Latency.AchievementsData = (function() {
         var sn = stat.charAt(0).toUpperCase() + stat.slice(1);
 
         // Stat milestones (4 per stat = 32)
-        [5, 10, 15, 20].forEach(function(val, i) {
+        [12, 15, 18, 20].forEach(function(val, i) {
             var rarities = ['common', 'uncommon', 'rare', 'epic'];
             _add('stat_' + stat + '_' + val, sn + ': ' + val, 'Reach ' + val + ' ' + sn + '.', 'stat', false,
                 { type: 'stat', stat: stat, min: val }, { xp: val * 10 }, rarities[i]);

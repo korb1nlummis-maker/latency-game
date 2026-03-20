@@ -297,9 +297,7 @@
                 "\"Or maybe I'm wrong about you. Guess we'll find out.\"",
                 {
                     "condition": {
-                        "stat": {
-                            "INT": 16
-                        }
+                        "statMin": { "stat": "intelligence", "value": 16 }
                     },
                     "text": "Your mind is already running calculations. Thermobaric charges in the support columns — that is not a contingency plan, that is a scorched earth protocol. If Voss triggers Ashfall, it will not just collapse the Underground. The structural damage will cascade upward. Midcity's foundations will fail within hours. Only Highcity, built on independent supports, would survive. Voss is willing to kill tens of thousands to keep his towers standing."
                 }
@@ -428,9 +426,7 @@
                 "She leans in. \"And if you're thinking about switching sides again — don't. We have your biometrics on file. Every drone in the city has your face loaded as a priority friendly. One flag change and they switch you to priority target. You would not make it two blocks.\"",
                 {
                     "condition": {
-                        "stat": {
-                            "CHA": 14
-                        }
+                        "statMin": { "stat": "charisma", "value": 14 }
                     },
                     "text": "You read the room with practiced eyes. Rask is scared. The tactical displays show more red than blue. Meridian is losing ground in the Lower District and the Undercity, holding steady in Midcity, dominant only in Highcity. They need your intelligence because their own network is compromised. That's leverage. Dangerous leverage, but leverage."
                 }
@@ -448,13 +444,10 @@
                     "next": "act4.chapter1.act4_033"
                 },
                 {
-                    "text": "Feed them false information — sabotage from inside",
-                    "condition": {
-                        "stat": {
-                            "INT": 14
-                        }
-                    },
-                    "next": "act4.chapter1.act4_017"
+                    "text": "[Intelligence 15] Feed them false information — sabotage from inside",
+                    "statCheck": { "stat": "intelligence", "dc": 15 },
+                    "next": "act4.chapter1.act4_017",
+                    "failNext": "act4.chapter1.act4_016"
                 },
                 {
                     "text": "\"I need to see the battlefield myself before I give you anything.\"",
@@ -589,9 +582,7 @@
                 },
                 {
                     "condition": {
-                        "stat": {
-                            "STR": 14
-                        }
+                        "statMin": { "stat": "strength", "value": 14 }
                     },
                     "text": "The ruptured main is visible where the ceiling has collapsed — a pipe thick as your torso, split along a weld seam. The flow is massive but the break is localized. If you could force something into the gap, a beam, a sheet of metal, anything strong enough, you might reduce the flow enough to buy time."
                 }
@@ -617,13 +608,10 @@
                     "next": "act4.chapter1.act4_013"
                 },
                 {
-                    "text": "Try to block the ruptured main with debris",
-                    "condition": {
-                        "stat": {
-                            "STR": 14
-                        }
-                    },
-                    "next": "act4.chapter1.act4_014"
+                    "text": "[Strength 15] Try to block the ruptured main with debris",
+                    "statCheck": { "stat": "strength", "dc": 15 },
+                    "next": "act4.chapter1.act4_014",
+                    "failNext": "act4.chapter1.act4_040"
                 },
                 {
                     "text": "The water is too high. Save yourself.",
@@ -647,9 +635,7 @@
                 "\"Zero sent me,\" she says. \"Figured you'd need muscle.\" She jams the crowbar into the valve wheel and pulls. Metal screams against metal. \"On three. One. Two.\"",
                 {
                     "condition": {
-                        "stat": {
-                            "STR": 16
-                        }
+                        "statMin": { "stat": "strength", "value": 16 }
                     },
                     "text": "Your combined strength is barely enough. The valve screams, shrieks, and then turns — one inch, two, three. Water begins to drain through the gate beneath your feet with a sound like a giant swallowing. The level drops. Slowly at first, then faster."
                 }
@@ -710,20 +696,13 @@
                     "next": "act4.chapter1.act4_015"
                 },
                 {
-                    "text": "Bluff: \"Protocol Ashfall is compromised. Stand down or Voss loses everything.\"",
-                    "condition": {
-                        "and": [
-                            {
-                                "flag": "act4.knows_ashfall"
-                            },
-                            {
-                                "stat": {
-                                    "CHA": 14
-                                }
-                            }
-                        ]
-                    },
-                    "next": "act4.chapter1.act4_034"
+                    "text": "[Charisma 15] Bluff: \"Protocol Ashfall is compromised. Stand down or Voss loses everything.\"",
+                    "conditions": [
+                        { "flag": "act4.knows_ashfall" }
+                    ],
+                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "next": "act4.chapter1.act4_034",
+                    "failNext": "act4.chapter1.act4_015"
                 }
             ],
             "ascii": null,
@@ -785,13 +764,10 @@
                     "next": "act4.chapter1.act4_021"
                 },
                 {
-                    "text": "Rally the Undercity survivors into a fighting force",
-                    "condition": {
-                        "stat": {
-                            "CHA": 16
-                        }
-                    },
-                    "next": "act4.chapter1.act4_037"
+                    "text": "[Charisma 16] Rally the Undercity survivors into a fighting force",
+                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "next": "act4.chapter1.act4_037",
+                    "failNext": "act4.chapter1.act4_016"
                 }
             ],
             "ascii": null,
@@ -930,9 +906,7 @@
                 "The confined space turns the firefight into slaughter on both sides. Pulse rounds ricochet off concrete walls. One of your scouts takes a round to the throat and drops without a sound. A Meridian trooper catches a shotgun blast that folds him in half.",
                 {
                     "condition": {
-                        "stat": {
-                            "DEX": 14
-                        }
+                        "statMin": { "stat": "dexterity", "value": 14 }
                     },
                     "text": "Your reflexes save you. You drop flat half a second before a pulse round passes through the space your head occupied, then roll behind a support column. From cover, you pick your shots. Controlled. Precise. Two troopers go down."
                 },
@@ -964,13 +938,10 @@
                     "next": "act4.chapter1.act4_018"
                 },
                 {
-                    "text": "Grab a fallen trooper's radio and call in false orders to Meridian",
-                    "condition": {
-                        "stat": {
-                            "INT": 14
-                        }
-                    },
-                    "next": "act4.chapter1.act4_019"
+                    "text": "[Intelligence 15] Grab a fallen trooper's radio and call in false orders to Meridian",
+                    "statCheck": { "stat": "intelligence", "dc": 15 },
+                    "next": "act4.chapter1.act4_019",
+                    "failNext": "act4.chapter1.act4_018"
                 }
             ],
             "ascii": null,
@@ -991,9 +962,7 @@
                 "\"We took the line,\" she says. Her voice is hollow. Eleven dead. Eleven names she will have to remember.",
                 {
                     "condition": {
-                        "stat": {
-                            "STR": 16
-                        }
+                        "statMin": { "stat": "strength", "value": 16 }
                     },
                     "text": "Your hands are bloody to the wrist. Not all of it is yours. During the melee you tore a trooper's helmet off with your bare hands, a feat that should have been impossible given the magnetic clamps. Adrenaline is a hell of a drug. Your body will charge interest on this later."
                 }
@@ -1082,13 +1051,10 @@
                     "next": "act4.chapter1.act4_034"
                 },
                 {
-                    "text": "Hold Midcity and try to rally all factions for a coordinated push",
-                    "condition": {
-                        "stat": {
-                            "CHA": 16
-                        }
-                    },
-                    "next": "act4.chapter1.act4_037"
+                    "text": "[Charisma 16] Hold Midcity and try to rally all factions for a coordinated push",
+                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "next": "act4.chapter1.act4_037",
+                    "failNext": "act4.chapter1.act4_034"
                 }
             ],
             "ascii": null,
@@ -1128,13 +1094,10 @@
                     "next": "act4.chapter1.act4_038"
                 },
                 {
-                    "text": "\"Neither. We dig in and negotiate. Force a ceasefire.\"",
-                    "condition": {
-                        "stat": {
-                            "CHA": 18
-                        }
-                    },
-                    "next": "act4.chapter1.act4_037"
+                    "text": "[Charisma 17] \"Neither. We dig in and negotiate. Force a ceasefire.\"",
+                    "statCheck": { "stat": "charisma", "dc": 17 },
+                    "next": "act4.chapter1.act4_037",
+                    "failNext": "act4.chapter1.act4_038"
                 }
             ],
             "ascii": null,
@@ -1153,9 +1116,7 @@
                 "Mako’s voice crackles through your comm: \"There’s a third option. Service elevator on the south pylon. Manual. But it opens directly into the Highcity security atrium. Into the teeth of their defense.\"",
                 {
                     "condition": {
-                        "stat": {
-                            "DEX": 16
-                        }
+                        "statMin": { "stat": "dexterity", "value": 16 }
                     },
                     "text": "The maintenance gantry is a death trap for anyone without exceptional balance. The walkway is less than a meter wide in places, the railings rusted to structural failure, and the wind at this height staggers you. But you have done harder things."
                 },
@@ -1212,9 +1173,7 @@
                 },
                 {
                     "condition": {
-                        "stat": {
-                            "DEX": 18
-                        }
+                        "statMin": { "stat": "dexterity", "value": 18 }
                     },
                     "text": "Structural supports every fifty meters — vertical beams connecting the gantry to the bridge above. The nearest is close enough to reach. Behind it, the drones lose their firing angle. You are trying to survive for three seconds. Three seconds is enough for something very stupid."
                 }
@@ -1232,22 +1191,16 @@
                     "next": "act4.chapter1.act4_024"
                 },
                 {
-                    "text": "Drop off the gantry and hang from the underside",
-                    "condition": {
-                        "stat": {
-                            "STR": 14
-                        }
-                    },
-                    "next": "act4.chapter1.act4_024"
+                    "text": "[Strength 15] Drop off the gantry and hang from the underside",
+                    "statCheck": { "stat": "strength", "dc": 15 },
+                    "next": "act4.chapter1.act4_024",
+                    "failNext": "act4.chapter1.act4_024"
                 },
                 {
-                    "text": "Run. Full sprint. Reach the Highcity end before they fire.",
-                    "condition": {
-                        "stat": {
-                            "DEX": 16
-                        }
-                    },
-                    "next": "act4.chapter1.act4_024"
+                    "text": "[Dexterity 16] Run. Full sprint. Reach the Highcity end before they fire.",
+                    "statCheck": { "stat": "dexterity", "dc": 16 },
+                    "next": "act4.chapter1.act4_024",
+                    "failNext": "act4.chapter1.act4_024"
                 },
                 {
                     "text": "Stand your ground. You are not going to make it.",
@@ -1275,9 +1228,7 @@
                 },
                 {
                     "condition": {
-                        "stat": {
-                            "CHA": 16
-                        }
+                        "statMin": { "stat": "charisma", "value": 16 }
                     },
                     "text": "You read the formation. Eight rifles, staged frontal. The elevator is a choke point — they cannot bring all eight to bear. The woman stands too close to their line of fire. A vulnerability."
                 }
@@ -1299,13 +1250,10 @@
                     "next": "act4.chapter1.act4_024"
                 },
                 {
-                    "text": "\"I want to talk to Voss. Face to face.\"",
-                    "condition": {
-                        "stat": {
-                            "CHA": 16
-                        }
-                    },
-                    "next": "act4.chapter1.act4_025"
+                    "text": "[Charisma 16] \"I want to talk to Voss. Face to face.\"",
+                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "next": "act4.chapter1.act4_025",
+                    "failNext": "act4.chapter1.act4_024"
                 },
                 {
                     "text": "Grab the woman as a hostage",
@@ -2344,13 +2292,10 @@
             ],
             "choices": [
                 {
-                    "text": "\"I guarantee synth rights. Fight with me and I’ll make it happen.\"",
-                    "condition": {
-                        "stat": {
-                            "CHA": 14
-                        }
-                    },
-                    "next": "act4.chapter1.act4_037"
+                    "text": "[Charisma 15] \"I guarantee synth rights. Fight with me and I’ll make it happen.\"",
+                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "next": "act4.chapter1.act4_037",
+                    "failNext": "act4.chapter1.act4_021"
                 },
                 {
                     "text": "\"I can’t guarantee anything. But I can promise to try.\"",
@@ -2393,13 +2338,10 @@
                     "next": "act4.chapter1.act4_038"
                 },
                 {
-                    "text": "Counter-offer: shared control of Highcity.",
-                    "condition": {
-                        "stat": {
-                            "CHA": 16
-                        }
-                    },
-                    "next": "act4.chapter1.act4_032"
+                    "text": "[Charisma 16] Counter-offer: shared control of Highcity.",
+                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "next": "act4.chapter1.act4_032",
+                    "failNext": "act4.chapter1.act4_021"
                 },
                 {
                     "text": "Refuse. The Saints cannot be trusted with that much power.",

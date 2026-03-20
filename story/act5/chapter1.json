@@ -183,8 +183,8 @@
                 "\"I have fought beside all of you,\" you say. \"And I have fought against all of you. I have seen what this city becomes when ideology eats its own. I have buried friends and made enemies of people I loved. And I am standing here because I refused to stop believing that this city is worth saving.\"",
                 "The room is still. You can feel the weight of every choice that brought you to this moment. Every alliance. Every betrayal. Every door you opened and every door you closed.",
                 "\"So here is what I know: none of you is right. And none of you is wrong. The future of this city cannot be built on one vision. It has to be built on all of them, or it will be built on corpses.\"",
-                { "condition": { "stat": { "charisma": 16 } }, "text": "Your words land. You can see it in the way Vex's jaw unclenches slightly, the way Luminara's glass tilts a degree closer to her lips, the way Ezra-7's data streams pause for one-point-three seconds. Even the Broker's silhouette shifts in its chair. You have their attention. All of it." },
-                { "condition": { "stat": { "charisma": 0, "max": 15 } }, "text": "Your words hang in the air. Vex looks at you with something between respect and pity. Luminara's expression does not change. The Broker's chair does not move. But Ezra-7 nods, a single precise inclination of their head. One ally at the table. Maybe enough." }
+                "Your words hang in the air. Vex looks at you with something between respect and pity. Luminara's expression does not change. The Broker's chair does not move. But Ezra-7 nods, a single precise inclination of their head. One ally at the table. Maybe enough.",
+                { "condition": { "statMin": { "stat": "charisma", "value": 16 } }, "text": "Then something shifts. One by one, the resistance drains from the room. Vex's jaw unclenches. Luminara's glass tilts a degree closer to her lips. Even the Broker's silhouette leans forward. You have their attention. All of it." }
             ],
             "onEnter": [
                 { "type": "set_flag", "flag": "act5.addressed_summit", "value": true },
@@ -575,9 +575,10 @@
                     "next": "act5.chapter1.act5_024"
                 },
                 {
-                    "text": "\"Neither. I should lead the Collective now. Step aside, Commander.\"",
-                    "condition": { "stat": { "charisma": 18 } },
-                    "next": "act5.chapter1.act5_025"
+                    "text": "[Charisma 18] \"Neither. I should lead the Collective now. Step aside, Commander.\"",
+                    "statCheck": { "stat": "charisma", "dc": 18 },
+                    "next": "act5.chapter1.act5_025",
+                    "failNext": "act5.chapter1.act5_025"
                 },
                 {
                     "text": "\"The revolution is over, Vex. Let the people decide for themselves.\"",
@@ -1029,9 +1030,10 @@
                     "next": "act5.chapter1.ending_053"
                 },
                 {
-                    "text": "\"Make me High Compiler. I will guide the transition.\"",
-                    "condition": { "stat": { "intelligence": 16 } },
-                    "next": "act5.chapter1.ending_054"
+                    "text": "[Intelligence 16] \"Make me High Compiler. I will guide the transition.\"",
+                    "statCheck": { "stat": "intelligence", "dc": 16 },
+                    "next": "act5.chapter1.ending_054",
+                    "failNext": "act5.chapter1.ending_054"
                 },
                 {
                     "text": "\"Open-source everything. Give the code to the people. Let them decide.\"",

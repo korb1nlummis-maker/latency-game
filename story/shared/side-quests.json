@@ -92,7 +92,7 @@
                     "text": "Try to hack the security panel beside the hatch",
                     "next": "shared.side-quests.sq_007",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 },
@@ -100,7 +100,7 @@
                     "text": "Force the hatch open manually",
                     "next": "shared.side-quests.sq_008",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 14
                     }
                 },
@@ -127,7 +127,7 @@
                     "text": "Try to intimidate him into handing it over",
                     "next": "shared.side-quests.sq_012",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 15
                     }
                 }
@@ -191,7 +191,7 @@
                     "text": "Prepare to fight the drone",
                     "next": "shared.side-quests.sq_016",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 12
                     }
                 }
@@ -211,7 +211,7 @@
                     "text": "Squeeze through the ventilation shaft",
                     "next": "shared.side-quests.sq_014",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 11
                     }
                 },
@@ -234,7 +234,7 @@
                     "text": "Try to negotiate the price down",
                     "next": "shared.side-quests.sq_018",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 12
                     }
                 },
@@ -257,7 +257,7 @@
                     "text": "Try to pocket it while Lucky isn't looking",
                     "next": "shared.side-quests.sq_019",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 16
                     }
                 }
@@ -295,7 +295,7 @@
                     "text": "Ask a bartender about Silk",
                     "next": "shared.side-quests.sq_022",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 11
                     }
                 }
@@ -320,7 +320,7 @@
                     "text": "Check for traps first",
                     "next": "shared.side-quests.sq_024",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 12
                     }
                 }
@@ -441,7 +441,7 @@
                     "text": "\"Silk? I have a business proposition.\"",
                     "next": "shared.side-quests.sq_027",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 13
                     }
                 }
@@ -460,7 +460,7 @@
                     "text": "Try to bribe one of the bodyguards",
                     "next": "shared.side-quests.sq_028",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 }
@@ -475,7 +475,7 @@
                     "text": "Approach the booth and bluff about having intel",
                     "next": "shared.side-quests.sq_027",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 14
                     }
                 },
@@ -504,7 +504,7 @@
                     "text": "\"Let's talk about this. We can split the profit.\"",
                     "next": "shared.side-quests.sq_029",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 12
                     }
                 },
@@ -512,7 +512,7 @@
                     "text": "Draw your weapon and face them down",
                     "next": "shared.side-quests.sq_030",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 13
                     }
                 },
@@ -520,7 +520,7 @@
                     "text": "Grab the chip and run",
                     "next": "shared.side-quests.sq_031",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 }
@@ -605,7 +605,7 @@
                     "text": "Offer fabricated intel about Meridian Corp",
                     "next": "shared.side-quests.sq_036",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 }
@@ -883,7 +883,7 @@
                     "text": "Sneak past the guards to the maintenance hatch",
                     "next": "shared.side-quests.sq_041",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 13
                     }
                 },
@@ -891,7 +891,7 @@
                     "text": "Create a distraction to draw the guards away",
                     "next": "shared.side-quests.sq_042",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 12
                     }
                 },
@@ -899,7 +899,7 @@
                     "text": "Fight through the front entrance",
                     "next": "shared.side-quests.sq_043",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 15
                     }
                 }
@@ -1012,7 +1012,7 @@
                     "text": "Research Kael Voss's death records",
                     "next": "shared.side-quests.sq_047",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 11
                     }
                 },
@@ -1037,7 +1037,7 @@
                     "text": "Access the quarantined stack fragment",
                     "next": "shared.side-quests.sq_048",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -1478,7 +1478,7 @@
                     "text": "\"Let's blockade. Rally the residents.\"",
                     "next": "shared.side-quests.sq_070",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 13
                     }
                 },
@@ -1486,7 +1486,7 @@
                     "text": "\"I can forge a counter-order.\"",
                     "next": "shared.side-quests.sq_071",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 },
@@ -1678,7 +1678,7 @@
                     "text": "Step into the cage and fight Gritz",
                     "next": "shared.side-quests.sq_080",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 12
                     }
                 },
@@ -1686,7 +1686,7 @@
                     "text": "Use speed and technique instead of brute force",
                     "next": "shared.side-quests.sq_080",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 13
                     }
                 }
@@ -1742,7 +1742,7 @@
                     "text": "Fight the second opponent",
                     "next": "shared.side-quests.sq_081",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 14
                     }
                 },
@@ -1766,7 +1766,7 @@
                     "text": "Face the champion — Raze",
                     "next": "shared.side-quests.sq_082",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 16
                     }
                 },
@@ -1903,7 +1903,7 @@
                     "text": "Ask around the neighborhood first",
                     "next": "shared.side-quests.sq_089",
                     "statCheck": {
-                        "stat": "CHA",
+                        "stat": "charisma",
                         "dc": 11
                     }
                 }
@@ -1922,7 +1922,7 @@
                     "text": "Search for security camera footage of the van",
                     "next": "shared.side-quests.sq_091",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 }
@@ -1972,7 +1972,7 @@
                     "text": "Search for another way into Sublevel 4",
                     "next": "shared.side-quests.sq_093",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 12
                     }
                 }
@@ -2013,7 +2013,7 @@
                     "text": "Fight through the guards",
                     "next": "shared.side-quests.sq_094",
                     "statCheck": {
-                        "stat": "STR",
+                        "stat": "strength",
                         "dc": 14
                     }
                 },
@@ -2021,7 +2021,7 @@
                     "text": "Sneak in through the ventilation system",
                     "next": "shared.side-quests.sq_095",
                     "statCheck": {
-                        "stat": "DEX",
+                        "stat": "dexterity",
                         "dc": 14
                     }
                 },
@@ -2029,7 +2029,7 @@
                     "text": "Create a diversion to draw them out",
                     "next": "shared.side-quests.sq_096",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 }

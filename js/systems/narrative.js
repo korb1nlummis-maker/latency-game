@@ -494,11 +494,17 @@ window.Latency.Narrative = (function () {
 
                 // ── Combat trigger ────────────────────────────────────
                 case 'start_combat':
-                    _emit('combat:start', {
-                        enemies: action.enemies || [],
-                        arena: action.arena || null,
-                        music: action.music || null
-                    });
+                    if (window.Latency.Combat && action.enemyId) {
+                        var combatContext = {
+                            returnNodeId: action.returnNodeId || action.onWin || action.winNext || null,
+                            onFleeNodeId: action.onFlee || null,
+                            onLoseNodeId: action.onLose || action.loseNext || null
+                        };
+                        window.Latency.Combat.initiate(action.enemyId, combatContext);
+                        if (window.Latency.StateMachine) {
+                            window.Latency.StateMachine.transition('combat');
+                        }
+                    }
                     break;
 
                 // ── Cutscene ──────────────────────────────────────────

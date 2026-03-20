@@ -266,6 +266,19 @@ window.Latency.AchievementSystem = (function () {
                 }
                 return false;
 
+            case 'faction_rep':
+                if (window.Latency.FactionSystem && window.Latency.FactionSystem.getAllFactionStatus) {
+                    var allStatus = window.Latency.FactionSystem.getAllFactionStatus();
+                    var facStatus = allStatus[cond.faction];
+                    if (!facStatus) { return false; }
+                    var currentRep = facStatus.reputation || 0;
+                    if (cond.minRep < 0) {
+                        return currentRep <= cond.minRep;
+                    }
+                    return currentRep >= cond.minRep;
+                }
+                return false;
+
             case 'skill':
                 if (window.Latency.SkillSystem) {
                     return window.Latency.SkillSystem.hasSkill(cond.skillId);

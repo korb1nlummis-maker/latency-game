@@ -117,8 +117,8 @@
                     "next": "act2.chapter3.act2ch3_004"
                 },
                 {
-                    "text": "[Tech 15] Attempt to communicate with Tomas inside the unit",
-                    "statCheck": { "stat": "tech", "dc": 15 },
+                    "text": "[Tech 13] Attempt to communicate with Tomas inside the unit",
+                    "statCheck": { "stat": "tech", "dc": 13 },
                     "next": "act2.chapter3.act2ch3_004a",
                     "failNext": "act2.chapter3.act2ch3_004"
                 },
@@ -458,8 +458,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Wisdom 15] \"No. It's not. And I think we should find out why.\"",
-                    "statCheck": { "stat": "wisdom", "dc": 15 },
+                    "text": "[Wisdom 14] \"No. It's not. And I think we should find out why.\"",
+                    "statCheck": { "stat": "wisdom", "dc": 14 },
                     "next": "act2.chapter3.act2ch3_009",
                     "failNext": "act2.chapter3.act2ch3_009a"
                 },
@@ -706,8 +706,8 @@
                     "next": "act2.chapter3.act2ch3_012c"
                 },
                 {
-                    "text": "[Charisma 15] \"The transfer technology is getting better. The copies are more stable. Please reconsider.\"",
-                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "text": "[Charisma 14] \"The transfer technology is getting better. The copies are more stable. Please reconsider.\"",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
                     "next": "act2.chapter3.act2ch3_012d",
                     "failNext": "act2.chapter3.act2ch3_012c"
                 },
@@ -772,8 +772,8 @@
                     "next": "act2.chapter3.act2ch3_012c"
                 },
                 {
-                    "text": "[Charisma 15] \"The transfer technology is getting better. Please reconsider.\"",
-                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "text": "[Charisma 14] \"The transfer technology is getting better. Please reconsider.\"",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
                     "next": "act2.chapter3.act2ch3_012d",
                     "failNext": "act2.chapter3.act2ch3_012c"
                 }

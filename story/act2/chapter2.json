@@ -6,7 +6,6 @@
         "description": "Act 2 Chapter 2 — The Faction War. Iron Collective attacks Neon Court supply lines, Ghost Syndicate plays all sides, Circuit Saints go underground, Ashen Circle gains followers. A betrayal arc reveals a traitor in the player's faction. Dr. Chen must be escorted out of the city. Five endings possible. Survivors learn the full scope of LATENCY."
     },
     "nodes": {
-
         "act2ch2_001": {
             "id": "act2.chapter2.act2ch2_001",
             "title": "The First Shot",
@@ -17,21 +16,59 @@
                 "Commander Vex herself leads the assault. You hear her voice on the open channel, raw and triumphant: \"Take the components. Burn the rest. Let them know this road belongs to the people now.\"",
                 "By sunrise, the Neon Court has lost its primary supply line. By noon, every faction in the city knows what happened. By evening, the retaliations begin.",
                 "The war you've been dreading is here. And there is no neutral ground.",
-                { "condition": { "faction": "ironCollective" }, "text": "Your datapad buzzes with a priority summons from the Foundry. Commander Vex wants every able body armed and ready. The supply raid was phase one. Phase two starts tonight." },
-                { "condition": { "faction": "neonCourt" }, "text": "The Queen of Neon's message arrives encrypted in three layers of social cipher, but the fury beneath the elegance is unmistakable: 'They have stolen from us. They will learn what that costs. Report to the Prism Lounge. Immediately.'" },
-                { "condition": { "faction": "circuitSaints" }, "text": "High Compiler Ezra-7 sends a single word on the Saints' secure channel: LOCKDOWN. The Observatory's blast doors seal. Whatever is coming, the Saints intend to weather it from behind fortified walls and prayer." },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "The Broker's message is already waiting when you check your dead drop: 'War is the most profitable market condition. Stations assigned. Sell to everyone. Trust no one. The usual.' A list of intel buyers follows, organized by faction." },
-                { "condition": { "faction": "ashenCircle" }, "text": "Speaker Noth's voice echoes through the Ossuary, calm as a funeral hymn: 'The machine-minds tear at each other while the true corruption festers unseen. Let them war. When the dust settles, they will come to us. They always do.'" }
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "Your datapad buzzes with a priority summons from the Foundry. Commander Vex wants every able body armed and ready. The supply raid was phase one. Phase two starts tonight."
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "The Queen of Neon's message arrives encrypted in three layers of social cipher, but the fury beneath the elegance is unmistakable: 'They have stolen from us. They will learn what that costs. Report to the Prism Lounge. Immediately.'"
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "High Compiler Ezra-7 sends a single word on the Saints' secure channel: LOCKDOWN. The Observatory's blast doors seal. Whatever is coming, the Saints intend to weather it from behind fortified walls and prayer."
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "The Broker's message is already waiting when you check your dead drop: 'War is the most profitable market condition. Stations assigned. Sell to everyone. Trust no one. The usual.' A list of intel buyers follows, organized by faction."
+                },
+                {
+                    "condition": {
+                        "faction": "ashenCircle"
+                    },
+                    "text": "Speaker Noth's voice echoes through the Ossuary, calm as a funeral hymn: 'The machine-minds tear at each other while the true corruption festers unseen. Let them war. When the dust settles, they will come to us. They always do.'"
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.started", "value": true },
-                { "type": "set_flag", "flag": "act2.faction_war_begun", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.started",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.faction_war_begun",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
                     "text": "Head to your faction's rally point",
-                    "condition": { "flag": "act1.faction_joined" },
+                    "condition": {
+                        "flag": "act1.faction_joined"
+                    },
                     "next": "act2.chapter2.act2ch2_002"
                 },
                 {
@@ -47,22 +84,53 @@
             "music": "ambient_war_drums",
             "isEnding": false
         },
-
         "act2ch2_002": {
             "id": "act2.chapter2.act2ch2_002",
             "title": "Faction Mobilization",
             "location": "faction_headquarters",
             "text": [
                 "Your faction's headquarters is a hive of controlled panic. Runners sprint between stations carrying encrypted datapads. Weapons are being distributed from caches hidden behind false walls. Faces you recognize from quieter days are strapping on armor with the grim efficiency of people who always knew this moment was coming.",
-                { "condition": { "faction": "ironCollective" }, "text": "The Foundry roars. Every forge is lit, every workbench occupied. Commander Vex stands on the central platform addressing a crowd of three hundred, her voice carrying over the clang of metal. 'The supply line was a message. But messages don't win wars. Meridian is already moving Sec-Corp units to protect the Court's remaining routes. We hit those next. We choke them until the corporate towers go dark.'" },
-                { "condition": { "faction": "neonCourt" }, "text": "The Prism Lounge has been transformed into a war room. The holographic dancers are gone, replaced by tactical displays showing troop movements across the city. Queen Lysara sits at the center, her chrome fingernails tapping a slow rhythm on the armrest of her throne. 'Darlings, the Iron scum have broken our supply chain. Silk, show them what we've prepared.' Silk steps forward, projecting a network of retaliatory strikes that would cripple the Industrial Corridor's power grid." },
-                { "condition": { "faction": "circuitSaints" }, "text": "The Observatory hums with a frequency you can feel in your bones. Every terminal is active, every Saint hunched over a screen, running code. Brother Ohm distributes ration packs while High Compiler Ezra-7 addresses the congregation. 'The factions destroy each other while Meridian watches and profits. Our task is preservation. The research must survive. Begin encrypting everything and prepare the exodus drives.'" },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "The Syndicate doesn't have a headquarters. It has nodes. You're at Node Seven, a gutted office building in the Commercial District where Rook is coordinating asset deployment. Maps cover every surface, pins marking faction positions, supply caches, and unmarked routes through the city. 'We sell Iron's battle plans to the Court. We sell the Court's retaliation schedule to the Iron. We sell both to Meridian. Everyone bleeds, everyone pays, and we profit from every drop.'" },
-                { "condition": { "faction": "ashenCircle" }, "text": "The Ossuary is full for the first time since you joined. Hundreds of followers pack the bone-lined corridors, many of them new faces driven here by fear. Speaker Noth moves through them like a shepherd, touching foreheads, whispering reassurances. 'The stacks corrupt. The war proves it. When iron and neon have ground each other to nothing, the survivors will seek truth. We must be ready to receive them.'" }
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "The Foundry roars. Every forge is lit, every workbench occupied. Commander Vex stands on the central platform addressing a crowd of three hundred, her voice carrying over the clang of metal. 'The supply line was a message. But messages don't win wars. Meridian is already moving Sec-Corp units to protect the Court's remaining routes. We hit those next. We choke them until the corporate towers go dark.'"
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "The Prism Lounge has been transformed into a war room. The holographic dancers are gone, replaced by tactical displays showing troop movements across the city. Queen Lysara sits at the center, her chrome fingernails tapping a slow rhythm on the armrest of her throne. 'Darlings, the Iron scum have broken our supply chain. Silk, show them what we've prepared.' Silk steps forward, projecting a network of retaliatory strikes that would cripple the Industrial Corridor's power grid."
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "The Observatory hums with a frequency you can feel in your bones. Every terminal is active, every Saint hunched over a screen, running code. Brother Ohm distributes ration packs while High Compiler Ezra-7 addresses the congregation. 'The factions destroy each other while Meridian watches and profits. Our task is preservation. The research must survive. Begin encrypting everything and prepare the exodus drives.'"
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "The Syndicate doesn't have a headquarters. It has nodes. You're at Node Seven, a gutted office building in the Commercial District where Rook is coordinating asset deployment. Maps cover every surface, pins marking faction positions, supply caches, and unmarked routes through the city. 'We sell Iron's battle plans to the Court. We sell the Court's retaliation schedule to the Iron. We sell both to Meridian. Everyone bleeds, everyone pays, and we profit from every drop.'"
+                },
+                {
+                    "condition": {
+                        "faction": "ashenCircle"
+                    },
+                    "text": "The Ossuary is full for the first time since you joined. Hundreds of followers pack the bone-lined corridors, many of them new faces driven here by fear. Speaker Noth moves through them like a shepherd, touching foreheads, whispering reassurances. 'The stacks corrupt. The war proves it. When iron and neon have ground each other to nothing, the survivors will seek truth. We must be ready to receive them.'"
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.faction_mobilized", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.faction_mobilized",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -78,7 +146,6 @@
             "music": "ambient_faction_tension",
             "isEnding": false
         },
-
         "act2ch2_003": {
             "id": "act2.chapter2.act2ch2_003",
             "title": "Mako's War Room",
@@ -89,11 +156,23 @@
                 "\"Seventeen dead in the supply raid,\" Mako says, not looking up from soldering a circuit board. \"Iron Collective lost two. Neon Court lost fifteen, mostly hired guards. Meridian's positioning Sec-Corp units along the district borders but hasn't committed to either side. Yet.\"",
                 "She finally looks at you. \"Ghost Syndicate is selling intelligence to every faction simultaneously. They've already made more from this war in twelve hours than they did all last quarter. The Circuit Saints sealed the Observatory and aren't talking to anyone. And the Ashen Circle...\" She pauses. \"The Ashen Circle's membership has tripled since the broadcast. People are scared. Scared people want answers. Noth is giving them simple ones.\"",
                 "\"Where does that leave you?\" she asks.",
-                { "condition": { "flag": "act1.mako_ally" }, "text": "Mako softens slightly. \"Look, I'm not going to tell you what to do. But I know something you don't. Dr. Chen contacted me an hour ago. Meridian knows she leaked the LATENCY data. She's running out of time. If she gets captured, everything we learned dies with her.\"" }
+                {
+                    "condition": {
+                        "flag": "act1.mako_ally"
+                    },
+                    "text": "Mako softens slightly. \"Look, I'm not going to tell you what to do. But I know something you don't. Dr. Chen contacted me an hour ago. Meridian knows she leaked the LATENCY data. She's running out of time. If she gets captured, everything we learned dies with her.\""
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.visited_mako_war", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.visited_mako_war",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -106,7 +185,9 @@
                 },
                 {
                     "text": "Go to your faction and report what Mako told you",
-                    "condition": { "flag": "act1.faction_joined" },
+                    "condition": {
+                        "flag": "act1.faction_joined"
+                    },
                     "next": "act2.chapter2.act2ch2_005"
                 }
             ],
@@ -114,7 +195,6 @@
             "music": "ambient_mako_shop",
             "isEnding": false
         },
-
         "act2ch2_004": {
             "id": "act2.chapter2.act2ch2_004",
             "title": "The Convoy Wreckage",
@@ -125,12 +205,29 @@
                 "On the Industrial Corridor side, you can see Iron Collective lookouts on the rooftops, watching. Not hiding. Making sure everyone knows they're watching.",
                 "A body lies under a thermal blanket near the overturned hauler. A Neon Court guard, judging by the iridescent armor visible beneath the covering. Someone has placed a small token on the blanket. A Circuit Saints prayer chip.",
                 "The tension in the air is physical. One wrong move, one nervous trigger finger, and this checkpoint becomes a killing field.",
-                { "condition": { "race": "synth" }, "text": "Your sensors pick up encrypted communications bouncing between the Sec-Corp drones. They're not here to investigate. They're mapping both factions' positions and forwarding the data to Meridian corporate. The company is cataloguing the war, not stopping it." },
-                { "condition": { "race": "shadowkin" }, "text": "The void whispers at the edges of the wreckage. So much violence leaves a residue that shadowkin can taste. The death here was quick but messy. And beneath it, something else. A wrongness in the data streams. Someone tampered with the convoy's route to make the ambush easier. Someone on the inside." }
+                {
+                    "condition": {
+                        "race": "synth"
+                    },
+                    "text": "Your sensors pick up encrypted communications bouncing between the Sec-Corp drones. They're not here to investigate. They're mapping both factions' positions and forwarding the data to Meridian corporate. The company is cataloguing the war, not stopping it."
+                },
+                {
+                    "condition": {
+                        "race": "shadowkin"
+                    },
+                    "text": "The void whispers at the edges of the wreckage. So much violence leaves a residue that shadowkin can taste. The death here was quick but messy. And beneath it, something else. A wrongness in the data streams. Someone tampered with the convoy's route to make the ambush easier. Someone on the inside."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.saw_wreckage", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.saw_wreckage",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -150,7 +247,6 @@
             "music": "ambient_battlefield",
             "isEnding": false
         },
-
         "act2ch2_005": {
             "id": "act2.chapter2.act2ch2_005",
             "title": "Caught in the Crossfire",
@@ -161,12 +257,29 @@
                 "You hit the ground. Around you, civilians are doing the same, pressing themselves behind overturned tables and abandoned carts. A child is crying somewhere. The gunfire echoes off the arcade's domed ceiling, making it impossible to tell direction.",
                 "Through the chaos, you spot two things simultaneously: a Ghost Syndicate operative calmly filming the firefight from a shadowed alcove, and a group of Ashen Circle recruiters pulling terrified civilians toward an exit, whispering promises of safety.",
                 "The war isn't just between factions. It's consuming the entire city. And you're standing in the middle of it.",
-                { "condition": { "race": "orc" }, "text": "Your combat instincts scream at you to move. The arcade's support columns provide cover in a zigzag pattern toward the east exit. You've been in enough fights to read the geometry of a killzone, and right now you're standing in one." },
-                { "condition": { "race": "elf" }, "text": "Your enhanced senses parse the chaos with crystalline clarity. Two Iron shooters on the upper walkway, north side. Three Neon Court guards returning fire from behind a kiosk, south side. The acoustic pattern of the gunfire tells you reinforcements are coming from both sides. You have ninety seconds, maybe less." }
+                {
+                    "condition": {
+                        "race": "orc"
+                    },
+                    "text": "Your combat instincts scream at you to move. The arcade's support columns provide cover in a zigzag pattern toward the east exit. You've been in enough fights to read the geometry of a killzone, and right now you're standing in one."
+                },
+                {
+                    "condition": {
+                        "race": "elf"
+                    },
+                    "text": "Your enhanced senses parse the chaos with crystalline clarity. Two Iron shooters on the upper walkway, north side. Three Neon Court guards returning fire from behind a kiosk, south side. The acoustic pattern of the gunfire tells you reinforcements are coming from both sides. You have ninety seconds, maybe less."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.crossfire_event", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.crossfire_event",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -175,13 +288,18 @@
                 },
                 {
                     "text": "Use the chaos to slip away toward your objective",
-                    "statCheck": { "stat": "dexterity", "dc": 13 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 13
+                    },
                     "next": "act2.chapter2.act2ch2_010",
-                    "fail": "act2.chapter2.act2ch2_009"
+                    "failNext": "act2.chapter2.act2ch2_009"
                 },
                 {
                     "text": "Join the fight on your faction's side",
-                    "condition": { "flag": "act1.faction_joined" },
+                    "condition": {
+                        "flag": "act1.faction_joined"
+                    },
                     "next": "act2.chapter2.act2ch2_010"
                 }
             ],
@@ -189,7 +307,6 @@
             "music": "combat_ambient",
             "isEnding": false
         },
-
         "act2ch2_006": {
             "id": "act2.chapter2.act2ch2_006",
             "title": "Dr. Chen's Signal",
@@ -204,9 +321,20 @@
                 "\"Getting to her is going to be ugly,\" Mako says. \"Getting her out of the city is going to be worse.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.chen_signal_received", "value": true },
-                { "type": "set_flag", "flag": "act2.chen_extraction_active", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.chen_signal_received",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chen_extraction_active",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -215,7 +343,9 @@
                 },
                 {
                     "text": "Can we get faction support for the extraction?",
-                    "condition": { "flag": "act1.faction_joined" },
+                    "condition": {
+                        "flag": "act1.faction_joined"
+                    },
                     "next": "act2.chapter2.act2ch2_005"
                 },
                 {
@@ -227,7 +357,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "act2ch2_007": {
             "id": "act2.chapter2.act2ch2_007",
             "title": "Evidence in the Wreckage",
@@ -237,13 +366,29 @@
                 "Something doesn't add up. The charges that hit the convoy were military-grade shaped charges, the kind that cut through armor in a specific pattern. But the blast signature on this hauler is different. Cleaner. More precise than anything the Iron Collective typically uses.",
                 "You find a fragment of the detonator casing wedged under the hauler's chassis. It's marked with a serial number that's been partially scratched off, but not well enough. Three digits remain: 7-7-1.",
                 "Directive Seven-Seven-One. The registration mandate. The same numbers. Coincidence is a luxury you stopped believing in a long time ago.",
-                { "condition": { "race": "cyborg" }, "text": "Your integrated scanner analyzes the detonator fragment. The metallurgical composition matches Meridian military ordnance, not Iron Collective improvised explosives. Someone supplied the Iron Collective with Meridian hardware. Or someone wanted this attack to happen." },
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": "Your integrated scanner analyzes the detonator fragment. The metallurgical composition matches Meridian military ordnance, not Iron Collective improvised explosives. Someone supplied the Iron Collective with Meridian hardware. Or someone wanted this attack to happen."
+                },
                 "The deeper you dig, the less this looks like a faction war and the more it looks like a puppet show."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.found_meridian_evidence", "value": true },
-                { "type": "add_experience", "amount": 25 },
-                { "type": "add_item", "item": "detonator_fragment", "description": "Fragment of military-grade detonator with serial number 7-7-1" }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.found_meridian_evidence",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "add_item",
+                    "item": "detonator_fragment",
+                    "description": "Fragment of military-grade detonator with serial number 7-7-1"
+                }
             ],
             "choices": [
                 {
@@ -263,7 +408,6 @@
             "music": "ambient_investigation",
             "isEnding": false
         },
-
         "act2ch2_008": {
             "id": "act2.chapter2.act2ch2_008",
             "title": "The Court's Fury",
@@ -274,23 +418,40 @@
                 "\"Fourteen of our people. Fourteen. Shot, burned, or crushed while guarding a legal supply convoy. The Iron dogs didn't even give a warning. Just fire and metal and death. And Meridian sits in their towers and watches.\"",
                 "She steps closer. \"The Queen has authorized full retaliation. The Industrial Corridor's power grid goes dark at midnight. Every Iron Collective safe house in Sector Nine gets hit. We're done being civilized about this.\"",
                 "Behind her, a squad is loading incendiary rounds into their weapons. This isn't posturing. This is preparation.",
-                { "condition": { "flag": "act2.chapter2.found_meridian_evidence" }, "text": "You consider showing her the detonator fragment. The evidence that Meridian hardware was used in the attack. It might change the Court's target from the Iron Collective to the real puppet master. Or it might get you killed for suggesting the Queen's enemy isn't who she thinks it is." }
+                {
+                    "condition": {
+                        "flag": "act2.chapter2.found_meridian_evidence"
+                    },
+                    "text": "You consider showing her the detonator fragment. The evidence that Meridian hardware was used in the attack. It might change the Court's target from the Iron Collective to the real puppet master. Or it might get you killed for suggesting the Queen's enemy isn't who she thinks it is."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.spoke_court_enforcers", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.spoke_court_enforcers",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
                     "text": "Show her the Meridian detonator fragment",
-                    "condition": { "flag": "act2.chapter2.found_meridian_evidence" },
+                    "condition": {
+                        "flag": "act2.chapter2.found_meridian_evidence"
+                    },
                     "next": "act2.chapter2.act2ch2_010"
                 },
                 {
                     "text": "Warn her that Meridian is playing both sides",
-                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "statCheck": {
+                        "stat": "charisma",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_010",
-                    "fail": "act2.chapter2.act2ch2_005"
+                    "failNext": "act2.chapter2.act2ch2_005"
                 },
                 {
                     "text": "Back away. This isn't your fight right now.",
@@ -301,7 +462,6 @@
             "music": "ambient_neon_strip",
             "isEnding": false
         },
-
         "act2ch2_009": {
             "id": "act2.chapter2.act2ch2_009",
             "title": "Saving Civilians",
@@ -315,10 +475,25 @@
                 "Outside, the old man grips your arm. \"Thank you,\" he says. Then, quieter: \"I used to work for Meridian. Research division. If you want to know why this war is really happening, find Dr. Chen. She knows everything.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.saved_civilians", "value": true },
-                { "type": "add_experience", "amount": 30 },
-                { "type": "modify_reputation", "faction": "circuitSaints", "amount": 10 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": 5 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.saved_civilians",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 10
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": 5
+                }
             ],
             "choices": [
                 {
@@ -334,7 +509,6 @@
             "music": "ambient_aftermath",
             "isEnding": false
         },
-
         "act2ch2_010": {
             "id": "act2.chapter2.act2ch2_010",
             "title": "The War Escalates",
@@ -348,14 +522,27 @@
                 "It's time to find out who."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.war_escalated", "value": true },
-                { "type": "set_flag", "flag": "act2.chapter2.betrayal_arc_started", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.war_escalated",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.betrayal_arc_started",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
                     "text": "Investigate the information leaks within your faction",
-                    "condition": { "flag": "act1.faction_joined" },
+                    "condition": {
+                        "flag": "act1.faction_joined"
+                    },
                     "next": "act2.chapter2.act2ch2_011"
                 },
                 {
@@ -364,7 +551,9 @@
                 },
                 {
                     "text": "You're unaligned. Follow the trail of leaked intel to its source.",
-                    "condition": { "not_flag": "act1.faction_joined" },
+                    "condition": {
+                        "not_flag": "act1.faction_joined"
+                    },
                     "next": "act2.chapter2.act2ch2_011"
                 }
             ],
@@ -372,7 +561,6 @@
             "music": "ambient_war_drums",
             "isEnding": false
         },
-
         "act2ch2_011": {
             "id": "act2.chapter2.act2ch2_011",
             "title": "The Leak",
@@ -381,15 +569,47 @@
                 "You start pulling at the thread. The leaks follow a pattern once you know what to look for: operational details that only inner-circle members would know, showing up in enemy hands exactly when they'd do the most damage.",
                 "Three Iron Collective ambush points were anticipated by Neon Court defenders who shouldn't have known about them. A Circuit Saints data cache was raided by Meridian Sec-Corp twelve hours after its location was changed. A Ghost Syndicate dead drop was compromised the day after it was established.",
                 "Someone with access to high-level faction intelligence is selling it. And based on the timing, they're in your circle.",
-                { "condition": { "faction": "ironCollective" }, "text": "You narrow it down to three people who had access to all three compromised ambush coordinates: Commander Vex, her second-in-command Forge, and Rust, the demolitions expert who planned the original convoy raid. Vex is above suspicion. Forge was wounded in the retaliation and barely survived. That leaves Rust. But Rust has been Iron Collective since the Gene Riots. The idea of him turning traitor is almost unthinkable." },
-                { "condition": { "faction": "neonCourt" }, "text": "You trace the intelligence flow and find three possible sources: Queen Lysara's inner court, which means either Silk the spymaster, Jade the quartermaster, or Prism the communications chief. Jade has been with the Court for twenty years. Prism barely leaves the signal room. Silk, though... Silk moves between factions as part of their intelligence work. Access to everyone. Trusted by the Queen. And the leaks started exactly when Silk returned from a 'diplomatic mission' to the Ghost Syndicate." },
-                { "condition": { "faction": "circuitSaints" }, "text": "The Saints' internal structure is built on trust and hierarchy. Only four people had access to the compromised data cache location: High Compiler Ezra-7, Sister Veda, Brother Ohm, and the Cache Guardian on duty that night. Ezra-7 is the Saints' founder. Sister Veda has never left the Observatory in six years. The Cache Guardian was killed in the raid, convenient for the traitor. That leaves Brother Ohm, who oversees logistics and supplies. Who knows every cache location. Who recently started wearing an ash-gray prayer band identical to the Ashen Circle's devotional tokens." },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "The Syndicate doesn't trust anyone by design, which makes finding a mole paradoxically harder. Everyone is expected to be duplicitous. But the compromised dead drop was known to only four operatives: The Broker, Whisper, Rook, and you. The Broker has no motive to sabotage their own network. Whisper was off-grid running a separate operation. That leaves Rook, your handler, the one who assigned you your station. Rook, who always seems to know exactly where Meridian's Sec-Corp patrols will be. Rook, whose background before joining the Syndicate is a perfect blank. Too perfect." },
-                { "condition": { "not_flag": "act1.faction_joined" }, "text": "Without a faction, you approach this from the outside. The pattern of leaks spans multiple factions, suggesting either a network of traitors or a single source with tentacles in several organizations. You focus on the communication channels. Someone is using a Meridian-grade encryption protocol to transmit data out of faction networks. The signal originates from the Transit Hub, bounces through three relay points, and terminates... in the Corporate Spires. Meridian headquarters." }
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "You narrow it down to three people who had access to all three compromised ambush coordinates: Commander Vex, her second-in-command Forge, and Rust, the demolitions expert who planned the original convoy raid. Vex is above suspicion. Forge was wounded in the retaliation and barely survived. That leaves Rust. But Rust has been Iron Collective since the Gene Riots. The idea of him turning traitor is almost unthinkable."
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "You trace the intelligence flow and find three possible sources: Queen Lysara's inner court, which means either Silk the spymaster, Jade the quartermaster, or Prism the communications chief. Jade has been with the Court for twenty years. Prism barely leaves the signal room. Silk, though... Silk moves between factions as part of their intelligence work. Access to everyone. Trusted by the Queen. And the leaks started exactly when Silk returned from a 'diplomatic mission' to the Ghost Syndicate."
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "The Saints' internal structure is built on trust and hierarchy. Only four people had access to the compromised data cache location: High Compiler Ezra-7, Sister Veda, Brother Ohm, and the Cache Guardian on duty that night. Ezra-7 is the Saints' founder. Sister Veda has never left the Observatory in six years. The Cache Guardian was killed in the raid, convenient for the traitor. That leaves Brother Ohm, who oversees logistics and supplies. Who knows every cache location. Who recently started wearing an ash-gray prayer band identical to the Ashen Circle's devotional tokens."
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "The Syndicate doesn't trust anyone by design, which makes finding a mole paradoxically harder. Everyone is expected to be duplicitous. But the compromised dead drop was known to only four operatives: The Broker, Whisper, Rook, and you. The Broker has no motive to sabotage their own network. Whisper was off-grid running a separate operation. That leaves Rook, your handler, the one who assigned you your station. Rook, who always seems to know exactly where Meridian's Sec-Corp patrols will be. Rook, whose background before joining the Syndicate is a perfect blank. Too perfect."
+                },
+                {
+                    "condition": {
+                        "not_flag": "act1.faction_joined"
+                    },
+                    "text": "Without a faction, you approach this from the outside. The pattern of leaks spans multiple factions, suggesting either a network of traitors or a single source with tentacles in several organizations. You focus on the communication channels. Someone is using a Meridian-grade encryption protocol to transmit data out of faction networks. The signal originates from the Transit Hub, bounces through three relay points, and terminates... in the Corporate Spires. Meridian headquarters."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.investigating_traitor", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.investigating_traitor",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -409,22 +629,53 @@
             "music": "ambient_investigation",
             "isEnding": false
         },
-
         "act2ch2_012": {
             "id": "act2.chapter2.act2ch2_012",
             "title": "Background Check",
             "location": "faction_headquarters",
             "text": [
                 "You dig. Carefully, quietly, using every contact and resource available to you without alerting the suspect.",
-                { "condition": { "faction": "ironCollective" }, "text": "Rust's story has always been simple: born in the Industrial Corridor, parents killed in the Gene Riots, joined the Collective at sixteen. But when you pull his early records, there's a gap. Two years unaccounted for between the Riots and his enlistment. Two years where a teenage demolitions prodigy could have been anywhere. You call in a favor with a records clerk in the Commercial District. The clerk goes pale when she sees the name. 'This file has a Neon Court access flag on it,' she whispers. 'Someone in the Court has been monitoring Rust's records for years.'" },
-                { "condition": { "faction": "neonCourt" }, "text": "Silk's operational history with the Court is impeccable. Dozens of successful intelligence operations, critical assets recruited, rivals neutralized with surgical precision. But you notice something in the timing. Every diplomatic mission Silk has taken to the Ghost Syndicate in the last six months has coincided with a compromised Court operation within seventy-two hours of their return. Five missions. Five leaks. The correlation is damning." },
-                { "condition": { "faction": "circuitSaints" }, "text": "Brother Ohm joined the Circuit Saints three years ago, presenting himself as a disillusioned Meridian technician seeking spiritual purpose. His technical skills were undeniable and Ezra-7 fast-tracked his advancement. But when you cross-reference his claimed employment history with Meridian's public records, the department he says he worked in doesn't exist. It never has. And the ash-gray prayer band he wears? You find one hidden in a storage locker, along with an Ashen Circle communication cipher and a list of Saints' cache locations." },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "Rook's background is a masterwork of fabrication. Every detail checks out on the surface: childhood in the Lower District, petty crime record, recruitment by the previous Broker. But when you run Rook's biometric profile through a contact at a private security firm, the facial recognition hits something unexpected. A partial match with a Meridian corporate security officer listed as 'deceased' four years ago. The officer's specialization? Infiltration and counter-intelligence. The Syndicate has been running a Meridian plant as a senior operative." },
-                { "condition": { "not_flag": "act1.faction_joined" }, "text": "Following the signal trail leads you to a relay station disguised as a defunct communications node in the Transit Hub. Inside, you find evidence of a sophisticated intelligence pipeline: data from multiple faction sources being compiled, encrypted, and transmitted to Meridian. The operator has been careful, but not careful enough. A partial fingerprint on a data chip. A strand of hair caught in a ventilation grate. And a personal log, encrypted but crackable, detailing contacts inside each major faction. Not one traitor. A network." }
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "Rust's story has always been simple: born in the Industrial Corridor, parents killed in the Gene Riots, joined the Collective at sixteen. But when you pull his early records, there's a gap. Two years unaccounted for between the Riots and his enlistment. Two years where a teenage demolitions prodigy could have been anywhere. You call in a favor with a records clerk in the Commercial District. The clerk goes pale when she sees the name. 'This file has a Neon Court access flag on it,' she whispers. 'Someone in the Court has been monitoring Rust's records for years.'"
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "Silk's operational history with the Court is impeccable. Dozens of successful intelligence operations, critical assets recruited, rivals neutralized with surgical precision. But you notice something in the timing. Every diplomatic mission Silk has taken to the Ghost Syndicate in the last six months has coincided with a compromised Court operation within seventy-two hours of their return. Five missions. Five leaks. The correlation is damning."
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "Brother Ohm joined the Circuit Saints three years ago, presenting himself as a disillusioned Meridian technician seeking spiritual purpose. His technical skills were undeniable and Ezra-7 fast-tracked his advancement. But when you cross-reference his claimed employment history with Meridian's public records, the department he says he worked in doesn't exist. It never has. And the ash-gray prayer band he wears? You find one hidden in a storage locker, along with an Ashen Circle communication cipher and a list of Saints' cache locations."
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "Rook's background is a masterwork of fabrication. Every detail checks out on the surface: childhood in the Lower District, petty crime record, recruitment by the previous Broker. But when you run Rook's biometric profile through a contact at a private security firm, the facial recognition hits something unexpected. A partial match with a Meridian corporate security officer listed as 'deceased' four years ago. The officer's specialization? Infiltration and counter-intelligence. The Syndicate has been running a Meridian plant as a senior operative."
+                },
+                {
+                    "condition": {
+                        "not_flag": "act1.faction_joined"
+                    },
+                    "text": "Following the signal trail leads you to a relay station disguised as a defunct communications node in the Transit Hub. Inside, you find evidence of a sophisticated intelligence pipeline: data from multiple faction sources being compiled, encrypted, and transmitted to Meridian. The operator has been careful, but not careful enough. A partial fingerprint on a data chip. A strand of hair caught in a ventilation grate. And a personal log, encrypted but crackable, detailing contacts inside each major faction. Not one traitor. A network."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.traitor_background_checked", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.traitor_background_checked",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -440,7 +691,6 @@
             "music": "ambient_suspense",
             "isEnding": false
         },
-
         "act2ch2_013": {
             "id": "act2.chapter2.act2ch2_013",
             "title": "The Trap",
@@ -453,9 +703,20 @@
                 "You have your traitor. Dead to rights."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.trap_set", "value": true },
-                { "type": "set_flag", "flag": "act2.chapter2.traitor_confirmed", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.trap_set",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.traitor_confirmed",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -471,27 +732,69 @@
             "music": "ambient_suspense",
             "isEnding": false
         },
-
         "act2ch2_014": {
             "id": "act2.chapter2.act2ch2_014",
             "title": "Faction Justice",
             "location": "faction_headquarters",
             "text": [
                 "You bring the evidence to faction leadership. The reaction is immediate and severe.",
-                { "condition": { "faction": "ironCollective" }, "text": "Commander Vex's face turns to stone when you show her the evidence. 'Rust,' she says, and the name sounds like a death sentence. 'Eighteen years. Eighteen years I've trusted that man with our people's lives.' She's silent for ten seconds. Then: 'Bring him to me. Alive. I want to hear him explain why before I decide what happens next.' Rust is apprehended within the hour. He doesn't resist. He doesn't even look surprised." },
-                { "condition": { "faction": "neonCourt" }, "text": "Queen Lysara examines the evidence with the cold precision of a surgeon evaluating a tumor. 'Silk,' she says. 'My best operative. My most trusted confidante. Selling us to those grubby little data merchants.' She smiles, and it's the most terrifying expression you've ever seen. 'Don't arrest them. Not yet. I want to know exactly how deep this goes. Then we'll make an example that the Ghost Syndicate will remember for a generation.' Silk is placed under surveillance so thorough they can't breathe without the Court knowing." },
-                { "condition": { "faction": "circuitSaints" }, "text": "High Compiler Ezra-7 receives your report in silence. When you finish, the ancient synth closes their optical sensors for a long moment. 'Brother Ohm. An Ashen Circle infiltrator in our midst. The very corruption we sought to transcend, wearing the face of devotion.' Ezra-7's eyes reopen, glowing with cold blue light. 'Seal the exits. Revoke his access codes. And summon the congregation. This will be addressed publicly. The Saints do not deal in shadows.'" },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "The Broker listens to your report through the usual scrambled audio channel. A long pause. Then laughter. Cold, mirthless laughter. 'Rook. Corporate security. Of course. I always wondered how Meridian seemed to know our playbook. The question is: how many others? One mole I can remove. A network requires surgery.' The Broker's voice turns ice-cold. 'Contain Rook. Don't kill them. Dead operatives can't answer questions. And I have many, many questions.'" },
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "Commander Vex's face turns to stone when you show her the evidence. 'Rust,' she says, and the name sounds like a death sentence. 'Eighteen years. Eighteen years I've trusted that man with our people's lives.' She's silent for ten seconds. Then: 'Bring him to me. Alive. I want to hear him explain why before I decide what happens next.' Rust is apprehended within the hour. He doesn't resist. He doesn't even look surprised."
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "Queen Lysara examines the evidence with the cold precision of a surgeon evaluating a tumor. 'Silk,' she says. 'My best operative. My most trusted confidante. Selling us to those grubby little data merchants.' She smiles, and it's the most terrifying expression you've ever seen. 'Don't arrest them. Not yet. I want to know exactly how deep this goes. Then we'll make an example that the Ghost Syndicate will remember for a generation.' Silk is placed under surveillance so thorough they can't breathe without the Court knowing."
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "High Compiler Ezra-7 receives your report in silence. When you finish, the ancient synth closes their optical sensors for a long moment. 'Brother Ohm. An Ashen Circle infiltrator in our midst. The very corruption we sought to transcend, wearing the face of devotion.' Ezra-7's eyes reopen, glowing with cold blue light. 'Seal the exits. Revoke his access codes. And summon the congregation. This will be addressed publicly. The Saints do not deal in shadows.'"
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "The Broker listens to your report through the usual scrambled audio channel. A long pause. Then laughter. Cold, mirthless laughter. 'Rook. Corporate security. Of course. I always wondered how Meridian seemed to know our playbook. The question is: how many others? One mole I can remove. A network requires surgery.' The Broker's voice turns ice-cold. 'Contain Rook. Don't kill them. Dead operatives can't answer questions. And I have many, many questions.'"
+                },
                 "The traitor is handled. But the damage they've done is already rippling through the faction war. Operations compromised, people dead, trust shattered. The war just got more complicated.",
                 "And Dr. Chen is still out there, waiting."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.traitor_reported", "value": true },
-                { "type": "add_experience", "amount": 25 },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": 15 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": 15 },
-                { "type": "modify_reputation", "faction": "circuitSaints", "amount": 15 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.traitor_reported",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": 15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": 15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": 15
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -507,22 +810,48 @@
             "music": "ambient_faction_tension",
             "isEnding": false
         },
-
         "act2ch2_015": {
             "id": "act2.chapter2.act2ch2_015",
             "title": "Confrontation",
             "location": "faction_headquarters",
             "text": [
                 "You find them alone. You planned it that way.",
-                { "condition": { "faction": "ironCollective" }, "text": "Rust is in his workshop, surrounded by detonators and shaped charges. He looks up when you enter, his weathered face creased with the easy smile of a man who thinks he hasn't been caught. 'Hey. Need something wired?' You close the door behind you. His smile falters when he sees your expression." },
-                { "condition": { "faction": "neonCourt" }, "text": "Silk is in their private quarters above the Prism Lounge, surrounded by communication equipment and intelligence dossiers. They're mid-transmission when you walk in. The look on their face when they see you standing in the doorway, watching, is a confession more damning than any evidence." },
-                { "condition": { "faction": "circuitSaints" }, "text": "Brother Ohm is in the lower archive, alone with the Saints' backup data cores. He's copying files when you find him. An Ashen Circle cipher device is sitting openly on the console beside him. He's not even trying to hide it anymore. When he sees you, his expression shifts from surprise to a calm that's almost peaceful. 'You found me,' he says simply." },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "Rook is at their usual station in Node Seven. Alone, which is rare. They're transmitting data on a frequency you don't recognize, a frequency that doesn't belong to the Syndicate's network. When they see you, their hand moves instinctively toward their sidearm. 'Easy,' you say. 'We need to talk.' Their hand stops. But it doesn't move away from the weapon." },
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "Rust is in his workshop, surrounded by detonators and shaped charges. He looks up when you enter, his weathered face creased with the easy smile of a man who thinks he hasn't been caught. 'Hey. Need something wired?' You close the door behind you. His smile falters when he sees your expression."
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "Silk is in their private quarters above the Prism Lounge, surrounded by communication equipment and intelligence dossiers. They're mid-transmission when you walk in. The look on their face when they see you standing in the doorway, watching, is a confession more damning than any evidence."
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "Brother Ohm is in the lower archive, alone with the Saints' backup data cores. He's copying files when you find him. An Ashen Circle cipher device is sitting openly on the console beside him. He's not even trying to hide it anymore. When he sees you, his expression shifts from surprise to a calm that's almost peaceful. 'You found me,' he says simply."
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "Rook is at their usual station in Node Seven. Alone, which is rare. They're transmitting data on a frequency you don't recognize, a frequency that doesn't belong to the Syndicate's network. When they see you, their hand moves instinctively toward their sidearm. 'Easy,' you say. 'We need to talk.' Their hand stops. But it doesn't move away from the weapon."
+                },
                 "The moment stretches. The air between you fills with the weight of accusation and the ghost of whatever trust existed before this."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.confronted_traitor", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.confronted_traitor",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -531,40 +860,76 @@
                 },
                 {
                     "text": "\"I know everything. But I'm giving you a chance to explain.\"",
-                    "statCheck": { "stat": "wisdom", "dc": 14 },
+                    "statCheck": {
+                        "stat": "wisdom",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_017",
-                    "fail": "act2.chapter2.act2ch2_016"
+                    "failNext": "act2.chapter2.act2ch2_016"
                 },
                 {
-                    "text": "\"I have a proposition. Keep leaking, but feed them what I tell you to.\"",
-                    "statCheck": { "stat": "intelligence", "dc": 15 },
+                    "text": "[Intelligence 14] \"I have a proposition. Keep leaking, but feed them what I tell you to.\"",
+                    "statCheck": {
+                        "stat": "intelligence",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_018",
-                    "fail": "act2.chapter2.act2ch2_016"
+                    "failNext": "act2.chapter2.act2ch2_016"
                 }
             ],
             "ascii": null,
             "music": "ambient_confrontation",
             "isEnding": false
         },
-
         "act2ch2_016": {
             "id": "act2.chapter2.act2ch2_016",
             "title": "The Traitor Exposed",
             "location": "faction_headquarters",
             "text": [
                 "The confrontation turns hostile. They know they're caught. The denial phase lasts about three seconds before survival instinct takes over.",
-                { "condition": { "faction": "ironCollective" }, "text": "Rust moves fast for a big man. He grabs a shaped charge from the workbench and holds it up, thumb on the detonator. 'Don't. Don't come any closer. I did what I had to do. The Court offered me something the Collective never could. A way out. A life that isn't just rust and blood and dying for someone else's revolution.' His hand is shaking. 'I'm leaving. You can let me go or we both go up. Your choice.'" },
-                { "condition": { "faction": "neonCourt" }, "text": "Silk's hand moves to a hidden panel in the wall. A concealed exit. 'The Ghost Syndicate pays better than the Queen, darling,' they say, voice silk-smooth even now. 'And they don't require you to pretend you believe in anything. The Court is a cult of personality built around a woman who hasn't had an original thought in a decade. I chose the rational option.'" },
-                { "condition": { "faction": "circuitSaints" }, "text": "Brother Ohm stands, and there's a serenity in his eyes that's unnerving. 'The Saints worship a dead signal and call it divine. The Ashen Circle understands the truth: the stacks are corruption incarnate. Every soul copied is a soul diminished. I didn't betray the Saints. I tried to save them from themselves.' He places his hand on the data core. 'Let me walk out, or I corrupt every backup in this archive.'" },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "Rook's hand finally closes on their sidearm. Corporate training shows in the economy of the movement. 'I'm Meridian security. Asset reclamation division. The Syndicate has been a destabilizing influence that needed to be mapped and neutralized. Nothing personal.' Their eyes are flat. Professional. 'I've already transmitted enough to burn this node. Walk away and you'll get a head start before the Sec-Corp teams arrive.'" }
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "Rust moves fast for a big man. He grabs a shaped charge from the workbench and holds it up, thumb on the detonator. 'Don't. Don't come any closer. I did what I had to do. The Court offered me something the Collective never could. A way out. A life that isn't just rust and blood and dying for someone else's revolution.' His hand is shaking. 'I'm leaving. You can let me go or we both go up. Your choice.'"
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "Silk's hand moves to a hidden panel in the wall. A concealed exit. 'The Ghost Syndicate pays better than the Queen, darling,' they say, voice silk-smooth even now. 'And they don't require you to pretend you believe in anything. The Court is a cult of personality built around a woman who hasn't had an original thought in a decade. I chose the rational option.'"
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "Brother Ohm stands, and there's a serenity in his eyes that's unnerving. 'The Saints worship a dead signal and call it divine. The Ashen Circle understands the truth: the stacks are corruption incarnate. Every soul copied is a soul diminished. I didn't betray the Saints. I tried to save them from themselves.' He places his hand on the data core. 'Let me walk out, or I corrupt every backup in this archive.'"
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "Rook's hand finally closes on their sidearm. Corporate training shows in the economy of the movement. 'I'm Meridian security. Asset reclamation division. The Syndicate has been a destabilizing influence that needed to be mapped and neutralized. Nothing personal.' Their eyes are flat. Professional. 'I've already transmitted enough to burn this node. Walk away and you'll get a head start before the Sec-Corp teams arrive.'"
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.traitor_hostile", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.traitor_hostile",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "combat": {
                 "enemies": [
-                    { "id": "faction_traitor", "name": "The Traitor", "level": 5 }
+                    {
+                        "id": "faction_traitor",
+                        "name": "The Traitor",
+                        "level": 5
+                    }
                 ],
                 "onWin": "act2.chapter2.act2ch2_019",
                 "onFlee": "act2.chapter2.act2ch2_020",
@@ -575,22 +940,52 @@
             "music": "combat_active",
             "isEnding": false
         },
-
         "act2ch2_017": {
             "id": "act2.chapter2.act2ch2_017",
             "title": "The Traitor's Confession",
             "location": "faction_headquarters",
             "text": [
                 "Your approach disarms them more effectively than any weapon. They expected fury. They expected violence. They didn't expect to be listened to.",
-                { "condition": { "faction": "ironCollective" }, "text": "Rust sinks onto his workbench like a puppet with cut strings. 'It started two years ago. The Neon Court approached me through a intermediary. They said they knew about my past, the two years I don't talk about. The years I spent in a Court laboratory being experimented on after the Gene Riots.' His voice cracks. 'They owned me already. The experiments, the things they put in my head. They could activate commands I didn't even know were there. I didn't have a choice. I never had a choice.'" },
-                { "condition": { "faction": "neonCourt" }, "text": "Silk sits down slowly. The mask drops. Beneath the elegance and the razor wit is someone who looks exhausted. 'The Ghost Syndicate didn't recruit me. They found me. Found out what I really am.' They pull back their sleeve, revealing a network of scars. 'Before the Court, before any of this, I was a lab subject. Meridian's Consciousness Division. They built me to infiltrate. The Ghost Syndicate discovered my real programming and offered me a deal: work for them willingly, or they'd expose me and let Meridian reclaim me.'" },
-                { "condition": { "faction": "circuitSaints" }, "text": "Brother Ohm's serenity doesn't waver, but something shifts behind his eyes. Sadness, maybe. 'I was Ashen Circle before I was anything else. Before the Saints found me, before I learned to love the signal, I believed what Noth taught: that consciousness itself was the corruption. I still believe parts of it.' He looks at the data core. 'But the Circle has changed. Noth isn't trying to save people anymore. He's building an army. And he's using me to weaken the only faction that might have the knowledge to stop LATENCY. I'm trapped between two faiths, and both of them are failing.'" },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "Rook's hand eases off the weapon. The corporate mask cracks. 'Yes. I'm Meridian security. Was Meridian security. They sent me in four years ago to map the Syndicate's network and leadership structure. I did my job. I was good at it.' A pause. 'Too good. I've been in so deep for so long that I don't know who I'm working for anymore. The reports I send to Meridian... I've been editing them. Leaving things out. People out. Because somewhere along the way, the Syndicate started feeling more like home than the corporation that built me.'" }
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "Rust sinks onto his workbench like a puppet with cut strings. 'It started two years ago. The Neon Court approached me through a intermediary. They said they knew about my past, the two years I don't talk about. The years I spent in a Court laboratory being experimented on after the Gene Riots.' His voice cracks. 'They owned me already. The experiments, the things they put in my head. They could activate commands I didn't even know were there. I didn't have a choice. I never had a choice.'"
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "Silk sits down slowly. The mask drops. Beneath the elegance and the razor wit is someone who looks exhausted. 'The Ghost Syndicate didn't recruit me. They found me. Found out what I really am.' They pull back their sleeve, revealing a network of scars. 'Before the Court, before any of this, I was a lab subject. Meridian's Consciousness Division. They built me to infiltrate. The Ghost Syndicate discovered my real programming and offered me a deal: work for them willingly, or they'd expose me and let Meridian reclaim me.'"
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "Brother Ohm's serenity doesn't waver, but something shifts behind his eyes. Sadness, maybe. 'I was Ashen Circle before I was anything else. Before the Saints found me, before I learned to love the signal, I believed what Noth taught: that consciousness itself was the corruption. I still believe parts of it.' He looks at the data core. 'But the Circle has changed. Noth isn't trying to save people anymore. He's building an army. And he's using me to weaken the only faction that might have the knowledge to stop LATENCY. I'm trapped between two faiths, and both of them are failing.'"
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "Rook's hand eases off the weapon. The corporate mask cracks. 'Yes. I'm Meridian security. Was Meridian security. They sent me in four years ago to map the Syndicate's network and leadership structure. I did my job. I was good at it.' A pause. 'Too good. I've been in so deep for so long that I don't know who I'm working for anymore. The reports I send to Meridian... I've been editing them. Leaving things out. People out. Because somewhere along the way, the Syndicate started feeling more like home than the corporation that built me.'"
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.traitor_confessed", "value": true },
-                { "type": "set_flag", "flag": "act2.chapter2.showed_mercy", "value": true },
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.traitor_confessed",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.showed_mercy",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -610,24 +1005,58 @@
             "music": "ambient_emotional",
             "isEnding": false
         },
-
         "act2ch2_018": {
             "id": "act2.chapter2.act2ch2_018",
             "title": "The Double Agent",
             "location": "faction_headquarters",
             "text": [
                 "You make a deal with the devil you know. The traitor becomes your traitor. A controlled leak. A weapon pointed back at those who planted them.",
-                { "condition": { "faction": "ironCollective" }, "text": "Rust nods slowly. 'You want me to feed the Neon Court false intel through their own back channel. Make them think they're still getting good data while you control the narrative.' The ghost of his old confidence returns. 'It could work. The Court's handler contacts me every forty-eight hours. I can start planting disinformation by tomorrow night. But if they find out, they'll activate whatever they put in my head. And I don't know what that means for me.'" },
-                { "condition": { "faction": "neonCourt" }, "text": "Silk's eyes sharpen. 'Turn the pipeline around. Feed the Ghost Syndicate exactly what we want them to know. Make them think they're still playing the Queen while the Queen is playing them.' They smile, and for the first time it reaches their eyes. 'This is what I was built for. Intelligence and counter-intelligence. The difference between a traitor and a double agent is just a matter of who's holding the leash. I'd rather it be someone who gave me a choice.'" },
-                { "condition": { "faction": "circuitSaints" }, "text": "Brother Ohm closes his eyes, considering. 'Feed Noth false data through the Ashen Circle's channels. Make him believe the Saints are weaker than they are, or stronger, depending on what serves us. Manipulate his recruitment drives.' He opens his eyes. 'I can do this. But know what you're asking. You're asking me to betray the Circle the same way I betrayed the Saints. At some point, there's no one left to be loyal to except you.'" },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "Rook straightens. The professional returns, but tempered now with something that wasn't there before. Loyalty, maybe. Or just the relief of not having to pretend anymore. 'I feed Meridian modified intelligence. Enough truth to maintain my cover, enough falsehood to protect the Syndicate's core operations. The Broker never needs to know what I am. And you get a direct line into Meridian corporate security.' They extend their hand. 'Partners?'" },
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "Rust nods slowly. 'You want me to feed the Neon Court false intel through their own back channel. Make them think they're still getting good data while you control the narrative.' The ghost of his old confidence returns. 'It could work. The Court's handler contacts me every forty-eight hours. I can start planting disinformation by tomorrow night. But if they find out, they'll activate whatever they put in my head. And I don't know what that means for me.'"
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "Silk's eyes sharpen. 'Turn the pipeline around. Feed the Ghost Syndicate exactly what we want them to know. Make them think they're still playing the Queen while the Queen is playing them.' They smile, and for the first time it reaches their eyes. 'This is what I was built for. Intelligence and counter-intelligence. The difference between a traitor and a double agent is just a matter of who's holding the leash. I'd rather it be someone who gave me a choice.'"
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "Brother Ohm closes his eyes, considering. 'Feed Noth false data through the Ashen Circle's channels. Make him believe the Saints are weaker than they are, or stronger, depending on what serves us. Manipulate his recruitment drives.' He opens his eyes. 'I can do this. But know what you're asking. You're asking me to betray the Circle the same way I betrayed the Saints. At some point, there's no one left to be loyal to except you.'"
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "Rook straightens. The professional returns, but tempered now with something that wasn't there before. Loyalty, maybe. Or just the relief of not having to pretend anymore. 'I feed Meridian modified intelligence. Enough truth to maintain my cover, enough falsehood to protect the Syndicate's core operations. The Broker never needs to know what I am. And you get a direct line into Meridian corporate security.' They extend their hand. 'Partners?'"
+                },
                 "It's a dangerous game. Fragile alliances built on leverage and mutual need. But in a city where everyone is lying, having a liar you control might be the most honest advantage available."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.turned_traitor", "value": true },
-                { "type": "set_flag", "flag": "act2.double_agent_active", "value": true },
-                { "type": "add_experience", "amount": 35 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": 10 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.turned_traitor",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.double_agent_active",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": 10
+                }
             ],
             "choices": [
                 {
@@ -643,7 +1072,6 @@
             "music": "ambient_suspense",
             "isEnding": false
         },
-
         "act2ch2_019": {
             "id": "act2.chapter2.act2ch2_019",
             "title": "Traitor Subdued",
@@ -651,15 +1079,42 @@
             "text": [
                 "The fight is short and vicious. The traitor is skilled, trained, dangerous. But they've been living a lie for too long, and the exhaustion of deception makes them half a second slow on every exchange.",
                 "You put them down. Not dead, but done. They lie on the floor, breathing hard, blood from a split lip staining the concrete.",
-                { "condition": { "faction": "ironCollective" }, "text": "Rust stares at the ceiling. 'The Court won't stop, you know. I'm not the only asset they have in the Collective. Just the only one you found.' He coughs. 'Do what you have to do.'" },
-                { "condition": { "faction": "neonCourt" }, "text": "Silk laughs softly, blood on their teeth. 'Well played. Better than I expected. The Queen will want to make an example of me. Tell her I said the Ghost Syndicate's real play is bigger than a few leaked trade routes. Tell her she's thinking too small.'" },
-                { "condition": { "faction": "circuitSaints" }, "text": "Brother Ohm lies still, the Ashen Circle cipher clutched in his hand. 'Noth will send another. And another. The Circle doesn't stop. They believe they're saving souls.' A weak smile. 'So did I, once. Protect the research. Whatever the Saints have found about LATENCY, it's worth more than any of us.'" },
-                { "condition": { "faction": "ghostSyndicate" }, "text": "Rook's corporate mask is fully gone. Underneath is someone who looks almost relieved it's over. 'Meridian has three more assets in the Syndicate. I don't know who they are. Different cell structure. But I can give you the handler's contact protocol if you let me live. It's worth more than my corpse.'" },
+                {
+                    "condition": {
+                        "faction": "ironCollective"
+                    },
+                    "text": "Rust stares at the ceiling. 'The Court won't stop, you know. I'm not the only asset they have in the Collective. Just the only one you found.' He coughs. 'Do what you have to do.'"
+                },
+                {
+                    "condition": {
+                        "faction": "neonCourt"
+                    },
+                    "text": "Silk laughs softly, blood on their teeth. 'Well played. Better than I expected. The Queen will want to make an example of me. Tell her I said the Ghost Syndicate's real play is bigger than a few leaked trade routes. Tell her she's thinking too small.'"
+                },
+                {
+                    "condition": {
+                        "faction": "circuitSaints"
+                    },
+                    "text": "Brother Ohm lies still, the Ashen Circle cipher clutched in his hand. 'Noth will send another. And another. The Circle doesn't stop. They believe they're saving souls.' A weak smile. 'So did I, once. Protect the research. Whatever the Saints have found about LATENCY, it's worth more than any of us.'"
+                },
+                {
+                    "condition": {
+                        "faction": "ghostSyndicate"
+                    },
+                    "text": "Rook's corporate mask is fully gone. Underneath is someone who looks almost relieved it's over. 'Meridian has three more assets in the Syndicate. I don't know who they are. Different cell structure. But I can give you the handler's contact protocol if you let me live. It's worth more than my corpse.'"
+                },
                 "You haul them to their feet. The war just got smaller by one traitor. But the war itself is still growing."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.traitor_subdued", "value": true },
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.traitor_subdued",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -679,7 +1134,6 @@
             "music": "ambient_aftermath",
             "isEnding": false
         },
-
         "act2ch2_020": {
             "id": "act2.chapter2.act2ch2_020",
             "title": "Aftermath of Betrayal",
@@ -688,12 +1142,24 @@
                 "The traitor situation is resolved, one way or another. But the damage is done. The faction war has been fed by leaked intelligence, every side armed with knowledge that should have been secret, every ambush anticipated, every defense undermined.",
                 "The city burns hotter because of it. Two more districts have lost power. The Transit Hub is contested territory, fought over by three factions simultaneously. Meridian Sec-Corp has established checkpoints on every major road, ostensibly for 'public safety,' practically for control.",
                 "In the chaos, one thread remains clear: Dr. Chen is still out there. Still hiding. Still carrying information that could change everything. And Meridian is getting closer to finding her every hour.",
-                { "condition": { "flag": "act2.double_agent_active" }, "text": "Your double agent reports that Meridian has activated a special retrieval unit for Dr. Chen. Six operatives, military-grade augmentation, authorized to use lethal force. They're sweeping the Transit Hub district-by-district. You have maybe twelve hours before they find her." },
+                {
+                    "condition": {
+                        "flag": "act2.double_agent_active"
+                    },
+                    "text": "Your double agent reports that Meridian has activated a special retrieval unit for Dr. Chen. Six operatives, military-grade augmentation, authorized to use lethal force. They're sweeping the Transit Hub district-by-district. You have maybe twelve hours before they find her."
+                },
                 "Whatever else is happening, the extraction can't wait any longer."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.betrayal_resolved", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.betrayal_resolved",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -705,7 +1171,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "act2ch2_021": {
             "id": "act2.chapter2.act2ch2_021",
             "title": "The Underground Railroad",
@@ -718,9 +1183,20 @@
                 "She pulls up a map of the Transit Hub on a cracked datapad. \"There are three routes out of the city from here. Each one is dangerous for different reasons. I need you to choose.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.chen_extraction_started", "value": true },
-                { "type": "set_flag", "flag": "act2.chen_met_in_person", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.chen_extraction_started",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chen_met_in_person",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -733,12 +1209,16 @@
                 },
                 {
                     "text": "Use the void passages beneath the city",
-                    "condition": { "race": "shadowkin" },
+                    "condition": {
+                        "race": "shadowkin"
+                    },
                     "next": "act2.chapter2.act2ch2_024"
                 },
                 {
                     "text": "Hack the automated checkpoint system and walk out the front",
-                    "condition": { "race": "cyborg" },
+                    "condition": {
+                        "race": "cyborg"
+                    },
                     "next": "act2.chapter2.act2ch2_024"
                 }
             ],
@@ -746,7 +1226,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "act2ch2_022": {
             "id": "act2.chapter2.act2ch2_022",
             "title": "The Maintenance Tunnels",
@@ -759,15 +1238,25 @@
                 "The footsteps are getting closer. You have seconds to decide."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.took_tunnels", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.took_tunnels",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
                     "text": "Find a side passage and hide until they pass",
-                    "statCheck": { "stat": "dexterity", "dc": 14 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_025",
-                    "fail": "act2.chapter2.act2ch2_026"
+                    "failNext": "act2.chapter2.act2ch2_026"
                 },
                 {
                     "text": "Ambush them before they spot you",
@@ -782,7 +1271,6 @@
             "music": "ambient_underground",
             "isEnding": false
         },
-
         "act2ch2_023": {
             "id": "act2.chapter2.act2ch2_023",
             "title": "The Cargo Rails",
@@ -795,21 +1283,34 @@
                 "Through the firefight or not at all."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.took_cargo_rails", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.took_cargo_rails",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
                     "text": "Wait for a lull in the fighting and sprint through",
-                    "statCheck": { "stat": "dexterity", "dc": 14 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_025",
-                    "fail": "act2.chapter2.act2ch2_026"
+                    "failNext": "act2.chapter2.act2ch2_026"
                 },
                 {
                     "text": "Create a distraction to draw both sides away from your path",
-                    "statCheck": { "stat": "intelligence", "dc": 14 },
+                    "statCheck": {
+                        "stat": "intelligence",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_025",
-                    "fail": "act2.chapter2.act2ch2_026"
+                    "failNext": "act2.chapter2.act2ch2_026"
                 },
                 {
                     "text": "Fight through. There's no time for anything else.",
@@ -820,32 +1321,48 @@
             "music": "combat_ambient",
             "isEnding": false
         },
-
         "act2ch2_024": {
             "id": "act2.chapter2.act2ch2_024",
             "title": "The Hidden Path",
             "location": "transit_hub_alternate",
             "text": [
-                { "condition": { "race": "shadowkin" }, "text": [
-                    "The void passages exist between the layers of reality, paths that only shadowkin can perceive and navigate. To Dr. Chen, you simply take her hand and step sideways into what looks like a solid wall.",
-                    "She gasps. The void passage is a corridor of living darkness, its walls pulsing with a faint bioluminescence that exists in no spectrum visible to unaugmented human eyes. The passage runs parallel to the physical tunnels but intersects with nothing. No patrols. No checkpoints. No war.",
-                    "\"What is this place?\" Chen whispers, her scientific mind overriding her fear.",
-                    "\"The space between,\" you tell her. \"Shadowkin have used these passages since before the city existed. Before humans built anything on this ground. The void was here first.\"",
-                    "The passage is disorienting for non-shadowkin. Chen stumbles twice, her sense of direction useless in a space that doesn't obey conventional geometry. But you know the way. The void whispers directions to those born to it.",
-                    "You emerge on the far side of the Transit Hub's perimeter, beyond the checkpoints, beyond the patrols. Clean. Unseen. Safe, for now."
-                ]},
-                { "condition": { "race": "cyborg" }, "text": [
-                    "The automated checkpoint system runs on a network you can see with your integrated scanner. Firewall layers, authentication protocols, patrol routing algorithms. It's sophisticated by civilian standards. By yours, it's a puzzle box with the solution printed on the side.",
-                    "You interface with the nearest checkpoint terminal through a concealed data port in your wrist. The system's security resists for approximately four seconds before your intrusion suite cracks it like an egg.",
-                    "You rewrite the patrol routes to create a thirty-minute window in Sector Seven. You flag your biometrics and Chen's as 'Meridian authorized personnel' in the checkpoint database. You disable the facial recognition on three drones and loop their camera feeds to show empty corridors.",
-                    "Then you walk Dr. Chen through the front door of the Transit Hub, past two checkpoints, under four drone patrols, and out the other side. Nobody stops you. Nobody even looks twice.",
-                    "\"That was terrifying,\" Chen says as you emerge on the far side.",
-                    "\"That was Tuesday,\" you reply."
-                ]}
+                {
+                    "condition": {
+                        "race": "shadowkin"
+                    },
+                    "text": [
+                        "The void passages exist between the layers of reality, paths that only shadowkin can perceive and navigate. To Dr. Chen, you simply take her hand and step sideways into what looks like a solid wall.",
+                        "She gasps. The void passage is a corridor of living darkness, its walls pulsing with a faint bioluminescence that exists in no spectrum visible to unaugmented human eyes. The passage runs parallel to the physical tunnels but intersects with nothing. No patrols. No checkpoints. No war.",
+                        "\"What is this place?\" Chen whispers, her scientific mind overriding her fear.",
+                        "\"The space between,\" you tell her. \"Shadowkin have used these passages since before the city existed. Before humans built anything on this ground. The void was here first.\"",
+                        "The passage is disorienting for non-shadowkin. Chen stumbles twice, her sense of direction useless in a space that doesn't obey conventional geometry. But you know the way. The void whispers directions to those born to it.",
+                        "You emerge on the far side of the Transit Hub's perimeter, beyond the checkpoints, beyond the patrols. Clean. Unseen. Safe, for now."
+                    ]
+                },
+                {
+                    "condition": {
+                        "race": "cyborg"
+                    },
+                    "text": [
+                        "The automated checkpoint system runs on a network you can see with your integrated scanner. Firewall layers, authentication protocols, patrol routing algorithms. It's sophisticated by civilian standards. By yours, it's a puzzle box with the solution printed on the side.",
+                        "You interface with the nearest checkpoint terminal through a concealed data port in your wrist. The system's security resists for approximately four seconds before your intrusion suite cracks it like an egg.",
+                        "You rewrite the patrol routes to create a thirty-minute window in Sector Seven. You flag your biometrics and Chen's as 'Meridian authorized personnel' in the checkpoint database. You disable the facial recognition on three drones and loop their camera feeds to show empty corridors.",
+                        "Then you walk Dr. Chen through the front door of the Transit Hub, past two checkpoints, under four drone patrols, and out the other side. Nobody stops you. Nobody even looks twice.",
+                        "\"That was terrifying,\" Chen says as you emerge on the far side.",
+                        "\"That was Tuesday,\" you reply."
+                    ]
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.took_hidden_path", "value": true },
-                { "type": "add_experience", "amount": 35 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.took_hidden_path",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
             ],
             "choices": [
                 {
@@ -857,7 +1374,6 @@
             "music": "ambient_underground",
             "isEnding": false
         },
-
         "act2ch2_025": {
             "id": "act2.chapter2.act2ch2_025",
             "title": "Clean Escape",
@@ -870,8 +1386,15 @@
                 "She's right. But you've made it this far."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.clean_transit_escape", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.clean_transit_escape",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -883,7 +1406,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "act2ch2_026": {
             "id": "act2.chapter2.act2ch2_026",
             "title": "Combat in Transit",
@@ -897,15 +1419,38 @@
                 "\"Keep moving,\" she says through gritted teeth. \"We stop, we die.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.transit_combat", "value": true },
-                { "type": "modify_stat", "stat": "health", "amount": -25 },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.transit_combat",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -25
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "combat": {
                 "enemies": [
-                    { "id": "meridian_retrieval_agent", "name": "Retrieval Agent", "level": 5 },
-                    { "id": "meridian_retrieval_agent", "name": "Retrieval Agent", "level": 4 },
-                    { "id": "meridian_sec_drone", "name": "Sec-Corp Drone", "level": 3 }
+                    {
+                        "id": "meridian_retrieval_agent",
+                        "name": "Retrieval Agent",
+                        "level": 5
+                    },
+                    {
+                        "id": "meridian_retrieval_agent",
+                        "name": "Retrieval Agent",
+                        "level": 4
+                    },
+                    {
+                        "id": "meridian_sec_drone",
+                        "name": "Sec-Corp Drone",
+                        "level": 3
+                    }
                 ],
                 "onWin": "act2.chapter2.act2ch2_027",
                 "onFlee": "act2.chapter2.act2ch2_028",
@@ -916,7 +1461,6 @@
             "music": "combat_active",
             "isEnding": false
         },
-
         "act2ch2_027": {
             "id": "act2.chapter2.act2ch2_027",
             "title": "The Final Stretch",
@@ -926,23 +1470,40 @@
                 "A maintenance access point in the wall has been prepared. Mako's work, judging by the clean cuts in the lock mechanism and the disabled sensor node. Beyond the wall, a vehicle is waiting. Unmarked, armored, fueled. Someone has been planning this extraction for longer than you realized.",
                 "But between you and the wall, a final obstacle. A Meridian checkpoint. Four Sec-Corp guards, two automated turrets, and a biometric scanner. Standard perimeter security, but right now, standard might as well be a fortress.",
                 "Dr. Chen studies the checkpoint. \"I can see three options. We go through them, we go around them, or we go under them. There are storm drains that run beneath the perimeter road, but they're narrow and might be monitored.\"",
-                { "condition": { "flag": "act2.double_agent_active" }, "text": "Your datapad buzzes. A message from your double agent: 'Checkpoint shift change in fourteen minutes. Ninety-second window where scanners reboot. Sending timing data now.' They're earning their keep." }
+                {
+                    "condition": {
+                        "flag": "act2.double_agent_active"
+                    },
+                    "text": "Your datapad buzzes. A message from your double agent: 'Checkpoint shift change in fourteen minutes. Ninety-second window where scanners reboot. Sending timing data now.' They're earning their keep."
+                }
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.final_stretch", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.final_stretch",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
                     "text": "Wait for the shift change window and slip through",
-                    "condition": { "flag": "act2.double_agent_active" },
+                    "condition": {
+                        "flag": "act2.double_agent_active"
+                    },
                     "next": "act2.chapter2.act2ch2_031"
                 },
                 {
                     "text": "Use the storm drains to bypass the checkpoint",
-                    "statCheck": { "stat": "dexterity", "dc": 13 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 13
+                    },
                     "next": "act2.chapter2.act2ch2_031",
-                    "fail": "act2.chapter2.act2ch2_030"
+                    "failNext": "act2.chapter2.act2ch2_030"
                 },
                 {
                     "text": "Create a diversion and rush the gate",
@@ -957,7 +1518,6 @@
             "music": "ambient_tension_high",
             "isEnding": false
         },
-
         "act2ch2_028": {
             "id": "act2.chapter2.act2ch2_028",
             "title": "Desperate Measures",
@@ -970,9 +1530,20 @@
                 "You have one choice left to make."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.desperate_assault", "value": true },
-                { "type": "modify_stat", "stat": "health", "amount": -20 },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.desperate_assault",
+                    "value": true
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
@@ -980,23 +1551,28 @@
                     "next": "act2.chapter2.act2ch2_ending_012"
                 },
                 {
-                    "text": "Fight through with everything you have",
-                    "statCheck": { "stat": "strength", "dc": 15 },
+                    "text": "[Strength 14] Fight through with everything you have",
+                    "statCheck": {
+                        "stat": "strength",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_031",
-                    "fail": "act2.chapter2.act2ch2_ending_015"
+                    "failNext": "act2.chapter2.act2ch2_ending_015"
                 },
                 {
                     "text": "Grab Chen and fall back to the storm drains",
-                    "statCheck": { "stat": "dexterity", "dc": 14 },
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_031",
-                    "fail": "act2.chapter2.act2ch2_ending_011"
+                    "failNext": "act2.chapter2.act2ch2_ending_011"
                 }
             ],
             "ascii": null,
             "music": "combat_desperate",
             "isEnding": false
         },
-
         "act2ch2_029": {
             "id": "act2.chapter2.act2ch2_029",
             "title": "Overwhelmed",
@@ -1009,8 +1585,15 @@
                 "Then a hood goes over your head and the darkness takes everything."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.both_captured", "value": true },
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.both_captured",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [
                 {
@@ -1022,7 +1605,6 @@
             "music": "ambient_ending_dark",
             "isEnding": false
         },
-
         "act2ch2_030": {
             "id": "act2.chapter2.act2ch2_030",
             "title": "Tunnel Collapse",
@@ -1035,21 +1617,34 @@
                 "You have one second to act."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.tunnel_collapse", "value": true },
-                { "type": "add_experience", "amount": 15 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.tunnel_collapse",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 15
+                }
             ],
             "choices": [
                 {
-                    "text": "Shield Chen with your body and push her toward the exit",
-                    "statCheck": { "stat": "strength", "dc": 15 },
+                    "text": "[Strength 14] Shield Chen with your body and push her toward the exit",
+                    "statCheck": {
+                        "stat": "strength",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_031",
-                    "fail": "act2.chapter2.act2ch2_ending_015"
+                    "failNext": "act2.chapter2.act2ch2_ending_015"
                 },
                 {
-                    "text": "Grab Chen and sprint for the exit together",
-                    "statCheck": { "stat": "dexterity", "dc": 15 },
+                    "text": "[Dexterity 14] Grab Chen and sprint for the exit together",
+                    "statCheck": {
+                        "stat": "dexterity",
+                        "dc": 14
+                    },
                     "next": "act2.chapter2.act2ch2_031",
-                    "fail": "act2.chapter2.act2ch2_ending_015"
+                    "failNext": "act2.chapter2.act2ch2_ending_015"
                 },
                 {
                     "text": "Push Chen ahead and use yourself to brace the collapse",
@@ -1060,7 +1655,6 @@
             "music": "combat_desperate",
             "isEnding": false
         },
-
         "act2ch2_ending_011": {
             "id": "act2.chapter2.act2ch2_ending_011",
             "title": "ENDING #11: Captured",
@@ -1076,8 +1670,15 @@
                 "END OF STORY — Captured by Meridian. Dr. Chen's data is compromised. Your mind has been mapped and archived. You exist as information in a corporate database. The war continues without you."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "ending.chen_dies_captured", "value": true },
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "set_flag",
+                    "flag": "ending.chen_dies_captured",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1086,7 +1687,6 @@
             "ending": true,
             "endingId": "ending_chen_dies_captured"
         },
-
         "act2ch2_ending_012": {
             "id": "act2.chapter2.act2ch2_ending_012",
             "title": "ENDING #12: The Sacrifice",
@@ -1105,8 +1705,15 @@
                 "END OF STORY — You died so the truth could live. Dr. Chen escaped with the LATENCY data. Your name will never appear in any history. But the future you bought with eleven seconds will remember, even if it doesn't know your name."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "ending.heroic_sacrifice", "value": true },
-                { "type": "add_experience", "amount": 75 }
+                {
+                    "type": "set_flag",
+                    "flag": "ending.heroic_sacrifice",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 75
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1115,7 +1722,6 @@
             "ending": true,
             "endingId": "ending_heroic_sacrifice"
         },
-
         "act2ch2_ending_013": {
             "id": "act2.chapter2.act2ch2_ending_013",
             "title": "ENDING #13: Left Behind",
@@ -1132,12 +1738,35 @@
                 "END OF STORY — You escaped. Dr. Chen was captured. The LATENCY data is in Meridian's hands. You are alive and free and hollow. The guilt will walk with you until there's nothing left of you to carry it."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "ending.chen_captured_you_fled", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": -30 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -30 },
-                { "type": "modify_reputation", "faction": "circuitSaints", "amount": -30 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": -20 },
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "set_flag",
+                    "flag": "ending.chen_captured_you_fled",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": -30
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -30
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": -30
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": -20
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1146,7 +1775,6 @@
             "ending": true,
             "endingId": "ending_chen_captured_you_fled"
         },
-
         "act2ch2_ending_014": {
             "id": "act2.chapter2.act2ch2_ending_014",
             "title": "ENDING #14: The Judas Price",
@@ -1166,13 +1794,40 @@
                 "END OF STORY — You sold Dr. Chen to Meridian. The truth about LATENCY is buried. Your conscience has a price tag, and Meridian paid it in full."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "ending.sold_chen_to_meridian", "value": true },
-                { "type": "modify_reputation", "faction": "ironCollective", "amount": -50 },
-                { "type": "modify_reputation", "faction": "neonCourt", "amount": -30 },
-                { "type": "modify_reputation", "faction": "circuitSaints", "amount": -50 },
-                { "type": "modify_reputation", "faction": "ghostSyndicate", "amount": -20 },
-                { "type": "modify_reputation", "faction": "ashenCircle", "amount": -30 },
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "set_flag",
+                    "flag": "ending.sold_chen_to_meridian",
+                    "value": true
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ironCollective",
+                    "amount": -50
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "neonCourt",
+                    "amount": -30
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "circuitSaints",
+                    "amount": -50
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ghostSyndicate",
+                    "amount": -20
+                },
+                {
+                    "type": "modify_reputation",
+                    "faction": "ashenCircle",
+                    "amount": -30
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1181,7 +1836,6 @@
             "ending": true,
             "endingId": "ending_sold_chen_to_meridian"
         },
-
         "act2ch2_ending_015": {
             "id": "act2.chapter2.act2ch2_ending_015",
             "title": "ENDING #15: Buried Together",
@@ -1200,8 +1854,15 @@
                 "END OF STORY — The tunnel collapsed. You and Dr. Chen died together. The LATENCY data was destroyed. The truth was buried, literally and figuratively. The war goes on. The program goes on. Nothing changes."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "ending.both_died_tunnel", "value": true },
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "set_flag",
+                    "flag": "ending.both_died_tunnel",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1210,7 +1871,6 @@
             "ending": true,
             "endingId": "ending_both_died_tunnel"
         },
-
         "act2ch2_031": {
             "id": "act2.chapter2.act2ch2_031",
             "title": "Across the Wall",
@@ -1224,9 +1884,20 @@
                 "She spreads the data drives across the table. Dozens of them, each labeled with dates and project codes. The earliest date reads 1976. Fifty years ago."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.chen_escaped", "value": true },
-                { "type": "set_flag", "flag": "act2.chen_extraction_successful", "value": true },
-                { "type": "add_experience", "amount": 35 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.chen_escaped",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chen_extraction_successful",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 35
+                }
             ],
             "choices": [
                 {
@@ -1238,7 +1909,6 @@
             "music": "ambient_revelation",
             "isEnding": false
         },
-
         "act2ch2_032": {
             "id": "act2.chapter2.act2ch2_032",
             "title": "The Full Scope",
@@ -1251,8 +1921,15 @@
                 "She meets your eyes. \"They didn't stop there.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.learned_latency_history", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.learned_latency_history",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -1268,7 +1945,6 @@
             "music": "ambient_revelation",
             "isEnding": false
         },
-
         "act2ch2_033": {
             "id": "act2.chapter2.act2ch2_033",
             "title": "The Numbers",
@@ -1283,8 +1959,15 @@
                 "\"All of it,\" Chen confirms. \"LATENCY created the conditions for its own normalization. The stacks exist because fifty years of rewritten decision-makers ensured the technology would be developed, funded, and eventually mandated. We're living in a world that was designed.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.learned_victim_count", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.learned_victim_count",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -1300,7 +1983,6 @@
             "music": "ambient_revelation",
             "isEnding": false
         },
-
         "act2ch2_034": {
             "id": "act2.chapter2.act2ch2_034",
             "title": "The Architect",
@@ -1316,10 +1998,25 @@
                 "She looks at you. \"We need to find the Vault. We need to find Marchetti. And we need to stop whatever he's building before it activates. Because if the current program rewrote thousands of elites over fifty years, the next version is designed to rewrite everyone. All at once.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.learned_architect_identity", "value": true },
-                { "type": "set_flag", "flag": "act2.knows_marchetti", "value": true },
-                { "type": "set_flag", "flag": "act2.vault_mentioned", "value": true },
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.learned_architect_identity",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.knows_marchetti",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.vault_mentioned",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -1335,7 +2032,6 @@
             "music": "ambient_revelation",
             "isEnding": false
         },
-
         "act2ch2_035": {
             "id": "act2.chapter2.act2ch2_035",
             "title": "The Reversal Question",
@@ -1350,8 +2046,15 @@
                 "\"Finding the Vault is only half the problem. Convincing or stopping its architect is the other half.\""
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.learned_reversal_possibility", "value": true },
-                { "type": "add_experience", "amount": 20 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.learned_reversal_possibility",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 20
+                }
             ],
             "choices": [
                 {
@@ -1360,7 +2063,9 @@
                 },
                 {
                     "text": "\"What's Marchetti planning next? You said something about a new version.\"",
-                    "condition": { "not_flag": "act2.chapter2.learned_architect_identity" },
+                    "condition": {
+                        "not_flag": "act2.chapter2.learned_architect_identity"
+                    },
                     "next": "act2.chapter2.act2ch2_034"
                 }
             ],
@@ -1368,7 +2073,6 @@
             "music": "ambient_revelation",
             "isEnding": false
         },
-
         "act2ch2_036": {
             "id": "act2.chapter2.act2ch2_036",
             "title": "The Vault's Location",
@@ -1383,11 +2087,30 @@
                 "The wasteland wind howls outside the safehouse. Behind you, the city glows on the horizon, a prison made of light. Ahead of you, the longest night of your life is just beginning."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.learned_vault_location", "value": true },
-                { "type": "set_flag", "flag": "act2.vault_access_undercity", "value": true },
-                { "type": "set_flag", "flag": "act2.vault_access_meridian_hq", "value": true },
-                { "type": "set_flag", "flag": "act2.vault_access_ossuary", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.learned_vault_location",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.vault_access_undercity",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.vault_access_meridian_hq",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.vault_access_ossuary",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -1407,7 +2130,6 @@
             "music": "ambient_revelation",
             "isEnding": false
         },
-
         "act2ch2_037": {
             "id": "act2.chapter2.act2ch2_037",
             "title": "Building a Coalition",
@@ -1420,14 +2142,30 @@
                 "\"The Circuit Saints want to understand consciousness. The Vault contains the most advanced consciousness research ever conducted. They'll want access.\"",
                 "\"The Ghost Syndicate wants profit. The Vault's technology is worth more than every faction's treasury combined. They'll want a cut.\"",
                 "\"And the Ashen Circle...\" She pauses. \"The Ashen Circle is the wildcard. If Noth knows about the Vault entrance in the Ossuary, he may be protecting it. Or using it. Either way, he'll be the hardest to bring on board.\"",
-                { "condition": { "flag": "act2.double_agent_active" }, "text": "Your double agent is the ace up your sleeve. A back channel to feed disinformation, manipulate faction movements, and maybe, just maybe, get everyone pointed at the same target." },
+                {
+                    "condition": {
+                        "flag": "act2.double_agent_active"
+                    },
+                    "text": "Your double agent is the ace up your sleeve. A back channel to feed disinformation, manipulate faction movements, and maybe, just maybe, get everyone pointed at the same target."
+                },
                 "You pack up the safehouse at dawn. The city waits. The war waits. The Vault waits. And somewhere deep underground, Marchetti works on his masterpiece.",
                 "The clock is ticking."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.coalition_planned", "value": true },
-                { "type": "set_flag", "flag": "act2.act3_setup_coalition", "value": true },
-                { "type": "add_experience", "amount": 30 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.coalition_planned",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.act3_setup_coalition",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 30
+                }
             ],
             "choices": [
                 {
@@ -1439,7 +2177,6 @@
             "music": "ambient_planning",
             "isEnding": false
         },
-
         "act2ch2_038": {
             "id": "act2.chapter2.act2ch2_038",
             "title": "The Undercity Path",
@@ -1448,14 +2185,30 @@
                 "The Undercity entrance is the most practical option. The deepest tunnels beneath the Lower District connect to the pre-city infrastructure that houses the Vault. No faction controls the Undercity proper; it's home to the dispossessed, the forgotten, and whatever else has been growing in the dark for decades.",
                 "\"The Undercity population might be an asset or an obstacle,\" Chen says, studying her maps. \"They've had no contact with the surface in some cases for years. They have their own social structure, their own rules. If we can negotiate passage, we avoid the factions entirely.\"",
                 "\"But the tunnels are also unmapped below a certain depth. My data shows the Vault access point approximately two kilometers below the current Undercity settlement layer. That's deep enough that conventional navigation fails. The magnetic fields down there play havoc with electronics.\"",
-                { "condition": { "race": "shadowkin" }, "text": "\"The void passages extend down there,\" you say. Chen looks at you sharply. \"If the passages go deep enough, I can navigate without electronics. The void doesn't care about magnetic fields.\" Chen nods slowly. \"That might be our best advantage.\"" },
+                {
+                    "condition": {
+                        "race": "shadowkin"
+                    },
+                    "text": "\"The void passages extend down there,\" you say. Chen looks at you sharply. \"If the passages go deep enough, I can navigate without electronics. The void doesn't care about magnetic fields.\" Chen nods slowly. \"That might be our best advantage.\""
+                },
                 "\"We'll need supplies for a deep expedition,\" Chen continues. \"And someone who knows the Undercity's current political landscape. I suggest we contact Mako. She has connections everywhere, even down there.\"",
                 "The Undercity path is quiet, lonely, and potentially lethal. But it avoids the war entirely. Sometimes the road less traveled is less traveled for a reason."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.undercity_path_chosen", "value": true },
-                { "type": "set_flag", "flag": "act2.act3_setup_undercity", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.undercity_path_chosen",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.act3_setup_undercity",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -1467,7 +2220,6 @@
             "music": "ambient_underground",
             "isEnding": false
         },
-
         "act2ch2_039": {
             "id": "act2.chapter2.act2ch2_039",
             "title": "The Ossuary Question",
@@ -1480,9 +2232,20 @@
                 "The Ossuary path is the riskiest but potentially the most rewarding. An alliance with the Ashen Circle, directed at the Vault, could change everything. Or it could blow up in your face."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.ossuary_path_chosen", "value": true },
-                { "type": "set_flag", "flag": "act2.act3_setup_ossuary", "value": true },
-                { "type": "add_experience", "amount": 25 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.ossuary_path_chosen",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.act3_setup_ossuary",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 25
+                }
             ],
             "choices": [
                 {
@@ -1494,7 +2257,6 @@
             "music": "ambient_suspense",
             "isEnding": false
         },
-
         "act2ch2_040": {
             "id": "act2.chapter2.act2ch2_040",
             "title": "The Road Back",
@@ -1506,24 +2268,63 @@
                 "The city wall appears on the horizon. The checkpoint you escaped through hours ago is now fortified with double the guards. The war has made Meridian paranoid. Getting back in will be harder than getting out.",
                 "But you have something you didn't have before. You have the truth. All of it. The full scope of LATENCY, its history, its victims, its architect, and its next move.",
                 "The question is what you're going to do with it.",
-                { "condition": { "flag": "act2.act3_setup_coalition" }, "text": "The factions are your target. Unify them or die trying. The Vault won't crack itself open." },
-                { "condition": { "flag": "act2.act3_setup_undercity" }, "text": "The Undercity awaits. Dark, deep, and full of unknowns. The quiet path to the Vault, if you can survive the descent." },
-                { "condition": { "flag": "act2.act3_setup_ossuary" }, "text": "The Ossuary awaits. Noth and his growing army of true believers, sitting on top of the answer to everything. The most dangerous gamble, with the highest potential payoff." },
+                {
+                    "condition": {
+                        "flag": "act2.act3_setup_coalition"
+                    },
+                    "text": "The factions are your target. Unify them or die trying. The Vault won't crack itself open."
+                },
+                {
+                    "condition": {
+                        "flag": "act2.act3_setup_undercity"
+                    },
+                    "text": "The Undercity awaits. Dark, deep, and full of unknowns. The quiet path to the Vault, if you can survive the descent."
+                },
+                {
+                    "condition": {
+                        "flag": "act2.act3_setup_ossuary"
+                    },
+                    "text": "The Ossuary awaits. Noth and his growing army of true believers, sitting on top of the answer to everything. The most dangerous gamble, with the highest potential payoff."
+                },
                 "The war continues. The clock continues. And somewhere deep underground, the Architect continues his work.",
                 "Act 2, Chapter 2 complete. The story continues."
             ],
             "onEnter": [
-                { "type": "set_flag", "flag": "act2.chapter2.complete", "value": true },
-                { "type": "set_flag", "flag": "act2.chapter2.chen_survived", "value": true },
-                { "type": "set_flag", "flag": "act2.knows_latency_scope", "value": true },
-                { "type": "set_flag", "flag": "act2.knows_vault_location", "value": true },
-                { "type": "set_flag", "flag": "act2.marchetti_alive", "value": true },
-                { "type": "add_experience", "amount": 50 }
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.complete",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.chapter2.chen_survived",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.knows_latency_scope",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.knows_vault_location",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "act2.marchetti_alive",
+                    "value": true
+                },
+                {
+                    "type": "add_experience",
+                    "amount": 50
+                }
             ],
             "choices": [],
             "ascii": null,
             "music": "ambient_chapter_end",
-            "isEnding": false
+            "isEnding": false,
+            "autoNext": "act2.chapter3.act2ch3_001"
         }
     }
 }

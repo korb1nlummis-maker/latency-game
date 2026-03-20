@@ -174,8 +174,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Charisma 15] Convince Drask to assign your squad to infrastructure patrol instead of civilian roundups",
-                    "statCheck": { "stat": "charisma", "dc": 15 },
+                    "text": "[Charisma 13] Convince Drask to assign your squad to infrastructure patrol instead of civilian roundups",
+                    "statCheck": { "stat": "charisma", "dc": 13 },
                     "next": "act2.chapter1.act2_007a",
                     "failNext": "act2.chapter1.act2_007b"
                 },
@@ -291,8 +291,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Tech 15] Attempt to probe PANOPTICON's outer defenses without triggering an alert",
-                    "statCheck": { "stat": "tech", "dc": 15 },
+                    "text": "[Tech 13] Attempt to probe PANOPTICON's outer defenses without triggering an alert",
+                    "statCheck": { "stat": "tech", "dc": 13 },
                     "next": "act2.chapter1.act2_009a",
                     "failNext": "act2.chapter1.act2_009b"
                 },
@@ -484,8 +484,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Dexterity 16] Run the weapons through the drone patrol gap you spotted last week",
-                    "statCheck": { "stat": "dexterity", "dc": 16 },
+                    "text": "[Dexterity 14] Run the weapons through the drone patrol gap you spotted last week",
+                    "statCheck": { "stat": "dexterity", "dc": 14 },
                     "next": "act2.chapter1.act2_013a",
                     "failNext": "act2.chapter1.act2_013b"
                 },
@@ -954,8 +954,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Strength 15] Plan a direct breach through the loading dock",
-                    "statCheck": { "stat": "strength", "dc": 15 },
+                    "text": "[Strength 14] Plan a direct breach through the loading dock",
+                    "statCheck": { "stat": "strength", "dc": 14 },
                     "next": "act2.chapter1.act2_027a",
                     "failNext": "act2.chapter1.act2_027c"
                 },
@@ -1074,8 +1074,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Charisma 16] Negotiate for a copy of the protocol for yourself as well",
-                    "statCheck": { "stat": "charisma", "dc": 16 },
+                    "text": "[Charisma 14] Negotiate for a copy of the protocol for yourself as well",
+                    "statCheck": { "stat": "charisma", "dc": 14 },
                     "next": "act2.chapter1.act2_029a",
                     "failNext": "act2.chapter1.act2_029b"
                 },
@@ -1190,8 +1190,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Tech 15] Interface with the Observatory's network to locate the server fragments",
-                    "statCheck": { "stat": "tech", "dc": 15 },
+                    "text": "[Tech 14] Interface with the Observatory's network to locate the server fragments",
+                    "statCheck": { "stat": "tech", "dc": 14 },
                     "next": "act2.chapter1.act2_031a",
                     "failNext": "act2.chapter1.act2_031b"
                 },
@@ -1398,8 +1398,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Wisdom 16] Deliver the sermon to the Lower District gathering with conviction",
-                    "statCheck": { "stat": "wisdom", "dc": 16 },
+                    "text": "[Wisdom 14] Deliver the sermon to the Lower District gathering with conviction",
+                    "statCheck": { "stat": "wisdom", "dc": 14 },
                     "next": "act2.chapter1.act2_035a",
                     "failNext": "act2.chapter1.act2_035b"
                 },

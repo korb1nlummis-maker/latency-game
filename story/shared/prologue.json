@@ -488,8 +488,8 @@
             "onEnter": [],
             "choices": [
                 {
-                    "text": "[Wisdom 13] Read Mako's body language. Is she telling the truth?",
-                    "statCheck": { "stat": "wisdom", "dc": 13 },
+                    "text": "[Wisdom 11] Read Mako's body language. Is she telling the truth?",
+                    "statCheck": { "stat": "wisdom", "dc": 11 },
                     "next": "shared.prologue.node_014",
                     "failNext": "shared.prologue.node_014a"
                 },
@@ -602,8 +602,8 @@
             ],
             "choices": [
                 {
-                    "text": "[Charisma 14] \"Mako, I can see you're holding back. I need to know everything.\"",
-                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "text": "[Charisma 12] \"Mako, I can see you're holding back. I need to know everything.\"",
+                    "statCheck": { "stat": "charisma", "dc": 12 },
                     "next": "shared.prologue.node_014b",
                     "failNext": "shared.prologue.node_015"
                 },
@@ -746,20 +746,20 @@
                     "next": "shared.prologue.node_017"
                 },
                 {
-                    "text": "[Charisma 14] Talk your way out of this",
-                    "statCheck": { "stat": "charisma", "dc": 14 },
+                    "text": "[Charisma 11] Talk your way out of this",
+                    "statCheck": { "stat": "charisma", "dc": 11 },
                     "next": "shared.prologue.node_018",
                     "failNext": "shared.prologue.node_018a"
                 },
                 {
-                    "text": "[Dexterity 13] Run for the other end of the alley",
-                    "statCheck": { "stat": "dexterity", "dc": 13 },
+                    "text": "[Dexterity 11] Run for the other end of the alley",
+                    "statCheck": { "stat": "dexterity", "dc": 11 },
                     "next": "shared.prologue.node_019",
                     "failNext": "shared.prologue.node_019a"
                 },
                 {
-                    "text": "[Strength 15] Crack your knuckles and step toward them. \"You sure about this?\"",
-                    "statCheck": { "stat": "strength", "dc": 15 },
+                    "text": "[Strength 12] Crack your knuckles and step toward them. \"You sure about this?\"",
+                    "statCheck": { "stat": "strength", "dc": 12 },
                     "next": "shared.prologue.node_017a",
                     "failNext": "shared.prologue.node_017"
                 }
@@ -950,8 +950,8 @@
                     "next": "shared.prologue.node_017"
                 },
                 {
-                    "text": "[Dexterity 13] Run for it",
-                    "statCheck": { "stat": "dexterity", "dc": 13 },
+                    "text": "[Dexterity 11] Run for it",
+                    "statCheck": { "stat": "dexterity", "dc": 11 },
                     "next": "shared.prologue.node_019",
                     "failNext": "shared.prologue.node_019a"
                 }
@@ -1218,14 +1218,14 @@
                     "next": "shared.prologue.node_027"
                 },
                 {
-                    "text": "[Wisdom 14] Study the stack carefully before responding",
-                    "statCheck": { "stat": "wisdom", "dc": 14 },
+                    "text": "[Wisdom 12] Study the stack carefully before responding",
+                    "statCheck": { "stat": "wisdom", "dc": 12 },
                     "next": "shared.prologue.node_028",
                     "failNext": "shared.prologue.node_027"
                 },
                 {
-                    "text": "[Tech 13] Examine the stack's hardware specifications",
-                    "statCheck": { "stat": "tech", "dc": 13 },
+                    "text": "[Tech 11] Examine the stack's hardware specifications",
+                    "statCheck": { "stat": "tech", "dc": 11 },
                     "next": "shared.prologue.node_029",
                     "failNext": "shared.prologue.node_027"
                 }
@@ -1256,8 +1256,8 @@
                     "next": "shared.prologue.node_030a"
                 },
                 {
-                    "text": "[Wisdom 14] Study the stack more carefully",
-                    "statCheck": { "stat": "wisdom", "dc": 14 },
+                    "text": "[Wisdom 12] Study the stack more carefully",
+                    "statCheck": { "stat": "wisdom", "dc": 12 },
                     "next": "shared.prologue.node_028",
                     "failNext": "shared.prologue.node_030b"
                 }

@@ -131,7 +131,7 @@
                     "text": "\"What's the catch? Nobody teaches for free.\"",
                     "next": "jobs.hacker.hack_006",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 11
                     }
                 }
@@ -251,7 +251,7 @@
                     "text": "Exploit the web frontend — look for injection vulnerabilities.",
                     "next": "jobs.hacker.hack_010",
                     "statCheck": {
-                        "stat": "TECH",
+                        "stat": "tech",
                         "dc": 12
                     }
                 },
@@ -469,7 +469,7 @@
                     "text": "Target the IoT devices — smart meters are often overlooked in security audits.",
                     "next": "jobs.hacker.hack_016",
                     "statCheck": {
-                        "stat": "TECH",
+                        "stat": "tech",
                         "dc": 13
                     }
                 },
@@ -672,7 +672,7 @@
                     "text": "\"Why not go straight for Meridian?\"",
                     "next": "jobs.hacker.hack_023",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 13
                     }
                 }
@@ -792,7 +792,7 @@
                     "text": "Counter-hunt BlackICE. The best defense is offense.",
                     "next": "jobs.hacker.hack_027",
                     "statCheck": {
-                        "stat": "TECH",
+                        "stat": "tech",
                         "dc": 14
                     }
                 }
@@ -890,7 +890,7 @@
                     "text": "This sounds like it could start a war. Are we ready?",
                     "next": "jobs.hacker.hack_030",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 14
                     }
                 }
@@ -920,7 +920,7 @@
                     "text": "Prepare the exploit. This requires precision.",
                     "next": "jobs.hacker.hack_031",
                     "statCheck": {
-                        "stat": "TECH",
+                        "stat": "tech",
                         "dc": 15
                     }
                 }
@@ -1038,7 +1038,7 @@
                     "text": "Hold it. Use it as leverage instead of a weapon.",
                     "next": "jobs.hacker.hack_035",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 }
@@ -1141,7 +1141,7 @@
                     "text": "Try to communicate with ECHO directly.",
                     "next": "jobs.hacker.hack_038",
                     "statCheck": {
-                        "stat": "TECH",
+                        "stat": "tech",
                         "dc": 16
                     }
                 }
@@ -1426,7 +1426,7 @@
                     "text": "Push through the countermeasures. Complete the extraction.",
                     "next": "jobs.hacker.hack_047",
                     "statCheck": {
-                        "stat": "TECH",
+                        "stat": "tech",
                         "dc": 16
                     }
                 },
@@ -1750,7 +1750,7 @@
                     "text": "\"If you're going in, I'm going with you.\"",
                     "next": "jobs.hacker.hack_059",
                     "statCheck": {
-                        "stat": "TECH",
+                        "stat": "tech",
                         "dc": 16
                     }
                 }
@@ -1836,7 +1836,7 @@
                     "text": "Strategic use. Maximum leverage for systemic change.",
                     "next": "jobs.hacker.hack_062",
                     "statCheck": {
-                        "stat": "INT",
+                        "stat": "intelligence",
                         "dc": 15
                     }
                 }

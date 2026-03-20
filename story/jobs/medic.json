@@ -16,12 +16,26 @@
                 "The address is a converted shipping container in Block 14, where the overhead pipes weep rust-colored condensation and the air tastes like machine oil. You find your patient on a table made from a door laid across two sawhorses. He is a foundry worker, mid-forties, with a laceration across his abdomen that has exposed things that should remain interior."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.started", "value": true},
-                {"type": "set_flag", "flag": "job.medic.rank", "value": 1}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.started",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.rank",
+                    "value": 1
+                }
             ],
             "choices": [
-                {"text": "Get to work immediately — every second counts", "next": "jobs.medic.jmed_002"},
-                {"text": "Assess the wound carefully before touching anything", "next": "jobs.medic.jmed_003"}
+                {
+                    "text": "Get to work immediately — every second counts",
+                    "next": "jobs.medic.jmed_002"
+                },
+                {
+                    "text": "Assess the wound carefully before touching anything",
+                    "next": "jobs.medic.jmed_003"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -37,11 +51,21 @@
                 "Forty minutes later, the man is unconscious from pain and alcohol, his abdomen closed, his chances upgraded from certain death to merely terrible. His wife stands in the doorway holding a child who watches you with enormous eyes."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.first_patient_saved", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.first_patient_saved",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"He'll need antibiotics. I'll find some.\"", "next": "jobs.medic.jmed_004"},
-                {"text": "\"Keep the wound clean. I'll check on him tomorrow.\"", "next": "jobs.medic.jmed_004"}
+                {
+                    "text": "\"He'll need antibiotics. I'll find some.\"",
+                    "next": "jobs.medic.jmed_004"
+                },
+                {
+                    "text": "\"Keep the wound clean. I'll check on him tomorrow.\"",
+                    "next": "jobs.medic.jmed_004"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -58,11 +82,22 @@
                 "You work methodically, cleaning, suturing, closing. The fishing line holds. The wound seals. By the time you're done, the man is sleeping, which is the body's way of saying it believes it might survive after all."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.first_patient_saved", "value": true},
-                {"type": "set_flag", "flag": "job.medic.careful_approach", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.first_patient_saved",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.careful_approach",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Leave instructions with his wife and head out into the rain", "next": "jobs.medic.jmed_004"}
+                {
+                    "text": "Leave instructions with his wife and head out into the rain",
+                    "next": "jobs.medic.jmed_004"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -79,11 +114,21 @@
                 "This is medicine down here. Not healing. Triage. You sort the dying from the salvageable and do what you can for both, knowing it will never be enough."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 15, "reason": "Meager payment for services"}
+                {
+                    "type": "modify_currency",
+                    "amount": 15,
+                    "reason": "Meager payment for services"
+                }
             ],
             "choices": [
-                {"text": "Focus on the cases you can actually help", "next": "jobs.medic.jmed_005"},
-                {"text": "Try to find real medicine on the black market", "next": "jobs.medic.jmed_006"}
+                {
+                    "text": "Focus on the cases you can actually help",
+                    "next": "jobs.medic.jmed_005"
+                },
+                {
+                    "text": "Try to find real medicine on the black market",
+                    "next": "jobs.medic.jmed_006"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -100,8 +145,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Treat the gang enforcer — credits are credits", "next": "jobs.medic.jmed_007"},
-                {"text": "Refuse gang work on principle", "next": "jobs.medic.jmed_008"}
+                {
+                    "text": "Treat the gang enforcer — credits are credits",
+                    "next": "jobs.medic.jmed_007"
+                },
+                {
+                    "text": "Refuse gang work on principle",
+                    "next": "jobs.medic.jmed_008"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -119,11 +170,22 @@
                 "\"You can do three-quarters,\" she says. \"And I'll throw in a box of surgical gloves. Real ones, not the recycled kind that tear if you look at them wrong.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.knows_kess", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.knows_kess",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Pay the three-quarters price", "next": "jobs.medic.jmed_007", "cost": 50},
-                {"text": "Try to negotiate further", "next": "jobs.medic.jmed_007"}
+                {
+                    "text": "Pay the three-quarters price",
+                    "next": "jobs.medic.jmed_007",
+                    "cost": 50
+                },
+                {
+                    "text": "Try to negotiate further",
+                    "next": "jobs.medic.jmed_007"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -142,12 +204,26 @@
                 "The Bone Saints' lieutenant drops a credstick on the table. More money than you've seen in weeks."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 75, "reason": "Payment from Bone Saints"},
-                {"type": "set_flag", "flag": "job.medic.treated_gang_member", "value": true}
+                {
+                    "type": "modify_currency",
+                    "amount": 75,
+                    "reason": "Payment from Bone Saints"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.treated_gang_member",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"I treat anyone who needs it. I don't belong to any gang.\"", "next": "jobs.medic.jmed_009"},
-                {"text": "\"I'll keep you on my list. You keep me on yours.\"", "next": "jobs.medic.jmed_009"}
+                {
+                    "text": "\"I treat anyone who needs it. I don't belong to any gang.\"",
+                    "next": "jobs.medic.jmed_009"
+                },
+                {
+                    "text": "\"I'll keep you on my list. You keep me on yours.\"",
+                    "next": "jobs.medic.jmed_009"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -165,11 +241,21 @@
                 "In the end, the gangs find you whether you want them to or not. The only question is which ones, and on what terms."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.refused_bone_saints", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.refused_bone_saints",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Treat the Iron Chain fighter — at least they asked politely", "next": "jobs.medic.jmed_009"},
-                {"text": "Refuse again. You treat civilians, not combatants", "next": "jobs.medic.jmed_010"}
+                {
+                    "text": "Treat the Iron Chain fighter — at least they asked politely",
+                    "next": "jobs.medic.jmed_009"
+                },
+                {
+                    "text": "Refuse again. You treat civilians, not combatants",
+                    "next": "jobs.medic.jmed_010"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -186,11 +272,21 @@
                 "You sit on the floor of your container afterward, hands still red, and stare at the wall until the shaking stops."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.lost_first_patient", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.lost_first_patient",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Keep going. There are more patients who need you", "next": "jobs.medic.jmed_011"},
-                {"text": "Take a moment to grieve before continuing", "next": "jobs.medic.jmed_011"}
+                {
+                    "text": "Keep going. There are more patients who need you",
+                    "next": "jobs.medic.jmed_011"
+                },
+                {
+                    "text": "Take a moment to grieve before continuing",
+                    "next": "jobs.medic.jmed_011"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -207,11 +303,21 @@
                 "Then one night a child arrives at your door, carried by her father, and the child has been shot. The father is Bone Saints. The child is six years old. She is bleeding from her stomach and she is looking at you with eyes that do not understand what is happening to her."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.principled_doc", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.principled_doc",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Treat the child immediately — she's a child, not a gang member", "next": "jobs.medic.jmed_011"},
-                {"text": "Treat the child, but tell the father this changes nothing about your policy", "next": "jobs.medic.jmed_011"}
+                {
+                    "text": "Treat the child immediately — she's a child, not a gang member",
+                    "next": "jobs.medic.jmed_011"
+                },
+                {
+                    "text": "Treat the child, but tell the father this changes nothing about your policy",
+                    "next": "jobs.medic.jmed_011"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -228,8 +334,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Focus on the yellow group — maximize lives saved", "next": "jobs.medic.jmed_012"},
-                {"text": "Try to save everyone, even the reds — you refuse to write anyone off", "next": "jobs.medic.jmed_013"}
+                {
+                    "text": "Focus on the yellow group — maximize lives saved",
+                    "next": "jobs.medic.jmed_012"
+                },
+                {
+                    "text": "Try to save everyone, even the reds — you refuse to write anyone off",
+                    "next": "jobs.medic.jmed_013"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -248,12 +360,26 @@
                 "\"Twelve people are alive. That's what well looks like down here.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.triage_practical", "value": true},
-                {"type": "modify_currency", "amount": 30, "reason": "Community donations for saving lives"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.triage_practical",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 30,
+                    "reason": "Community donations for saving lives"
+                }
             ],
             "choices": [
-                {"text": "\"I need better supplies. Real equipment. Or the next spill kills more.\"", "next": "jobs.medic.jmed_014"},
-                {"text": "\"Teach me. I need to know more if I'm going to do this.\"", "next": "jobs.medic.jmed_014"}
+                {
+                    "text": "\"I need better supplies. Real equipment. Or the next spill kills more.\"",
+                    "next": "jobs.medic.jmed_014"
+                },
+                {
+                    "text": "\"Teach me. I need to know more if I'm going to do this.\"",
+                    "next": "jobs.medic.jmed_014"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -272,12 +398,26 @@
                 "\"I know. But I can refuse to be the one who decides who dies.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.triage_idealist", "value": true},
-                {"type": "modify_currency", "amount": 20, "reason": "Community donations"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.triage_idealist",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 20,
+                    "reason": "Community donations"
+                }
             ],
             "choices": [
-                {"text": "\"Teach me to be better. So I don't have to choose.\"", "next": "jobs.medic.jmed_014"},
-                {"text": "\"Where do I get real equipment? I need real tools.\"", "next": "jobs.medic.jmed_014"}
+                {
+                    "text": "\"Teach me to be better. So I don't have to choose.\"",
+                    "next": "jobs.medic.jmed_014"
+                },
+                {
+                    "text": "\"Where do I get real equipment? I need real tools.\"",
+                    "next": "jobs.medic.jmed_014"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -294,11 +434,21 @@
                 "\"I should warn you,\" he adds. \"The work never stops. The patients never end. And the system that creates them never changes. If you're looking for a career that makes you feel good about the world, this is not it.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.okafor_mentorship", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.okafor_mentorship",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"I'm not looking to feel good. I'm looking to keep people alive.\"", "next": "jobs.medic.jmed_015"},
-                {"text": "\"What about the system? Is there a way to change it?\"", "next": "jobs.medic.jmed_015"}
+                {
+                    "text": "\"I'm not looking to feel good. I'm looking to keep people alive.\"",
+                    "next": "jobs.medic.jmed_015"
+                },
+                {
+                    "text": "\"What about the system? Is there a way to change it?\"",
+                    "next": "jobs.medic.jmed_015"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -314,11 +464,21 @@
                 "Three weeks in, Okafor hands you a scalpel and steps back from the table. \"This one's yours,\" he says. The patient is a dockworker with an abscess the size of your fist. You drain it, pack it, close it. Your hands don't shake."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.surgical_training", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.surgical_training",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Ask Okafor about stack medicine — the real money", "next": "jobs.medic.jmed_016"},
-                {"text": "Continue focusing on trauma surgery", "next": "jobs.medic.jmed_017"}
+                {
+                    "text": "Ask Okafor about stack medicine — the real money",
+                    "next": "jobs.medic.jmed_016"
+                },
+                {
+                    "text": "Continue focusing on trauma surgery",
+                    "next": "jobs.medic.jmed_017"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -335,11 +495,21 @@
                 "He doesn't elaborate. But you file it away. There are things Okafor knows that he isn't ready to share, and there are reasons he lost his license that he hasn't told you."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.asked_about_stacks", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.asked_about_stacks",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Don't push. He'll tell you when he's ready", "next": "jobs.medic.jmed_018"},
-                {"text": "\"What happened to your license?\"", "next": "jobs.medic.jmed_017"}
+                {
+                    "text": "Don't push. He'll tell you when he's ready",
+                    "next": "jobs.medic.jmed_018"
+                },
+                {
+                    "text": "\"What happened to your license?\"",
+                    "next": "jobs.medic.jmed_017"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -356,11 +526,21 @@
                 "He looks at you directly. \"They didn't just take my license. They took my stack. I'm mortal now, same as the people I treat. Everything I know about stack medicine, I carry in my biological brain, which is degrading a little more each year. So yes — I know stack surgery. And yes, someday I will teach you. But not today.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.okafor_backstory", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.okafor_backstory",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"I understand. I'll earn it.\"", "next": "jobs.medic.jmed_018"},
-                {"text": "\"What happened to those patients? The fragmented ones?\"", "next": "jobs.medic.jmed_018"}
+                {
+                    "text": "\"I understand. I'll earn it.\"",
+                    "next": "jobs.medic.jmed_018"
+                },
+                {
+                    "text": "\"What happened to those patients? The fragmented ones?\"",
+                    "next": "jobs.medic.jmed_018"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -378,9 +558,18 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "\"I don't sell patient information. Get out.\"", "next": "jobs.medic.jmed_019"},
-                {"text": "\"I treat wounds, not sides. Both gangs bleed the same.\"", "next": "jobs.medic.jmed_019"},
-                {"text": "Consider it — the money could buy real medical equipment", "next": "jobs.medic.jmed_020"}
+                {
+                    "text": "\"I don't sell patient information. Get out.\"",
+                    "next": "jobs.medic.jmed_019"
+                },
+                {
+                    "text": "\"I treat wounds, not sides. Both gangs bleed the same.\"",
+                    "next": "jobs.medic.jmed_019"
+                },
+                {
+                    "text": "Consider it — the money could buy real medical equipment",
+                    "next": "jobs.medic.jmed_020"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -397,11 +586,21 @@
                 "You need to resupply. The question is how."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.maintained_neutrality", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.maintained_neutrality",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Raid the abandoned Meridian Medical depot in Sector 9", "next": "jobs.medic.jmed_021"},
-                {"text": "Go to the black market and pay whatever it costs", "next": "jobs.medic.jmed_022"}
+                {
+                    "text": "Raid the abandoned Meridian Medical depot in Sector 9",
+                    "next": "jobs.medic.jmed_021"
+                },
+                {
+                    "text": "Go to the black market and pay whatever it costs",
+                    "next": "jobs.medic.jmed_022"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -418,12 +617,26 @@
                 "You treat them. Of course you treat them. And the guilt settles into a place in your chest where it will live for a very long time."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 100, "reason": "Payment for information"},
-                {"type": "set_flag", "flag": "job.medic.sold_information", "value": true}
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Payment for information"
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.sold_information",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Never again. Use the money for supplies and move forward", "next": "jobs.medic.jmed_021"},
-                {"text": "The guilt is the price. Buy the equipment", "next": "jobs.medic.jmed_022"}
+                {
+                    "text": "Never again. Use the money for supplies and move forward",
+                    "next": "jobs.medic.jmed_021"
+                },
+                {
+                    "text": "The guilt is the price. Buy the equipment",
+                    "next": "jobs.medic.jmed_022"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -439,11 +652,21 @@
                 "The cables are not medical supplies. They are something else entirely — tools for interfacing with the technology that defines who lives and who dies in this city."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.found_stack_cables", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.found_stack_cables",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Take only the medical supplies. Leave the stack cables", "next": "jobs.medic.jmed_023"},
-                {"text": "Take everything. The cables might be useful someday", "next": "jobs.medic.jmed_023"}
+                {
+                    "text": "Take only the medical supplies. Leave the stack cables",
+                    "next": "jobs.medic.jmed_023"
+                },
+                {
+                    "text": "Take everything. The cables might be useful someday",
+                    "next": "jobs.medic.jmed_023"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -461,8 +684,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Buy the essentials only — stay out of debt", "next": "jobs.medic.jmed_023"},
-                {"text": "Take the credit. The scanner will save lives", "next": "jobs.medic.jmed_023"}
+                {
+                    "text": "Buy the essentials only — stay out of debt",
+                    "next": "jobs.medic.jmed_023"
+                },
+                {
+                    "text": "Take the credit. The scanner will save lives",
+                    "next": "jobs.medic.jmed_023"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -479,11 +708,21 @@
                 "There is a treatment. It is expensive, corporate-controlled, and not available in the Lower District. But it exists."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.kessler_case", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.kessler_case",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Tell the mother the truth and try to source the treatment", "next": "jobs.medic.jmed_024"},
-                {"text": "Treat the symptoms and buy time while you figure out options", "next": "jobs.medic.jmed_024"}
+                {
+                    "text": "Tell the mother the truth and try to source the treatment",
+                    "next": "jobs.medic.jmed_024"
+                },
+                {
+                    "text": "Treat the symptoms and buy time while you figure out options",
+                    "next": "jobs.medic.jmed_024"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -502,8 +741,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "\"We synthesize it. A child's life is worth the risk.\"", "next": "jobs.medic.jmed_025"},
-                {"text": "\"Let me try to get the real thing first. There might be a legal way.\"", "next": "jobs.medic.jmed_025"}
+                {
+                    "text": "\"We synthesize it. A child's life is worth the risk.\"",
+                    "next": "jobs.medic.jmed_025"
+                },
+                {
+                    "text": "\"Let me try to get the real thing first. There might be a legal way.\"",
+                    "next": "jobs.medic.jmed_025"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -520,12 +765,27 @@
                 "You are now a criminal. The weight of it should be heavier than it is."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.synthesized_illegal_drug", "value": true},
-                {"type": "set_flag", "flag": "job.medic.rank1_complete", "value": true},
-                {"type": "modify_currency", "amount": 50, "reason": "Rank 1 completion bonus"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.synthesized_illegal_drug",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.rank1_complete",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 50,
+                    "reason": "Rank 1 completion bonus"
+                }
             ],
             "choices": [
-                {"text": "You're ready for more. Ask Okafor about running a real clinic", "next": "jobs.medic.jmed_026"}
+                {
+                    "text": "You're ready for more. Ask Okafor about running a real clinic",
+                    "next": "jobs.medic.jmed_026"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -542,11 +802,22 @@
                 "Welcome to medicine. Rank 2."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.rank", "value": 2},
-                {"type": "set_flag", "flag": "job.medic.clinic_runner", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.rank",
+                    "value": 2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.clinic_runner",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Establish a routine and build the clinic's reputation", "next": "jobs.medic.jmed_027"}
+                {
+                    "text": "Establish a routine and build the clinic's reputation",
+                    "next": "jobs.medic.jmed_027"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -563,8 +834,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Investigate the morphine shipment quietly", "next": "jobs.medic.jmed_028"},
-                {"text": "Keep the morphine — patients need pain relief regardless of its origin", "next": "jobs.medic.jmed_029"}
+                {
+                    "text": "Investigate the morphine shipment quietly",
+                    "next": "jobs.medic.jmed_028"
+                },
+                {
+                    "text": "Keep the morphine — patients need pain relief regardless of its origin",
+                    "next": "jobs.medic.jmed_029"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -581,11 +858,21 @@
                 "\"So here's the deal,\" Perez says. \"We keep the pipeline secure. You keep receiving your supplies. And every third shipment carries a little extra cargo that doesn't concern you.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.discovered_drug_pipeline", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.discovered_drug_pipeline",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Refuse. Find another supply route, even if it's harder", "next": "jobs.medic.jmed_030"},
-                {"text": "Accept the arrangement. The clinic needs those supplies", "next": "jobs.medic.jmed_031"}
+                {
+                    "text": "Refuse. Find another supply route, even if it's harder",
+                    "next": "jobs.medic.jmed_030"
+                },
+                {
+                    "text": "Accept the arrangement. The clinic needs those supplies",
+                    "next": "jobs.medic.jmed_031"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -601,11 +888,21 @@
                 "Three weeks later, a teenager overdoses on morphine from a batch that matches your clinic's stock. He survives, barely. His mother comes to you, not knowing the connection, and asks you to treat him. You do."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.ignored_drug_pipeline", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.ignored_drug_pipeline",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "The overdose changes things. Investigate the source now", "next": "jobs.medic.jmed_030"},
-                {"text": "Tighten your own inventory controls but don't rock the boat", "next": "jobs.medic.jmed_031"}
+                {
+                    "text": "The overdose changes things. Investigate the source now",
+                    "next": "jobs.medic.jmed_030"
+                },
+                {
+                    "text": "Tighten your own inventory controls but don't rock the boat",
+                    "next": "jobs.medic.jmed_031"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -622,11 +919,22 @@
                 "But the clinic survives. And when you lock up at the end of a shift, your hands are clean in every sense that matters."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.clean_supply_chain", "value": true},
-                {"type": "modify_currency", "amount": -30, "reason": "Cost of establishing new supply routes"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.clean_supply_chain",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -30,
+                    "reason": "Cost of establishing new supply routes"
+                }
             ],
             "choices": [
-                {"text": "Focus on building the clinic's capacity with honest means", "next": "jobs.medic.jmed_032"}
+                {
+                    "text": "Focus on building the clinic's capacity with honest means",
+                    "next": "jobs.medic.jmed_032"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -643,11 +951,22 @@
                 "\"The clinic is doing good work,\" he says one evening. What he means is: is the good work enough to offset the rest? You don't have an answer."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.compromised_supply", "value": true},
-                {"type": "modify_currency", "amount": 40, "reason": "Reduced supply costs through gang arrangement"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.compromised_supply",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 40,
+                    "reason": "Reduced supply costs through gang arrangement"
+                }
             ],
             "choices": [
-                {"text": "Keep the arrangement and focus on the patients", "next": "jobs.medic.jmed_032"}
+                {
+                    "text": "Keep the arrangement and focus on the patients",
+                    "next": "jobs.medic.jmed_032"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -664,12 +983,25 @@
                 "One vial. Two patients. The mathematics of medicine at its most cruel."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.antivenom_choice", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.antivenom_choice",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Give the antivenom to the child", "next": "jobs.medic.jmed_033"},
-                {"text": "Give the antivenom to Malik — he protects the whole neighborhood", "next": "jobs.medic.jmed_034"},
-                {"text": "Try to split the dose between them", "next": "jobs.medic.jmed_035"}
+                {
+                    "text": "Give the antivenom to the child",
+                    "next": "jobs.medic.jmed_033"
+                },
+                {
+                    "text": "Give the antivenom to Malik — he protects the whole neighborhood",
+                    "next": "jobs.medic.jmed_034"
+                },
+                {
+                    "text": "Try to split the dose between them",
+                    "next": "jobs.medic.jmed_035"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -687,11 +1019,21 @@
                 "You saved a child and lost a protector. The calculus of that equation will never balance."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.saved_child_over_malik", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.saved_child_over_malik",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Organize a volunteer patrol to replace Malik's role", "next": "jobs.medic.jmed_036"},
-                {"text": "Focus on sourcing more antivenom to prevent future dilemmas", "next": "jobs.medic.jmed_036"}
+                {
+                    "text": "Organize a volunteer patrol to replace Malik's role",
+                    "next": "jobs.medic.jmed_036"
+                },
+                {
+                    "text": "Focus on sourcing more antivenom to prevent future dilemmas",
+                    "next": "jobs.medic.jmed_036"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -709,10 +1051,17 @@
                 "The mother never comes to the clinic again."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.saved_malik_over_child", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.saved_malik_over_child",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Carry the weight and keep working", "next": "jobs.medic.jmed_036"}
+                {
+                    "text": "Carry the weight and keep working",
+                    "next": "jobs.medic.jmed_036"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -729,10 +1078,17 @@
                 "Both alive. Both damaged. Both looking at you with gratitude you don't feel you've earned."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.split_antivenom", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.split_antivenom",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Monitor both patients through their recovery", "next": "jobs.medic.jmed_036"}
+                {
+                    "text": "Monitor both patients through their recovery",
+                    "next": "jobs.medic.jmed_036"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -749,11 +1105,21 @@
                 "There are seventeen more. All in the same residential stack. All with the same symptoms. All deteriorating."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.plague_started", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.plague_started",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Set up a quarantine zone in the clinic", "next": "jobs.medic.jmed_037"},
-                {"text": "Go to Block 22 personally to assess the situation", "next": "jobs.medic.jmed_037"}
+                {
+                    "text": "Set up a quarantine zone in the clinic",
+                    "next": "jobs.medic.jmed_037"
+                },
+                {
+                    "text": "Go to Block 22 personally to assess the situation",
+                    "next": "jobs.medic.jmed_037"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -770,11 +1136,21 @@
                 "You take samples — sputum, blood, swabs of the ventilation ducts. Okafor's lab equipment is limited but functional. What you find makes your stomach drop: a synthetic pathogen. Engineered. Someone made this."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.discovered_synthetic_plague", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.discovered_synthetic_plague",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Tell Okafor immediately — this needs to be reported", "next": "jobs.medic.jmed_038"},
-                {"text": "Investigate the ventilation system for the source", "next": "jobs.medic.jmed_038"}
+                {
+                    "text": "Tell Okafor immediately — this needs to be reported",
+                    "next": "jobs.medic.jmed_038"
+                },
+                {
+                    "text": "Investigate the ventilation system for the source",
+                    "next": "jobs.medic.jmed_038"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -793,8 +1169,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Focus on treating the sick while Okafor works on a cure", "next": "jobs.medic.jmed_039"},
-                {"text": "Try to find the source — who planted the pathogen?", "next": "jobs.medic.jmed_039"}
+                {
+                    "text": "Focus on treating the sick while Okafor works on a cure",
+                    "next": "jobs.medic.jmed_039"
+                },
+                {
+                    "text": "Try to find the source — who planted the pathogen?",
+                    "next": "jobs.medic.jmed_039"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -812,8 +1194,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Test it first — even in crisis, you need to know it works", "next": "jobs.medic.jmed_040"},
-                {"text": "Distribute it now — people are dying every hour", "next": "jobs.medic.jmed_041"}
+                {
+                    "text": "Test it first — even in crisis, you need to know it works",
+                    "next": "jobs.medic.jmed_040"
+                },
+                {
+                    "text": "Distribute it now — people are dying every hour",
+                    "next": "jobs.medic.jmed_041"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -830,10 +1218,17 @@
                 "Twelve hours later, Reena is sitting up and asking for soup. The antiviral works. Three more patients died during the test period — three lives that the delay cost. But now you know the treatment is safe, and you begin mass distribution with confidence."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.tested_antiviral", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.tested_antiviral",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Begin treating all patients immediately", "next": "jobs.medic.jmed_042"}
+                {
+                    "text": "Begin treating all patients immediately",
+                    "next": "jobs.medic.jmed_042"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -851,10 +1246,17 @@
                 "\"No. This time.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.distributed_untested", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.distributed_untested",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"Sometimes luck is all you've got down here.\"", "next": "jobs.medic.jmed_042"}
+                {
+                    "text": "\"Sometimes luck is all you've got down here.\"",
+                    "next": "jobs.medic.jmed_042"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -870,11 +1272,21 @@
                 "But the question of the engineered pathogen remains unanswered. Someone made that virus. Someone deployed it. And if they did it once, they can do it again."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 60, "reason": "Community donations after plague treatment"}
+                {
+                    "type": "modify_currency",
+                    "amount": 60,
+                    "reason": "Community donations after plague treatment"
+                }
             ],
             "choices": [
-                {"text": "Investigate the pathogen's origin — who made it and why?", "next": "jobs.medic.jmed_043"},
-                {"text": "Focus on preparedness — stockpile antivirals for the next outbreak", "next": "jobs.medic.jmed_044"}
+                {
+                    "text": "Investigate the pathogen's origin — who made it and why?",
+                    "next": "jobs.medic.jmed_043"
+                },
+                {
+                    "text": "Focus on preparedness — stockpile antivirals for the next outbreak",
+                    "next": "jobs.medic.jmed_044"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -891,11 +1303,21 @@
                 "Okafor's advice: \"Be careful. Corporations don't commit crimes — they commit policies. And they eliminate policy risks.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.traced_pathogen", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.traced_pathogen",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Store the evidence safely. It may be useful later", "next": "jobs.medic.jmed_045"},
-                {"text": "Try to leak it to an independent journalist", "next": "jobs.medic.jmed_045"}
+                {
+                    "text": "Store the evidence safely. It may be useful later",
+                    "next": "jobs.medic.jmed_045"
+                },
+                {
+                    "text": "Try to leak it to an independent journalist",
+                    "next": "jobs.medic.jmed_045"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -912,10 +1334,17 @@
                 "Okafor nods approvingly. \"Prevention is the most thankless form of medicine. Nobody thanks you for the epidemic that didn't happen.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.built_preparedness", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.built_preparedness",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "You've proven yourself. Ask Okafor about the next level", "next": "jobs.medic.jmed_045"}
+                {
+                    "text": "You've proven yourself. Ask Okafor about the next level",
+                    "next": "jobs.medic.jmed_045"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -933,9 +1362,18 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Side with Voss — sustainability matters, even if it means some patients pay", "next": "jobs.medic.jmed_046"},
-                {"text": "Side with Sister Dena — free care is the whole point", "next": "jobs.medic.jmed_046"},
-                {"text": "Propose a compromise — sliding scale based on ability to pay", "next": "jobs.medic.jmed_046"}
+                {
+                    "text": "Side with Voss — sustainability matters, even if it means some patients pay",
+                    "next": "jobs.medic.jmed_046"
+                },
+                {
+                    "text": "Side with Sister Dena — free care is the whole point",
+                    "next": "jobs.medic.jmed_046"
+                },
+                {
+                    "text": "Propose a compromise — sliding scale based on ability to pay",
+                    "next": "jobs.medic.jmed_046"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -952,11 +1390,21 @@
                 "The alternatives, it becomes clear, involve the clinic registering with the Meridian Medical Authority, accepting corporate oversight, and — crucially — requiring stack registration for all patients. The very thing the clinic was built to avoid."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.inspector_graves", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.inspector_graves",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Stall him while you figure out options", "next": "jobs.medic.jmed_047"},
-                {"text": "Tell him to do his worst — you won't register patients", "next": "jobs.medic.jmed_048"}
+                {
+                    "text": "Stall him while you figure out options",
+                    "next": "jobs.medic.jmed_047"
+                },
+                {
+                    "text": "Tell him to do his worst — you won't register patients",
+                    "next": "jobs.medic.jmed_048"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -974,10 +1422,17 @@
                 "The 30-day deadline passes without enforcement."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.stalled_inspector", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.stalled_inspector",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Use the breathing room to strengthen the clinic's position", "next": "jobs.medic.jmed_049"}
+                {
+                    "text": "Use the breathing room to strengthen the clinic's position",
+                    "next": "jobs.medic.jmed_049"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -995,10 +1450,17 @@
                 "You've won a battle. The war continues."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.defied_inspector", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.defied_inspector",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Prepare for whatever comes next", "next": "jobs.medic.jmed_049"}
+                {
+                    "text": "Prepare for whatever comes next",
+                    "next": "jobs.medic.jmed_049"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1015,11 +1477,22 @@
                 "The weight of what he's offering settles on you. Not just knowledge — responsibility. Legacy. The burden of being the only one who knows."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.okafor_dying", "value": true},
-                {"type": "set_flag", "flag": "job.medic.rank2_complete", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.okafor_dying",
+                    "value": true
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.rank2_complete",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"Teach me everything. I'll carry what you can't.\"", "next": "jobs.medic.jmed_050"}
+                {
+                    "text": "\"Teach me everything. I'll carry what you can't.\"",
+                    "next": "jobs.medic.jmed_050"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1036,11 +1509,22 @@
                 "Rank 3. Stack Surgeon."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.rank", "value": 3},
-                {"type": "set_flag", "flag": "job.medic.stack_surgeon", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.rank",
+                    "value": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.stack_surgeon",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Begin learning stack surgery from Okafor", "next": "jobs.medic.jmed_051"}
+                {
+                    "text": "Begin learning stack surgery from Okafor",
+                    "next": "jobs.medic.jmed_051"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1057,11 +1541,21 @@
                 "\"Fragmentation. The consciousness splits. Parts of the personality encode to the stack while other parts remain in the organic brain. The patient becomes two incomplete people sharing one body. The corporations call it 'integration failure.' I call it what it is: a broken soul.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.stack_theory", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.stack_theory",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"How do you prevent fragmentation?\"", "next": "jobs.medic.jmed_052"},
-                {"text": "\"Can the fragmented be healed?\"", "next": "jobs.medic.jmed_052"}
+                {
+                    "text": "\"How do you prevent fragmentation?\"",
+                    "next": "jobs.medic.jmed_052"
+                },
+                {
+                    "text": "\"Can the fragmented be healed?\"",
+                    "next": "jobs.medic.jmed_052"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1079,8 +1573,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "\"I need a living patient to truly learn.\"", "next": "jobs.medic.jmed_053"},
-                {"text": "Continue practicing until you're certain of your skill", "next": "jobs.medic.jmed_053"}
+                {
+                    "text": "\"I need a living patient to truly learn.\"",
+                    "next": "jobs.medic.jmed_053"
+                },
+                {
+                    "text": "Continue practicing until you're certain of your skill",
+                    "next": "jobs.medic.jmed_053"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1099,11 +1599,22 @@
                 "You run the diagnostic. Clean integration. Zero fragmentation. A perfect installation."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.first_stack_surgery", "value": true},
-                {"type": "modify_currency", "amount": 100, "reason": "Payment for stack installation"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.first_stack_surgery",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Payment for stack installation"
+                }
             ],
             "choices": [
-                {"text": "\"It worked. You're going to be fine.\"", "next": "jobs.medic.jmed_054"}
+                {
+                    "text": "\"It worked. You're going to be fine.\"",
+                    "next": "jobs.medic.jmed_054"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1121,8 +1632,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Limit stack surgeries to those who truly need them for survival", "next": "jobs.medic.jmed_055"},
-                {"text": "Anyone who wants a stack deserves access — expand operations", "next": "jobs.medic.jmed_056"}
+                {
+                    "text": "Limit stack surgeries to those who truly need them for survival",
+                    "next": "jobs.medic.jmed_055"
+                },
+                {
+                    "text": "Anyone who wants a stack deserves access — expand operations",
+                    "next": "jobs.medic.jmed_056"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1139,10 +1656,17 @@
                 "The man leaves angry. His mother dies two weeks later, mortal and final. He never comes back."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.stack_gatekeeper", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.stack_gatekeeper",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Hold the line. The clinic's survival matters more than any individual case", "next": "jobs.medic.jmed_057"}
+                {
+                    "text": "Hold the line. The clinic's survival matters more than any individual case",
+                    "next": "jobs.medic.jmed_057"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1159,12 +1683,26 @@
                 "Then a patient's unregistered stack pings a corporate scanner during a routine transit check. The signal traces back to your lab's hardware signature. Someone is coming."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.stack_open_access", "value": true},
-                {"type": "modify_currency", "amount": 150, "reason": "Stack surgery payments"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.stack_open_access",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 150,
+                    "reason": "Stack surgery payments"
+                }
             ],
             "choices": [
-                {"text": "Shut everything down and go dark", "next": "jobs.medic.jmed_057"},
-                {"text": "Change the hardware signatures and keep operating", "next": "jobs.medic.jmed_057"}
+                {
+                    "text": "Shut everything down and go dark",
+                    "next": "jobs.medic.jmed_057"
+                },
+                {
+                    "text": "Change the hardware signatures and keep operating",
+                    "next": "jobs.medic.jmed_057"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1182,11 +1720,21 @@
                 "At minute sixty-three, you stop. Kenji is gone. The stack recorded partial consciousness data — fragments of a person, echoes without enough continuity to reconstitute. He is dead in every way that matters."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.patient_died_on_table", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.patient_died_on_table",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Sit with the body. You owe him that", "next": "jobs.medic.jmed_058"},
-                {"text": "Analyze what went wrong. Prevent it from happening again", "next": "jobs.medic.jmed_058"}
+                {
+                    "text": "Sit with the body. You owe him that",
+                    "next": "jobs.medic.jmed_058"
+                },
+                {
+                    "text": "Analyze what went wrong. Prevent it from happening again",
+                    "next": "jobs.medic.jmed_058"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1207,8 +1755,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Review every aspect of the procedure for improvements", "next": "jobs.medic.jmed_059"},
-                {"text": "Take time away from stack surgery to recover", "next": "jobs.medic.jmed_059"}
+                {
+                    "text": "Review every aspect of the procedure for improvements",
+                    "next": "jobs.medic.jmed_059"
+                },
+                {
+                    "text": "Take time away from stack surgery to recover",
+                    "next": "jobs.medic.jmed_059"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1226,11 +1780,21 @@
                 "\"I don't know. I've never had the skill or the equipment to try. But you might.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.found_fragmented_patients", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.found_fragmented_patients",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Study the fragmented patients — try to find a way to heal them", "next": "jobs.medic.jmed_060"},
-                {"text": "\"We should let them go, Okafor. This isn't living.\"", "next": "jobs.medic.jmed_061"}
+                {
+                    "text": "Study the fragmented patients — try to find a way to heal them",
+                    "next": "jobs.medic.jmed_060"
+                },
+                {
+                    "text": "\"We should let them go, Okafor. This isn't living.\"",
+                    "next": "jobs.medic.jmed_061"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1247,11 +1811,21 @@
                 "Okafor cannot help. His hands are too far gone. This is yours alone."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.attempting_reintegration", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.attempting_reintegration",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Attempt the reintegration on the most stable patient first", "next": "jobs.medic.jmed_062"},
-                {"text": "Continue studying — you need more data before attempting this", "next": "jobs.medic.jmed_062"}
+                {
+                    "text": "Attempt the reintegration on the most stable patient first",
+                    "next": "jobs.medic.jmed_062"
+                },
+                {
+                    "text": "Continue studying — you need more data before attempting this",
+                    "next": "jobs.medic.jmed_062"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1271,8 +1845,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "\"Then I'll try. I'll try to heal them before it's too late.\"", "next": "jobs.medic.jmed_062"},
-                {"text": "\"I respect your hope. Let me study them first.\"", "next": "jobs.medic.jmed_062"}
+                {
+                    "text": "\"Then I'll try. I'll try to heal them before it's too late.\"",
+                    "next": "jobs.medic.jmed_062"
+                },
+                {
+                    "text": "\"I respect your hope. Let me study them first.\"",
+                    "next": "jobs.medic.jmed_062"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1289,10 +1869,17 @@
                 "At hour eleven, the integration monitor reads: COHERENCE 94%. Not perfect. But functional. Human."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.reintegrated_patient", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.reintegrated_patient",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Wake him up", "next": "jobs.medic.jmed_063"}
+                {
+                    "text": "Wake him up",
+                    "next": "jobs.medic.jmed_063"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1311,11 +1898,21 @@
                 "Okafor weeps. The first time you've seen him cry."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 75, "reason": "Breakthrough medical achievement"}
+                {
+                    "type": "modify_currency",
+                    "amount": 75,
+                    "reason": "Breakthrough medical achievement"
+                }
             ],
             "choices": [
-                {"text": "Attempt reintegration on the other two patients", "next": "jobs.medic.jmed_064"},
-                {"text": "Give Dmitri time to recover before attempting more procedures", "next": "jobs.medic.jmed_064"}
+                {
+                    "text": "Attempt reintegration on the other two patients",
+                    "next": "jobs.medic.jmed_064"
+                },
+                {
+                    "text": "Give Dmitri time to recover before attempting more procedures",
+                    "next": "jobs.medic.jmed_064"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1332,11 +1929,21 @@
                 "The request is simple. The implications are not. If you share the technique, Meridian gains the ability to heal fragmentation — but also to understand consciousness at a level that could be used for manipulation, control, weaponization of the very technology that defines personhood."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.corporate_interest", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.corporate_interest",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Share the technique — the knowledge could save thousands of fragmented patients", "next": "jobs.medic.jmed_065"},
-                {"text": "Refuse — you don't trust what Meridian will do with this knowledge", "next": "jobs.medic.jmed_066"}
+                {
+                    "text": "Share the technique — the knowledge could save thousands of fragmented patients",
+                    "next": "jobs.medic.jmed_065"
+                },
+                {
+                    "text": "Refuse — you don't trust what Meridian will do with this knowledge",
+                    "next": "jobs.medic.jmed_066"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1353,10 +1960,17 @@
                 "But the fragmented patients across the city begin receiving treatment. Forty-seven reintegrations in the first month. Lives restored. The knowledge is doing good, even if the credit went to the wrong people."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.shared_with_meridian", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.shared_with_meridian",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "The results matter more than the credit. Keep working", "next": "jobs.medic.jmed_067"}
+                {
+                    "text": "The results matter more than the credit. Keep working",
+                    "next": "jobs.medic.jmed_067"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1374,10 +1988,17 @@
                 "Voss nods slowly. \"That's a lot of surgery for one person. I hope your hands hold out longer than Dr. Okafor's did.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.refused_meridian", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.refused_meridian",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Begin treating fragmented patients from Meridian's facilities", "next": "jobs.medic.jmed_067"}
+                {
+                    "text": "Begin treating fragmented patients from Meridian's facilities",
+                    "next": "jobs.medic.jmed_067"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1396,11 +2017,21 @@
                 "\"Save me. Or let me go. But don't let me become something less than who I was.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.okafor_collapsed", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.okafor_collapsed",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"I can install a stack. Back up your consciousness before the degradation takes everything.\"", "next": "jobs.medic.jmed_068"},
-                {"text": "\"What do you want, Okafor? Tell me what you want.\"", "next": "jobs.medic.jmed_069"}
+                {
+                    "text": "\"I can install a stack. Back up your consciousness before the degradation takes everything.\"",
+                    "next": "jobs.medic.jmed_068"
+                },
+                {
+                    "text": "\"What do you want, Okafor? Tell me what you want.\"",
+                    "next": "jobs.medic.jmed_069"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1418,10 +2049,17 @@
                 "His body will still deteriorate. But Okafor — the essential, irreducible Okafor — is backed up. Safe. Immortal in the way that only a stack can provide."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.saved_okafor_stack", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.saved_okafor_stack",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"Now teach me everything you have left. While you still can.\"", "next": "jobs.medic.jmed_070"}
+                {
+                    "text": "\"Now teach me everything you have left. While you still can.\"",
+                    "next": "jobs.medic.jmed_070"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1439,11 +2077,21 @@
                 "\"Promise me,\" he says. \"When the time comes, let me go.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.okafor_chose_mortality", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.okafor_chose_mortality",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "\"I promise.\" And mean it", "next": "jobs.medic.jmed_070"},
-                {"text": "\"I can't promise that. But I hear you.\"", "next": "jobs.medic.jmed_070"}
+                {
+                    "text": "\"I promise.\" And mean it",
+                    "next": "jobs.medic.jmed_070"
+                },
+                {
+                    "text": "\"I can't promise that. But I hear you.\"",
+                    "next": "jobs.medic.jmed_070"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1460,10 +2108,17 @@
                 "\"Take care of them,\" Okafor tells you that evening. He doesn't specify who. He means everyone."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.rank3_complete", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.rank3_complete",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Accept the mantle. You are the clinic's doctor now", "next": "jobs.medic.jmed_071"}
+                {
+                    "text": "Accept the mantle. You are the clinic's doctor now",
+                    "next": "jobs.medic.jmed_071"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1480,12 +2135,27 @@
                 "Rank 4. Chief of Medicine. The hardest rank of all, because now the choices are systemic."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.rank", "value": 4},
-                {"type": "set_flag", "flag": "job.medic.chief_of_medicine", "value": true},
-                {"type": "modify_currency", "amount": 100, "reason": "Rank 4 bonus"}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.rank",
+                    "value": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.chief_of_medicine",
+                    "value": true
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": 100,
+                    "reason": "Rank 4 bonus"
+                }
             ],
             "choices": [
-                {"text": "Assess the district's healthcare needs and plan your approach", "next": "jobs.medic.jmed_072"}
+                {
+                    "text": "Assess the district's healthcare needs and plan your approach",
+                    "next": "jobs.medic.jmed_072"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1502,11 +2172,21 @@
                 "You check. The mutations are systematic. Someone has released a second-generation bioweapon. And this time, they've designed it to resist your cure."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.plague_returned", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.plague_returned",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Develop a new antiviral — you've done it before", "next": "jobs.medic.jmed_073"},
-                {"text": "Find whoever is releasing these bioweapons and stop them at the source", "next": "jobs.medic.jmed_074"}
+                {
+                    "text": "Develop a new antiviral — you've done it before",
+                    "next": "jobs.medic.jmed_073"
+                },
+                {
+                    "text": "Find whoever is releasing these bioweapons and stop them at the source",
+                    "next": "jobs.medic.jmed_074"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1523,10 +2203,17 @@
                 "You build a crude EM emitter from salvaged parts. You test it on a blood sample. The pathogen dissolves. You scale the emitter to room size. Then building size."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.developed_em_cure", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.developed_em_cure",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Deploy the cure across the infected blocks", "next": "jobs.medic.jmed_075"}
+                {
+                    "text": "Deploy the cure across the infected blocks",
+                    "next": "jobs.medic.jmed_075"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1543,11 +2230,21 @@
                 "Hale is not here. But his work is."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.found_hale_lab", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.found_hale_lab",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Destroy the lab and everything in it", "next": "jobs.medic.jmed_075"},
-                {"text": "Preserve the evidence — this needs to be exposed publicly", "next": "jobs.medic.jmed_075"}
+                {
+                    "text": "Destroy the lab and everything in it",
+                    "next": "jobs.medic.jmed_075"
+                },
+                {
+                    "text": "Preserve the evidence — this needs to be exposed publicly",
+                    "next": "jobs.medic.jmed_075"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1564,13 +2261,29 @@
                 "The weight of the choice is immense. But you've been carrying weights since your first night as a street doc, and your back hasn't broken yet."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.approaching_endgame", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.approaching_endgame",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Build a free healthcare system for the entire Lower District", "next": "jobs.medic.jmed_076"},
-                {"text": "Use the cure as leverage to force corporate reform", "next": "jobs.medic.jmed_080"},
-                {"text": "Expose everything publicly — the bioweapons, the corporate crimes, all of it", "next": "jobs.medic.jmed_084"},
-                {"text": "Go after Hale directly — some problems require personal solutions", "next": "jobs.medic.jmed_088"}
+                {
+                    "text": "Build a free healthcare system for the entire Lower District",
+                    "next": "jobs.medic.jmed_076"
+                },
+                {
+                    "text": "Use the cure as leverage to force corporate reform",
+                    "next": "jobs.medic.jmed_080"
+                },
+                {
+                    "text": "Expose everything publicly — the bioweapons, the corporate crimes, all of it",
+                    "next": "jobs.medic.jmed_084"
+                },
+                {
+                    "text": "Go after Hale directly — some problems require personal solutions",
+                    "next": "jobs.medic.jmed_088"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1587,7 +2300,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Continue building the network", "next": "jobs.medic.jmed_077"}
+                {
+                    "text": "Continue building the network",
+                    "next": "jobs.medic.jmed_077"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1604,7 +2320,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Defend the network and press forward", "next": "jobs.medic.jmed_078"}
+                {
+                    "text": "Defend the network and press forward",
+                    "next": "jobs.medic.jmed_078"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1621,10 +2340,17 @@
                 "One patient. One life. The entire calculus changes."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 200, "reason": "Corporate donation from Harrington"}
+                {
+                    "type": "modify_currency",
+                    "amount": 200,
+                    "reason": "Corporate donation from Harrington"
+                }
             ],
             "choices": [
-                {"text": "Accept the help and use it to cement the network's future", "next": "jobs.medic.jmed_079"}
+                {
+                    "text": "Accept the help and use it to cement the network's future",
+                    "next": "jobs.medic.jmed_079"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1642,7 +2368,11 @@
                 "The work continues. It always continues. But for the first time, the system works for everyone, and the hands that built it were yours."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.ending_healer", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.ending_healer",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1661,7 +2391,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Hold firm on all demands", "next": "jobs.medic.jmed_081"}
+                {
+                    "text": "Hold firm on all demands",
+                    "next": "jobs.medic.jmed_081"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1679,7 +2412,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Press the advantage while they're vulnerable", "next": "jobs.medic.jmed_082"}
+                {
+                    "text": "Press the advantage while they're vulnerable",
+                    "next": "jobs.medic.jmed_082"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1695,10 +2431,17 @@
                 "It is not justice. Justice would involve the architects of the plague facing consequences. Justice would involve Hale in a cell. What you've achieved is improvement — systemic, structural, real — and in the Lower District, improvement is the closest thing to justice that exists."
             ],
             "onEnter": [
-                {"type": "modify_currency", "amount": 250, "reason": "Corporate healthcare funding secured"}
+                {
+                    "type": "modify_currency",
+                    "amount": 250,
+                    "reason": "Corporate healthcare funding secured"
+                }
             ],
             "choices": [
-                {"text": "Return to the clinic and implement the changes", "next": "jobs.medic.jmed_083"}
+                {
+                    "text": "Return to the clinic and implement the changes",
+                    "next": "jobs.medic.jmed_083"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1716,7 +2459,11 @@
                 "You are the doctor who forced a corporation to care about the poor. It is not a fairy tale ending. It is a real one."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.ending_reformer", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.ending_reformer",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1734,7 +2481,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Release the data", "next": "jobs.medic.jmed_085"}
+                {
+                    "text": "Release the data",
+                    "next": "jobs.medic.jmed_085"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1751,7 +2501,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Use the window to push for systemic change while attention holds", "next": "jobs.medic.jmed_086"}
+                {
+                    "text": "Use the window to push for systemic change while attention holds",
+                    "next": "jobs.medic.jmed_086"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1769,7 +2522,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "See it through to the end", "next": "jobs.medic.jmed_087"}
+                {
+                    "text": "See it through to the end",
+                    "next": "jobs.medic.jmed_087"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1787,7 +2543,11 @@
                 "\"Good,\" you say. \"I've been hiding since I started. It's time to practice medicine in the light.\""
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.ending_whistleblower", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.ending_whistleblower",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1805,7 +2565,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Call in favors from the community to track Hale", "next": "jobs.medic.jmed_089"}
+                {
+                    "text": "Call in favors from the community to track Hale",
+                    "next": "jobs.medic.jmed_089"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1822,11 +2585,21 @@
                 "Or you could use the syringe for something else. Something permanent. Something that would ensure he never builds another plague."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.found_hale", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.found_hale",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Sedate him and bring him back for public trial", "next": "jobs.medic.jmed_090"},
-                {"text": "End him. Some problems only have one solution", "next": "jobs.medic.jmed_091"}
+                {
+                    "text": "Sedate him and bring him back for public trial",
+                    "next": "jobs.medic.jmed_090"
+                },
+                {
+                    "text": "End him. Some problems only have one solution",
+                    "next": "jobs.medic.jmed_091"
+                }
             ],
             "ascii": null,
             "music": "tension_building",
@@ -1844,8 +2617,14 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Advocate for mercy — imprisonment, not death", "next": "jobs.medic.jmed_092"},
-                {"text": "Let the community decide without your influence", "next": "jobs.medic.jmed_092"}
+                {
+                    "text": "Advocate for mercy — imprisonment, not death",
+                    "next": "jobs.medic.jmed_092"
+                },
+                {
+                    "text": "Let the community decide without your influence",
+                    "next": "jobs.medic.jmed_092"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1863,10 +2642,17 @@
                 "You sedate him with the original dose and carry him out."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.spared_hale", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.spared_hale",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Bring him back for the community to decide", "next": "jobs.medic.jmed_092"}
+                {
+                    "text": "Bring him back for the community to decide",
+                    "next": "jobs.medic.jmed_092"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1883,7 +2669,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Return to the clinic. The work continues", "next": "jobs.medic.jmed_093"}
+                {
+                    "text": "Return to the clinic. The work continues",
+                    "next": "jobs.medic.jmed_093"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1900,7 +2689,11 @@
                 "You are the doctor who fought back. The healer who became a hunter and then became a healer again. The legacy is complicated. The patients don't care about legacies. They care that you're here, and your hands are steady, and the clinic's light is on."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.ending_avenger", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.ending_avenger",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
@@ -1918,7 +2711,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Continue managing the mass casualty event", "next": "jobs.medic.jmed_095"}
+                {
+                    "text": "Continue managing the mass casualty event",
+                    "next": "jobs.medic.jmed_095"
+                }
             ],
             "ascii": null,
             "music": "combat_heavy",
@@ -1934,10 +2730,17 @@
                 "Torres becomes an unlikely ally. He doesn't change the system from within — that's a fantasy — but he stops enforcing it against your clinic. Inspections are missed. Reports are misfiled. A small act of individual decency in an indecent system. It's not much. It's enough."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.saved_torres", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.saved_torres",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Accept his help quietly and keep working", "next": "jobs.medic.jmed_096"}
+                {
+                    "text": "Accept his help quietly and keep working",
+                    "next": "jobs.medic.jmed_096"
+                }
             ],
             "ascii": null,
             "music": "ambient_dark_city",
@@ -1954,10 +2757,17 @@
                 "They stay anyway. All six of them."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.trained_doctors", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.trained_doctors",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Send them to establish clinics across the district", "next": "jobs.medic.jmed_097"}
+                {
+                    "text": "Send them to establish clinics across the district",
+                    "next": "jobs.medic.jmed_097"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1974,10 +2784,17 @@
                 "You write his name in the ledger. The last name, for now. Not because death has stopped but because the ledger is full, and you need a new one. You start a new ledger with a blank first page that you know will not stay blank for long."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.okafor_dead", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.okafor_dead",
+                    "value": true
+                }
             ],
             "choices": [
-                {"text": "Grieve. Then return to work. That's what he would want", "next": "jobs.medic.jmed_098"}
+                {
+                    "text": "Grieve. Then return to work. That's what he would want",
+                    "next": "jobs.medic.jmed_098"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -1995,7 +2812,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "Step outside. Watch the rain. Then go back in", "next": "jobs.medic.jmed_099"}
+                {
+                    "text": "Step outside. Watch the rain. Then go back in",
+                    "next": "jobs.medic.jmed_099"
+                }
             ],
             "ascii": null,
             "music": "ambient_melancholy",
@@ -2013,7 +2833,10 @@
             ],
             "onEnter": [],
             "choices": [
-                {"text": "There is always one more patient", "next": "jobs.medic.jmed_100"}
+                {
+                    "text": "There is always one more patient",
+                    "next": "jobs.medic.jmed_100"
+                }
             ],
             "ascii": null,
             "music": "ambient_slum_rain",
@@ -2033,12 +2856,16 @@
                 "The next patient is waiting."
             ],
             "onEnter": [
-                {"type": "set_flag", "flag": "job.medic.complete", "value": true}
+                {
+                    "type": "set_flag",
+                    "flag": "job.medic.complete",
+                    "value": true
+                }
             ],
             "choices": [],
             "ascii": null,
             "music": "ambient_slum_rain",
-            "isEnding": false
+            "isEnding": true
         }
     }
 }

@@ -420,10 +420,10 @@
             ],
             "choices": [
                 {
-                    "text": "[Tech 14] Push through the IDS with extra caution",
+                    "text": "[Tech 12] Push through the IDS with extra caution",
                     "statCheck": {
                         "stat": "tech",
-                        "dc": 14
+                        "dc": 12
                     },
                     "next": "act1.chapter1-hacker.hack_007",
                     "failNext": "act1.chapter1-hacker.hack_007f"

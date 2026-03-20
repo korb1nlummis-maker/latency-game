@@ -204,7 +204,7 @@
                 "\"You're the one Sable sent,\" he says. His voice is rough but warm, like wood smoke. \"Sit down. I want to tell you something, and I want you to hear it from me. Not from the Circle, not from my children, not from the corps. From me.\"",
                 {
                     "condition": {
-                        "stat": "WIS",
+                        "stat": "wisdom",
                         "check": "gte",
                         "value": 13
                     },
@@ -212,7 +212,7 @@
                 },
                 {
                     "condition": {
-                        "stat": "WIS",
+                        "stat": "wisdom",
                         "check": "lt",
                         "value": 13
                     },
@@ -314,7 +314,7 @@
                 "Dav steps forward. His hand rests on the enforcement badge like a talisman. \"I've filed a medical preservation order. Legally, you can't leave this ward without Meridian authorization. And you—\" he points at you \"—if you're here to take him, that's kidnapping. I'll have a Sec-Corp response team here in four minutes.\"",
                 {
                     "condition": {
-                        "stat": "WIS",
+                        "stat": "wisdom",
                         "check": "gte",
                         "value": 14
                     },
@@ -322,7 +322,7 @@
                 },
                 {
                     "condition": {
-                        "stat": "WIS",
+                        "stat": "wisdom",
                         "check": "lt",
                         "value": 14
                     },
@@ -363,7 +363,7 @@
                     "text": "[WIS 13] \"Sera. What do you think your father would want if the stack didn't exist?\"",
                     "next": "act1.chapter2-ashen.fac_ashen_007",
                     "requirement": {
-                        "stat": "WIS",
+                        "stat": "wisdom",
                         "check": "gte",
                         "value": 13
                     },
@@ -434,7 +434,7 @@
                 "\"Then Sable found me. Or I found her. She didn't promise me an afterlife. She didn't promise me anything. She showed me the Ossuary and she told me the truth the stack-lords don't want anyone to hear: that a natural death is not an ending. It's a completion. The consciousness doesn't just stop. It goes somewhere the stacks can't follow. Somewhere they can't monetize.\"",
                 {
                     "condition": {
-                        "stat": "WIS",
+                        "stat": "wisdom",
                         "check": "gte",
                         "value": 13
                     },
@@ -522,7 +522,7 @@
                     "text": "[WIS 14] \"You're not nihilists. You're the opposite.\"",
                     "next": "act1.chapter2-ashen.fac_ashen_011",
                     "requirement": {
-                        "stat": "WIS",
+                        "stat": "wisdom",
                         "check": "gte",
                         "value": 14
                     },

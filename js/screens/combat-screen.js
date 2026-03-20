@@ -631,8 +631,11 @@ window.Latency.Screens.CombatScreen = (function () {
         var continueBtn = _el('button', 'cb-action-btn cb-btn-continue', 'CONTINUE');
         continueBtn.setAttribute('type', 'button');
         _bind(continueBtn, 'click', function () {
+            // Capture the return node ID before endCombat clears state
+            var state = window.Latency.Combat.getState();
+            var returnNodeId = state ? state.returnNodeId : null;
             window.Latency.Combat.endCombat();
-            _returnToGameplay();
+            _returnToGameplay(returnNodeId);
         });
         overlay.appendChild(continueBtn);
 
@@ -667,6 +670,10 @@ window.Latency.Screens.CombatScreen = (function () {
     function _buildDefeatOverlay() {
         var overlay = _el('div', 'cb-overlay cb-defeat-overlay');
 
+        // Capture the onLose node ID before any state cleanup
+        var state = window.Latency.Combat.getState();
+        var onLoseNodeId = state ? state.onLoseNodeId : null;
+
         // CRT static noise layer
         var staticLayer = _el('div', 'cb-defeat-static');
         overlay.appendChild(staticLayer);
@@ -682,6 +689,17 @@ window.Latency.Screens.CombatScreen = (function () {
         overlay.appendChild(subtitle);
 
         var btnRow = _el('div', 'cb-overlay-buttons');
+
+        // If a defeat-specific story node exists, show CONTINUE to load it
+        if (onLoseNodeId) {
+            var continueBtn = _el('button', 'cb-action-btn cb-btn-continue', 'CONTINUE');
+            continueBtn.setAttribute('type', 'button');
+            _bind(continueBtn, 'click', function () {
+                window.Latency.Combat.endCombat();
+                _returnToGameplay(onLoseNodeId);
+            });
+            btnRow.appendChild(continueBtn);
+        }
 
         var loadBtn = _el('button', 'cb-action-btn cb-btn-load', 'LOAD SAVE');
         loadBtn.setAttribute('type', 'button');
@@ -715,11 +733,12 @@ window.Latency.Screens.CombatScreen = (function () {
     // --------------------------------------------------------
     // Return to gameplay
     // --------------------------------------------------------
-    function _returnToGameplay() {
+    function _returnToGameplay(returnNodeId) {
+        var params = returnNodeId ? { nodeId: returnNodeId } : null;
         if (window.Latency.StateMachine && window.Latency.StateMachine.transition) {
-            window.Latency.StateMachine.transition('gameplay');
+            window.Latency.StateMachine.transition('gameplay', params);
         } else if (window.Latency.ScreenManager && window.Latency.ScreenManager.show) {
-            window.Latency.ScreenManager.show('gameplay');
+            window.Latency.ScreenManager.show('gameplay', params);
         }
     }
 
@@ -945,9 +964,13 @@ window.Latency.Screens.CombatScreen = (function () {
                 defeatOverlay.classList.add('cb-overlay-visible');
             }, 50));
         } else if (data.result === 'fled') {
+            // Capture flee node ID before endCombat clears state
+            var state = window.Latency.Combat.getState();
+            var fleeNodeId = state ? (state.onFleeNodeId || state.returnNodeId) : null;
             // Return to gameplay after a brief delay
             _pendingTimers.push(setTimeout(function () {
-                _returnToGameplay();
+                window.Latency.Combat.endCombat();
+                _returnToGameplay(fleeNodeId);
             }, 800));
         }
     }

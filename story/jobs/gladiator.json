@@ -1783,14 +1783,10 @@
                     "next": "jobs.gladiator.jgld_071"
                 },
                 {
-                    "text": "Enter the championship yourself. One last fight",
-                    "condition": {
-                        "stat_check": {
-                            "stat": "combat",
-                            "dc": 16
-                        }
-                    },
-                    "next": "jobs.gladiator.jgld_072"
+                    "text": "[Strength 14] Enter the championship yourself. One last fight",
+                    "statCheck": { "stat": "strength", "dc": 14 },
+                    "next": "jobs.gladiator.jgld_072",
+                    "failNext": "jobs.gladiator.jgld_072"
                 }
             ],
             "ascii": null,
@@ -2122,14 +2118,10 @@
             ],
             "choices": [
                 {
-                    "text": "Study Monarch's augmentations for weaknesses",
-                    "condition": {
-                        "stat_check": {
-                            "stat": "hacking",
-                            "dc": 14
-                        }
-                    },
-                    "next": "jobs.gladiator.jgld_085"
+                    "text": "[Tech 13] Study Monarch's augmentations for weaknesses",
+                    "statCheck": { "stat": "tech", "dc": 13 },
+                    "next": "jobs.gladiator.jgld_085",
+                    "failNext": "jobs.gladiator.jgld_086"
                 },
                 {
                     "text": "Fight with pure technique. No shortcuts",
@@ -2233,14 +2225,10 @@
             ],
             "choices": [
                 {
-                    "text": "Exploit the window. Strike now with everything remaining",
-                    "condition": {
-                        "stat_check": {
-                            "stat": "combat",
-                            "dc": 18
-                        }
-                    },
-                    "next": "jobs.gladiator.jgld_089"
+                    "text": "[Strength 16] Exploit the window. Strike now with everything remaining",
+                    "statCheck": { "stat": "strength", "dc": 16 },
+                    "next": "jobs.gladiator.jgld_089",
+                    "failNext": "jobs.gladiator.jgld_090"
                 },
                 {
                     "text": "Keep fighting. Survive to the bell",
