@@ -1,0 +1,8 @@
+
+# Electron / Build
+node_modules/
+dist/
+build/
+*.exe
+*.dmg
+*.AppImage

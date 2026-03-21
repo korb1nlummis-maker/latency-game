@@ -1,0 +1,53 @@
+{
+  "name": "latency",
+  "version": "1.0.0",
+  "description": "LATENCY - A cyberpunk choose-your-destiny RPG",
+  "main": "electron/main.js",
+  "author": "Latency Studios",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build": "node scripts/build.js",
+    "package": "node scripts/build.js && electron-builder --win",
+    "package:dir": "node scripts/build.js && electron-builder --win --dir"
+  },
+  "build": {
+    "appId": "com.latencystudios.latency",
+    "productName": "LATENCY",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build-resources"
+    },
+    "files": [
+      "electron/**/*",
+      "build/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build-resources/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "build-resources/icon.ico",
+      "uninstallerIcon": "build-resources/icon.ico"
+    },
+    "asar": true,
+    "asarUnpack": [
+      "build/assets/**/*"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
+    "javascript-obfuscator": "^4.1.0",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.36.0"
+  }
+}
