@@ -1,0 +1,122 @@
+====================================
+LATENCY - Steam Store Page Content
+====================================
+
+TITLE: LATENCY
+
+TAGLINE: In a world where death is optional, living is the hardest choice.
+
+GENRE TAGS: RPG, Choose Your Own Adventure, Cyberpunk, Text-Based, Dark Fantasy,
+            Singleplayer, Story Rich, Multiple Endings, Character Customization,
+            Atmospheric, Dark, Dystopian
+
+------------------------------------
+SHORT DESCRIPTION (under 300 chars)
+------------------------------------
+A cyberpunk choose-your-destiny RPG with 3,000+ story nodes, 10 playable races,
+D&D-style combat, and hundreds of branching paths. Every choice reshapes your fate
+in a megacity where death is cheap and trust is expensive.
+
+------------------------------------
+LONG DESCRIPTION (About This Game)
+------------------------------------
+LATENCY is a massive text-based RPG set in a dystopian megacity where humanity
+coexists uneasily with orcs, elves, cyborgs, and beings from beyond the void.
+
+CHOOSE YOUR IDENTITY
+Pick from 10 unique races — Human, Orc, Wood Elf, Dark Elf, Dwarf, Half-Giant,
+Cyborg, Synth, Shadowkin, or Voidborn. Each comes with distinct racial abilities,
+stat bonuses, and origin stories that shape how the world treats you.
+
+FORGE YOUR PATH
+Six career paths await: Enforcer, Hacker, Smuggler, Medic, Gladiator, or Diplomat.
+Your job determines your contacts, your reputation, and the doors that open — or
+slam shut — as you navigate the megacity's power struggles.
+
+CHOOSE YOUR ALLEGIANCE
+Five factions vie for control: the Iron Collective, the Neon Court, the Circuit Saints,
+the Ghost Syndicate, and the Ashen Circle. Earn their trust or their hatred. Play them
+against each other. Or burn them all down.
+
+REAL CONSEQUENCES
+With 3,000+ story nodes and hundreds of branching paths, your choices matter.
+Stat checks use D&D-style d20 mechanics — your character build determines what
+you can attempt, and the dice determine if you succeed. Failed rolls don't just
+block progress; they open entirely different storylines.
+
+FIGHT DIRTY
+Turn-based combat with attack rolls, damage dice, abilities, items, and the option
+to flee when the odds turn against you. Every enemy has unique AI behavior — some
+are aggressive, some tactical, some cowardly.
+
+FEATURES
+- 3,000+ story nodes across a 5-act campaign
+- 10 playable races with unique origin stories
+- 6 career paths with dedicated storylines
+- 5 factions with reputation systems
+- D&D-style d20 combat with dice rolling
+- Character stats, skills, inventory, and equipment
+- Multiple endings based on your choices
+- Atmospheric cyberpunk soundtrack
+- Voice narration (browser text-to-speech)
+- Autosave + 5 manual save slots
+- Achievement system
+
+------------------------------------
+SYSTEM REQUIREMENTS
+------------------------------------
+MINIMUM:
+  OS: Windows 10 (64-bit)
+  Processor: Any modern CPU
+  Memory: 4 GB RAM
+  Graphics: Any GPU with hardware acceleration
+  Storage: 600 MB available space
+
+RECOMMENDED:
+  OS: Windows 10/11 (64-bit)
+  Processor: Intel i5 / AMD Ryzen 5 or better
+  Memory: 8 GB RAM
+  Graphics: Any modern GPU
+  Storage: 600 MB available space
+
+------------------------------------
+MATURE CONTENT DESCRIPTION
+------------------------------------
+The game contains themes of violence, crime, drug references, and dystopian
+societal issues. Text descriptions include combat violence, criminal activity,
+and dark themes appropriate for mature audiences. No graphic imagery.
+
+Suggested rating: Mature 17+ / PEGI 16
+
+------------------------------------
+CAPSULE IMAGE REQUIREMENTS (you need to create these)
+------------------------------------
+Header Capsule:     460 x 215 px  (shows on store page header)
+Small Capsule:      231 x 87 px   (shows in search results, wishlist)
+Main Capsule:       616 x 353 px  (shows on front page, in sales)
+Hero Graphic:       3840 x 1240 px (shows at top of store page, behind logo)
+Logo:               640 x 360 px  (transparent background, game logo only)
+Library Capsule:    600 x 900 px  (shows in Steam library)
+Library Hero:       3840 x 1240 px (shows as library background)
+
+TIP: Use Canva, Photoshop, or commission an artist. The capsule images are
+the MOST important marketing asset — they're what players see when browsing.
+Use the game's color scheme: dark background (#0a0e14), green accent (#00ff88),
+red highlights (#ff4444), cyan text (#66ffcc).
+
+------------------------------------
+SCREENSHOTS (Steam requires at least 5)
+------------------------------------
+Required size: 1280x720 or 1920x1080
+
+Recommended screenshots to capture:
+1. Main menu with LATENCY title
+2. Character creation - race selection grid
+3. Character creation - stat allocation
+4. Cutscene with artwork and narrative text
+5. Gameplay - narrative text with choices visible
+6. Combat encounter - player vs enemy with dice roll
+7. Inventory/character sheet overlay
+8. Map screen
+9. A dramatic story moment with stat check
+10. Game over / ending screen
