@@ -19,7 +19,7 @@ window.Latency.CutsceneData['origin_human'] = {
     music: 1,
     slides: [
         {
-            art: 'assets/images/races/human.jpg',
+            art: 'assets/images/races/human.webp',
             text: 'You are born without fanfare in a lower-district clinic that smells of recycled air and antiseptic. No one sends flowers. The nurse logs your weight, your blood type, your species — human — and moves on to the next delivery. You are unremarkable from your very first breath.',
             mood: 'dark',
             duration: 0

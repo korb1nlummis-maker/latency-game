@@ -683,16 +683,14 @@
 
 /* Container for cutscene images — overflow hidden for Ken Burns effect */
 .cs-art-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 640px;
-    max-height: 420px;
-    overflow: hidden;
+    display: block;
+    max-width: 450px;
+    max-height: 45vh;
     border-radius: 4px;
     margin: 0 auto;
     position: relative;
     border: 1px solid rgba(0, 255, 136, 0.15);
+    overflow: hidden;
 }
 
 /* Scanline overlay on images to maintain cyberpunk aesthetic */
@@ -717,10 +715,10 @@
 
 /* Image element inside cutscene and AsciiRenderer */
 .ascii-art-image {
-    width: 110%;           /* slightly oversized for Ken Burns movement */
-    height: auto;
-    min-height: 100%;
-    object-fit: cover;
+    width: 100%;
+    max-height: 45vh;
+    object-fit: contain;
+    transform-origin: top center;
     display: block;
     margin: 0 auto;
     border-radius: 0;
@@ -752,10 +750,10 @@
 /* Slow Ken Burns zoom + pan — subtle cinematic movement */
 @keyframes ascii-art-ken-burns {
     0% {
-        transform: scale(1.0) translate(0%, 0%);
+        transform: scale(1.0);
     }
     100% {
-        transform: scale(1.08) translate(-1.5%, -1%);
+        transform: scale(1.06);
     }
 }
 
@@ -769,10 +767,10 @@
 
 @keyframes ascii-art-ken-burns-alt {
     0% {
-        transform: scale(1.0) translate(0%, 0%);
+        transform: scale(1.0);
     }
     100% {
-        transform: scale(1.06) translate(1.5%, -0.5%);
+        transform: scale(1.04);
     }
 }
 
