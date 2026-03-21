@@ -145,6 +145,61 @@ window.Latency.CharacterSystem = (function () {
             }
         }
 
+        // Auto-equip the best starting weapon and armor from backpack
+        var Items = window.Latency.Items || {};
+        var bestWeapon = null;
+        var bestWeaponIdx = -1;
+        var bestArmor = null;
+        var bestArmorIdx = -1;
+        for (var ei = 0; ei < _character.inventory.backpack.length; ei++) {
+            var entry = _character.inventory.backpack[ei];
+            var itemDef = Items[entry.itemId];
+            if (!itemDef) continue;
+            if (itemDef.type === 'weapon' && !bestWeapon) {
+                bestWeapon = itemDef;
+                bestWeaponIdx = ei;
+            }
+            if (itemDef.type === 'armor' && !bestArmor) {
+                bestArmor = itemDef;
+                bestArmorIdx = ei;
+            }
+        }
+        if (bestWeapon) {
+            var wEntry = _character.inventory.backpack[bestWeaponIdx];
+            wEntry.quantity -= 1;
+            if (wEntry.quantity <= 0) _character.inventory.backpack.splice(bestWeaponIdx, 1);
+            _character.inventory.equipped.weapon = {
+                itemId: bestWeapon.id,
+                name: bestWeapon.name,
+                type: bestWeapon.type,
+                damage: bestWeapon.damage,
+                damageStat: bestWeapon.damageStat || 'strength',
+                properties: bestWeapon.properties || [],
+                value: bestWeapon.value || 0
+            };
+            // Adjust bestArmorIdx if weapon was before it and got removed
+            if (bestArmorIdx > bestWeaponIdx && _character.inventory.backpack.length <= bestArmorIdx) {
+                bestArmorIdx = -1; // recalculate
+                for (var ai = 0; ai < _character.inventory.backpack.length; ai++) {
+                    var aDef = Items[_character.inventory.backpack[ai].itemId];
+                    if (aDef && aDef.type === 'armor') { bestArmorIdx = ai; break; }
+                }
+            }
+        }
+        if (bestArmor && bestArmorIdx >= 0) {
+            var aEntry = _character.inventory.backpack[bestArmorIdx];
+            aEntry.quantity -= 1;
+            if (aEntry.quantity <= 0) _character.inventory.backpack.splice(bestArmorIdx, 1);
+            _character.inventory.equipped.armor = {
+                itemId: bestArmor.id,
+                name: bestArmor.name,
+                type: bestArmor.type,
+                armor: bestArmor.armorBonus || 0,
+                properties: bestArmor.properties || [],
+                value: bestArmor.value || 0
+            };
+        }
+
         recalculateDerived();
 
         // Full HP/stamina on creation
