@@ -550,6 +550,12 @@ window.Latency.Screens.Gameplay = (function () {
         _els.narrativeText = narrativeArea;
         panel.appendChild(narrativeArea);
 
+        // Dice roll result area (shown during stat checks)
+        var diceResultArea = _el('div', 'gp-dice-result');
+        diceResultArea.style.display = 'none';
+        _els.diceResult = diceResultArea;
+        panel.appendChild(diceResultArea);
+
         // Choices area
         var choicesArea = _el('div', 'gp-choices');
         _els.choices = choicesArea;
@@ -1166,9 +1172,105 @@ window.Latency.Screens.Gameplay = (function () {
     }
 
     // --------------------------------------------------------
+    // Dice roll display (narrative stat checks)
+    // --------------------------------------------------------
+
+    /**
+     * Show a dice roll result in the narrative panel when a stat
+     * check is resolved. This fires on the 'dice:roll' event
+     * emitted by Narrative.makeChoice for stat-check choices.
+     *
+     * The result box appears between the narrative text and the
+     * choice buttons, showing the d20 roll, modifier, total, DC,
+     * and pass/fail outcome with color-coded styling.
+     */
+    function _onNarrativeDiceRoll(data) {
+        if (!data || !_els.diceResult) return;
+
+        // Only handle narrative stat checks, not combat dice rolls
+        // Combat dice rolls have purpose like 'attack', 'damage', etc.
+        // Narrative rolls have a 'stat' property and a 'dc' property
+        if (!data.stat || data.dc === undefined) return;
+
+        var stat = data.stat;
+        var roll = data.roll;
+        var modifier = data.modifier;
+        var total = data.total;
+        var dc = data.dc;
+        var success = data.success;
+
+        // Build stat label
+        var statLabel = STAT_LABELS[stat]
+            ? STAT_LABELS[stat].name
+            : stat.charAt(0).toUpperCase() + stat.slice(1);
+        var statShort = STAT_LABELS[stat]
+            ? STAT_LABELS[stat].short
+            : stat.toUpperCase().substring(0, 3);
+
+        // Build modifier string
+        var modStr = modifier >= 0 ? '+' + modifier : String(modifier);
+
+        // Determine result class and text
+        var resultText = success ? 'SUCCESS' : 'FAILED';
+        var resultClass = success ? 'gp-dice-success' : 'gp-dice-fail';
+        var critText = '';
+        if (roll === 20) critText = ' (NATURAL 20!)';
+        else if (roll === 1) critText = ' (NATURAL 1!)';
+
+        // Build the dice result HTML
+        var html = '<div class="gp-dice-header">' +
+            '<span class="gp-dice-label">[' + statLabel + ' Check — DC ' + dc + ']</span>' +
+            '</div>' +
+            '<div class="gp-dice-roll-line">' +
+            '<span class="gp-dice-rolling">Rolling d20...</span> ' +
+            '<span class="gp-dice-numbers">' + roll + ' ' + modStr + ' (' + statShort + ') = ' + total + '</span>' +
+            '</div>' +
+            '<div class="gp-dice-outcome ' + resultClass + '">' +
+            '>>> ' + resultText + critText + ' <<<' +
+            '</div>';
+
+        _els.diceResult.innerHTML = html;
+        _els.diceResult.style.display = 'block';
+        _els.diceResult.className = 'gp-dice-result ' + resultClass;
+
+        // Clear choices while showing dice result
+        if (_els.choices) {
+            _els.choices.innerHTML = '';
+        }
+
+        // Animate the dice roll reveal
+        var rollLine = _els.diceResult.querySelector('.gp-dice-numbers');
+        var outcomeLine = _els.diceResult.querySelector('.gp-dice-outcome');
+        if (rollLine) rollLine.style.opacity = '0';
+        if (outcomeLine) outcomeLine.style.opacity = '0';
+
+        // Show the roll number after a brief "rolling" animation
+        _pendingTimers.push(setTimeout(function () {
+            if (rollLine) rollLine.style.opacity = '1';
+        }, 600));
+
+        // Show the outcome after the number
+        _pendingTimers.push(setTimeout(function () {
+            if (outcomeLine) outcomeLine.style.opacity = '1';
+        }, 1200));
+    }
+
+    /**
+     * Hide the dice result display (called when a new story node loads).
+     */
+    function _hideDiceResult() {
+        if (_els.diceResult) {
+            _els.diceResult.style.display = 'none';
+            _els.diceResult.innerHTML = '';
+        }
+    }
+
+    // --------------------------------------------------------
     // Event handlers
     // --------------------------------------------------------
     function _onStoryNode(data) {
+        // Hide any lingering dice result display
+        _hideDiceResult();
         _renderStoryNode(data);
         if (data && data.nodeId) {
             _lastDisplayedNodeId = data.nodeId;
@@ -1304,6 +1406,7 @@ window.Latency.Screens.Gameplay = (function () {
             _subscribe('trait:remove', _onTraitChange);
             _subscribe('npc:relationship', _onNpcRelationshipChange);
             _subscribe('npc:tier_change', _onNpcRelationshipChange);
+            _subscribe('dice:roll', _onNarrativeDiceRoll);
 
             // Initial sidebar populate from current character data
             _refreshSidebar();

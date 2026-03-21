@@ -1986,5 +1986,1128 @@ window.Latency.Items = {
         weight: 3,
         description: 'A gnarled wooden staff worn smooth by years of wandering. Serves as a walking aid, a focus for psychic energy, and a weapon of last resort.',
         requirements: {}
+    },
+
+    // =========================================================================
+    //  STORY QUEST ITEMS — referenced by narrative actions
+    // =========================================================================
+
+    uninstalled_memory_stack: {
+        id: 'uninstalled_memory_stack',
+        name: 'Uninstalled Memory Stack',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A cortical stack that has never been installed. It hums with latent potential, waiting for a mind to call home.',
+        questRelated: true
+    },
+
+    ashfall_detonation_codes: {
+        id: 'ashfall_detonation_codes',
+        name: 'Ashfall Detonation Codes',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Encrypted detonation codes for the Ashfall device. In the wrong hands, these could level a district.',
+        questRelated: true
+    },
+
+    ashen_keeper_vial: {
+        id: 'ashen_keeper_vial',
+        name: 'Ashen Keeper Vial',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A sealed vial of grey liquid carried by Ashen Circle keepers. The contents shift like smoke trapped in glass.',
+        questRelated: true
+    },
+
+    thale_research_data: {
+        id: 'thale_research_data',
+        name: 'Thale Research Data',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Classified research files from Dr. Thale. The data details experiments that should never have been authorized.',
+        questRelated: true
+    },
+
+    detonator_fragment: {
+        id: 'detonator_fragment',
+        name: 'Detonator Fragment',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A piece of a destroyed detonator. Forensic analysis might reveal who built it.',
+        questRelated: true
+    },
+
+    collector_contact_card: {
+        id: 'collector_contact_card',
+        name: 'Collector Contact Card',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A business card with shifting holographic text. The Collector deals in rare artifacts and rarer information.',
+        questRelated: true
+    },
+
+    data_chip_pawnshop: {
+        id: 'data_chip_pawnshop',
+        name: 'Pawnshop Data Chip',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A data chip retrieved from a pawnshop terminal. Contains transaction records that someone wanted erased.',
+        questRelated: true
+    },
+
+    data_chip_server_farm: {
+        id: 'data_chip_server_farm',
+        name: 'Server Farm Data Chip',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A data chip pulled from a server farm. Packed with encrypted communications and routing data.',
+        questRelated: true
+    },
+
+    data_chip_silk: {
+        id: 'data_chip_silk',
+        name: 'Silk Market Data Chip',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A data chip from the Silk Market network. Contains trade manifests and smuggling routes.',
+        questRelated: true
+    },
+
+    sector9_surveillance_codes: {
+        id: 'sector9_surveillance_codes',
+        name: 'Sector 9 Surveillance Codes',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Access codes for the Sector 9 surveillance grid. With these, every camera in the district answers to you.',
+        questRelated: true
+    },
+
+    voss_personal_effects: {
+        id: 'voss_personal_effects',
+        name: 'Voss Personal Effects',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A small bundle of personal belongings that once belonged to Voss. A life reduced to what fits in a pocket.',
+        questRelated: true
+    },
+
+    blank_memory_stack: {
+        id: 'blank_memory_stack',
+        name: 'Blank Memory Stack',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A factory-fresh cortical stack with no recorded memories. A blank page waiting for a life story.',
+        questRelated: true
+    },
+
+    preserved_seed_collection: {
+        id: 'preserved_seed_collection',
+        name: 'Preserved Seed Collection',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A carefully maintained collection of pre-collapse seeds in sealed containers. Each one is a species that might otherwise be extinct.',
+        questRelated: true
+    },
+
+    fresh_tomatoes: {
+        id: 'fresh_tomatoes',
+        name: 'Fresh Tomatoes',
+        type: 'misc',
+        value: 15,
+        weight: 1,
+        description: 'Actual fresh tomatoes grown in real soil. In a world of nutrient paste, these are worth more than credits.'
+    },
+
+    liras_canvas_bag: {
+        id: 'liras_canvas_bag',
+        name: "Lira's Canvas Bag",
+        type: 'key_item',
+        value: 0,
+        weight: 1,
+        description: 'A worn canvas bag entrusted to you by Lira. Whatever is inside, she considered it worth dying for.',
+        questRelated: true
+    },
+
+    security_override_key: {
+        id: 'security_override_key',
+        name: 'Security Override Key',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A master override key for building security systems. Bypasses standard locks and alarm protocols.',
+        questRelated: true
+    },
+
+    medkit_standard: {
+        id: 'medkit_standard',
+        name: 'Standard Medkit',
+        type: 'consumable',
+        effect: { type: 'heal', value: 25 },
+        value: 20,
+        weight: 1,
+        description: 'A standard-issue medical kit with bandages, antiseptic, and a single auto-injector of painkillers.'
+    },
+
+    sector5_tunnel_map: {
+        id: 'sector5_tunnel_map',
+        name: 'Sector 5 Tunnel Map',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A hand-drawn map of the tunnel network beneath Sector 5. Marked with safe passages and danger zones.',
+        questRelated: true
+    },
+
+    energy_cells_pack: {
+        id: 'energy_cells_pack',
+        name: 'Energy Cells Pack',
+        type: 'misc',
+        value: 20,
+        weight: 1,
+        description: 'A sealed pack of high-capacity energy cells. Universal power source for tech weapons and devices.'
+    },
+
+    smuggling_intel_datapad: {
+        id: 'smuggling_intel_datapad',
+        name: 'Smuggling Intel Datapad',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A datapad loaded with smuggling routes, contact lists, and shipment schedules. Extremely valuable to the right people.',
+        questRelated: true
+    },
+
+    ration_pack: {
+        id: 'ration_pack',
+        name: 'Ration Pack',
+        type: 'consumable',
+        effect: { type: 'heal', value: 8 },
+        value: 5,
+        weight: 1,
+        description: 'Vacuum-sealed nutrient paste. Tastes like sadness but keeps you alive for another day.'
+    },
+
+    stray_cat_companion: {
+        id: 'stray_cat_companion',
+        name: 'Stray Cat',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A scrappy alley cat that has decided to follow you. It purrs like a broken motor and bites anyone else who gets close.',
+        questRelated: false
+    },
+
+    // =========================================================================
+    //  CYBORG ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    basic_prosthetic_arm: {
+        id: 'basic_prosthetic_arm',
+        name: 'Basic Prosthetic Arm',
+        type: 'key_item',
+        value: 0,
+        weight: 2,
+        description: 'A crude but functional prosthetic arm. The servos whine and the grip is imprecise, but it works.',
+        questRelated: true
+    },
+
+    kt4400_service_manual: {
+        id: 'kt4400_service_manual',
+        name: 'KT-4400 Service Manual',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Technical documentation for the KT-4400 series cybernetic augmentation. Dog-eared and annotated in the margins.',
+        questRelated: true
+    },
+
+    stimulant_patch: {
+        id: 'stimulant_patch',
+        name: 'Stimulant Patch',
+        type: 'consumable',
+        effect: { type: 'buff', stat: 'dexterity', value: 2, duration: 3 },
+        value: 10,
+        weight: 0,
+        description: 'A transdermal stimulant that quickens reflexes and sharpens focus for a short time.'
+    },
+
+    stripped_comm_unit: {
+        id: 'stripped_comm_unit',
+        name: 'Stripped Comm Unit',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A communication unit stripped of its tracking hardware. Untraceable and functional on most frequencies.',
+        questRelated: true
+    },
+
+    data_extraction_device: {
+        id: 'data_extraction_device',
+        name: 'Data Extraction Device',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A specialized device for pulling data from secured terminals. Corporate espionage in a box.',
+        questRelated: true
+    },
+
+    forged_medicore_id: {
+        id: 'forged_medicore_id',
+        name: 'Forged Medicore ID',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A convincing forgery of a Medicore employee badge. Good enough to get past a casual security check.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  DARK ELF ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    obsidian_figurine: {
+        id: 'obsidian_figurine',
+        name: 'Obsidian Figurine',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A small figurine carved from volcanic obsidian. It depicts a hooded figure with outstretched hands.',
+        questRelated: true
+    },
+
+    obsidian_blade: {
+        id: 'obsidian_blade',
+        name: 'Obsidian Blade',
+        type: 'weapon',
+        subtype: 'melee',
+        damage: '1d6+1',
+        damageStat: 'dexterity',
+        properties: ['finesse', 'concealable'],
+        value: 50,
+        weight: 1,
+        description: 'A blade of knapped obsidian set in a bone handle. The edge is sharper than steel but brittle.',
+        requirements: {}
+    },
+
+    surveillance_kit: {
+        id: 'surveillance_kit',
+        name: 'Surveillance Kit',
+        type: 'key_item',
+        value: 0,
+        weight: 1,
+        description: 'A compact kit containing micro-cameras, signal interceptors, and a portable feed viewer.',
+        questRelated: true
+    },
+
+    eclipse_data_crystal: {
+        id: 'eclipse_data_crystal',
+        name: 'Eclipse Data Crystal',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A dark crystal containing encrypted data from the Eclipse network. It absorbs light rather than reflecting it.',
+        questRelated: true
+    },
+
+    kin_blade: {
+        id: 'kin_blade',
+        name: 'Kin Blade',
+        type: 'weapon',
+        subtype: 'melee',
+        damage: '1d8+2',
+        damageStat: 'dexterity',
+        properties: ['finesse', 'concealable', 'bypass_armor_10'],
+        value: 120,
+        weight: 1,
+        description: 'A ceremonial blade passed between dark elf kin. Upgraded from obsidian to monomolecular steel.',
+        requirements: {}
+    },
+
+    // =========================================================================
+    //  DWARF ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    harken_datapad: {
+        id: 'harken_datapad',
+        name: 'Harken Datapad',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A datapad belonging to Harken. Contains coordinates, schematics, and encrypted personal messages.',
+        questRelated: true
+    },
+
+    dwarven_pistol: {
+        id: 'dwarven_pistol',
+        name: 'Dwarven Pistol',
+        type: 'weapon',
+        subtype: 'ranged',
+        damage: '1d8+1',
+        damageStat: 'dexterity',
+        properties: ['concealable', 'ammo_ballistic', 'dwarven_craft'],
+        value: 80,
+        weight: 2,
+        description: 'A hand-crafted dwarven firearm with exceptional precision. Every component was machined by hand.',
+        requirements: {}
+    },
+
+    kessa_address_chip: {
+        id: 'kessa_address_chip',
+        name: 'Kessa Address Chip',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A data chip containing an address. Whoever Kessa is, they want to be found by the right person.',
+        questRelated: true
+    },
+
+    grandmothers_tools: {
+        id: 'grandmothers_tools',
+        name: "Grandmother's Tools",
+        type: 'key_item',
+        value: 0,
+        weight: 2,
+        description: 'A set of precision engineering tools passed down through generations. Each one is worn smooth by decades of use.',
+        questRelated: true
+    },
+
+    encrypted_comm: {
+        id: 'encrypted_comm',
+        name: 'Encrypted Comm Device',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A heavily encrypted communication device. The signal bounces through a dozen relays before reaching its destination.',
+        questRelated: true
+    },
+
+    tactical_vest: {
+        id: 'tactical_vest',
+        name: 'Tactical Vest',
+        type: 'armor',
+        armorBonus: 2,
+        properties: ['lightweight'],
+        value: 60,
+        weight: 3,
+        description: 'A lightweight tactical vest with reinforced plating. Standard equipment for security details.',
+        requirements: {}
+    },
+
+    taser: {
+        id: 'taser',
+        name: 'Taser',
+        type: 'weapon',
+        subtype: 'ranged',
+        damage: '1d4',
+        damageStat: 'dexterity',
+        properties: ['stun_chance_30', 'light', 'concealable'],
+        value: 30,
+        weight: 1,
+        description: 'A compact electroshock weapon. Non-lethal by design, though that depends on the target.',
+        requirements: {}
+    },
+
+    security_keycard: {
+        id: 'security_keycard',
+        name: 'Security Keycard',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A security access keycard with a moderate clearance level. Opens doors in several restricted areas.',
+        questRelated: true
+    },
+
+    salvaged_plasma_cutter: {
+        id: 'salvaged_plasma_cutter',
+        name: 'Salvaged Plasma Cutter',
+        type: 'key_item',
+        value: 0,
+        weight: 2,
+        description: 'A plasma cutting tool pulled from industrial wreckage. Still functional for precision metalwork.',
+        questRelated: true
+    },
+
+    carbon_steel_stock: {
+        id: 'carbon_steel_stock',
+        name: 'Carbon Steel Stock',
+        type: 'misc',
+        value: 25,
+        weight: 3,
+        description: 'A bar of high-grade carbon steel. Raw material for crafting weapons and tools.'
+    },
+
+    precision_calipers: {
+        id: 'precision_calipers',
+        name: 'Precision Calipers',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Measurement calipers accurate to a thousandth of a millimeter. Essential for precision engineering.',
+        questRelated: true
+    },
+
+    singing_steel_bar: {
+        id: 'singing_steel_bar',
+        name: 'Singing Steel Bar',
+        type: 'key_item',
+        value: 0,
+        weight: 2,
+        description: 'A bar of resonant alloy that hums when struck. The dwarves say it sings because it remembers the forge.',
+        questRelated: true
+    },
+
+    weighted_wrench: {
+        id: 'weighted_wrench',
+        name: 'Weighted Wrench',
+        type: 'weapon',
+        subtype: 'melee',
+        damage: '1d6+1',
+        damageStat: 'strength',
+        properties: ['heavy', 'stun_chance_10'],
+        value: 15,
+        weight: 3,
+        description: 'A heavy wrench with extra weight welded to the head. A tool repurposed for percussive maintenance on skulls.',
+        requirements: {}
+    },
+
+    nexus_data_chip: {
+        id: 'nexus_data_chip',
+        name: 'Nexus Data Chip',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A data chip containing access credentials for the Nexus network. Opens doors in the digital world.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  HALF-GIANT ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    miras_address: {
+        id: 'miras_address',
+        name: "Mira's Address",
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A scrap of paper with an address scrawled in careful handwriting. Mira is waiting somewhere in the city.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  HUMAN ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    tenant_note: {
+        id: 'tenant_note',
+        name: 'Tenant Note',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A crumpled note left by a fellow tenant. The handwriting is shaky and the message is urgent.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  ORC ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    ironjaw_motto: {
+        id: 'ironjaw_motto',
+        name: 'Ironjaw Motto',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A metal plate inscribed with the Ironjaw clan motto. The words are simple but they carry the weight of generations.',
+        questRelated: true
+    },
+
+    wasteland_lichen: {
+        id: 'wasteland_lichen',
+        name: 'Wasteland Lichen',
+        type: 'misc',
+        value: 5,
+        weight: 0,
+        description: 'Hardy lichen scraped from wasteland rocks. Used in traditional orc remedies and surprisingly effective.'
+    },
+
+    durga_letter: {
+        id: 'durga_letter',
+        name: "Durga's Letter",
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A sealed letter from Durga. The wax seal bears the mark of old orc tradition.',
+        questRelated: true
+    },
+
+    ironjaw_medallion: {
+        id: 'ironjaw_medallion',
+        name: 'Ironjaw Medallion',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A heavy iron medallion bearing the Ironjaw clan crest. It marks you as one of the clan, or at least as someone who earned their respect.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  SHADOWKIN ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    phase_stabilizer: {
+        id: 'phase_stabilizer',
+        name: 'Phase Stabilizer',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A device that stabilizes dimensional phase fluctuations. Keeps you anchored to this plane of reality.',
+        questRelated: true
+    },
+
+    nutrient_bar: {
+        id: 'nutrient_bar',
+        name: 'Nutrient Bar',
+        type: 'consumable',
+        effect: { type: 'heal', value: 5 },
+        value: 3,
+        weight: 0,
+        description: 'A compressed nutrient bar that tastes like chalk. Provides minimal sustenance.'
+    },
+
+    power_cell: {
+        id: 'power_cell',
+        name: 'Power Cell',
+        type: 'misc',
+        value: 10,
+        weight: 0,
+        description: 'A standard-issue power cell. Compatible with most electronic devices and tech weapons.'
+    },
+
+    encrypted_data_chip: {
+        id: 'encrypted_data_chip',
+        name: 'Encrypted Data Chip',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A data chip with military-grade encryption. Whatever is on it, someone wanted it kept very secret.',
+        questRelated: true
+    },
+
+    phase_emitter: {
+        id: 'phase_emitter',
+        name: 'Phase Emitter',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A device that emits controlled phase pulses. Can temporarily thin the boundary between dimensions.',
+        questRelated: true
+    },
+
+    surveillance_drone: {
+        id: 'surveillance_drone',
+        name: 'Surveillance Drone',
+        type: 'key_item',
+        value: 0,
+        weight: 1,
+        description: 'A small reconnaissance drone that fits in the palm of your hand. Its camera feed links to your neural interface.',
+        questRelated: true
+    },
+
+    division_9_data: {
+        id: 'division_9_data',
+        name: 'Division 9 Data',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Classified files from Division 9. The contents detail experiments that officially never happened.',
+        questRelated: true
+    },
+
+    corporate_stabilizer: {
+        id: 'corporate_stabilizer',
+        name: 'Corporate Stabilizer',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A corporate-manufactured phase stabilizer. More refined than the improvised version, but with a tracking chip built in.',
+        questRelated: true
+    },
+
+    threshold_data: {
+        id: 'threshold_data',
+        name: 'Threshold Data',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Research data on dimensional thresholds. Maps the weak points between this reality and whatever lies beyond.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  SYNTH ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    forged_registration_card: {
+        id: 'forged_registration_card',
+        name: 'Forged Registration Card',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A convincing forgery of a synth registration card. Lists you as a licensed domestic model with full mobility rights.',
+        questRelated: true
+    },
+
+    signal_modulator: {
+        id: 'signal_modulator',
+        name: 'Signal Modulator',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A device that modulates wireless signals. Can be used to scramble tracking frequencies or boost communications.',
+        questRelated: true
+    },
+
+    emp_emitter: {
+        id: 'emp_emitter',
+        name: 'EMP Emitter',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A compact electromagnetic pulse emitter. Disables electronics in a small radius but is single-use.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  VOIDBORN ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    signal_processor: {
+        id: 'signal_processor',
+        name: 'Signal Processor',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A neural signal processor that filters and amplifies psychic frequencies. Helps focus scattered voidborn abilities.',
+        questRelated: true
+    },
+
+    void_fragment: {
+        id: 'void_fragment',
+        name: 'Void Fragment',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A crystallized shard of void energy. It pulses with cold light and whispers in frequencies below hearing.',
+        questRelated: true
+    },
+
+    void_fragment_2: {
+        id: 'void_fragment_2',
+        name: 'Void Fragment (Second)',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Another shard of crystallized void energy. When held near the first fragment, they resonate in harmony.',
+        questRelated: true
+    },
+
+    void_fragment_3: {
+        id: 'void_fragment_3',
+        name: 'Void Fragment (Third)',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A third void fragment. The three shards together create a faint geometric pattern in the air between them.',
+        questRelated: true
+    },
+
+    void_fragment_4: {
+        id: 'void_fragment_4',
+        name: 'Void Fragment (Fourth)',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'The fourth void fragment. With all four assembled, the keystone can be forged.',
+        questRelated: true
+    },
+
+    void_keystone: {
+        id: 'void_keystone',
+        name: 'Void Keystone',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A keystone forged from four void fragments. It thrums with power that bends light and thought around it.',
+        questRelated: true
+    },
+
+    sera_rice_grain: {
+        id: 'sera_rice_grain',
+        name: "Sera's Rice Grain",
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A single grain of rice given to you by Sera. A symbol of sustenance, simplicity, and the things worth protecting.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  WOOD ELF ORIGIN QUEST ITEMS
+    // =========================================================================
+
+    heartwood_token: {
+        id: 'heartwood_token',
+        name: 'Heartwood Token',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A small carved token made from heartwood. It carries the blessing of the grove elders.',
+        questRelated: true
+    },
+
+    worn_knife: {
+        id: 'worn_knife',
+        name: 'Worn Knife',
+        type: 'weapon',
+        subtype: 'melee',
+        damage: '1d4',
+        damageStat: 'dexterity',
+        properties: ['light', 'concealable'],
+        value: 5,
+        weight: 1,
+        description: 'A simple knife with a chipped blade. It has seen better days but still cuts.',
+        requirements: {}
+    },
+
+    emp_charge: {
+        id: 'emp_charge',
+        name: 'EMP Charge',
+        type: 'misc',
+        value: 30,
+        weight: 0,
+        description: 'A single-use electromagnetic pulse charge. Fries nearby electronics when detonated.'
+    },
+
+    silverleaf_seed: {
+        id: 'silverleaf_seed',
+        name: 'Silverleaf Seed',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A seed from the rare silverleaf tree. It glows faintly in moonlight and represents hope for reforestation.',
+        questRelated: true
+    },
+
+    clean_datapad: {
+        id: 'clean_datapad',
+        name: 'Clean Datapad',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A datapad wiped of all previous data. Ready to be loaded with whatever information you need.',
+        questRelated: true
+    },
+
+    signal_scrambler: {
+        id: 'signal_scrambler',
+        name: 'Signal Scrambler',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A device that scrambles wireless signals in a small area. Creates a temporary dead zone for surveillance.',
+        questRelated: true
+    },
+
+    electronic_lockpicks: {
+        id: 'electronic_lockpicks',
+        name: 'Electronic Lockpicks',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A set of electronic bypassing tools for digital locks. More sophisticated than mechanical picks.',
+        questRelated: true
+    },
+
+    monofilament_blade: {
+        id: 'monofilament_blade',
+        name: 'Monofilament Blade',
+        type: 'weapon',
+        subtype: 'melee',
+        damage: '1d8+1',
+        damageStat: 'dexterity',
+        properties: ['finesse', 'concealable', 'bypass_armor_15'],
+        value: 150,
+        weight: 1,
+        description: 'A blade with a single-molecule cutting edge. Slices through most materials with minimal resistance.',
+        requirements: {}
+    },
+
+    meridian_bio_registry: {
+        id: 'meridian_bio_registry',
+        name: 'Meridian Bio-Registry',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A copy of the Meridian biometric registry. Contains identity records for thousands of citizens.',
+        questRelated: true
+    },
+
+    extraction_list: {
+        id: 'extraction_list',
+        name: 'Extraction List',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A list of individuals marked for extraction from corporate control. Each name represents a life to be saved.',
+        questRelated: true
+    },
+
+    rare_seed_collection: {
+        id: 'rare_seed_collection',
+        name: 'Rare Seed Collection',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A collection of rare and endangered plant seeds. Some of these species exist nowhere else in the world.',
+        questRelated: true
+    },
+
+    core_soil_sample: {
+        id: 'core_soil_sample',
+        name: 'Core Soil Sample',
+        type: 'key_item',
+        value: 0,
+        weight: 1,
+        description: 'A sample of uncontaminated soil from deep underground. Evidence that the earth can still support life.',
+        questRelated: true
+    },
+
+    silverleaf_seed_backup: {
+        id: 'silverleaf_seed_backup',
+        name: 'Silverleaf Seed (Backup)',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A second silverleaf seed, carefully preserved as insurance against loss of the first.',
+        questRelated: true
+    },
+
+    living_wood_knife: {
+        id: 'living_wood_knife',
+        name: 'Living Wood Knife',
+        type: 'weapon',
+        subtype: 'melee',
+        damage: '1d6+2',
+        damageStat: 'dexterity',
+        properties: ['light', 'concealable', 'living_weapon'],
+        value: 80,
+        weight: 1,
+        description: 'A knife carved from living wood that continues to grow. The blade resharpens itself and the handle shifts to fit your grip.',
+        requirements: {}
+    },
+
+    moonvine_healing_vial: {
+        id: 'moonvine_healing_vial',
+        name: 'Moonvine Healing Vial',
+        type: 'consumable',
+        effect: { type: 'heal', value: 35 },
+        value: 25,
+        weight: 0,
+        description: 'A vial of luminescent sap from the moonvine plant. Heals wounds with the gentle efficiency of nature.'
+    },
+
+    // =========================================================================
+    //  ACT 1 QUEST ITEMS
+    // =========================================================================
+
+    neon_court_identity_package: {
+        id: 'neon_court_identity_package',
+        name: 'Neon Court Identity Package',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A complete identity package from the Neon Court. New name, new records, new life. The old you is officially dead.',
+        questRelated: true
+    },
+
+    syndicate_credit_chip: {
+        id: 'syndicate_credit_chip',
+        name: 'Syndicate Credit Chip',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'An untraceable credit chip loaded with syndicate funds. Spends like regular credits but leaves no trail.',
+        questRelated: true
+    },
+
+    dealer_comm_unit: {
+        id: 'dealer_comm_unit',
+        name: 'Dealer Comm Unit',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A communication unit taken from a dealer. Still active on the local crime network frequencies.',
+        questRelated: true
+    },
+
+    dealer_encrypted_datapad: {
+        id: 'dealer_encrypted_datapad',
+        name: 'Dealer Encrypted Datapad',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'An encrypted datapad confiscated from a dealer. Contains customer lists, supply chains, and distribution maps.',
+        questRelated: true
+    },
+
+    chemical_sample_v7: {
+        id: 'chemical_sample_v7',
+        name: 'Chemical Sample V7',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A vial of unidentified chemical compound labeled V7. The liquid shifts color when exposed to light.',
+        questRelated: true
+    },
+
+    apex_shipping_manifest: {
+        id: 'apex_shipping_manifest',
+        name: 'Apex Shipping Manifest',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A shipping manifest from Apex Logistics. The listed cargo does not match what was actually delivered.',
+        questRelated: true
+    },
+
+    clinic_badge: {
+        id: 'clinic_badge',
+        name: 'Clinic Badge',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'An employee badge for a street clinic. Grants access to medical supplies and treatment rooms.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  FACTION QUEST ITEMS
+    // =========================================================================
+
+    sine_research_data: {
+        id: 'sine_research_data',
+        name: 'Sine Research Data',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'Research data from Archon Sine detailing consciousness transfer experiments. The files include subject records and failure logs.',
+        questRelated: true
+    },
+
+    quantum_neural_bridge: {
+        id: 'quantum_neural_bridge',
+        name: 'Quantum Neural Bridge',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A circlet of crystal filaments woven through gold-alloy wire. Designed to bridge quantum states and consciousness.',
+        questRelated: true
+    },
+
+    complete_sine_records: {
+        id: 'complete_sine_records',
+        name: 'Complete Sine Records',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'The complete, unredacted records of Sine\'s consciousness transfer experiments. Damning evidence of six deaths.',
+        questRelated: true
+    },
+
+    // =========================================================================
+    //  ENEMY LOOT ITEMS — referenced by enemies.js loot tables
+    // =========================================================================
+
+    shock_baton: {
+        id: 'shock_baton',
+        name: 'Shock Baton',
+        type: 'weapon',
+        subtype: 'melee',
+        damage: '1d6+1',
+        damageStat: 'strength',
+        properties: ['stun_chance_20'],
+        value: 35,
+        weight: 2,
+        description: 'An electroshock baton that delivers a painful jolt on contact. Favored by enforcers and thugs alike.',
+        requirements: {}
+    },
+
+    encrypted_data: {
+        id: 'encrypted_data',
+        name: 'Encrypted Data',
+        type: 'misc',
+        value: 30,
+        weight: 0,
+        description: 'An encrypted data package of unknown origin. Someone with the right skills could crack it open.'
+    },
+
+    meridian_keycard: {
+        id: 'meridian_keycard',
+        name: 'Meridian Keycard',
+        type: 'key_item',
+        value: 0,
+        weight: 0,
+        description: 'A corporate access keycard for Meridian Industries facilities. Restricted clearance level.',
+        questRelated: true
+    },
+
+    neon_shard: {
+        id: 'neon_shard',
+        name: 'Neon Shard',
+        type: 'misc',
+        value: 15,
+        weight: 0,
+        description: 'A fragment of crystallized neon energy. Glows with a pulsing inner light and is valued as a curiosity.'
+    },
+
+    sentinel_core: {
+        id: 'sentinel_core',
+        name: 'Sentinel Core',
+        type: 'misc',
+        value: 50,
+        weight: 1,
+        description: 'The processing core of a destroyed sentinel drone. Contains valuable components and potential intelligence data.'
+    },
+
+    alpha_core: {
+        id: 'alpha_core',
+        name: 'Alpha Core',
+        type: 'misc',
+        value: 75,
+        weight: 1,
+        description: 'An advanced processing core from an alpha-class machine. Highly valued by tech specialists and collectors.'
+    },
+
+    beta_core: {
+        id: 'beta_core',
+        name: 'Beta Core',
+        type: 'misc',
+        value: 40,
+        weight: 1,
+        description: 'A secondary processing core from a beta-class machine. Less powerful than an alpha core but still valuable.'
     }
 };

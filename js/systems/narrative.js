@@ -474,25 +474,32 @@ window.Latency.Narrative = (function () {
                 // ── Health ────────────────────────────────────────────
                 case 'heal':
                     var healAmount = Number(action.amount) || 0;
-                    var maxHp = character.maxHealth || 100;
-                    var oldHp = character.health || 0;
-                    character.health = Math.min(oldHp + healAmount, maxHp);
-                    _emit('narrative:heal', {
-                        amount: healAmount,
-                        oldHealth: oldHp,
-                        newHealth: character.health
-                    });
+                    if (window.Latency.CharacterSystem && typeof window.Latency.CharacterSystem.heal === 'function') {
+                        var hpBefore = character.derived ? character.derived.currentHp : 0;
+                        window.Latency.CharacterSystem.heal(healAmount);
+                        var charAfterHeal = _getCharacter();
+                        var hpAfter = charAfterHeal.derived ? charAfterHeal.derived.currentHp : hpBefore;
+                        _emit('narrative:heal', {
+                            amount: healAmount,
+                            oldHealth: hpBefore,
+                            newHealth: hpAfter
+                        });
+                    }
                     break;
 
                 case 'damage':
                     var dmgAmount = Number(action.amount) || 0;
-                    var beforeHp = character.health || 0;
-                    character.health = Math.max(beforeHp - dmgAmount, 0);
-                    _emit('narrative:damage', {
-                        amount: dmgAmount,
-                        oldHealth: beforeHp,
-                        newHealth: character.health
-                    });
+                    if (window.Latency.CharacterSystem && typeof window.Latency.CharacterSystem.takeDamage === 'function') {
+                        var hpBeforeDmg = character.derived ? character.derived.currentHp : 0;
+                        window.Latency.CharacterSystem.takeDamage(dmgAmount);
+                        var charAfterDmg = _getCharacter();
+                        var hpAfterDmg = charAfterDmg.derived ? charAfterDmg.derived.currentHp : 0;
+                        _emit('narrative:damage', {
+                            amount: dmgAmount,
+                            oldHealth: hpBeforeDmg,
+                            newHealth: hpAfterDmg
+                        });
+                    }
                     break;
 
                 // ── Combat trigger ────────────────────────────────────
@@ -534,6 +541,37 @@ window.Latency.Narrative = (function () {
                         }
                     }
                     _emit('narrative:music', action);
+                    break;
+
+                // ── Flags (alias) ────────────────────────────────────
+                case 'flag':
+                    // Alias for set_flag used in some story files
+                    if (!character.flags) { character.flags = []; }
+                    if (character.flags.indexOf(action.flag) === -1) {
+                        character.flags.push(action.flag);
+                    }
+                    _emit('narrative:flag', { flag: action.flag, set: true });
+                    break;
+
+                // ── Faction reputation (alias) ───────────────────────
+                case 'modify_faction':
+                    // Alias for modify_reputation used in some story files
+                    if (window.Latency.FactionSystem && typeof window.Latency.FactionSystem.modifyReputation === 'function') {
+                        window.Latency.FactionSystem.modifyReputation(action.faction, Number(action.amount || 0));
+                    } else {
+                        if (!character.factions) { character.factions = {}; }
+                        var oldFacRep = Number(character.factions[action.faction]) || 0;
+                        character.factions[action.faction] = oldFacRep + Number(action.amount || 0);
+                    }
+                    _emit('narrative:reputation', {
+                        faction: action.faction,
+                        amount: Number(action.amount || 0)
+                    });
+                    break;
+
+                // ── Trigger event ────────────────────────────────────
+                case 'trigger_event':
+                    _emit(action.event, action.params || {});
                     break;
 
                 // ── Job / class ───────────────────────────────────────
@@ -782,7 +820,16 @@ window.Latency.Narrative = (function () {
             var modifier = _statModifier(statValue);
             var roll = _rollD20();
             var total = roll + modifier;
-            var success = total >= dc;
+
+            // Natural 20 always succeeds, natural 1 always fails
+            var success;
+            if (roll === 20) {
+                success = true;
+            } else if (roll === 1) {
+                success = false;
+            } else {
+                success = total >= dc;
+            }
 
             _emit('dice:roll', {
                 stat: stat,
@@ -816,6 +863,24 @@ window.Latency.Narrative = (function () {
                 }
                 nextNodeId = choice.failNext || choice.next || nextNodeId;
             }
+
+            // Emit the choice event
+            _emit('story:choice', {
+                choiceIndex: choiceIndex,
+                choice: choice,
+                nodeId: _currentNodeId
+            });
+
+            // Delay loading the next node so the player can see the dice result
+            if (nextNodeId) {
+                return new Promise(function (resolve) {
+                    setTimeout(function () {
+                        loadNode(nextNodeId).then(resolve);
+                    }, 2500);
+                });
+            }
+            return null;
+
         } else {
             // ── Normal choice (no stat check) ─────────────────────────────
             if (choice.consequences) {

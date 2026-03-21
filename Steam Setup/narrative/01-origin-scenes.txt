@@ -1,0 +1,141 @@
+ORIGIN CUTSCENE SCENES (23 images)
+====================================
+These appear during the 10 race origin cutscenes at the start of the game.
+
+1. human-duct-scrubbing
+   Used in: Human origin, slide 4
+   A young human laborer on hands and knees scrubbing a narrow, grimy ventilation
+   duct lit by a single headlamp. Hands cracked and bleeding, chemical residue on
+   metal walls. Claustrophobic, oppressive. Dark tones with harsh white headlamp light.
+
+2. human-bunk-room-grief
+   Used in: Human origin, slide 7
+   A cramped communal bunk room with thin walls. A hand pressed flat against the wall.
+   Dim emergency lighting. Forty bunks stacked tight in industrial housing. Lonely,
+   suffocating atmosphere. Blue-grey tones.
+
+3. human-cityscape-dawn
+   Used in: Human origin, slide 9
+   A figure silhouetted at a housing block threshold at synthetic dawn. The megacity
+   stretches vertically above in tiers of steel, neon, and cold light. The moment of
+   stepping out into the world. Warm orange dawn vs cold blue city.
+
+4. orc-foundry-smelting
+   Used in: Orc origin, slide 2
+   Interior of a massive industrial foundry. Molten orange metal pouring from a
+   crucible. An orc mother shielding a child strapped to her back. Intense heat haze,
+   sparks, sweat. Orange and black palette with industrial scale.
+
+5. orc-foreman-knockout
+   Used in: Orc origin, slide 10
+   A muscular orc standing over a crumpled human foreman on a foundry floor. Shock
+   prod on the ground. Every orc worker on the line has turned to watch in silence.
+   Dramatic moment of defiance. Low angle, dramatic lighting.
+
+6. orc-gate-departure
+   Used in: Orc origin, slide 11
+   An orc walking through industrial factory gates into a rain-soaked megacity street.
+   Blood drying on knuckles. Foundry sirens wailing behind, red warning lights. Walking
+   away from everything they knew. Rain, neon, determination.
+
+7. wood-elf-surveyor-flags
+   Used in: Wood Elf origin, slide 4
+   Corporate surveyors in orange vests planting a Meridian Industries flag at the edge
+   of a green grove. Spray-painted trees marked for cutting. Scanner equipment. Tension
+   between nature and corporate machinery.
+
+8. wood-elf-grove-clearing
+   Used in: Wood Elf origin, slide 6
+   Industrial cutters chewing through a forest growing from cracked concrete ruins.
+   Birds fleeing. Sawdust and diesel in the air. Wood elves with bows watching from
+   branches above. Nature being destroyed by machines.
+
+9. wood-elf-mother-tree-falls
+   Used in: Wood Elf origin, slide 8
+   A massive mutant oak crashing down at sunset. Roots ripping through sublevels.
+   Green dust filling the air like snow. Elves keening in silhouette against orange
+   sky. Devastating, emotional. The death of something sacred.
+
+10. dark-elf-creche-darkness
+    Used in: Dark Elf origin, slide 2
+    A lightless underground hall where dark elf children learn to navigate by touch.
+    Faint bioluminescent markings on tunnel walls. Cool limestone atmosphere. Near-total
+    darkness with subtle blue-green bioluminescence.
+
+11. dark-elf-mentor-blade
+    Used in: Dark Elf origin, slide 3
+    A dark elf mentor (female, named Yvenne) materializing from tunnel shadow behind a
+    young student. Blade tip pressing against the student's spine. Teaching by ambush.
+    Sharp features, silver-white hair, predatory grace.
+
+12. dark-elf-surface-emergence
+    Used in: Dark Elf origin, slide 11
+    A hooded dark elf emerging from a tunnel mouth into the sodium-lit sprawl of the
+    lower districts at night. Blade at hip. Crowd of surface dwellers ahead. Eyes
+    adjusting to harsh artificial light after a life underground.
+
+13. dwarf-grandmother-workshop
+    Used in: Dwarf origin, slide 1
+    Close-up of an elderly dwarf woman's broad, scarred, oil-blackened hands holding a
+    wrench with surgical precision over a water reclamation unit. Workshop tools
+    surrounding her. Reverent, skilled, generations of knowledge in those hands.
+
+14. dwarf-pipe-burst-repair
+    Used in: Dwarf origin, slide 9
+    A dwarf chest-deep in floodwater in a dark service tunnel. Plasma torch clenched
+    between teeth. Both hands bracing a massive burst pipe. Sparks flying into dark
+    water. Heroic, desperate, skilled under pressure.
+
+15. half-giant-barracks-bunk
+    Used in: Half-Giant origin, slide 2
+    A row of reinforced steel bunks in an industrial barracks. A massive half-giant
+    child sitting on one, too big for it. Stenciled number G-12 on coveralls. Machine
+    oil smell. Institutional, dehumanizing, the child is just a number.
+
+16. half-giant-scaffold-accident
+    Used in: Half-Giant origin, slide 6
+    A half-giant catching a falling steel beam mid-collapse on a construction site.
+    Their elbow swinging back. A small human figure crumpled nearby. Chaos, dust,
+    falling debris. Raw power used to save a life.
+
+17. cyborg-mirror-reflection
+    Used in: Cyborg origin, slide 5
+    A cyborg pressing a mechanical palm against a bathroom mirror. Half-chrome
+    half-flesh reflection staring back. One organic eye visible. Seam lines across
+    face where metal meets skin. Identity crisis, loss of humanity.
+
+18. synth-warehouse-rows
+    Used in: Synth origin, slide 3
+    Rows of identical synths standing motionless in a fluorescent-lit warehouse. Eyes
+    open but empty. One being activated by a technician. A single synth at the edge
+    looking different — aware, curious, alive. Eerie, mass-produced humanity.
+
+19. synth-rooftop-rain
+    Used in: Synth origin, slide 8
+    A synth standing alone in the rain on a warehouse rooftop. Water running down their
+    synthetic face. City neon reflected in the droplets. Eyes expressing something new —
+    wonder, sadness, or the first spark of real emotion. Beautiful, melancholic.
+
+20. shadowkin-blackout-embrace
+    Used in: Shadowkin origin, slide 7
+    A shadowkin standing perfectly still during a total city blackout. Darkness wrapping
+    around them like a living cloak. Everyone else fumbling for flashlights in panic.
+    The shadowkin is calm, at home in the dark. Purple-black void energy.
+
+21. shadowkin-shadow-detaches
+    Used in: Shadowkin origin, slide 9
+    A figure's shadow standing beside them as a separate entity. The shadow is taller,
+    with wrong angles, reaching out a hand of pure absence. Eerie void-purple
+    highlights. The moment the darkness becomes a companion.
+
+22. voidborn-sensory-overload
+    Used in: Voidborn origin, slide 1
+    A voidborn with oversized luminous eyes on a crowded megacity street. Translucent
+    probability-ghost versions of people branching from every figure like afterimages.
+    Sensory overwhelm. Chaotic, beautiful, overwhelming. Purple and cyan energy.
+
+23. voidborn-rooftop-signal
+    Used in: Voidborn origin, slide 9
+    A voidborn on a rooftop at night, enormous alien eyes wide open to the sky.
+    Patterns visible in the star field that no one else can see. A faint cosmic signal
+    pulsing down. City sprawl below. Lonely, cosmic, transcendent.

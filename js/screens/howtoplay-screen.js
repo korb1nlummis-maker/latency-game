@@ -21,7 +21,7 @@ window.Latency.Screens.HowToPlayScreen = (function () {
     // --------------------------------------------------------
     var _container = null;
     var _listeners = [];
-    var _activeTab = 'world';
+    var _activeTab = 'combat';
 
     // --------------------------------------------------------
     // ASCII decorations
@@ -41,172 +41,148 @@ window.Latency.Screens.HowToPlayScreen = (function () {
     // Tab definitions
     // --------------------------------------------------------
     var TABS = [
-        { id: 'world',       label: '1. THE WORLD' },
-        { id: 'character',   label: '2. YOUR CHARACTER' },
-        { id: 'gameplay',    label: '3. GAMEPLAY' },
-        { id: 'progression', label: '4. PROGRESSION' },
-        { id: 'tips',        label: '5. TIPS' }
+        { id: 'combat',    label: '1. COMBAT' },
+        { id: 'stats',     label: '2. STATS & CHECKS' },
+        { id: 'inventory', label: '3. INVENTORY' },
+        { id: 'factions',  label: '4. FACTIONS' },
+        { id: 'tips',      label: '5. TIPS' }
     ];
 
     // --------------------------------------------------------
     // Section content builders
     // --------------------------------------------------------
 
-    function _buildWorldSection() {
+    function _buildCombatSection() {
         return '' +
             SECTION_BORDER_TOP + '\n' +
-            '│  SECTION 01: THE WORLD                            │\n' +
+            '│  SECTION 01: COMBAT                                │\n' +
             SECTION_BORDER_BOTTOM + '\n\n' +
-            '  > THE MEGACITY\n' +
-            '  ──────────────\n' +
-            '  In the sprawling megacity, death is optional — for those\n' +
-            '  who can afford it. Cortical memory stacks allow the\n' +
-            '  wealthy elite to cheat mortality, backing up their\n' +
-            '  consciousness into crystalline implants while the poor\n' +
-            '  die permanent deaths in the toxic slums below.\n\n' +
-            '  The Cloud Towers pierce the smog ceiling, gleaming\n' +
-            '  fortresses of the immortal elite. Below, the lower\n' +
-            '  districts rot — a labyrinth of neon-lit alleys,\n' +
-            '  abandoned sectors reclaimed by nature, and tunnel\n' +
-            '  networks ruled by those the surface forgot.\n\n' +
-            '  > FACTIONS\n' +
-            '  ──────────\n' +
-            '  Five factions vie for control of the megacity:\n\n' +
-            '  ■ THE IRON COLLECTIVE        [color: #c0392b]\n' +
-            '    Militant workers fighting against stack inequality.\n' +
-            '    "No gods. No stacks. Only iron."\n\n' +
-            '  ■ THE NEON COURT             [color: #9b59b6]\n' +
-            '    Decadent aristocrats who rule through glamour,\n' +
-            '    manipulation, and exquisite cruelty.\n\n' +
-            '  ■ THE CIRCUIT SAINTS         [color: #2980b9]\n' +
-            '    A techno-religious order that worships the Machine\n' +
-            '    God and seeks digital transcendence.\n\n' +
-            '  ■ THE GHOST SYNDICATE        [color: #7f8c8d]\n' +
-            '    A criminal empire of thieves, smugglers, and\n' +
-            '    assassins led by the enigmatic Broker.\n\n' +
-            '  ■ THE ASHEN CIRCLE           [color: #95a5a6]\n' +
-            '    Nihilist philosophers who believe reality itself\n' +
-            '    is unraveling and embrace the void.\n';
-    }
-
-    function _buildCharacterSection() {
-        return '' +
-            SECTION_BORDER_TOP + '\n' +
-            '│  SECTION 02: YOUR CHARACTER                        │\n' +
-            SECTION_BORDER_BOTTOM + '\n\n' +
-            '  > RACES\n' +
-            '  ───────\n' +
-            '  Ten species inhabit the megacity:\n\n' +
-            '  01. HUMAN      — Adaptable survivors who thrive through\n' +
-            '                   tenacity and social cunning.\n' +
-            '  02. ORC        — Toxic-foundry mutants with unmatched\n' +
-            '                   strength and short tempers.\n' +
-            '  03. WOOD ELF   — Sharp-eyed hunters dwelling in the\n' +
-            '                   overgrown ruins where nature reclaimed steel.\n' +
-            '  04. DARK ELF   — Tunnel rulers who trade in secrets,\n' +
-            '                   shadows, and ruthless precision.\n' +
-            '  05. DWARF      — Stocky engineers who built the city\'s\n' +
-            '                   bones and never let anyone forget it.\n' +
-            '  06. HALF-GIANT — Eight-foot heavy lifters used as\n' +
-            '                   living cranes and expendable muscle.\n' +
-            '  07. CYBORG     — Once human, now more machine — immense\n' +
-            '                   tech ability at the cost of humanity.\n' +
-            '  08. SYNTH      — Artificial beings who woke up in bodies\n' +
-            '                   they didn\'t choose, searching for identity.\n' +
-            '  09. SHADOWKIN  — Rift-touched descendants carrying dark\n' +
-            '                   energy in their blood, existing between worlds.\n' +
-            '  10. VOIDBORN   — Alien-human hybrids with psychic powers\n' +
-            '                   that terrify everyone around them.\n\n' +
-            '  > STATS\n' +
-            '  ───────\n' +
-            '  Eight attributes define your character:\n\n' +
-            '  STR  Strength     — Physical power, melee damage, carry weight\n' +
-            '  DEX  Dexterity    — Agility, dodge chance, ranged accuracy\n' +
-            '  CON  Constitution — Durability, max HP, poison/toxin resist\n' +
-            '  INT  Intelligence — Tech skill, hacking, knowledge checks\n' +
-            '  WIS  Wisdom       — Perception, willpower, mental resistance\n' +
-            '  CHA  Charisma     — Persuasion, intimidation, faction influence\n' +
-            '  TECH Tech Affinity— Cybernetic compatibility, device mastery\n' +
-            '  LCK  Luck         — Critical chance, loot quality, random events\n\n' +
-            '  > STAT MODIFIERS\n' +
-            '  ────────────────\n' +
-            '  Your modifier for any stat is calculated as:\n\n' +
-            '      modifier = floor( (stat - 10) / 2 )\n\n' +
-            '  Examples:\n' +
-            '    STAT 8  -> modifier -1    STAT 14 -> modifier +2\n' +
-            '    STAT 10 -> modifier  0    STAT 18 -> modifier +4\n' +
-            '    STAT 12 -> modifier +1    STAT 20 -> modifier +5\n';
-    }
-
-    function _buildGameplaySection() {
-        return '' +
-            SECTION_BORDER_TOP + '\n' +
-            '│  SECTION 03: GAMEPLAY                              │\n' +
-            SECTION_BORDER_BOTTOM + '\n\n' +
-            '  > CHOICES\n' +
-            '  ─────────\n' +
-            '  Click or tap to select your response. Some choices\n' +
-            '  are always available. Others require passing a stat\n' +
-            '  check — these are marked with the stat and DC\n' +
-            '  (Difficulty Class) needed.\n\n' +
-            '  > STAT CHECKS\n' +
-            '  ─────────────\n' +
-            '  When a choice requires a stat check:\n\n' +
-            '    Roll = d20 + stat modifier\n\n' +
-            '    If Roll >= DC ... SUCCESS\n' +
-            '    If Roll <  DC ... FAILURE\n\n' +
-            '  Special rolls:\n' +
-            '    NAT 20 (natural 20) = Automatic success, always\n' +
-            '    NAT 1  (natural 1)  = Automatic failure, always\n\n' +
-            '  > COMBAT\n' +
+            '  > TURN-BASED D20 COMBAT\n' +
+            '  ────────────────────────\n' +
+            '  Combat uses d20 dice rolls. Each round, you and\n' +
+            '  your enemy take turns choosing actions.\n\n' +
+            '  > ATTACK\n' +
             '  ────────\n' +
-            '  Combat is turn-based. Each round you choose:\n\n' +
-            '    [ATTACK]  — Strike with your equipped weapon\n' +
-            '    [DEFEND]  — Brace for impact, reducing damage taken\n' +
-            '    [ABILITY] — Use a racial or class special ability\n' +
-            '    [ITEM]    — Consume a healing item or throwable\n' +
-            '    [FLEE]    — Attempt to escape (DEX check vs enemy)\n\n' +
+            '  Roll d20 + your stat modifier vs enemy Armor Class.\n\n' +
+            '    If Roll >= enemy AC ... HIT!\n' +
+            '      -> Roll weapon damage dice (e.g. 1d8+1)\n' +
+            '    If Roll <  enemy AC ... MISS\n\n' +
+            '  STR modifier is used for melee weapons.\n' +
+            '  DEX modifier is used for ranged weapons.\n\n' +
+            '  > CRITICAL HITS & MISSES\n' +
+            '  ─────────────────────────\n' +
+            '    NAT 20 = CRITICAL HIT  — Always hits, double damage\n' +
+            '    NAT 1  = CRITICAL MISS — Always misses\n\n' +
+            '  > ENEMY ATTACKS\n' +
+            '  ───────────────\n' +
+            '  Enemies use the same rules against YOUR Armor Class.\n' +
+            '  Equip better armor to raise your AC and avoid hits.\n\n' +
+            '  > OTHER ACTIONS\n' +
+            '  ───────────────\n' +
+            '    [DEFEND]   — Reduce incoming damage, regain stamina\n' +
+            '    [USE ITEM] — Use healing items or consumables from\n' +
+            '                 your inventory mid-combat\n' +
+            '    [FLEE]     — Attempt to escape (may fail based on\n' +
+            '                 DEX check vs enemy)\n\n' +
             '  > DEATH\n' +
             '  ───────\n' +
-            '  When your HP reaches 0, you die. Death is permanent\n' +
-            '  unless you have a cortical stack or a trait that\n' +
-            '  prevents it (some racial traits trigger once to\n' +
-            '  save you from a killing blow).\n\n' +
-            '  WARNING: Save often. The city does not forgive.\n';
+            '  When HP reaches 0, you die. Some racial traits can\n' +
+            '  save you from a killing blow once. Save often.\n';
     }
 
-    function _buildProgressionSection() {
+    function _buildStatsSection() {
         return '' +
             SECTION_BORDER_TOP + '\n' +
-            '│  SECTION 04: PROGRESSION                           │\n' +
+            '│  SECTION 02: STATS & CHECKS                        │\n' +
             SECTION_BORDER_BOTTOM + '\n\n' +
-            '  > XP & LEVELING\n' +
+            '  > CHARACTER STATS\n' +
+            '  ─────────────────\n' +
+            '  Eight attributes define your character:\n\n' +
+            '  STR  Strength     — Melee damage, physical checks\n' +
+            '  DEX  Dexterity    — Ranged attacks, dodge, agility\n' +
+            '  CON  Constitution — Max HP, stamina, endurance\n' +
+            '  INT  Intelligence — Hacking, tech, knowledge checks\n' +
+            '  WIS  Wisdom       — Perception, insight, awareness\n' +
+            '  CHA  Charisma     — Persuasion, intimidation, social\n' +
+            '  TECH Tech Affinity— Augmentation use, device control\n' +
+            '  LCK  Luck         — Crit chance, random event outcomes\n\n' +
+            '  > STAT MODIFIERS\n' +
+            '  ────────────────\n' +
+            '  Your modifier is calculated as:\n\n' +
+            '      modifier = floor( (stat - 10) / 2 )\n\n' +
+            '    STAT 8  -> -1    STAT 14 -> +2\n' +
+            '    STAT 10 ->  0    STAT 18 -> +4\n' +
+            '    STAT 12 -> +1    STAT 20 -> +5\n\n' +
+            '  Your race and backstory give stat bonuses that\n' +
+            '  affect all rolls throughout the game.\n\n' +
+            '  > STAT CHECKS\n' +
+            '  ─────────────\n' +
+            '  Story choices may require stat checks.\n\n' +
+            '    Roll = d20 + stat modifier\n\n' +
+            '    If Roll >= DC (Difficulty Class) ... SUCCESS\n' +
+            '    If Roll <  DC                   ... FAILURE\n\n' +
+            '  Success opens better paths. Failure has consequences.\n\n' +
+            '  Special rolls:\n' +
+            '    NAT 20 = Always succeeds, regardless of DC\n' +
+            '    NAT 1  = Always fails, regardless of modifier\n';
+    }
+
+    function _buildInventorySection() {
+        return '' +
+            SECTION_BORDER_TOP + '\n' +
+            '│  SECTION 03: INVENTORY & ITEMS                     │\n' +
+            SECTION_BORDER_BOTTOM + '\n\n' +
+            '  > FINDING ITEMS\n' +
             '  ───────────────\n' +
-            '  Earn XP through combat, quests, and exploration.\n' +
-            '  XP required for each level:\n\n' +
-            '      threshold = 100 * level * 1.5\n\n' +
-            '    Level 2:  300 XP     Level 5:  750 XP\n' +
-            '    Level 3:  450 XP     Level 10: 1500 XP\n\n' +
-            '  > SKILLS\n' +
-            '  ────────\n' +
-            '  Gain 2 skill points per level.\n' +
-            '  Invest them across 5 skill trees:\n\n' +
-            '    [COMBAT]   — Weapon mastery, critical strikes\n' +
-            '    [STEALTH]  — Evasion, ambush, lockpicking\n' +
-            '    [TECH]     — Hacking, crafting, device control\n' +
-            '    [SOCIAL]   — Persuasion, deception, leadership\n' +
-            '    [SURVIVAL] — Healing, scavenging, resistance\n\n' +
-            '  > JOBS\n' +
-            '  ──────\n' +
-            '  Six careers are available, each with 4 ranks:\n\n' +
-            '    Mercenary   — Fight for credits and reputation\n' +
-            '    Smuggler    — Move contraband through the city\n' +
-            '    Technician  — Repair, hack, and build for pay\n' +
-            '    Medic       — Heal the wounded (and the desperate)\n' +
-            '    Enforcer    — Corporate muscle with authority\n' +
-            '    Fixer       — Broker deals and arrange meetings\n\n' +
-            '  Complete job tasks to rank up and unlock perks.\n\n' +
-            '  > FACTION REPUTATION\n' +
+            '  Find items through exploration, combat loot, and\n' +
+            '  story choices. Search every corner — rare gear\n' +
+            '  hides in unexpected places.\n\n' +
+            '  > EQUIPMENT\n' +
+            '  ───────────\n' +
+            '  Equip weapons and armor to improve combat stats.\n\n' +
+            '    WEAPONS — Determine your damage dice and which\n' +
+            '              stat modifier applies to attack rolls\n' +
+            '    ARMOR   — Raises your Armor Class (AC), making\n' +
+            '              you harder to hit in combat\n\n' +
+            '  > CONSUMABLES\n' +
+            '  ─────────────\n' +
+            '  Use items to heal and survive:\n\n' +
+            '    Med Patches — Restore HP during or outside combat\n' +
+            '    Stim Packs  — Boost stats temporarily\n' +
+            '    Other items — Various effects found in-game\n\n' +
+            '  > BACKPACK\n' +
+            '  ──────────\n' +
+            '  Limited to 20 inventory slots. Manage your space\n' +
+            '  carefully — drop or sell what you don\'t need.\n\n' +
+            '  > CREDITS\n' +
+            '  ─────────\n' +
+            '  Credits are the city\'s currency. Earn them through\n' +
+            '  jobs, loot, and story choices. Spend at vendors\n' +
+            '  for gear, items, and services.\n';
+    }
+
+    function _buildFactionsSection() {
+        return '' +
+            SECTION_BORDER_TOP + '\n' +
+            '│  SECTION 04: FACTIONS                              │\n' +
+            SECTION_BORDER_BOTTOM + '\n\n' +
+            '  > FIVE FACTIONS\n' +
+            '  ───────────────\n' +
+            '  Five factions vie for control of the megacity:\n\n' +
+            '  ■ THE IRON COLLECTIVE\n' +
+            '    Militant workers fighting stack inequality.\n\n' +
+            '  ■ THE NEON COURT\n' +
+            '    Decadent aristocrats ruling through glamour\n' +
+            '    and manipulation.\n\n' +
+            '  ■ THE CIRCUIT SAINTS\n' +
+            '    A techno-religious order seeking digital\n' +
+            '    transcendence.\n\n' +
+            '  ■ THE GHOST SYNDICATE\n' +
+            '    A criminal empire of thieves, smugglers,\n' +
+            '    and assassins.\n\n' +
+            '  ■ THE ASHEN CIRCLE\n' +
+            '    Nihilist philosophers who embrace the void.\n\n' +
+            '  > REPUTATION SYSTEM\n' +
             '  ────────────────────\n' +
             '  Each faction tracks your standing from -100 to +100:\n\n' +
             '    -100 to -51  HOSTILE     — Hunted on sight\n' +
@@ -214,7 +190,9 @@ window.Latency.Screens.HowToPlayScreen = (function () {
             '     -10 to  10  NEUTRAL     — Unknown outsider\n' +
             '      11 to  50  FRIENDLY    — Trusted ally\n' +
             '      51 to 100  ALLIED      — Inner circle\n\n' +
-            '  Actions, quests, and dialogue shift reputation.\n' +
+            '  Your actions and choices shift reputation.\n' +
+            '  High rep unlocks faction quests and allies.\n' +
+            '  Low rep makes factions hostile toward you.\n' +
             '  Some endings require specific faction standings.\n';
     }
 
@@ -237,15 +215,14 @@ window.Latency.Screens.HowToPlayScreen = (function () {
             '      Your species affects dialogue options, story\n' +
             '      branches, NPC reactions, and available endings.\n' +
             '      Some paths only open for specific races.\n\n' +
-            '  [!] 116 ENDINGS EXIST\n' +
-            '      Some are easy to find. Others require very\n' +
-            '      specific choices, faction standings, stats, or\n' +
-            '      items. Experiment with different builds.\n\n' +
-            '  [!] THE TRUE ENDING\n' +
-            '      Requires completing every major questline,\n' +
-            '      maxing all faction reputations, and making a\n' +
-            '      choice that only appears when everything else\n' +
-            '      is done. Good luck.\n\n' +
+            '  [!] CHOICES MATTER\n' +
+            '      Every decision has consequences. Multiple\n' +
+            '      endings exist based on your choices, faction\n' +
+            '      standings, and actions throughout the game.\n\n' +
+            '  [!] NO SINGLE RIGHT PATH\n' +
+            '      Some paths are locked behind stat requirements.\n' +
+            '      Your character, your story. Experiment with\n' +
+            '      different builds and see what opens up.\n\n' +
             '  ════════════════════════════════════════════════\n' +
             '  END OF MANUAL // ACCESS LEVEL: PUBLIC\n' +
             '  ════════════════════════════════════════════════\n';
@@ -255,11 +232,11 @@ window.Latency.Screens.HowToPlayScreen = (function () {
     // Section content map
     // --------------------------------------------------------
     var SECTION_BUILDERS = {
-        world:       _buildWorldSection,
-        character:   _buildCharacterSection,
-        gameplay:    _buildGameplaySection,
-        progression: _buildProgressionSection,
-        tips:        _buildTipsSection
+        combat:    _buildCombatSection,
+        stats:     _buildStatsSection,
+        inventory: _buildInventorySection,
+        factions:  _buildFactionsSection,
+        tips:      _buildTipsSection
     };
 
     // --------------------------------------------------------
@@ -382,7 +359,7 @@ window.Latency.Screens.HowToPlayScreen = (function () {
         mount: function (container, params) {
             _container = container;
             _listeners = [];
-            _activeTab = 'world';
+            _activeTab = 'combat';
 
             var dom = _buildScreen();
             _container.appendChild(dom);

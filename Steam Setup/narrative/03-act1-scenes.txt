@@ -1,0 +1,55 @@
+ACT 1 SCENES (8 images)
+=========================
+Job introductions and the Act 1 climax.
+
+31. foundry-gates-fortress
+    Used in: Act 1, Enforcer chapter opening
+    The Iron Collective's Foundry — a fortress of corrugated iron and reinforced
+    concrete bristling with jury-rigged turrets and searchlights. Two armored guards
+    at a massive gate. Industrial smoke rising. Military-industrial compound in the
+    slums. Intimidating, powerful, brutal.
+
+32. foundry-training-yard
+    Used in: Act 1, Enforcer chapter
+    A vast industrial cathedral interior repurposed as a training yard. Dozens of
+    fighters drilling with bladed weapons. Sparks from welding. Propaganda murals
+    on the walls. A massive banner with a barbed-wire fist logo. Boot camp meets
+    factory floor.
+
+33. deep-net-cafe
+    Used in: Act 1, Hacker chapter opening
+    A basement bunker lit in ultraviolet. Rows of signal-dampened privacy booths.
+    Patrons jacked into terminals with slack bodies and twitching fingers. Ozone
+    and solder smell. Cold blue-purple atmosphere. The dark web made physical.
+
+34. neon-court-entrance
+    Used in: Act 1, Smuggler chapter opening
+    A matte-black featureless door in an unmarked building. A single violet neon
+    line pulsing along its frame like a vein. Mid-district alley setting. Understated
+    elegance hiding extreme wealth. You'd walk past it and never know.
+
+35. neon-court-lounge
+    Used in: Act 1, Smuggler chapter
+    A sleek underground lounge with low furniture, dark polished surfaces. Violet
+    and blue ambient lighting. A dozen people negotiating in whispers. A figure in
+    a neon-thread suit approaching with a drink. Luxury, danger, style.
+
+36. medical-quarter-clinic
+    Used in: Act 1, Medic chapter opening
+    A converted storage-unit clinic. Cots along both walls with patients. A harried
+    triage station. Hand-painted sign reading "ALL WELCOME - NO STACK REQUIRED."
+    Organized chaos, compassion in a brutal world. Warm despite the poverty.
+
+37. registration-crisis-broadcast
+    Used in: Act 1, Chapter 4 climax
+    Every holographic billboard and screen in the city simultaneously showing
+    Director Voss's face in a charcoal suit. Crowds below staring up in horror.
+    The moment mandatory registration for all non-humans is announced. Dystopian
+    propaganda broadcast. Orwellian dread.
+
+38. transit-hub-riot
+    Used in: Act 1, Chapter 4 climax
+    A transit hub engulfed in chaos. Overturned barriers. Drone searchlights cutting
+    through tear gas. Crowds surging against security forces in riot gear. Orange
+    fire, broken glass, water cannons. The city breaking apart. Visceral, violent,
+    desperate.

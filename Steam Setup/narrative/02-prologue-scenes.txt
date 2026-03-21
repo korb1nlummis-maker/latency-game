@@ -1,0 +1,50 @@
+PROLOGUE SCENES (7 images)
+============================
+These appear during the shared prologue that all races play through.
+
+24. slum-apartment-wake
+    Used in: Prologue node_001 "The Lower District"
+    A tiny rust-stained room with a cot, metal shelf, cracked mirror. Rain streaking
+    down a grimy window. The megacity stacked vertically outside. A Meridian
+    holographic ad glowing across the street. The worst apartment you've ever seen,
+    but it's yours. Cramped, lonely, rain-soaked.
+
+25. lower-district-street-rain
+    Used in: Prologue node_006 "The Street"
+    A narrow neon-lit street canyon between massive tower blocks in acid rain. Vendor
+    stalls under tarps. Patrol drones overhead with searchlights. A street preacher
+    on a crate. Crowds in hoods pushing through. Cyberpunk street life at its grittiest.
+
+26. vendor-stalls-black-market
+    Used in: Prologue node_007 "The Vendor Stalls"
+    A row of Lower District vendor stalls under corrugated awnings. Black-market
+    augmentations laid out on velvet. Data chips in anti-static bags. Ration packs.
+    A kid reaching for someone's pocket. Hustle, desperation, survival commerce.
+
+27. mako-repair-shop
+    Used in: Prologue node_009 "Mako's Repair Shop"
+    A cluttered cyberpunk repair shop interior. Hanging cables, gutted electronics
+    everywhere. A compact woman with augmented mechanical arms working at a
+    workbench. Neon sign buzzing "MAKO'S" in the window. Organized chaos, warmth
+    amid the grit. She's your first ally.
+
+28. alley-mugging-standoff
+    Used in: Prologue node_016 "The Alley"
+    A dark rain-soaked alley between buildings. Three augmented street thugs blocking
+    the path — one with a metal jaw and crackling shock baton, one with a blade, one
+    cracking knuckles. Electronic waste in dumpsters. Menacing neon backlighting.
+    This is your first fight.
+
+29. job-board-crowd
+    Used in: Prologue node_020 "The Job Board"
+    A covered intersection with an 8-foot industrial display screen bolted to a
+    concrete pillar. Scrolling colored job listings in terminal font. A crowd of
+    desperate job seekers pressing forward, elbowing for position. Your ticket out
+    of nothing.
+
+30. stack-dealer-encounter
+    Used in: Prologue node_026 "The Stack Dealer"
+    A clean, well-dressed man in a dark coat at the edge of a rain-slicked square.
+    Holding an open matte-black case with a glowing memory stack inside — blue-white
+    light illuminating his face from below. Neon reflections on wet ground. Corporate
+    menace disguised as opportunity.

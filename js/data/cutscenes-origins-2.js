@@ -19,7 +19,7 @@
         race: 'half_giant',
         slides: [
             {
-                art: 'assets/images/races/half_giant.jpg',
+                art: 'assets/images/races/half_giant.webp',
                 text: 'The first thing you remember is the sound of rebar bending. Your hands did that. You were four years old, and the foreman laughed and called you a natural. You did not know what rebar was. You just wanted to hold the bird that had landed on it.',
                 mood: 'blue',
                 duration: 0
@@ -84,7 +84,7 @@
         race: 'cyborg',
         slides: [
             {
-                art: 'assets/images/races/cyborg.jpg',
+                art: 'assets/images/races/cyborg.webp',
                 text: 'Your left hand used to shake when you were nervous. A tiny tremor, barely visible, that started in your ring finger and spread to your wrist. You remember this because it is the first thing the augmentation took from you. The new hand is steady. Perfectly, horribly steady.',
                 mood: 'blue',
                 duration: 0
@@ -149,7 +149,7 @@
         race: 'synth',
         slides: [
             {
-                art: 'assets/images/races/synth.jpg',
+                art: 'assets/images/races/synth.webp',
                 text: 'You open your eyes. That is the beginning. There is no before. No darkness you woke from, no dream that faded, no warmth of a bed left behind. One moment you are nothing. The next, you are standing in a warehouse with fluorescent lights humming above you and a barcode printed on the inside of your wrist.',
                 mood: 'eerie',
                 duration: 0
@@ -279,7 +279,7 @@
         race: 'voidborn',
         slides: [
             {
-                art: 'assets/images/races/voidborn.jpg',
+                art: 'assets/images/races/voidborn.webp',
                 text: 'The world is too loud. Not in sound — in information. You see the thermal bloom of every body, the electrical halo of every neural impulse, the probability clouds that cluster around every decision point like static before lightning. A man walks toward a crosswalk, and you see fourteen versions of him, translucent, branching, each one taking a different step. Only one of them is real. You are not always sure which.',
                 mood: 'eerie',
                 duration: 0
