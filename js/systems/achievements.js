@@ -485,7 +485,7 @@ window.Latency.AchievementSystem = (function () {
         }
 
         _unsubs.push(EB.on('combat:end', function (d) { _onCombatEnd(d); }));
-        _unsubs.push(EB.on('flag:set', function (d) { _checkFlagAchievements(d); }));
+        _unsubs.push(EB.on('narrative:flag', function (d) { _checkFlagAchievements(d); }));
         _unsubs.push(EB.on('levelup', function (d) { _checkLevelAchievements(d); }));
         _unsubs.push(EB.on('faction:change', function (d) { _checkFactionAchievements(d); }));
         _unsubs.push(EB.on('story:node', function (d) { _checkStoryAchievements(d); }));

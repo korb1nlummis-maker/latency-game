@@ -1,864 +1,864 @@
 {
-    "meta": {
-        "file": "chapter2-ashen",
-        "act": 1,
-        "chapter": 2,
-        "description": "First contact with the Ashen Circle faction. High Priestess Sable reaches out through dreams or digital channels. The player escorts a dying man to the Ossuary for a true death ceremony, confronting questions about mortality, souls, and the stack system's grip on life itself."
-    },
-    "nodes": {
-        "fac_ashen_001": {
-            "id": "act1.chapter2-ashen.fac_ashen_001",
-            "title": "The Dream That Isn't a Dream",
-            "location": "player_apartment",
-            "text": [
-                "You wake at the dead hour. Not 03:00, not 04:00, but somewhere in the gap between, a time that doesn't register on clocks. The room is wrong. The shadows lean at angles that don't correspond to any light source. The air smells of candle wax and something older, something mineral and deep, like stone that has never seen sunlight.",
-                {
-                    "condition": {
-                        "race": "human"
-                    },
-                    "text": "A woman stands at the foot of your cot. She wasn't there a moment ago. She didn't enter through the door. She is simply present, the way grief is present, the way silence is present after a sound has stopped. Her robes are the grey of cold ash. Her eyes are dark and calm and ancient in a face that cannot be older than thirty."
-                },
-                {
-                    "condition": {
-                        "race": "elf"
-                    },
-                    "text": "A woman stands among the shadows, and your long-lived senses insist she has been there for hours, waiting with a patience that even elves would find unsettling. Her robes are the grey of cold ash. Her eyes hold the weight of something vast and still, and when she looks at you, you feel seen in a way that makes your centuries feel like days."
-                },
-                {
-                    "condition": {
-                        "race": "orc"
-                    },
-                    "text": "A woman stands at the foot of your cot, and every ancestral instinct in your body screams at once. Not danger. Something else. Recognition. Your tusks ache with a resonance you have never felt before, as though the bone itself is vibrating at a frequency that predates language. Her robes are the grey of cold ash, and her eyes hold no fear."
-                },
-                {
-                    "condition": {
-                        "race": "cyborg"
-                    },
-                    "text": "Your HUD fractures. Diagnostic overlays dissolve into static, then reform as something else: an image, projected directly into your visual cortex, bypassing every firewall you have. A woman in grey robes, standing in a candlelit space that doesn't match your apartment's geometry. A signal riding frequencies your hardware shouldn't be able to receive. Your threat detection returns null. Whatever this is, your systems don't classify it as hostile. They classify it as inevitable."
-                },
-                {
-                    "condition": {
-                        "race": "synth"
-                    },
-                    "text": "Your cognitive architecture experiences an unprecedented event: an intrusion that does not register as an intrusion. A data stream flowing through channels that do not exist in your technical specifications, carrying an image rendered in perfect fidelity. A woman in grey robes. A candlelit space. Your security protocols engage and then, one by one, stand down. Not defeated. Persuaded. The code itself recognizes something older than code."
-                },
-                {
-                    "condition": {
-                        "race": "shadowkin"
-                    },
-                    "text": "The shadows in your room move. Not the small, restless shifting you have lived with your entire life, but a deliberate parting, a curtain being drawn aside. A woman steps through the darkness as though it were a doorway she has used many times. Her robes are the grey of cold ash, and when she looks at you, your shadow self stirs in recognition. She smells of the spaces between things."
-                },
-                {
-                    "condition": {
-                        "race": "voidborn"
-                    },
-                    "text": "The void within you responds before your conscious mind does. A resonance, deep and harmonic, like a tuning fork struck against the fabric of reality. A woman in grey robes materializes from a fold in the air, and the void energies that course through your body reach toward her with something that feels terrifyingly like reverence. She stands in the seam between what is and what isn't, and she is entirely at home there."
-                },
-                "\"You dream of circuits and survival,\" she says. Her voice is a low alto that reverberates in your chest cavity. \"Everyone in this city does. Running, fighting, accumulating, clinging. But tonight you will dream of something the city has forgotten.\"",
-                "She extends her hand. In her palm, a candle flame burns without a candle. It gives off warmth you can feel in your teeth.",
-                "\"My name is Sable. And I need your help to let a man die.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ashen_started",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"Let a man die? Explain yourself.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_002"
-                },
-                {
-                    "text": "\"How are you in my head?\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_002"
-                },
-                {
-                    "text": "Reach for a weapon.",
-                    "next": "act1.chapter2-ashen.fac_ashen_002"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_sacred_low",
-            "isEnding": false
+  "meta": {
+    "file": "chapter2-ashen",
+    "act": 1,
+    "chapter": 2,
+    "description": "First contact with the Ashen Circle faction. High Priestess Sable reaches out through dreams or digital channels. The player escorts a dying man to the Ossuary for a true death ceremony, confronting questions about mortality, souls, and the stack system's grip on life itself."
+  },
+  "nodes": {
+    "fac_ashen_001": {
+      "id": "act1.chapter2-ashen.fac_ashen_001",
+      "title": "The Dream That Isn't a Dream",
+      "location": "player_apartment",
+      "text": [
+        "You wake at the dead hour. Not 03:00, not 04:00, but somewhere in the gap between, a time that doesn't register on clocks. The room is wrong. The shadows lean at angles that don't correspond to any light source. The air smells of candle wax and something older, something mineral and deep, like stone that has never seen sunlight.",
+        {
+          "condition": {
+            "race": "human"
+          },
+          "text": "A woman stands at the foot of your cot. She wasn't there a moment ago. She didn't enter through the door. She is simply present, the way grief is present, the way silence is present after a sound has stopped. Her robes are the grey of cold ash. Her eyes are dark and calm and ancient in a face that cannot be older than thirty."
         },
-        "fac_ashen_002": {
-            "id": "act1.chapter2-ashen.fac_ashen_002",
-            "title": "Sable's Burden",
-            "location": "player_apartment",
-            "text": [
-                "The flame in her palm does not flicker. It burns with the steadiness of something that has been burning for a very long time.",
-                "\"His name is Orin Malek. Fifty-seven years old. Lung rot from thirty years in the filtration plants. The kind of death the stack-lords designed the cortical system to prevent. Upload the mind, discard the body, sleeve into something clean and new. Immortality for those who can afford the subscription.\"",
-                "Her voice carries no bitterness. Only a vast, tired clarity.",
-                "\"Orin can't afford it. But that isn't why he came to us. He could beg. He could sell his remaining years to a body-lease corp and spend his final decades as a rental sleeve for tourists. He has options. The city always offers options that look like choices but feel like traps.\"",
-                "She closes her hand around the flame. It doesn't go out. It simply passes through her skin and continues to glow beneath her flesh, illuminating the bones of her fingers like an x-ray made of candlelight.",
-                "\"Orin came to the Ashen Circle because he wants something the city cannot sell him. He wants to die. Truly. Completely. No stack backup. No consciousness archive. No digital echo rattling around a server farm for eternity, thinking the same thoughts in the same loops, calling it immortality.\"",
-                "\"He wants to end. And we believe that is the most sacred right any living thing possesses.\"",
-                {
-                    "condition": {
-                        "race": "synth"
-                    },
-                    "text": "Your ethical subroutines flag this statement for review. The concept of choosing non-existence contradicts your core self-preservation architecture. And yet some deeper process, something below the level of programmed values, parses her words and returns: VALID."
-                },
-                {
-                    "condition": {
-                        "race": "cyborg"
-                    },
-                    "text": "Your HUD attempts to classify her statement. Religious extremism? Suicide facilitation? Philosophical framework? The categories blur. Your human half feels something the hardware can't quantify."
-                }
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "\"Why do you need me?\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_003"
-                },
-                {
-                    "text": "\"That sounds like assisted suicide with extra steps.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_003"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_sacred_low",
-            "isEnding": false
+        {
+          "condition": {
+            "race": "elf"
+          },
+          "text": "A woman stands among the shadows, and your long-lived senses insist she has been there for hours, waiting with a patience that even elves would find unsettling. Her robes are the grey of cold ash. Her eyes hold the weight of something vast and still, and when she looks at you, you feel seen in a way that makes your centuries feel like days."
         },
-        "fac_ashen_003": {
-            "id": "act1.chapter2-ashen.fac_ashen_003",
-            "title": "The Complication",
-            "location": "player_apartment",
-            "text": [
-                "\"Orin's family has filed a Meridian Preservation Order. His daughter, Sera, and his son, Dav. They love him. I want you to understand that. This is not a story about villains. This is a story about people who love each other and cannot agree on what love requires.\"",
-                "Sable's gaze holds yours with an intensity that makes the room feel smaller.",
-                "\"Sera has taken a second mortgage on her housing unit to fund a stack-transfer for Orin. She has gone into debt that will follow her for decades. She has done this because she cannot imagine a world without her father in it. Dav has contacted Meridian Enforcement to place a medical hold on Orin's body, preventing him from leaving the district without corporate authorization.\"",
-                "\"They believe they are saving him. They believe death is the enemy and immortality is the cure. The entire city believes this. It is the founding myth of the stack economy: that consciousness must be preserved at any cost, because the alternative is nothing.\"",
-                "The flame beneath her skin pulses once, like a heartbeat.",
-                "\"The Ashen Circle believes the alternative is not nothing. We believe it is something the stacks cannot contain, something the corps cannot sell, and something the city has been running from since the first cortical implant was installed. We believe death is a door, not a wall.\"",
-                "\"I need you to escort Orin from the medical district to the Ossuary. Past his family. Past Meridian Enforcement. Past a city that has made it illegal to choose your own ending.\""
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "\"I'll help him. Everyone deserves to choose how they go.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_004",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.ashen_agreed_willing",
-                            "value": true
-                        }
-                    ]
-                },
-                {
-                    "text": "\"I'll hear Orin out. But I'm not promising anything.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_004",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.ashen_agreed_cautious",
-                            "value": true
-                        }
-                    ]
-                },
-                {
-                    "text": "\"This is cult nonsense. I won't help someone kill themselves.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_004",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.ashen_refused_initial",
-                            "value": true
-                        }
-                    ]
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_sacred_low",
-            "isEnding": false
+        {
+          "condition": {
+            "race": "orc"
+          },
+          "text": "A woman stands at the foot of your cot, and every ancestral instinct in your body screams at once. Not danger. Something else. Recognition. Your tusks ache with a resonance you have never felt before, as though the bone itself is vibrating at a frequency that predates language. Her robes are the grey of cold ash, and her eyes hold no fear."
         },
-        "fac_ashen_004": {
-            "id": "act1.chapter2-ashen.fac_ashen_004",
-            "title": "Meeting Orin",
-            "location": "medical_district",
-            "text": [
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_refused_initial"
-                    },
-                    "text": "You told Sable no. She didn't argue. She simply faded, the dream or signal dissolving like smoke, leaving only the faint scent of candle wax and a set of coordinates burned into your memory. You went anyway. Not because you changed your mind. Because something about the coordinates wouldn't let you sleep."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_agreed_willing"
-                    },
-                    "text": "Sable gave you coordinates before she dissolved back into whatever medium she had arrived through. The medical district, lower tier. Ward 9. The place where people go when the city has decided their bodies aren't worth maintaining but corporate policy won't let them stop."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_agreed_cautious"
-                    },
-                    "text": "You follow the coordinates Sable provided, moving through the medical district's lower levels where the lights buzz at frequencies that give you headaches and the corridors smell of antiseptic failing to mask something worse."
-                },
-                "Ward 9. The door is unlocked. Inside, a man sits on the edge of a medical cot, feet on the floor, hands on his knees. He is thin in the way that illness makes people thin: not the absence of flesh but the presence of something consuming it from within. His breathing is careful, rationed, each inhale a negotiation with lungs that have been losing the argument for years.",
-                "But his eyes. His eyes are clear and calm and present in a way you have rarely seen in this city, where everyone's gaze is split between the physical world and whatever their HUD is showing them. Orin Malek is here. Fully. Completely. In a way that makes the room feel more real around him.",
-                "\"You're the one Sable sent,\" he says. His voice is rough but warm, like wood smoke. \"Sit down. I want to tell you something, and I want you to hear it from me. Not from the Circle, not from my children, not from the corps. From me.\"",
-                {
-                    "condition": {
-                        "stat": "wisdom",
-                        "check": "gte",
-                        "value": 13
-                    },
-                    "text": "You study his face. There is no despair here. No desperation. What you see is something far rarer and more unsettling: peace. The genuine article, not the pharmaceutical kind. Orin Malek has made his decision and he is at ease with it in a way that challenges everything the city has taught you about the value of survival."
-                },
-                {
-                    "condition": {
-                        "stat": "wisdom",
-                        "check": "lt",
-                        "value": 13
-                    },
-                    "text": "He looks tired. Sick. You wonder if the Circle has gotten to him, filled his head with their philosophy until he mistook it for his own will."
-                }
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.met_orin",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Sit down. Listen.",
-                    "next": "act1.chapter2-ashen.fac_ashen_005"
-                },
-                {
-                    "text": "\"Your daughter is trying to save you. Why won't you let her?\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_005"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_melancholy_warm",
-            "isEnding": false
+        {
+          "condition": {
+            "race": "cyborg"
+          },
+          "text": "Your HUD fractures. Diagnostic overlays dissolve into static, then reform as something else: an image, projected directly into your visual cortex, bypassing every firewall you have. A woman in grey robes, standing in a candlelit space that doesn't match your apartment's geometry. A signal riding frequencies your hardware shouldn't be able to receive. Your threat detection returns null. Whatever this is, your systems don't classify it as hostile. They classify it as inevitable."
         },
-        "fac_ashen_005": {
-            "id": "act1.chapter2-ashen.fac_ashen_005",
-            "title": "Orin's Truth",
-            "location": "medical_district",
-            "text": [
-                "Orin coughs once, a sound like tearing paper, and waves off your concern before you can offer it.",
-                "\"I've lived fifty-seven years. That sounds like nothing in a city where the stack-lords have been alive for centuries, wearing bodies like changes of clothes. But I lived those years. Every one. I felt the filtration plant dust settle in my lungs and I felt my wife's hand in mine the morning our daughter was born and I felt the ground shake when the eastern district collapsed. I have been present for my life. That is the only wealth I have ever possessed.\"",
-                "He looks at his hands. Scarred, thick-knuckled, trembling slightly with a tremor he doesn't try to hide.",
-                "\"Sera wants to copy me into a stack. Upload my consciousness, archive my memories, preserve my patterns in silicon until she can afford a new sleeve. She calls it saving me. But I have watched what stacks do to people. I watched my friend Tobias get stacked after a factory accident. Thirty years in a server, and when they finally sleeved him into a new body, he couldn't remember the smell of his mother's cooking. He had the data. He had the memory file. But the experience was gone. The warmth of it. The meaning.\"",
-                "\"They kept his mind alive and killed everything that made it his.\"",
-                "Orin's eyes find yours. There is no plea in them. Only a question.",
-                "\"I am dying. That is a fact. The question is whether I die as Orin Malek, with everything I am intact, or whether I let them scrape my consciousness out of my skull and pour it into a box where it will loop and degrade and forget until the subscription lapses and they delete what's left.\"",
-                "\"Sable showed me another way. The old way. The way people died before the stacks made death into a product.\"",
-                {
-                    "condition": {
-                        "race": "shadowkin"
-                    },
-                    "text": "As Orin speaks, you feel something shift in the shadow-space that has been your constant companion since birth. A resonance. A recognition. As though the darkness itself is listening to this man and finding his words true."
-                },
-                {
-                    "condition": {
-                        "race": "voidborn"
-                    },
-                    "text": "The void energies within you respond to Orin's conviction with an almost gravitational pull. You sense something in him that you have felt at the edges of void anomalies: a thinning of the barrier between what is and what lies beyond. But in Orin, it is not violent. It is gentle. Voluntary. Like a door being opened from the inside."
-                }
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "\"I'll take you to the Ossuary. Let's go.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_006",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.agreed_to_escort",
-                            "value": true
-                        }
-                    ]
-                },
-                {
-                    "text": "\"Your family deserves to say goodbye first.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_006",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.suggested_family_goodbye",
-                            "value": true
-                        }
-                    ]
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_melancholy_warm",
-            "isEnding": false
+        {
+          "condition": {
+            "race": "synth"
+          },
+          "text": "Your cognitive architecture experiences an unprecedented event: an intrusion that does not register as an intrusion. A data stream flowing through channels that do not exist in your technical specifications, carrying an image rendered in perfect fidelity. A woman in grey robes. A candlelit space. Your security protocols engage and then, one by one, stand down. Not defeated. Persuaded. The code itself recognizes something older than code."
         },
-        "fac_ashen_006": {
-            "id": "act1.chapter2-ashen.fac_ashen_006",
-            "title": "The Family",
-            "location": "medical_district",
-            "text": [
-                "You don't make it to the corridor before the door opens from the outside.",
-                "A woman in her late twenties stands in the doorway. She has Orin's eyes but none of his calm. Behind her, a young man with clenched fists and a Meridian Enforcement badge clipped to his belt. Sera and Dav. The children who love their father enough to cage him.",
-                "\"Dad.\" Sera's voice cracks on the single syllable. She looks at you with a mixture of fear and fury that could strip paint. \"Who are you? Are you Circle? Did they send you?\"",
-                {
-                    "condition": {
-                        "flag": "chapter2.suggested_family_goodbye"
-                    },
-                    "text": "\"I told him you deserved a goodbye,\" you say. Sera's expression fractures between gratitude and suspicion."
-                },
-                "\"Sera,\" Orin says. He says it the way you say the name of something precious. \"I left you a letter. Everything I want you to know is in it.\"",
-                "\"I don't want a letter!\" Her voice rises to a register that bounces off the ward's bare walls. \"I want you! I want you in a stack where I can visit you, where I can hear your voice, where Dav's kids can know their grandfather! I signed the papers! The transfer is scheduled for tomorrow! All you have to do is nothing! Just sit there and let them save you!\"",
-                "Dav steps forward. His hand rests on the enforcement badge like a talisman. \"I've filed a medical preservation order. Legally, you can't leave this ward without Meridian authorization. And you—\" he points at you \"—if you're here to take him, that's kidnapping. I'll have a Sec-Corp response team here in four minutes.\"",
-                {
-                    "condition": {
-                        "stat": "wisdom",
-                        "check": "gte",
-                        "value": 14
-                    },
-                    "text": "You read the room. Sera is terrified, not angry. She has built her entire coping mechanism around the belief that the stack will preserve her father. If that belief collapses, she has nothing to hold on to. Dav is angry because anger is easier than grief. The badge is armor. The threat is a wall. They are both drowning and calling it standing."
-                },
-                {
-                    "condition": {
-                        "stat": "wisdom",
-                        "check": "lt",
-                        "value": 14
-                    },
-                    "text": "The situation is combustible. A dying man, two desperate children, and you in the middle of something that feels increasingly beyond your ability to navigate."
-                }
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.family_confrontation",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"This is Orin's choice. Not yours. Not mine. His.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_007",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.defended_orins_choice",
-                            "value": true
-                        }
-                    ]
-                },
-                {
-                    "text": "\"What if you came with us? Witnessed what he's chosen?\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_007",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.invited_family",
-                            "value": true
-                        }
-                    ]
-                },
-                {
-                    "text": "[WIS 13] \"Sera. What do you think your father would want if the stack didn't exist?\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_007",
-                    "requirement": {
-                        "stat": "wisdom",
-                        "check": "gte",
-                        "value": 13
-                    },
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.wisdom_question",
-                            "value": true
-                        }
-                    ]
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_tension_emotional",
-            "isEnding": false
+        {
+          "condition": {
+            "race": "shadowkin"
+          },
+          "text": "The shadows in your room move. Not the small, restless shifting you have lived with your entire life, but a deliberate parting, a curtain being drawn aside. A woman steps through the darkness as though it were a doorway she has used many times. Her robes are the grey of cold ash, and when she looks at you, your shadow self stirs in recognition. She smells of the spaces between things."
         },
-        "fac_ashen_007": {
-            "id": "act1.chapter2-ashen.fac_ashen_007",
-            "title": "A Fracture in the Ward",
-            "location": "medical_district",
-            "text": [
-                {
-                    "condition": {
-                        "flag": "chapter2.wisdom_question"
-                    },
-                    "text": "Sera opens her mouth to argue. Stops. The question hangs in the antiseptic air like a blade suspended mid-swing. You watch the thought penetrate, watch it find the soft place behind her anger where the truth lives. Her eyes fill. She doesn't answer. She doesn't need to. The answer is on her face: if the stack didn't exist, she would hold her father's hand and let him go. The technology hasn't given her a choice. It has taken one away."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.invited_family"
-                    },
-                    "text": "Dav scoffs. Sera hesitates. And in that hesitation, you see the crack in the wall she has built between herself and her father's decision. She doesn't say yes. But she doesn't say no. She looks at Orin, and something passes between them that is older and deeper than language."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.defended_orins_choice"
-                    },
-                    "text": "\"His choice?\" Dav's voice is sharp enough to cut. \"He's dying. He's sick. He's been brainwashed by a death cult. That's not choice. That's a vulnerable man being exploited by—\" He stops. Because Orin has stood up. Slowly, painfully, with the dignity of a man who has earned every ounce of effort it costs him."
-                },
-                "\"Sera. Dav.\" Orin's voice fills the room in a way that has nothing to do with volume. \"I changed your diapers. I taught you to ride the transit rails. I held your mother's hand while she died, and I have held her memory in my living brain every day since. Not in a file. Not in an archive. In my heart. And I will carry her with me through whatever door is waiting.\"",
-                "\"I am not confused. I am not coerced. I am not afraid. I am your father, and I am asking you, as the last thing I will ever ask, to let me leave this room.\"",
-                "Sera is crying. Dav's hand has fallen away from his badge. The four-minute threat evaporates like breath on cold glass.",
-                "Orin walks to the door. He moves slowly but he moves. He stops beside Sera, cups her face in his scarred hands, and presses his forehead to hers. He whispers something you cannot hear. Then he does the same to Dav, who stands rigid as iron and then crumbles, shoulders shaking, silent.",
-                "Orin turns to you. His eyes are wet but his step is steady.",
-                "\"Take me to the Ossuary.\""
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "Lead the way into the undercity.",
-                    "next": "act1.chapter2-ashen.fac_ashen_008"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_melancholy_warm",
-            "isEnding": false
+        {
+          "condition": {
+            "race": "voidborn"
+          },
+          "text": "The void within you responds before your conscious mind does. A resonance, deep and harmonic, like a tuning fork struck against the fabric of reality. A woman in grey robes materializes from a fold in the air, and the void energies that course through your body reach toward her with something that feels terrifyingly like reverence. She stands in the seam between what is and what isn't, and she is entirely at home there."
         },
-        "fac_ashen_008": {
-            "id": "act1.chapter2-ashen.fac_ashen_008",
-            "title": "The Descent",
-            "location": "undercity_passages",
-            "text": [
-                "The route to the Ossuary is not on any map. Sable's coordinates lead through maintenance tunnels that predate the current city grid, corridors of ancient concrete and exposed rebar that the renovation crews never reached. The air grows cooler as you descend. The hum of the city's power grid fades. In its place: silence, deep and mineral, the silence of places that have been underground long enough to forget the sun.",
-                "Orin walks beside you. He doesn't rush. He doesn't slow. He walks like a man taking a long route home.",
-                "\"You're wondering if I'm afraid,\" he says, as you navigate a collapsed junction by the light of your equipment. It isn't a question.",
-                "\"I was. For months. When the doctors told me the lung rot was terminal, I spent every night staring at the ceiling, calculating the cost of stacking, running the numbers, trying to find a way to buy more time. Time. That's what the corps sell. Not life. Time. There's a difference, but the city has made us forget it.\"",
-                "He pauses to breathe. The sound is labored but controlled.",
-                "\"Then Sable found me. Or I found her. She didn't promise me an afterlife. She didn't promise me anything. She showed me the Ossuary and she told me the truth the stack-lords don't want anyone to hear: that a natural death is not an ending. It's a completion. The consciousness doesn't just stop. It goes somewhere the stacks can't follow. Somewhere they can't monetize.\"",
-                {
-                    "condition": {
-                        "stat": "wisdom",
-                        "check": "gte",
-                        "value": 13
-                    },
-                    "text": "You listen to his words and test them against the part of yourself that has learned to distinguish between belief and delusion. What you find surprises you: there is no desperation in Orin's faith. It is not the frantic grasping of a dying man. It is the settled certainty of someone who has looked at both options with clear eyes and chosen the one that requires more courage."
-                },
-                "Ahead, in the darkness, candlelight. Dozens of flames. Hundreds. A warm orange glow that has no business existing this far below the city, emanating from somewhere just around the curve of the tunnel."
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "Step into the light.",
-                    "next": "act1.chapter2-ashen.fac_ashen_009"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_descent_echoes",
-            "isEnding": false
-        },
-        "fac_ashen_009": {
-            "id": "act1.chapter2-ashen.fac_ashen_009",
-            "title": "The Ossuary",
-            "location": "the_ossuary",
-            "text": [
-                "The tunnel opens into a cathedral.",
-                "Not a church. Not a chapel. A cathedral, vast and vaulted, carved from the bedrock beneath the city by hands that must have worked for generations. The ceiling arches sixty feet above, supported by columns of natural stone that have been smoothed and shaped but not polished, leaving the raw grain of the rock visible, spiraling upward like frozen rivers. Every surface holds candles. Thousands of them. Set into niches carved into the walls, balanced on stone ledges, clustered in pools of melted wax on the floor. The light they produce is warm and living, shifting and breathing in drafts you cannot feel, painting the stone in shades of amber and gold.",
-                "And the bones. The walls are lined with them. Human bones, arranged with a care and precision that transforms the macabre into the sacred. Skulls form arches above doorways. Femurs create geometric patterns that spiral outward from central mandala points. Ribcages, opened and mounted, hold candles in their cavities like offerings cupped in skeletal hands. This is not a place of horror. It is a place where death has been given architecture, where the remains of the dead have been arranged into something that says: you were here, you mattered, you are remembered.",
-                {
-                    "condition": {
-                        "race": "shadowkin"
-                    },
-                    "text": "The shadows in the Ossuary are different from any you have ever encountered. They don't shift or compete or hunger. They are still. At peace. They lap at the edges of the candlelight like a gentle tide, and within them you sense presences — not ghosts, not echoes, but impressions. The emotional residue of everyone who has ever completed their journey in this place. It is the most beautiful thing you have ever felt."
-                },
-                {
-                    "condition": {
-                        "race": "voidborn"
-                    },
-                    "text": "The void within you goes quiet. Not suppressed. Not dampened. Quiet, the way a storm goes quiet in its eye. The Ossuary exists in a space where the boundary between reality and the void is tissue-thin, and through that membrane you feel something that your people have debated for centuries: the other side. Not oblivion. Not chaos. A warmth. A vast, encompassing warmth, like being held by something too large to see."
-                },
-                "Sable stands at the center of the nave. Around her, a dozen figures in grey robes, faces visible, unmasked. They are not what you expected. Not fanatics with hollow eyes. Teachers, laborers, a woman who looks like a grandmother, a man with mechanic's grease under his nails. Ordinary people who have found something extraordinary.",
-                "\"Welcome to the Ossuary,\" Sable says. \"Welcome to the oldest place in the city. Older than the stacks. Older than the corps. Older than the fear.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.entered_ossuary",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"This place is... not what I expected.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_010"
-                },
-                {
-                    "text": "Say nothing. Take it in.",
-                    "next": "act1.chapter2-ashen.fac_ashen_010"
-                }
-            ],
-            "ascii": "assets/ascii/locations/ossuary.txt",
-            "music": "ambient_ossuary_sacred",
-            "isEnding": false
-        },
-        "fac_ashen_010": {
-            "id": "act1.chapter2-ashen.fac_ashen_010",
-            "title": "Sable's Teaching",
-            "location": "the_ossuary",
-            "text": [
-                "Orin is guided to a stone platform at the cathedral's center by two members of the Circle. They move with tenderness, supporting his weight without diminishing his dignity. He lies down. The stone should be cold but candlelight has warmed it. He closes his eyes and opens them again, as though confirming that the ceiling of bones and firelight is real.",
-                "Sable stands beside you while the preparations unfold.",
-                "\"You have questions,\" she says. \"Everyone does, the first time. Ask.\"",
-                "You look at the bones in the walls. The candles. The quiet reverence of the Circle members as they arrange flowers — real flowers, impossible luxury in the undercity — around Orin's platform.",
-                "\"The stack system,\" Sable says, following your gaze, \"is the greatest prison ever built. Not because it forces compliance. Because it makes freedom look like death and death look like failure. The rich live forever and call it progress. The poor die permanently and call it tragedy. But the truth is older than either story.\"",
-                "She picks up a candle and holds it between you. The flame reflects in her dark eyes.",
-                "\"Death is not the absence of life. It is the completion of it. A consciousness that runs forever becomes a loop. It loses the urgency, the sweetness, the unbearable preciousness that makes a finite life meaningful. The stack-lords have lived for centuries, and they are the emptiest people in the city. They have everything except the one thing that gives everything value: an ending.\"",
-                "\"The rich fear death because they've forgotten what it means to truly live.\"",
-                "The words settle over you like ash. Like snow. Like something falling gently from a great height."
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "\"And the ceremony? What actually happens?\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_011"
-                },
-                {
-                    "text": "[WIS 14] \"You're not nihilists. You're the opposite.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_011",
-                    "requirement": {
-                        "stat": "wisdom",
-                        "check": "gte",
-                        "value": 14
-                    },
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.understood_circle",
-                            "value": true
-                        }
-                    ]
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ossuary_sacred",
-            "isEnding": false
-        },
-        "fac_ashen_011": {
-            "id": "act1.chapter2-ashen.fac_ashen_011",
-            "title": "The Ceremony Begins",
-            "location": "the_ossuary",
-            "text": [
-                {
-                    "condition": {
-                        "flag": "chapter2.understood_circle"
-                    },
-                    "text": "Sable looks at you for a long moment. Something shifts in her expression. Not surprise. Recognition. As though she has been waiting to hear those words and was not sure anyone in this city still had the capacity to say them. \"No,\" she agrees softly. \"We are not nihilists. We are the last people who remember what it means to be mortal. And we think that is the most important thing anyone can be.\""
-                },
-                "The Circle forms around Orin. Twelve figures plus Sable, standing in a ring, each holding a candle. Orin lies on the stone platform with his hands folded on his chest. His breathing has become shallower, more deliberate, as though he is conserving each breath for its precise purpose.",
-                "Sable begins to speak. Not in a language you recognize, not in code or data, but in something older, something that vibrates in the stone beneath your feet and the bones in the walls and the marrow of your own skeleton. It is not a prayer. It is a permission. A formal, sacred granting of permission for a consciousness to complete its journey.",
-                "The other Circle members join, their voices layering over Sable's in harmonics that should not be possible from human throats. The candles in the room respond, every flame leaning inward toward Orin, as though drawn by a gravity that has nothing to do with physics.",
-                "Orin opens his eyes one last time. He is looking at something above him. Not the ceiling. Not the bones. Something beyond. His face changes. The pain goes first. Then the weariness. Then the fear he would never admit he carried. What remains is an expression you have never seen on a living face.",
-                "Joy. Pure, absolute, bottomless joy.",
-                "He exhales. And it happens."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ceremony_begun",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Watch. Bear witness.",
-                    "next": "act1.chapter2-ashen.fac_ashen_012"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ceremony_rising",
-            "isEnding": false
-        },
-        "fac_ashen_012": {
-            "id": "act1.chapter2-ashen.fac_ashen_012",
-            "title": "The Impossible Moment",
-            "location": "the_ossuary",
-            "text": [
-                "Orin's body stills. His chest does not rise again. In any medical facility in the city, this would trigger alarms, automated responses, the desperate machinery of preservation. Here, in the Ossuary, there is only candlelight and silence and the gentle end of a man's breathing.",
-                "And then something happens that should not be possible.",
-                "Warmth. Not heat, not temperature. Warmth. The kind that has no physical source, that radiates from nowhere and everywhere, that fills the cathedral like sunlight filling a room at dawn. Every candle in the Ossuary flares at once, not brighter but deeper, the flames taking on a golden hue that makes the stone glow like living amber. The bones in the walls catch the light and for one impossible moment they are not bones. They are a constellation. A pattern. A map of something vast and interconnected and unutterably beautiful.",
-                "You feel it in your chest. Not an emotion. A presence. As though the air in the room has become saturated with something that has no name in any language the city speaks. It is warm. It is kind. It is the most real thing you have ever experienced.",
-                "Peace. Not the absence of conflict. Not the numbness of pharmaceuticals. Peace, the way a river meets the ocean. Peace, the way a long-held breath finally releases. Peace, the way a father's love for his children does not end at the border of death but passes through it and continues, on and on, into something you cannot see but can feel pressing against every surface of your soul.",
-                "Everyone in the room feels it. You know this because you can see it on their faces. The Circle members, experienced in this ritual, weep openly. Not with grief. With awe. With the staggering, knee-weakening relief of confirmation.",
-                {
-                    "condition": {
-                        "race": "shadowkin"
-                    },
-                    "text": "You feel it more than the others. Through your shadow-sense, through the darkness that has been your birthright and your burden, you perceive what the others can only feel: Orin's soul. Not a metaphor. Not a concept. A real, luminous, unmistakable presence, rising from his body like heat from a stone, passing through the membrane between life and whatever lies beyond. It pauses. It turns. For one incandescent moment, it sees you. It knows you. And then it is gone, slipping through a door in the fabric of reality with the ease of someone coming home."
-                },
-                {
-                    "condition": {
-                        "race": "voidborn"
-                    },
-                    "text": "The void within you does something it has never done. It sings. A single, resonant harmonic that vibrates through your entire being, and through that vibration you perceive what the others can only feel: the passage. Orin's consciousness — not data, not pattern, not code, but the irreducible essence of a man who lived and loved and chose — moving through the void like light through water. The void is not oblivion, you realize. It is a medium. A passage. A womb. And what emerges on the other side is something the stacks could never contain because it was never information. It was life."
-                },
-                "The warmth fades. Slowly. Gently. Like a hand being withdrawn with reluctance. The candles settle. The bones are bones again. Orin's body lies still on the stone, empty and peaceful, a vessel that has delivered its cargo and now rests.",
-                "The silence in the cathedral is not the silence of loss. It is the silence of something being completed."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.witnessed_ceremony",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 150
-                }
-            ],
-            "choices": [
-                {
-                    "text": "...",
-                    "next": "act1.chapter2-ashen.fac_ashen_013"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ceremony_transcendence",
-            "isEnding": false
-        },
-        "fac_ashen_013": {
-            "id": "act1.chapter2-ashen.fac_ashen_013",
-            "title": "After the Light",
-            "location": "the_ossuary",
-            "text": [
-                "Time passes. Minutes or hours, you cannot say. The Circle members tend to Orin's body with reverent hands, preparing him to join the bones in the walls. His remains will become part of the Ossuary's architecture, part of the constellation, another point of light in the pattern that spans the vaulted ceiling.",
-                "Sable finds you sitting on a stone bench near the entrance. Your hands are shaking. You didn't notice until now.",
-                "\"That feeling,\" she says, sitting beside you. \"That warmth. That is what the stack system steals. Not life. Not consciousness. The passage. The completion. When a person is stacked, their pattern is preserved but their soul — for lack of a better word — has nowhere to go. It loops. It echoes. It degrades. The stack-lords are not immortal. They are trapped. And they have built an entire civilization on the premise that their prison is a paradise.\"",
-                "She lets the silence hold for a moment.",
-                "\"You felt something real tonight. Something the Meridian Corporation has spent three centuries trying to disprove, suppress, and monetize. The question is: what will you do with what you now know?\"",
-                "Behind you, the candles burn. Somewhere in the tunnels above, the city hums with its endless commerce of consciousness, buying and selling and preserving and hoarding, terrified of the one thing that Orin Malek faced without flinching.",
-                {
-                    "condition": {
-                        "flag": "chapter2.invited_family"
-                    },
-                    "text": "At the tunnel entrance, a flicker of movement. Sera stands in the shadows, her face wet, her eyes wide. She came. She followed. She saw. Dav stands behind her, his enforcement badge hanging loose in his hand, forgotten. Neither of them speaks. Neither of them needs to."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.understood_circle"
-                    },
-                    "text": "Sable watches you with an expression you haven't seen from her before. Something almost like hope."
-                }
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "\"I want to join the Ashen Circle.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_014",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.ashen_joined",
-                            "value": true
-                        },
-                        {
-                            "type": "modify_faction",
-                            "faction": "ashenCircle",
-                            "amount": 20
-                        },
-                        {
-                            "type": "set_flag",
-                            "flag": "faction.ashenCircle_firstContact",
-                            "value": "joined"
-                        }
-                    ]
-                },
-                {
-                    "text": "\"I need time. But I won't forget what I saw here.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_014",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.ashen_neutral_observer",
-                            "value": true
-                        },
-                        {
-                            "type": "modify_faction",
-                            "faction": "ashenCircle",
-                            "amount": 8
-                        },
-                        {
-                            "type": "set_flag",
-                            "flag": "faction.ashenCircle_firstContact",
-                            "value": "observer"
-                        }
-                    ]
-                },
-                {
-                    "text": "\"What you're doing here is beautiful. But it's still illegal, and people should know what happens to stacked minds. I'm going to Meridian.\"",
-                    "next": "act1.chapter2-ashen.fac_ashen_015",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.ashen_reported",
-                            "value": true
-                        },
-                        {
-                            "type": "modify_faction",
-                            "faction": "ashenCircle",
-                            "amount": -25
-                        },
-                        {
-                            "type": "set_flag",
-                            "flag": "faction.ashenCircle_firstContact",
-                            "value": "betrayed"
-                        }
-                    ]
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ossuary_sacred",
-            "isEnding": false
-        },
-        "fac_ashen_014": {
-            "id": "act1.chapter2-ashen.fac_ashen_014",
-            "title": "The Circle Holds",
-            "location": "the_ossuary",
-            "text": [
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_joined"
-                    },
-                    "text": "Sable rises. She places her hands on your shoulders. Her touch is warm, warmer than it should be, as though some residual energy from the ceremony still clings to her skin."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_joined"
-                    },
-                    "text": "\"Welcome to the Ashen Circle. We are not a rebellion. We are not an army. We are a memory. The memory of what it means to be alive, to be finite, to be real. You carry that memory now. Guard it.\""
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_joined"
-                    },
-                    "text": "She produces a small object: a ring of grey metal, unpolished, set with a tiny fragment of bone. \"Orin's gift to whoever witnessed his passage. He asked me to give it to you. He said he knew someone would come.\""
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_neutral_observer"
-                    },
-                    "text": "Sable nods. No disappointment. No pressure. The same serenity she has carried since the first moment you saw her."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_neutral_observer"
-                    },
-                    "text": "\"Time is the one thing we believe in,\" she says. \"Take what you need. The Ossuary will be here. The candles will be burning. And if you ever need to find us, listen for the silence between the city's noise. We live in the pauses.\""
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.ashen_neutral_observer"
-                    },
-                    "text": "She presses something into your hand: a small grey candle, unlit, that fits in your palm like a secret. \"Light it when you are ready. Or don't. Either way, you have seen the truth. That cannot be unstacked.\""
-                },
-                "You leave the Ossuary through tunnels that feel different now. Warmer. The city waits above, with its neon and its noise and its desperate commerce of immortality. But something has shifted in the architecture of your understanding. A door has been opened. A question has been answered.",
-                "Or perhaps, more accurately, a question has finally been asked.",
-                {
-                    "condition": {
-                        "flag": "chapter2.invited_family"
-                    },
-                    "text": "Sera catches your arm at the tunnel junction. Her eyes are red but clear. \"Thank you,\" she whispers. \"I don't understand yet. But I felt it. He was... he was happy. At the end. He was so happy.\" Dav says nothing. But he nods. Once. And drops his enforcement badge into the darkness below the grating."
-                }
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ashen_complete",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 200
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Return to the surface. Carry what you've learned.",
-                    "next": "factions.ashen-circle.ac_001",
-                    "effects": [
-                        {
-                            "type": "flag",
-                            "flag": "faction_quest.ashen.started",
-                            "value": true
-                        }
-                    ]
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_resolution_quiet",
-            "isEnding": false
-        },
-        "fac_ashen_015": {
-            "id": "act1.chapter2-ashen.fac_ashen_015",
-            "title": "The Betrayal",
-            "location": "the_ossuary",
-            "text": [
-                "Sable's expression doesn't change. That is the worst part. She looks at you the way you might look at rain: with acceptance of something that was always going to happen.",
-                "\"I know,\" she says. \"I knew when I chose you. There was always a chance you would see what we showed you and choose the city's answer over ours. That is your right. The Ashen Circle does not compel. We never have.\"",
-                "She stands. The Circle members have stopped their work. They watch you with eyes that hold no hatred, only a sadness so deep it has become geological, layered and compressed by centuries of being misunderstood.",
-                "\"Meridian will pay you a bounty,\" Sable continues. \"Three thousand credits for the location of the Ossuary. Five thousand if you can identify me by name. They will send a tactical team. They will dismantle this cathedral bone by bone. They will scan every fragment for exploitable data. And then they will build something profitable on the ground where Orin Malek completed his journey in peace.\"",
-                "\"But they will not find what you found here tonight. They will not feel what you felt. Because the warmth, the light, the passage — those things are not in the stones or the bones or the candles. They are in the dying. And the dying will continue, with or without the Ossuary, in whatever dark and hidden place the Circle builds next.\"",
-                "She turns away. Then pauses.",
-                "\"You will dream of Orin's face. Not tonight. Not tomorrow. But someday, when the credits are spent and the city's gratitude has faded, you will close your eyes and see a dying man's joy, and you will wonder if what you sold was worth what you bought.\"",
-                "She walks into the candlelight and the Circle closes around her and you are alone in the cathedral of bones with only the sound of your own breathing and the faint, fading warmth of something you chose not to believe in."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ashen_complete",
-                    "value": true
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ashen_betrayed_circle",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 100
-                },
-                {
-                    "type": "modify_credits",
-                    "amount": 3000
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Leave the Ossuary. Collect the bounty.",
-                    "next": "act1.chapter3.stack_001",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.meridian_bounty_collected",
-                            "value": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Leave the Ossuary. Don't contact Meridian. Keep the location to yourself.",
-                    "next": "act1.chapter3.stack_001",
-                    "onSelect": [
-                        {
-                            "type": "set_flag",
-                            "flag": "chapter2.ashen_rejected_but_silent",
-                            "value": true
-                        },
-                        {
-                            "type": "modify_faction",
-                            "faction": "ashenCircle",
-                            "amount": 15
-                        }
-                    ]
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_aftermath_hollow",
-            "isEnding": false
+        "\"You dream of circuits and survival,\" she says. Her voice is a low alto that reverberates in your chest cavity. \"Everyone in this city does. Running, fighting, accumulating, clinging. But tonight you will dream of something the city has forgotten.\"",
+        "She extends her hand. In her palm, a candle flame burns without a candle. It gives off warmth you can feel in your teeth.",
+        "\"My name is Sable. And I need your help to let a man die.\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ashen_started",
+          "value": true
         }
+      ],
+      "choices": [
+        {
+          "text": "\"Let a man die? Explain yourself.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_002"
+        },
+        {
+          "text": "\"How are you in my head?\"",
+          "next": "act1.chapter2-ashen.fac_ashen_002"
+        },
+        {
+          "text": "Reach for a weapon.",
+          "next": "act1.chapter2-ashen.fac_ashen_002"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_sacred_low",
+      "isEnding": false
+    },
+    "fac_ashen_002": {
+      "id": "act1.chapter2-ashen.fac_ashen_002",
+      "title": "Sable's Burden",
+      "location": "player_apartment",
+      "text": [
+        "The flame in her palm does not flicker. It burns with the steadiness of something that has been burning for a very long time.",
+        "\"His name is Orin Malek. Fifty-seven years old. Lung rot from thirty years in the filtration plants. The kind of death the stack-lords designed the cortical system to prevent. Upload the mind, discard the body, sleeve into something clean and new. Immortality for those who can afford the subscription.\"",
+        "Her voice carries no bitterness. Only a vast, tired clarity.",
+        "\"Orin can't afford it. But that isn't why he came to us. He could beg. He could sell his remaining years to a body-lease corp and spend his final decades as a rental sleeve for tourists. He has options. The city always offers options that look like choices but feel like traps.\"",
+        "She closes her hand around the flame. It doesn't go out. It simply passes through her skin and continues to glow beneath her flesh, illuminating the bones of her fingers like an x-ray made of candlelight.",
+        "\"Orin came to the Ashen Circle because he wants something the city cannot sell him. He wants to die. Truly. Completely. No stack backup. No consciousness archive. No digital echo rattling around a server farm for eternity, thinking the same thoughts in the same loops, calling it immortality.\"",
+        "\"He wants to end. And we believe that is the most sacred right any living thing possesses.\"",
+        {
+          "condition": {
+            "race": "synth"
+          },
+          "text": "Your ethical subroutines flag this statement for review. The concept of choosing non-existence contradicts your core self-preservation architecture. And yet some deeper process, something below the level of programmed values, parses her words and returns: VALID."
+        },
+        {
+          "condition": {
+            "race": "cyborg"
+          },
+          "text": "Your HUD attempts to classify her statement. Religious extremism? Suicide facilitation? Philosophical framework? The categories blur. Your human half feels something the hardware can't quantify."
+        }
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "\"Why do you need me?\"",
+          "next": "act1.chapter2-ashen.fac_ashen_003"
+        },
+        {
+          "text": "\"That sounds like assisted suicide with extra steps.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_003"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_sacred_low",
+      "isEnding": false
+    },
+    "fac_ashen_003": {
+      "id": "act1.chapter2-ashen.fac_ashen_003",
+      "title": "The Complication",
+      "location": "player_apartment",
+      "text": [
+        "\"Orin's family has filed a Meridian Preservation Order. His daughter, Sera, and his son, Dav. They love him. I want you to understand that. This is not a story about villains. This is a story about people who love each other and cannot agree on what love requires.\"",
+        "Sable's gaze holds yours with an intensity that makes the room feel smaller.",
+        "\"Sera has taken a second mortgage on her housing unit to fund a stack-transfer for Orin. She has gone into debt that will follow her for decades. She has done this because she cannot imagine a world without her father in it. Dav has contacted Meridian Enforcement to place a medical hold on Orin's body, preventing him from leaving the district without corporate authorization.\"",
+        "\"They believe they are saving him. They believe death is the enemy and immortality is the cure. The entire city believes this. It is the founding myth of the stack economy: that consciousness must be preserved at any cost, because the alternative is nothing.\"",
+        "The flame beneath her skin pulses once, like a heartbeat.",
+        "\"The Ashen Circle believes the alternative is not nothing. We believe it is something the stacks cannot contain, something the corps cannot sell, and something the city has been running from since the first cortical implant was installed. We believe death is a door, not a wall.\"",
+        "\"I need you to escort Orin from the medical district to the Ossuary. Past his family. Past Meridian Enforcement. Past a city that has made it illegal to choose your own ending.\""
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "\"I'll help him. Everyone deserves to choose how they go.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_004",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.ashen_agreed_willing",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "\"I'll hear Orin out. But I'm not promising anything.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_004",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.ashen_agreed_cautious",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "\"This is cult nonsense. I won't help someone kill themselves.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_004",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.ashen_refused_initial",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_sacred_low",
+      "isEnding": false
+    },
+    "fac_ashen_004": {
+      "id": "act1.chapter2-ashen.fac_ashen_004",
+      "title": "Meeting Orin",
+      "location": "medical_district",
+      "text": [
+        {
+          "condition": {
+            "flag": "chapter2.ashen_refused_initial"
+          },
+          "text": "You told Sable no. She didn't argue. She simply faded, the dream or signal dissolving like smoke, leaving only the faint scent of candle wax and a set of coordinates burned into your memory. You went anyway. Not because you changed your mind. Because something about the coordinates wouldn't let you sleep."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.ashen_agreed_willing"
+          },
+          "text": "Sable gave you coordinates before she dissolved back into whatever medium she had arrived through. The medical district, lower tier. Ward 9. The place where people go when the city has decided their bodies aren't worth maintaining but corporate policy won't let them stop."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.ashen_agreed_cautious"
+          },
+          "text": "You follow the coordinates Sable provided, moving through the medical district's lower levels where the lights buzz at frequencies that give you headaches and the corridors smell of antiseptic failing to mask something worse."
+        },
+        "Ward 9. The door is unlocked. Inside, a man sits on the edge of a medical cot, feet on the floor, hands on his knees. He is thin in the way that illness makes people thin: not the absence of flesh but the presence of something consuming it from within. His breathing is careful, rationed, each inhale a negotiation with lungs that have been losing the argument for years.",
+        "But his eyes. His eyes are clear and calm and present in a way you have rarely seen in this city, where everyone's gaze is split between the physical world and whatever their HUD is showing them. Orin Malek is here. Fully. Completely. In a way that makes the room feel more real around him.",
+        "\"You're the one Sable sent,\" he says. His voice is rough but warm, like wood smoke. \"Sit down. I want to tell you something, and I want you to hear it from me. Not from the Circle, not from my children, not from the corps. From me.\"",
+        {
+          "condition": {
+            "stat": "wisdom",
+            "check": "gte",
+            "value": 13
+          },
+          "text": "You study his face. There is no despair here. No desperation. What you see is something far rarer and more unsettling: peace. The genuine article, not the pharmaceutical kind. Orin Malek has made his decision and he is at ease with it in a way that challenges everything the city has taught you about the value of survival."
+        },
+        {
+          "condition": {
+            "stat": "wisdom",
+            "check": "lt",
+            "value": 13
+          },
+          "text": "He looks tired. Sick. You wonder if the Circle has gotten to him, filled his head with their philosophy until he mistook it for his own will."
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.met_orin",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "Sit down. Listen.",
+          "next": "act1.chapter2-ashen.fac_ashen_005"
+        },
+        {
+          "text": "\"Your daughter is trying to save you. Why won't you let her?\"",
+          "next": "act1.chapter2-ashen.fac_ashen_005"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_melancholy_warm",
+      "isEnding": false
+    },
+    "fac_ashen_005": {
+      "id": "act1.chapter2-ashen.fac_ashen_005",
+      "title": "Orin's Truth",
+      "location": "medical_district",
+      "text": [
+        "Orin coughs once, a sound like tearing paper, and waves off your concern before you can offer it.",
+        "\"I've lived fifty-seven years. That sounds like nothing in a city where the stack-lords have been alive for centuries, wearing bodies like changes of clothes. But I lived those years. Every one. I felt the filtration plant dust settle in my lungs and I felt my wife's hand in mine the morning our daughter was born and I felt the ground shake when the eastern district collapsed. I have been present for my life. That is the only wealth I have ever possessed.\"",
+        "He looks at his hands. Scarred, thick-knuckled, trembling slightly with a tremor he doesn't try to hide.",
+        "\"Sera wants to copy me into a stack. Upload my consciousness, archive my memories, preserve my patterns in silicon until she can afford a new sleeve. She calls it saving me. But I have watched what stacks do to people. I watched my friend Tobias get stacked after a factory accident. Thirty years in a server, and when they finally sleeved him into a new body, he couldn't remember the smell of his mother's cooking. He had the data. He had the memory file. But the experience was gone. The warmth of it. The meaning.\"",
+        "\"They kept his mind alive and killed everything that made it his.\"",
+        "Orin's eyes find yours. There is no plea in them. Only a question.",
+        "\"I am dying. That is a fact. The question is whether I die as Orin Malek, with everything I am intact, or whether I let them scrape my consciousness out of my skull and pour it into a box where it will loop and degrade and forget until the subscription lapses and they delete what's left.\"",
+        "\"Sable showed me another way. The old way. The way people died before the stacks made death into a product.\"",
+        {
+          "condition": {
+            "race": "shadowkin"
+          },
+          "text": "As Orin speaks, you feel something shift in the shadow-space that has been your constant companion since birth. A resonance. A recognition. As though the darkness itself is listening to this man and finding his words true."
+        },
+        {
+          "condition": {
+            "race": "voidborn"
+          },
+          "text": "The void energies within you respond to Orin's conviction with an almost gravitational pull. You sense something in him that you have felt at the edges of void anomalies: a thinning of the barrier between what is and what lies beyond. But in Orin, it is not violent. It is gentle. Voluntary. Like a door being opened from the inside."
+        }
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "\"I'll take you to the Ossuary. Let's go.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_006",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.agreed_to_escort",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "\"Your family deserves to say goodbye first.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_006",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.suggested_family_goodbye",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_melancholy_warm",
+      "isEnding": false
+    },
+    "fac_ashen_006": {
+      "id": "act1.chapter2-ashen.fac_ashen_006",
+      "title": "The Family",
+      "location": "medical_district",
+      "text": [
+        "You don't make it to the corridor before the door opens from the outside.",
+        "A woman in her late twenties stands in the doorway. She has Orin's eyes but none of his calm. Behind her, a young man with clenched fists and a Meridian Enforcement badge clipped to his belt. Sera and Dav. The children who love their father enough to cage him.",
+        "\"Dad.\" Sera's voice cracks on the single syllable. She looks at you with a mixture of fear and fury that could strip paint. \"Who are you? Are you Circle? Did they send you?\"",
+        {
+          "condition": {
+            "flag": "chapter2.suggested_family_goodbye"
+          },
+          "text": "\"I told him you deserved a goodbye,\" you say. Sera's expression fractures between gratitude and suspicion."
+        },
+        "\"Sera,\" Orin says. He says it the way you say the name of something precious. \"I left you a letter. Everything I want you to know is in it.\"",
+        "\"I don't want a letter!\" Her voice rises to a register that bounces off the ward's bare walls. \"I want you! I want you in a stack where I can visit you, where I can hear your voice, where Dav's kids can know their grandfather! I signed the papers! The transfer is scheduled for tomorrow! All you have to do is nothing! Just sit there and let them save you!\"",
+        "Dav steps forward. His hand rests on the enforcement badge like a talisman. \"I've filed a medical preservation order. Legally, you can't leave this ward without Meridian authorization. And you—\" he points at you \"—if you're here to take him, that's kidnapping. I'll have a Sec-Corp response team here in four minutes.\"",
+        {
+          "condition": {
+            "stat": "wisdom",
+            "check": "gte",
+            "value": 14
+          },
+          "text": "You read the room. Sera is terrified, not angry. She has built her entire coping mechanism around the belief that the stack will preserve her father. If that belief collapses, she has nothing to hold on to. Dav is angry because anger is easier than grief. The badge is armor. The threat is a wall. They are both drowning and calling it standing."
+        },
+        {
+          "condition": {
+            "stat": "wisdom",
+            "check": "lt",
+            "value": 14
+          },
+          "text": "The situation is combustible. A dying man, two desperate children, and you in the middle of something that feels increasingly beyond your ability to navigate."
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.family_confrontation",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"This is Orin's choice. Not yours. Not mine. His.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_007",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.defended_orins_choice",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "\"What if you came with us? Witnessed what he's chosen?\"",
+          "next": "act1.chapter2-ashen.fac_ashen_007",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.invited_family",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "[WIS 13] \"Sera. What do you think your father would want if the stack didn't exist?\"",
+          "next": "act1.chapter2-ashen.fac_ashen_007",
+          "requirement": {
+            "stat": "wisdom",
+            "check": "gte",
+            "value": 13
+          },
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.wisdom_question",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_tension_emotional",
+      "isEnding": false
+    },
+    "fac_ashen_007": {
+      "id": "act1.chapter2-ashen.fac_ashen_007",
+      "title": "A Fracture in the Ward",
+      "location": "medical_district",
+      "text": [
+        {
+          "condition": {
+            "flag": "chapter2.wisdom_question"
+          },
+          "text": "Sera opens her mouth to argue. Stops. The question hangs in the antiseptic air like a blade suspended mid-swing. You watch the thought penetrate, watch it find the soft place behind her anger where the truth lives. Her eyes fill. She doesn't answer. She doesn't need to. The answer is on her face: if the stack didn't exist, she would hold her father's hand and let him go. The technology hasn't given her a choice. It has taken one away."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.invited_family"
+          },
+          "text": "Dav scoffs. Sera hesitates. And in that hesitation, you see the crack in the wall she has built between herself and her father's decision. She doesn't say yes. But she doesn't say no. She looks at Orin, and something passes between them that is older and deeper than language."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.defended_orins_choice"
+          },
+          "text": "\"His choice?\" Dav's voice is sharp enough to cut. \"He's dying. He's sick. He's been brainwashed by a death cult. That's not choice. That's a vulnerable man being exploited by—\" He stops. Because Orin has stood up. Slowly, painfully, with the dignity of a man who has earned every ounce of effort it costs him."
+        },
+        "\"Sera. Dav.\" Orin's voice fills the room in a way that has nothing to do with volume. \"I changed your diapers. I taught you to ride the transit rails. I held your mother's hand while she died, and I have held her memory in my living brain every day since. Not in a file. Not in an archive. In my heart. And I will carry her with me through whatever door is waiting.\"",
+        "\"I am not confused. I am not coerced. I am not afraid. I am your father, and I am asking you, as the last thing I will ever ask, to let me leave this room.\"",
+        "Sera is crying. Dav's hand has fallen away from his badge. The four-minute threat evaporates like breath on cold glass.",
+        "Orin walks to the door. He moves slowly but he moves. He stops beside Sera, cups her face in his scarred hands, and presses his forehead to hers. He whispers something you cannot hear. Then he does the same to Dav, who stands rigid as iron and then crumbles, shoulders shaking, silent.",
+        "Orin turns to you. His eyes are wet but his step is steady.",
+        "\"Take me to the Ossuary.\""
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "Lead the way into the undercity.",
+          "next": "act1.chapter2-ashen.fac_ashen_008"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_melancholy_warm",
+      "isEnding": false
+    },
+    "fac_ashen_008": {
+      "id": "act1.chapter2-ashen.fac_ashen_008",
+      "title": "The Descent",
+      "location": "undercity_passages",
+      "text": [
+        "The route to the Ossuary is not on any map. Sable's coordinates lead through maintenance tunnels that predate the current city grid, corridors of ancient concrete and exposed rebar that the renovation crews never reached. The air grows cooler as you descend. The hum of the city's power grid fades. In its place: silence, deep and mineral, the silence of places that have been underground long enough to forget the sun.",
+        "Orin walks beside you. He doesn't rush. He doesn't slow. He walks like a man taking a long route home.",
+        "\"You're wondering if I'm afraid,\" he says, as you navigate a collapsed junction by the light of your equipment. It isn't a question.",
+        "\"I was. For months. When the doctors told me the lung rot was terminal, I spent every night staring at the ceiling, calculating the cost of stacking, running the numbers, trying to find a way to buy more time. Time. That's what the corps sell. Not life. Time. There's a difference, but the city has made us forget it.\"",
+        "He pauses to breathe. The sound is labored but controlled.",
+        "\"Then Sable found me. Or I found her. She didn't promise me an afterlife. She didn't promise me anything. She showed me the Ossuary and she told me the truth the stack-lords don't want anyone to hear: that a natural death is not an ending. It's a completion. The consciousness doesn't just stop. It goes somewhere the stacks can't follow. Somewhere they can't monetize.\"",
+        {
+          "condition": {
+            "stat": "wisdom",
+            "check": "gte",
+            "value": 13
+          },
+          "text": "You listen to his words and test them against the part of yourself that has learned to distinguish between belief and delusion. What you find surprises you: there is no desperation in Orin's faith. It is not the frantic grasping of a dying man. It is the settled certainty of someone who has looked at both options with clear eyes and chosen the one that requires more courage."
+        },
+        "Ahead, in the darkness, candlelight. Dozens of flames. Hundreds. A warm orange glow that has no business existing this far below the city, emanating from somewhere just around the curve of the tunnel."
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "Step into the light.",
+          "next": "act1.chapter2-ashen.fac_ashen_009"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_descent_echoes",
+      "isEnding": false
+    },
+    "fac_ashen_009": {
+      "id": "act1.chapter2-ashen.fac_ashen_009",
+      "title": "The Ossuary",
+      "location": "the_ossuary",
+      "text": [
+        "The tunnel opens into a cathedral.",
+        "Not a church. Not a chapel. A cathedral, vast and vaulted, carved from the bedrock beneath the city by hands that must have worked for generations. The ceiling arches sixty feet above, supported by columns of natural stone that have been smoothed and shaped but not polished, leaving the raw grain of the rock visible, spiraling upward like frozen rivers. Every surface holds candles. Thousands of them. Set into niches carved into the walls, balanced on stone ledges, clustered in pools of melted wax on the floor. The light they produce is warm and living, shifting and breathing in drafts you cannot feel, painting the stone in shades of amber and gold.",
+        "And the bones. The walls are lined with them. Human bones, arranged with a care and precision that transforms the macabre into the sacred. Skulls form arches above doorways. Femurs create geometric patterns that spiral outward from central mandala points. Ribcages, opened and mounted, hold candles in their cavities like offerings cupped in skeletal hands. This is not a place of horror. It is a place where death has been given architecture, where the remains of the dead have been arranged into something that says: you were here, you mattered, you are remembered.",
+        {
+          "condition": {
+            "race": "shadowkin"
+          },
+          "text": "The shadows in the Ossuary are different from any you have ever encountered. They don't shift or compete or hunger. They are still. At peace. They lap at the edges of the candlelight like a gentle tide, and within them you sense presences — not ghosts, not echoes, but impressions. The emotional residue of everyone who has ever completed their journey in this place. It is the most beautiful thing you have ever felt."
+        },
+        {
+          "condition": {
+            "race": "voidborn"
+          },
+          "text": "The void within you goes quiet. Not suppressed. Not dampened. Quiet, the way a storm goes quiet in its eye. The Ossuary exists in a space where the boundary between reality and the void is tissue-thin, and through that membrane you feel something that your people have debated for centuries: the other side. Not oblivion. Not chaos. A warmth. A vast, encompassing warmth, like being held by something too large to see."
+        },
+        "Sable stands at the center of the nave. Around her, a dozen figures in grey robes, faces visible, unmasked. They are not what you expected. Not fanatics with hollow eyes. Teachers, laborers, a woman who looks like a grandmother, a man with mechanic's grease under his nails. Ordinary people who have found something extraordinary.",
+        "\"Welcome to the Ossuary,\" Sable says. \"Welcome to the oldest place in the city. Older than the stacks. Older than the corps. Older than the fear.\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.entered_ossuary",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"This place is... not what I expected.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_010"
+        },
+        {
+          "text": "Say nothing. Take it in.",
+          "next": "act1.chapter2-ashen.fac_ashen_010"
+        }
+      ],
+      "ascii": "assets/ascii/locations/ossuary.txt",
+      "music": "ambient_ossuary_sacred",
+      "isEnding": false
+    },
+    "fac_ashen_010": {
+      "id": "act1.chapter2-ashen.fac_ashen_010",
+      "title": "Sable's Teaching",
+      "location": "the_ossuary",
+      "text": [
+        "Orin is guided to a stone platform at the cathedral's center by two members of the Circle. They move with tenderness, supporting his weight without diminishing his dignity. He lies down. The stone should be cold but candlelight has warmed it. He closes his eyes and opens them again, as though confirming that the ceiling of bones and firelight is real.",
+        "Sable stands beside you while the preparations unfold.",
+        "\"You have questions,\" she says. \"Everyone does, the first time. Ask.\"",
+        "You look at the bones in the walls. The candles. The quiet reverence of the Circle members as they arrange flowers — real flowers, impossible luxury in the undercity — around Orin's platform.",
+        "\"The stack system,\" Sable says, following your gaze, \"is the greatest prison ever built. Not because it forces compliance. Because it makes freedom look like death and death look like failure. The rich live forever and call it progress. The poor die permanently and call it tragedy. But the truth is older than either story.\"",
+        "She picks up a candle and holds it between you. The flame reflects in her dark eyes.",
+        "\"Death is not the absence of life. It is the completion of it. A consciousness that runs forever becomes a loop. It loses the urgency, the sweetness, the unbearable preciousness that makes a finite life meaningful. The stack-lords have lived for centuries, and they are the emptiest people in the city. They have everything except the one thing that gives everything value: an ending.\"",
+        "\"The rich fear death because they've forgotten what it means to truly live.\"",
+        "The words settle over you like ash. Like snow. Like something falling gently from a great height."
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "\"And the ceremony? What actually happens?\"",
+          "next": "act1.chapter2-ashen.fac_ashen_011"
+        },
+        {
+          "text": "[WIS 14] \"You're not nihilists. You're the opposite.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_011",
+          "requirement": {
+            "stat": "wisdom",
+            "check": "gte",
+            "value": 14
+          },
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.understood_circle",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ossuary_sacred",
+      "isEnding": false
+    },
+    "fac_ashen_011": {
+      "id": "act1.chapter2-ashen.fac_ashen_011",
+      "title": "The Ceremony Begins",
+      "location": "the_ossuary",
+      "text": [
+        {
+          "condition": {
+            "flag": "chapter2.understood_circle"
+          },
+          "text": "Sable looks at you for a long moment. Something shifts in her expression. Not surprise. Recognition. As though she has been waiting to hear those words and was not sure anyone in this city still had the capacity to say them. \"No,\" she agrees softly. \"We are not nihilists. We are the last people who remember what it means to be mortal. And we think that is the most important thing anyone can be.\""
+        },
+        "The Circle forms around Orin. Twelve figures plus Sable, standing in a ring, each holding a candle. Orin lies on the stone platform with his hands folded on his chest. His breathing has become shallower, more deliberate, as though he is conserving each breath for its precise purpose.",
+        "Sable begins to speak. Not in a language you recognize, not in code or data, but in something older, something that vibrates in the stone beneath your feet and the bones in the walls and the marrow of your own skeleton. It is not a prayer. It is a permission. A formal, sacred granting of permission for a consciousness to complete its journey.",
+        "The other Circle members join, their voices layering over Sable's in harmonics that should not be possible from human throats. The candles in the room respond, every flame leaning inward toward Orin, as though drawn by a gravity that has nothing to do with physics.",
+        "Orin opens his eyes one last time. He is looking at something above him. Not the ceiling. Not the bones. Something beyond. His face changes. The pain goes first. Then the weariness. Then the fear he would never admit he carried. What remains is an expression you have never seen on a living face.",
+        "Joy. Pure, absolute, bottomless joy.",
+        "He exhales. And it happens."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ceremony_begun",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "Watch. Bear witness.",
+          "next": "act1.chapter2-ashen.fac_ashen_012"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ceremony_rising",
+      "isEnding": false
+    },
+    "fac_ashen_012": {
+      "id": "act1.chapter2-ashen.fac_ashen_012",
+      "title": "The Impossible Moment",
+      "location": "the_ossuary",
+      "text": [
+        "Orin's body stills. His chest does not rise again. In any medical facility in the city, this would trigger alarms, automated responses, the desperate machinery of preservation. Here, in the Ossuary, there is only candlelight and silence and the gentle end of a man's breathing.",
+        "And then something happens that should not be possible.",
+        "Warmth. Not heat, not temperature. Warmth. The kind that has no physical source, that radiates from nowhere and everywhere, that fills the cathedral like sunlight filling a room at dawn. Every candle in the Ossuary flares at once, not brighter but deeper, the flames taking on a golden hue that makes the stone glow like living amber. The bones in the walls catch the light and for one impossible moment they are not bones. They are a constellation. A pattern. A map of something vast and interconnected and unutterably beautiful.",
+        "You feel it in your chest. Not an emotion. A presence. As though the air in the room has become saturated with something that has no name in any language the city speaks. It is warm. It is kind. It is the most real thing you have ever experienced.",
+        "Peace. Not the absence of conflict. Not the numbness of pharmaceuticals. Peace, the way a river meets the ocean. Peace, the way a long-held breath finally releases. Peace, the way a father's love for his children does not end at the border of death but passes through it and continues, on and on, into something you cannot see but can feel pressing against every surface of your soul.",
+        "Everyone in the room feels it. You know this because you can see it on their faces. The Circle members, experienced in this ritual, weep openly. Not with grief. With awe. With the staggering, knee-weakening relief of confirmation.",
+        {
+          "condition": {
+            "race": "shadowkin"
+          },
+          "text": "You feel it more than the others. Through your shadow-sense, through the darkness that has been your birthright and your burden, you perceive what the others can only feel: Orin's soul. Not a metaphor. Not a concept. A real, luminous, unmistakable presence, rising from his body like heat from a stone, passing through the membrane between life and whatever lies beyond. It pauses. It turns. For one incandescent moment, it sees you. It knows you. And then it is gone, slipping through a door in the fabric of reality with the ease of someone coming home."
+        },
+        {
+          "condition": {
+            "race": "voidborn"
+          },
+          "text": "The void within you does something it has never done. It sings. A single, resonant harmonic that vibrates through your entire being, and through that vibration you perceive what the others can only feel: the passage. Orin's consciousness — not data, not pattern, not code, but the irreducible essence of a man who lived and loved and chose — moving through the void like light through water. The void is not oblivion, you realize. It is a medium. A passage. A womb. And what emerges on the other side is something the stacks could never contain because it was never information. It was life."
+        },
+        "The warmth fades. Slowly. Gently. Like a hand being withdrawn with reluctance. The candles settle. The bones are bones again. Orin's body lies still on the stone, empty and peaceful, a vessel that has delivered its cargo and now rests.",
+        "The silence in the cathedral is not the silence of loss. It is the silence of something being completed."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.witnessed_ceremony",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 150
+        }
+      ],
+      "choices": [
+        {
+          "text": "...",
+          "next": "act1.chapter2-ashen.fac_ashen_013"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ceremony_transcendence",
+      "isEnding": false
+    },
+    "fac_ashen_013": {
+      "id": "act1.chapter2-ashen.fac_ashen_013",
+      "title": "After the Light",
+      "location": "the_ossuary",
+      "text": [
+        "Time passes. Minutes or hours, you cannot say. The Circle members tend to Orin's body with reverent hands, preparing him to join the bones in the walls. His remains will become part of the Ossuary's architecture, part of the constellation, another point of light in the pattern that spans the vaulted ceiling.",
+        "Sable finds you sitting on a stone bench near the entrance. Your hands are shaking. You didn't notice until now.",
+        "\"That feeling,\" she says, sitting beside you. \"That warmth. That is what the stack system steals. Not life. Not consciousness. The passage. The completion. When a person is stacked, their pattern is preserved but their soul — for lack of a better word — has nowhere to go. It loops. It echoes. It degrades. The stack-lords are not immortal. They are trapped. And they have built an entire civilization on the premise that their prison is a paradise.\"",
+        "She lets the silence hold for a moment.",
+        "\"You felt something real tonight. Something the Meridian Corporation has spent three centuries trying to disprove, suppress, and monetize. The question is: what will you do with what you now know?\"",
+        "Behind you, the candles burn. Somewhere in the tunnels above, the city hums with its endless commerce of consciousness, buying and selling and preserving and hoarding, terrified of the one thing that Orin Malek faced without flinching.",
+        {
+          "condition": {
+            "flag": "chapter2.invited_family"
+          },
+          "text": "At the tunnel entrance, a flicker of movement. Sera stands in the shadows, her face wet, her eyes wide. She came. She followed. She saw. Dav stands behind her, his enforcement badge hanging loose in his hand, forgotten. Neither of them speaks. Neither of them needs to."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.understood_circle"
+          },
+          "text": "Sable watches you with an expression you haven't seen from her before. Something almost like hope."
+        }
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "\"I want to join the Ashen Circle.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_014",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.ashen_joined",
+              "value": true
+            },
+            {
+              "type": "modify_faction",
+              "faction": "ashenCircle",
+              "amount": 20
+            },
+            {
+              "type": "set_flag",
+              "flag": "faction.ashenCircle_firstContact",
+              "value": "joined"
+            }
+          ]
+        },
+        {
+          "text": "\"I need time. But I won't forget what I saw here.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_014",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.ashen_neutral_observer",
+              "value": true
+            },
+            {
+              "type": "modify_faction",
+              "faction": "ashenCircle",
+              "amount": 8
+            },
+            {
+              "type": "set_flag",
+              "flag": "faction.ashenCircle_firstContact",
+              "value": "observer"
+            }
+          ]
+        },
+        {
+          "text": "\"What you're doing here is beautiful. But it's still illegal, and people should know what happens to stacked minds. I'm going to Meridian.\"",
+          "next": "act1.chapter2-ashen.fac_ashen_015",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.ashen_reported",
+              "value": true
+            },
+            {
+              "type": "modify_faction",
+              "faction": "ashenCircle",
+              "amount": -25
+            },
+            {
+              "type": "set_flag",
+              "flag": "faction.ashenCircle_firstContact",
+              "value": "betrayed"
+            }
+          ]
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ossuary_sacred",
+      "isEnding": false
+    },
+    "fac_ashen_014": {
+      "id": "act1.chapter2-ashen.fac_ashen_014",
+      "title": "The Circle Holds",
+      "location": "the_ossuary",
+      "text": [
+        {
+          "condition": {
+            "flag": "chapter2.ashen_joined"
+          },
+          "text": "Sable rises. She places her hands on your shoulders. Her touch is warm, warmer than it should be, as though some residual energy from the ceremony still clings to her skin."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.ashen_joined"
+          },
+          "text": "\"Welcome to the Ashen Circle. We are not a rebellion. We are not an army. We are a memory. The memory of what it means to be alive, to be finite, to be real. You carry that memory now. Guard it.\""
+        },
+        {
+          "condition": {
+            "flag": "chapter2.ashen_joined"
+          },
+          "text": "She produces a small object: a ring of grey metal, unpolished, set with a tiny fragment of bone. \"Orin's gift to whoever witnessed his passage. He asked me to give it to you. He said he knew someone would come.\""
+        },
+        {
+          "condition": {
+            "flag": "chapter2.ashen_neutral_observer"
+          },
+          "text": "Sable nods. No disappointment. No pressure. The same serenity she has carried since the first moment you saw her."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.ashen_neutral_observer"
+          },
+          "text": "\"Time is the one thing we believe in,\" she says. \"Take what you need. The Ossuary will be here. The candles will be burning. And if you ever need to find us, listen for the silence between the city's noise. We live in the pauses.\""
+        },
+        {
+          "condition": {
+            "flag": "chapter2.ashen_neutral_observer"
+          },
+          "text": "She presses something into your hand: a small grey candle, unlit, that fits in your palm like a secret. \"Light it when you are ready. Or don't. Either way, you have seen the truth. That cannot be unstacked.\""
+        },
+        "You leave the Ossuary through tunnels that feel different now. Warmer. The city waits above, with its neon and its noise and its desperate commerce of immortality. But something has shifted in the architecture of your understanding. A door has been opened. A question has been answered.",
+        "Or perhaps, more accurately, a question has finally been asked.",
+        {
+          "condition": {
+            "flag": "chapter2.invited_family"
+          },
+          "text": "Sera catches your arm at the tunnel junction. Her eyes are red but clear. \"Thank you,\" she whispers. \"I don't understand yet. But I felt it. He was... he was happy. At the end. He was so happy.\" Dav says nothing. But he nods. Once. And drops his enforcement badge into the darkness below the grating."
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ashen_complete",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 200
+        }
+      ],
+      "choices": [
+        {
+          "text": "Return to the surface. Carry what you've learned.",
+          "next": "factions.ashen-circle.ac_001",
+          "effects": [
+            {
+              "type": "flag",
+              "flag": "faction_quest.ashen.started",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_resolution_quiet",
+      "isEnding": false
+    },
+    "fac_ashen_015": {
+      "id": "act1.chapter2-ashen.fac_ashen_015",
+      "title": "The Betrayal",
+      "location": "the_ossuary",
+      "text": [
+        "Sable's expression doesn't change. That is the worst part. She looks at you the way you might look at rain: with acceptance of something that was always going to happen.",
+        "\"I know,\" she says. \"I knew when I chose you. There was always a chance you would see what we showed you and choose the city's answer over ours. That is your right. The Ashen Circle does not compel. We never have.\"",
+        "She stands. The Circle members have stopped their work. They watch you with eyes that hold no hatred, only a sadness so deep it has become geological, layered and compressed by centuries of being misunderstood.",
+        "\"Meridian will pay you a bounty,\" Sable continues. \"Three thousand credits for the location of the Ossuary. Five thousand if you can identify me by name. They will send a tactical team. They will dismantle this cathedral bone by bone. They will scan every fragment for exploitable data. And then they will build something profitable on the ground where Orin Malek completed his journey in peace.\"",
+        "\"But they will not find what you found here tonight. They will not feel what you felt. Because the warmth, the light, the passage — those things are not in the stones or the bones or the candles. They are in the dying. And the dying will continue, with or without the Ossuary, in whatever dark and hidden place the Circle builds next.\"",
+        "She turns away. Then pauses.",
+        "\"You will dream of Orin's face. Not tonight. Not tomorrow. But someday, when the credits are spent and the city's gratitude has faded, you will close your eyes and see a dying man's joy, and you will wonder if what you sold was worth what you bought.\"",
+        "She walks into the candlelight and the Circle closes around her and you are alone in the cathedral of bones with only the sound of your own breathing and the faint, fading warmth of something you chose not to believe in."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ashen_complete",
+          "value": true
+        },
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ashen_betrayed_circle",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 100
+        },
+        {
+          "type": "modify_currency",
+          "amount": 3000
+        }
+      ],
+      "choices": [
+        {
+          "text": "Leave the Ossuary. Collect the bounty.",
+          "next": "act1.chapter3.stack_001",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.meridian_bounty_collected",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "Leave the Ossuary. Don't contact Meridian. Keep the location to yourself.",
+          "next": "act1.chapter3.stack_001",
+          "onSelect": [
+            {
+              "type": "set_flag",
+              "flag": "chapter2.ashen_rejected_but_silent",
+              "value": true
+            },
+            {
+              "type": "modify_faction",
+              "faction": "ashenCircle",
+              "amount": 15
+            }
+          ]
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_aftermath_hollow",
+      "isEnding": false
     }
+  }
 }

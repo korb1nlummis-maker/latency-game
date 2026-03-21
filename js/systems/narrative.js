@@ -37,6 +37,9 @@ window.Latency.Narrative = (function () {
     /** @type {Object[]|null} The filtered choices for the current node. */
     var _currentChoices = null;
 
+    /** @type {string|null} The nodeId of the last successfully loaded node (for fallback navigation). */
+    var _previousNodeId = null;
+
     // -----------------------------------------------------------------------
     // Helpers
     // -----------------------------------------------------------------------
@@ -577,12 +580,88 @@ window.Latency.Narrative = (function () {
      * @param {string} nodeId - Dot-delimited node identifier.
      * @returns {Promise<Object>} The processed story node.
      */
+    /**
+     * Build and display a fallback node so the player is never stuck on a
+     * blank screen. Provides a choice to return to the previous node (if
+     * one exists) or go to the main menu.
+     *
+     * @param {string} nodeId - The nodeId that failed to load.
+     * @param {string} message - Fallback narrative text to display.
+     * @returns {Object} A synthetic processed node.
+     */
+    function _buildFallbackNode(nodeId, message) {
+        var fallbackChoices = [];
+
+        if (_previousNodeId) {
+            fallbackChoices.push({
+                text: 'Go back',
+                next: _previousNodeId,
+                isStatCheck: false,
+                _originalIndex: 0
+            });
+        }
+
+        fallbackChoices.push({
+            text: 'Return to Main Menu',
+            next: '__main_menu__',
+            isStatCheck: false,
+            _originalIndex: fallbackChoices.length
+        });
+
+        var fallbackNode = {
+            id: nodeId,
+            text: [message],
+            choices: fallbackChoices,
+            speaker: null,
+            mood: null,
+            ascii: null,
+            music: null,
+            background: null,
+            raw: null
+        };
+
+        _currentNode = fallbackNode;
+        _currentNodeId = nodeId;
+        _currentChoices = fallbackChoices;
+
+        _emit('story:node', {
+            nodeId: nodeId,
+            node: fallbackNode
+        });
+
+        return fallbackNode;
+    }
+
     async function loadNode(nodeId) {
         var parsed = _parseNodeId(nodeId);
         var character = _getCharacter();
 
-        // 1. Load the story file
-        var fileData = await window.Latency.AssetLoader.loadStoryFile(parsed.filePath);
+        // Handle main-menu escape hatch from fallback nodes
+        if (nodeId === '__main_menu__') {
+            _emit('narrative:mainmenu');
+            if (window.Latency.StateMachine) {
+                window.Latency.StateMachine.transition('mainMenu');
+            }
+            return null;
+        }
+
+        // 1. Load the story file (with error handling)
+        var fileData;
+        try {
+            fileData = await window.Latency.AssetLoader.loadStoryFile(parsed.filePath);
+        } catch (err) {
+            console.error('[Narrative] Failed to load story file "' + parsed.filePath + '": ' + err.message);
+            _emit('narrative:error', {
+                type: 'file_load',
+                nodeId: nodeId,
+                filePath: parsed.filePath,
+                error: err.message
+            });
+            return _buildFallbackNode(
+                nodeId,
+                'The path forward is unclear... Something went wrong loading this part of the story.'
+            );
+        }
 
         // 2. Find the node in the file (support nested "nodes" container or flat)
         var rawNode = null;
@@ -593,11 +672,24 @@ window.Latency.Narrative = (function () {
         }
 
         if (!rawNode) {
-            throw new Error(
+            console.error(
                 '[Narrative] Node "' + parsed.nodeKey + '" not found in "' +
                 parsed.filePath + '.json"'
             );
+            _emit('narrative:error', {
+                type: 'missing_node',
+                nodeId: nodeId,
+                filePath: parsed.filePath,
+                nodeKey: parsed.nodeKey
+            });
+            return _buildFallbackNode(
+                nodeId,
+                "You've reached an uncharted path. The story continues elsewhere."
+            );
         }
+
+        // Track the previous valid node BEFORE updating current
+        _previousNodeId = _currentNodeId;
 
         // 3. Execute onEnter actions (before processing text, so flags can
         //    affect conditional text in the same node)
@@ -757,6 +849,7 @@ window.Latency.Narrative = (function () {
         /** @internal exposed for testing/debugging */
         _currentNode: _currentNode,
         _currentNodeId: _currentNodeId,
+        _previousNodeId: _previousNodeId,
 
         loadNode: loadNode,
         processText: processText,

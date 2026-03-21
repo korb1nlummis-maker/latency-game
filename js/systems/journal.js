@@ -707,7 +707,7 @@ window.Latency.Journal = (function () {
         // Subscribe to flag events for auto-tracking
         var EB = _bus();
         if (EB) {
-            _unsubs.push(EB.on('flag:set', _onFlagSet));
+            _unsubs.push(EB.on('narrative:flag', _onFlagSet));
         }
 
         console.log('[Journal] Initialized. ' +

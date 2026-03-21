@@ -959,9 +959,11 @@ window.Latency.SfxManager = (function () {
             play('combat-start');
         });
 
-        // combat:victory
-        Bus.on('combat:victory', function () {
-            play('combat-victory');
+        // combat:end -> play victory sound if result is victory
+        Bus.on('combat:end', function (data) {
+            if (data && data.result === 'victory') {
+                play('combat-victory');
+            }
         });
 
         // hp:change -> heal if positive, damage if negative
@@ -982,15 +984,7 @@ window.Latency.SfxManager = (function () {
         Bus.on('dice:roll', function () {
             play('dice-roll');
         });
-        Bus.on('dice:success', function () {
-            play('dice-success');
-        });
-        Bus.on('dice:fail', function () {
-            play('dice-fail');
-        });
-        Bus.on('dice:crit', function () {
-            play('dice-crit');
-        });
+        // dice:success, dice:fail, dice:crit removed — combat emits dice:roll with success field, no separate events
 
         // notify
         Bus.on('notify', function () {
@@ -1008,18 +1002,18 @@ window.Latency.SfxManager = (function () {
         });
 
         // achievement
-        Bus.on('achievement:unlock', function () {
+        Bus.on('achievement:unlocked', function () {
             play('achievement');
         });
 
         // item events
-        Bus.on('item:pickup', function () {
+        Bus.on('inventory:add', function () {
             play('pickup');
         });
-        Bus.on('item:equip', function () {
+        Bus.on('inventory:equip', function () {
             play('equip');
         });
-        Bus.on('credits:gain', function () {
+        Bus.on('currency:change', function () {
             play('coin');
         });
 

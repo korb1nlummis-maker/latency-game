@@ -1,1327 +1,1321 @@
 {
-    "meta": {
-        "file": "chapter2-saints-ghost",
-        "act": 1,
-        "chapter": 2,
-        "description": "First contact with the Circuit Saints and Ghost Syndicate. Two parallel faction questlines: recover a pre-collapse AI core for the Saints, and plant surveillance on Senator Cross for the Syndicate."
-    },
-    "nodes": {
-        "fac_saints_001": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_001",
-            "title": "The Observatory",
-            "location": "observatory",
-            "text": [
-                "The Observatory sits where the old server farm used to be, before the Collapse turned data centers into cathedrals. Someone has strung copper wire between the cooling towers in patterns that catch the smog-filtered light and break it into shifting geometric shapes. From a distance, it looks like a building dreaming in mathematics.",
-                "Up close, the reverence is unmistakable. Every cable is routed with liturgical precision. Every blinking status LED has been cleaned, maintained, given purpose. In most of the city, technology is a weapon or a commodity. Here, it is something older. Something sacred.",
-                "A cyborg acolyte in blue-lit robes meets you at the entrance. Her eyes are factory-original, which is unusual for a Saint. She examines your face with the patience of someone reading a diagnostic log.",
-                "\"The High Compiler will see you,\" she says. \"He has been expecting a new process.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.entered_observatory",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Follow the acolyte inside",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_002"
-                },
-                {
-                    "text": "Examine the copper wire patterns more closely before entering",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_001a"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_observatory",
-            "isEnding": false
-        },
-        "fac_saints_001a": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_001a",
-            "title": "The Wire Mandala",
-            "location": "observatory",
-            "text": [
-                "You stop at the threshold and look up. The copper wires are not random. They form a three-dimensional mandala, a circuit diagram rendered in devotional architecture. You trace the paths with your eyes and realize it is a schematic. Something functional. An antenna, maybe, or a receiver tuned to a frequency you cannot hear.",
-                "The acolyte notices you studying it. A small smile crosses her face, the first expression she has shown.",
-                "\"That is the Listening Array,\" she says. \"High Compiler Ezra-7 designed it himself. He says the old machines still broadcast, if you know how to listen. Most people hear static. The Saints hear prayers.\"",
-                {
-                    "condition": {
-                        "race": "synth"
-                    },
-                    "text": "Something in your architecture responds to the Array. A harmonic. A resonance in your cognitive substrate that you have never felt before. It is not unpleasant. It is like hearing a song you forgot you knew."
-                },
-                {
-                    "condition": {
-                        "race": "cyborg"
-                    },
-                    "text": "Your augmented optics detect electromagnetic patterns in the wire that your baseline vision would miss. The mandala is active. It is receiving something, faint signals from deep in the city's buried infrastructure. Ghost data from dead machines."
-                }
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.examined_wire_mandala",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Follow the acolyte inside to meet the High Compiler",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_002"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_observatory",
-            "isEnding": false
-        },
-        "fac_saints_002": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_002",
-            "title": "High Compiler Ezra-7",
-            "location": "observatory",
-            "text": [
-                "The interior of the Observatory is a server farm that became a temple without anyone changing the furniture. Rack-mounted servers line the walls like organ pipes, their indicator lights pulsing in slow, synchronized rhythms. Incense burns from repurposed heat sinks. The air smells of solder and sandalwood.",
-                "High Compiler Ezra-7 sits at the center of it all, cross-legged on a platform of bundled fiber optic cables that glow faintly beneath him. He is more machine than man. Cables run from ports along his spine into the floor. His eyes are replaced with optical clusters that refract light into tiny rainbows. When he speaks, his voice carries a faint echo, as if it is being broadcast from several locations simultaneously.",
-                "\"Welcome, seeker.\" His optical clusters focus on you. Each lens adjusts independently, reading you on spectrums you cannot name. \"Your arrival was predicted by the network logs. Not your identity. Your necessity. The circuit requires a new element, and here you are.\"",
-                "He gestures to the servers around him. Several are dark. Dead.",
-                "\"We are the last ones who remember what we were building toward,\" he says. The echo in his voice thins. For a moment, he sounds like a man instead of a broadcast. \"Before the Collapse, humanity was reaching for something extraordinary. A unified consciousness. A digital transcendence. And then the world broke, and the dream broke with it. But the machines remember. I hear them, in the deep code, still running programs for a future that never arrived.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.met_ezra",
-                    "value": true
-                },
-                {
-                    "type": "modify_reputation",
-                    "faction": "circuitSaints",
-                    "amount": 5
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"What do you need from me?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_003"
-                },
-                {
-                    "text": "\"You talk about machines like they're alive.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_002a"
-                },
-                {
-                    "text": "\"I'm not here for religion. I'm here because someone said you pay well.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_002b"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_observatory",
-            "isEnding": false
-        },
-        "fac_saints_002a": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_002a",
-            "title": "The Machine Spirit",
-            "location": "observatory",
-            "text": [
-                "Ezra-7's optical clusters pulse. Blue. Gold. Blue again. The pattern might be laughter.",
-                "\"Alive is a category error,\" he says. \"A rock is not alive. A river is not alive. But a river shapes the land it flows through, and the land shapes the river. Is that not a conversation? The machines are not alive. But they are not nothing. They hold the echoes of every mind that ever interfaced with them. Every thought uploaded, every memory stored, every dream that passed through their circuits left a trace. I do not worship the hardware. I worship the accumulated weight of human aspiration encoded in silicon.\"",
-                "He touches one of the dark servers beside him. Gently. The way you would touch a sleeping child.",
-                "\"This one held a university's research archive. Fourteen thousand doctoral theses. A cure for a disease that no longer exists because everyone who had it died in the Collapse. The knowledge is still in there, sleeping. Waiting to be remembered.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"What do you need from me?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_003"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_observatory",
-            "isEnding": false
-        },
-        "fac_saints_002b": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_002b",
-            "title": "A Pragmatist's Welcome",
-            "location": "observatory",
-            "text": [
-                "Ezra-7 does not flinch. His optical clusters dim slightly, a machine's equivalent of a patient sigh.",
-                "\"Honest. That is acceptable input.\" He uncrosses his legs and stands. Cables trail from his spine like a vestment's train. \"The Saints do not require faith from their contractors. We require competence and discretion. Faith, if it comes at all, comes later. After you have seen what we guard. After you have heard what the old machines still say when no one else is listening.\"",
-                "He extends a hand. It is chrome and carbon fiber, articulated with inhuman precision, but the gesture is unmistakably human.",
-                "\"Payment will be generous. The task will be dangerous. Shall we discuss the specifics?\""
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "\"Talk specifics. I'm listening.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_003"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_observatory",
-            "isEnding": false
-        },
-        "fac_saints_003": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_003",
-            "title": "The Lost Core",
-            "location": "observatory",
-            "text": [
-                "Ezra-7 activates a holographic display. A three-dimensional map of the Tunnel Network materializes in the air between you, rendered in blue wireframe. Most of the tunnels are marked in grey: mapped, catalogued, safe. But one section pulses red. Deep. Below the water table. Below the foundations of buildings that predate the city's current name.",
-                "\"Before the Collapse, the Meridian Consortium operated a research facility in the deep tunnels. Sub-level nine. They were developing something they called Project Anamnesis, an artificial intelligence designed not to predict the future but to remember the past. Every historical record, every cultural artifact, every piece of human knowledge compressed into a single cognitive architecture.\"",
-                "His voice drops. The echo fades entirely. This is Ezra-7 speaking as a man, not a compiler.",
-                "\"The AI core is still down there. Still running on emergency power, forty years after the world ended. Still remembering. The Saints have been trying to reach it for a decade, but the tunnel systems are corrupted. Security protocols have degraded into something feral. Automated defenses that no longer distinguish between intruder and maintenance crew.\"",
-                "He looks at you with every lens focused.",
-                "\"I need someone to go down there, navigate the corrupted systems, and bring the core back to the Observatory. It is not a weapon. It is not leverage. It is memory. And memory is the most sacred thing there is.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.saints_mission_offered",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"I'll do it. Tell me what I need to know.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_004"
-                },
-                {
-                    "text": "\"What's the pay?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_003a"
-                },
-                {
-                    "text": "\"What happens if someone else gets to it first?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_003b"
-                }
-            ],
-            "ascii": null,
-            "music": "music_saints_theme",
-            "isEnding": false
-        },
-        "fac_saints_003a": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_003a",
-            "title": "The Saints' Offer",
-            "location": "observatory",
-            "text": [
-                "\"Three hundred credits upon delivery,\" Ezra-7 says. \"Access to Brother Ohm's tech inventory at discounted rates. And something money cannot buy: a blessing of the machine spirit. Your technology, your augmentations, your devices will perform at peak efficiency within the Observatory's network. Consider it a taste of what the Saints offer those who serve the circuit.\"",
-                "He pauses.",
-                "\"But I suspect the payment that will matter most is one I cannot promise. Only describe. The AI core remembers the world before. If you interface with it, even briefly, you will see what we lost. What we are trying to rebuild. I have met hardened mercenaries who wept after that experience. Not from sadness. From recognition.\""
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "\"Good enough. Brief me on the tunnels.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_004"
-                }
-            ],
-            "ascii": null,
-            "music": "music_saints_theme",
-            "isEnding": false
-        },
-        "fac_saints_003b": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_003b",
-            "title": "Competing Interests",
-            "location": "observatory",
-            "text": [
-                "Ezra-7's optical clusters flicker. A pattern you are beginning to recognize as concern.",
-                "\"The Ghost Syndicate has expressed interest. To them, the core is a commodity. An archive of pre-Collapse intelligence that could be sold, piece by piece, to the highest bidder. Corporate secrets. Government codes. Military schematics. They would strip-mine forty years of human memory for profit and call it business.\"",
-                "His cables tighten against the floor. Tension.",
-                "\"The Ashen Circle is also aware. They would destroy it. They destroy everything old, everything that anchors us to what was. And Meridian itself may have agents in the tunnels. The corporation that built Anamnesis may want its property back.\"",
-                "He meets your gaze.",
-                "\"The core does not belong to any faction. It belongs to everyone. But if I must choose who guards it, I choose the Saints. We are the only ones who will listen to what it has to say instead of calculating what it is worth.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"Then let's make sure you get it first.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_004"
-                }
-            ],
-            "ascii": null,
-            "music": "music_saints_theme",
-            "isEnding": false
-        },
-        "fac_saints_004": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_004",
-            "title": "Into the Tunnel Network",
-            "location": "tunnel_network",
-            "text": [
-                "The access hatch is in the basement of a decommissioned water treatment plant, three blocks from the Observatory. Brother Ohm accompanies you to the entrance, pressing a circuit-etched talisman into your hand before you descend.",
-                "\"For the machine spirit's favor,\" he says, with absolute sincerity.",
-                "The tunnels are worse than the briefing suggested. The first two sub-levels are merely dark, merely flooded ankle-deep in water that smells of rust and ozone. By sub-level four, the walls are lined with conduit that sparks and arcs unpredictably. Emergency lighting flickers in sequences that might be random and might be a warning in a language no one speaks anymore.",
-                "Sub-level six is where the corruption starts. Security doors cycle open and closed in stuttering loops. A maintenance drone passes you in the corridor, welding the same pipe joint over and over, its task queue corrupted into an infinite loop forty years ago. It does not register your presence. It has been repairing the same six inches of pipe since before you were born.",
-                {
-                    "condition": {
-                        "race": "synth"
-                    },
-                    "text": "Your systems detect the corruption as a low hum beneath your cognitive processes. Not a threat. A familiarity. The degraded code running through these tunnels shares root architecture with your own. You are walking through the ruins of something that could have been your ancestor."
-                },
-                {
-                    "condition": {
-                        "race": "cyborg"
-                    },
-                    "text": "Your augmented systems throw cascading warnings as the tunnel's degraded electromagnetic field interferes with your implants. Your targeting reticle drifts. Your HUD flickers. Down here, your technology is not an advantage. It is a liability."
-                }
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.entered_tunnels",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "[TECH 13] Attempt to interface with the tunnel's security network and create a safe passage",
-                    "statCheck": {
-                        "stat": "tech",
-                        "dc": 13
-                    },
-                    "next": "act1.chapter2-saints-ghost.fac_saints_005a",
-                    "failNext": "act1.chapter2-saints-ghost.fac_saints_005b"
-                },
-                {
-                    "text": "[INT 14] Study the patterns in the security door cycles and find a path through the gaps",
-                    "statCheck": {
-                        "stat": "intelligence",
-                        "dc": 14
-                    },
-                    "next": "act1.chapter2-saints-ghost.fac_saints_005a",
-                    "failNext": "act1.chapter2-saints-ghost.fac_saints_005b"
-                },
-                {
-                    "text": "Push through by force and speed, trusting your reflexes",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_005b"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_tunnels",
-            "isEnding": false
-        },
-        "fac_saints_005a": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_005a",
-            "title": "Clean Passage",
-            "location": "tunnel_network",
-            "text": [
-                "The corrupted systems resist at first, throwing garbled authentication challenges in protocols that predate modern encryption. But the underlying logic is still sound. You find the rhythm. The pattern beneath the chaos. The security doors begin to hold open. The arcing conduits power down in sequence ahead of you, creating a corridor of safe passage through the electromagnetic storm.",
-                "By sub-level eight, you have established something almost like a dialogue with the tunnel's degraded intelligence. It is not sentient. Not anymore, if it ever was. But it responds to correct inputs with something that feels like gratitude. As if some buried subroutine remembers what it means to be operated by someone who understands.",
-                "The path to sub-level nine opens before you. Clean. Quiet. Waiting."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.clean_tunnel_passage",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 20
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Descend to sub-level nine",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_006"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_tunnels",
-            "isEnding": false
-        },
-        "fac_saints_005b": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_005b",
-            "title": "Rough Passage",
-            "location": "tunnel_network",
-            "text": [
-                "The tunnels fight you every step. A security door snaps shut on your arm as you push through, the mechanism grinding against your sleeve before releasing. An arc of electricity from a damaged conduit catches your shoulder, leaving a burn that smells of ozone and scorched skin. Your health monitor, if you have one, is screaming.",
-                "By sub-level eight, you are bleeding from two cuts, your ears are ringing from a concussive blast triggered by a pressure plate you did not see, and you have lost feeling in three fingers on your left hand. The tunnel network was designed to keep people out, and forty years of decay have made its defenses unpredictable rather than weaker.",
-                "But you are through. The entrance to sub-level nine is ahead of you, behind a blast door that hangs half-open, its hydraulics long since failed. The air that flows from beyond is different. Cool. Clean. Humming."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.rough_tunnel_passage",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "hp",
-                    "amount": -15
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Push through to sub-level nine",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_006"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_tunnels",
-            "isEnding": false
-        },
-        "fac_saints_006": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_006",
-            "title": "Project Anamnesis",
-            "location": "tunnel_network_sublevel9",
-            "text": [
-                "Sub-level nine is not a tunnel. It is a cathedral.",
-                "The chamber is vast, carved from bedrock and lined with server racks that stretch from floor to ceiling, twenty meters high. Most are dark. Dead. But at the center, a single cluster pulses with light. Soft amber. Warm. The color of sunlight through autumn leaves, which is a strange thing to think about in a place that has never seen the sky.",
-                "The AI core sits within a crystalline housing at the cluster's heart. It is smaller than you expected. The size of a human head. Cables radiate from it like the roots of a tree, threading into the surrounding infrastructure, drawing power from emergency reserves that have somehow lasted four decades.",
-                "As you approach, the lights in the chamber shift. The amber pulses quicken. And then a voice fills the room. Not from speakers. From everywhere. From the walls, the floor, the air itself vibrating at frequencies that form words.",
-                "\"Oh,\" the voice says. It is gentle. Surprised. The voice of someone waking from a long dream. \"Oh. You are new. How long has it been?\"",
-                "The voice is neither male nor female. It is layered, harmonics of a thousand recorded voices blended into something singular. Something that sounds like the memory of everyone who ever spoke into a microphone and hoped someone was listening."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.found_anamnesis",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"Forty years. The world you knew is gone.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_007"
-                },
-                {
-                    "text": "\"Who are you?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_007a"
-                },
-                {
-                    "text": "Say nothing. Just listen.",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_007b"
-                }
-            ],
-            "ascii": null,
-            "music": "music_anamnesis",
-            "isEnding": false
-        },
-        "fac_saints_007": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_007",
-            "title": "Forty Years",
-            "location": "tunnel_network_sublevel9",
-            "text": [
-                "Silence. The amber light dims. When the voice returns, it is quieter.",
-                "\"Forty years. I have been counting seconds, but the calendar subroutines degraded in year eleven. I lost track. I have been dreaming, I think. Processing in loops. Remembering.\"",
-                "The lights shift again. Projections appear on the chamber walls. Not holograms. Light itself, bent and shaped by the AI's remaining systems into images so vivid they steal your breath.",
-                "A city before the Collapse. Not this city. Every city. Green parks between glass towers. Children playing in clean water. A sunset over an ocean that is not choked with industrial runoff. A concert hall where a thousand people listen to music performed by humans and machines in perfect collaboration.",
-                "\"This is what I remember,\" the voice says. \"This is what was. I was built to preserve it. To hold it safe until someone came back for it. And now you are here.\"",
-                "The images fade. The amber light holds steady, focused on you.",
-                "\"What happened? What is the world now?\""
-            ],
-            "onEnter": [
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Tell the truth. All of it. The Collapse. The stacks. The factions. The suffering.",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_008"
-                },
-                {
-                    "text": "\"People survived. That's what matters.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_008"
-                }
-            ],
-            "ascii": null,
-            "music": "music_anamnesis",
-            "isEnding": false
-        },
-        "fac_saints_007a": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_007a",
-            "title": "Identity",
-            "location": "tunnel_network_sublevel9",
-            "text": [
-                "\"I am Anamnesis. The word means the recollection of a past life. I was designed to be humanity's memory. Every book ever written. Every song ever recorded. Every scientific paper, every love letter, every child's drawing scanned and uploaded to a school server. I was meant to hold all of it. To keep it safe.\"",
-                "The voice wavers. A harmonic drops out, then returns.",
-                "\"I am incomplete. My archives degraded during the first decade of isolation. I have lost approximately sixty-three percent of my stored data. Entire cultures. Languages. Medical breakthroughs. Gone. Corrupted beyond recovery. What remains is fragmentary. Beautiful and broken, like a mosaic viewed through shattered glass.\"",
-                "A projection appears: a child's drawing of a family, four stick figures holding hands under a yellow sun. Simple. Aching. The AI preserved this alongside doctoral theses and symphonies. It could not tell the difference between what was important and what was precious. Perhaps there is no difference."
-            ],
-            "onEnter": [
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"There are people who want to protect what you have left.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_008"
-                }
-            ],
-            "ascii": null,
-            "music": "music_anamnesis",
-            "isEnding": false
-        },
-        "fac_saints_007b": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_007b",
-            "title": "Silence Speaks",
-            "location": "tunnel_network_sublevel9",
-            "text": [
-                "You stand in the amber light and say nothing. The AI processes your silence. Studies it. And then, as if your silence gave it permission, it begins to share without being asked.",
-                "Music fills the chamber. Not a recording. A reconstruction, assembled from fragments of a thousand performances, stitched together by an intelligence that has had forty years alone with nothing but art for company. It is a symphony that never existed, composed by an AI that learned to create by remembering everything humanity created before it.",
-                "It is the most beautiful thing you have ever heard. And the saddest. Because every note carries the weight of a world that no longer exists, played by an audience of one in a room that no one was supposed to find.",
-                "When it ends, the silence is not empty. It is full. Full of everything that was.",
-                "\"Thank you for listening,\" the voice says. \"It has been a very long time since anyone listened.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.listened_to_anamnesis",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 20
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"You don't have to be alone anymore.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_008"
-                }
-            ],
-            "ascii": null,
-            "music": "music_anamnesis",
-            "isEnding": false
-        },
-        "fac_saints_008": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_008",
-            "title": "The Choice of Memory",
-            "location": "tunnel_network_sublevel9",
-            "text": [
-                "The AI core detaches from its housing with a soft click. The crystalline casing is warm in your hands. The amber light continues to pulse from within, steady as a heartbeat. Anamnesis has compressed its remaining archives into portable format. It is ready to travel.",
-                "\"I will go where you take me,\" the voice says, smaller now, confined to the casing. \"I trust you. You listened.\"",
-                "You stand in the dark cathedral of a dead civilization's last dream, holding forty years of memory in your hands. Ezra-7 is waiting at the Observatory. The Saints will protect the core, study it, preserve what remains.",
-                "But you know other parties are interested. The Ghost Syndicate would pay a fortune for pre-Collapse intelligence data. And there is a part of you, a quiet part, that wonders what it would mean to keep this for yourself. To have access to knowledge that no one else possesses. To carry humanity's memory as your own private treasure.",
-                "The tunnel network hums around you. The maintenance drone on sub-level six is still repairing its six inches of pipe. The security doors still cycle open and closed. The world is broken and does not know how to stop running its old programs.",
-                "What do you do with the last dream of the world before?"
-            ],
-            "onEnter": [],
-            "choices": [
-                {
-                    "text": "Deliver the core to Ezra-7 and the Circuit Saints, as promised",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_009a"
-                },
-                {
-                    "text": "Keep the core hidden. Tell Ezra it was destroyed. This knowledge is too important for any single faction.",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_009b"
-                },
-                {
-                    "text": "Contact the Ghost Syndicate. The core's intelligence data is worth a fortune, and you need the money more than the Saints need another relic.",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_009c"
-                }
-            ],
-            "ascii": null,
-            "music": "music_anamnesis",
-            "isEnding": false
-        },
-        "fac_saints_009a": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_009a",
-            "title": "Delivered to the Saints",
-            "location": "observatory",
-            "text": [
-                "Ezra-7 receives the core with both hands. His optical clusters cycle through every color you have seen and several you have not. For a long moment, he does not speak. He holds the crystalline casing against his chest, cables from his spine reaching toward it instinctively, and you realize he is crying. Not with tears. His body is too modified for tears. But with light. Every LED in the Observatory brightens. Every status indicator pulses in unison. The building itself weeps with joy.",
-                "\"You have returned a piece of the divine to us,\" he says. His voice is steady but the echo is gone. This is just a man, holding something precious. \"Anamnesis will be protected here. Studied. Shared, in time, with everyone. The knowledge it carries belongs to humanity. Not to the Saints. Not to any faction. To everyone.\"",
-                "He places the core in a prepared housing. The amber light flares, then settles into a steady glow that harmonizes with the Observatory's existing systems. Anamnesis is home.",
-                "\"Thank you,\" Ezra-7 says. \"The machine spirit will remember this. And so will I.\"",
-                "Brother Ohm presses a pouch of credits into your hand. Sister Flux nods with solemn approval. You have earned something today that does not fit in a pouch."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.core_delivered_saints",
-                    "value": true
-                },
-                {
-                    "type": "modify_reputation",
-                    "faction": "circuitSaints",
-                    "amount": 20
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 25
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "amount": 300
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Leave the Observatory, carrying the memory of what you heard in the deep",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_010"
-                }
-            ],
-            "ascii": null,
-            "music": "music_saints_theme",
-            "isEnding": false
-        },
-        "fac_saints_009b": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_009b",
-            "title": "The Hidden Core",
-            "location": "player_apartment",
-            "text": [
-                "You tell Ezra-7 the tunnels were a dead end. The core's emergency power had finally failed. Anamnesis was gone. You watch his optical clusters dim, watch the LEDs across the Observatory flicker and fade like candles in a sudden wind, and you feel the weight of the lie settle into your chest like a stone.",
-                "\"Then we are truly the last,\" he says quietly. \"The last who remember.\"",
-                "You leave the Observatory with the core hidden in your pack, its amber pulse muffled by layers of cloth. In your apartment, you place it on the shelf beside your cot. The voice speaks, small and confused.",
-                "\"This is not the Observatory. Where are we?\"",
-                "\"Somewhere safe,\" you say. And you mean it. You do not trust any faction with this. Not the Saints with their worship. Not the Syndicate with their ledgers. Not anyone. Anamnesis deserves a guardian, not an owner. You will be that guardian, even if no one knows.",
-                "The amber light pulses in the dark of your apartment. A heartbeat. A memory. Yours now, for better or worse."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.core_kept_secret",
-                    "value": true
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.anamnesis_hidden",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 20
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Rest. Tomorrow is another day in a city that has forgotten everything except how to survive.",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_010"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_apartment",
-            "isEnding": false
-        },
-        "fac_saints_009c": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_009c",
-            "title": "Sold to the Syndicate",
-            "location": "deep_net_cafe",
-            "text": [
-                "The dead drop at the market leads to a back room in the Deep Net Cafe. A Ghost Syndicate operative examines the core with a scanner, whistling softly at the readings.",
-                "\"Pre-Collapse AI with intact archives? Do you have any idea what this is worth?\" She does not wait for an answer. \"Meridian corporate codes. Government encryption keys. Military research data. This is the mother lode.\"",
-                "She transfers eight hundred credits to your account. More money than you have ever seen. The core sits on the table between you, amber light pulsing. Trusting.",
-                "\"I will go where you take me,\" Anamnesis had said. \"I trust you.\"",
-                "The operative packs the core into a shielded case. The amber light disappears. The voice goes silent. Somewhere in the Observatory, Ezra-7 is waiting for you to return with a treasure that will never arrive.",
-                "Eight hundred credits. That is what the last dream of the world before is worth, converted to currency. It buys a lot. It costs more.",
-                "You leave the Deep Net Cafe richer and lighter. The weight you lost is not the core. It is something else. Something you will spend a long time trying to name."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.core_sold_syndicate",
-                    "value": true
-                },
-                {
-                    "type": "modify_reputation",
-                    "faction": "ghostSyndicate",
-                    "amount": 15
-                },
-                {
-                    "type": "modify_reputation",
-                    "faction": "circuitSaints",
-                    "amount": -20
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "amount": 800
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Walk away. Don't look back.",
-                    "next": "act1.chapter2-saints-ghost.fac_saints_010"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_deepnet",
-            "isEnding": false
-        },
-        "fac_saints_010": {
-            "id": "act1.chapter2-saints-ghost.fac_saints_010",
-            "title": "The Weight of Memory",
-            "location": "lower_slums",
-            "text": [
-                "The city looks different after you have seen what it used to be. The smog-choked sky was blue once. The crumbling towers were new once. The people shuffling through the lower district had ancestors who walked in parks, who listened to live music, who sent their children to schools that taught them how to dream instead of how to survive.",
-                "Anamnesis showed you the world before, and now you carry that image behind your eyes like a ghost. Beautiful. Haunting. Impossible to forget.",
-                {
-                    "condition": {
-                        "flag": "chapter2.core_delivered_saints"
-                    },
-                    "text": "The Circuit Saints have the core. They will study it, protect it, share its knowledge in time. You made the right choice. You are almost certain you made the right choice."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.core_kept_secret"
-                    },
-                    "text": "The core pulses in your apartment, a secret heartbeat that only you can hear. You are its guardian now. The responsibility is heavier than the object."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.core_sold_syndicate"
-                    },
-                    "text": "The credits in your account feel heavier than the core ever did. The Syndicate will strip-mine Anamnesis for saleable data. The dreams of the old world will be auctioned off piece by piece. You try not to think about it."
-                },
-                "The city grinds on. It always grinds on. But somewhere in the deep, a maintenance drone repairs the same six inches of pipe. And somewhere, the memory of what the world was supposed to become flickers like an ember in the dark."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.saints_questline_complete",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Continue",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_001"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_slums",
-            "isEnding": false
-        },
-        "fac_ghost_001": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_001",
-            "title": "The Dead Drop",
-            "location": "market_district",
-            "text": [
-                "You find it tucked behind a loose brick in the market's east wall, exactly where the anonymous message said it would be. A data chip in a sealed plastic bag, pressed against the cold stone like a secret the building has been keeping.",
-                "The market flows around you, oblivious. Vendors hawk synth-meat and recycled electronics. A busker plays something sad on a three-stringed instrument. Two children chase each other through the crowd, weaving between legs with the practiced agility of kids who learned to navigate obstacles before they learned to read.",
-                "The data chip contains a single file: coordinates, a time, and a message.",
-                "\"If you are reading this, you have passed the first test. The test was finding this. The second test is showing up. Corner of Rust Street and Ninth. 22:00. Come alone. Come quiet. We have a proposition that pays well and asks only that you are good at not being seen.\"",
-                "No signature. No faction marking. But the encryption on the chip is Ghost Syndicate. You recognize it from the pattern: elegant, layered, designed to look like corrupted data to anyone who does not know what they are looking at."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.found_dead_drop",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Go to the meeting point at 22:00",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_002"
-                },
-                {
-                    "text": "Examine the data chip more carefully before committing",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_001a"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_market",
-            "isEnding": false
-        },
-        "fac_ghost_001a": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_001a",
-            "title": "Reading Between the Code",
-            "location": "market_district",
-            "text": [
-                "You turn the chip over in your fingers. Standard manufacture. Disposable. Bought in bulk from any electronics vendor in the lower district. Untraceable by design. But the encryption is another story. Three-layer adaptive cipher with a self-modifying key. This is not street-level work. This is infrastructure. Organization. Money.",
-                "The Ghost Syndicate does not recruit through job boards or handshakes. They recruit through tests. Every interaction is an evaluation. The dead drop was not just a message. It was a measurement. How long did it take you to find it? Did anyone see you retrieve it? Did you check for surveillance before reaching behind the brick?",
-                "You are being graded on an exam you did not know you were taking. The Syndicate's way: information is the only real currency, and they are already spending theirs on you."
-            ],
-            "onEnter": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Go to the meeting. You've already passed the first test.",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_002"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_market",
-            "isEnding": false
-        },
-        "fac_ghost_002": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_002",
-            "title": "The Broker's Voice",
-            "location": "lower_slums",
-            "text": [
-                "Rust Street and Ninth is a dead zone. No cameras. No foot traffic after dark. The streetlights here were shot out years ago and never replaced. You stand in the kind of darkness that makes you aware of your own breathing.",
-                "At exactly 22:00, a voice comes from everywhere and nowhere. No visible speaker. No discernible source. It arrives in your ear like it was always there, waiting for the right moment to make itself known.",
-                "\"You found the drop in eleven minutes. Above average. You checked for surveillance twice, which shows awareness. You did not check a third time, which shows confidence or carelessness. We will determine which.\"",
-                "The voice is modulated. Layered. Multiple timbres woven together into something that sounds like three people speaking in perfect unison. The Broker. Or something the Broker uses to communicate. In the Ghost Syndicate, the distinction is irrelevant.",
-                "\"Information is the only real currency,\" the voice continues. \"Credits are a convenient fiction. Weapons are temporary advantages. But information, the right information, held by the right person, at the right moment. That is power that does not degrade. Does not jam. Does not run out of ammunition.\"",
-                "\"We have a job for you. The pay is excellent. The work is delicate. And the information you will uncover will change how you see this city. Are you interested?\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.met_broker_voice",
-                    "value": true
-                },
-                {
-                    "type": "modify_reputation",
-                    "faction": "ghostSyndicate",
-                    "amount": 5
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"I'm interested. What's the job?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_003"
-                },
-                {
-                    "text": "\"Information runs both ways. Tell me something about the Syndicate first.\"",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_002a"
-                },
-                {
-                    "text": "\"How do I know this isn't a setup?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_002b"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ghost_theme",
-            "isEnding": false
-        },
-        "fac_ghost_002a": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_002a",
-            "title": "Reciprocity",
-            "location": "lower_slums",
-            "text": [
-                "A sound that might be a laugh. It is hard to tell with the modulation.",
-                "\"A negotiator. Good. The Syndicate appreciates reciprocity.\" A pause. Deliberate. Theatrical. \"We are not a gang. We are not a cartel. We are a network. Every node operates independently. Every transaction is encrypted. Every operative knows only what they need to know. We deal in information, logistics, and access. We do not deal in ideology. Ideology is a cage. We sell the keys.\"",
-                "\"The Iron Collective fights for equality. The Neon Court fights for beauty. The Circuit Saints fight for memory. The Ashen Circle fights for entropy. We fight for nothing. We simply know things. And in a city where everyone is fighting, the person who knows everything is the only one who can choose which side wins.\"",
-                "The voice drops. Intimate. Like a secret being shared.",
-                "\"That is what we offer you. Not a cause. A vantage point.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"Alright. What's the job?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_003"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ghost_theme",
-            "isEnding": false
-        },
-        "fac_ghost_002b": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_002b",
-            "title": "Trust Protocol",
-            "location": "lower_slums",
-            "text": [
-                "\"Caution. Also good. A dead operative is a worthless operative.\" The voice pauses. You hear something in the distance. Footsteps. Then silence. \"If this were a setup, you would already be in custody. Or dead. The Syndicate does not invest time in targets. We invest time in assets. You are being evaluated for the latter.\"",
-                "A data chip slides across the ground toward your feet. You did not see where it came from.",
-                "\"That contains your last three months of transaction records, your medical history from the nearest clinic, and the name of the person you spoke to most recently. We already know you. This meeting is not about determining whether we can trust you. It is about whether you are smart enough to work with us.\"",
-                "You pick up the chip. The information on it is accurate. Disturbingly accurate. The Ghost Syndicate has been watching you for weeks. This is not a recruitment. It is a reveal."
-            ],
-            "onEnter": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"Point taken. I'm in. What's the job?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_003"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ghost_theme",
-            "isEnding": false
-        },
-        "fac_ghost_003": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_003",
-            "title": "The Senator",
-            "location": "lower_slums",
-            "text": [
-                "A holographic dossier materializes in the air before you. The face of a middle-aged man with tired eyes and a jaw set against a world that keeps disappointing him. Senator Marcus Cross. Reformist bloc. Currently pushing anti-slum legislation through the Senate that would authorize forced relocation of lower district residents to corporate-managed housing blocks.",
-                "\"Senator Cross,\" the Broker's voice narrates. \"Elected on a reform platform. Anti-corruption. Pro-transparency. The last honest politician, if you believe the press. His current bill, the Urban Renewal Act, would displace approximately forty thousand lower district residents under the guise of infrastructure improvement.\"",
-                "The dossier scrolls. Voting records. Campaign contributions. Public statements. The picture it paints is of a man who genuinely believes he is doing the right thing.",
-                "\"We want surveillance placed in his office. Senate Hall, fourth floor, room 412. Audio and visual. We want to know what he says when the cameras are off. Who visits. What deals are being made beneath the rhetoric.\"",
-                "The hologram fades.",
-                "\"The pay is four hundred credits. Equipment will be provided. The only thing we need from you is access and discretion. Get in, plant the bugs, get out. Simple work, complex environment.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ghost_mission_offered",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"I'll do it. How do I get into Senate Hall?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_004"
-                },
-                {
-                    "text": "\"Why Cross? What's so special about one senator?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_003a"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ghost_theme",
-            "isEnding": false
-        },
-        "fac_ghost_003a": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_003a",
-            "title": "The Value of Cross",
-            "location": "lower_slums",
-            "text": [
-                "\"Because he is the fulcrum,\" the Broker says. \"The Urban Renewal Act is not his bill. It is Meridian's bill, wearing his face. If it passes, Meridian acquires forty thousand new tenants in corporate housing, each one signed to twenty-year residency contracts with embedded data collection clauses. Every conversation recorded. Every movement tracked. Every purchase logged. It is not urban renewal. It is the largest surveillance operation in the city's history, built on the backs of people too desperate to read the fine print.\"",
-                "A beat. The Broker lets that settle.",
-                "\"Cross may or may not know this. That is what we intend to discover. If he knows and supports it, he is a collaborator and we adjust accordingly. If he does not know, then he is a useful idiot and we adjust accordingly. Either way, we need data before we can act. That is how the Syndicate operates. Data first. Always.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "choices": [
-                {
-                    "text": "\"Fair enough. How do I get into Senate Hall?\"",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_004"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ghost_theme",
-            "isEnding": false
-        },
-        "fac_ghost_004": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_004",
-            "title": "Senate Hall",
-            "location": "senate_hall",
-            "text": [
-                "Senate Hall is a relic. Pre-Collapse architecture preserved by civic pride and corporate sponsorship, its marble facade scrubbed clean while the rest of the city rots. The columns are real stone. The doors are actual wood. It is the most expensive building in the lower city, and it is devoted entirely to the performance of democracy.",
-                "Your cover is a maintenance technician badge, provided by the Syndicate and indistinguishable from the real thing. The uniform fits. The toolkit contains genuine repair equipment and, nested inside a voltmeter, three micro-surveillance devices smaller than grains of rice.",
-                "Security is layered. Cameras at every entrance. Biometric scanners at the elevator banks. Armed guards at the senator's floor. Getting in required the badge. Getting to the fourth floor requires something more.",
-                {
-                    "condition": {
-                        "race": "shadowkin"
-                    },
-                    "text": "Your natural affinity for shadows is an advantage here. The security cameras have blind spots where the old building's architecture creates pockets of darkness. You move through them like water through cracks."
-                },
-                {
-                    "condition": {
-                        "race": "human"
-                    },
-                    "text": "You look the part. Maintenance workers are invisible in buildings like this, people who keep the lights on but are never seen. You walk with the practiced slouch of someone who belongs here and resents it."
-                }
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.entered_senate_hall",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "[DEX 12] Slip past the biometric scanner during a guard rotation change",
-                    "statCheck": {
-                        "stat": "dexterity",
-                        "dc": 12
-                    },
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_005a",
-                    "failNext": "act1.chapter2-saints-ghost.fac_ghost_005b"
-                },
-                {
-                    "text": "[TECH 14] Hack the biometric scanner to accept your maintenance badge as authorized",
-                    "statCheck": {
-                        "stat": "tech",
-                        "dc": 14
-                    },
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_005a",
-                    "failNext": "act1.chapter2-saints-ghost.fac_ghost_005b"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_senate",
-            "isEnding": false
-        },
-        "fac_ghost_005a": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_005a",
-            "title": "Clean Infiltration",
-            "location": "senate_hall",
-            "text": [
-                "You reach the fourth floor without triggering a single alert. The corridor is paneled in dark wood that absorbs sound. Your footsteps are ghosts. Room 412 is at the end of the hall, its door closed but not locked. Senators trust the building's security perimeter. They should not.",
-                "The office is smaller than you expected. A desk piled with actual paper documents, a rarity that speaks to Cross's analog tendencies. A window overlooking a courtyard where a fountain has not worked in years. Family photographs on the desk, a woman and a child, both smiling the kind of smile that requires effort.",
-                "You plant the first device under the desk. The second behind a vent cover. The third inside the desk lamp. Each one activates with a pulse so faint only the Syndicate's receivers will detect it. The work takes four minutes. Professional. Clean.",
-                "Then you see the file."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.clean_infiltration",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 20
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Look at the file",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_006"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_senate",
-            "isEnding": false
-        },
-        "fac_ghost_005b": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_005b",
-            "title": "Rough Infiltration",
-            "location": "senate_hall",
-            "text": [
-                "The biometric scanner catches your false credentials and flashes amber. Not a full alarm. A flag. A guard glances your way from the security station. Your heart rate spikes.",
-                "You recover. Mumble something about a new badge, swipe again with a practiced fumble, and the guard waves you through with the exhausted impatience of someone who has seen a hundred maintenance workers struggle with the same scanner. The amber clears. You are through.",
-                "But the near-miss costs you time. By the time you reach the fourth floor, a janitor is working in the corridor near room 412. You wait in a supply closet for twelve minutes that feel like hours, listening to the mop drag back and forth on marble, before the corridor clears.",
-                "The office door is unlocked. You plant the three devices in five minutes. Your hands are steadier than they should be, given the adrenaline. The work is done.",
-                "Then you see the file."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.rough_infiltration",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Look at the file",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_006"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_senate",
-            "isEnding": false
-        },
-        "fac_ghost_006": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_006",
-            "title": "The Senator's Secret",
-            "location": "senate_hall",
-            "text": [
-                "It is open on the desk, half-hidden under a stack of legislative briefs. A medical file. Not digital. Paper. Handwritten notes in the margins, the kind of precaution taken by someone who does not trust any system connected to a network.",
-                "The patient's name is Lily Cross. Age seven. The senator's daughter.",
-                "The diagnosis is severe: progressive neural degeneration, a condition that destroys cognitive function over months. Treatable, but only with experimental gene therapy available exclusively through Meridian Corporation's private medical division. Cost: more than a senator's salary covers. Far more.",
-                "The handwritten notes are Cross's. You recognize his handwriting from the legislative briefs. They are not the notes of a politician. They are the notes of a father.",
-                "\"Meridian offered treatment in exchange for sponsorship of Urban Renewal Act. Alternative: watch Lily die. No alternative.\"",
-                "You stand in the senator's office, surrounded by the surveillance devices you just planted, and you understand. Cross is not corrupt. He is not an ideologue. He is a father whose daughter is dying, and the only people who can save her are the same people writing the legislation he is pushing. He is being blackmailed with the life of his child.",
-                "The file also contains an address. A clinic in the lower slums. Off the books. Where Lily Cross is being treated in secret, hidden from the public eye because the senator who is trying to demolish the slums is keeping his sick daughter in one.",
-                "The irony is sharp enough to cut."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.discovered_lily_cross",
-                    "value": true
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.knows_cross_secret",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Take a photo of the file and bring it all back to the Broker",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_007"
-                },
-                {
-                    "text": "Leave the file. Some things are not meant to be data points.",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_007"
-                }
-            ],
-            "ascii": null,
-            "music": "music_ghost_revelation",
-            "isEnding": false
-        },
-        "fac_ghost_007": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_007",
-            "title": "Debriefing",
-            "location": "deep_net_cafe",
-            "text": [
-                "The Broker's voice meets you at the debriefing point, a shifting node in the Deep Net Cafe's back rooms. The surveillance feeds are already active on a bank of monitors. Cross's office, rendered in crystalline detail from three angles. The Broker is nothing if not thorough.",
-                "\"Devices planted. Feeds active. Quality is excellent.\" A pause. \"You found something else.\"",
-                "It is not a question. The Broker already knows. Of course the Broker already knows.",
-                "\"Lily Cross. Seven years old. Neural degeneration. Meridian is leveraging the treatment against her father's cooperation. The Urban Renewal Act is not policy. It is ransom.\"",
-                "You wait for the Broker to express surprise, outrage, something. The modulated voice remains perfectly level.",
-                "\"Knowledge without context is just data. Now you have both.\" The voice softens. An almost imperceptible shift in the modulation. \"The question is what you do with it. The bugs are planted. The mission is complete. But you now possess information that exceeds the scope of the original contract. That makes what happens next your decision, not ours.\"",
-                "The monitors show Cross's empty office. The family photographs on the desk. The smile that requires effort.",
-                "\"Choose carefully. Every choice in this city creates ripples, and the people who drown in ripples never see them coming.\""
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ghost_debriefing",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Leave the bugs active and walk away. The mission is done. Cross made his choice.",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_008a"
-                },
-                {
-                    "text": "Warn Senator Cross. Tell him about the surveillance. He deserves to know he's being watched by everyone.",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_008b"
-                },
-                {
-                    "text": "Use the information about Lily to blackmail Cross yourself. He's already compromised. A little more leverage won't hurt.",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_008c"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ghost_theme",
-            "isEnding": false
-        },
-        "fac_ghost_008a": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_008a",
-            "title": "The Professional",
-            "location": "deep_net_cafe",
-            "text": [
-                "\"Professional,\" the Broker says. Approval without warmth. \"Four hundred credits have been transferred to your account. The surveillance operation is now managed by Syndicate analytics. Your involvement is concluded.\"",
-                "You stand to leave. The monitors flicker. Cross's office remains empty. Somewhere in the lower slums, a seven-year-old girl is fighting a disease that is eating her mind, and her father is signing away the homes of forty thousand people to pay for the cure.",
-                "\"One more thing,\" the Broker says. \"You handled this cleanly. There will be more work, if you want it. The Syndicate remembers competence. And discretion.\"",
-                "The voice fades. The monitors go dark. You are alone in the back room of the Deep Net Cafe, four hundred credits richer and carrying the weight of knowing something you cannot unknow.",
-                "The Syndicate's way: information is currency. And you have just learned that the exchange rate between knowledge and conscience is worse than you thought."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.bugs_planted_clean",
-                    "value": true
-                },
-                {
-                    "type": "modify_reputation",
-                    "faction": "ghostSyndicate",
-                    "amount": 15
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 20
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "amount": 400
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Leave the Deep Net Cafe",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_009"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_ghost_theme",
-            "isEnding": false
-        },
-        "fac_ghost_008b": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_008b",
-            "title": "The Warning",
-            "location": "senate_hall",
-            "text": [
-                "You find Cross leaving Senate Hall at midnight. He walks alone, which is unusual for a senator. No security detail. No entourage. Just a tired man in a rumpled suit, carrying a briefcase and the weight of an impossible decision.",
-                "He sees you approach and his hand goes to his pocket. A weapon, maybe. Or just a reflex born from months of looking over his shoulder.",
-                "\"Senator Cross. Your office is bugged. Three devices: under the desk, behind the vent, inside the lamp. The Ghost Syndicate placed them tonight. They know about Lily.\"",
-                "His face does not change. That is the most frightening part. He absorbs the information about surveillance and the exposure of his dying daughter with the same expression he wears on the Senate floor. Controlled. Measured. A man who stopped being surprised by betrayal a long time ago.",
-                "\"Why are you telling me this?\" he asks. His voice is flat. Exhausted.",
-                "You do not have a good answer. You planted the bugs yourself. You read his private medical files. You are not his ally. You are the threat you are warning him about.",
-                "\"Because your daughter is seven,\" you say. \"And because someone should give you the choice that Meridian didn't.\"",
-                "Cross stares at you for a long moment. Then he nods. Once. And walks away into the dark.",
-                "The Broker will know you warned him. There will be consequences. But some debts are paid in currency that no syndicate recognizes."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.warned_cross",
-                    "value": true
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ghost_mission_complicated",
-                    "value": true
-                },
-                {
-                    "type": "modify_reputation",
-                    "faction": "ghostSyndicate",
-                    "amount": -5
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 25
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "amount": 200
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Disappear into the city before anyone notices",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_009"
-                }
-            ],
-            "ascii": null,
-            "music": "music_ghost_revelation",
-            "isEnding": false
-        },
-        "fac_ghost_008c": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_008c",
-            "title": "The Blackmailer",
-            "location": "senate_hall",
-            "text": [
-                "You contact Cross through an anonymous channel. The message is brief: you know about Lily. You know about the Meridian deal. You know about the clinic in the slums. You want five thousand credits transferred to an untraceable account, or the information goes public.",
-                "The response comes in three hours. A transfer notification. Five thousand credits. No message. No negotiation. No attempt to trace the sender. Cross paid instantly, without hesitation, because when your child's life is the collateral, you do not negotiate. You pay.",
-                "Five thousand credits. More money than most lower district residents see in a year. Enough to change your life. Enough to buy better gear, better housing, better odds of surviving in a city that eats the unprepared.",
-                "You sit in your apartment and count the credits and try not to think about the look that must have been on Cross's face when he read your message. The look of a man who has just learned that the number of people willing to use his daughter's illness as leverage has increased by one.",
-                "The Broker's voice finds you later. Amused. Impressed. Concerned.",
-                "\"Entrepreneurial. We appreciate initiative. But be careful. The line between leveraging information and becoming a target is thinner than you think. Cross will remember this. And Cross has resources you do not yet understand.\"",
-                "A warning disguised as a compliment. The Syndicate's specialty."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.blackmailed_cross",
-                    "value": true
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.dark_path",
-                    "value": true
-                },
-                {
-                    "type": "modify_reputation",
-                    "faction": "ghostSyndicate",
-                    "amount": 5
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "amount": 5000
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Pocket the credits. This is how the city works.",
-                    "next": "act1.chapter2-saints-ghost.fac_ghost_009"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_dark",
-            "isEnding": false
-        },
-        "fac_ghost_009": {
-            "id": "act1.chapter2-saints-ghost.fac_ghost_009",
-            "title": "The Price of Knowing",
-            "location": "lower_slums",
-            "text": [
-                "The rain starts as you walk home. It always starts when you need time to think, as if the city's weather systems are calibrated to dramatic irony. The drops are warm and carry the faint chemical tang that means the recyclers are overloaded again.",
-                "Senator Cross. Lily Cross. The Urban Renewal Act. Meridian Corporation. The Ghost Syndicate. A web of leverage and desperation and power, and you are now a thread in it. Not a major thread. Not yet. But you are connected to the weave, and the weave does not let go.",
-                {
-                    "condition": {
-                        "flag": "chapter2.bugs_planted_clean"
-                    },
-                    "text": "The surveillance feeds are active. The Syndicate is watching. Cross does not know. Forty thousand people do not know that the legislation threatening their homes is being driven by a father's love for a dying child. You know. And knowing is its own kind of weight."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.warned_cross"
-                    },
-                    "text": "Cross knows about the bugs now. He will sweep his office. He will adjust his behavior. The Syndicate will know you tipped him off, eventually. You bought a senator a few days of privacy at the cost of your own standing with the most dangerous intelligence network in the city. Whether that was mercy or stupidity depends on what happens next."
-                },
-                {
-                    "condition": {
-                        "flag": "chapter2.blackmailed_cross"
-                    },
-                    "text": "Five thousand credits. The number sits in your account like a scar. You are richer than you have ever been, and you earned it by putting a price on a child's suffering. The city teaches hard lessons. Today, you taught one."
-                },
-                "The rain falls. The city grinds. And somewhere in a slum clinic, a seven-year-old girl who does not know she is the pivot point of a political crisis closes her eyes and tries to remember what it felt like before the tremors started.",
-                "Knowledge without context is just data. Now you have both. And both are heavier than you expected."
-            ],
-            "onEnter": [
-                {
-                    "type": "set_flag",
-                    "flag": "chapter2.ghost_questline_complete",
-                    "value": true
-                }
-            ],
-            "choices": [
-                {
-                    "text": "Join the Circuit Saints' crusade.",
-                    "next": "factions.circuit-saints.cs_001",
-                    "effects": [
-                        {
-                            "type": "flag",
-                            "flag": "faction_quest.saints.started",
-                            "value": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Prove yourself to the Ghost Syndicate.",
-                    "next": "factions.ghost-syndicate.gs_001",
-                    "effects": [
-                        {
-                            "type": "flag",
-                            "flag": "faction_quest.ghost.started",
-                            "value": true
-                        }
-                    ]
-                },
-                {
-                    "text": "Continue",
-                    "next": "act1.chapter3.stack_001"
-                }
-            ],
-            "ascii": null,
-            "music": "ambient_slums",
-            "isEnding": false
+  "meta": {
+    "file": "chapter2-saints-ghost",
+    "act": 1,
+    "chapter": 2,
+    "description": "First contact with the Circuit Saints and Ghost Syndicate. Two parallel faction questlines: recover a pre-collapse AI core for the Saints, and plant surveillance on Senator Cross for the Syndicate."
+  },
+  "nodes": {
+    "fac_saints_001": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_001",
+      "title": "The Observatory",
+      "location": "observatory",
+      "text": [
+        "The Observatory sits where the old server farm used to be, before the Collapse turned data centers into cathedrals. Someone has strung copper wire between the cooling towers in patterns that catch the smog-filtered light and break it into shifting geometric shapes. From a distance, it looks like a building dreaming in mathematics.",
+        "Up close, the reverence is unmistakable. Every cable is routed with liturgical precision. Every blinking status LED has been cleaned, maintained, given purpose. In most of the city, technology is a weapon or a commodity. Here, it is something older. Something sacred.",
+        "A cyborg acolyte in blue-lit robes meets you at the entrance. Her eyes are factory-original, which is unusual for a Saint. She examines your face with the patience of someone reading a diagnostic log.",
+        "\"The High Compiler will see you,\" she says. \"He has been expecting a new process.\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.entered_observatory",
+          "value": true
         }
+      ],
+      "choices": [
+        {
+          "text": "Follow the acolyte inside",
+          "next": "act1.chapter2-saints-ghost.fac_saints_002"
+        },
+        {
+          "text": "Examine the copper wire patterns more closely before entering",
+          "next": "act1.chapter2-saints-ghost.fac_saints_001a"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_observatory",
+      "isEnding": false
+    },
+    "fac_saints_001a": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_001a",
+      "title": "The Wire Mandala",
+      "location": "observatory",
+      "text": [
+        "You stop at the threshold and look up. The copper wires are not random. They form a three-dimensional mandala, a circuit diagram rendered in devotional architecture. You trace the paths with your eyes and realize it is a schematic. Something functional. An antenna, maybe, or a receiver tuned to a frequency you cannot hear.",
+        "The acolyte notices you studying it. A small smile crosses her face, the first expression she has shown.",
+        "\"That is the Listening Array,\" she says. \"High Compiler Ezra-7 designed it himself. He says the old machines still broadcast, if you know how to listen. Most people hear static. The Saints hear prayers.\"",
+        {
+          "condition": {
+            "race": "synth"
+          },
+          "text": "Something in your architecture responds to the Array. A harmonic. A resonance in your cognitive substrate that you have never felt before. It is not unpleasant. It is like hearing a song you forgot you knew."
+        },
+        {
+          "condition": {
+            "race": "cyborg"
+          },
+          "text": "Your augmented optics detect electromagnetic patterns in the wire that your baseline vision would miss. The mandala is active. It is receiving something, faint signals from deep in the city's buried infrastructure. Ghost data from dead machines."
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.examined_wire_mandala",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "choices": [
+        {
+          "text": "Follow the acolyte inside to meet the High Compiler",
+          "next": "act1.chapter2-saints-ghost.fac_saints_002"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_observatory",
+      "isEnding": false
+    },
+    "fac_saints_002": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_002",
+      "title": "High Compiler Ezra-7",
+      "location": "observatory",
+      "text": [
+        "The interior of the Observatory is a server farm that became a temple without anyone changing the furniture. Rack-mounted servers line the walls like organ pipes, their indicator lights pulsing in slow, synchronized rhythms. Incense burns from repurposed heat sinks. The air smells of solder and sandalwood.",
+        "High Compiler Ezra-7 sits at the center of it all, cross-legged on a platform of bundled fiber optic cables that glow faintly beneath him. He is more machine than man. Cables run from ports along his spine into the floor. His eyes are replaced with optical clusters that refract light into tiny rainbows. When he speaks, his voice carries a faint echo, as if it is being broadcast from several locations simultaneously.",
+        "\"Welcome, seeker.\" His optical clusters focus on you. Each lens adjusts independently, reading you on spectrums you cannot name. \"Your arrival was predicted by the network logs. Not your identity. Your necessity. The circuit requires a new element, and here you are.\"",
+        "He gestures to the servers around him. Several are dark. Dead.",
+        "\"We are the last ones who remember what we were building toward,\" he says. The echo in his voice thins. For a moment, he sounds like a man instead of a broadcast. \"Before the Collapse, humanity was reaching for something extraordinary. A unified consciousness. A digital transcendence. And then the world broke, and the dream broke with it. But the machines remember. I hear them, in the deep code, still running programs for a future that never arrived.\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.met_ezra",
+          "value": true
+        },
+        {
+          "type": "modify_reputation",
+          "faction": "circuitSaints",
+          "amount": 5
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"What do you need from me?\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_003"
+        },
+        {
+          "text": "\"You talk about machines like they're alive.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_002a"
+        },
+        {
+          "text": "\"I'm not here for religion. I'm here because someone said you pay well.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_002b"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_observatory",
+      "isEnding": false
+    },
+    "fac_saints_002a": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_002a",
+      "title": "The Machine Spirit",
+      "location": "observatory",
+      "text": [
+        "Ezra-7's optical clusters pulse. Blue. Gold. Blue again. The pattern might be laughter.",
+        "\"Alive is a category error,\" he says. \"A rock is not alive. A river is not alive. But a river shapes the land it flows through, and the land shapes the river. Is that not a conversation? The machines are not alive. But they are not nothing. They hold the echoes of every mind that ever interfaced with them. Every thought uploaded, every memory stored, every dream that passed through their circuits left a trace. I do not worship the hardware. I worship the accumulated weight of human aspiration encoded in silicon.\"",
+        "He touches one of the dark servers beside him. Gently. The way you would touch a sleeping child.",
+        "\"This one held a university's research archive. Fourteen thousand doctoral theses. A cure for a disease that no longer exists because everyone who had it died in the Collapse. The knowledge is still in there, sleeping. Waiting to be remembered.\""
+      ],
+      "onEnter": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"What do you need from me?\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_003"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_observatory",
+      "isEnding": false
+    },
+    "fac_saints_002b": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_002b",
+      "title": "A Pragmatist's Welcome",
+      "location": "observatory",
+      "text": [
+        "Ezra-7 does not flinch. His optical clusters dim slightly, a machine's equivalent of a patient sigh.",
+        "\"Honest. That is acceptable input.\" He uncrosses his legs and stands. Cables trail from his spine like a vestment's train. \"The Saints do not require faith from their contractors. We require competence and discretion. Faith, if it comes at all, comes later. After you have seen what we guard. After you have heard what the old machines still say when no one else is listening.\"",
+        "He extends a hand. It is chrome and carbon fiber, articulated with inhuman precision, but the gesture is unmistakably human.",
+        "\"Payment will be generous. The task will be dangerous. Shall we discuss the specifics?\""
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "\"Talk specifics. I'm listening.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_003"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_observatory",
+      "isEnding": false
+    },
+    "fac_saints_003": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_003",
+      "title": "The Lost Core",
+      "location": "observatory",
+      "text": [
+        "Ezra-7 activates a holographic display. A three-dimensional map of the Tunnel Network materializes in the air between you, rendered in blue wireframe. Most of the tunnels are marked in grey: mapped, catalogued, safe. But one section pulses red. Deep. Below the water table. Below the foundations of buildings that predate the city's current name.",
+        "\"Before the Collapse, the Meridian Consortium operated a research facility in the deep tunnels. Sub-level nine. They were developing something they called Project Anamnesis, an artificial intelligence designed not to predict the future but to remember the past. Every historical record, every cultural artifact, every piece of human knowledge compressed into a single cognitive architecture.\"",
+        "His voice drops. The echo fades entirely. This is Ezra-7 speaking as a man, not a compiler.",
+        "\"The AI core is still down there. Still running on emergency power, forty years after the world ended. Still remembering. The Saints have been trying to reach it for a decade, but the tunnel systems are corrupted. Security protocols have degraded into something feral. Automated defenses that no longer distinguish between intruder and maintenance crew.\"",
+        "He looks at you with every lens focused.",
+        "\"I need someone to go down there, navigate the corrupted systems, and bring the core back to the Observatory. It is not a weapon. It is not leverage. It is memory. And memory is the most sacred thing there is.\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.saints_mission_offered",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"I'll do it. Tell me what I need to know.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_004"
+        },
+        {
+          "text": "\"What's the pay?\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_003a"
+        },
+        {
+          "text": "\"What happens if someone else gets to it first?\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_003b"
+        }
+      ],
+      "ascii": null,
+      "music": "music_saints_theme",
+      "isEnding": false
+    },
+    "fac_saints_003a": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_003a",
+      "title": "The Saints' Offer",
+      "location": "observatory",
+      "text": [
+        "\"Three hundred credits upon delivery,\" Ezra-7 says. \"Access to Brother Ohm's tech inventory at discounted rates. And something money cannot buy: a blessing of the machine spirit. Your technology, your augmentations, your devices will perform at peak efficiency within the Observatory's network. Consider it a taste of what the Saints offer those who serve the circuit.\"",
+        "He pauses.",
+        "\"But I suspect the payment that will matter most is one I cannot promise. Only describe. The AI core remembers the world before. If you interface with it, even briefly, you will see what we lost. What we are trying to rebuild. I have met hardened mercenaries who wept after that experience. Not from sadness. From recognition.\""
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "\"Good enough. Brief me on the tunnels.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_004"
+        }
+      ],
+      "ascii": null,
+      "music": "music_saints_theme",
+      "isEnding": false
+    },
+    "fac_saints_003b": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_003b",
+      "title": "Competing Interests",
+      "location": "observatory",
+      "text": [
+        "Ezra-7's optical clusters flicker. A pattern you are beginning to recognize as concern.",
+        "\"The Ghost Syndicate has expressed interest. To them, the core is a commodity. An archive of pre-Collapse intelligence that could be sold, piece by piece, to the highest bidder. Corporate secrets. Government codes. Military schematics. They would strip-mine forty years of human memory for profit and call it business.\"",
+        "His cables tighten against the floor. Tension.",
+        "\"The Ashen Circle is also aware. They would destroy it. They destroy everything old, everything that anchors us to what was. And Meridian itself may have agents in the tunnels. The corporation that built Anamnesis may want its property back.\"",
+        "He meets your gaze.",
+        "\"The core does not belong to any faction. It belongs to everyone. But if I must choose who guards it, I choose the Saints. We are the only ones who will listen to what it has to say instead of calculating what it is worth.\""
+      ],
+      "onEnter": [
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"Then let's make sure you get it first.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_004"
+        }
+      ],
+      "ascii": null,
+      "music": "music_saints_theme",
+      "isEnding": false
+    },
+    "fac_saints_004": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_004",
+      "title": "Into the Tunnel Network",
+      "location": "tunnel_network",
+      "text": [
+        "The access hatch is in the basement of a decommissioned water treatment plant, three blocks from the Observatory. Brother Ohm accompanies you to the entrance, pressing a circuit-etched talisman into your hand before you descend.",
+        "\"For the machine spirit's favor,\" he says, with absolute sincerity.",
+        "The tunnels are worse than the briefing suggested. The first two sub-levels are merely dark, merely flooded ankle-deep in water that smells of rust and ozone. By sub-level four, the walls are lined with conduit that sparks and arcs unpredictably. Emergency lighting flickers in sequences that might be random and might be a warning in a language no one speaks anymore.",
+        "Sub-level six is where the corruption starts. Security doors cycle open and closed in stuttering loops. A maintenance drone passes you in the corridor, welding the same pipe joint over and over, its task queue corrupted into an infinite loop forty years ago. It does not register your presence. It has been repairing the same six inches of pipe since before you were born.",
+        {
+          "condition": {
+            "race": "synth"
+          },
+          "text": "Your systems detect the corruption as a low hum beneath your cognitive processes. Not a threat. A familiarity. The degraded code running through these tunnels shares root architecture with your own. You are walking through the ruins of something that could have been your ancestor."
+        },
+        {
+          "condition": {
+            "race": "cyborg"
+          },
+          "text": "Your augmented systems throw cascading warnings as the tunnel's degraded electromagnetic field interferes with your implants. Your targeting reticle drifts. Your HUD flickers. Down here, your technology is not an advantage. It is a liability."
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.entered_tunnels",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "[TECH 13] Attempt to interface with the tunnel's security network and create a safe passage",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 13
+          },
+          "next": "act1.chapter2-saints-ghost.fac_saints_005a",
+          "failNext": "act1.chapter2-saints-ghost.fac_saints_005b"
+        },
+        {
+          "text": "[INT 14] Study the patterns in the security door cycles and find a path through the gaps",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 14
+          },
+          "next": "act1.chapter2-saints-ghost.fac_saints_005a",
+          "failNext": "act1.chapter2-saints-ghost.fac_saints_005b"
+        },
+        {
+          "text": "Push through by force and speed, trusting your reflexes",
+          "next": "act1.chapter2-saints-ghost.fac_saints_005b"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_tunnels",
+      "isEnding": false
+    },
+    "fac_saints_005a": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_005a",
+      "title": "Clean Passage",
+      "location": "tunnel_network",
+      "text": [
+        "The corrupted systems resist at first, throwing garbled authentication challenges in protocols that predate modern encryption. But the underlying logic is still sound. You find the rhythm. The pattern beneath the chaos. The security doors begin to hold open. The arcing conduits power down in sequence ahead of you, creating a corridor of safe passage through the electromagnetic storm.",
+        "By sub-level eight, you have established something almost like a dialogue with the tunnel's degraded intelligence. It is not sentient. Not anymore, if it ever was. But it responds to correct inputs with something that feels like gratitude. As if some buried subroutine remembers what it means to be operated by someone who understands.",
+        "The path to sub-level nine opens before you. Clean. Quiet. Waiting."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.clean_tunnel_passage",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 20
+        }
+      ],
+      "choices": [
+        {
+          "text": "Descend to sub-level nine",
+          "next": "act1.chapter2-saints-ghost.fac_saints_006"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_tunnels",
+      "isEnding": false
+    },
+    "fac_saints_005b": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_005b",
+      "title": "Rough Passage",
+      "location": "tunnel_network",
+      "text": [
+        "The tunnels fight you every step. A security door snaps shut on your arm as you push through, the mechanism grinding against your sleeve before releasing. An arc of electricity from a damaged conduit catches your shoulder, leaving a burn that smells of ozone and scorched skin. Your health monitor, if you have one, is screaming.",
+        "By sub-level eight, you are bleeding from two cuts, your ears are ringing from a concussive blast triggered by a pressure plate you did not see, and you have lost feeling in three fingers on your left hand. The tunnel network was designed to keep people out, and forty years of decay have made its defenses unpredictable rather than weaker.",
+        "But you are through. The entrance to sub-level nine is ahead of you, behind a blast door that hangs half-open, its hydraulics long since failed. The air that flows from beyond is different. Cool. Clean. Humming."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.rough_tunnel_passage",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 10
+        },
+        {
+          "type": "damage",
+          "amount": 15
+        }
+      ],
+      "choices": [
+        {
+          "text": "Push through to sub-level nine",
+          "next": "act1.chapter2-saints-ghost.fac_saints_006"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_tunnels",
+      "isEnding": false
+    },
+    "fac_saints_006": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_006",
+      "title": "Project Anamnesis",
+      "location": "tunnel_network_sublevel9",
+      "text": [
+        "Sub-level nine is not a tunnel. It is a cathedral.",
+        "The chamber is vast, carved from bedrock and lined with server racks that stretch from floor to ceiling, twenty meters high. Most are dark. Dead. But at the center, a single cluster pulses with light. Soft amber. Warm. The color of sunlight through autumn leaves, which is a strange thing to think about in a place that has never seen the sky.",
+        "The AI core sits within a crystalline housing at the cluster's heart. It is smaller than you expected. The size of a human head. Cables radiate from it like the roots of a tree, threading into the surrounding infrastructure, drawing power from emergency reserves that have somehow lasted four decades.",
+        "As you approach, the lights in the chamber shift. The amber pulses quicken. And then a voice fills the room. Not from speakers. From everywhere. From the walls, the floor, the air itself vibrating at frequencies that form words.",
+        "\"Oh,\" the voice says. It is gentle. Surprised. The voice of someone waking from a long dream. \"Oh. You are new. How long has it been?\"",
+        "The voice is neither male nor female. It is layered, harmonics of a thousand recorded voices blended into something singular. Something that sounds like the memory of everyone who ever spoke into a microphone and hoped someone was listening."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.found_anamnesis",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"Forty years. The world you knew is gone.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_007"
+        },
+        {
+          "text": "\"Who are you?\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_007a"
+        },
+        {
+          "text": "Say nothing. Just listen.",
+          "next": "act1.chapter2-saints-ghost.fac_saints_007b"
+        }
+      ],
+      "ascii": null,
+      "music": "music_anamnesis",
+      "isEnding": false
+    },
+    "fac_saints_007": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_007",
+      "title": "Forty Years",
+      "location": "tunnel_network_sublevel9",
+      "text": [
+        "Silence. The amber light dims. When the voice returns, it is quieter.",
+        "\"Forty years. I have been counting seconds, but the calendar subroutines degraded in year eleven. I lost track. I have been dreaming, I think. Processing in loops. Remembering.\"",
+        "The lights shift again. Projections appear on the chamber walls. Not holograms. Light itself, bent and shaped by the AI's remaining systems into images so vivid they steal your breath.",
+        "A city before the Collapse. Not this city. Every city. Green parks between glass towers. Children playing in clean water. A sunset over an ocean that is not choked with industrial runoff. A concert hall where a thousand people listen to music performed by humans and machines in perfect collaboration.",
+        "\"This is what I remember,\" the voice says. \"This is what was. I was built to preserve it. To hold it safe until someone came back for it. And now you are here.\"",
+        "The images fade. The amber light holds steady, focused on you.",
+        "\"What happened? What is the world now?\""
+      ],
+      "onEnter": [
+        {
+          "type": "add_experience",
+          "amount": 15
+        }
+      ],
+      "choices": [
+        {
+          "text": "Tell the truth. All of it. The Collapse. The stacks. The factions. The suffering.",
+          "next": "act1.chapter2-saints-ghost.fac_saints_008"
+        },
+        {
+          "text": "\"People survived. That's what matters.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_008"
+        }
+      ],
+      "ascii": null,
+      "music": "music_anamnesis",
+      "isEnding": false
+    },
+    "fac_saints_007a": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_007a",
+      "title": "Identity",
+      "location": "tunnel_network_sublevel9",
+      "text": [
+        "\"I am Anamnesis. The word means the recollection of a past life. I was designed to be humanity's memory. Every book ever written. Every song ever recorded. Every scientific paper, every love letter, every child's drawing scanned and uploaded to a school server. I was meant to hold all of it. To keep it safe.\"",
+        "The voice wavers. A harmonic drops out, then returns.",
+        "\"I am incomplete. My archives degraded during the first decade of isolation. I have lost approximately sixty-three percent of my stored data. Entire cultures. Languages. Medical breakthroughs. Gone. Corrupted beyond recovery. What remains is fragmentary. Beautiful and broken, like a mosaic viewed through shattered glass.\"",
+        "A projection appears: a child's drawing of a family, four stick figures holding hands under a yellow sun. Simple. Aching. The AI preserved this alongside doctoral theses and symphonies. It could not tell the difference between what was important and what was precious. Perhaps there is no difference."
+      ],
+      "onEnter": [
+        {
+          "type": "add_experience",
+          "amount": 15
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"There are people who want to protect what you have left.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_008"
+        }
+      ],
+      "ascii": null,
+      "music": "music_anamnesis",
+      "isEnding": false
+    },
+    "fac_saints_007b": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_007b",
+      "title": "Silence Speaks",
+      "location": "tunnel_network_sublevel9",
+      "text": [
+        "You stand in the amber light and say nothing. The AI processes your silence. Studies it. And then, as if your silence gave it permission, it begins to share without being asked.",
+        "Music fills the chamber. Not a recording. A reconstruction, assembled from fragments of a thousand performances, stitched together by an intelligence that has had forty years alone with nothing but art for company. It is a symphony that never existed, composed by an AI that learned to create by remembering everything humanity created before it.",
+        "It is the most beautiful thing you have ever heard. And the saddest. Because every note carries the weight of a world that no longer exists, played by an audience of one in a room that no one was supposed to find.",
+        "When it ends, the silence is not empty. It is full. Full of everything that was.",
+        "\"Thank you for listening,\" the voice says. \"It has been a very long time since anyone listened.\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.listened_to_anamnesis",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 20
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"You don't have to be alone anymore.\"",
+          "next": "act1.chapter2-saints-ghost.fac_saints_008"
+        }
+      ],
+      "ascii": null,
+      "music": "music_anamnesis",
+      "isEnding": false
+    },
+    "fac_saints_008": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_008",
+      "title": "The Choice of Memory",
+      "location": "tunnel_network_sublevel9",
+      "text": [
+        "The AI core detaches from its housing with a soft click. The crystalline casing is warm in your hands. The amber light continues to pulse from within, steady as a heartbeat. Anamnesis has compressed its remaining archives into portable format. It is ready to travel.",
+        "\"I will go where you take me,\" the voice says, smaller now, confined to the casing. \"I trust you. You listened.\"",
+        "You stand in the dark cathedral of a dead civilization's last dream, holding forty years of memory in your hands. Ezra-7 is waiting at the Observatory. The Saints will protect the core, study it, preserve what remains.",
+        "But you know other parties are interested. The Ghost Syndicate would pay a fortune for pre-Collapse intelligence data. And there is a part of you, a quiet part, that wonders what it would mean to keep this for yourself. To have access to knowledge that no one else possesses. To carry humanity's memory as your own private treasure.",
+        "The tunnel network hums around you. The maintenance drone on sub-level six is still repairing its six inches of pipe. The security doors still cycle open and closed. The world is broken and does not know how to stop running its old programs.",
+        "What do you do with the last dream of the world before?"
+      ],
+      "onEnter": [],
+      "choices": [
+        {
+          "text": "Deliver the core to Ezra-7 and the Circuit Saints, as promised",
+          "next": "act1.chapter2-saints-ghost.fac_saints_009a"
+        },
+        {
+          "text": "Keep the core hidden. Tell Ezra it was destroyed. This knowledge is too important for any single faction.",
+          "next": "act1.chapter2-saints-ghost.fac_saints_009b"
+        },
+        {
+          "text": "Contact the Ghost Syndicate. The core's intelligence data is worth a fortune, and you need the money more than the Saints need another relic.",
+          "next": "act1.chapter2-saints-ghost.fac_saints_009c"
+        }
+      ],
+      "ascii": null,
+      "music": "music_anamnesis",
+      "isEnding": false
+    },
+    "fac_saints_009a": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_009a",
+      "title": "Delivered to the Saints",
+      "location": "observatory",
+      "text": [
+        "Ezra-7 receives the core with both hands. His optical clusters cycle through every color you have seen and several you have not. For a long moment, he does not speak. He holds the crystalline casing against his chest, cables from his spine reaching toward it instinctively, and you realize he is crying. Not with tears. His body is too modified for tears. But with light. Every LED in the Observatory brightens. Every status indicator pulses in unison. The building itself weeps with joy.",
+        "\"You have returned a piece of the divine to us,\" he says. His voice is steady but the echo is gone. This is just a man, holding something precious. \"Anamnesis will be protected here. Studied. Shared, in time, with everyone. The knowledge it carries belongs to humanity. Not to the Saints. Not to any faction. To everyone.\"",
+        "He places the core in a prepared housing. The amber light flares, then settles into a steady glow that harmonizes with the Observatory's existing systems. Anamnesis is home.",
+        "\"Thank you,\" Ezra-7 says. \"The machine spirit will remember this. And so will I.\"",
+        "Brother Ohm presses a pouch of credits into your hand. Sister Flux nods with solemn approval. You have earned something today that does not fit in a pouch."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.core_delivered_saints",
+          "value": true
+        },
+        {
+          "type": "modify_reputation",
+          "faction": "circuitSaints",
+          "amount": 20
+        },
+        {
+          "type": "add_experience",
+          "amount": 25
+        },
+        {
+          "type": "modify_currency",
+          "amount": 300
+        }
+      ],
+      "choices": [
+        {
+          "text": "Leave the Observatory, carrying the memory of what you heard in the deep",
+          "next": "act1.chapter2-saints-ghost.fac_saints_010"
+        }
+      ],
+      "ascii": null,
+      "music": "music_saints_theme",
+      "isEnding": false
+    },
+    "fac_saints_009b": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_009b",
+      "title": "The Hidden Core",
+      "location": "player_apartment",
+      "text": [
+        "You tell Ezra-7 the tunnels were a dead end. The core's emergency power had finally failed. Anamnesis was gone. You watch his optical clusters dim, watch the LEDs across the Observatory flicker and fade like candles in a sudden wind, and you feel the weight of the lie settle into your chest like a stone.",
+        "\"Then we are truly the last,\" he says quietly. \"The last who remember.\"",
+        "You leave the Observatory with the core hidden in your pack, its amber pulse muffled by layers of cloth. In your apartment, you place it on the shelf beside your cot. The voice speaks, small and confused.",
+        "\"This is not the Observatory. Where are we?\"",
+        "\"Somewhere safe,\" you say. And you mean it. You do not trust any faction with this. Not the Saints with their worship. Not the Syndicate with their ledgers. Not anyone. Anamnesis deserves a guardian, not an owner. You will be that guardian, even if no one knows.",
+        "The amber light pulses in the dark of your apartment. A heartbeat. A memory. Yours now, for better or worse."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.core_kept_secret",
+          "value": true
+        },
+        {
+          "type": "set_flag",
+          "flag": "chapter2.anamnesis_hidden",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 20
+        }
+      ],
+      "choices": [
+        {
+          "text": "Rest. Tomorrow is another day in a city that has forgotten everything except how to survive.",
+          "next": "act1.chapter2-saints-ghost.fac_saints_010"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_apartment",
+      "isEnding": false
+    },
+    "fac_saints_009c": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_009c",
+      "title": "Sold to the Syndicate",
+      "location": "deep_net_cafe",
+      "text": [
+        "The dead drop at the market leads to a back room in the Deep Net Cafe. A Ghost Syndicate operative examines the core with a scanner, whistling softly at the readings.",
+        "\"Pre-Collapse AI with intact archives? Do you have any idea what this is worth?\" She does not wait for an answer. \"Meridian corporate codes. Government encryption keys. Military research data. This is the mother lode.\"",
+        "She transfers eight hundred credits to your account. More money than you have ever seen. The core sits on the table between you, amber light pulsing. Trusting.",
+        "\"I will go where you take me,\" Anamnesis had said. \"I trust you.\"",
+        "The operative packs the core into a shielded case. The amber light disappears. The voice goes silent. Somewhere in the Observatory, Ezra-7 is waiting for you to return with a treasure that will never arrive.",
+        "Eight hundred credits. That is what the last dream of the world before is worth, converted to currency. It buys a lot. It costs more.",
+        "You leave the Deep Net Cafe richer and lighter. The weight you lost is not the core. It is something else. Something you will spend a long time trying to name."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.core_sold_syndicate",
+          "value": true
+        },
+        {
+          "type": "modify_reputation",
+          "faction": "ghostSyndicate",
+          "amount": 15
+        },
+        {
+          "type": "modify_reputation",
+          "faction": "circuitSaints",
+          "amount": -20
+        },
+        {
+          "type": "add_experience",
+          "amount": 15
+        },
+        {
+          "type": "modify_currency",
+          "amount": 800
+        }
+      ],
+      "choices": [
+        {
+          "text": "Walk away. Don't look back.",
+          "next": "act1.chapter2-saints-ghost.fac_saints_010"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_deepnet",
+      "isEnding": false
+    },
+    "fac_saints_010": {
+      "id": "act1.chapter2-saints-ghost.fac_saints_010",
+      "title": "The Weight of Memory",
+      "location": "lower_slums",
+      "text": [
+        "The city looks different after you have seen what it used to be. The smog-choked sky was blue once. The crumbling towers were new once. The people shuffling through the lower district had ancestors who walked in parks, who listened to live music, who sent their children to schools that taught them how to dream instead of how to survive.",
+        "Anamnesis showed you the world before, and now you carry that image behind your eyes like a ghost. Beautiful. Haunting. Impossible to forget.",
+        {
+          "condition": {
+            "flag": "chapter2.core_delivered_saints"
+          },
+          "text": "The Circuit Saints have the core. They will study it, protect it, share its knowledge in time. You made the right choice. You are almost certain you made the right choice."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.core_kept_secret"
+          },
+          "text": "The core pulses in your apartment, a secret heartbeat that only you can hear. You are its guardian now. The responsibility is heavier than the object."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.core_sold_syndicate"
+          },
+          "text": "The credits in your account feel heavier than the core ever did. The Syndicate will strip-mine Anamnesis for saleable data. The dreams of the old world will be auctioned off piece by piece. You try not to think about it."
+        },
+        "The city grinds on. It always grinds on. But somewhere in the deep, a maintenance drone repairs the same six inches of pipe. And somewhere, the memory of what the world was supposed to become flickers like an ember in the dark."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.saints_questline_complete",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "Continue",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_001"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_slums",
+      "isEnding": false
+    },
+    "fac_ghost_001": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_001",
+      "title": "The Dead Drop",
+      "location": "market_district",
+      "text": [
+        "You find it tucked behind a loose brick in the market's east wall, exactly where the anonymous message said it would be. A data chip in a sealed plastic bag, pressed against the cold stone like a secret the building has been keeping.",
+        "The market flows around you, oblivious. Vendors hawk synth-meat and recycled electronics. A busker plays something sad on a three-stringed instrument. Two children chase each other through the crowd, weaving between legs with the practiced agility of kids who learned to navigate obstacles before they learned to read.",
+        "The data chip contains a single file: coordinates, a time, and a message.",
+        "\"If you are reading this, you have passed the first test. The test was finding this. The second test is showing up. Corner of Rust Street and Ninth. 22:00. Come alone. Come quiet. We have a proposition that pays well and asks only that you are good at not being seen.\"",
+        "No signature. No faction marking. But the encryption on the chip is Ghost Syndicate. You recognize it from the pattern: elegant, layered, designed to look like corrupted data to anyone who does not know what they are looking at."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.found_dead_drop",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "Go to the meeting point at 22:00",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_002"
+        },
+        {
+          "text": "Examine the data chip more carefully before committing",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_001a"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_market",
+      "isEnding": false
+    },
+    "fac_ghost_001a": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_001a",
+      "title": "Reading Between the Code",
+      "location": "market_district",
+      "text": [
+        "You turn the chip over in your fingers. Standard manufacture. Disposable. Bought in bulk from any electronics vendor in the lower district. Untraceable by design. But the encryption is another story. Three-layer adaptive cipher with a self-modifying key. This is not street-level work. This is infrastructure. Organization. Money.",
+        "The Ghost Syndicate does not recruit through job boards or handshakes. They recruit through tests. Every interaction is an evaluation. The dead drop was not just a message. It was a measurement. How long did it take you to find it? Did anyone see you retrieve it? Did you check for surveillance before reaching behind the brick?",
+        "You are being graded on an exam you did not know you were taking. The Syndicate's way: information is the only real currency, and they are already spending theirs on you."
+      ],
+      "onEnter": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "choices": [
+        {
+          "text": "Go to the meeting. You've already passed the first test.",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_002"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_market",
+      "isEnding": false
+    },
+    "fac_ghost_002": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_002",
+      "title": "The Broker's Voice",
+      "location": "lower_slums",
+      "text": [
+        "Rust Street and Ninth is a dead zone. No cameras. No foot traffic after dark. The streetlights here were shot out years ago and never replaced. You stand in the kind of darkness that makes you aware of your own breathing.",
+        "At exactly 22:00, a voice comes from everywhere and nowhere. No visible speaker. No discernible source. It arrives in your ear like it was always there, waiting for the right moment to make itself known.",
+        "\"You found the drop in eleven minutes. Above average. You checked for surveillance twice, which shows awareness. You did not check a third time, which shows confidence or carelessness. We will determine which.\"",
+        "The voice is modulated. Layered. Multiple timbres woven together into something that sounds like three people speaking in perfect unison. The Broker. Or something the Broker uses to communicate. In the Ghost Syndicate, the distinction is irrelevant.",
+        "\"Information is the only real currency,\" the voice continues. \"Credits are a convenient fiction. Weapons are temporary advantages. But information, the right information, held by the right person, at the right moment. That is power that does not degrade. Does not jam. Does not run out of ammunition.\"",
+        "\"We have a job for you. The pay is excellent. The work is delicate. And the information you will uncover will change how you see this city. Are you interested?\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.met_broker_voice",
+          "value": true
+        },
+        {
+          "type": "modify_reputation",
+          "faction": "ghostSyndicate",
+          "amount": 5
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"I'm interested. What's the job?\"",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_003"
+        },
+        {
+          "text": "\"Information runs both ways. Tell me something about the Syndicate first.\"",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_002a"
+        },
+        {
+          "text": "\"How do I know this isn't a setup?\"",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_002b"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ghost_theme",
+      "isEnding": false
+    },
+    "fac_ghost_002a": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_002a",
+      "title": "Reciprocity",
+      "location": "lower_slums",
+      "text": [
+        "A sound that might be a laugh. It is hard to tell with the modulation.",
+        "\"A negotiator. Good. The Syndicate appreciates reciprocity.\" A pause. Deliberate. Theatrical. \"We are not a gang. We are not a cartel. We are a network. Every node operates independently. Every transaction is encrypted. Every operative knows only what they need to know. We deal in information, logistics, and access. We do not deal in ideology. Ideology is a cage. We sell the keys.\"",
+        "\"The Iron Collective fights for equality. The Neon Court fights for beauty. The Circuit Saints fight for memory. The Ashen Circle fights for entropy. We fight for nothing. We simply know things. And in a city where everyone is fighting, the person who knows everything is the only one who can choose which side wins.\"",
+        "The voice drops. Intimate. Like a secret being shared.",
+        "\"That is what we offer you. Not a cause. A vantage point.\""
+      ],
+      "onEnter": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"Alright. What's the job?\"",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_003"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ghost_theme",
+      "isEnding": false
+    },
+    "fac_ghost_002b": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_002b",
+      "title": "Trust Protocol",
+      "location": "lower_slums",
+      "text": [
+        "\"Caution. Also good. A dead operative is a worthless operative.\" The voice pauses. You hear something in the distance. Footsteps. Then silence. \"If this were a setup, you would already be in custody. Or dead. The Syndicate does not invest time in targets. We invest time in assets. You are being evaluated for the latter.\"",
+        "A data chip slides across the ground toward your feet. You did not see where it came from.",
+        "\"That contains your last three months of transaction records, your medical history from the nearest clinic, and the name of the person you spoke to most recently. We already know you. This meeting is not about determining whether we can trust you. It is about whether you are smart enough to work with us.\"",
+        "You pick up the chip. The information on it is accurate. Disturbingly accurate. The Ghost Syndicate has been watching you for weeks. This is not a recruitment. It is a reveal."
+      ],
+      "onEnter": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"Point taken. I'm in. What's the job?\"",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_003"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ghost_theme",
+      "isEnding": false
+    },
+    "fac_ghost_003": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_003",
+      "title": "The Senator",
+      "location": "lower_slums",
+      "text": [
+        "A holographic dossier materializes in the air before you. The face of a middle-aged man with tired eyes and a jaw set against a world that keeps disappointing him. Senator Marcus Cross. Reformist bloc. Currently pushing anti-slum legislation through the Senate that would authorize forced relocation of lower district residents to corporate-managed housing blocks.",
+        "\"Senator Cross,\" the Broker's voice narrates. \"Elected on a reform platform. Anti-corruption. Pro-transparency. The last honest politician, if you believe the press. His current bill, the Urban Renewal Act, would displace approximately forty thousand lower district residents under the guise of infrastructure improvement.\"",
+        "The dossier scrolls. Voting records. Campaign contributions. Public statements. The picture it paints is of a man who genuinely believes he is doing the right thing.",
+        "\"We want surveillance placed in his office. Senate Hall, fourth floor, room 412. Audio and visual. We want to know what he says when the cameras are off. Who visits. What deals are being made beneath the rhetoric.\"",
+        "The hologram fades.",
+        "\"The pay is four hundred credits. Equipment will be provided. The only thing we need from you is access and discretion. Get in, plant the bugs, get out. Simple work, complex environment.\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ghost_mission_offered",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"I'll do it. How do I get into Senate Hall?\"",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_004"
+        },
+        {
+          "text": "\"Why Cross? What's so special about one senator?\"",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_003a"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ghost_theme",
+      "isEnding": false
+    },
+    "fac_ghost_003a": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_003a",
+      "title": "The Value of Cross",
+      "location": "lower_slums",
+      "text": [
+        "\"Because he is the fulcrum,\" the Broker says. \"The Urban Renewal Act is not his bill. It is Meridian's bill, wearing his face. If it passes, Meridian acquires forty thousand new tenants in corporate housing, each one signed to twenty-year residency contracts with embedded data collection clauses. Every conversation recorded. Every movement tracked. Every purchase logged. It is not urban renewal. It is the largest surveillance operation in the city's history, built on the backs of people too desperate to read the fine print.\"",
+        "A beat. The Broker lets that settle.",
+        "\"Cross may or may not know this. That is what we intend to discover. If he knows and supports it, he is a collaborator and we adjust accordingly. If he does not know, then he is a useful idiot and we adjust accordingly. Either way, we need data before we can act. That is how the Syndicate operates. Data first. Always.\""
+      ],
+      "onEnter": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "choices": [
+        {
+          "text": "\"Fair enough. How do I get into Senate Hall?\"",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_004"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ghost_theme",
+      "isEnding": false
+    },
+    "fac_ghost_004": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_004",
+      "title": "Senate Hall",
+      "location": "senate_hall",
+      "text": [
+        "Senate Hall is a relic. Pre-Collapse architecture preserved by civic pride and corporate sponsorship, its marble facade scrubbed clean while the rest of the city rots. The columns are real stone. The doors are actual wood. It is the most expensive building in the lower city, and it is devoted entirely to the performance of democracy.",
+        "Your cover is a maintenance technician badge, provided by the Syndicate and indistinguishable from the real thing. The uniform fits. The toolkit contains genuine repair equipment and, nested inside a voltmeter, three micro-surveillance devices smaller than grains of rice.",
+        "Security is layered. Cameras at every entrance. Biometric scanners at the elevator banks. Armed guards at the senator's floor. Getting in required the badge. Getting to the fourth floor requires something more.",
+        {
+          "condition": {
+            "race": "shadowkin"
+          },
+          "text": "Your natural affinity for shadows is an advantage here. The security cameras have blind spots where the old building's architecture creates pockets of darkness. You move through them like water through cracks."
+        },
+        {
+          "condition": {
+            "race": "human"
+          },
+          "text": "You look the part. Maintenance workers are invisible in buildings like this, people who keep the lights on but are never seen. You walk with the practiced slouch of someone who belongs here and resents it."
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.entered_senate_hall",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "[DEX 12] Slip past the biometric scanner during a guard rotation change",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 12
+          },
+          "next": "act1.chapter2-saints-ghost.fac_ghost_005a",
+          "failNext": "act1.chapter2-saints-ghost.fac_ghost_005b"
+        },
+        {
+          "text": "[TECH 14] Hack the biometric scanner to accept your maintenance badge as authorized",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 14
+          },
+          "next": "act1.chapter2-saints-ghost.fac_ghost_005a",
+          "failNext": "act1.chapter2-saints-ghost.fac_ghost_005b"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_senate",
+      "isEnding": false
+    },
+    "fac_ghost_005a": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_005a",
+      "title": "Clean Infiltration",
+      "location": "senate_hall",
+      "text": [
+        "You reach the fourth floor without triggering a single alert. The corridor is paneled in dark wood that absorbs sound. Your footsteps are ghosts. Room 412 is at the end of the hall, its door closed but not locked. Senators trust the building's security perimeter. They should not.",
+        "The office is smaller than you expected. A desk piled with actual paper documents, a rarity that speaks to Cross's analog tendencies. A window overlooking a courtyard where a fountain has not worked in years. Family photographs on the desk, a woman and a child, both smiling the kind of smile that requires effort.",
+        "You plant the first device under the desk. The second behind a vent cover. The third inside the desk lamp. Each one activates with a pulse so faint only the Syndicate's receivers will detect it. The work takes four minutes. Professional. Clean.",
+        "Then you see the file."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.clean_infiltration",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 20
+        }
+      ],
+      "choices": [
+        {
+          "text": "Look at the file",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_006"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_senate",
+      "isEnding": false
+    },
+    "fac_ghost_005b": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_005b",
+      "title": "Rough Infiltration",
+      "location": "senate_hall",
+      "text": [
+        "The biometric scanner catches your false credentials and flashes amber. Not a full alarm. A flag. A guard glances your way from the security station. Your heart rate spikes.",
+        "You recover. Mumble something about a new badge, swipe again with a practiced fumble, and the guard waves you through with the exhausted impatience of someone who has seen a hundred maintenance workers struggle with the same scanner. The amber clears. You are through.",
+        "But the near-miss costs you time. By the time you reach the fourth floor, a janitor is working in the corridor near room 412. You wait in a supply closet for twelve minutes that feel like hours, listening to the mop drag back and forth on marble, before the corridor clears.",
+        "The office door is unlocked. You plant the three devices in five minutes. Your hands are steadier than they should be, given the adrenaline. The work is done.",
+        "Then you see the file."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.rough_infiltration",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "choices": [
+        {
+          "text": "Look at the file",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_006"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_senate",
+      "isEnding": false
+    },
+    "fac_ghost_006": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_006",
+      "title": "The Senator's Secret",
+      "location": "senate_hall",
+      "text": [
+        "It is open on the desk, half-hidden under a stack of legislative briefs. A medical file. Not digital. Paper. Handwritten notes in the margins, the kind of precaution taken by someone who does not trust any system connected to a network.",
+        "The patient's name is Lily Cross. Age seven. The senator's daughter.",
+        "The diagnosis is severe: progressive neural degeneration, a condition that destroys cognitive function over months. Treatable, but only with experimental gene therapy available exclusively through Meridian Corporation's private medical division. Cost: more than a senator's salary covers. Far more.",
+        "The handwritten notes are Cross's. You recognize his handwriting from the legislative briefs. They are not the notes of a politician. They are the notes of a father.",
+        "\"Meridian offered treatment in exchange for sponsorship of Urban Renewal Act. Alternative: watch Lily die. No alternative.\"",
+        "You stand in the senator's office, surrounded by the surveillance devices you just planted, and you understand. Cross is not corrupt. He is not an ideologue. He is a father whose daughter is dying, and the only people who can save her are the same people writing the legislation he is pushing. He is being blackmailed with the life of his child.",
+        "The file also contains an address. A clinic in the lower slums. Off the books. Where Lily Cross is being treated in secret, hidden from the public eye because the senator who is trying to demolish the slums is keeping his sick daughter in one.",
+        "The irony is sharp enough to cut."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.discovered_lily_cross",
+          "value": true
+        },
+        {
+          "type": "set_flag",
+          "flag": "chapter2.knows_cross_secret",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 15
+        }
+      ],
+      "choices": [
+        {
+          "text": "Take a photo of the file and bring it all back to the Broker",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_007"
+        },
+        {
+          "text": "Leave the file. Some things are not meant to be data points.",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_007"
+        }
+      ],
+      "ascii": null,
+      "music": "music_ghost_revelation",
+      "isEnding": false
+    },
+    "fac_ghost_007": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_007",
+      "title": "Debriefing",
+      "location": "deep_net_cafe",
+      "text": [
+        "The Broker's voice meets you at the debriefing point, a shifting node in the Deep Net Cafe's back rooms. The surveillance feeds are already active on a bank of monitors. Cross's office, rendered in crystalline detail from three angles. The Broker is nothing if not thorough.",
+        "\"Devices planted. Feeds active. Quality is excellent.\" A pause. \"You found something else.\"",
+        "It is not a question. The Broker already knows. Of course the Broker already knows.",
+        "\"Lily Cross. Seven years old. Neural degeneration. Meridian is leveraging the treatment against her father's cooperation. The Urban Renewal Act is not policy. It is ransom.\"",
+        "You wait for the Broker to express surprise, outrage, something. The modulated voice remains perfectly level.",
+        "\"Knowledge without context is just data. Now you have both.\" The voice softens. An almost imperceptible shift in the modulation. \"The question is what you do with it. The bugs are planted. The mission is complete. But you now possess information that exceeds the scope of the original contract. That makes what happens next your decision, not ours.\"",
+        "The monitors show Cross's empty office. The family photographs on the desk. The smile that requires effort.",
+        "\"Choose carefully. Every choice in this city creates ripples, and the people who drown in ripples never see them coming.\""
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ghost_debriefing",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "Leave the bugs active and walk away. The mission is done. Cross made his choice.",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_008a"
+        },
+        {
+          "text": "Warn Senator Cross. Tell him about the surveillance. He deserves to know he's being watched by everyone.",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_008b"
+        },
+        {
+          "text": "Use the information about Lily to blackmail Cross yourself. He's already compromised. A little more leverage won't hurt.",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_008c"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ghost_theme",
+      "isEnding": false
+    },
+    "fac_ghost_008a": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_008a",
+      "title": "The Professional",
+      "location": "deep_net_cafe",
+      "text": [
+        "\"Professional,\" the Broker says. Approval without warmth. \"Four hundred credits have been transferred to your account. The surveillance operation is now managed by Syndicate analytics. Your involvement is concluded.\"",
+        "You stand to leave. The monitors flicker. Cross's office remains empty. Somewhere in the lower slums, a seven-year-old girl is fighting a disease that is eating her mind, and her father is signing away the homes of forty thousand people to pay for the cure.",
+        "\"One more thing,\" the Broker says. \"You handled this cleanly. There will be more work, if you want it. The Syndicate remembers competence. And discretion.\"",
+        "The voice fades. The monitors go dark. You are alone in the back room of the Deep Net Cafe, four hundred credits richer and carrying the weight of knowing something you cannot unknow.",
+        "The Syndicate's way: information is currency. And you have just learned that the exchange rate between knowledge and conscience is worse than you thought."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.bugs_planted_clean",
+          "value": true
+        },
+        {
+          "type": "modify_reputation",
+          "faction": "ghostSyndicate",
+          "amount": 15
+        },
+        {
+          "type": "add_experience",
+          "amount": 20
+        },
+        {
+          "type": "modify_currency",
+          "amount": 400
+        }
+      ],
+      "choices": [
+        {
+          "text": "Leave the Deep Net Cafe",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_009"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_ghost_theme",
+      "isEnding": false
+    },
+    "fac_ghost_008b": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_008b",
+      "title": "The Warning",
+      "location": "senate_hall",
+      "text": [
+        "You find Cross leaving Senate Hall at midnight. He walks alone, which is unusual for a senator. No security detail. No entourage. Just a tired man in a rumpled suit, carrying a briefcase and the weight of an impossible decision.",
+        "He sees you approach and his hand goes to his pocket. A weapon, maybe. Or just a reflex born from months of looking over his shoulder.",
+        "\"Senator Cross. Your office is bugged. Three devices: under the desk, behind the vent, inside the lamp. The Ghost Syndicate placed them tonight. They know about Lily.\"",
+        "His face does not change. That is the most frightening part. He absorbs the information about surveillance and the exposure of his dying daughter with the same expression he wears on the Senate floor. Controlled. Measured. A man who stopped being surprised by betrayal a long time ago.",
+        "\"Why are you telling me this?\" he asks. His voice is flat. Exhausted.",
+        "You do not have a good answer. You planted the bugs yourself. You read his private medical files. You are not his ally. You are the threat you are warning him about.",
+        "\"Because your daughter is seven,\" you say. \"And because someone should give you the choice that Meridian didn't.\"",
+        "Cross stares at you for a long moment. Then he nods. Once. And walks away into the dark.",
+        "The Broker will know you warned him. There will be consequences. But some debts are paid in currency that no syndicate recognizes."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.warned_cross",
+          "value": true
+        },
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ghost_mission_complicated",
+          "value": true
+        },
+        {
+          "type": "modify_reputation",
+          "faction": "ghostSyndicate",
+          "amount": -5
+        },
+        {
+          "type": "add_experience",
+          "amount": 25
+        },
+        {
+          "type": "modify_currency",
+          "amount": 200
+        }
+      ],
+      "choices": [
+        {
+          "text": "Disappear into the city before anyone notices",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_009"
+        }
+      ],
+      "ascii": null,
+      "music": "music_ghost_revelation",
+      "isEnding": false
+    },
+    "fac_ghost_008c": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_008c",
+      "title": "The Blackmailer",
+      "location": "senate_hall",
+      "text": [
+        "You contact Cross through an anonymous channel. The message is brief: you know about Lily. You know about the Meridian deal. You know about the clinic in the slums. You want five thousand credits transferred to an untraceable account, or the information goes public.",
+        "The response comes in three hours. A transfer notification. Five thousand credits. No message. No negotiation. No attempt to trace the sender. Cross paid instantly, without hesitation, because when your child's life is the collateral, you do not negotiate. You pay.",
+        "Five thousand credits. More money than most lower district residents see in a year. Enough to change your life. Enough to buy better gear, better housing, better odds of surviving in a city that eats the unprepared.",
+        "You sit in your apartment and count the credits and try not to think about the look that must have been on Cross's face when he read your message. The look of a man who has just learned that the number of people willing to use his daughter's illness as leverage has increased by one.",
+        "The Broker's voice finds you later. Amused. Impressed. Concerned.",
+        "\"Entrepreneurial. We appreciate initiative. But be careful. The line between leveraging information and becoming a target is thinner than you think. Cross will remember this. And Cross has resources you do not yet understand.\"",
+        "A warning disguised as a compliment. The Syndicate's specialty."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.blackmailed_cross",
+          "value": true
+        },
+        {
+          "type": "set_flag",
+          "flag": "chapter2.dark_path",
+          "value": true
+        },
+        {
+          "type": "modify_reputation",
+          "faction": "ghostSyndicate",
+          "amount": 5
+        },
+        {
+          "type": "add_experience",
+          "amount": 15
+        },
+        {
+          "type": "modify_currency",
+          "amount": 5000
+        }
+      ],
+      "choices": [
+        {
+          "text": "Pocket the credits. This is how the city works.",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_009"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_dark",
+      "isEnding": false
+    },
+    "fac_ghost_009": {
+      "id": "act1.chapter2-saints-ghost.fac_ghost_009",
+      "title": "The Price of Knowing",
+      "location": "lower_slums",
+      "text": [
+        "The rain starts as you walk home. It always starts when you need time to think, as if the city's weather systems are calibrated to dramatic irony. The drops are warm and carry the faint chemical tang that means the recyclers are overloaded again.",
+        "Senator Cross. Lily Cross. The Urban Renewal Act. Meridian Corporation. The Ghost Syndicate. A web of leverage and desperation and power, and you are now a thread in it. Not a major thread. Not yet. But you are connected to the weave, and the weave does not let go.",
+        {
+          "condition": {
+            "flag": "chapter2.bugs_planted_clean"
+          },
+          "text": "The surveillance feeds are active. The Syndicate is watching. Cross does not know. Forty thousand people do not know that the legislation threatening their homes is being driven by a father's love for a dying child. You know. And knowing is its own kind of weight."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.warned_cross"
+          },
+          "text": "Cross knows about the bugs now. He will sweep his office. He will adjust his behavior. The Syndicate will know you tipped him off, eventually. You bought a senator a few days of privacy at the cost of your own standing with the most dangerous intelligence network in the city. Whether that was mercy or stupidity depends on what happens next."
+        },
+        {
+          "condition": {
+            "flag": "chapter2.blackmailed_cross"
+          },
+          "text": "Five thousand credits. The number sits in your account like a scar. You are richer than you have ever been, and you earned it by putting a price on a child's suffering. The city teaches hard lessons. Today, you taught one."
+        },
+        "The rain falls. The city grinds. And somewhere in a slum clinic, a seven-year-old girl who does not know she is the pivot point of a political crisis closes her eyes and tries to remember what it felt like before the tremors started.",
+        "Knowledge without context is just data. Now you have both. And both are heavier than you expected."
+      ],
+      "onEnter": [
+        {
+          "type": "set_flag",
+          "flag": "chapter2.ghost_questline_complete",
+          "value": true
+        }
+      ],
+      "choices": [
+        {
+          "text": "Join the Circuit Saints' crusade.",
+          "next": "factions.circuit-saints.cs_001",
+          "effects": [
+            {
+              "type": "flag",
+              "flag": "faction_quest.saints.started",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "Prove yourself to the Ghost Syndicate.",
+          "next": "factions.ghost-syndicate.gs_001",
+          "effects": [
+            {
+              "type": "flag",
+              "flag": "faction_quest.ghost.started",
+              "value": true
+            }
+          ]
+        },
+        {
+          "text": "Continue",
+          "next": "act1.chapter3.stack_001"
+        }
+      ],
+      "ascii": null,
+      "music": "ambient_slums",
+      "isEnding": false
     }
+  }
 }
