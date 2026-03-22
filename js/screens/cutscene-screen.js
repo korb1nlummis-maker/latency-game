@@ -77,7 +77,12 @@ window.Latency.Screens.CutsceneScreen = (function () {
         determination:'cs-mood-warm',
         warm:         'cs-mood-warm',
         cold:         'cs-mood-blue',
-        eerie:        'cs-mood-eerie'
+        eerie:        'cs-mood-eerie',
+        neon:         'cs-mood-neon',
+        industrial:   'cs-mood-industrial',
+        digital:      'cs-mood-digital',
+        matrix:       'cs-mood-digital',
+        winter:       'cs-mood-blue'
     };
 
     // --------------------------------------------------------
@@ -392,7 +397,7 @@ window.Latency.Screens.CutsceneScreen = (function () {
         var mood = slide.mood || 'dark';
         _setMood(mood);
 
-        // Set cinematic background effect based on mood
+        // Set cinematic background effect — per-slide override or mood-mapped
         if (window.Latency.CinematicRenderer) {
             var moodEffectMap = {
                 dark:          'fog',
@@ -404,12 +409,19 @@ window.Latency.Screens.CutsceneScreen = (function () {
                 cold:          'rain',
                 eerie:         'void',
                 warm:          'neon',
+                neon:          'neon',
                 neutral:       'stars',
                 peaceful:      'stars',
-                determination: 'sparks'
+                determination: 'sparks',
+                industrial:    'smoke',
+                digital:       'datastream',
+                winter:        'snow',
+                matrix:        'datastream'
             };
-            var effect = moodEffectMap[mood] || 'fog';
-            window.Latency.CinematicRenderer.setEffect(effect, { intensity: 0.6 });
+            // Per-slide effect override takes priority over mood mapping
+            var effect = slide.effect || moodEffectMap[mood] || 'fog';
+            var intensity = (typeof slide.effectIntensity === 'number') ? slide.effectIntensity : 0.6;
+            window.Latency.CinematicRenderer.setEffect(effect, { intensity: intensity });
         }
 
         // Handle music cue on this slide

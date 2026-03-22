@@ -104,6 +104,53 @@
     animation: cs-bg-breathe-eerie 5s ease-in-out infinite;
 }
 
+.cs-mood-neon .cs-bg-gradient {
+    background: radial-gradient(ellipse at 50% 50%, #001a0a 0%, #000f05 40%, #000 80%);
+    animation: cs-bg-breathe-neon 4s ease-in-out infinite;
+}
+
+.cs-mood-industrial .cs-bg-gradient {
+    background: radial-gradient(ellipse at 40% 70%, #1a1008 0%, #0f0800 30%, #050200 60%, #000 90%);
+    animation: cs-bg-pulse-industrial 3s ease-in-out infinite;
+}
+
+.cs-mood-digital .cs-bg-gradient {
+    background: radial-gradient(ellipse at 50% 30%, #001a00 0%, #000a00 40%, #000 80%);
+    animation: cs-bg-breathe-digital 6s ease-in-out infinite;
+}
+
+.cs-mood-neon .cs-narrative-text {
+    color: #88ffcc;
+    text-shadow: 0 0 8px rgba(100, 255, 200, 0.4);
+}
+
+.cs-mood-industrial .cs-narrative-text {
+    color: #ffcc88;
+    text-shadow: 0 0 6px rgba(255, 180, 100, 0.3);
+}
+
+.cs-mood-digital .cs-narrative-text {
+    color: #44ff88;
+    text-shadow: 0 0 10px rgba(68, 255, 136, 0.5);
+    font-family: var(--font-mono);
+}
+
+@keyframes cs-bg-breathe-neon {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes cs-bg-pulse-industrial {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    30% { opacity: 0.7; transform: scale(1.02); }
+    60% { opacity: 0.5; transform: scale(0.98); }
+}
+
+@keyframes cs-bg-breathe-digital {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
 @keyframes cs-bg-breathe-dark {
     0%, 100% { opacity: 0.4; transform: scale(1); }
     50% { opacity: 0.7; transform: scale(1.05); }
