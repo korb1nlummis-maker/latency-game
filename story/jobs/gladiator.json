@@ -2482,7 +2482,7 @@
                         "dc": 14
                     },
                     "next": "jobs.gladiator.jgld_072",
-                    "failNext": "jobs.gladiator.jgld_072",
+                    "failNext": "jobs.gladiator.jgld_070_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3644,6 +3644,43 @@
             "mood": "red",
             "effect": "embers",
             "effectIntensity": 0.8
+        },
+        "jgld_070_fail": {
+            "id": "jobs.gladiator.jgld_070_fail",
+            "title": "Championship Loss",
+            "location": "the_arena",
+            "text": [
+                "Opponent younger, faster, hungry. Three rounds.",
+                "Blood and the end of an era."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -10
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept loss with grace.",
+                    "next": "jobs.gladiator.jgld_072"
+                },
+                {
+                    "text": "Arena doesn't define you.",
+                    "next": "jobs.gladiator.jgld_072"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
         }
     }
 }

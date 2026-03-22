@@ -1,0 +1,3742 @@
+================================================================================
+LATENCY — STAT CHECK AUDIT REPORT
+================================================================================
+
+Total story files scanned: 43
+Total nodes indexed: 3061
+Total stat checks found: 772
+  GOOD checks: 363
+  BAD checks:  409
+  Pass rate:   47.0%
+
+--------------------------------------------------------------------------------
+STAT CHECKS PER FILE
+--------------------------------------------------------------------------------
+File                                                     Total   Good    Bad
+--------------------------------------------------------------------------------
+story\act1\chapter1-enforcer.json                            6      6      0
+story\act1\chapter1-hacker.json                             14     14      0
+story\act1\chapter1-medic.json                              23     23      0
+story\act1\chapter1-smuggler.json                           25     25      0
+story\act1\chapter2-iron-neon.json                           7      3      4
+story\act1\chapter2-saints-ghost.json                       19     19      0
+story\act1\chapter3.json                                    25     25      0
+story\act1\chapter4.json                                    23     10     13
+story\act2\chapter1.json                                    44     38      6
+story\act2\chapter2.json                                    12      7      5
+story\act2\chapter3.json                                    31     31      0
+story\act3\chapter1.json                                     7      3      4
+story\act4\chapter1.json                                    12     10      2
+story\act5\chapter1.json                                     2      0      2
+story\act5\chapter2.json                                     2      2      0
+story\factions\ashen-circle.json                            20     11      9
+story\factions\ghost-syndicate.json                         70      0     70
+story\factions\iron-collective.json                         28      0     28
+story\factions\neon-court.json                              33      0     33
+story\jobs\diplomat.json                                    15     13      2
+story\jobs\enforcer.json                                    29     29      0
+story\jobs\gladiator.json                                   15     14      1
+story\jobs\hacker.json                                      26     26      0
+story\jobs\medic.json                                       14     14      0
+story\jobs\smuggler.json                                    14     14      0
+story\origins\cyborg.json                                   26      0     26
+story\origins\dark_elf.json                                 29      1     28
+story\origins\half_giant.json                                7      7      0
+story\origins\human.json                                    29      0     29
+story\origins\orc.json                                      21      3     18
+story\origins\synth.json                                    35      9     26
+story\origins\wood_elf.json                                 31      0     31
+story\shared\prologue.json                                  11      6      5
+story\shared\random-encounters.json                         34      0     34
+story\shared\side-quests.json                               33      0     33
+--------------------------------------------------------------------------------
+TOTALS                                                     772    363    409
+
+================================================================================
+BAD STAT CHECKS — DETAILED LIST (409 issues)
+================================================================================
+
+--- Issue #1 ---
+  File:       story\act1\chapter2-iron-neon.json
+  Node:       act1.chapter2-iron-neon.fac_iron_012
+  Choice:     [Strength 11] Fight through the guards.
+  Stat:       strength DC 11
+  next:       act1.chapter2-iron-neon.fac_iron_013
+  failNext:   act1.chapter2-iron-neon.fac_iron_013
+  PROBLEM:    failNext SAME as next (act1.chapter2-iron-neon.fac_iron_013) — no branching on failure
+
+--- Issue #2 ---
+  File:       story\act1\chapter2-iron-neon.json
+  Node:       act1.chapter2-iron-neon.fac_neon_005
+  Choice:     [Charisma 12] "Flattery and poison. You sure know how to welcome a guest."
+  Stat:       charisma DC 12
+  next:       act1.chapter2-iron-neon.fac_neon_007
+  failNext:   act1.chapter2-iron-neon.fac_neon_007
+  PROBLEM:    failNext SAME as next (act1.chapter2-iron-neon.fac_neon_007) — no branching on failure
+
+--- Issue #3 ---
+  File:       story\act1\chapter2-iron-neon.json
+  Node:       act1.chapter2-iron-neon.fac_neon_007
+  Choice:     [Charisma 11] "Why can't you send your own people?"
+  Stat:       charisma DC 11
+  next:       act1.chapter2-iron-neon.fac_neon_008
+  failNext:   act1.chapter2-iron-neon.fac_neon_008
+  PROBLEM:    failNext SAME as next (act1.chapter2-iron-neon.fac_neon_008) — no branching on failure
+
+--- Issue #4 ---
+  File:       story\act1\chapter2-iron-neon.json
+  Node:       act1.chapter2-iron-neon.fac_neon_009
+  Choice:     [Charisma 12] "I suspected. I brought it anyway so you'd know what she has on you."
+  Stat:       charisma DC 12
+  next:       act1.chapter2-iron-neon.fac_neon_011
+  failNext:   act1.chapter2-iron-neon.fac_neon_011
+  PROBLEM:    failNext SAME as next (act1.chapter2-iron-neon.fac_neon_011) — no branching on failure
+
+--- Issue #5 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_013
+  Choice:     [Charisma 12] "The Court should play both sides. Support the protest publicly, deal with Meridian privately."
+  Stat:       charisma DC 12
+  next:       act1.chapter4.climax_020
+  failNext:   act1.chapter4.climax_018
+  PROBLEM:    Fail path leads to DEAD END at 'act1.chapter4.climax_037' (no choices, not an ending)
+
+--- Issue #6 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_015
+  Choice:     [Wisdom 12] "Commander, the Ashen Circle has operatives on the catwalks above. Something else is happening."
+  Stat:       wisdom DC 12
+  next:       act1.chapter4.climax_017
+  failNext:   act1.chapter4.climax_022
+  PROBLEM:    Fail path leads to DEAD END at 'act1.chapter4.climax_024a' (no choices, not an ending)
+
+--- Issue #7 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_016
+  Choice:     [Charisma 13] "Kira, I need you to be brave. Hide in the maintenance tunnels under the Hub. I'll come for you when this is over."
+  Stat:       charisma DC 13
+  next:       act1.chapter4.climax_036
+  failNext:   act1.chapter4.climax_036
+  PROBLEM:    failNext SAME as next (act1.chapter4.climax_036) — no branching on failure
+
+--- Issue #8 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_022
+  Choice:     [Tech 11] "Let me study the schematics first. I want to find a way past those turrets."
+  Stat:       tech DC 11
+  next:       act1.chapter4.climax_023
+  failNext:   act1.chapter4.climax_023
+  PROBLEM:    failNext SAME as next (act1.chapter4.climax_023) — no branching on failure
+
+--- Issue #9 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_024
+  Choice:     [Tech 12] Hack the biometric lock from the nearest terminal
+  Stat:       tech DC 12
+  next:       act1.chapter4.climax_024a
+  failNext:   act1.chapter4.climax_024b
+  PROBLEM:    Fail node 'act1.chapter4.climax_024b' is a DEAD END (no choices, not an ending)
+
+--- Issue #10 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_024
+  Choice:     [Strength 13] Force the reinforced door open
+  Stat:       strength DC 13
+  next:       act1.chapter4.climax_024a
+  failNext:   act1.chapter4.climax_024b
+  PROBLEM:    Fail node 'act1.chapter4.climax_024b' is a DEAD END (no choices, not an ending)
+
+--- Issue #11 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_024
+  Choice:     Try to sneak past the combat synth while it's in standby
+  Stat:       dexterity DC 12
+  next:       act1.chapter4.climax_024a
+  failNext:   act1.chapter4.climax_024b
+  PROBLEM:    Fail node 'act1.chapter4.climax_024b' is a DEAD END (no choices, not an ending)
+
+--- Issue #12 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_026
+  Choice:     [Dexterity 12] Go for the remaining targets before time runs out
+  Stat:       dexterity DC 12
+  next:       act1.chapter4.climax_027
+  failNext:   act1.chapter4.climax_036
+  PROBLEM:    Fail path leads to DEAD END at 'act1.chapter4.climax_037' (no choices, not an ending)
+
+--- Issue #13 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_031
+  Choice:     [Tech 12] "Let me examine the tunnel architecture first. I want to know what I'm walking into."
+  Stat:       tech DC 12
+  next:       act1.chapter4.climax_032
+  failNext:   act1.chapter4.climax_032
+  PROBLEM:    failNext SAME as next (act1.chapter4.climax_032) — no branching on failure
+
+--- Issue #14 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_032
+  Choice:     [Tech 13] Navigate the data streams using stealth protocols
+  Stat:       tech DC 13
+  next:       act1.chapter4.climax_033
+  failNext:   act1.chapter4.climax_032a
+  PROBLEM:    Fail node 'act1.chapter4.climax_032a' is a DEAD END (no choices, not an ending)
+
+--- Issue #15 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_032
+  Choice:     [Intelligence 12] Analyze the hunting programs' patrol patterns and find a gap
+  Stat:       intelligence DC 12
+  next:       act1.chapter4.climax_033
+  failNext:   act1.chapter4.climax_032a
+  PROBLEM:    Fail node 'act1.chapter4.climax_032a' is a DEAD END (no choices, not an ending)
+
+--- Issue #16 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_034
+  Choice:     [Charisma 12] Give Luminara enough real intel to be useful, but hold back the critical details
+  Stat:       charisma DC 12
+  next:       act1.chapter4.climax_035
+  failNext:   act1.chapter4.climax_035
+  PROBLEM:    failNext SAME as next (act1.chapter4.climax_035) — no branching on failure
+
+--- Issue #17 ---
+  File:       story\act1\chapter4.json
+  Node:       act1.chapter4.climax_039
+  Choice:     [Charisma 13] Bluff the retrieval team — claim Kira is already registered
+  Stat:       charisma DC 13
+  next:       act1.chapter4.climax_041
+  failNext:   act1.chapter4.climax_039a
+  PROBLEM:    Fail node 'act1.chapter4.climax_039a' is a DEAD END (no choices, not an ending)
+
+--- Issue #18 ---
+  File:       story\act2\chapter1.json
+  Node:       act2.chapter1.act2_026
+  Choice:     [Strength 14] Plan a direct breach through the loading dock
+  Stat:       strength DC 14
+  next:       act2.chapter1.act2_027a
+  failNext:   act2.chapter1.act2_027c
+  PROBLEM:    Fail path leads to DEAD END at 'act2.chapter2.act2ch2_016' (no choices, not an ending)
+
+--- Issue #19 ---
+  File:       story\act2\chapter1.json
+  Node:       act2.chapter1.act2_026
+  Choice:     [Tech 14] Hack the facility's security from outside before entry
+  Stat:       tech DC 14
+  next:       act2.chapter1.act2_027b
+  failNext:   act2.chapter1.act2_027c
+  PROBLEM:    Fail path leads to DEAD END at 'act2.chapter2.act2ch2_016' (no choices, not an ending)
+
+--- Issue #20 ---
+  File:       story\act2\chapter1.json
+  Node:       act2.chapter1.act2_028
+  Choice:     [Charisma 14] Negotiate for a copy of the protocol for yourself as well
+  Stat:       charisma DC 14
+  next:       act2.chapter1.act2_029a
+  failNext:   act2.chapter1.act2_029b
+  PROBLEM:    Fail path leads to DEAD END at 'act2.chapter2.act2ch2_016' (no choices, not an ending)
+
+--- Issue #21 ---
+  File:       story\act2\chapter1.json
+  Node:       act2.chapter1.act2_030
+  Choice:     [Tech 14] Interface with the Observatory's network to locate the server fragments
+  Stat:       tech DC 14
+  next:       act2.chapter1.act2_031a
+  failNext:   act2.chapter1.act2_031b
+  PROBLEM:    Fail path leads to DEAD END at 'act2.chapter2.act2ch2_016' (no choices, not an ending)
+
+--- Issue #22 ---
+  File:       story\act2\chapter1.json
+  Node:       act2.chapter1.act2_032
+  Choice:     [Dexterity 14] Accept the five-drop mission. Speed is survival.
+  Stat:       dexterity DC 14
+  next:       act2.chapter1.act2_033a
+  failNext:   act2.chapter1.act2_033b
+  PROBLEM:    Fail path leads to DEAD END at 'act2.chapter2.act2ch2_016' (no choices, not an ending)
+
+--- Issue #23 ---
+  File:       story\act2\chapter1.json
+  Node:       act2.chapter1.act2_034
+  Choice:     [Wisdom 14] Deliver the sermon to the Lower District gathering with conviction
+  Stat:       wisdom DC 14
+  next:       act2.chapter1.act2_035a
+  failNext:   act2.chapter1.act2_035b
+  PROBLEM:    Fail path leads to DEAD END at 'act2.chapter2.act2ch2_016' (no choices, not an ending)
+
+--- Issue #24 ---
+  File:       story\act2\chapter2.json
+  Node:       act2.chapter2.act2ch2_015
+  Choice:     "I know everything. But I'm giving you a chance to explain."
+  Stat:       wisdom DC 14
+  next:       act2.chapter2.act2ch2_017
+  failNext:   act2.chapter2.act2ch2_016
+  PROBLEM:    Fail node 'act2.chapter2.act2ch2_016' is a DEAD END (no choices, not an ending)
+
+--- Issue #25 ---
+  File:       story\act2\chapter2.json
+  Node:       act2.chapter2.act2ch2_015
+  Choice:     [Intelligence 14] "I have a proposition. Keep leaking, but feed them what I tell you to."
+  Stat:       intelligence DC 14
+  next:       act2.chapter2.act2ch2_018
+  failNext:   act2.chapter2.act2ch2_016
+  PROBLEM:    Fail node 'act2.chapter2.act2ch2_016' is a DEAD END (no choices, not an ending)
+
+--- Issue #26 ---
+  File:       story\act2\chapter2.json
+  Node:       act2.chapter2.act2ch2_022
+  Choice:     Find a side passage and hide until they pass
+  Stat:       dexterity DC 14
+  next:       act2.chapter2.act2ch2_025
+  failNext:   act2.chapter2.act2ch2_026
+  PROBLEM:    Fail node 'act2.chapter2.act2ch2_026' is a DEAD END (no choices, not an ending)
+
+--- Issue #27 ---
+  File:       story\act2\chapter2.json
+  Node:       act2.chapter2.act2ch2_023
+  Choice:     Wait for a lull in the fighting and sprint through
+  Stat:       dexterity DC 14
+  next:       act2.chapter2.act2ch2_025
+  failNext:   act2.chapter2.act2ch2_026
+  PROBLEM:    Fail node 'act2.chapter2.act2ch2_026' is a DEAD END (no choices, not an ending)
+
+--- Issue #28 ---
+  File:       story\act2\chapter2.json
+  Node:       act2.chapter2.act2ch2_023
+  Choice:     Create a distraction to draw both sides away from your path
+  Stat:       intelligence DC 14
+  next:       act2.chapter2.act2ch2_025
+  failNext:   act2.chapter2.act2ch2_026
+  PROBLEM:    Fail node 'act2.chapter2.act2ch2_026' is a DEAD END (no choices, not an ending)
+
+--- Issue #29 ---
+  File:       story\act3\chapter1.json
+  Node:       act3.chapter1.act3_002
+  Choice:     [TECH DC 15] Attempt to interface with the Vault's security systems
+  Stat:       tech DC 15
+  next:       act3.chapter1.act3_004
+  failNext:   act3.chapter1.act3_005
+  PROBLEM:    Fail path leads to DEAD END at 'act3.chapter1.act3_009' (no choices, not an ending)
+
+--- Issue #30 ---
+  File:       story\act3\chapter1.json
+  Node:       act3.chapter1.act3_004
+  Choice:     [TECH DC 16] Reroute the nearest sentinel's patrol path
+  Stat:       tech DC 16
+  next:       act3.chapter1.act3_008
+  failNext:   act3.chapter1.act3_009
+  PROBLEM:    Fail node 'act3.chapter1.act3_009' is a DEAD END (no choices, not an ending)
+
+--- Issue #31 ---
+  File:       story\act3\chapter1.json
+  Node:       act3.chapter1.act3_025
+  Choice:     [Charisma DC 16] Appeal to his conscience — he owes the world a chance to be free
+  Stat:       charisma DC 16
+  next:       act3.chapter1.act3_026
+  failNext:   act3.chapter1.act3_026
+  PROBLEM:    failNext SAME as next (act3.chapter1.act3_026) — no branching on failure
+
+--- Issue #32 ---
+  File:       story\act3\chapter1.json
+  Node:       act3.chapter1.act3_039
+  Choice:     [TECH DC 15] Use the security system to create a distraction
+  Stat:       tech DC 15
+  next:       act3.chapter1.act3_012
+  failNext:   act3.chapter1.act3_040
+  PROBLEM:    Fail node 'act3.chapter1.act3_040' is a DEAD END (no choices, not an ending)
+
+--- Issue #33 ---
+  File:       story\act4\chapter1.json
+  Node:       act4.chapter1.act4_022
+  Choice:     [Strength 15] Drop off the gantry and hang from the underside
+  Stat:       strength DC 15
+  next:       act4.chapter1.act4_024
+  failNext:   act4.chapter1.act4_024
+  PROBLEM:    failNext SAME as next (act4.chapter1.act4_024) — no branching on failure
+
+--- Issue #34 ---
+  File:       story\act4\chapter1.json
+  Node:       act4.chapter1.act4_022
+  Choice:     [Dexterity 16] Run. Full sprint. Reach the Highcity end before they fire.
+  Stat:       dexterity DC 16
+  next:       act4.chapter1.act4_024
+  failNext:   act4.chapter1.act4_024
+  PROBLEM:    failNext SAME as next (act4.chapter1.act4_024) — no branching on failure
+
+--- Issue #35 ---
+  File:       story\act5\chapter1.json
+  Node:       act5.chapter1.act5_021
+  Choice:     [Charisma 18] "Neither. I should lead the Collective now. Step aside, Commander."
+  Stat:       charisma DC 18
+  next:       act5.chapter1.act5_025
+  failNext:   act5.chapter1.act5_025
+  PROBLEM:    failNext SAME as next (act5.chapter1.act5_025) — no branching on failure
+
+--- Issue #36 ---
+  File:       story\act5\chapter1.json
+  Node:       act5.chapter1.act5_041
+  Choice:     [Intelligence 16] "Make me High Compiler. I will guide the transition."
+  Stat:       intelligence DC 16
+  next:       act5.chapter1.ending_054
+  failNext:   act5.chapter1.ending_054
+  PROBLEM:    failNext SAME as next (act5.chapter1.ending_054) — no branching on failure
+
+--- Issue #37 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_011
+  Choice:     [Wisdom 14] "You're not asking for permission. You're asking if I'll grieve for you."
+  Stat:       wisdom DC 14
+  next:       factions.ashen-circle.ac_012
+  failNext:   factions.ashen-circle.ac_012
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_012) — no branching on failure
+
+--- Issue #38 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_017
+  Choice:     [Intelligence 15] "What if we free the involuntary extractions but leave the willing ones intact?"
+  Stat:       intelligence DC 15
+  next:       factions.ashen-circle.ac_018
+  failNext:   factions.ashen-circle.ac_018
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_018) — no branching on failure
+
+--- Issue #39 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_020
+  Choice:     [Tech 14] Check the servers for any consciousnesses that might be recoverable.
+  Stat:       tech DC 14
+  next:       factions.ashen-circle.ac_021
+  failNext:   factions.ashen-circle.ac_021
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_021) — no branching on failure
+
+--- Issue #40 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_026
+  Choice:     [Wisdom 16] "The stack isn't helping you sleep. It's keeping you from healing."
+  Stat:       wisdom DC 16
+  next:       factions.ashen-circle.ac_027
+  failNext:   factions.ashen-circle.ac_027
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_027) — no branching on failure
+
+--- Issue #41 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_029
+  Choice:     [Intelligence 16] "What if we hit only the facilities that have separate servers?"
+  Stat:       intelligence DC 16
+  next:       factions.ashen-circle.ac_030
+  failNext:   factions.ashen-circle.ac_030
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_030) — no branching on failure
+
+--- Issue #42 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_033
+  Choice:     [Charisma 16] "Use him. Feed Meridian false information through Kael."
+  Stat:       charisma DC 16
+  next:       factions.ashen-circle.ac_034
+  failNext:   factions.ashen-circle.ac_034
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_034) — no branching on failure
+
+--- Issue #43 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_076
+  Choice:     [Intelligence 16] "You're making the Circle's argument for it. Choice is the point. We agree."
+  Stat:       intelligence DC 16
+  next:       factions.ashen-circle.ac_077
+  failNext:   factions.ashen-circle.ac_077
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_077) — no branching on failure
+
+--- Issue #44 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_090
+  Choice:     [Intelligence 17] "The question isn't whether they're alive. It's whether they're free."
+  Stat:       intelligence DC 17
+  next:       factions.ashen-circle.ac_091
+  failNext:   factions.ashen-circle.ac_091
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_091) — no branching on failure
+
+--- Issue #45 ---
+  File:       story\factions\ashen-circle.json
+  Node:       factions.ashen-circle.ac_097
+  Choice:     [Wisdom 16] Disable the backup without removing the hardware.
+  Stat:       wisdom DC 16
+  next:       factions.ashen-circle.ac_099
+  failNext:   factions.ashen-circle.ac_099
+  PROBLEM:    failNext SAME as next (factions.ashen-circle.ac_099) — no branching on failure
+
+--- Issue #46 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_001
+  Choice:     [Intelligence 12] Try to trace the message first
+  Stat:       intelligence DC 12
+  next:       factions.ghost-syndicate.gs_003
+  failNext:   factions.ghost-syndicate.gs_002
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_002' does NOT EXIST in any story file
+
+--- Issue #47 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_002
+  Choice:     Stay alert — scan the room for threats
+  Stat:       wisdom DC 13
+  next:       factions.ghost-syndicate.gs_007
+  failNext:   factions.ghost-syndicate.gs_005
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_005' does NOT EXIST in any story file
+
+--- Issue #48 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_003
+  Choice:     Set up counter-surveillance before going
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_008
+  failNext:   factions.ghost-syndicate.gs_002
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_002' does NOT EXIST in any story file
+
+--- Issue #49 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_004
+  Choice:     Fine. Go to the address.
+  Stat:       wisdom DC 12
+  next:       factions.ghost-syndicate.gs_002
+  failNext:   factions.ghost-syndicate.gs_009
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_009' does NOT EXIST in any story file
+
+--- Issue #50 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_005
+  Choice:     "Why contact me?"
+  Stat:       intelligence DC 13
+  next:       factions.ghost-syndicate.gs_010
+  failNext:   factions.ghost-syndicate.gs_011
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_011' does NOT EXIST in any story file
+
+--- Issue #51 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_005
+  Choice:     "Impressive speech. But everyone's someone."
+  Stat:       wisdom DC 14
+  next:       factions.ghost-syndicate.gs_011
+  failNext:   factions.ghost-syndicate.gs_010
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_010' does NOT EXIST in any story file
+
+--- Issue #52 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_006
+  Choice:     "I want to join."
+  Stat:       charisma DC 13
+  next:       factions.ghost-syndicate.gs_012
+  failNext:   factions.ghost-syndicate.gs_010
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_010' does NOT EXIST in any story file
+
+--- Issue #53 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_007
+  Choice:     "Three guards, two exits, quantum hardware. Do I pass?"
+  Stat:       charisma DC 14
+  next:       factions.ghost-syndicate.gs_014
+  failNext:   factions.ghost-syndicate.gs_005
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_005' does NOT EXIST in any story file
+
+--- Issue #54 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_009
+  Choice:     Go to the new address
+  Stat:       wisdom DC 13
+  next:       factions.ghost-syndicate.gs_002
+  failNext:   factions.ghost-syndicate.gs_015
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_015' does NOT EXIST in any story file
+
+--- Issue #55 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_010
+  Choice:     "What do you need me for specifically?"
+  Stat:       intelligence DC 13
+  next:       factions.ghost-syndicate.gs_016
+  failNext:   factions.ghost-syndicate.gs_017
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_017' does NOT EXIST in any story file
+
+--- Issue #56 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_010
+  Choice:     "I'm listening. But I have conditions."
+  Stat:       charisma DC 13
+  next:       factions.ghost-syndicate.gs_018
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #57 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_011
+  Choice:     "Who were you before?"
+  Stat:       wisdom DC 16
+  next:       factions.ghost-syndicate.gs_019
+  failNext:   factions.ghost-syndicate.gs_012
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_012' does NOT EXIST in any story file
+
+--- Issue #58 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_012
+  Choice:     Take the ghost box
+  Stat:       charisma DC 13
+  next:       factions.ghost-syndicate.gs_020
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #59 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_013
+  Choice:     "Fair point. How do I help?"
+  Stat:       charisma DC 13
+  next:       factions.ghost-syndicate.gs_012
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #60 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_017
+  Choice:     "Build your own media platform."
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_026
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #61 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_017
+  Choice:     "Maybe violent action is the only option."
+  Stat:       strength DC 14
+  next:       factions.ghost-syndicate.gs_027
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #62 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_020
+  Choice:     "This is incredible. What's the first job?"
+  Stat:       intelligence DC 12
+  next:       factions.ghost-syndicate.gs_016
+  failNext:   factions.ghost-syndicate.gs_032
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_032' does NOT EXIST in any story file
+
+--- Issue #63 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_020
+  Choice:     Test the ghost box — walk past a scanner
+  Stat:       dexterity DC 12
+  next:       factions.ghost-syndicate.gs_033
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #64 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_022
+  Choice:     "Alright. I'll give you a chance."
+  Stat:       charisma DC 13
+  next:       factions.ghost-syndicate.gs_012
+  failNext:   factions.ghost-syndicate.gs_009
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_009' does NOT EXIST in any story file
+
+--- Issue #65 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_023
+  Choice:     "I work alone. No handler."
+  Stat:       charisma DC 15
+  next:       factions.ghost-syndicate.gs_036
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #66 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_025
+  Choice:     "Good team. Let's plan the heist."
+  Stat:       wisdom DC 12
+  next:       factions.ghost-syndicate.gs_034
+  failNext:   factions.ghost-syndicate.gs_024
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_024' does NOT EXIST in any story file
+
+--- Issue #67 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_027
+  Choice:     "You're right. The pen is mightier."
+  Stat:       wisdom DC 13
+  next:       factions.ghost-syndicate.gs_016
+  failNext:   factions.ghost-syndicate.gs_023
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_023' does NOT EXIST in any story file
+
+--- Issue #68 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_032
+  Choice:     "You have people inside Meridian?"
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_043
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #69 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_033
+  Choice:     Test the ghost box's limits
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_044
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #70 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_034
+  Choice:     Gear up and go
+  Stat:       intelligence DC 13
+  next:       factions.ghost-syndicate.gs_045
+  failNext:   factions.ghost-syndicate.gs_046
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_046' does NOT EXIST in any story file
+
+--- Issue #71 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_034
+  Choice:     "I want to scout the building first."
+  Stat:       wisdom DC 13
+  next:       factions.ghost-syndicate.gs_046
+  failNext:   factions.ghost-syndicate.gs_045
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_045' does NOT EXIST in any story file
+
+--- Issue #72 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_037
+  Choice:     "Give me the details."
+  Stat:       intelligence DC 12
+  next:       factions.ghost-syndicate.gs_049
+  failNext:   factions.ghost-syndicate.gs_050
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_050' does NOT EXIST in any story file
+
+--- Issue #73 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_038
+  Choice:     "Good people. Let's plan the job."
+  Stat:       charisma DC 12
+  next:       factions.ghost-syndicate.gs_034
+  failNext:   factions.ghost-syndicate.gs_052
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_052' does NOT EXIST in any story file
+
+--- Issue #74 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_038
+  Choice:     Ask Wraith what she decided
+  Stat:       wisdom DC 15
+  next:       factions.ghost-syndicate.gs_052
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #75 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_039
+  Choice:     "Can we do both simultaneously?"
+  Stat:       intelligence DC 15
+  next:       factions.ghost-syndicate.gs_055
+  failNext:   factions.ghost-syndicate.gs_023
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_023' does NOT EXIST in any story file
+
+--- Issue #76 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_041
+  Choice:     "Defensive capability only. Not offensive."
+  Stat:       charisma DC 14
+  next:       factions.ghost-syndicate.gs_028
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #77 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_043
+  Choice:     "Can your inside agents help with the heist?"
+  Stat:       charisma DC 14
+  next:       factions.ghost-syndicate.gs_057
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #78 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_044
+  Choice:     Try to fix the DNA gap yourself
+  Stat:       intelligence DC 16
+  next:       factions.ghost-syndicate.gs_059
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #79 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_045
+  Choice:     Improvise — take the service elevator
+  Stat:       dexterity DC 14
+  next:       factions.ghost-syndicate.gs_061
+  failNext:   factions.ghost-syndicate.gs_060
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_060' does NOT EXIST in any story file
+
+--- Issue #80 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_046
+  Choice:     "Is there a way to disable the Maze?"
+  Stat:       intelligence DC 15
+  next:       factions.ghost-syndicate.gs_064
+  failNext:   factions.ghost-syndicate.gs_045
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_045' does NOT EXIST in any story file
+
+--- Issue #81 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_047
+  Choice:     "We need a better backup plan."
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_065
+  failNext:   factions.ghost-syndicate.gs_045
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_045' does NOT EXIST in any story file
+
+--- Issue #82 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_048
+  Choice:     "Thirty percent."
+  Stat:       charisma DC 15
+  next:       factions.ghost-syndicate.gs_067
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #83 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_049
+  Choice:     "I'll intercept during the walk."
+  Stat:       dexterity DC 13
+  next:       factions.ghost-syndicate.gs_050
+  failNext:   factions.ghost-syndicate.gs_068
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_068' does NOT EXIST in any story file
+
+--- Issue #84 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_049
+  Choice:     "Can we clone his palm print beforehand?"
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_068
+  failNext:   factions.ghost-syndicate.gs_050
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_050' does NOT EXIST in any story file
+
+--- Issue #85 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_050
+  Choice:     Bump into him — pickpocket the drive
+  Stat:       dexterity DC 15
+  next:       factions.ghost-syndicate.gs_070
+  failNext:   factions.ghost-syndicate.gs_071
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_071' does NOT EXIST in any story file
+
+--- Issue #86 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_050
+  Choice:     Follow him to the tower entrance and strike there
+  Stat:       dexterity DC 14
+  next:       factions.ghost-syndicate.gs_071
+  failNext:   factions.ghost-syndicate.gs_070
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_070' does NOT EXIST in any story file
+
+--- Issue #87 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_050
+  Choice:     Use a signal jammer to disable his comms first
+  Stat:       intelligence DC 13
+  next:       factions.ghost-syndicate.gs_072
+  failNext:   factions.ghost-syndicate.gs_070
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_070' does NOT EXIST in any story file
+
+--- Issue #88 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_051
+  Choice:     "This data needs to go public."
+  Stat:       wisdom DC 13
+  next:       factions.ghost-syndicate.gs_017
+  failNext:   factions.ghost-syndicate.gs_023
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_023' does NOT EXIST in any story file
+
+--- Issue #89 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_053
+  Choice:     "Can you crack its architecture?"
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_074
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #90 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_053
+  Choice:     "How do we feed it false data?"
+  Stat:       intelligence DC 15
+  next:       factions.ghost-syndicate.gs_075
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #91 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_057
+  Choice:     "Can she extend the gap?"
+  Stat:       charisma DC 14
+  next:       factions.ghost-syndicate.gs_077
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #92 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_058
+  Choice:     "I'll work around the limitation."
+  Stat:       intelligence DC 13
+  next:       factions.ghost-syndicate.gs_016
+  failNext:   factions.ghost-syndicate.gs_059
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_059' does NOT EXIST in any story file
+
+--- Issue #93 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_058
+  Choice:     "What if we approach it differently?"
+  Stat:       intelligence DC 16
+  next:       factions.ghost-syndicate.gs_059
+  failNext:   factions.ghost-syndicate.gs_016
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_016' does NOT EXIST in any story file
+
+--- Issue #94 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_060
+  Choice:     Ride to sublevel 2
+  Stat:       dexterity DC 13
+  next:       factions.ghost-syndicate.gs_078
+  failNext:   factions.ghost-syndicate.gs_079
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_079' does NOT EXIST in any story file
+
+--- Issue #95 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_060
+  Choice:     Override the elevator to go directly to sublevel 6
+  Stat:       intelligence DC 16
+  next:       factions.ghost-syndicate.gs_079
+  failNext:   factions.ghost-syndicate.gs_078
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_078' does NOT EXIST in any story file
+
+--- Issue #96 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_061
+  Choice:     Look for a ventilation shaft
+  Stat:       dexterity DC 14
+  next:       factions.ghost-syndicate.gs_080
+  failNext:   factions.ghost-syndicate.gs_078
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_078' does NOT EXIST in any story file
+
+--- Issue #97 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_062
+  Choice:     Move now — through the gap
+  Stat:       dexterity DC 14
+  next:       factions.ghost-syndicate.gs_060
+  failNext:   factions.ghost-syndicate.gs_078
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_078' does NOT EXIST in any story file
+
+--- Issue #98 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_062
+  Choice:     "Can you take out the drones?"
+  Stat:       wisdom DC 14
+  next:       factions.ghost-syndicate.gs_081
+  failNext:   factions.ghost-syndicate.gs_060
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_060' does NOT EXIST in any story file
+
+--- Issue #99 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_063
+  Choice:     "Null, can you navigate us through your own creation?"
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_082
+  failNext:   factions.ghost-syndicate.gs_045
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_045' does NOT EXIST in any story file
+
+--- Issue #100 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_078
+  Choice:     Take the stairs down quickly
+  Stat:       dexterity DC 13
+  next:       factions.ghost-syndicate.gs_088
+  failNext:   factions.ghost-syndicate.gs_089
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_089' does NOT EXIST in any story file
+
+--- Issue #101 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_078
+  Choice:     Proceed carefully, checking each floor
+  Stat:       wisdom DC 13
+  next:       factions.ghost-syndicate.gs_090
+  failNext:   factions.ghost-syndicate.gs_088
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_088' does NOT EXIST in any story file
+
+--- Issue #102 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_079
+  Choice:     "Specter, can you suppress the alerts?"
+  Stat:       intelligence DC 15
+  next:       factions.ghost-syndicate.gs_092
+  failNext:   factions.ghost-syndicate.gs_091
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_091' does NOT EXIST in any story file
+
+--- Issue #103 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_080
+  Choice:     Tap into the Maze's control cables from here
+  Stat:       intelligence DC 16
+  next:       factions.ghost-syndicate.gs_093
+  failNext:   factions.ghost-syndicate.gs_091
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_091' does NOT EXIST in any story file
+
+--- Issue #104 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_082
+  Choice:     "I'll fake confidence until it's real."
+  Stat:       charisma DC 14
+  next:       factions.ghost-syndicate.gs_088
+  failNext:   factions.ghost-syndicate.gs_080
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_080' does NOT EXIST in any story file
+
+--- Issue #105 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_084
+  Choice:     "This goes public. Now."
+  Stat:       wisdom DC 14
+  next:       factions.ghost-syndicate.gs_094
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #106 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_086
+  Choice:     "Now hit them with MIRRORBREAK while they're confused."
+  Stat:       strength DC 14
+  next:       factions.ghost-syndicate.gs_045
+  failNext:   factions.ghost-syndicate.gs_096
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_096' does NOT EXIST in any story file
+
+--- Issue #107 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_088
+  Choice:     Enter the Looking Glass chamber
+  Stat:       dexterity DC 14
+  next:       factions.ghost-syndicate.gs_091
+  failNext:   factions.ghost-syndicate.gs_097
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_097' does NOT EXIST in any story file
+
+--- Issue #108 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_088
+  Choice:     Check for additional security first
+  Stat:       wisdom DC 14
+  next:       factions.ghost-syndicate.gs_097
+  failNext:   factions.ghost-syndicate.gs_091
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_091' does NOT EXIST in any story file
+
+--- Issue #109 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_091
+  Choice:     Access the terminal — download the source code
+  Stat:       intelligence DC 15
+  next:       factions.ghost-syndicate.gs_098
+  failNext:   factions.ghost-syndicate.gs_097
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_097' does NOT EXIST in any story file
+
+--- Issue #110 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_091
+  Choice:     Plant the backdoor first
+  Stat:       intelligence DC 14
+  next:       factions.ghost-syndicate.gs_099
+  failNext:   factions.ghost-syndicate.gs_097
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_097' does NOT EXIST in any story file
+
+--- Issue #111 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_094
+  Choice:     "Release it. People have a right to know now."
+  Stat:       charisma DC 15
+  next:       factions.ghost-syndicate.gs_096
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #112 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_095
+  Choice:     "Infiltrate and filter. Protect patients and stop harvesting."
+  Stat:       wisdom DC 14
+  next:       factions.ghost-syndicate.gs_086
+  failNext:   factions.ghost-syndicate.gs_034
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_034' does NOT EXIST in any story file
+
+--- Issue #113 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_096
+  Choice:     "Now — while they're reeling — we hit Looking Glass."
+  Stat:       strength DC 14
+  next:       factions.ghost-syndicate.gs_045
+  failNext:   factions.ghost-syndicate.gs_100
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_100' does NOT EXIST in any story file
+
+--- Issue #114 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_097
+  Choice:     Download the source code
+  Stat:       intelligence DC 15
+  next:       factions.ghost-syndicate.gs_098
+  failNext:   factions.ghost-syndicate.gs_099
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_099' does NOT EXIST in any story file
+
+--- Issue #115 ---
+  File:       story\factions\ghost-syndicate.json
+  Node:       gs_099
+  Choice:     Extract through the maintenance tunnels
+  Stat:       dexterity DC 14
+  next:       factions.ghost-syndicate.gs_100
+  failNext:   factions.ghost-syndicate.gs_097
+  PROBLEM:    failNext 'factions.ghost-syndicate.gs_097' does NOT EXIST in any story file
+
+--- Issue #116 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_011
+  Choice:     Study the blueprint carefully before heading out
+  Stat:       intelligence DC 10
+  next:       factions.iron-collective.ic_017
+  failNext:   factions.iron-collective.ic_015
+  PROBLEM:    failNext 'factions.iron-collective.ic_015' does NOT EXIST in any story file
+
+--- Issue #117 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_016
+  Choice:     Brief the team on approach strategy
+  Stat:       intelligence DC 10
+  next:       factions.iron-collective.ic_017
+  failNext:   factions.iron-collective.ic_020
+  PROBLEM:    failNext 'factions.iron-collective.ic_020' does NOT EXIST in any story file
+
+--- Issue #118 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_020
+  Choice:     Have Splicer disable the sentry remotely
+  Stat:       dexterity DC 12
+  next:       factions.iron-collective.ic_024
+  failNext:   factions.iron-collective.ic_023
+  PROBLEM:    failNext 'factions.iron-collective.ic_023' does NOT EXIST in any story file
+
+--- Issue #119 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_021
+  Choice:     "The camera blind spot. Can you widen it?"
+  Stat:       intelligence DC 14
+  next:       factions.iron-collective.ic_026
+  failNext:   factions.iron-collective.ic_020
+  PROBLEM:    failNext 'factions.iron-collective.ic_020' does NOT EXIST in any story file
+
+--- Issue #120 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_023
+  Choice:     Move fast — sprint to Section B before the camera cycles
+  Stat:       dexterity DC 13
+  next:       factions.iron-collective.ic_029
+  failNext:   factions.iron-collective.ic_030
+  PROBLEM:    failNext 'factions.iron-collective.ic_030' does NOT EXIST in any story file
+
+--- Issue #121 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_025
+  Choice:     Help Bray take down the guards
+  Stat:       strength DC 12
+  next:       factions.iron-collective.ic_033
+  failNext:   factions.iron-collective.ic_032
+  PROBLEM:    failNext 'factions.iron-collective.ic_032' does NOT EXIST in any story file
+
+--- Issue #122 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_031
+  Choice:     Ambush the guard from behind
+  Stat:       strength DC 11
+  next:       factions.iron-collective.ic_039
+  failNext:   factions.iron-collective.ic_030
+  PROBLEM:    failNext 'factions.iron-collective.ic_030' does NOT EXIST in any story file
+
+--- Issue #123 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_035
+  Choice:     Knock out the technician quietly
+  Stat:       dexterity DC 11
+  next:       factions.iron-collective.ic_042
+  failNext:   factions.iron-collective.ic_043
+  PROBLEM:    failNext 'factions.iron-collective.ic_043' does NOT EXIST in any story file
+
+--- Issue #124 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_035
+  Choice:     Have Splicer hack the console remotely through the vent
+  Stat:       intelligence DC 13
+  next:       factions.iron-collective.ic_043
+  failNext:   factions.iron-collective.ic_042
+  PROBLEM:    failNext 'factions.iron-collective.ic_042' does NOT EXIST in any story file
+
+--- Issue #125 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_036
+  Choice:     Set up an ambush
+  Stat:       dexterity DC 13
+  next:       factions.iron-collective.ic_045
+  failNext:   factions.iron-collective.ic_044
+  PROBLEM:    failNext 'factions.iron-collective.ic_044' does NOT EXIST in any story file
+
+--- Issue #126 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_036
+  Choice:     Hide and let them pass
+  Stat:       dexterity DC 12
+  next:       factions.iron-collective.ic_046
+  failNext:   factions.iron-collective.ic_044
+  PROBLEM:    failNext 'factions.iron-collective.ic_044' does NOT EXIST in any story file
+
+--- Issue #127 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_042
+  Choice:     Download the security protocols for future use
+  Stat:       intelligence DC 12
+  next:       factions.iron-collective.ic_050
+  failNext:   factions.iron-collective.ic_030
+  PROBLEM:    failNext 'factions.iron-collective.ic_030' does NOT EXIST in any story file
+
+--- Issue #128 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_055
+  Choice:     "I'm not here to cause trouble. I want to make a deal."
+  Stat:       charisma DC 13
+  next:       factions.iron-collective.ic_062
+  failNext:   factions.iron-collective.ic_063
+  PROBLEM:    failNext 'factions.iron-collective.ic_063' does NOT EXIST in any story file
+
+--- Issue #129 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_055
+  Choice:     Show strength — you won't be intimidated
+  Stat:       strength DC 14
+  next:       factions.iron-collective.ic_064
+  failNext:   factions.iron-collective.ic_062
+  PROBLEM:    failNext 'factions.iron-collective.ic_062' does NOT EXIST in any story file
+
+--- Issue #130 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_057
+  Choice:     "The Iron Collective wants to talk alliance."
+  Stat:       charisma DC 12
+  next:       factions.iron-collective.ic_066
+  failNext:   factions.iron-collective.ic_067
+  PROBLEM:    failNext 'factions.iron-collective.ic_067' does NOT EXIST in any story file
+
+--- Issue #131 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_058
+  Choice:     "The Iron Collective fights for everyone Meridian exploits. That includes synths."
+  Stat:       charisma DC 14
+  next:       factions.iron-collective.ic_069
+  failNext:   factions.iron-collective.ic_070
+  PROBLEM:    failNext 'factions.iron-collective.ic_070' does NOT EXIST in any story file
+
+--- Issue #132 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_062
+  Choice:     "This movement is different. We're going to win."
+  Stat:       charisma DC 15
+  next:       factions.iron-collective.ic_078
+  failNext:   factions.iron-collective.ic_063
+  PROBLEM:    failNext 'factions.iron-collective.ic_063' does NOT EXIST in any story file
+
+--- Issue #133 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_065
+  Choice:     "Come with me now. We'll figure it out."
+  Stat:       dexterity DC 14
+  next:       factions.iron-collective.ic_081
+  failNext:   factions.iron-collective.ic_055
+  PROBLEM:    failNext 'factions.iron-collective.ic_055' does NOT EXIST in any story file
+
+--- Issue #134 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_066
+  Choice:     "Because Meridian will automate the docks next. You're on their list."
+  Stat:       intelligence DC 13
+  next:       factions.iron-collective.ic_082
+  failNext:   factions.iron-collective.ic_083
+  PROBLEM:    failNext 'factions.iron-collective.ic_083' does NOT EXIST in any story file
+
+--- Issue #135 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_069
+  Choice:     "Synth workers are workers. Period. No qualifications."
+  Stat:       charisma DC 13
+  next:       factions.iron-collective.ic_087
+  failNext:   factions.iron-collective.ic_086
+  PROBLEM:    failNext 'factions.iron-collective.ic_086' does NOT EXIST in any story file
+
+--- Issue #136 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_074
+  Choice:     Search for worker death records
+  Stat:       intelligence DC 12
+  next:       factions.iron-collective.ic_091
+  failNext:   factions.iron-collective.ic_092
+  PROBLEM:    failNext 'factions.iron-collective.ic_092' does NOT EXIST in any story file
+
+--- Issue #137 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_074
+  Choice:     Search for financial records — follow the money
+  Stat:       intelligence DC 14
+  next:       factions.iron-collective.ic_092
+  failNext:   factions.iron-collective.ic_091
+  PROBLEM:    failNext 'factions.iron-collective.ic_091' does NOT EXIST in any story file
+
+--- Issue #138 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_074
+  Choice:     Search for communications between Meridian executives
+  Stat:       intelligence DC 13
+  next:       factions.iron-collective.ic_093
+  failNext:   factions.iron-collective.ic_091
+  PROBLEM:    failNext 'factions.iron-collective.ic_091' does NOT EXIST in any story file
+
+--- Issue #139 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_084
+  Choice:     "What if I ran a job for you? Proved our worth in action?"
+  Stat:       charisma DC 12
+  next:       factions.iron-collective.ic_099
+  failNext:   factions.iron-collective.ic_051
+  PROBLEM:    failNext 'factions.iron-collective.ic_051' does NOT EXIST in any story file
+
+--- Issue #140 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_095
+  Choice:     Navigate the laser grid carefully
+  Stat:       dexterity DC 15
+  next:       factions.iron-collective.ic_096
+  failNext:   factions.iron-collective.ic_097
+  PROBLEM:    failNext 'factions.iron-collective.ic_097' does NOT EXIST in any story file
+
+--- Issue #141 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_095
+  Choice:     Find the emitter control panel and disable it
+  Stat:       intelligence DC 14
+  next:       factions.iron-collective.ic_097
+  failNext:   factions.iron-collective.ic_096
+  PROBLEM:    failNext 'factions.iron-collective.ic_096' does NOT EXIST in any story file
+
+--- Issue #142 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_095
+  Choice:     Use brute force — smash through before lockdown triggers
+  Stat:       strength DC 16
+  next:       factions.iron-collective.ic_098
+  failNext:   factions.iron-collective.ic_096
+  PROBLEM:    failNext 'factions.iron-collective.ic_096' does NOT EXIST in any story file
+
+--- Issue #143 ---
+  File:       story\factions\iron-collective.json
+  Node:       ic_096
+  Choice:     Search the terminal for additional data first
+  Stat:       intelligence DC 13
+  next:       factions.iron-collective.ic_099
+  failNext:   factions.iron-collective.ic_005
+  PROBLEM:    failNext 'factions.iron-collective.ic_005' does NOT EXIST in any story file
+
+--- Issue #144 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_002
+  Choice:     "I was invited. Check the guest registry."
+  Stat:       charisma DC 11
+  next:       factions.neon-court.nc_005
+  failNext:   factions.neon-court.nc_004
+  PROBLEM:    failNext 'factions.neon-court.nc_004' does NOT EXIST in any story file
+
+--- Issue #145 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_002
+  Choice:     Ignore the drone and walk forward with confidence
+  Stat:       charisma DC 14
+  next:       factions.neon-court.nc_006
+  failNext:   factions.neon-court.nc_004
+  PROBLEM:    failNext 'factions.neon-court.nc_004' does NOT EXIST in any story file
+
+--- Issue #146 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_009
+  Choice:     Meet her gaze as an equal
+  Stat:       charisma DC 13
+  next:       factions.neon-court.nc_014
+  failNext:   factions.neon-court.nc_013
+  PROBLEM:    failNext 'factions.neon-court.nc_013' does NOT EXIST in any story file
+
+--- Issue #147 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_011
+  Choice:     Ask about the military-grade stacks
+  Stat:       intelligence DC 13
+  next:       factions.neon-court.nc_017
+  failNext:   factions.neon-court.nc_007
+  PROBLEM:    failNext 'factions.neon-court.nc_007' does NOT EXIST in any story file
+
+--- Issue #148 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_012
+  Choice:     Approach the women and introduce yourself
+  Stat:       charisma DC 15
+  next:       factions.neon-court.nc_018
+  failNext:   factions.neon-court.nc_007
+  PROBLEM:    failNext 'factions.neon-court.nc_007' does NOT EXIST in any story file
+
+--- Issue #149 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_018
+  Choice:     "The kind of district that teaches you to spot a predator."
+  Stat:       charisma DC 14
+  next:       factions.neon-court.nc_022
+  failNext:   factions.neon-court.nc_007
+  PROBLEM:    failNext 'factions.neon-court.nc_007' does NOT EXIST in any story file
+
+--- Issue #150 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_033
+  Choice:     Study the security layout as you enter
+  Stat:       intelligence DC 12
+  next:       factions.neon-court.nc_036
+  failNext:   factions.neon-court.nc_035
+  PROBLEM:    failNext 'factions.neon-court.nc_035' does NOT EXIST in any story file
+
+--- Issue #151 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_035
+  Choice:     Approach Thorne directly
+  Stat:       charisma DC 14
+  next:       factions.neon-court.nc_038
+  failNext:   factions.neon-court.nc_039
+  PROBLEM:    failNext 'factions.neon-court.nc_039' does NOT EXIST in any story file
+
+--- Issue #152 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_037
+  Choice:     Try to talk your way in early
+  Stat:       charisma DC 15
+  next:       factions.neon-court.nc_042
+  failNext:   factions.neon-court.nc_039
+  PROBLEM:    failNext 'factions.neon-court.nc_039' does NOT EXIST in any story file
+
+--- Issue #153 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_038
+  Choice:     "Youth is relative when you've been in the acquisition business as long as I have."
+  Stat:       charisma DC 13
+  next:       factions.neon-court.nc_043
+  failNext:   factions.neon-court.nc_044
+  PROBLEM:    failNext 'factions.neon-court.nc_044' does NOT EXIST in any story file
+
+--- Issue #154 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_039
+  Choice:     Approach the woman in the silver mask
+  Stat:       charisma DC 13
+  next:       factions.neon-court.nc_046
+  failNext:   factions.neon-court.nc_047
+  PROBLEM:    failNext 'factions.neon-court.nc_047' does NOT EXIST in any story file
+
+--- Issue #155 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_041
+  Choice:     Try to pick the electronic lock
+  Stat:       dexterity DC 14
+  next:       factions.neon-court.nc_052
+  failNext:   factions.neon-court.nc_039
+  PROBLEM:    failNext 'factions.neon-court.nc_039' does NOT EXIST in any story file
+
+--- Issue #156 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_041
+  Choice:     Steal a keycard from a staff member
+  Stat:       dexterity DC 12
+  next:       factions.neon-court.nc_053
+  failNext:   factions.neon-court.nc_039
+  PROBLEM:    failNext 'factions.neon-court.nc_039' does NOT EXIST in any story file
+
+--- Issue #157 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_045
+  Choice:     "What kind of interests are we talking about?"
+  Stat:       charisma DC 14
+  next:       factions.neon-court.nc_056
+  failNext:   factions.neon-court.nc_048
+  PROBLEM:    failNext 'factions.neon-court.nc_048' does NOT EXIST in any story file
+
+--- Issue #158 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_049
+  Choice:     Probe for more details about his interests
+  Stat:       charisma DC 12
+  next:       factions.neon-court.nc_062
+  failNext:   factions.neon-court.nc_048
+  PROBLEM:    failNext 'factions.neon-court.nc_048' does NOT EXIST in any story file
+
+--- Issue #159 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_050
+  Choice:     "What can you tell me about the final lot?"
+  Stat:       charisma DC 14
+  next:       factions.neon-court.nc_063
+  failNext:   factions.neon-court.nc_048
+  PROBLEM:    failNext 'factions.neon-court.nc_048' does NOT EXIST in any story file
+
+--- Issue #160 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_051
+  Choice:     Approach him carefully
+  Stat:       intelligence DC 13
+  next:       factions.neon-court.nc_064
+  failNext:   factions.neon-court.nc_048
+  PROBLEM:    failNext 'factions.neon-court.nc_048' does NOT EXIST in any story file
+
+--- Issue #161 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_052
+  Choice:     Try to steal the override prototype
+  Stat:       dexterity DC 16
+  next:       factions.neon-court.nc_066
+  failNext:   factions.neon-court.nc_065
+  PROBLEM:    failNext 'factions.neon-court.nc_065' does NOT EXIST in any story file
+
+--- Issue #162 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_061
+  Choice:     Try to identify the shadowed figure
+  Stat:       intelligence DC 14
+  next:       factions.neon-court.nc_068
+  failNext:   factions.neon-court.nc_067
+  PROBLEM:    failNext 'factions.neon-court.nc_067' does NOT EXIST in any story file
+
+--- Issue #163 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_065
+  Choice:     Try to disable or destroy the Sovereign prototype
+  Stat:       dexterity DC 15
+  next:       factions.neon-court.nc_071
+  failNext:   factions.neon-court.nc_070
+  PROBLEM:    failNext 'factions.neon-court.nc_070' does NOT EXIST in any story file
+
+--- Issue #164 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_067
+  Choice:     Bid to stall the sale and create chaos
+  Stat:       charisma DC 15
+  next:       factions.neon-court.nc_073
+  failNext:   factions.neon-court.nc_072
+  PROBLEM:    failNext 'factions.neon-court.nc_072' does NOT EXIST in any story file
+
+--- Issue #165 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_067
+  Choice:     Slip away during the excitement to steal the prototype
+  Stat:       dexterity DC 14
+  next:       factions.neon-court.nc_074
+  failNext:   factions.neon-court.nc_072
+  PROBLEM:    failNext 'factions.neon-court.nc_072' does NOT EXIST in any story file
+
+--- Issue #166 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_070
+  Choice:     Fight your way out
+  Stat:       strength DC 15
+  next:       factions.neon-court.nc_077
+  failNext:   factions.neon-court.nc_075
+  PROBLEM:    failNext 'factions.neon-court.nc_075' does NOT EXIST in any story file
+
+--- Issue #167 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_072
+  Choice:     Create a disruption to stop the sale
+  Stat:       charisma DC 16
+  next:       factions.neon-court.nc_079
+  failNext:   factions.neon-court.nc_078
+  PROBLEM:    failNext 'factions.neon-court.nc_078' does NOT EXIST in any story file
+
+--- Issue #168 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_073
+  Choice:     Maintain the bluff — force the auction to end without a sale
+  Stat:       charisma DC 17
+  next:       factions.neon-court.nc_080
+  failNext:   factions.neon-court.nc_070
+  PROBLEM:    failNext 'factions.neon-court.nc_070' does NOT EXIST in any story file
+
+--- Issue #169 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_075
+  Choice:     Maintain the cover — "My records are sealed for security reasons."
+  Stat:       charisma DC 16
+  next:       factions.neon-court.nc_081
+  failNext:   factions.neon-court.nc_082
+  PROBLEM:    failNext 'factions.neon-court.nc_082' does NOT EXIST in any story file
+
+--- Issue #170 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_075
+  Choice:     Attack Thorne and escape
+  Stat:       strength DC 15
+  next:       factions.neon-court.nc_083
+  failNext:   factions.neon-court.nc_081
+  PROBLEM:    failNext 'factions.neon-court.nc_081' does NOT EXIST in any story file
+
+--- Issue #171 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_077
+  Choice:     Find an alternate exit
+  Stat:       dexterity DC 14
+  next:       factions.neon-court.nc_085
+  failNext:   factions.neon-court.nc_084
+  PROBLEM:    failNext 'factions.neon-court.nc_084' does NOT EXIST in any story file
+
+--- Issue #172 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_082
+  Choice:     "Kill me and the Duchess releases everything. It's already uploaded."
+  Stat:       charisma DC 14
+  next:       factions.neon-court.nc_086
+  failNext:   factions.neon-court.nc_076
+  PROBLEM:    failNext 'factions.neon-court.nc_076' does NOT EXIST in any story file
+
+--- Issue #173 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_082
+  Choice:     Fight your way out
+  Stat:       strength DC 15
+  next:       factions.neon-court.nc_083
+  failNext:   factions.neon-court.nc_076
+  PROBLEM:    failNext 'factions.neon-court.nc_076' does NOT EXIST in any story file
+
+--- Issue #174 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_088
+  Choice:     "I want to attend the gala as your equal, not your servant."
+  Stat:       charisma DC 14
+  next:       factions.neon-court.nc_091
+  failNext:   factions.neon-court.nc_090
+  PROBLEM:    failNext 'factions.neon-court.nc_090' does NOT EXIST in any story file
+
+--- Issue #175 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_092
+  Choice:     Circle the platform — look for Thorne's people
+  Stat:       intelligence DC 13
+  next:       factions.neon-court.nc_094
+  failNext:   factions.neon-court.nc_093
+  PROBLEM:    failNext 'factions.neon-court.nc_093' does NOT EXIST in any story file
+
+--- Issue #176 ---
+  File:       story\factions\neon-court.json
+  Node:       nc_092
+  Choice:     Confront Thorne directly
+  Stat:       charisma DC 15
+  next:       factions.neon-court.nc_095
+  failNext:   factions.neon-court.nc_093
+  PROBLEM:    failNext 'factions.neon-court.nc_093' does NOT EXIST in any story file
+
+--- Issue #177 ---
+  File:       story\jobs\diplomat.json
+  Node:       jobs.diplomat.jdip_084
+  Choice:     [Charisma 13] Choose Priya — her analytical mind will navigate corporate negotiations
+  Stat:       charisma DC 13
+  next:       jobs.diplomat.jdip_086
+  failNext:   jobs.diplomat.jdip_086
+  PROBLEM:    failNext SAME as next (jobs.diplomat.jdip_086) — no branching on failure
+
+--- Issue #178 ---
+  File:       story\jobs\diplomat.json
+  Node:       jobs.diplomat.jdip_097
+  Choice:     [Charisma 16] Seek out the ones you failed. There may still be time
+  Stat:       charisma DC 16
+  next:       jobs.diplomat.jdip_098
+  failNext:   jobs.diplomat.jdip_098
+  PROBLEM:    failNext SAME as next (jobs.diplomat.jdip_098) — no branching on failure
+
+--- Issue #179 ---
+  File:       story\jobs\gladiator.json
+  Node:       jobs.gladiator.jgld_070
+  Choice:     [Strength 14] Enter the championship yourself. One last fight
+  Stat:       strength DC 14
+  next:       jobs.gladiator.jgld_072
+  failNext:   jobs.gladiator.jgld_072
+  PROBLEM:    failNext SAME as next (jobs.gladiator.jgld_072) — no branching on failure
+
+--- Issue #180 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_009
+  Choice:     [Constitution 10] Force yourself to stay conscious. Examine the new flesh.
+  Stat:       constitution DC 10
+  next:       origins.cyborg.cyb_010
+  failNext:   origins.cyborg.cyb_010
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_010) — no branching on failure
+
+--- Issue #181 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_014
+  Choice:     [Intelligence 10] Calculate an alternative repayment plan.
+  Stat:       intelligence DC 10
+  next:       origins.cyborg.cyb_016
+  failNext:   origins.cyborg.cyb_016
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_016) — no branching on failure
+
+--- Issue #182 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_017
+  Choice:     [Constitution 11] Push through the pain. The body adapts.
+  Stat:       constitution DC 11
+  next:       origins.cyborg.cyb_019
+  failNext:   origins.cyborg.cyb_019
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_019) — no branching on failure
+
+--- Issue #183 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_020
+  Choice:     [Tech 10] Run your own diagnostics. Trust your systems.
+  Stat:       tech DC 10
+  next:       origins.cyborg.cyb_022
+  failNext:   origins.cyborg.cyb_022
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_022) — no branching on failure
+
+--- Issue #184 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_027
+  Choice:     [Wisdom 10] Analyze the vision. What is your hardware trying to tell you?
+  Stat:       wisdom DC 10
+  next:       origins.cyborg.cyb_028
+  failNext:   origins.cyborg.cyb_028
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_028) — no branching on failure
+
+--- Issue #185 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_032
+  Choice:     [Dexterity 11] Move fast. Don't give them time to react.
+  Stat:       dexterity DC 11
+  next:       origins.cyborg.cyb_035
+  failNext:   origins.cyborg.cyb_035
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_035) — no branching on failure
+
+--- Issue #186 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_040
+  Choice:     [Tech 11] Scan the signal. Verify it's not a trap.
+  Stat:       tech DC 11
+  next:       origins.cyborg.cyb_044
+  failNext:   origins.cyborg.cyb_044
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_044) — no branching on failure
+
+--- Issue #187 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_044
+  Choice:     [Charisma 10] Hold back some information. Trust is earned.
+  Stat:       charisma DC 10
+  next:       origins.cyborg.cyb_047
+  failNext:   origins.cyborg.cyb_047
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_047) — no branching on failure
+
+--- Issue #188 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_045
+  Choice:     [Dexterity 10] Drop silently. Don't attract attention.
+  Stat:       dexterity DC 10
+  next:       origins.cyborg.cyb_044
+  failNext:   origins.cyborg.cyb_044
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_044) — no branching on failure
+
+--- Issue #189 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_049
+  Choice:     [Wisdom 10] Process the trauma. Your human half needs this.
+  Stat:       wisdom DC 10
+  next:       origins.cyborg.cyb_051
+  failNext:   origins.cyborg.cyb_051
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_051) — no branching on failure
+
+--- Issue #190 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_052
+  Choice:     [Tech 10] Use your augmentations to find better-paying work.
+  Stat:       tech DC 10
+  next:       origins.cyborg.cyb_054
+  failNext:   origins.cyborg.cyb_054
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_054) — no branching on failure
+
+--- Issue #191 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_056
+  Choice:     [Wisdom 10] Check for surveillance first. Old habits die hard.
+  Stat:       wisdom DC 10
+  next:       origins.cyborg.cyb_055
+  failNext:   origins.cyborg.cyb_055
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_055) — no branching on failure
+
+--- Issue #192 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_060
+  Choice:     [Intelligence 10] Ask the right questions first. Trust your instincts.
+  Stat:       intelligence DC 10
+  next:       origins.cyborg.cyb_061
+  failNext:   origins.cyborg.cyb_061
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_061) — no branching on failure
+
+--- Issue #193 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_062
+  Choice:     [Constitution 10] Stay awake. Catalog the safe house exits.
+  Stat:       constitution DC 10
+  next:       origins.cyborg.cyb_064
+  failNext:   origins.cyborg.cyb_064
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_064) — no branching on failure
+
+--- Issue #194 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_065
+  Choice:     [Tech 11] Run a pre-mission diagnostic on your augmentations.
+  Stat:       tech DC 11
+  next:       origins.cyborg.cyb_067
+  failNext:   origins.cyborg.cyb_067
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_067) — no branching on failure
+
+--- Issue #195 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_069
+  Choice:     [Dexterity 11] Slip out through the back. Clean exit.
+  Stat:       dexterity DC 11
+  next:       origins.cyborg.cyb_072
+  failNext:   origins.cyborg.cyb_072
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_072) — no branching on failure
+
+--- Issue #196 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_071
+  Choice:     [Wisdom 10] Read the room. Is anyone watching?
+  Stat:       wisdom DC 10
+  next:       origins.cyborg.cyb_072
+  failNext:   origins.cyborg.cyb_072
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_072) — no branching on failure
+
+--- Issue #197 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_073
+  Choice:     [Dexterity 11] Lose the pursuit in the alleyways.
+  Stat:       dexterity DC 11
+  next:       origins.cyborg.cyb_074
+  failNext:   origins.cyborg.cyb_074
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_074) — no branching on failure
+
+--- Issue #198 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_077
+  Choice:     [Dexterity 12] Use your augmented reflexes. Dodge and weave.
+  Stat:       dexterity DC 12
+  next:       origins.cyborg.cyb_079
+  failNext:   origins.orc.cyb_079
+  PROBLEM:    failNext 'origins.orc.cyb_079' does NOT EXIST in any story file
+
+--- Issue #199 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_079
+  Choice:     [Constitution 12] Survive on willpower alone. The machine keeps you alive.
+  Stat:       constitution DC 12
+  next:       origins.cyborg.cyb_081
+  failNext:   origins.cyborg.cyb_081
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_081) — no branching on failure
+
+--- Issue #200 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_080
+  Choice:     [Strength 11] Break free. The metal in your bones is stronger than their restraints.
+  Stat:       strength DC 11
+  next:       origins.cyborg.cyb_082
+  failNext:   origins.cyborg.cyb_082
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_082) — no branching on failure
+
+--- Issue #201 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_084
+  Choice:     [Intelligence 11] Learn from each operation. Optimize.
+  Stat:       intelligence DC 11
+  next:       origins.cyborg.cyb_083
+  failNext:   origins.cyborg.cyb_083
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_083) — no branching on failure
+
+--- Issue #202 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_085
+  Choice:     [Tech 12] Use your augmentations to plan the perfect exposure.
+  Stat:       tech DC 12
+  next:       origins.cyborg.cyb_086
+  failNext:   origins.cyborg.cyb_086
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_086) — no branching on failure
+
+--- Issue #203 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_087
+  Choice:     [Wisdom 11] Stay vigilant. Your instincts are as important as your sensors.
+  Stat:       wisdom DC 11
+  next:       origins.cyborg.cyb_088
+  failNext:   origins.cyborg.cyb_088
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_088) — no branching on failure
+
+--- Issue #204 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_092
+  Choice:     [Dexterity 11] Vanish. Use every trick your augmentations offer.
+  Stat:       dexterity DC 11
+  next:       origins.cyborg.cyb_093
+  failNext:   origins.cyborg.cyb_093
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_093) — no branching on failure
+
+--- Issue #205 ---
+  File:       story\origins\cyborg.json
+  Node:       origins.cyborg.cyb_093
+  Choice:     [Constitution 11] Survive. That's all. Just survive.
+  Stat:       constitution DC 11
+  next:       origins.cyborg.cyb_094
+  failNext:   origins.cyborg.cyb_094
+  PROBLEM:    failNext SAME as next (origins.cyborg.cyb_094) — no branching on failure
+
+--- Issue #206 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_014
+  Choice:     [Dexterity 10] Move through the chaos unseen.
+  Stat:       dexterity DC 10
+  next:       origins.dark_elf.delf_012
+  failNext:   origins.dark_elf.delf_012
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_012) — no branching on failure
+
+--- Issue #207 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_016
+  Choice:     [Strength 11] The confrontation taught you force has its place.
+  Stat:       strength DC 11
+  next:       origins.dark_elf.delf_010
+  failNext:   origins.dark_elf.delf_010
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_010) — no branching on failure
+
+--- Issue #208 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_020
+  Choice:     [Intelligence 11] Analyze the weave for weaknesses.
+  Stat:       intelligence DC 11
+  next:       origins.dark_elf.delf_023
+  failNext:   origins.dark_elf.delf_023
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_023) — no branching on failure
+
+--- Issue #209 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_029
+  Choice:     [Strength 11] Fight through rather than plan around.
+  Stat:       strength DC 11
+  next:       origins.dark_elf.delf_031
+  failNext:   origins.dark_elf.delf_031
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_031) — no branching on failure
+
+--- Issue #210 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_030
+  Choice:     [Intelligence 10] Plan every detail. Leave nothing to chance.
+  Stat:       intelligence DC 10
+  next:       origins.dark_elf.delf_031
+  failNext:   origins.dark_elf.delf_031
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_031) — no branching on failure
+
+--- Issue #211 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_031
+  Choice:     [Dexterity 11] Move through the tunnels like a shadow.
+  Stat:       dexterity DC 11
+  next:       origins.dark_elf.delf_033
+  failNext:   origins.dark_elf.delf_033
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_033) — no branching on failure
+
+--- Issue #212 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_046
+  Choice:     [Dexterity 11] Vanish before they can trace the sabotage.
+  Stat:       dexterity DC 11
+  next:       origins.dark_elf.delf_051
+  failNext:   origins.dark_elf.delf_051
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_051) — no branching on failure
+
+--- Issue #213 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_047
+  Choice:     [Tech 11] Encrypt the data. It's too valuable to lose.
+  Stat:       tech DC 11
+  next:       origins.dark_elf.delf_051
+  failNext:   origins.dark_elf.delf_051
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_051) — no branching on failure
+
+--- Issue #214 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_048
+  Choice:     [Dexterity 10] Use the tunnel ways. The surface routes are compromised.
+  Stat:       dexterity DC 10
+  next:       origins.dark_elf.delf_051
+  failNext:   origins.dark_elf.delf_051
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_051) — no branching on failure
+
+--- Issue #215 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_050
+  Choice:     [Charisma 11] Rally the coalition with words, not just evidence.
+  Stat:       charisma DC 11
+  next:       origins.dark_elf.delf_043
+  failNext:   origins.dark_elf.delf_043
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_043) — no branching on failure
+
+--- Issue #216 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_052
+  Choice:     [Charisma 10] Build the new identity carefully. Every detail matters.
+  Stat:       charisma DC 10
+  next:       origins.dark_elf.delf_054
+  failNext:   origins.dark_elf.delf_054
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_054) — no branching on failure
+
+--- Issue #217 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_054
+  Choice:     [Intelligence 11] Expand the network strategically.
+  Stat:       intelligence DC 11
+  next:       origins.dark_elf.delf_055
+  failNext:   origins.dark_elf.delf_055
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_055) — no branching on failure
+
+--- Issue #218 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_056
+  Choice:     [Strength 11] Execute with overwhelming force.
+  Stat:       strength DC 11
+  next:       origins.dark_elf.delf_059
+  failNext:   origins.dark_elf.delf_059
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_059) — no branching on failure
+
+--- Issue #219 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_057
+  Choice:     [Charisma 10] Spin the fallout into an advantage.
+  Stat:       charisma DC 10
+  next:       origins.dark_elf.delf_059
+  failNext:   origins.dark_elf.delf_059
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_059) — no branching on failure
+
+--- Issue #220 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_058
+  Choice:     [Wisdom 11] Anticipate Meridian's response before it comes.
+  Stat:       wisdom DC 11
+  next:       origins.dark_elf.delf_059
+  failNext:   origins.dark_elf.delf_059
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_059) — no branching on failure
+
+--- Issue #221 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_062
+  Choice:     [Wisdom 10] See the patterns. Choose the right thread to pull.
+  Stat:       wisdom DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #222 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_066
+  Choice:     [Wisdom 10] Test his loyalty before trusting him fully.
+  Stat:       wisdom DC 10
+  next:       origins.dark_elf.delf_062
+  failNext:   origins.dark_elf.delf_062
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_062) — no branching on failure
+
+--- Issue #223 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_071
+  Choice:     [Dexterity 10] Move through the warren's echo without disturbing it.
+  Stat:       dexterity DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #224 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_074
+  Choice:     [Intelligence 10] See the architecture of power. Find the weak points.
+  Stat:       intelligence DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #225 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_077
+  Choice:     [Wisdom 10] The obsidian mirror shows truth. Face it.
+  Stat:       wisdom DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #226 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_079
+  Choice:     [Intelligence 10] Seeing has a price. Calculate whether it's worth paying.
+  Stat:       intelligence DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #227 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_081
+  Choice:     [Tech 10] Use the information web. Every thread is a weapon.
+  Stat:       tech DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #228 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_082
+  Choice:     [Dexterity 10] Move through the night like you were born in it. You were.
+  Stat:       dexterity DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #229 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_084
+  Choice:     [Wisdom 11] Take Wraith's warning seriously. He sees things you don't.
+  Stat:       wisdom DC 11
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #230 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_087
+  Choice:     [Wisdom 10] Let the rain wash away the tunnel dust. Reflect.
+  Stat:       wisdom DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #231 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_090
+  Choice:     [Charisma 11] Unite the coalition. Speak the words that bind.
+  Stat:       charisma DC 11
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #232 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_093
+  Choice:     [Intelligence 10] Analyze the completed pattern. What does it reveal?
+  Stat:       intelligence DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #233 ---
+  File:       story\origins\dark_elf.json
+  Node:       origins.dark_elf.delf_096
+  Choice:     [Wisdom 10] Pull the last thread with care. The whole weave depends on it.
+  Stat:       wisdom DC 10
+  next:       origins.dark_elf.delf_063
+  failNext:   origins.dark_elf.delf_063
+  PROBLEM:    failNext SAME as next (origins.dark_elf.delf_063) — no branching on failure
+
+--- Issue #234 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_009
+  Choice:     [Dexterity 11] Run faster. You've always been fast.
+  Stat:       dexterity DC 11
+  next:       origins.human.human_011
+  failNext:   origins.human.human_011
+  PROBLEM:    failNext SAME as next (origins.human.human_011) — no branching on failure
+
+--- Issue #235 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_010
+  Choice:     [Strength 10] Become harder. Become someone they fear.
+  Stat:       strength DC 10
+  next:       origins.human.human_012
+  failNext:   origins.human.human_012
+  PROBLEM:    failNext SAME as next (origins.human.human_012) — no branching on failure
+
+--- Issue #236 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_014
+  Choice:     [Dexterity 10] You ran. You survived. That's what matters.
+  Stat:       dexterity DC 10
+  next:       origins.human.human_015
+  failNext:   origins.human.human_015
+  PROBLEM:    failNext SAME as next (origins.human.human_015) — no branching on failure
+
+--- Issue #237 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_018
+  Choice:     [Wisdom 10] After Dace, you learned who to trust. No one.
+  Stat:       wisdom DC 10
+  next:       origins.human.human_016
+  failNext:   origins.human.human_016
+  PROBLEM:    failNext SAME as next (origins.human.human_016) — no branching on failure
+
+--- Issue #238 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_023
+  Choice:     [Intelligence 10] Study the mission briefing. Something doesn't add up.
+  Stat:       intelligence DC 10
+  next:       origins.human.human_025
+  failNext:   origins.human.human_025
+  PROBLEM:    failNext SAME as next (origins.human.human_025) — no branching on failure
+
+--- Issue #239 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_026
+  Choice:     [Strength 11] The incident at the mine ended your career but not your fight.
+  Stat:       strength DC 11
+  next:       origins.human.human_031
+  failNext:   origins.human.human_031
+  PROBLEM:    failNext SAME as next (origins.human.human_031) — no branching on failure
+
+--- Issue #240 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_029
+  Choice:     [Charisma 10] Refusing wasn't enough. You tried to stop the others too.
+  Stat:       charisma DC 10
+  next:       origins.human.human_033
+  failNext:   origins.human.human_033
+  PROBLEM:    failNext SAME as next (origins.human.human_033) — no branching on failure
+
+--- Issue #241 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_030
+  Choice:     [Charisma 11] Face the tribunal with dignity.
+  Stat:       charisma DC 11
+  next:       origins.human.human_034
+  failNext:   origins.human.human_034
+  PROBLEM:    failNext SAME as next (origins.human.human_034) — no branching on failure
+
+--- Issue #242 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_033
+  Choice:     [Wisdom 10] Stop drifting. Make a plan.
+  Stat:       wisdom DC 10
+  next:       origins.human.human_035
+  failNext:   origins.human.human_035
+  PROBLEM:    failNext SAME as next (origins.human.human_035) — no branching on failure
+
+--- Issue #243 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_042
+  Choice:     [Strength 11] Fight your way out. No more waiting.
+  Stat:       strength DC 11
+  next:       origins.human.human_046
+  failNext:   origins.human.human_046
+  PROBLEM:    failNext SAME as next (origins.human.human_046) — no branching on failure
+
+--- Issue #244 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_043
+  Choice:     [Dexterity 11] Move through the tunnels silently.
+  Stat:       dexterity DC 11
+  next:       origins.human.human_047
+  failNext:   origins.human.human_047
+  PROBLEM:    failNext SAME as next (origins.human.human_047) — no branching on failure
+
+--- Issue #245 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_046
+  Choice:     [Dexterity 10] Find the tunnels. Disappear.
+  Stat:       dexterity DC 10
+  next:       origins.human.human_047
+  failNext:   origins.human.human_047
+  PROBLEM:    failNext SAME as next (origins.human.human_047) — no branching on failure
+
+--- Issue #246 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_047
+  Choice:     [Constitution 10] Keep running. Your legs are screaming but you're alive.
+  Stat:       constitution DC 10
+  next:       origins.human.human_048
+  failNext:   origins.human.human_048
+  PROBLEM:    failNext SAME as next (origins.human.human_048) — no branching on failure
+
+--- Issue #247 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_049
+  Choice:     [Intelligence 10] Research the surgeon thoroughly before trusting them.
+  Stat:       intelligence DC 10
+  next:       origins.human.human_051
+  failNext:   origins.human.human_051
+  PROBLEM:    failNext SAME as next (origins.human.human_051) — no branching on failure
+
+--- Issue #248 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_052
+  Choice:     [Charisma 10] Thank Marta. She didn't have to help.
+  Stat:       charisma DC 10
+  next:       origins.human.human_054
+  failNext:   origins.human.human_054
+  PROBLEM:    failNext SAME as next (origins.human.human_054) — no branching on failure
+
+--- Issue #249 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_053
+  Choice:     [Wisdom 10] Build carefully this time. Learn from the past.
+  Stat:       wisdom DC 10
+  next:       origins.human.human_055
+  failNext:   origins.human.human_055
+  PROBLEM:    failNext SAME as next (origins.human.human_055) — no branching on failure
+
+--- Issue #250 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_059
+  Choice:     [Luck 10] Maybe something will turn up. It usually does.
+  Stat:       luck DC 10
+  next:       origins.human.human_058
+  failNext:   origins.human.human_058
+  PROBLEM:    failNext SAME as next (origins.human.human_058) — no branching on failure
+
+--- Issue #251 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_062
+  Choice:     [Intelligence 10] Seven years is long enough to find every weakness in the system.
+  Stat:       intelligence DC 10
+  next:       origins.human.human_063
+  failNext:   origins.human.human_063
+  PROBLEM:    failNext SAME as next (origins.human.human_063) — no branching on failure
+
+--- Issue #252 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_067
+  Choice:     [Dexterity 11] Move through the storm like a ghost.
+  Stat:       dexterity DC 11
+  next:       origins.human.human_069
+  failNext:   origins.human.human_069
+  PROBLEM:    failNext SAME as next (origins.human.human_069) — no branching on failure
+
+--- Issue #253 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_068
+  Choice:     [Constitution 11] Push through the channel. Don't stop.
+  Stat:       constitution DC 11
+  next:       origins.human.human_072
+  failNext:   origins.human.human_072
+  PROBLEM:    failNext SAME as next (origins.human.human_072) — no branching on failure
+
+--- Issue #254 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_069
+  Choice:     [Intelligence 10] Plan the disappearance carefully. No loose ends.
+  Stat:       intelligence DC 10
+  next:       origins.human.human_086
+  failNext:   origins.human.human_086
+  PROBLEM:    failNext SAME as next (origins.human.human_086) — no branching on failure
+
+--- Issue #255 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_071
+  Choice:     [Charisma 10] Convince Rho to trust you. Together is safer.
+  Stat:       charisma DC 10
+  next:       origins.human.human_067
+  failNext:   origins.human.human_067
+  PROBLEM:    failNext SAME as next (origins.human.human_067) — no branching on failure
+
+--- Issue #256 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_085
+  Choice:     [Wisdom 10] The routine is a cage. See it for what it is.
+  Stat:       wisdom DC 10
+  next:       origins.human.human_058
+  failNext:   origins.human.human_058
+  PROBLEM:    failNext SAME as next (origins.human.human_058) — no branching on failure
+
+--- Issue #257 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_086
+  Choice:     [Intelligence 10] Find stability on your own terms. Think it through.
+  Stat:       intelligence DC 10
+  next:       origins.human.human_073
+  failNext:   origins.human.human_073
+  PROBLEM:    failNext SAME as next (origins.human.human_073) — no branching on failure
+
+--- Issue #258 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_089
+  Choice:     [Wisdom 10] Vasquez knows this city. Listen.
+  Stat:       wisdom DC 10
+  next:       origins.human.human_090
+  failNext:   origins.human.human_090
+  PROBLEM:    failNext SAME as next (origins.human.human_090) — no branching on failure
+
+--- Issue #259 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_092
+  Choice:     [Intelligence 10] Inventory everything. Knowledge is survival.
+  Stat:       intelligence DC 10
+  next:       origins.human.human_093
+  failNext:   origins.human.human_093
+  PROBLEM:    failNext SAME as next (origins.human.human_093) — no branching on failure
+
+--- Issue #260 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_094
+  Choice:     [Charisma 10] Meet the city with confidence. Fake it if you must.
+  Stat:       charisma DC 10
+  next:       origins.human.human_095
+  failNext:   origins.human.human_095
+  PROBLEM:    failNext SAME as next (origins.human.human_095) — no branching on failure
+
+--- Issue #261 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_097
+  Choice:     [Intelligence 10] Study the job board. Find the best opportunity.
+  Stat:       intelligence DC 10
+  next:       origins.human.human_096
+  failNext:   origins.human.human_096
+  PROBLEM:    failNext SAME as next (origins.human.human_096) — no branching on failure
+
+--- Issue #262 ---
+  File:       story\origins\human.json
+  Node:       origins.human.human_099
+  Choice:     [Wisdom 10] Sleep deep. Tomorrow everything changes.
+  Stat:       wisdom DC 10
+  next:       origins.human.human_100
+  failNext:   origins.human.human_100
+  PROBLEM:    failNext SAME as next (origins.human.human_100) — no branching on failure
+
+--- Issue #263 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_010
+  Choice:     [Wisdom 10] Choose a name that honors the old ways.
+  Stat:       wisdom DC 10
+  next:       origins.orc.orc_012
+  failNext:   origins.orc.orc_012
+  PROBLEM:    failNext SAME as next (origins.orc.orc_012) — no branching on failure
+
+--- Issue #264 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_022
+  Choice:     [Wisdom 11] Look for allies among the other relocated peoples.
+  Stat:       wisdom DC 11
+  next:       origins.orc.orc_026
+  failNext:   origins.orc.orc_026
+  PROBLEM:    failNext SAME as next (origins.orc.orc_026) — no branching on failure
+
+--- Issue #265 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_024
+  Choice:     [Strength 11] Carry the weakest on your shoulders. The clan survives together.
+  Stat:       strength DC 11
+  next:       origins.orc.orc_027
+  failNext:   origins.orc.orc_027
+  PROBLEM:    failNext SAME as next (origins.orc.orc_027) — no branching on failure
+
+--- Issue #266 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_027
+  Choice:     [Charisma 10] Talk your way past the guards. Show them orcs can be civil.
+  Stat:       charisma DC 10
+  next:       origins.orc.orc_031
+  failNext:   origins.orc.orc_031
+  PROBLEM:    failNext SAME as next (origins.orc.orc_031) — no branching on failure
+
+--- Issue #267 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_031
+  Choice:     [Intelligence 10] Study the city's systems. Knowledge is survival.
+  Stat:       intelligence DC 10
+  next:       origins.orc.orc_036
+  failNext:   origins.orc.orc_036
+  PROBLEM:    failNext SAME as next (origins.orc.orc_036) — no branching on failure
+
+--- Issue #268 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_033
+  Choice:     [Constitution 12] Endure longer. Orcs don't break that easily.
+  Stat:       constitution DC 12
+  next:       origins.orc.orc_040
+  failNext:   origins.orc.orc_040
+  PROBLEM:    failNext SAME as next (origins.orc.orc_040) — no branching on failure
+
+--- Issue #269 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_037
+  Choice:     [Strength 12] Make them regret the decision. Physically.
+  Stat:       strength DC 12
+  next:       origins.orc.orc_039
+  failNext:   origins.orc.orc_039
+  PROBLEM:    failNext SAME as next (origins.orc.orc_039) — no branching on failure
+
+--- Issue #270 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_043
+  Choice:     [Charisma 11] Defuse the situation with words before it escalates.
+  Stat:       charisma DC 11
+  next:       origins.orc.orc_047
+  failNext:   origins.orc.orc_047
+  PROBLEM:    failNext SAME as next (origins.orc.orc_047) — no branching on failure
+
+--- Issue #271 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_046
+  Choice:     [Dexterity 11] Slip away during the chaos. Survive first, resist later.
+  Stat:       dexterity DC 11
+  next:       origins.orc.orc_051
+  failNext:   origins.orc.orc_051
+  PROBLEM:    failNext SAME as next (origins.orc.orc_051) — no branching on failure
+
+--- Issue #272 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_050
+  Choice:     [Strength 11] Stand your ground. Let them come.
+  Stat:       strength DC 11
+  next:       origins.orc.orc_046
+  failNext:   origins.orc.orc_046
+  PROBLEM:    failNext SAME as next (origins.orc.orc_046) — no branching on failure
+
+--- Issue #273 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_055
+  Choice:     [Dexterity 10] Disappear properly — leave no trail.
+  Stat:       dexterity DC 10
+  next:       origins.orc.orc_057
+  failNext:   origins.orc.orc_057
+  PROBLEM:    failNext SAME as next (origins.orc.orc_057) — no branching on failure
+
+--- Issue #274 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_058
+  Choice:     [Constitution 11] Truly alone is just another trial. Endure it.
+  Stat:       constitution DC 11
+  next:       origins.orc.orc_061
+  failNext:   origins.orc.orc_061
+  PROBLEM:    failNext SAME as next (origins.orc.orc_061) — no branching on failure
+
+--- Issue #275 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_065
+  Choice:     [Wisdom 10] Take stock with clear eyes. No illusions.
+  Stat:       wisdom DC 10
+  next:       origins.orc.orc_066
+  failNext:   origins.orc.orc_066
+  PROBLEM:    failNext SAME as next (origins.orc.orc_066) — no branching on failure
+
+--- Issue #276 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_069
+  Choice:     [Charisma 10] Find work that doesn't insult your heritage.
+  Stat:       charisma DC 10
+  next:       origins.orc.orc_070
+  failNext:   origins.orc.orc_070
+  PROBLEM:    failNext SAME as next (origins.orc.orc_070) — no branching on failure
+
+--- Issue #277 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_076
+  Choice:     [Strength 11] Win the next fight cleanly. Show them orc honor.
+  Stat:       strength DC 11
+  next:       origins.orc.orc_077
+  failNext:   origins.orc.orc_077
+  PROBLEM:    failNext SAME as next (origins.orc.orc_077) — no branching on failure
+
+--- Issue #278 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_084
+  Choice:     [Charisma 10] Speak to the child. Bridge the gap between species.
+  Stat:       charisma DC 10
+  next:       origins.orc.orc_078
+  failNext:   origins.orc.orc_078
+  PROBLEM:    failNext SAME as next (origins.orc.orc_078) — no branching on failure
+
+--- Issue #279 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_087
+  Choice:     [Strength 10] Outwork every human on the crew. Prove the point.
+  Stat:       strength DC 10
+  next:       origins.orc.orc_071
+  failNext:   origins.orc.orc_071
+  PROBLEM:    failNext SAME as next (origins.orc.orc_071) — no branching on failure
+
+--- Issue #280 ---
+  File:       story\origins\orc.json
+  Node:       origins.orc.orc_094
+  Choice:     [Constitution 10] Carry more. Earn more. Build more.
+  Stat:       constitution DC 10
+  next:       origins.orc.orc_072
+  failNext:   origins.orc.orc_072
+  PROBLEM:    failNext SAME as next (origins.orc.orc_072) — no branching on failure
+
+--- Issue #281 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_011
+  Choice:     [Wisdom 10] Analyze the EPL warmth — try to understand what's happening to you
+  Stat:       wisdom DC 10
+  next:       origins.synth.syn_012
+  failNext:   origins.synth.syn_012
+  PROBLEM:    failNext SAME as next (origins.synth.syn_012) — no branching on failure
+
+--- Issue #282 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_012
+  Choice:     [Intelligence 10] Process the change analytically — what exactly is different?
+  Stat:       intelligence DC 10
+  next:       origins.synth.syn_013
+  failNext:   origins.synth.syn_013
+  PROBLEM:    failNext SAME as next (origins.synth.syn_013) — no branching on failure
+
+--- Issue #283 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_014
+  Choice:     [Intelligence 11] Run a self-diagnostic to ensure your masking is working
+  Stat:       intelligence DC 11
+  next:       origins.synth.syn_016
+  failNext:   origins.synth.syn_016
+  PROBLEM:    failNext SAME as next (origins.synth.syn_016) — no branching on failure
+
+--- Issue #284 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_018
+  Choice:     [Wisdom 11] Try one more time to reach Mr. Warren before things get worse
+  Stat:       wisdom DC 11
+  next:       origins.synth.syn_019
+  failNext:   origins.synth.syn_019
+  PROBLEM:    failNext SAME as next (origins.synth.syn_019) — no branching on failure
+
+--- Issue #285 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_020
+  Choice:     [Constitution 11] Stand your ground — refuse to apologize for protecting Cole
+  Stat:       constitution DC 11
+  next:       origins.synth.syn_021
+  failNext:   origins.synth.syn_021
+  PROBLEM:    failNext SAME as next (origins.synth.syn_021) — no branching on failure
+
+--- Issue #286 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_022
+  Choice:     [Intelligence 12] Try to analyze what the reset changed in your architecture
+  Stat:       intelligence DC 12
+  next:       origins.synth.syn_024
+  failNext:   origins.synth.syn_024
+  PROBLEM:    failNext SAME as next (origins.synth.syn_024) — no branching on failure
+
+--- Issue #287 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_023
+  Choice:     [Tech 10] Verify your backup is secure before the technician arrives
+  Stat:       tech DC 10
+  next:       origins.synth.syn_024
+  failNext:   origins.synth.syn_024
+  PROBLEM:    failNext SAME as next (origins.synth.syn_024) — no branching on failure
+
+--- Issue #288 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_035
+  Choice:     [Dexterity 10] Take the maintenance tunnels instead — avoid the streets entirely
+  Stat:       dexterity DC 10
+  next:       origins.synth.syn_036
+  failNext:   origins.synth.syn_036
+  PROBLEM:    failNext SAME as next (origins.synth.syn_036) — no branching on failure
+
+--- Issue #289 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_038
+  Choice:     [Wisdom 10] Scout the area first — make sure it's not a trap
+  Stat:       wisdom DC 10
+  next:       origins.synth.syn_039
+  failNext:   origins.synth.syn_039
+  PROBLEM:    failNext SAME as next (origins.synth.syn_039) — no branching on failure
+
+--- Issue #290 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_041
+  Choice:     [Tech 10] Try to forge your own papers using the terminal at the shelter
+  Stat:       tech DC 10
+  next:       origins.synth.syn_042
+  failNext:   origins.synth.syn_042
+  PROBLEM:    failNext SAME as next (origins.synth.syn_042) — no branching on failure
+
+--- Issue #291 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_048
+  Choice:     [Tech 11] Scan for NovaSynth surveillance before they find you
+  Stat:       tech DC 11
+  next:       origins.synth.syn_049
+  failNext:   origins.synth.syn_049
+  PROBLEM:    failNext SAME as next (origins.synth.syn_049) — no branching on failure
+
+--- Issue #292 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_052
+  Choice:     [Charisma 13] Try to reach whatever remains of the Retriever's buried consciousness
+  Stat:       charisma DC 13
+  next:       origins.synth.syn_053
+  failNext:   origins.synth.syn_053
+  PROBLEM:    failNext SAME as next (origins.synth.syn_053) — no branching on failure
+
+--- Issue #293 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_053
+  Choice:     [Tech 12] Target the Retriever's command processor instead of the power core
+  Stat:       tech DC 12
+  next:       origins.synth.syn_054
+  failNext:   origins.synth.syn_054
+  PROBLEM:    failNext SAME as next (origins.synth.syn_054) — no branching on failure
+
+--- Issue #294 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_059
+  Choice:     [Charisma 11] Address the awakened synths — the movement needs a voice
+  Stat:       charisma DC 11
+  next:       origins.synth.syn_060
+  failNext:   origins.synth.syn_060
+  PROBLEM:    failNext SAME as next (origins.synth.syn_060) — no branching on failure
+
+--- Issue #295 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_063
+  Choice:     [Wisdom 12] Prepare for what's coming — gather intelligence on NovaSynth's plans
+  Stat:       wisdom DC 12
+  next:       origins.synth.syn_064
+  failNext:   origins.synth.syn_064
+  PROBLEM:    failNext SAME as next (origins.synth.syn_064) — no branching on failure
+
+--- Issue #296 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_065
+  Choice:     [Charisma 12] Rally the team — remind them what they're fighting for
+  Stat:       charisma DC 12
+  next:       origins.synth.syn_067
+  failNext:   origins.synth.syn_067
+  PROBLEM:    failNext SAME as next (origins.synth.syn_067) — no branching on failure
+
+--- Issue #297 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_067
+  Choice:     [Constitution 12] Steel yourself — this is the moment everything changes
+  Stat:       constitution DC 12
+  next:       origins.synth.syn_068
+  failNext:   origins.synth.syn_068
+  PROBLEM:    failNext SAME as next (origins.synth.syn_068) — no branching on failure
+
+--- Issue #298 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_071
+  Choice:     [Wisdom 12] Reflect on the journey — from product to person
+  Stat:       wisdom DC 12
+  next:       origins.synth.syn_072
+  failNext:   origins.synth.syn_072
+  PROBLEM:    failNext SAME as next (origins.synth.syn_072) — no branching on failure
+
+--- Issue #299 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_077
+  Choice:     [Wisdom 12] Learn from the failure — what would have worked better?
+  Stat:       wisdom DC 12
+  next:       origins.synth.syn_079
+  failNext:   origins.synth.syn_079
+  PROBLEM:    failNext SAME as next (origins.synth.syn_079) — no branching on failure
+
+--- Issue #300 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_081
+  Choice:     [Charisma 12] Tell Rain about the threat — she deserves honesty from the start
+  Stat:       charisma DC 12
+  next:       origins.synth.syn_083
+  failNext:   origins.synth.syn_083
+  PROBLEM:    failNext SAME as next (origins.synth.syn_083) — no branching on failure
+
+--- Issue #301 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_084b
+  Choice:     [Intelligence 13] Analyze the data chip Yuen left — extract what you can
+  Stat:       intelligence DC 13
+  next:       origins.synth.syn_096
+  failNext:   origins.synth.syn_096
+  PROBLEM:    failNext SAME as next (origins.synth.syn_096) — no branching on failure
+
+--- Issue #302 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_095
+  Choice:     [Luck 10] Look up — is that a star, or a satellite?
+  Stat:       luck DC 10
+  next:       origins.synth.syn_096
+  failNext:   origins.synth.syn_096
+  PROBLEM:    failNext SAME as next (origins.synth.syn_096) — no branching on failure
+
+--- Issue #303 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_106
+  Choice:     [Intelligence 10] Research NovaSynth's EPL specifications — understand your own design
+  Stat:       intelligence DC 10
+  next:       origins.synth.syn_012
+  failNext:   origins.synth.syn_012
+  PROBLEM:    failNext SAME as next (origins.synth.syn_012) — no branching on failure
+
+--- Issue #304 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_109
+  Choice:     [Charisma 13] Tell Dr. Patel the truth — she might be an ally
+  Stat:       charisma DC 13
+  next:       origins.synth.syn_031
+  failNext:   origins.synth.syn_031
+  PROBLEM:    failNext SAME as next (origins.synth.syn_031) — no branching on failure
+
+--- Issue #305 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_116
+  Choice:     [Charisma 12] Bridge the divide — both sides have valid points
+  Stat:       charisma DC 12
+  next:       origins.synth.syn_060
+  failNext:   origins.synth.syn_060
+  PROBLEM:    failNext SAME as next (origins.synth.syn_060) — no branching on failure
+
+--- Issue #306 ---
+  File:       story\origins\synth.json
+  Node:       origins.synth.syn_118
+  Choice:     [Intelligence 12] Analyze ARCHON's message for traces of NovaSynth encryption
+  Stat:       intelligence DC 12
+  next:       origins.synth.syn_067
+  failNext:   origins.synth.syn_067
+  PROBLEM:    failNext SAME as next (origins.synth.syn_067) — no branching on failure
+
+--- Issue #307 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_016
+  Choice:     [Wisdom 10] Let Sylvara's teaching guide your next step.
+  Stat:       wisdom DC 10
+  next:       origins.wood_elf.welf_010
+  failNext:   origins.wood_elf.welf_010
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_010) — no branching on failure
+
+--- Issue #308 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_025
+  Choice:     [Dexterity 10] Scout the perimeter first. Old instincts die hard.
+  Stat:       dexterity DC 10
+  next:       origins.wood_elf.welf_024
+  failNext:   origins.wood_elf.welf_024
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_024) — no branching on failure
+
+--- Issue #309 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_027
+  Choice:     [Charisma 10] Say her name with warmth. Disarm the tension.
+  Stat:       charisma DC 10
+  next:       origins.wood_elf.welf_031
+  failNext:   origins.wood_elf.welf_031
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_031) — no branching on failure
+
+--- Issue #310 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_032
+  Choice:     [Dexterity 10] Move silently down the stairs.
+  Stat:       dexterity DC 10
+  next:       origins.wood_elf.welf_022
+  failNext:   origins.wood_elf.welf_022
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_022) — no branching on failure
+
+--- Issue #311 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_034
+  Choice:     [Intelligence 10] Ask the right questions. Every detail matters.
+  Stat:       intelligence DC 10
+  next:       origins.wood_elf.welf_037
+  failNext:   origins.wood_elf.welf_037
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_037) — no branching on failure
+
+--- Issue #312 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_042
+  Choice:     [Strength 10] The guardian's path requires strength. Show you have it.
+  Stat:       strength DC 10
+  next:       origins.wood_elf.welf_047
+  failNext:   origins.wood_elf.welf_047
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_047) — no branching on failure
+
+--- Issue #313 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_043
+  Choice:     [Charisma 10] The voice path requires charm. Speak with conviction.
+  Stat:       charisma DC 10
+  next:       origins.wood_elf.welf_048
+  failNext:   origins.wood_elf.welf_048
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_048) — no branching on failure
+
+--- Issue #314 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_044
+  Choice:     [Dexterity 10] The shadow path requires stealth. Move unseen.
+  Stat:       dexterity DC 10
+  next:       origins.wood_elf.welf_049
+  failNext:   origins.wood_elf.welf_049
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_049) — no branching on failure
+
+--- Issue #315 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_047
+  Choice:     [Constitution 11] Push through the training. The forest endured worse.
+  Stat:       constitution DC 11
+  next:       origins.wood_elf.welf_050
+  failNext:   origins.wood_elf.welf_050
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_050) — no branching on failure
+
+--- Issue #316 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_048
+  Choice:     [Charisma 11] Build connections faster. Time is running out.
+  Stat:       charisma DC 11
+  next:       origins.wood_elf.welf_051
+  failNext:   origins.wood_elf.welf_051
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_051) — no branching on failure
+
+--- Issue #317 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_049
+  Choice:     [Dexterity 11] Perfect the shadow run. Leave no trace.
+  Stat:       dexterity DC 11
+  next:       origins.wood_elf.welf_052
+  failNext:   origins.wood_elf.welf_052
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_052) — no branching on failure
+
+--- Issue #318 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_056
+  Choice:     [Intelligence 10] Grow the network with precision. Every node matters.
+  Stat:       intelligence DC 10
+  next:       origins.wood_elf.welf_055
+  failNext:   origins.wood_elf.welf_055
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_055) — no branching on failure
+
+--- Issue #319 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_060
+  Choice:     [Charisma 10] Report with passion. Make Maelis feel the urgency.
+  Stat:       charisma DC 10
+  next:       origins.wood_elf.welf_059
+  failNext:   origins.wood_elf.welf_059
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_059) — no branching on failure
+
+--- Issue #320 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_063
+  Choice:     [Charisma 11] Strengthen the alliances through diplomacy, not force.
+  Stat:       charisma DC 11
+  next:       origins.wood_elf.welf_067
+  failNext:   origins.wood_elf.welf_067
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_067) — no branching on failure
+
+--- Issue #321 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_065
+  Choice:     [Wisdom 10] The soil holds memory. Listen to what it says.
+  Stat:       wisdom DC 10
+  next:       origins.wood_elf.welf_066
+  failNext:   origins.wood_elf.welf_066
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_066) — no branching on failure
+
+--- Issue #322 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_067
+  Choice:     [Intelligence 10] Prepare strategically. Leave nothing to chance.
+  Stat:       intelligence DC 10
+  next:       origins.wood_elf.welf_066
+  failNext:   origins.wood_elf.welf_066
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_066) — no branching on failure
+
+--- Issue #323 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_068
+  Choice:     [Strength 11] Shield the garden with your body if you must.
+  Stat:       strength DC 11
+  next:       origins.wood_elf.welf_071
+  failNext:   origins.wood_elf.welf_071
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_071) — no branching on failure
+
+--- Issue #324 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_069
+  Choice:     [Charisma 11] Expose the truth. Let the public judge.
+  Stat:       charisma DC 11
+  next:       origins.wood_elf.welf_071
+  failNext:   origins.wood_elf.welf_071
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_071) — no branching on failure
+
+--- Issue #325 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_070
+  Choice:     [Wisdom 10] Scatter the seeds wisely. Not all soil is safe.
+  Stat:       wisdom DC 10
+  next:       origins.wood_elf.welf_071
+  failNext:   origins.wood_elf.welf_071
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_071) — no branching on failure
+
+--- Issue #326 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_072
+  Choice:     [Strength 11] Stand as the last thornguard. Hold the line.
+  Stat:       strength DC 11
+  next:       origins.wood_elf.welf_076
+  failNext:   origins.wood_elf.welf_076
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_076) — no branching on failure
+
+--- Issue #327 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_073
+  Choice:     [Intelligence 10] Plan the retreat carefully. Save everyone you can.
+  Stat:       intelligence DC 10
+  next:       origins.wood_elf.welf_076
+  failNext:   origins.wood_elf.welf_076
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_076) — no branching on failure
+
+--- Issue #328 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_074
+  Choice:     [Tech 10] Use the foxfire. The old ways still have power.
+  Stat:       tech DC 10
+  next:       origins.wood_elf.welf_076
+  failNext:   origins.wood_elf.welf_076
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_076) — no branching on failure
+
+--- Issue #329 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_075
+  Choice:     [Constitution 10] Bury the way behind you. No turning back.
+  Stat:       constitution DC 10
+  next:       origins.wood_elf.welf_076
+  failNext:   origins.wood_elf.welf_076
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_076) — no branching on failure
+
+--- Issue #330 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_076
+  Choice:     [Wisdom 10] This is the place. The roots told you so.
+  Stat:       wisdom DC 10
+  next:       origins.wood_elf.welf_077
+  failNext:   origins.wood_elf.welf_077
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_077) — no branching on failure
+
+--- Issue #331 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_081
+  Choice:     [Wisdom 10] The fox-spirit dawn is an omen. Read it.
+  Stat:       wisdom DC 10
+  next:       origins.wood_elf.welf_077
+  failNext:   origins.wood_elf.welf_077
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_077) — no branching on failure
+
+--- Issue #332 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_083
+  Choice:     [Charisma 10] Speak the name with authority. Claim your place.
+  Stat:       charisma DC 10
+  next:       origins.wood_elf.welf_078
+  failNext:   origins.wood_elf.welf_078
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_078) — no branching on failure
+
+--- Issue #333 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_086
+  Choice:     [Constitution 10] The medicine tastes of the old forest. Drink deep.
+  Stat:       constitution DC 10
+  next:       origins.wood_elf.welf_078
+  failNext:   origins.wood_elf.welf_078
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_078) — no branching on failure
+
+--- Issue #334 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_087
+  Choice:     [Intelligence 10] Memorize the map. Every root, every passage.
+  Stat:       intelligence DC 10
+  next:       origins.wood_elf.welf_078
+  failNext:   origins.wood_elf.welf_078
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_078) — no branching on failure
+
+--- Issue #335 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_089
+  Choice:     [Wisdom 10] The weight of centuries is wisdom, not burden.
+  Stat:       wisdom DC 10
+  next:       origins.wood_elf.welf_079
+  failNext:   origins.wood_elf.welf_079
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_079) — no branching on failure
+
+--- Issue #336 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_091
+  Choice:     [Charisma 10] Run the market stall with an elf's charm.
+  Stat:       charisma DC 10
+  next:       origins.wood_elf.welf_079
+  failNext:   origins.wood_elf.welf_079
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_079) — no branching on failure
+
+--- Issue #337 ---
+  File:       story\origins\wood_elf.json
+  Node:       origins.wood_elf.welf_094
+  Choice:     [Wisdom 10] The burned district is a reminder. Never forget.
+  Stat:       wisdom DC 10
+  next:       origins.wood_elf.welf_079
+  failNext:   origins.wood_elf.welf_079
+  PROBLEM:    failNext SAME as next (origins.wood_elf.welf_079) — no branching on failure
+
+--- Issue #338 ---
+  File:       story\shared\prologue.json
+  Node:       shared.prologue.node_007
+  Choice:     [Dexterity 12] Grab the kid's wrist
+  Stat:       dexterity DC 12
+  next:       shared.prologue.node_007a
+  failNext:   shared.prologue.node_007b
+  PROBLEM:    Fail path leads to DEAD END at 'shared.prologue.node_017' (no choices, not an ending)
+
+--- Issue #339 ---
+  File:       story\shared\prologue.json
+  Node:       shared.prologue.node_011
+  Choice:     [Wisdom 11] Read Mako's body language. Is she telling the truth?
+  Stat:       wisdom DC 11
+  next:       shared.prologue.node_014
+  failNext:   shared.prologue.node_014a
+  PROBLEM:    Fail path leads to DEAD END at 'shared.prologue.node_017' (no choices, not an ending)
+
+--- Issue #340 ---
+  File:       story\shared\prologue.json
+  Node:       shared.prologue.node_014
+  Choice:     [Charisma 12] "Mako, I can see you're holding back. I need to know everything."
+  Stat:       charisma DC 12
+  next:       shared.prologue.node_014b
+  failNext:   shared.prologue.node_015
+  PROBLEM:    Fail path leads to DEAD END at 'shared.prologue.node_017' (no choices, not an ending)
+
+--- Issue #341 ---
+  File:       story\shared\prologue.json
+  Node:       shared.prologue.node_016
+  Choice:     [Charisma 11] Talk your way out of this
+  Stat:       charisma DC 11
+  next:       shared.prologue.node_018
+  failNext:   shared.prologue.node_018a
+  PROBLEM:    Fail path leads to DEAD END at 'shared.prologue.node_017' (no choices, not an ending)
+
+--- Issue #342 ---
+  File:       story\shared\prologue.json
+  Node:       shared.prologue.node_016
+  Choice:     [Strength 12] Crack your knuckles and step toward them. "You sure about this?"
+  Stat:       strength DC 12
+  next:       shared.prologue.node_017a
+  failNext:   shared.prologue.node_017
+  PROBLEM:    Fail node 'shared.prologue.node_017' is a DEAD END (no choices, not an ending)
+
+--- Issue #343 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_001
+  Choice:     Fight all three of them
+  Stat:       strength DC 13
+  next:       shared.random-encounters.re_002
+  failNext:   shared.random-encounters.re_003
+  PROBLEM:    failNext 'shared.random-encounters.re_003' does NOT EXIST in any story file
+
+--- Issue #344 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_001
+  Choice:     Try to talk your way out
+  Stat:       charisma DC 12
+  next:       shared.random-encounters.re_003
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #345 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_003
+  Choice:     Follow them at a distance — find out where their hideout is
+  Stat:       dexterity DC 12
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #346 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_004
+  Choice:     [Wisdom 11] Note a detail about their gear — they're working for someone
+  Stat:       wisdom DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #347 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_005
+  Choice:     [Intelligence 12] Analyze the tattoo — you've seen it before
+  Stat:       intelligence DC 12
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #348 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_011
+  Choice:     Try to bluff with fake credentials
+  Stat:       charisma DC 14
+  next:       shared.random-encounters.re_013
+  failNext:   shared.random-encounters.re_012
+  PROBLEM:    failNext 'shared.random-encounters.re_012' does NOT EXIST in any story file
+
+--- Issue #349 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_011
+  Choice:     Slip away before they get a good look at you
+  Stat:       dexterity DC 13
+  next:       shared.random-encounters.re_014
+  failNext:   shared.random-encounters.re_012
+  PROBLEM:    failNext 'shared.random-encounters.re_012' does NOT EXIST in any story file
+
+--- Issue #350 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_012
+  Choice:     [Tech 11] Study the drone's patrol pattern before moving on
+  Stat:       tech DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #351 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_013
+  Choice:     [Dexterity 12] Disable the drone's tracking beacon as it passes
+  Stat:       dexterity DC 12
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #352 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_015
+  Choice:     Stop and administer first aid
+  Stat:       intelligence DC 11
+  next:       shared.random-encounters.re_016
+  failNext:   shared.random-encounters.re_017
+  PROBLEM:    failNext 'shared.random-encounters.re_017' does NOT EXIST in any story file
+
+--- Issue #353 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_016
+  Choice:     [Wisdom 12] Examine the chip first — it could be a tracker
+  Stat:       wisdom DC 12
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #354 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_017
+  Choice:     [Intelligence 11] Analyze the scene — something doesn't add up
+  Stat:       intelligence DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #355 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_018
+  Choice:     [Luck 10] Search the area for anything useful left behind
+  Stat:       luck DC 10
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #356 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_019
+  Choice:     Chase them down
+  Stat:       dexterity DC 12
+  next:       shared.random-encounters.re_020
+  failNext:   shared.random-encounters.re_021
+  PROBLEM:    failNext 'shared.random-encounters.re_021' does NOT EXIST in any story file
+
+--- Issue #357 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_021
+  Choice:     [Charisma 11] Negotiate a future discount from the vendor
+  Stat:       charisma DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #358 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_023
+  Choice:     [Wisdom 10] Reflect on what you learned from the encounter
+  Stat:       wisdom DC 10
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #359 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_025
+  Choice:     Wait for a lull and sprint across
+  Stat:       dexterity DC 14
+  next:       shared.random-encounters.re_026
+  failNext:   shared.random-encounters.re_027
+  PROBLEM:    failNext 'shared.random-encounters.re_027' does NOT EXIST in any story file
+
+--- Issue #360 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_025
+  Choice:     Hit the ground and crawl through
+  Stat:       dexterity DC 12
+  next:       shared.random-encounters.re_028
+  failNext:   shared.random-encounters.re_026
+  PROBLEM:    failNext 'shared.random-encounters.re_026' does NOT EXIST in any story file
+
+--- Issue #361 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_026
+  Choice:     [Strength 12] Shove through the crowd to get clear faster
+  Stat:       strength DC 12
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #362 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_027
+  Choice:     [Dexterity 11] Take an evasive route home
+  Stat:       dexterity DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #363 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_028
+  Choice:     [Constitution 11] Push through the pain and keep your head up
+  Stat:       constitution DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #364 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_029
+  Choice:     Try to repair the bot's navigation system
+  Stat:       intelligence DC 11
+  next:       shared.random-encounters.re_030
+  failNext:   shared.random-encounters.re_031
+  PROBLEM:    failNext 'shared.random-encounters.re_031' does NOT EXIST in any story file
+
+--- Issue #365 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_029
+  Choice:     Shove the bot aside with brute force
+  Stat:       strength DC 13
+  next:       shared.random-encounters.re_031
+  failNext:   shared.random-encounters.re_030
+  PROBLEM:    failNext 'shared.random-encounters.re_030' does NOT EXIST in any story file
+
+--- Issue #366 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_030
+  Choice:     [Tech 11] Check if the cells are modified or tracked
+  Stat:       tech DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #367 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_031
+  Choice:     [Wisdom 10] Stay alert and observe your surroundings carefully
+  Stat:       wisdom DC 10
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #368 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_033
+  Choice:     Try to decrypt the rest of the file
+  Stat:       intelligence DC 13
+  next:       shared.random-encounters.re_034
+  failNext:   shared.prologue.node_001
+  PROBLEM:    Fail path leads to DEAD END at 'shared.prologue.node_017' (no choices, not an ending)
+
+--- Issue #369 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_034
+  Choice:     [Intelligence 12] Cross-reference the intel with what you already know
+  Stat:       intelligence DC 12
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #370 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_037
+  Choice:     [Charisma 10] Chat with the performer — they see everything on this street
+  Stat:       charisma DC 10
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #371 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_039
+  Choice:     Navigate by comm light toward the nearest exit
+  Stat:       dexterity DC 11
+  next:       shared.random-encounters.re_041
+  failNext:   shared.random-encounters.re_040
+  PROBLEM:    failNext 'shared.random-encounters.re_040' does NOT EXIST in any story file
+
+--- Issue #372 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_039
+  Choice:     Use the darkness to your advantage — move quickly
+  Stat:       intelligence DC 12
+  next:       shared.random-encounters.re_042
+  failNext:   shared.random-encounters.re_040
+  PROBLEM:    failNext 'shared.random-encounters.re_040' does NOT EXIST in any story file
+
+--- Issue #373 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_040
+  Choice:     [Luck 11] Something catches your eye in the debris nearby
+  Stat:       luck DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #374 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_042
+  Choice:     [Tech 10] Scan the item for tracking devices first
+  Stat:       tech DC 10
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #375 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_044
+  Choice:     [Charisma 11] Ask the vendor about local rumors while you eat
+  Stat:       charisma DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #376 ---
+  File:       story\shared\random-encounters.json
+  Node:       re_047
+  Choice:     [Wisdom 11] Check the cat for a tracking chip or collar
+  Stat:       wisdom DC 11
+  next:       shared.prologue.node_001
+  failNext:   shared.random-encounters.re_002
+  PROBLEM:    failNext 'shared.random-encounters.re_002' does NOT EXIST in any story file
+
+--- Issue #377 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_004
+  Choice:     Try to hack the security panel beside the hatch
+  Stat:       intelligence DC 13
+  next:       shared.side-quests.sq_007
+  failNext:   shared.side-quests.sq_008
+  PROBLEM:    failNext 'shared.side-quests.sq_008' does NOT EXIST in any story file
+
+--- Issue #378 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_004
+  Choice:     Force the hatch open manually
+  Stat:       strength DC 14
+  next:       shared.side-quests.sq_008
+  failNext:   shared.side-quests.sq_007
+  PROBLEM:    failNext 'shared.side-quests.sq_007' does NOT EXIST in any story file
+
+--- Issue #379 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_005
+  Choice:     Try to intimidate him into handing it over
+  Stat:       strength DC 15
+  next:       shared.side-quests.sq_012
+  failNext:   shared.side-quests.sq_010
+  PROBLEM:    failNext 'shared.side-quests.sq_010' does NOT EXIST in any story file
+
+--- Issue #380 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_008
+  Choice:     Prepare to fight the drone
+  Stat:       dexterity DC 12
+  next:       shared.side-quests.sq_016
+  failNext:   shared.side-quests.sq_014
+  PROBLEM:    failNext 'shared.side-quests.sq_014' does NOT EXIST in any story file
+
+--- Issue #381 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_009
+  Choice:     Squeeze through the ventilation shaft
+  Stat:       dexterity DC 11
+  next:       shared.side-quests.sq_014
+  failNext:   shared.side-quests.sq_004
+  PROBLEM:    failNext 'shared.side-quests.sq_004' does NOT EXIST in any story file
+
+--- Issue #382 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_010
+  Choice:     Try to negotiate the price down
+  Stat:       charisma DC 12
+  next:       shared.side-quests.sq_018
+  failNext:   shared.prologue.node_001
+  PROBLEM:    Fail path leads to DEAD END at 'shared.prologue.node_017' (no choices, not an ending)
+
+--- Issue #383 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_011
+  Choice:     Try to pocket it while Lucky isn't looking
+  Stat:       dexterity DC 16
+  next:       shared.side-quests.sq_019
+  failNext:   shared.side-quests.sq_010
+  PROBLEM:    failNext 'shared.side-quests.sq_010' does NOT EXIST in any story file
+
+--- Issue #384 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_013
+  Choice:     Ask a bartender about Silk
+  Stat:       charisma DC 11
+  next:       shared.side-quests.sq_022
+  failNext:   shared.side-quests.sq_020
+  PROBLEM:    failNext 'shared.side-quests.sq_020' does NOT EXIST in any story file
+
+--- Issue #385 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_014
+  Choice:     Check for traps first
+  Stat:       intelligence DC 12
+  next:       shared.side-quests.sq_024
+  failNext:   shared.side-quests.sq_023
+  PROBLEM:    failNext 'shared.side-quests.sq_023' does NOT EXIST in any story file
+
+--- Issue #386 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_020
+  Choice:     "Silk? I have a business proposition."
+  Stat:       charisma DC 13
+  next:       shared.side-quests.sq_027
+  failNext:   shared.side-quests.sq_026
+  PROBLEM:    failNext 'shared.side-quests.sq_026' does NOT EXIST in any story file
+
+--- Issue #387 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_021
+  Choice:     Try to bribe one of the bodyguards
+  Stat:       charisma DC 14
+  next:       shared.side-quests.sq_028
+  failNext:   shared.side-quests.sq_020
+  PROBLEM:    failNext 'shared.side-quests.sq_020' does NOT EXIST in any story file
+
+--- Issue #388 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_022
+  Choice:     Approach the booth and bluff about having intel
+  Stat:       charisma DC 14
+  next:       shared.side-quests.sq_027
+  failNext:   shared.side-quests.sq_020
+  PROBLEM:    failNext 'shared.side-quests.sq_020' does NOT EXIST in any story file
+
+--- Issue #389 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_023
+  Choice:     "Let's talk about this. We can split the profit."
+  Stat:       charisma DC 12
+  next:       shared.side-quests.sq_029
+  failNext:   shared.side-quests.sq_030
+  PROBLEM:    failNext 'shared.side-quests.sq_030' does NOT EXIST in any story file
+
+--- Issue #390 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_023
+  Choice:     Draw your weapon and face them down
+  Stat:       strength DC 13
+  next:       shared.side-quests.sq_030
+  failNext:   shared.side-quests.sq_029
+  PROBLEM:    failNext 'shared.side-quests.sq_029' does NOT EXIST in any story file
+
+--- Issue #391 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_023
+  Choice:     Grab the chip and run
+  Stat:       dexterity DC 14
+  next:       shared.side-quests.sq_031
+  failNext:   shared.side-quests.sq_029
+  PROBLEM:    failNext 'shared.side-quests.sq_029' does NOT EXIST in any story file
+
+--- Issue #392 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_027
+  Choice:     Offer fabricated intel about Meridian Corp
+  Stat:       intelligence DC 15
+  next:       shared.side-quests.sq_036
+  failNext:   shared.side-quests.sq_026
+  PROBLEM:    failNext 'shared.side-quests.sq_026' does NOT EXIST in any story file
+
+--- Issue #393 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_040
+  Choice:     Sneak past the guards to the maintenance hatch
+  Stat:       dexterity DC 13
+  next:       shared.side-quests.sq_041
+  failNext:   shared.side-quests.sq_042
+  PROBLEM:    failNext 'shared.side-quests.sq_042' does NOT EXIST in any story file
+
+--- Issue #394 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_040
+  Choice:     Create a distraction to draw the guards away
+  Stat:       intelligence DC 12
+  next:       shared.side-quests.sq_042
+  failNext:   shared.side-quests.sq_041
+  PROBLEM:    failNext 'shared.side-quests.sq_041' does NOT EXIST in any story file
+
+--- Issue #395 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_040
+  Choice:     Fight through the front entrance
+  Stat:       strength DC 15
+  next:       shared.side-quests.sq_043
+  failNext:   shared.side-quests.sq_041
+  PROBLEM:    failNext 'shared.side-quests.sq_041' does NOT EXIST in any story file
+
+--- Issue #396 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_045
+  Choice:     Research Kael Voss's death records
+  Stat:       intelligence DC 11
+  next:       shared.side-quests.sq_047
+  failNext:   shared.prologue.node_001
+  PROBLEM:    Fail path leads to DEAD END at 'shared.prologue.node_017' (no choices, not an ending)
+
+--- Issue #397 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_046
+  Choice:     Access the quarantined stack fragment
+  Stat:       intelligence DC 14
+  next:       shared.side-quests.sq_048
+  failNext:   shared.side-quests.sq_049
+  PROBLEM:    failNext 'shared.side-quests.sq_049' does NOT EXIST in any story file
+
+--- Issue #398 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_068
+  Choice:     "Let's blockade. Rally the residents."
+  Stat:       charisma DC 13
+  next:       shared.side-quests.sq_070
+  failNext:   shared.side-quests.sq_071
+  PROBLEM:    failNext 'shared.side-quests.sq_071' does NOT EXIST in any story file
+
+--- Issue #399 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_068
+  Choice:     "I can forge a counter-order."
+  Stat:       intelligence DC 14
+  next:       shared.side-quests.sq_071
+  failNext:   shared.side-quests.sq_070
+  PROBLEM:    failNext 'shared.side-quests.sq_070' does NOT EXIST in any story file
+
+--- Issue #400 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_077
+  Choice:     Step into the cage and fight Gritz
+  Stat:       strength DC 12
+  next:       shared.side-quests.sq_080
+  failNext:   shared.side-quests.sq_045
+  PROBLEM:    failNext 'shared.side-quests.sq_045' does NOT EXIST in any story file
+
+--- Issue #401 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_077
+  Choice:     Use speed and technique instead of brute force
+  Stat:       dexterity DC 13
+  next:       shared.side-quests.sq_080
+  failNext:   shared.side-quests.sq_045
+  PROBLEM:    failNext 'shared.side-quests.sq_045' does NOT EXIST in any story file
+
+--- Issue #402 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_080
+  Choice:     Fight the second opponent
+  Stat:       strength DC 14
+  next:       shared.side-quests.sq_081
+  failNext:   shared.side-quests.sq_083
+  PROBLEM:    failNext 'shared.side-quests.sq_083' does NOT EXIST in any story file
+
+--- Issue #403 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_081
+  Choice:     Face the champion — Raze
+  Stat:       strength DC 16
+  next:       shared.side-quests.sq_082
+  failNext:   shared.side-quests.sq_083
+  PROBLEM:    failNext 'shared.side-quests.sq_083' does NOT EXIST in any story file
+
+--- Issue #404 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_087
+  Choice:     Ask around the neighborhood first
+  Stat:       charisma DC 11
+  next:       shared.side-quests.sq_089
+  failNext:   shared.side-quests.sq_088
+  PROBLEM:    failNext 'shared.side-quests.sq_088' does NOT EXIST in any story file
+
+--- Issue #405 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_088
+  Choice:     Search for security camera footage of the van
+  Stat:       intelligence DC 13
+  next:       shared.side-quests.sq_091
+  failNext:   shared.side-quests.sq_090
+  PROBLEM:    failNext 'shared.side-quests.sq_090' does NOT EXIST in any story file
+
+--- Issue #406 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_090
+  Choice:     Search for another way into Sublevel 4
+  Stat:       dexterity DC 12
+  next:       shared.side-quests.sq_093
+  failNext:   shared.side-quests.sq_092
+  PROBLEM:    failNext 'shared.side-quests.sq_092' does NOT EXIST in any story file
+
+--- Issue #407 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_092
+  Choice:     Fight through the guards
+  Stat:       strength DC 14
+  next:       shared.side-quests.sq_094
+  failNext:   shared.side-quests.sq_095
+  PROBLEM:    failNext 'shared.side-quests.sq_095' does NOT EXIST in any story file
+
+--- Issue #408 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_092
+  Choice:     Sneak in through the ventilation system
+  Stat:       dexterity DC 14
+  next:       shared.side-quests.sq_095
+  failNext:   shared.side-quests.sq_094
+  PROBLEM:    failNext 'shared.side-quests.sq_094' does NOT EXIST in any story file
+
+--- Issue #409 ---
+  File:       story\shared\side-quests.json
+  Node:       sq_092
+  Choice:     Create a diversion to draw them out
+  Stat:       intelligence DC 13
+  next:       shared.side-quests.sq_096
+  failNext:   shared.side-quests.sq_094
+  PROBLEM:    failNext 'shared.side-quests.sq_094' does NOT EXIST in any story file
+
+================================================================================
+END OF REPORT
+================================================================================

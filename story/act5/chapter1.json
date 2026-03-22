@@ -826,7 +826,7 @@
                         "dc": 18
                     },
                     "next": "act5.chapter1.act5_025",
-                    "failNext": "act5.chapter1.act5_025",
+                    "failNext": "act5.chapter1.act5_021_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1474,7 +1474,7 @@
                         "dc": 16
                     },
                     "next": "act5.chapter1.ending_054",
-                    "failNext": "act5.chapter1.ending_054",
+                    "failNext": "act5.chapter1.act5_041_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2391,6 +2391,80 @@
             "mood": "determination",
             "effect": "sparks",
             "effectIntensity": 0.7
+        },
+        "act5_021_fail": {
+            "id": "act5.chapter1.act5_021_fail",
+            "title": "Ambition Rejected",
+            "location": "the_foundry",
+            "text": [
+                "'Lead? You can't read a room. Step aside.'",
+                "Decision made. Not in your favor."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -10
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept. Support whoever leads.",
+                    "next": "act5.chapter1.act5_025"
+                },
+                {
+                    "text": "File it away. Your time will come.",
+                    "next": "act5.chapter1.act5_025"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_buildup",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "act5_041_fail": {
+            "id": "act5.chapter1.act5_041_fail",
+            "title": "Transition Collapses",
+            "location": "observatory",
+            "text": [
+                "'We didn't fight to replace one compiler with another.'",
+                "Vision dies in committee."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "compiler_rejected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the decision.",
+                    "next": "act5.chapter1.ending_054"
+                },
+                {
+                    "text": "Serve in lesser capacity.",
+                    "next": "act5.chapter1.ending_054"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_circuit_saints",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
         }
     }
 }

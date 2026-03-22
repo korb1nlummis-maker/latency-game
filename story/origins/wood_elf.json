@@ -575,7 +575,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_010",
+                    "failNext": "origins.wood_elf.welf_f016",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -938,7 +938,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_024",
+                    "failNext": "origins.wood_elf.welf_f025",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1036,7 +1036,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_031",
+                    "failNext": "origins.wood_elf.welf_f027",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1237,7 +1237,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_022",
+                    "failNext": "origins.wood_elf.welf_f032",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1330,7 +1330,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_037",
+                    "failNext": "origins.wood_elf.welf_f034",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1661,7 +1661,7 @@
                         "stat": "strength",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_047",
+                    "failNext": "origins.wood_elf.welf_f042",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1733,7 +1733,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_048",
+                    "failNext": "origins.wood_elf.welf_f043",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1809,7 +1809,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_049",
+                    "failNext": "origins.wood_elf.welf_f044",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1942,7 +1942,7 @@
                         "stat": "constitution",
                         "dc": 11
                     },
-                    "failNext": "origins.wood_elf.welf_050",
+                    "failNext": "origins.wood_elf.welf_f047",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2012,7 +2012,7 @@
                         "stat": "charisma",
                         "dc": 11
                     },
-                    "failNext": "origins.wood_elf.welf_051",
+                    "failNext": "origins.wood_elf.welf_f048",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2090,7 +2090,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.wood_elf.welf_052",
+                    "failNext": "origins.wood_elf.welf_f049",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2414,7 +2414,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_055",
+                    "failNext": "origins.wood_elf.welf_f056",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2589,7 +2589,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_059",
+                    "failNext": "origins.wood_elf.welf_f060",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2728,7 +2728,7 @@
                         "stat": "charisma",
                         "dc": 11
                     },
-                    "failNext": "origins.wood_elf.welf_067",
+                    "failNext": "origins.wood_elf.welf_f063",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2839,7 +2839,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_066",
+                    "failNext": "origins.wood_elf.welf_f065",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2937,7 +2937,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_066",
+                    "failNext": "origins.wood_elf.welf_f067",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3003,7 +3003,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.wood_elf.welf_071",
+                    "failNext": "origins.wood_elf.welf_f068",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3073,7 +3073,7 @@
                         "stat": "charisma",
                         "dc": 11
                     },
-                    "failNext": "origins.wood_elf.welf_071",
+                    "failNext": "origins.wood_elf.welf_f069",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3139,7 +3139,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_071",
+                    "failNext": "origins.wood_elf.welf_f070",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3252,7 +3252,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.wood_elf.welf_076",
+                    "failNext": "origins.wood_elf.welf_f072",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3323,7 +3323,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_076",
+                    "failNext": "origins.wood_elf.welf_f073",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3398,7 +3398,7 @@
                         "stat": "tech",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_076",
+                    "failNext": "origins.wood_elf.welf_f074",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3474,7 +3474,7 @@
                         "stat": "constitution",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_076",
+                    "failNext": "origins.wood_elf.welf_f075",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3539,7 +3539,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_077",
+                    "failNext": "origins.wood_elf.welf_f076",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3740,7 +3740,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_077",
+                    "failNext": "origins.wood_elf.welf_f081",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3837,7 +3837,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_078",
+                    "failNext": "origins.wood_elf.welf_f083",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3967,7 +3967,7 @@
                         "stat": "constitution",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_078",
+                    "failNext": "origins.wood_elf.welf_f086",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4028,7 +4028,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_078",
+                    "failNext": "origins.wood_elf.welf_f087",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4118,7 +4118,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_079",
+                    "failNext": "origins.wood_elf.welf_f089",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4212,7 +4212,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_079",
+                    "failNext": "origins.wood_elf.welf_f091",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4334,7 +4334,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.wood_elf.welf_079",
+                    "failNext": "origins.wood_elf.welf_f094",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4635,6 +4635,1197 @@
             "mood": "red",
             "effect": "embers",
             "effectIntensity": 0.8
+        },
+        "welf_f016": {
+            "id": "origins.wood_elf.welf_f016",
+            "title": "Lost in the Whisper",
+            "location": "lower_slums",
+            "text": [
+                "Sylvara's teachings swirl through your mind but the words refuse to settle. The old tongue tangles on your lips, the meditation postures feel wrong in this concrete box. You reach for the forest's rhythm and find only static.",
+                "A sharp headache blooms behind your eyes. The Hollowing surges — that awful emptiness where the root-connection used to live. You stagger against the wall, gasping.",
+                "When the moment passes, you feel diminished. The old ways are slipping further away with each failed attempt to reclaim them."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_sylvara_wisdom",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Push through the pain. The forest isn't gone — it's inside you.",
+                    "next": "origins.wood_elf.welf_010"
+                },
+                {
+                    "text": "Abandon the meditation. Some doors close forever.",
+                    "next": "origins.wood_elf.welf_010"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "rain",
+            "effectIntensity": 0.6
+        },
+        "welf_f025": {
+            "id": "origins.wood_elf.welf_f025",
+            "title": "Spooked in the Dark",
+            "location": "lower_slums",
+            "text": [
+                "You try to move like the forest scouts of old — silent, deliberate, one with the shadows. But your foot catches a loose pipe and sends it clattering across the concrete. The sound echoes through the empty corridors like a gunshot.",
+                "Somewhere ahead, lights flicker on. Voices call out. Your cover is blown before you even reached the perimeter.",
+                "You press yourself flat against the wall, heart hammering, as a patrol drone sweeps past. The old instincts are there, but this isn't the forest. The city doesn't forgive clumsiness."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_perimeter_scout",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Wait for the patrol to pass, then try again carefully.",
+                    "next": "origins.wood_elf.welf_024"
+                },
+                {
+                    "text": "Retreat and find another approach entirely.",
+                    "next": "origins.wood_elf.welf_024"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "welf_f027": {
+            "id": "origins.wood_elf.welf_f027",
+            "title": "Words That Fall Flat",
+            "location": "lower_slums",
+            "text": [
+                "You say her name but it comes out wrong — too eager, too desperate. The warmth you intended sounds like need, and she flinches. The tension thickens instead of dissolving.",
+                "An awkward silence stretches between you. She crosses her arms, and you realize you've pushed when you should have waited. Not every connection can be forced, even between kin.",
+                "The moment to disarm has passed. Now you'll have to earn her trust the hard way."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_charm_attempt",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Apologize and give her space. Patience is an elven virtue.",
+                    "next": "origins.wood_elf.welf_031"
+                },
+                {
+                    "text": "Press on despite the awkwardness. Time is short.",
+                    "next": "origins.wood_elf.welf_031"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "welf_f032": {
+            "id": "origins.wood_elf.welf_f032",
+            "title": "A Clumsy Descent",
+            "location": "lower_slums",
+            "text": [
+                "The stairs are slick with condensation and your elven grace fails you completely. Your foot slips on the third step and you tumble down the remaining flight, crashing into the landing with a sound that reverberates through the entire stairwell.",
+                "Pain lances through your hip and elbow. Worse, you hear doors opening above and below — your noisy descent has attracted attention from every floor.",
+                "You haul yourself upright, bruised and limping. In the forest canopy, a fall like this would have been cushioned by a thousand yielding branches. Here, there's only concrete and consequences."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.fell_on_stairs",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Limp onward before anyone investigates the noise.",
+                    "next": "origins.wood_elf.welf_022"
+                },
+                {
+                    "text": "Hide in the shadows until the curious residents give up.",
+                    "next": "origins.wood_elf.welf_022"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.4
+        },
+        "welf_f034": {
+            "id": "origins.wood_elf.welf_f034",
+            "title": "Questions That Reveal Nothing",
+            "location": "lower_slums",
+            "text": [
+                "You ask questions but they scatter like startled birds — too broad, too obvious. Your informant's eyes narrow with suspicion. You're probing without direction, and they can tell.",
+                "The conversation dries up. Important details slip through your fingers because you didn't know which threads to pull. In the forest, reading signs was instinct. Here, information is guarded like water in a drought.",
+                "You leave the exchange knowing less than when you started, and having burned a contact in the process."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_investigation",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept the loss and work with what you have.",
+                    "next": "origins.wood_elf.welf_037"
+                },
+                {
+                    "text": "Try a different source — there's always another way.",
+                    "next": "origins.wood_elf.welf_037"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "welf_f042": {
+            "id": "origins.wood_elf.welf_f042",
+            "title": "The Guardian Falters",
+            "location": "lower_slums",
+            "text": [
+                "You set your feet and push, calling on the old guardian strength. But your muscles — atrophied by years of refugee camp food and cramped quarters — betray you. The weight overwhelms you and you buckle, dropping to one knee.",
+                "Something shifts in the way others look at you. The guardian's path demands strength you no longer possess. The forest made you strong; the city has hollowed you out.",
+                "Your arms tremble as you rise, ashamed. A wood elf guardian who cannot hold the line is no guardian at all."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_guardian_test",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Train harder. The strength will return.",
+                    "next": "origins.wood_elf.welf_047"
+                },
+                {
+                    "text": "Perhaps the guardian's path isn't your destiny anymore.",
+                    "next": "origins.wood_elf.welf_047"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.6
+        },
+        "welf_f043": {
+            "id": "origins.wood_elf.welf_f043",
+            "title": "Voice Without Resonance",
+            "location": "lower_slums",
+            "text": [
+                "You speak, but the words land like dead leaves on stone. The conviction you intended comes across as desperation. Your audience shifts uncomfortably, and the connection you tried to forge dissolves before it solidifies.",
+                "In the forest, your voice carried through the canopy and the trees themselves seemed to listen. Here, surrounded by steel and noise, your voice is just another sound in the cacophony.",
+                "The voice path demands a charm that bridges worlds. Today, your words couldn't even bridge the gap between two people."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_voice_path",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Practice. The old songs weren't mastered in a day.",
+                    "next": "origins.wood_elf.welf_048"
+                },
+                {
+                    "text": "Listen more, speak less. Wisdom begins with silence.",
+                    "next": "origins.wood_elf.welf_048"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "welf_f044": {
+            "id": "origins.wood_elf.welf_f044",
+            "title": "Shadows Betray You",
+            "location": "lower_slums",
+            "text": [
+                "You step into the shadow and it betrays you immediately. A security light catches the edge of your silhouette, casting it long and unmistakable across the wall. An alarm chirps — not loud, but enough.",
+                "In the Verdant Reaches, shadows were allies. They bent around you, welcomed you into their depths. These urban shadows are thin and treacherous, broken by a thousand artificial lights.",
+                "You pull back into cover, your heart racing. The shadow path demands perfect stealth, and you just announced your presence to anyone watching the feeds."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_shadow_path",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Learn from the mistake. Urban shadows have different rules.",
+                    "next": "origins.wood_elf.welf_049"
+                },
+                {
+                    "text": "Wait for the alert to clear, then try a different route.",
+                    "next": "origins.wood_elf.welf_049"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "welf_f047": {
+            "id": "origins.wood_elf.welf_f047",
+            "title": "Body at Its Limit",
+            "location": "lower_slums",
+            "text": [
+                "The training pushes you past what your body can sustain. Your lungs burn, your vision blurs, and your legs give out beneath you. You collapse onto the training mat, chest heaving, tasting blood in the back of your throat.",
+                "The forest endured worse — yes. But the forest had ten thousand years of root networks to draw strength from. You have only this failing body and the ghost of what you used to be.",
+                "A trainer pulls you aside and suggests you rest. The word stings like a slap."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_endurance_training",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rest and recover. Pushing beyond your limits helps no one.",
+                    "next": "origins.wood_elf.welf_050"
+                },
+                {
+                    "text": "Get back up. Pain is temporary; failure is not.",
+                    "next": "origins.wood_elf.welf_050"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.5
+        },
+        "welf_f048": {
+            "id": "origins.wood_elf.welf_f048",
+            "title": "Connections Unraveling",
+            "location": "lower_slums",
+            "text": [
+                "You reach out to build bridges but the connections slip through your fingers like water. People smile politely and then forget you exist. Your attempts at networking feel forced, transparent, desperate.",
+                "Time is running out and your contact list remains thin. The easy rapport that came naturally among your own people doesn't translate here. Humans are guarded creatures, quick to judge and slow to trust an elf with nothing to offer.",
+                "Another wasted evening. Another door that closed before you could step through it."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -10
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_networking",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Quality over quantity. Find one real ally.",
+                    "next": "origins.wood_elf.welf_051"
+                },
+                {
+                    "text": "Change your approach entirely. What worked before won't work here.",
+                    "next": "origins.wood_elf.welf_051"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.6
+        },
+        "welf_f049": {
+            "id": "origins.wood_elf.welf_f049",
+            "title": "Trace Left Behind",
+            "location": "lower_slums",
+            "text": [
+                "You run the course but your foot catches a sensor wire you didn't see. The alarm doesn't sound — this is practice — but the instructor marks a red X on the board. Trace detected. Mission compromised.",
+                "A perfect shadow run requires leaving nothing behind — no scent, no sound, no displaced air. You left a footprint, a brushed wall, a faint heat signature. Amateur mistakes that would cost lives in the field.",
+                "The other trainees glance at you with pity, which is worse than contempt."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_shadow_run",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Study the sensor grid. Learn its blind spots.",
+                    "next": "origins.wood_elf.welf_052"
+                },
+                {
+                    "text": "Run it again immediately. Muscle memory requires repetition.",
+                    "next": "origins.wood_elf.welf_052"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "welf_f056": {
+            "id": "origins.wood_elf.welf_f056",
+            "title": "A Tangled Web",
+            "location": "lower_slums",
+            "text": [
+                "You try to grow the network but every new connection creates two new problems. Unreliable contacts feed you bad information. A node you trusted turns out to be compromised. The whole careful structure threatens to collapse.",
+                "Precision requires patience, and you've been rushing. In the forest, the Whisper Web grew over centuries. You're trying to build something similar in weeks, and the shortcuts are showing.",
+                "Three contacts go dark in a single day. Your network is smaller now than when you started."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -12
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_network_growth",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Cut the compromised nodes and rebuild carefully.",
+                    "next": "origins.wood_elf.welf_055"
+                },
+                {
+                    "text": "Focus on quality. One trustworthy contact is worth ten unreliable ones.",
+                    "next": "origins.wood_elf.welf_055"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "welf_f060": {
+            "id": "origins.wood_elf.welf_f060",
+            "title": "Passion Without Purpose",
+            "location": "lower_slums",
+            "text": [
+                "You pour your heart into the report but it comes out as raw emotion without structure. Maelis listens with a furrowed brow, trying to extract useful intelligence from your flood of feelings.",
+                "'I can feel your urgency,' she says carefully, 'but I need facts, not feelings. Coordinates. Numbers. Timelines.' The gentle rebuke stings because she's right.",
+                "Your passion is real but unfocused. The urgency you feel hasn't translated into the kind of precise communication that moves people to action."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_report_to_maelis",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Reorganize your thoughts and try again with structure.",
+                    "next": "origins.wood_elf.welf_059"
+                },
+                {
+                    "text": "Ask Maelis what format she needs. Learn from the mistake.",
+                    "next": "origins.wood_elf.welf_059"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.4
+        },
+        "welf_f063": {
+            "id": "origins.wood_elf.welf_f063",
+            "title": "Diplomacy Rejected",
+            "location": "lower_slums",
+            "text": [
+                "Your diplomatic overture falls on deaf ears. The faction representatives exchange glances — not hostile, but dismissive. An elf trying to broker peace between human organizations? The optics alone undermine your message.",
+                "One representative leans back in their chair. 'We appreciate the sentiment,' they say, in a tone that conveys the opposite. 'But this is a matter between us.' The door, metaphorical and literal, closes.",
+                "Force might have worked where diplomacy failed, but that's not who you are. The alliance remains fractured, and you've used up goodwill you can't easily replace."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_alliance_diplomacy",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find a different approach to bridge the divide.",
+                    "next": "origins.wood_elf.welf_067"
+                },
+                {
+                    "text": "Accept the setback and focus on what you can control.",
+                    "next": "origins.wood_elf.welf_067"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.6
+        },
+        "welf_f065": {
+            "id": "origins.wood_elf.welf_f065",
+            "title": "Deaf to the Earth",
+            "location": "lower_slums",
+            "text": [
+                "You kneel and press your palms to the soil, reaching for the old connection. But the earth here is dead — poisoned by decades of industrial runoff, compacted by machinery, stripped of every living thing that once gave it voice.",
+                "The silence is deafening. Where there should be whispers of root and mycelium, there is only the dull throb of buried pipes and the distant rumble of underground transit. The soil holds no memory here. Or if it does, you can no longer hear it.",
+                "You rise with dirt on your knees and nothing in your heart but the cold confirmation that this land has been murdered."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_soil_reading",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "There must be living soil somewhere. Keep searching.",
+                    "next": "origins.wood_elf.welf_066"
+                },
+                {
+                    "text": "Trust your other senses. The earth isn't the only source of truth.",
+                    "next": "origins.wood_elf.welf_066"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.7
+        },
+        "welf_f067": {
+            "id": "origins.wood_elf.welf_f067",
+            "title": "Strategy Undone",
+            "location": "lower_slums",
+            "text": [
+                "Your preparations unravel as you discover a critical flaw in your plan — a variable you didn't account for, a connection you assumed was solid that wasn't. The careful strategy collapses like a house of cards.",
+                "Hours of research wasted. You stare at your notes and see the gap now, obvious in hindsight. Intelligence work requires a mind for systems, and yours keeps defaulting to organic patterns that don't apply here.",
+                "You'll have to start over, and time is a luxury you don't have."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -7
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_strategic_prep",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rebuild the plan from scratch with better intel.",
+                    "next": "origins.wood_elf.welf_066"
+                },
+                {
+                    "text": "Improvise. Sometimes the forest teaches that plans are overrated.",
+                    "next": "origins.wood_elf.welf_066"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.4
+        },
+        "welf_f068": {
+            "id": "origins.wood_elf.welf_f068",
+            "title": "The Shield Breaks",
+            "location": "lower_slums",
+            "text": [
+                "You throw yourself in front of the garden but the force that meets you is overwhelming. Industrial machinery doesn't care about courage or conviction. You're hurled aside like a leaf in a storm, slamming into the fence with enough force to crack a rib.",
+                "The sacred plants — the ones you've been nurturing for months — are trampled beneath tracks and boots. You watch from the ground, gasping, as green things die under grey machines.",
+                "Your body failed the garden. The last green things you were protecting are gone."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 7
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_garden_defense",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Seeds survive. You can plant again.",
+                    "next": "origins.wood_elf.welf_071"
+                },
+                {
+                    "text": "Channel the rage. This will not happen again.",
+                    "next": "origins.wood_elf.welf_071"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.8
+        },
+        "welf_f069": {
+            "id": "origins.wood_elf.welf_f069",
+            "title": "Truth Falls on Deaf Ears",
+            "location": "lower_slums",
+            "text": [
+                "You stand before the crowd and speak the truth — every ugly detail, every damning fact. But your delivery crumbles under the weight of your own emotion. Your voice cracks. Your hands shake. The audience sees an angry elf, not a credible witness.",
+                "The opposition's PR team is already spinning your outburst as 'extremist rhetoric from displaced populations.' By morning, your truth will be buried under their narrative.",
+                "Exposure without credibility is just noise. And noise is easy to ignore."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -10
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_public_exposure",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Regroup. Find someone with more credibility to deliver the message.",
+                    "next": "origins.wood_elf.welf_071"
+                },
+                {
+                    "text": "Document everything. The truth will surface eventually.",
+                    "next": "origins.wood_elf.welf_071"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "welf_f070": {
+            "id": "origins.wood_elf.welf_f070",
+            "title": "Seeds in Poisoned Ground",
+            "location": "lower_slums",
+            "text": [
+                "You scatter the seeds with care, reading the soil and the light as Sylvara taught you. But you misjudge the contamination levels. Within hours, the first sprouts blacken and curl, poisoned by heavy metals you couldn't detect by touch alone.",
+                "Precious seeds — irreplaceable remnants of the Verdant Reaches — wasted in dead earth. Each one represented a species that may never grow again. The loss is more than agricultural. It's ancestral.",
+                "You gather what remains with trembling hands. Not all soil is safe, and you should have tested before planting."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.wasted_seeds",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Test the soil properly next time. Science and nature aren't enemies.",
+                    "next": "origins.wood_elf.welf_071"
+                },
+                {
+                    "text": "Find truly clean ground, no matter how far you have to search.",
+                    "next": "origins.wood_elf.welf_071"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.7
+        },
+        "welf_f072": {
+            "id": "origins.wood_elf.welf_f072",
+            "title": "The Line Does Not Hold",
+            "location": "lower_slums",
+            "text": [
+                "You plant your feet as the last thornguard, drawing on every ounce of ancestral strength. But the assault comes from three directions at once, and you are one elf where there should be dozens. They overwhelm you through sheer numbers.",
+                "You take a blow to the shoulder, then the ribs, then the knee. You go down hard, tasting blood and dirt. The line is broken. The position is lost.",
+                "As they drag you clear of the wreckage, you think of the thornguards of old — how they stood against armies and held. But they stood together. You stood alone."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.thornguard_fallen",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Survive. Regroup. The fight isn't over.",
+                    "next": "origins.wood_elf.welf_076"
+                },
+                {
+                    "text": "Accept the loss. Some battles are lessons, not victories.",
+                    "next": "origins.wood_elf.welf_076"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.8
+        },
+        "welf_f073": {
+            "id": "origins.wood_elf.welf_f073",
+            "title": "Retreat Into Chaos",
+            "location": "lower_slums",
+            "text": [
+                "Your retreat plan looked clean on paper but reality is messy. The exit route you mapped is blocked. The fallback position is compromised. People are panicking, ignoring your instructions, scattering in every direction.",
+                "You save some but lose track of others. In the confusion, supplies are abandoned, valuable equipment left behind. The retreat becomes a rout, and when you finally reach safety, the headcount is incomplete.",
+                "You planned for the best case. A good strategist plans for the worst."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -15
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_retreat_plan",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Account for everyone. No one gets left behind.",
+                    "next": "origins.wood_elf.welf_076"
+                },
+                {
+                    "text": "Learn from the failure. Next plan will have three backup routes.",
+                    "next": "origins.wood_elf.welf_076"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "welf_f074": {
+            "id": "origins.wood_elf.welf_f074",
+            "title": "Foxfire Fizzles",
+            "location": "lower_slums",
+            "text": [
+                "You invoke the foxfire — the ancient bioluminescent defense of the deep forest. But the technique requires living wood as a catalyst, and the synthetic materials around you reject the process. A feeble green glow sputters from your fingertips and dies.",
+                "The old ways still have power, but only when the old materials are present. Here in the concrete jungle, the foxfire finds nothing to feed on. The technique that once lit entire groves and confused invading armies produces nothing but a sad flicker.",
+                "You're left exposed, your gambit wasted, with nothing to show for it but tingling fingers and a deeper sense of displacement."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.foxfire_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Adapt the old techniques to new materials.",
+                    "next": "origins.wood_elf.welf_076"
+                },
+                {
+                    "text": "Fall back to conventional methods. Survival first, tradition second.",
+                    "next": "origins.wood_elf.welf_076"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "welf_f075": {
+            "id": "origins.wood_elf.welf_f075",
+            "title": "The Tunnel Holds",
+            "location": "lower_slums",
+            "text": [
+                "You try to collapse the passage behind you but your body isn't strong enough. The support beams are industrial steel, not the soft wood of forest tunnels. You heave and strain until your vision goes white with effort, but the structure barely groans.",
+                "Worse, the noise has given away your position. The sound of pursuit grows louder behind you. The way you came is still open, and now they know exactly which tunnel you took.",
+                "No turning back was the plan, but the tunnel didn't cooperate. You'll have to outrun what follows instead."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_tunnel_collapse",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Run. Speed is your only advantage now.",
+                    "next": "origins.wood_elf.welf_076"
+                },
+                {
+                    "text": "Find a hiding spot in the tunnel network. Let them pass.",
+                    "next": "origins.wood_elf.welf_076"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.5
+        },
+        "welf_f076": {
+            "id": "origins.wood_elf.welf_f076",
+            "title": "The Roots Are Silent",
+            "location": "lower_slums",
+            "text": [
+                "You kneel and press your ear to the ground, reaching for the voice of roots that once guided your people through the deepest forests. But the earth here speaks only in the language of buried cables and water mains. The roots — if any survive — are silent.",
+                "This is not the place. Or perhaps it is, and you've lost the ability to hear. Either way, the certainty you sought is absent. You're choosing blind, guided by hope rather than knowledge.",
+                "The Hollowing aches behind your sternum. Another connection lost."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.roots_silent",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Trust your gut instead. Instinct is a kind of wisdom.",
+                    "next": "origins.wood_elf.welf_077"
+                },
+                {
+                    "text": "Keep searching. The connection must be somewhere.",
+                    "next": "origins.wood_elf.welf_077"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.7
+        },
+        "welf_f081": {
+            "id": "origins.wood_elf.welf_f081",
+            "title": "Omen Misread",
+            "location": "lower_slums",
+            "text": [
+                "The fox-spirit dawn — that rare golden light that once heralded change in the Verdant Reaches — appears above the skyline. You try to read it as your grandmother taught you, but the city's light pollution fractures the omen into meaningless noise.",
+                "Is it a warning? A blessing? A natural phenomenon stripped of all spiritual meaning by five million watts of neon? You stare until your eyes water, and the answer doesn't come.",
+                "The omens were for the forest. The city has no signs you know how to read."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.misread_omen",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Make your own meaning. The old signs were always personal.",
+                    "next": "origins.wood_elf.welf_077"
+                },
+                {
+                    "text": "Ignore the omen. Act on facts, not signs.",
+                    "next": "origins.wood_elf.welf_077"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "welf_f083": {
+            "id": "origins.wood_elf.welf_f083",
+            "title": "Authority Denied",
+            "location": "lower_slums",
+            "text": [
+                "You speak the name with all the authority you can muster, but it rings hollow. The people here don't know your lineage, don't recognize the old titles, don't understand what it means to claim a place by naming it. To them, you're just another refugee with delusions of importance.",
+                "The dismissal is casual and complete. A shrug, a turned back, a conversation that continues as if you hadn't spoken. Your claim evaporates like morning dew on hot concrete.",
+                "In the forest, names had power. Here, power comes from credits and connections, and you have neither."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.authority_rejected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Earn your place the hard way. Actions speak louder than names.",
+                    "next": "origins.wood_elf.welf_078"
+                },
+                {
+                    "text": "Find those who still remember what elven names mean.",
+                    "next": "origins.wood_elf.welf_078"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "welf_f086": {
+            "id": "origins.wood_elf.welf_f086",
+            "title": "The Medicine Rejects You",
+            "location": "lower_slums",
+            "text": [
+                "The medicine — brewed from old forest recipes with whatever substitutes you could find — hits your stomach like acid. Your body rejects it violently, and you spend the next hour doubled over, purging everything you've eaten.",
+                "The old forest recipes assumed old forest ingredients. The synthetic substitutes you used have different chemical profiles, and your body knows the difference even if your mind doesn't.",
+                "When the nausea finally passes, you're weaker than before. The medicine that was supposed to strengthen you has left you depleted and shaking."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.medicine_rejected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rest and recover. Your body needs time, not alchemy.",
+                    "next": "origins.wood_elf.welf_078"
+                },
+                {
+                    "text": "Consult a human chemist. Science might improve the recipe.",
+                    "next": "origins.wood_elf.welf_078"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "welf_f087": {
+            "id": "origins.wood_elf.welf_f087",
+            "title": "The Map Blurs",
+            "location": "lower_slums",
+            "text": [
+                "You study the map until the lines swim before your eyes, but the information won't stick. The passages twist and branch in patterns that defy the organic logic your mind is trained for. These tunnels weren't grown — they were carved by machines with no regard for natural flow.",
+                "After an hour, you can barely remember the entrance points, let alone the deeper passages. Every root, every passage — the task is beyond you. Your spatial memory, honed in living forests, fails in this dead labyrinth of concrete and steel.",
+                "You fold the map with frustration. You'll have to navigate by landmark and instinct instead of memorized routes."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_memorize_map",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Take the map with you. No shame in using tools.",
+                    "next": "origins.wood_elf.welf_078"
+                },
+                {
+                    "text": "Memorize just the critical junctions. Good enough is good enough.",
+                    "next": "origins.wood_elf.welf_078"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.4
+        },
+        "welf_f089": {
+            "id": "origins.wood_elf.welf_f089",
+            "title": "Centuries Weigh Heavy",
+            "location": "lower_slums",
+            "text": [
+                "You try to embrace the weight of ages, to find strength in the long elven perspective. But tonight, centuries don't feel like wisdom. They feel like an unbearable accumulation of loss — every face you've outlived, every forest you've watched fall, every promise the world broke.",
+                "The weight doesn't enlighten you. It crushes you. You sit in the dark, paralyzed by the sheer volume of grief that an elven lifespan accumulates. Humans have the mercy of forgetting. You remember everything.",
+                "When you finally move again, the night has passed and you've accomplished nothing but drowning in the past."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.overwhelmed_by_centuries",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Live in the present. The past is a country you can't return to.",
+                    "next": "origins.wood_elf.welf_079"
+                },
+                {
+                    "text": "Let the grief pass through you. Feel it, then release it.",
+                    "next": "origins.wood_elf.welf_079"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.8
+        },
+        "welf_f091": {
+            "id": "origins.wood_elf.welf_f091",
+            "title": "The Market Stall Empties",
+            "location": "lower_slums",
+            "text": [
+                "An elf's charm, it turns out, doesn't translate well to street commerce. Your attempts at warm persuasion come across as condescending. Two customers walk away muttering about 'tree-hugger scams.' A third haggles you down to a price that doesn't cover your costs.",
+                "By mid-afternoon, you've lost more credits than you've earned. The stall sits nearly empty — not because you sold everything, but because you gave half of it away trying to build goodwill that never materialized.",
+                "Market work requires a different kind of charm. The forest-born grace that puts animals at ease only makes urban shoppers suspicious."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -15
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.market_stall_failure",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Watch how the human vendors work. Learn their rhythms.",
+                    "next": "origins.wood_elf.welf_079"
+                },
+                {
+                    "text": "Find a different way to earn. The market isn't your arena.",
+                    "next": "origins.wood_elf.welf_079"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.4
+        },
+        "welf_f094": {
+            "id": "origins.wood_elf.welf_f094",
+            "title": "The Burned District Overwhelms",
+            "location": "lower_slums",
+            "text": [
+                "You walk through the burned district trying to read its lessons, but the devastation overwhelms your composure. The charred foundations, the melted infrastructure, the chemical smell that still lingers years after the fire — it mirrors the burning of the Verdant Reaches too closely.",
+                "The reminder doesn't strengthen you. It breaks something open. You find yourself weeping in an empty lot, surrounded by ashes that could be forest or city — it doesn't matter. Destruction smells the same everywhere.",
+                "When you pull yourself together, you've lost hours and gained nothing but a deeper understanding of your own fragility."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.burned_district_breakdown",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Use the pain as fuel. Never forget means never stop fighting.",
+                    "next": "origins.wood_elf.welf_079"
+                },
+                {
+                    "text": "Some wounds need tending, not testing. Walk away.",
+                    "next": "origins.wood_elf.welf_079"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "embers",
+            "effectIntensity": 0.7
         }
     }
 }

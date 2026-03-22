@@ -841,7 +841,7 @@
                         "dc": 13
                     },
                     "next": "act1.chapter4.climax_036",
-                    "failNext": "act1.chapter4.climax_036",
+                    "failNext": "act1.chapter4.climax_016_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1137,7 +1137,7 @@
                         "dc": 11
                     },
                     "next": "act1.chapter4.climax_023",
-                    "failNext": "act1.chapter4.climax_023",
+                    "failNext": "act1.chapter4.climax_022_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1359,7 +1359,16 @@
                 "onFlee": "act1.chapter4.climax_036",
                 "onLose": "act1.chapter4.ending_act1_002"
             },
-            "choices": [],
+            "choices": [
+                {
+                    "text": "Press on.",
+                    "next": "act1.chapter4.climax_026"
+                },
+                {
+                    "text": "Assess the situation.",
+                    "next": "act1.chapter4.climax_025"
+                }
+            ],
             "ascii": null,
             "music": "combat_active",
             "isEnding": false,
@@ -1400,7 +1409,16 @@
                 "onFlee": "act1.chapter4.climax_036",
                 "onLose": "act1.chapter4.ending_act1_002"
             },
-            "choices": [],
+            "choices": [
+                {
+                    "text": "Try another approach.",
+                    "next": "act1.chapter4.climax_024"
+                },
+                {
+                    "text": "Alternate route.",
+                    "next": "act1.chapter4.climax_025"
+                }
+            ],
             "ascii": null,
             "music": "combat_active",
             "isEnding": false,
@@ -1762,7 +1780,7 @@
                         "dc": 12
                     },
                     "next": "act1.chapter4.climax_032",
-                    "failNext": "act1.chapter4.climax_032",
+                    "failNext": "act1.chapter4.climax_031_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1885,7 +1903,16 @@
                 "onFlee": "act1.chapter4.climax_036",
                 "onLose": "act1.chapter4.ending_act1_008"
             },
-            "choices": [],
+            "choices": [
+                {
+                    "text": "Try differently.",
+                    "next": "act1.chapter4.climax_032"
+                },
+                {
+                    "text": "Retreat and reassess.",
+                    "next": "act1.chapter4.climax_031"
+                }
+            ],
             "ascii": null,
             "music": "combat_active",
             "isEnding": false,
@@ -1969,7 +1996,7 @@
                         "dc": 12
                     },
                     "next": "act1.chapter4.climax_035",
-                    "failNext": "act1.chapter4.climax_035",
+                    "failNext": "act1.chapter4.climax_034_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2154,7 +2181,16 @@
                 "onFlee": "act1.chapter4.climax_040",
                 "onLose": "act1.chapter4.ending_act1_001"
             },
-            "choices": [],
+            "choices": [
+                {
+                    "text": "Regroup and push forward.",
+                    "next": "act1.chapter4.climax_036"
+                },
+                {
+                    "text": "Fall back.",
+                    "next": "act1.chapter4.climax_031"
+                }
+            ],
             "ascii": null,
             "music": "combat_active",
             "isEnding": false,
@@ -2294,7 +2330,16 @@
                 "onFlee": "act1.chapter4.ending_act1_009",
                 "onLose": "act1.chapter4.ending_act1_005"
             },
-            "choices": [],
+            "choices": [
+                {
+                    "text": "Different approach for Kira.",
+                    "next": "act1.chapter4.climax_039"
+                },
+                {
+                    "text": "Move forward.",
+                    "next": "act1.chapter4.climax_041"
+                }
+            ],
             "ascii": null,
             "music": "combat_active",
             "isEnding": false,
@@ -3042,6 +3087,154 @@
             "mood": "eerie",
             "effect": "void",
             "effectIntensity": 0.9
+        },
+        "climax_016_fail": {
+            "id": "act1.chapter4.climax_016_fail",
+            "title": "Kira Panics",
+            "location": "transit_hub",
+            "text": [
+                "Words too tense. Kira freezes in terror.",
+                "Your calm shattered against your own fear."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "kira_panicked",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Pick Kira up.",
+                    "next": "act1.chapter4.climax_036"
+                },
+                {
+                    "text": "Find someone to watch her.",
+                    "next": "act1.chapter4.climax_036"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_high",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "climax_022_fail": {
+            "id": "act1.chapter4.climax_022_fail",
+            "title": "Schematics Indecipherable",
+            "location": "transit_hub",
+            "text": [
+                "Military encryption. Tools barely scratch surface.",
+                "Turrets remain a mystery. Time wasted."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "schematics_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go in blind.",
+                    "next": "act1.chapter4.climax_023"
+                },
+                {
+                    "text": "Ask if anyone else can read these.",
+                    "next": "act1.chapter4.climax_023"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_buildup",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "climax_031_fail": {
+            "id": "act1.chapter4.climax_031_fail",
+            "title": "Architecture Beyond Comprehension",
+            "location": "observatory",
+            "text": [
+                "Contradictory readings. Passages exist and don't.",
+                "No closer to understanding."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "tunnel_unknown",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Navigate by instinct.",
+                    "next": "act1.chapter4.climax_032"
+                },
+                {
+                    "text": "Proceed cautiously.",
+                    "next": "act1.chapter4.climax_032"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_digital",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "climax_034_fail": {
+            "id": "act1.chapter4.climax_034_fail",
+            "title": "Luminara Sees Through You",
+            "location": "transit_hub",
+            "text": [
+                "She catches the gaps. 'You're holding back.'",
+                "Negotiation slips from your grasp."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "luminara_distrusts",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Come clean.",
+                    "next": "act1.chapter4.climax_035"
+                },
+                {
+                    "text": "Double down.",
+                    "next": "act1.chapter4.climax_035"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_stealth",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
         }
     }
 }

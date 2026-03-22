@@ -405,7 +405,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_012",
+                    "failNext": "origins.orc.orc_010_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -897,7 +897,7 @@
                         "stat": "wisdom",
                         "dc": 11
                     },
-                    "failNext": "origins.orc.orc_026",
+                    "failNext": "origins.orc.orc_022_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1002,7 +1002,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.orc.orc_027",
+                    "failNext": "origins.orc.orc_024_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1141,7 +1141,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_031",
+                    "failNext": "origins.orc.orc_027_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1322,7 +1322,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_036",
+                    "failNext": "origins.orc.orc_031_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1431,7 +1431,7 @@
                         "stat": "constitution",
                         "dc": 12
                     },
-                    "failNext": "origins.orc.orc_040",
+                    "failNext": "origins.orc.orc_033_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1609,7 +1609,7 @@
                         "stat": "strength",
                         "dc": 12
                     },
-                    "failNext": "origins.orc.orc_039",
+                    "failNext": "origins.orc.orc_037_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1865,7 +1865,7 @@
                         "stat": "charisma",
                         "dc": 11
                     },
-                    "failNext": "origins.orc.orc_047",
+                    "failNext": "origins.orc.orc_043_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2009,7 +2009,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.orc.orc_051",
+                    "failNext": "origins.orc.orc_046_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2193,7 +2193,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.orc.orc_046",
+                    "failNext": "origins.orc.orc_050_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2415,7 +2415,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_057",
+                    "failNext": "origins.orc.orc_055_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2564,7 +2564,7 @@
                         "stat": "constitution",
                         "dc": 11
                     },
-                    "failNext": "origins.orc.orc_061",
+                    "failNext": "origins.orc.orc_058_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2829,7 +2829,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_066",
+                    "failNext": "origins.orc.orc_065_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2978,7 +2978,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_070",
+                    "failNext": "origins.orc.orc_069_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3265,7 +3265,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.orc.orc_077",
+                    "failNext": "origins.orc.orc_076_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3604,7 +3604,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_078",
+                    "failNext": "origins.orc.orc_084_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3750,7 +3750,7 @@
                         "stat": "strength",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_071",
+                    "failNext": "origins.orc.orc_087_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4005,7 +4005,7 @@
                         "stat": "constitution",
                         "dc": 10
                     },
-                    "failNext": "origins.orc.orc_072",
+                    "failNext": "origins.orc.orc_094_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4222,6 +4222,672 @@
             "isEnding": true,
             "mood": "industrial",
             "effect": "smoke",
+            "effectIntensity": 0.5
+        },
+        "orc_010_fail": {
+            "id": "origins.orc.orc_010_fail",
+            "title": "A Name Without Honor",
+            "location": "scrap_yards",
+            "text": [
+                "The old words feel wrong in your mouth. You fumble the phrasing, and Elder Kurg's expression hardens.",
+                "Kurg brands you anyway. But the silence afterward is worse. No cheer. Just failure."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": -1
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.naming_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Bear the shame. A name earned poorly is still a name.",
+                    "next": "origins.orc.orc_012"
+                },
+                {
+                    "text": "Swear to prove them wrong.",
+                    "next": "origins.orc.orc_011"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.5
+        },
+        "orc_022_fail": {
+            "id": "origins.orc.orc_022_fail",
+            "title": "No Allies Found",
+            "location": "transit_hub",
+            "text": [
+                "They see an orc and see danger, competition for scraps.",
+                "You return empty-handed, rejection bitter as reactor coolant."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.rejected_alliance",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Orcs survive alone.",
+                    "next": "origins.orc.orc_026"
+                },
+                {
+                    "text": "Try actions instead of words.",
+                    "next": "origins.orc.orc_024"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "orc_024_fail": {
+            "id": "origins.orc.orc_024_fail",
+            "title": "The Weight Too Great",
+            "location": "scrap_yards",
+            "text": [
+                "Your knees buckle on the third hill. Grumak tumbles into the dust.",
+                "Others help him. Nobody helps you."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "strength",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Get up. Pain is weakness leaving the body.",
+                    "next": "origins.orc.orc_027"
+                },
+                {
+                    "text": "Accept help. Even orcs need support.",
+                    "next": "origins.orc.orc_026"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.5
+        },
+        "orc_027_fail": {
+            "id": "origins.orc.orc_027_fail",
+            "title": "Civil Words, Uncivil Response",
+            "location": "transit_hub",
+            "text": [
+                "The guard looks at your tusks, not your papers.",
+                "'Papers don't change what you are,' he says, waving a shock baton."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.guard_humiliation",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Swallow the rage.",
+                    "next": "origins.orc.orc_031"
+                },
+                {
+                    "text": "Remember their faces.",
+                    "next": "origins.orc.orc_031"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "orc_031_fail": {
+            "id": "origins.orc.orc_031_fail",
+            "title": "Lost in the System",
+            "location": "lower_slums",
+            "text": [
+                "Terminals respond to fingerprints you don't have. Maps assume human eyes.",
+                "Three days wasted. Credits spent that could have bought food."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -15
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Streets teach better than screens.",
+                    "next": "origins.orc.orc_036"
+                },
+                {
+                    "text": "Find an orc who knows the system.",
+                    "next": "origins.orc.orc_033"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "orc_033_fail": {
+            "id": "origins.orc.orc_033_fail",
+            "title": "The Breaking Point",
+            "location": "the_foundry",
+            "text": [
+                "Your lungs struggle with industrial smog. You collapse during a work shift.",
+                "They dock your pay for the lost hours."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -8
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rest. Even iron rusts.",
+                    "next": "origins.orc.orc_040"
+                },
+                {
+                    "text": "Push through. No luxury of weakness.",
+                    "next": "origins.orc.orc_037"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "orc_037_fail": {
+            "id": "origins.orc.orc_037_fail",
+            "title": "Outmatched",
+            "location": "the_foundry",
+            "text": [
+                "The bodyguard is augmented, chrome arms faster than biology. Like punching reactor shielding.",
+                "He doesn't hit back. The foreman adds 'assault' to your file."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.assault_charge",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Walk away. Choose battles wisely.",
+                    "next": "origins.orc.orc_039"
+                },
+                {
+                    "text": "The rage goes underground.",
+                    "next": "origins.orc.orc_040"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "orc_043_fail": {
+            "id": "origins.orc.orc_043_fail",
+            "title": "Words Fall on Deaf Ears",
+            "location": "lower_slums",
+            "text": [
+                "They hear an orc talking. Diplomacy drowned in jeers.",
+                "A brick catches you above the eye. Green blood."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Retreat. Can't fight a crowd.",
+                    "next": "origins.orc.orc_047"
+                },
+                {
+                    "text": "Stand bleeding. Let them see their fear.",
+                    "next": "origins.orc.orc_046"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "orc_046_fail": {
+            "id": "origins.orc.orc_046_fail",
+            "title": "Caught in the Open",
+            "location": "underground_tunnels",
+            "text": [
+                "Shoulders too wide for the alley. A drone paints you with a targeting laser.",
+                "It moves on, but your window is gone."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.drone_flagged",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Wait for nightfall.",
+                    "next": "origins.orc.orc_051"
+                },
+                {
+                    "text": "Walk out brazenly.",
+                    "next": "origins.orc.orc_047"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "orc_050_fail": {
+            "id": "origins.orc.orc_050_fail",
+            "title": "Overwhelmed by Numbers",
+            "location": "underground_tunnels",
+            "text": [
+                "First goes down easy. Second too. But six with shock sticks.",
+                "Cracked ribs in the gutter. Standing ground means stationary target."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -10
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.beaten",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Crawl to shelter. Survive.",
+                    "next": "origins.orc.orc_046"
+                },
+                {
+                    "text": "Memorize faces. Vengeance later.",
+                    "next": "origins.orc.orc_051"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "orc_055_fail": {
+            "id": "origins.orc.orc_055_fail",
+            "title": "Trail Left Behind",
+            "location": "lower_slums",
+            "text": [
+                "Boot prints too deep, doorframes scratched by tusks.",
+                "Corporate security followed your trail by morning."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.tracked",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Confront the tail.",
+                    "next": "origins.orc.orc_057"
+                },
+                {
+                    "text": "Go somewhere unexpected.",
+                    "next": "origins.orc.orc_058"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "orc_058_fail": {
+            "id": "origins.orc.orc_058_fail",
+            "title": "Alone and Failing",
+            "location": "lower_slums",
+            "text": [
+                "Without clan or bone-mender, isolation eats at you.",
+                "You wake shivering, unable to remember when someone last spoke your name."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -6
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Endure. The trial ends when you're strong enough.",
+                    "next": "origins.orc.orc_061"
+                },
+                {
+                    "text": "Seek other outcasts.",
+                    "next": "origins.orc.orc_057"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "orc_065_fail": {
+            "id": "origins.orc.orc_065_fail",
+            "title": "Blind Spots",
+            "location": "lower_slums",
+            "text": [
+                "Stress clouds judgment. Assets: nothing. Threats: everything.",
+                "You forgot to think about living while focused on surviving."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.lost_clarity",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Stop thinking. Start doing.",
+                    "next": "origins.orc.orc_066"
+                },
+                {
+                    "text": "Rest first.",
+                    "next": "origins.orc.orc_066"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "orc_069_fail": {
+            "id": "origins.orc.orc_069_fail",
+            "title": "No Dignified Options",
+            "location": "lower_slums",
+            "text": [
+                "Every listing: muscle work, hazmat, sewers. Better positions list 'human baseline required.'",
+                "You take cargo hauling. Every crate reminds you."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -5
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -2
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Dignity is built, not found.",
+                    "next": "origins.orc.orc_070"
+                },
+                {
+                    "text": "Keep looking.",
+                    "next": "origins.orc.orc_066"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "orc_076_fail": {
+            "id": "origins.orc.orc_076_fail",
+            "title": "A Dirty Loss",
+            "location": "neon_strip",
+            "text": [
+                "Your opponent cheats. Grit in your eyes, cheap shot.",
+                "The crowd just wanted an orc to fall."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -8
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Get up. Back up your honor.",
+                    "next": "origins.orc.orc_077"
+                },
+                {
+                    "text": "Fight smart next time.",
+                    "next": "origins.orc.orc_077"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "orc_084_fail": {
+            "id": "origins.orc.orc_084_fail",
+            "title": "The Child's Fear",
+            "location": "lower_slums",
+            "text": [
+                "Orc smiles show tusks. The kid screams. Parent snatches them away.",
+                "'Stay away from my child, greenskin.'"
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.child_feared",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Walk away. Some bridges can't be built.",
+                    "next": "origins.orc.orc_078"
+                },
+                {
+                    "text": "Pain hardens into resolve.",
+                    "next": "origins.orc.orc_078"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "orc_087_fail": {
+            "id": "origins.orc.orc_087_fail",
+            "title": "The Broken Tool",
+            "location": "the_foundry",
+            "text": [
+                "Day four, a crane cable snaps. Crate clips your shoulder.",
+                "Foreman docks hazard pay. 'Orcs are supposed to be tough.'"
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -7
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Patch up and keep working.",
+                    "next": "origins.orc.orc_071"
+                },
+                {
+                    "text": "Report the unsafe equipment.",
+                    "next": "origins.orc.orc_071"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "orc_094_fail": {
+            "id": "origins.orc.orc_094_fail",
+            "title": "Diminishing Returns",
+            "location": "lower_slums",
+            "text": [
+                "More you earn, more they charge. Orc tax, hazmat surcharge, 'non-citizen fee.'",
+                "Month of killing yourself. Barely broken even."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "constitution",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find a smarter path.",
+                    "next": "origins.orc.orc_072"
+                },
+                {
+                    "text": "Keep pushing. Orcs outlast.",
+                    "next": "origins.orc.orc_072"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
             "effectIntensity": 0.5
         }
     }

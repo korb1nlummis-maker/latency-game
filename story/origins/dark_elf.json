@@ -538,7 +538,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_012",
+                    "failNext": "origins.dark_elf.delf_014_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -641,7 +641,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_010",
+                    "failNext": "origins.dark_elf.delf_016_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -815,7 +815,7 @@
                         "stat": "intelligence",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_023",
+                    "failNext": "origins.dark_elf.delf_020_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1176,7 +1176,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_031",
+                    "failNext": "origins.dark_elf.delf_029_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1244,7 +1244,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_031",
+                    "failNext": "origins.dark_elf.delf_030_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1315,7 +1315,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_033",
+                    "failNext": "origins.dark_elf.delf_031_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1911,7 +1911,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_051",
+                    "failNext": "origins.dark_elf.delf_046_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1990,7 +1990,7 @@
                         "stat": "tech",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_051",
+                    "failNext": "origins.dark_elf.delf_047_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2065,7 +2065,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_051",
+                    "failNext": "origins.dark_elf.delf_048_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2175,7 +2175,7 @@
                         "stat": "charisma",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_043",
+                    "failNext": "origins.dark_elf.delf_050_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2275,7 +2275,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_054",
+                    "failNext": "origins.dark_elf.delf_052_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2381,7 +2381,7 @@
                         "stat": "intelligence",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_055",
+                    "failNext": "origins.dark_elf.delf_054_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2487,7 +2487,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_059",
+                    "failNext": "origins.dark_elf.delf_056_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2558,7 +2558,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_059",
+                    "failNext": "origins.dark_elf.delf_057_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2625,7 +2625,7 @@
                         "stat": "wisdom",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_059",
+                    "failNext": "origins.dark_elf.delf_058_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2805,7 +2805,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_062_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2973,7 +2973,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_062",
+                    "failNext": "origins.dark_elf.delf_066_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3184,7 +3184,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_071_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3324,7 +3324,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_074_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3447,7 +3447,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_077_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3542,7 +3542,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_079_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3633,7 +3633,7 @@
                         "stat": "tech",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_081_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3694,7 +3694,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_082_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3781,7 +3781,7 @@
                         "stat": "wisdom",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_084_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3900,7 +3900,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_087_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4015,7 +4015,7 @@
                         "stat": "charisma",
                         "dc": 11
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_090_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4143,7 +4143,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_093_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4260,7 +4260,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.dark_elf.delf_063",
+                    "failNext": "origins.dark_elf.delf_096_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4495,6 +4495,1042 @@
             "mood": "red",
             "effect": "embers",
             "effectIntensity": 0.8
+        },
+        "delf_014_fail": {
+            "id": "origins.dark_elf.delf_014_fail",
+            "title": "Detected in the Chaos",
+            "location": "underground_tunnels",
+            "text": [
+                "Drone infrared catches your heat signature. Spotlight pins you.",
+                "Being seen is worse than being hit. Cover blown."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.detected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Freeze. Wait for the light to pass.",
+                    "next": "origins.dark_elf.delf_012"
+                },
+                {
+                    "text": "Sprint for deeper shadows.",
+                    "next": "origins.dark_elf.delf_012"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_016_fail": {
+            "id": "origins.dark_elf.delf_016_fail",
+            "title": "Force Without Finesse",
+            "location": "underground_tunnels",
+            "text": [
+                "Dark elf strength is borrowed. Your blow barely staggers them.",
+                "Exposed for nothing. Force isn't yours."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "strength",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Retreat to shadows.",
+                    "next": "origins.dark_elf.delf_010"
+                },
+                {
+                    "text": "Use their surprise.",
+                    "next": "origins.dark_elf.delf_010"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "delf_020_fail": {
+            "id": "origins.dark_elf.delf_020_fail",
+            "title": "The Weave Resists",
+            "location": "underground_tunnels",
+            "text": [
+                "Analysis loops back. Maze of false endpoints.",
+                "Hours wasted. No weaknesses found."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.analysis_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Abandon analysis.",
+                    "next": "origins.dark_elf.delf_023"
+                },
+                {
+                    "text": "Step back. Missing something.",
+                    "next": "origins.dark_elf.delf_023"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_029_fail": {
+            "id": "origins.dark_elf.delf_029_fail",
+            "title": "Sprung Your Own Trap",
+            "location": "underground_tunnels",
+            "text": [
+                "Tripwire. Flash-bang sears dark-adapted eyes.",
+                "Blind, ears ringing, senses stripped."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -6
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "dexterity",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Wait for senses to recover.",
+                    "next": "origins.dark_elf.delf_031"
+                },
+                {
+                    "text": "Even impaired, still a dark elf.",
+                    "next": "origins.dark_elf.delf_031"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "delf_030_fail": {
+            "id": "origins.dark_elf.delf_030_fail",
+            "title": "Overthinking",
+            "location": "underground_tunnels",
+            "text": [
+                "Perfect plan. Window closed by the time it's done.",
+                "Reality didn't wait."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.missed_window",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Adapt to new reality.",
+                    "next": "origins.dark_elf.delf_031"
+                },
+                {
+                    "text": "Start over.",
+                    "next": "origins.dark_elf.delf_031"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_031_fail": {
+            "id": "origins.dark_elf.delf_031_fail",
+            "title": "The Tunnel Echoes",
+            "location": "underground_tunnels",
+            "text": [
+                "Acoustics amplify every step. Making sound means failure.",
+                "Something ahead heard you."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.tunnel_exposed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find another route.",
+                    "next": "origins.dark_elf.delf_033"
+                },
+                {
+                    "text": "Sacrifice speed for silence.",
+                    "next": "origins.dark_elf.delf_033"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_046_fail": {
+            "id": "origins.dark_elf.delf_046_fail",
+            "title": "The Trace Finds You",
+            "location": "the_foundry",
+            "text": [
+                "Biometric scanner recorded you. Signature broadcasting.",
+                "Anonymity compromised."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Change everything.",
+                    "next": "origins.dark_elf.delf_051"
+                },
+                {
+                    "text": "Use the exposure.",
+                    "next": "origins.dark_elf.delf_051"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_047_fail": {
+            "id": "origins.dark_elf.delf_047_fail",
+            "title": "Encryption Failure",
+            "location": "the_foundry",
+            "text": [
+                "Proprietary format. Cipher crashes halfway.",
+                "Alert triggered. They know your priorities."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.partial_encrypt",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Salvage what you can.",
+                    "next": "origins.dark_elf.delf_051"
+                },
+                {
+                    "text": "Delete it all.",
+                    "next": "origins.dark_elf.delf_051"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_048_fail": {
+            "id": "origins.dark_elf.delf_048_fail",
+            "title": "Tunnels Compromised",
+            "location": "the_foundry",
+            "text": [
+                "Fresh motion sensors. You trigger one. Alarm shrieks.",
+                "Emergency lights turn sanctuary into stage."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.tunnels_trapped",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Surface immediately.",
+                    "next": "origins.dark_elf.delf_051"
+                },
+                {
+                    "text": "Push deeper.",
+                    "next": "origins.dark_elf.delf_051"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "delf_050_fail": {
+            "id": "origins.dark_elf.delf_050_fail",
+            "title": "Coalition Fractures",
+            "location": "underground_tunnels",
+            "text": [
+                "Clinical delivery where passion needed. Shadow asking for trust.",
+                "Coalition fractures. Proof nobody acts on."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.coalition_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Work from the shadows.",
+                    "next": "origins.dark_elf.delf_043"
+                },
+                {
+                    "text": "Find one ally.",
+                    "next": "origins.dark_elf.delf_043"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "delf_052_fail": {
+            "id": "origins.dark_elf.delf_052_fail",
+            "title": "Identity Cracks",
+            "location": "lower_slums",
+            "text": [
+                "Biometric references a closed clinic. First check reveals the gap.",
+                "Mask with a crack. Every checkpoint a gamble."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Patch the flaw.",
+                    "next": "origins.dark_elf.delf_054"
+                },
+                {
+                    "text": "Use it as is.",
+                    "next": "origins.dark_elf.delf_054"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_054_fail": {
+            "id": "origins.dark_elf.delf_054_fail",
+            "title": "Network Breach",
+            "location": "lower_slums",
+            "text": [
+                "One contact already compromised. Three safe houses burned.",
+                "Network contracts instead of expanding."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -15
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rebuild. Trust no one.",
+                    "next": "origins.dark_elf.delf_055"
+                },
+                {
+                    "text": "Find the mole.",
+                    "next": "origins.dark_elf.delf_055"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_056_fail": {
+            "id": "origins.dark_elf.delf_056_fail",
+            "title": "Force Meets Resistance",
+            "location": "underground_tunnels",
+            "text": [
+                "Dark elves work best alone. Synchronized attack drifts apart.",
+                "Surgical strike became butcher's work."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -6
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Partial success counts.",
+                    "next": "origins.dark_elf.delf_059"
+                },
+                {
+                    "text": "Simpler next time.",
+                    "next": "origins.dark_elf.delf_059"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "delf_057_fail": {
+            "id": "origins.dark_elf.delf_057_fail",
+            "title": "Spin Unravels",
+            "location": "market_district",
+            "text": [
+                "Story spread too fast through uncontrolled channels.",
+                "Fallout lands on you."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.spin_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Let the storm pass.",
+                    "next": "origins.dark_elf.delf_059"
+                },
+                {
+                    "text": "Disappear a while.",
+                    "next": "origins.dark_elf.delf_059"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_058_fail": {
+            "id": "origins.dark_elf.delf_058_fail",
+            "title": "Blindsided",
+            "location": "underground_tunnels",
+            "text": [
+                "They weaponized public opinion instead.",
+                "Wrong horizon."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.meridian_blindside",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Counter the narrative.",
+                    "next": "origins.dark_elf.delf_059"
+                },
+                {
+                    "text": "Shadows don't need approval.",
+                    "next": "origins.dark_elf.delf_059"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "delf_062_fail": {
+            "id": "origins.dark_elf.delf_062_fail",
+            "title": "Wrong Thread Pulled",
+            "location": "lower_slums",
+            "text": [
+                "Wrong thread tightens the knot.",
+                "Allies exposed. Resources gone."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -10
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Cut losses. New pattern.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "The mistake is data.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_066_fail": {
+            "id": "origins.dark_elf.delf_066_fail",
+            "title": "Test Reveals Nothing",
+            "location": "sector_7_bar",
+            "text": [
+                "He passes. A disloyal agent would know to pass.",
+                "Wasted resources proving your own distrust."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.trust_paralysis",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Trust provisionally.",
+                    "next": "origins.dark_elf.delf_062"
+                },
+                {
+                    "text": "Cut him loose.",
+                    "next": "origins.dark_elf.delf_062"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_071_fail": {
+            "id": "origins.dark_elf.delf_071_fail",
+            "title": "The Echo Betrays",
+            "location": "underground_tunnels",
+            "text": [
+                "Dampening panels swallow echoes. Navigating blind.",
+                "Dead ends. Warren became cage."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.warren_lost",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Touch walls. Feel airflow.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Mark your path.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_074_fail": {
+            "id": "origins.dark_elf.delf_074_fail",
+            "title": "Power Obscured",
+            "location": "lower_slums",
+            "text": [
+                "Redundancies. Weak points are decoys.",
+                "Designed to waste your time."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "intelligence",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Attack the periphery.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Be patient.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_077_fail": {
+            "id": "origins.dark_elf.delf_077_fail",
+            "title": "The Mirror's Distortion",
+            "location": "lower_slums",
+            "text": [
+                "Mirror shows only your hollow-eyed face.",
+                "Confirmation of how lost you are."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Set the mirror aside.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Look deeper.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "delf_079_fail": {
+            "id": "origins.dark_elf.delf_079_fail",
+            "title": "Miscalculated Cost",
+            "location": "lower_slums",
+            "text": [
+                "Math was perfect. Some costs can't be calculated.",
+                "Being right makes it worse."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.calculated_wrong",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Sentiment is a luxury.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Remember this feeling.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_081_fail": {
+            "id": "origins.dark_elf.delf_081_fail",
+            "title": "Web Snapped",
+            "location": "lower_slums",
+            "text": [
+                "Someone cut your web. Three contacts dark.",
+                "Dismantled by someone who knows dark elf networks."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "New web. Different architecture.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Find who cut them.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_082_fail": {
+            "id": "origins.dark_elf.delf_082_fail",
+            "title": "The Night Has Eyes",
+            "location": "underground_tunnels",
+            "text": [
+                "Infrared surveillance designed to counter you. Rubber bullet hits wall.",
+                "The night no longer belongs to you alone."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.night_countered",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Operate in the light.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Find blind spots.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "delf_084_fail": {
+            "id": "origins.dark_elf.delf_084_fail",
+            "title": "Warning Misread",
+            "location": "sector_7_bar",
+            "text": [
+                "Real warning hidden in what Wraith didn't say.",
+                "Guarded the wrong door."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "credits",
+                    "amount": -8
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Misreading is data.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Confront Wraith.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_087_fail": {
+            "id": "origins.dark_elf.delf_087_fail",
+            "title": "Reflection Without Clarity",
+            "location": "lower_slums",
+            "text": [
+                "Rain washes grime, not doubt.",
+                "Cold, wet, and no wiser."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_meditation",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Clarity comes from action.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Try again tomorrow.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "delf_090_fail": {
+            "id": "origins.dark_elf.delf_090_fail",
+            "title": "Words That Divide",
+            "location": "underground_tunnels",
+            "text": [
+                "Coalition needs passion. Dark elves trained it out.",
+                "Speech ends in uncomfortable silence."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.speech_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Support from shadows.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Show unity through action.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_093_fail": {
+            "id": "origins.dark_elf.delf_093_fail",
+            "title": "Pattern Without Meaning",
+            "location": "lower_slums",
+            "text": [
+                "Data clear. Implications not.",
+                "Perfect map of unknown territory."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.pattern_unclear",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Share it. Another perspective.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Distance brings understanding.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "delf_096_fail": {
+            "id": "origins.dark_elf.delf_096_fail",
+            "title": "The Weave Unravels",
+            "location": "lower_slums",
+            "text": [
+                "Thread snags. Pattern distorts. Careful work collapses.",
+                "The last thread was holding everything."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Salvage what you can.",
+                    "next": "origins.dark_elf.delf_063"
+                },
+                {
+                    "text": "Start from nothing.",
+                    "next": "origins.dark_elf.delf_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
         }
     }
 }

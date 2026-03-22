@@ -314,7 +314,7 @@
                         "stat": "constitution",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_010",
+                    "failNext": "origins.cyborg.cyb_f009",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -519,7 +519,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_016",
+                    "failNext": "origins.cyborg.cyb_f014",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -659,7 +659,7 @@
                         "stat": "constitution",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_019",
+                    "failNext": "origins.cyborg.cyb_f017",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -805,7 +805,7 @@
                         "stat": "tech",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_022",
+                    "failNext": "origins.cyborg.cyb_f020",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1072,7 +1072,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_028",
+                    "failNext": "origins.cyborg.cyb_f027",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1308,7 +1308,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_035",
+                    "failNext": "origins.cyborg.cyb_f032",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1620,7 +1620,7 @@
                         "stat": "tech",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_044",
+                    "failNext": "origins.cyborg.cyb_f040",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1793,7 +1793,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_047",
+                    "failNext": "origins.cyborg.cyb_f044",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1865,7 +1865,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_044",
+                    "failNext": "origins.cyborg.cyb_f045",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2044,7 +2044,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_051",
+                    "failNext": "origins.cyborg.cyb_f049",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2178,7 +2178,7 @@
                         "stat": "tech",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_054",
+                    "failNext": "origins.cyborg.cyb_f052",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2360,7 +2360,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_055",
+                    "failNext": "origins.cyborg.cyb_f056",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2543,7 +2543,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_061",
+                    "failNext": "origins.cyborg.cyb_f060",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2634,7 +2634,7 @@
                         "stat": "constitution",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_064",
+                    "failNext": "origins.cyborg.cyb_f062",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2780,7 +2780,7 @@
                         "stat": "tech",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_067",
+                    "failNext": "origins.cyborg.cyb_f065",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2917,7 +2917,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_072",
+                    "failNext": "origins.cyborg.cyb_f069",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3035,7 +3035,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.cyborg.cyb_072",
+                    "failNext": "origins.cyborg.cyb_f071",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3137,7 +3137,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_074",
+                    "failNext": "origins.cyborg.cyb_f073",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3331,7 +3331,7 @@
                         "stat": "dexterity",
                         "dc": 12
                     },
-                    "failNext": "origins.orc.cyb_079"
+                    "failNext": "origins.cyborg.cyb_f077"
                 }
             ],
             "ascii": null,
@@ -3419,7 +3419,7 @@
                         "stat": "constitution",
                         "dc": 12
                     },
-                    "failNext": "origins.cyborg.cyb_081",
+                    "failNext": "origins.cyborg.cyb_f079",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3484,7 +3484,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_082",
+                    "failNext": "origins.cyborg.cyb_f080",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3682,7 +3682,7 @@
                         "stat": "intelligence",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_083",
+                    "failNext": "origins.cyborg.cyb_f084",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3749,7 +3749,7 @@
                         "stat": "tech",
                         "dc": 12
                     },
-                    "failNext": "origins.cyborg.cyb_086",
+                    "failNext": "origins.cyborg.cyb_f085",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3841,7 +3841,7 @@
                         "stat": "wisdom",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_088",
+                    "failNext": "origins.cyborg.cyb_f087",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4078,7 +4078,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_093",
+                    "failNext": "origins.cyborg.cyb_f092",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4144,7 +4144,7 @@
                         "stat": "constitution",
                         "dc": 11
                     },
-                    "failNext": "origins.cyborg.cyb_094",
+                    "failNext": "origins.cyborg.cyb_f093",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4576,6 +4576,980 @@
             "mood": "determination",
             "effect": "sparks",
             "effectIntensity": 0.7
+        },
+        "cyb_f009": {
+            "id": "origins.cyborg.cyb_f009",
+            "title": "Consciousness Slips Away",
+            "location": "lower_slums",
+            "text": [
+                "You fight to stay conscious but the new augmentations are flooding your nervous system with signals your brain can't process. Error cascades bloom behind your eyes — phantom pain from limbs that are now metal, ghost sensations from skin that no longer exists.",
+                "Your vision whites out. When it returns, you've lost time — minutes or hours, impossible to tell. The examination you intended never happened. Instead, your body made the decision for you: sleep while the hardware reboots.",
+                "You wake groggy, disoriented, with no understanding of what the surgeons put inside you. The new flesh remains a mystery your failing consciousness couldn't solve."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.lost_consciousness",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Run a diagnostic later. Your body knows what it needs.",
+                    "next": "origins.cyborg.cyb_010"
+                },
+                {
+                    "text": "Accept the unknown. Not everything needs to be understood immediately.",
+                    "next": "origins.cyborg.cyb_010"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.7
+        },
+        "cyb_f014": {
+            "id": "origins.cyborg.cyb_f014",
+            "title": "Numbers Don't Add Up",
+            "location": "lower_slums",
+            "text": [
+                "You try to calculate an alternative repayment plan but the numbers are deliberately designed to be unworkable. Every scenario you model ends the same way: deeper in debt, with compounding interest that grows faster than any income you could generate.",
+                "The loan wasn't designed to be repaid. It was designed to create permanent dependence. Your augmentations aren't upgrades — they're shackles, and the debt is the chain.",
+                "You put down the calculations with shaking hands. The math is merciless, and it says you belong to them."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -15
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.debt_trap_realized",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "There must be a way out they haven't anticipated.",
+                    "next": "origins.cyborg.cyb_016"
+                },
+                {
+                    "text": "Accept the debt for now. Focus on survival, not the ledger.",
+                    "next": "origins.cyborg.cyb_016"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "cyb_f017": {
+            "id": "origins.cyborg.cyb_f017",
+            "title": "Rejection Cascade",
+            "location": "lower_slums",
+            "text": [
+                "You push through the pain but your body pushes back harder. A rejection cascade begins — your immune system attacking the new augmentations as foreign invaders. Inflammation blooms at every junction between flesh and metal.",
+                "Your arm locks mid-motion, servos grinding against swollen tissue. Your vision glitches as the optical implant overheats. Every system is fighting every other system, and your body is the battlefield.",
+                "You collapse, curling around the pain, as your flesh and your metal wage a war that neither can win."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 7
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.rejection_cascade",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find a street clinic. The implants need recalibration.",
+                    "next": "origins.cyborg.cyb_019"
+                },
+                {
+                    "text": "Ride it out. The body adapts — eventually.",
+                    "next": "origins.cyborg.cyb_019"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.8
+        },
+        "cyb_f020": {
+            "id": "origins.cyborg.cyb_f020",
+            "title": "Diagnostic Error",
+            "location": "lower_slums",
+            "text": [
+                "You run your own diagnostics and the results are gibberish. Corrupted data streams, phantom readings from components that don't match your hardware manifest, error codes in a language your systems don't recognize.",
+                "Either your diagnostic software is compromised, or your augmentations include hardware you weren't told about. Neither possibility is comforting.",
+                "You shut down the diagnostic before it can flag your systems to whoever installed the mystery components. Trust your systems? You can't even verify what your systems are."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.diagnostic_error",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find an independent tech to audit your hardware.",
+                    "next": "origins.cyborg.cyb_022"
+                },
+                {
+                    "text": "Ignore the anomalies. Ignorance might be safer than knowledge.",
+                    "next": "origins.cyborg.cyb_022"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "cyb_f027": {
+            "id": "origins.cyborg.cyb_f027",
+            "title": "Vision Overload",
+            "location": "lower_slums",
+            "text": [
+                "You try to analyze the vision but your hardware interprets the attempt as a processing request and begins rendering the image at full resolution. Data floods your visual cortex — every pixel of the hallucination rendered in excruciating detail.",
+                "The room disappears behind a wall of fractured imagery. You stagger, blind to the real world, drowning in data your augmented brain is treating as priority input. Your systems can't distinguish between the vision and reality.",
+                "When the overload finally subsides, you're on the floor with a nosebleed and a splitting headache. Your hardware told you nothing except that it's dangerously unstable."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.vision_overload",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Limit processing power to essential functions only.",
+                    "next": "origins.cyborg.cyb_028"
+                },
+                {
+                    "text": "Log the error. Understanding the malfunction might prevent the next one.",
+                    "next": "origins.cyborg.cyb_028"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.8
+        },
+        "cyb_f032": {
+            "id": "origins.cyborg.cyb_f032",
+            "title": "Servo Lag",
+            "location": "lower_slums",
+            "text": [
+                "You move fast — or try to. But your augmented legs have a microsecond delay, a lag between your intention and the servo response. In combat, microseconds are lifetimes. You're a step behind where you should be, and they're ready for you.",
+                "A fist connects with your jaw before your reflexes can compensate. The world tilts. Your balance gyroscope recalibrates too late to prevent you from hitting the ground.",
+                "The lag is a known issue with budget augmentations. You got what you paid for — speed that's almost fast enough but never quite."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.servo_lag",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Compensate by anticipating instead of reacting.",
+                    "next": "origins.cyborg.cyb_035"
+                },
+                {
+                    "text": "Find a tech to reduce the lag. This is fixable.",
+                    "next": "origins.cyborg.cyb_035"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "cyb_f040": {
+            "id": "origins.cyborg.cyb_f040",
+            "title": "Signal Was a Trap",
+            "location": "lower_slums",
+            "text": [
+                "You scan the signal and your systems immediately flag it as suspicious — too clean, too structured, too perfectly designed to attract augmented individuals. By the time the warning pops up, your scanner has already pinged the source with your location.",
+                "It's a honeypot. Someone is fishing for cyborgs, and you just bit. Your coordinates are now in the hands of whoever set the trap, along with a detailed readout of your augmentation specs.",
+                "You kill the scanner and move, but the damage is done. They know what you are, where you were, and what hardware you're running."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.signal_trap",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Change locations immediately. Assume they're coming.",
+                    "next": "origins.cyborg.cyb_044"
+                },
+                {
+                    "text": "Spoof your hardware signature. Become a different cyborg.",
+                    "next": "origins.cyborg.cyb_044"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.7
+        },
+        "cyb_f044": {
+            "id": "origins.cyborg.cyb_f044",
+            "title": "Too Much Information Shared",
+            "location": "lower_slums",
+            "text": [
+                "You try to hold back information but your social protocols betray you. A nervous tic, an involuntary data packet your communication implant broadcasts without your permission — details leak through channels you didn't know you had.",
+                "They notice. Their eyes narrow, processing the microexpressions your metal face can't quite control. The trust you're trying to build is undermined by hardware that doesn't understand deception.",
+                "You walk away having revealed more than you intended, to people whose trustworthiness you haven't verified. Your augmentations, designed for efficiency, are terrible at subtlety."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.info_leak",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Disable the communication implant's passive broadcast.",
+                    "next": "origins.cyborg.cyb_047"
+                },
+                {
+                    "text": "The damage is done. Use it — maybe trust requires vulnerability.",
+                    "next": "origins.cyborg.cyb_047"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "cyb_f045": {
+            "id": "origins.cyborg.cyb_f045",
+            "title": "Noisy Landing",
+            "location": "lower_slums",
+            "text": [
+                "You drop from the ledge but your augmented legs hit the ground with a metallic clang that echoes through the empty space. So much for stealth. The hydraulic joints in your knees hiss as they absorb the impact, broadcasting your position to anyone within fifty meters.",
+                "Lights flicker on in a nearby window. A dog starts barking. Your stealth approach has announced itself with all the subtlety of a dropped anvil.",
+                "Organic bodies land softly. Yours lands like a machine, because that's what it partly is. The weight of metal doesn't understand the concept of 'silently.'"
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.noisy_landing",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Move quickly before anyone investigates the noise.",
+                    "next": "origins.cyborg.cyb_044"
+                },
+                {
+                    "text": "Freeze. Let the moment pass. Dogs stop barking eventually.",
+                    "next": "origins.cyborg.cyb_044"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "cyb_f049": {
+            "id": "origins.cyborg.cyb_f049",
+            "title": "Trauma Buffer Overflow",
+            "location": "lower_slums",
+            "text": [
+                "You try to process the trauma but your augmented mind treats emotional processing like data processing — and overloads. Memories replay at accelerated speed, each one tagged with physiological data that makes the pain clinical and worse.",
+                "Your human half needs this, you told yourself. But your machine half won't let the emotions process naturally. It quantifies, categorizes, and stores them with perfect fidelity, ensuring you'll never forget a single detail of every terrible thing that's happened.",
+                "Perfect memory is a curse when what you need is the mercy of forgetting."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.trauma_buffer_overflow",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Partition the memories. Seal them behind a software wall.",
+                    "next": "origins.cyborg.cyb_051"
+                },
+                {
+                    "text": "Feel it all. You're still human enough for that.",
+                    "next": "origins.cyborg.cyb_051"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.7
+        },
+        "cyb_f052": {
+            "id": "origins.cyborg.cyb_f052",
+            "title": "Augmentation Scan Failed",
+            "location": "lower_slums",
+            "text": [
+                "You try to leverage your augmentations for better-paying work, but the first employer runs a hardware verification scan. Your off-brand components flag immediately — unlicensed, unregistered, possibly stolen.",
+                "The interview ends before it begins. 'We can't insure unlicensed augmentations,' they say, with the practiced sympathy of someone who's rejected a hundred cyborgs this month. 'Meridian certification required.'",
+                "Your augmentations were supposed to be your advantage. Instead, they're a red flag that marks you as underground, unlicensed, and unhirable."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -10
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.augment_scan_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find employers who don't scan. The underground economy doesn't care about certifications.",
+                    "next": "origins.cyborg.cyb_054"
+                },
+                {
+                    "text": "Look into getting your hardware certified. It's expensive but opens doors.",
+                    "next": "origins.cyborg.cyb_054"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "cyb_f056": {
+            "id": "origins.cyborg.cyb_f056",
+            "title": "Scanner Glitch",
+            "location": "lower_slums",
+            "text": [
+                "You activate your surveillance detection suite but it glitches — feeding you false positives that light up every surface like a Christmas tree. Every window is a camera, every lamppost is a sensor, every parked vehicle is a surveillance van.",
+                "Your paranoia spikes as your hardware confirms threats that don't exist. You spend twenty minutes avoiding phantom watchers and hiding from your own malfunctioning systems before you realize the scanner is the problem.",
+                "By the time you recalibrate, you've wasted time and energy on ghosts, and you still don't know if anyone is actually watching."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.scanner_glitch",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Trust your organic instincts instead. The eyes still work.",
+                    "next": "origins.cyborg.cyb_055"
+                },
+                {
+                    "text": "Recalibrate the scanner and try again with adjusted sensitivity.",
+                    "next": "origins.cyborg.cyb_055"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "cyb_f060": {
+            "id": "origins.cyborg.cyb_f060",
+            "title": "Wrong Questions Asked",
+            "location": "lower_slums",
+            "text": [
+                "You ask questions but your augmented analytical framework keeps steering you toward data-driven inquiries that miss the human element entirely. 'What are the specifications?' 'What is the failure rate?' The questions are technically correct and socially tone-deaf.",
+                "Your contact grows uncomfortable, then evasive. They came to share information, not submit to an interrogation by a machine wearing a human face.",
+                "The right questions require emotional intelligence — the one thing your augmentations can't provide. You leave with data but no understanding."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.wrong_questions",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Listen more than you analyze. People aren't datasets.",
+                    "next": "origins.cyborg.cyb_061"
+                },
+                {
+                    "text": "Accept your limitations. Find a human partner for the social work.",
+                    "next": "origins.cyborg.cyb_061"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.4
+        },
+        "cyb_f062": {
+            "id": "origins.cyborg.cyb_f062",
+            "title": "Systems Crash During Watch",
+            "location": "lower_slums",
+            "text": [
+                "You force yourself to stay awake but your augmentations interpret the sustained consciousness as a priority override and begin shutting down non-essential systems to conserve power. Vision dims. Audio dampens. Your threat detection suite goes offline.",
+                "By the time you realize what's happening, you're sitting in the dark with half your hardware in power-save mode, functionally blind and deaf. The exits you were supposed to catalog remain unmapped.",
+                "A cyborg that can't stay awake is worse than a human who falls asleep — at least the human's eyes still work when they wake up."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.systems_crashed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Reboot and do a quick scan before anyone notices.",
+                    "next": "origins.cyborg.cyb_064"
+                },
+                {
+                    "text": "Rest properly. Half-measures are getting dangerous.",
+                    "next": "origins.cyborg.cyb_064"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.7
+        },
+        "cyb_f065": {
+            "id": "origins.cyborg.cyb_f065",
+            "title": "Diagnostic Shows Corruption",
+            "location": "lower_slums",
+            "text": [
+                "The pre-mission diagnostic runs and the results are alarming. Three subsystems are running corrupted firmware. Your reaction time is 12% below baseline. The left arm actuator has a calibration drift that will worsen under stress.",
+                "You should abort and spend a day on maintenance. But the mission window is now, and there won't be another for weeks. Going in with compromised hardware is dangerous. Not going in might be worse.",
+                "Your augmentations are tools, and right now they're tools that need sharpening. But the clock doesn't care about your maintenance schedule."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.corrupted_firmware",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go anyway. Compensate for the deficits manually.",
+                    "next": "origins.cyborg.cyb_067"
+                },
+                {
+                    "text": "Quick-patch the worst issues. It won't be perfect but it'll help.",
+                    "next": "origins.cyborg.cyb_067"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "cyb_f069": {
+            "id": "origins.cyborg.cyb_f069",
+            "title": "Exit Detected",
+            "location": "lower_slums",
+            "text": [
+                "You slip toward the back exit but your augmentations set off a scanner you didn't know was there. An electromagnetic pulse gate — invisible to organic senses, impossible for augmented bodies to pass without triggering.",
+                "An alarm chirps. Not loud, but persistent. The back exit was a trap for exactly your kind: cyborgs trying to leave quietly. The clean exit you planned just became a messy one.",
+                "You're marked now. Every second you stay increases the response team's accuracy in tracking your position."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.exit_detected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Run. Speed over stealth now.",
+                    "next": "origins.cyborg.cyb_072"
+                },
+                {
+                    "text": "Find an organic exit — a window, a vent, anything without a scanner.",
+                    "next": "origins.cyborg.cyb_072"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.7
+        },
+        "cyb_f071": {
+            "id": "origins.cyborg.cyb_f071",
+            "title": "Blind Spot in Your Awareness",
+            "location": "lower_slums",
+            "text": [
+                "You read the room — or try to. But your threat assessment software is calibrated for physical dangers, not social ones. It tells you there are no weapons in sight, no hostile postures. All clear.",
+                "It misses the woman in the corner speaking quietly into her comm. It misses the bartender's hand drifting below the counter. It misses the subtle shift in body language as three people simultaneously stop pretending to be casual.",
+                "Someone is watching. Your hardware says otherwise, and right now your hardware is lying."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.awareness_blind_spot",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Trust your gut, not your sensors. The human part knows something's wrong.",
+                    "next": "origins.cyborg.cyb_072"
+                },
+                {
+                    "text": "Leave. When you can't read the room, remove yourself from it.",
+                    "next": "origins.cyborg.cyb_072"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "cyb_f073": {
+            "id": "origins.cyborg.cyb_f073",
+            "title": "Alley Becomes a Cage",
+            "location": "lower_slums",
+            "text": [
+                "You duck into the alleyways but your augmented body is too wide for the narrow passages locals use as shortcuts. Your shoulder catches a pipe, your knee clips a dumpster, and every impact echoes through the corridor of concrete walls.",
+                "The pursuit doesn't need to follow your exact route — they just need to listen. Your metal body is a percussion instrument, playing your position with every collision.",
+                "You emerge from the alley network bruised, dented, and no further ahead than when you entered. The city's shortcuts were built for organic bodies, not yours."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.alley_too_narrow",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Take the main streets. Use speed instead of stealth.",
+                    "next": "origins.cyborg.cyb_074"
+                },
+                {
+                    "text": "Find an underground route. Sewers don't care how wide you are.",
+                    "next": "origins.cyborg.cyb_074"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "cyb_f077": {
+            "id": "origins.cyborg.cyb_f077",
+            "title": "Reflexes Overloaded",
+            "location": "lower_slums",
+            "text": [
+                "Your augmented reflexes fire but the input is too much — too many threats from too many angles. Your systems try to dodge everything simultaneously and succeed at dodging nothing. You jitter in place, caught between conflicting motor commands.",
+                "The first hit gets through while you're paralyzed by indecision. Then the second. Your augmented reflexes, designed for one-on-one encounters, crash when faced with coordinated group attacks.",
+                "You hit the ground, systems screaming error codes, body taking damage your reflexes should have prevented."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 7
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.reflex_overload",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Reboot reflexes and focus on the nearest threat only.",
+                    "next": "origins.cyborg.cyb_079"
+                },
+                {
+                    "text": "Switch to manual control. Instinct over algorithms.",
+                    "next": "origins.cyborg.cyb_079"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.8
+        },
+        "cyb_f079": {
+            "id": "origins.cyborg.cyb_f079",
+            "title": "Willpower Isn't Enough",
+            "location": "lower_slums",
+            "text": [
+                "You cling to consciousness through sheer will, but the machine part of you doesn't run on willpower. It runs on power cells, and those are failing. Systems shut down one by one — first the nonessentials, then the essentials, then the ones that keep you standing.",
+                "The machine keeps you alive, yes. But alive and functional are different things. You survive on backup power, barely conscious, vision reduced to a narrow tunnel of gray static.",
+                "Survival is not the same as living. Right now, you're just a machine running on its last charge."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.power_cell_failing",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find a charging station. Hardware needs maintenance, not motivation.",
+                    "next": "origins.cyborg.cyb_081"
+                },
+                {
+                    "text": "Ration remaining power. Only use augmentations when essential.",
+                    "next": "origins.cyborg.cyb_081"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.8
+        },
+        "cyb_f080": {
+            "id": "origins.cyborg.cyb_f080",
+            "title": "Restraints Hold",
+            "location": "lower_slums",
+            "text": [
+                "You heave against the restraints, calling on the metal in your bones. But these restraints were designed for augmented prisoners — adaptive alloy that tightens when it detects enhanced force. The harder you pull, the tighter they grip.",
+                "Your servos whine, approaching their operational limit. Warning indicators flash across your HUD: structural damage imminent, force threshold exceeded, automatic shutdown in thirty seconds.",
+                "The metal in your bones is strong. These restraints are stronger. They were built by people who know exactly what a cyborg can do, and they built accordingly."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.restraints_held",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Stop fighting the restraints. Find a smarter way out.",
+                    "next": "origins.cyborg.cyb_082"
+                },
+                {
+                    "text": "Disable the adaptive alloy's sensor. Brute force only works when they can't adapt.",
+                    "next": "origins.cyborg.cyb_082"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.6
+        },
+        "cyb_f084": {
+            "id": "origins.cyborg.cyb_f084",
+            "title": "Optimization Loop",
+            "location": "lower_slums",
+            "text": [
+                "You try to learn from each operation, running the data through your analytical suite. But the suite identifies so many variables and potential optimizations that you become paralyzed by information. Every decision branches into a thousand sub-decisions.",
+                "Your augmented mind is trapped in an optimization loop — seeking the perfect approach while the real world moves on without you. By the time you've analyzed the last operation, the next one has started and you're still processing.",
+                "Learning requires knowing when to stop analyzing. Your hardware doesn't have that feature."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.optimization_loop",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Set a processing limit. Good enough beats perfect every time.",
+                    "next": "origins.cyborg.cyb_083"
+                },
+                {
+                    "text": "Trust your organic instincts to filter what matters.",
+                    "next": "origins.cyborg.cyb_083"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "cyb_f085": {
+            "id": "origins.cyborg.cyb_f085",
+            "title": "Digital Trail Left Behind",
+            "location": "lower_slums",
+            "text": [
+                "You use your augmentations to plan the exposure, but your digital footprint is enormous. Every scan, every data query, every network connection leaves a trail that an experienced tracker can follow straight back to you.",
+                "The perfect exposure plan crumbles when you realize you've been planning it on compromised channels. Your augmentations, so useful for gathering information, are equally useful for broadcasting your intentions to anyone who's listening.",
+                "The exposure is exposed. Your target knows you're coming, what you have, and where you got it."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -12
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.digital_trail",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go dark. Disconnect everything and plan on paper.",
+                    "next": "origins.cyborg.cyb_086"
+                },
+                {
+                    "text": "Accelerate the timeline. They know you're coming — arrive first.",
+                    "next": "origins.cyborg.cyb_086"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.7
+        },
+        "cyb_f087": {
+            "id": "origins.cyborg.cyb_f087",
+            "title": "Sensor Overconfidence",
+            "location": "lower_slums",
+            "text": [
+                "Your sensors say the area is clear. Your instincts say otherwise. You trust the sensors — they're expensive hardware with verified accuracy ratings — and walk into the space with your guard down.",
+                "The EMP grenade goes off three seconds later, frying your sensors, your HUD, and your threat detection in a single pulse. In the ringing silence that follows, you hear footsteps approaching from the direction your sensors swore was empty.",
+                "Your instincts were right. Your sensors were spoofed. And now you're blind, deaf, and surrounded."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.sensor_overconfidence",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Fight on instinct alone. You were human before you were machine.",
+                    "next": "origins.cyborg.cyb_088"
+                },
+                {
+                    "text": "Emergency reboot. Get the sensors back online, whatever it costs.",
+                    "next": "origins.cyborg.cyb_088"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.9
+        },
+        "cyb_f092": {
+            "id": "origins.cyborg.cyb_f092",
+            "title": "Vanishing Act Fails",
+            "location": "lower_slums",
+            "text": [
+                "You activate every stealth feature your augmentations offer — thermal dampening, electronic signature suppression, optical camouflage. But the optical camo flickers, the thermal dampener overheats, and your electronic signature spikes instead of flatlines.",
+                "Instead of vanishing, you light up like a beacon on every scanner in range. Your stealth suite isn't malfunctioning — it's been compromised. Someone uploaded counter-stealth protocols specifically calibrated to your hardware.",
+                "They knew your specs. They prepared for this. You're not just visible — you're spotlit."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.stealth_compromised",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Ditch the tech. Go analog — hood up, head down, walk normal.",
+                    "next": "origins.cyborg.cyb_093"
+                },
+                {
+                    "text": "If you can't hide, run. Full power to locomotion.",
+                    "next": "origins.cyborg.cyb_093"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.8
+        },
+        "cyb_f093": {
+            "id": "origins.cyborg.cyb_f093",
+            "title": "The Machine Breaks Down",
+            "location": "lower_slums",
+            "text": [
+                "Survive. That's all. Just survive. The most basic directive, the one that should transcend hardware and software alike. But your body is failing on both fronts — the organic parts exhausted, the mechanical parts degraded beyond safe operating parameters.",
+                "Your left eye stops transmitting. Your right hand locks into a fist it can't unclench. Every step sends error messages cascading across a HUD that's barely rendering anymore.",
+                "The machine that was supposed to make you more than human is making you less. You're not surviving — you're deteriorating, one component at a time."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 7
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.machine_breakdown",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Keep going. The human part doesn't need permission from the machine.",
+                    "next": "origins.cyborg.cyb_094"
+                },
+                {
+                    "text": "Find shelter and attempt emergency repairs.",
+                    "next": "origins.cyborg.cyb_094"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.9
         }
     }
 }

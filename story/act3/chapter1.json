@@ -437,7 +437,16 @@
                 "winNext": "act3.chapter1.act3_013",
                 "loseNext": "act3.chapter1.ending_act3_004"
             },
-            "choices": [],
+            "choices": [
+                {
+                    "text": "Different approach to the Vault.",
+                    "next": "act3.chapter1.act3_002"
+                },
+                {
+                    "text": "Push deeper.",
+                    "next": "act3.chapter1.act3_008"
+                }
+            ],
             "ascii": null,
             "music": "combat_active",
             "isEnding": false,
@@ -1136,7 +1145,7 @@
                         "dc": 16
                     },
                     "next": "act3.chapter1.act3_026",
-                    "failNext": "act3.chapter1.act3_026",
+                    "failNext": "act3.chapter1.act3_025_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1953,7 +1962,16 @@
                 "winNext": "act3.chapter1.act3_012",
                 "loseNext": "act3.chapter1.ending_act3_004"
             },
-            "choices": [],
+            "choices": [
+                {
+                    "text": "Manual distraction.",
+                    "next": "act3.chapter1.act3_012"
+                },
+                {
+                    "text": "Move directly.",
+                    "next": "act3.chapter1.act3_012"
+                }
+            ],
             "ascii": null,
             "music": "combat_active",
             "isEnding": false,
@@ -2292,6 +2310,43 @@
             "mood": "melancholy",
             "effect": "void",
             "effectIntensity": 0.7
+        },
+        "act3_025_fail": {
+            "id": "act3.chapter1.act3_025_fail",
+            "title": "Conscience Unmoved",
+            "location": "vault_deep_room",
+            "text": [
+                "'Conscience. I had one once. It watched while the world burned.'",
+                "He knows you believe in mercy. He'll use it."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Try logic.",
+                    "next": "act3.chapter1.act3_026"
+                },
+                {
+                    "text": "Words won't work. Prepare.",
+                    "next": "act3.chapter1.act3_026"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension_high",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
         }
     }
 }

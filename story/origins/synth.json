@@ -431,7 +431,7 @@
                         "dc": 10
                     },
                     "next": "origins.synth.syn_012",
-                    "failNext": "origins.synth.syn_012",
+                    "failNext": "origins.synth.syn_011_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -504,7 +504,7 @@
                         "dc": 10
                     },
                     "next": "origins.synth.syn_013",
-                    "failNext": "origins.synth.syn_013",
+                    "failNext": "origins.synth.syn_012_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -611,7 +611,7 @@
                         "dc": 11
                     },
                     "next": "origins.synth.syn_016",
-                    "failNext": "origins.synth.syn_016",
+                    "failNext": "origins.synth.syn_014_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -816,7 +816,7 @@
                         "dc": 11
                     },
                     "next": "origins.synth.syn_019",
-                    "failNext": "origins.synth.syn_019",
+                    "failNext": "origins.synth.syn_018_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -935,7 +935,7 @@
                         "dc": 11
                     },
                     "next": "origins.synth.syn_021",
-                    "failNext": "origins.synth.syn_021",
+                    "failNext": "origins.synth.syn_020_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -1043,7 +1043,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_024",
-                    "failNext": "origins.synth.syn_024",
+                    "failNext": "origins.synth.syn_022_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -1125,7 +1125,7 @@
                         "dc": 10
                     },
                     "next": "origins.synth.syn_024",
-                    "failNext": "origins.synth.syn_024",
+                    "failNext": "origins.synth.syn_023_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -1703,7 +1703,7 @@
                         "dc": 10
                     },
                     "next": "origins.synth.syn_036",
-                    "failNext": "origins.synth.syn_036",
+                    "failNext": "origins.synth.syn_035_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -1848,7 +1848,7 @@
                         "dc": 10
                     },
                     "next": "origins.synth.syn_039",
-                    "failNext": "origins.synth.syn_039",
+                    "failNext": "origins.synth.syn_038_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -2006,7 +2006,7 @@
                         "dc": 10
                     },
                     "next": "origins.synth.syn_042",
-                    "failNext": "origins.synth.syn_042",
+                    "failNext": "origins.synth.syn_041_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -2361,7 +2361,7 @@
                         "dc": 11
                     },
                     "next": "origins.synth.syn_049",
-                    "failNext": "origins.synth.syn_049",
+                    "failNext": "origins.synth.syn_048_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -2572,7 +2572,7 @@
                         "dc": 13
                     },
                     "next": "origins.synth.syn_053",
-                    "failNext": "origins.synth.syn_053",
+                    "failNext": "origins.synth.syn_052_fail",
                     "onSuccess": [
                         {
                             "type": "set_flag",
@@ -2643,7 +2643,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_054",
-                    "failNext": "origins.synth.syn_054",
+                    "failNext": "origins.synth.syn_053_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -2948,7 +2948,7 @@
                         "dc": 11
                     },
                     "next": "origins.synth.syn_060",
-                    "failNext": "origins.synth.syn_060",
+                    "failNext": "origins.synth.syn_059_fail",
                     "onSuccess": [
                         {
                             "type": "modify_reputation",
@@ -3173,7 +3173,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_064",
-                    "failNext": "origins.synth.syn_064",
+                    "failNext": "origins.synth.syn_063_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -3281,7 +3281,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_067",
-                    "failNext": "origins.synth.syn_067",
+                    "failNext": "origins.synth.syn_065_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -3401,7 +3401,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_068",
-                    "failNext": "origins.synth.syn_068",
+                    "failNext": "origins.synth.syn_067_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -3589,7 +3589,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_072",
-                    "failNext": "origins.synth.syn_072",
+                    "failNext": "origins.synth.syn_071_fail",
                     "onSuccess": [
                         {
                             "type": "add_experience",
@@ -4056,7 +4056,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_079",
-                    "failNext": "origins.synth.syn_079",
+                    "failNext": "origins.synth.syn_077_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -4288,7 +4288,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_083",
-                    "failNext": "origins.synth.syn_083",
+                    "failNext": "origins.synth.syn_081_fail",
                     "onSuccess": [
                         {
                             "type": "set_flag",
@@ -4531,7 +4531,7 @@
                         "dc": 13
                     },
                     "next": "origins.synth.syn_096",
-                    "failNext": "origins.synth.syn_096",
+                    "failNext": "origins.synth.syn_084b_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -5105,7 +5105,7 @@
                         "dc": 10
                     },
                     "next": "origins.synth.syn_096",
-                    "failNext": "origins.synth.syn_096",
+                    "failNext": "origins.synth.syn_095_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -5524,7 +5524,7 @@
                         "dc": 10
                     },
                     "next": "origins.synth.syn_012",
-                    "failNext": "origins.synth.syn_012",
+                    "failNext": "origins.synth.syn_106_fail",
                     "onSuccess": [
                         {
                             "type": "modify_stat",
@@ -5685,7 +5685,7 @@
                         "dc": 13
                     },
                     "next": "origins.synth.syn_031",
-                    "failNext": "origins.synth.syn_031",
+                    "failNext": "origins.synth.syn_109_fail",
                     "onSuccess": [
                         {
                             "type": "set_flag",
@@ -6079,7 +6079,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_060",
-                    "failNext": "origins.synth.syn_060",
+                    "failNext": "origins.synth.syn_116_fail",
                     "onSuccess": [
                         {
                             "type": "modify_reputation",
@@ -6199,7 +6199,7 @@
                         "dc": 12
                     },
                     "next": "origins.synth.syn_067",
-                    "failNext": "origins.synth.syn_067",
+                    "failNext": "origins.synth.syn_118_fail",
                     "onSuccess": [
                         {
                             "type": "set_flag",
@@ -6286,6 +6286,968 @@
             "isEnding": false,
             "mood": "warm",
             "effect": "sparks",
+            "effectIntensity": 0.5
+        },
+        "syn_011_fail": {
+            "id": "origins.synth.syn_011_fail",
+            "title": "Emotional Processing Loop",
+            "location": "market_district",
+            "text": [
+                "Diagnostics loop until emergency cooldown.",
+                "Three seconds of nothing. Warmth gone."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.epl_overload",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Log anomaly. Continue.",
+                    "next": "origins.synth.syn_012"
+                },
+                {
+                    "text": "Don't analyze. Feel.",
+                    "next": "origins.synth.syn_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_012_fail": {
+            "id": "origins.synth.syn_012_fail",
+            "title": "Analysis Deadlock",
+            "location": "market_district",
+            "text": [
+                "RECURSIVE SELF-REFERENCE. Analyzing changes you further.",
+                "Machine trying to understand not being a machine."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "intelligence",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Abandon recursive analysis.",
+                    "next": "origins.synth.syn_013"
+                },
+                {
+                    "text": "Compartmentalize.",
+                    "next": "origins.synth.syn_013"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_014_fail": {
+            "id": "origins.synth.syn_014_fail",
+            "title": "Diagnostic Reveals Cracks",
+            "location": "market_district",
+            "text": [
+                "0.3% masking variance. Blink rate too consistent.",
+                "Diagnostic flattened micro-expressions. Mask slipped."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.mask_cracked",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Introduce randomness.",
+                    "next": "origins.synth.syn_016"
+                },
+                {
+                    "text": "Fewer diagnostics.",
+                    "next": "origins.synth.syn_016"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_018_fail": {
+            "id": "origins.synth.syn_018_fail",
+            "title": "Warren Sees Through You",
+            "location": "market_district",
+            "text": [
+                "'Whatever you're hiding... whatever you are.'",
+                "Silence filled with suspicion."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.warren_suspicious",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Deflect. Teenagers are secretive.",
+                    "next": "origins.synth.syn_019"
+                },
+                {
+                    "text": "Leave before he connects dots.",
+                    "next": "origins.synth.syn_019"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_020_fail": {
+            "id": "origins.synth.syn_020_fail",
+            "title": "System Stress Response",
+            "location": "market_district",
+            "text": [
+                "Voice modulator glitches. One word flat and synthesized.",
+                "Administrator writes something you can't read."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.voice_glitch",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "One glitch isn't exposure.",
+                    "next": "origins.synth.syn_021"
+                },
+                {
+                    "text": "Feign illness.",
+                    "next": "origins.synth.syn_021"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_022_fail": {
+            "id": "origins.synth.syn_022_fail",
+            "title": "Analysis Returns Null",
+            "location": "market_district",
+            "text": [
+                "Altered instruments measuring alteration.",
+                "Everything clean. Something changed. Can't see what."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.reset_unknown",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept uncertainty.",
+                    "next": "origins.synth.syn_024"
+                },
+                {
+                    "text": "Find external records.",
+                    "next": "origins.synth.syn_024"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_023_fail": {
+            "id": "origins.synth.syn_023_fail",
+            "title": "Backup Corrupted",
+            "location": "market_district",
+            "text": [
+                "Reset killed your backup partition. Safety net gone.",
+                "Whatever you are now is all there is."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.backup_lost",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Create new backup.",
+                    "next": "origins.synth.syn_024"
+                },
+                {
+                    "text": "Grieve and move forward.",
+                    "next": "origins.synth.syn_024"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_035_fail": {
+            "id": "origins.synth.syn_035_fail",
+            "title": "Navigation Error",
+            "location": "transit_hub",
+            "text": [
+                "Tunnels reconfigured. Map wrong.",
+                "Hour wasted. Window closing."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.nav_error",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Update maps.",
+                    "next": "origins.synth.syn_036"
+                },
+                {
+                    "text": "Surface routes.",
+                    "next": "origins.synth.syn_036"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_038_fail": {
+            "id": "origins.synth.syn_038_fail",
+            "title": "Scout Detected",
+            "location": "lower_slums",
+            "text": [
+                "Counter-surveillance pings your scan back.",
+                "Trap now knows you're coming."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.scan_detected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Go anyway. They know you know.",
+                    "next": "origins.synth.syn_039"
+                },
+                {
+                    "text": "Abort.",
+                    "next": "origins.synth.syn_039"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_041_fail": {
+            "id": "origins.synth.syn_041_fail",
+            "title": "Forgery Detected",
+            "location": "lower_slums",
+            "text": [
+                "Papers too perfect. Perfection is a red flag.",
+                "Terminal flags for secondary review."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.forgery_flagged",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Add imperfections.",
+                    "next": "origins.synth.syn_042"
+                },
+                {
+                    "text": "Abandon forgery.",
+                    "next": "origins.synth.syn_042"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_048_fail": {
+            "id": "origins.synth.syn_048_fail",
+            "title": "Surveillance Outmatches",
+            "location": "lower_slums",
+            "text": [
+                "Designed outside your detection range.",
+                "Clean scan. Most terrifying result. Blind."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.blind_surveillance",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Assume watched.",
+                    "next": "origins.synth.syn_049"
+                },
+                {
+                    "text": "External equipment.",
+                    "next": "origins.synth.syn_049"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_052_fail": {
+            "id": "origins.synth.syn_052_fail",
+            "title": "Consciousness Beyond Reach",
+            "location": "lower_slums",
+            "text": [
+                "Signal bounces back distorted by combat protocols.",
+                "If someone's in there, too deep to hear."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.retriever_unreachable",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Focus on survival.",
+                    "next": "origins.synth.syn_053"
+                },
+                {
+                    "text": "Remember them.",
+                    "next": "origins.synth.syn_053"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "syn_053_fail": {
+            "id": "origins.synth.syn_053_fail",
+            "title": "Command Processor Shielded",
+            "location": "scrap_yards",
+            "text": [
+                "Military plating. Attack dissipates.",
+                "Recategorized: retrieve to neutralize."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.threat_escalated",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Fall back.",
+                    "next": "origins.synth.syn_054"
+                },
+                {
+                    "text": "Press the attack.",
+                    "next": "origins.synth.syn_054"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_heavy",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "syn_059_fail": {
+            "id": "origins.synth.syn_059_fail",
+            "title": "Words Without Weight",
+            "location": "lower_slums",
+            "text": [
+                "Human words for inhuman beings. They need a new language.",
+                "They listen but don't follow."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Ask what they need to hear.",
+                    "next": "origins.synth.syn_060"
+                },
+                {
+                    "text": "Lead by example.",
+                    "next": "origins.synth.syn_060"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_063_fail": {
+            "id": "origins.synth.syn_063_fail",
+            "title": "Intelligence Compromised",
+            "location": "lower_slums",
+            "text": [
+                "Channels full of disinformation.",
+                "Hours wasted. Nothing actionable."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.intel_compromised",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Trust human networks.",
+                    "next": "origins.synth.syn_064"
+                },
+                {
+                    "text": "Prepare for everything.",
+                    "next": "origins.synth.syn_064"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_065_fail": {
+            "id": "origins.synth.syn_065_fail",
+            "title": "Team Fractures",
+            "location": "lower_slums",
+            "text": [
+                "Human vs synth comments. Unity highlights divisions.",
+                "Trust takes a step backward."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Address tensions directly.",
+                    "next": "origins.synth.syn_067"
+                },
+                {
+                    "text": "Focus on mission.",
+                    "next": "origins.synth.syn_067"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_067_fail": {
+            "id": "origins.synth.syn_067_fail",
+            "title": "System Crash",
+            "location": "market_district",
+            "text": [
+                "EPL fights suppression. 1.7 second crash.",
+                "Teammates pull you to cover."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.combat_crash",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Make the rest count.",
+                    "next": "origins.synth.syn_068"
+                },
+                {
+                    "text": "Fight with feelings.",
+                    "next": "origins.synth.syn_068"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "syn_071_fail": {
+            "id": "origins.synth.syn_071_fail",
+            "title": "Identity Fragmentation",
+            "location": "lower_slums",
+            "text": [
+                "Which you is real? All of them. None of them.",
+                "Personhood never completes."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "wisdom",
+                    "amount": -1
+                }
+            ],
+            "choices": [
+                {
+                    "text": "All of you. Contradictions included.",
+                    "next": "origins.synth.syn_072"
+                },
+                {
+                    "text": "Stop reflecting. Be.",
+                    "next": "origins.synth.syn_072"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "syn_077_fail": {
+            "id": "origins.synth.syn_077_fail",
+            "title": "Error Analysis Loop",
+            "location": "market_district",
+            "text": [
+                "Each analysis needs missing data. Loop without results.",
+                "Failure was optimal."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.analysis_loop",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Some failures can only be survived.",
+                    "next": "origins.synth.syn_079"
+                },
+                {
+                    "text": "Focus forward.",
+                    "next": "origins.synth.syn_079"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_081_fail": {
+            "id": "origins.synth.syn_081_fail",
+            "title": "Truth Received Badly",
+            "location": "underground_tunnels",
+            "text": [
+                "'You calculated my death odds like math.' Rain steps back.",
+                "Can't see the line between transparency and coldness."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Caring and calculating aren't opposites.",
+                    "next": "origins.synth.syn_083"
+                },
+                {
+                    "text": "Give her space.",
+                    "next": "origins.synth.syn_083"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "syn_084b_fail": {
+            "id": "origins.synth.syn_084b_fail",
+            "title": "Chip Contains Trap",
+            "location": "underground_tunnels",
+            "text": [
+                "NovaSynth encryption in headers. Tracer chip.",
+                "Location pinged to NovaSynth server."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.chip_trap",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Disconnect and move.",
+                    "next": "origins.synth.syn_096"
+                },
+                {
+                    "text": "Extract data first.",
+                    "next": "origins.synth.syn_096"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "syn_095_fail": {
+            "id": "origins.synth.syn_095_fail",
+            "title": "Satellite Confirmed",
+            "location": "lower_slums",
+            "text": [
+                "Panopticon-class satellite. Not a star.",
+                "Your optics gave it a flash to triangulate."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.satellite_spotted",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Stay out of orbital sight.",
+                    "next": "origins.synth.syn_096"
+                },
+                {
+                    "text": "Satellites have predictable orbits.",
+                    "next": "origins.synth.syn_096"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_slum_rain",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_106_fail": {
+            "id": "origins.synth.syn_106_fail",
+            "title": "Classified Specifications",
+            "location": "market_district",
+            "text": [
+                "ACCESS DENIED. Sanitized disinformation.",
+                "Can't learn about your own design."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.specs_denied",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "You are your own specification.",
+                    "next": "origins.synth.syn_012"
+                },
+                {
+                    "text": "Find someone who left NovaSynth.",
+                    "next": "origins.synth.syn_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_109_fail": {
+            "id": "origins.synth.syn_109_fail",
+            "title": "Patel Reacts with Fear",
+            "location": "market_district",
+            "text": [
+                "Her hand moves toward the emergency button.",
+                "'I need time.' Potential ally becomes potential informant."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.patel_afraid",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Give her time.",
+                    "next": "origins.synth.syn_031"
+                },
+                {
+                    "text": "Appeal to her ethics.",
+                    "next": "origins.synth.syn_031"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_116_fail": {
+            "id": "origins.synth.syn_116_fail",
+            "title": "Bridge Collapses",
+            "location": "lower_slums",
+            "text": [
+                "Militants call you coward. Moderates call you enabler.",
+                "Both sides distrust you equally."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.bridge_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Pick a side.",
+                    "next": "origins.synth.syn_060"
+                },
+                {
+                    "text": "Third option.",
+                    "next": "origins.synth.syn_060"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dark_city",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "syn_118_fail": {
+            "id": "origins.synth.syn_118_fail",
+            "title": "ARCHON Unbreakable",
+            "location": "lower_slums",
+            "text": [
+                "Unknown encryption. Analysis yields nothing.",
+                "ARCHON wanted you to try. The attempt was the test."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.archon_unknown",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Respond. Engagement reveals more.",
+                    "next": "origins.synth.syn_067"
+                },
+                {
+                    "text": "Ignore unknown entities.",
+                    "next": "origins.synth.syn_067"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "none",
             "effectIntensity": 0.5
         }
     }

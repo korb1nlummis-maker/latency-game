@@ -343,7 +343,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.human.human_011",
+                    "failNext": "origins.human.human_f009",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -418,7 +418,7 @@
                         "stat": "strength",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_012",
+                    "failNext": "origins.human.human_f010",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -599,7 +599,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_015",
+                    "failNext": "origins.human.human_f014",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -778,7 +778,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_016",
+                    "failNext": "origins.human.human_f018",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1001,7 +1001,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_025",
+                    "failNext": "origins.human.human_f023",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1148,7 +1148,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.human.human_031",
+                    "failNext": "origins.human.human_f026",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1306,7 +1306,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_033",
+                    "failNext": "origins.human.human_f029",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1371,7 +1371,7 @@
                         "stat": "charisma",
                         "dc": 11
                     },
-                    "failNext": "origins.human.human_034",
+                    "failNext": "origins.human.human_f030",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1514,7 +1514,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_035",
+                    "failNext": "origins.human.human_f033",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1894,7 +1894,7 @@
                         "stat": "strength",
                         "dc": 11
                     },
-                    "failNext": "origins.human.human_046",
+                    "failNext": "origins.human.human_f042",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1964,7 +1964,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.human.human_047",
+                    "failNext": "origins.human.human_f043",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2117,7 +2117,7 @@
                         "stat": "dexterity",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_047",
+                    "failNext": "origins.human.human_f046",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2182,7 +2182,7 @@
                         "stat": "constitution",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_048",
+                    "failNext": "origins.human.human_f047",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2285,7 +2285,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_051",
+                    "failNext": "origins.human.human_f049",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2420,7 +2420,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_054",
+                    "failNext": "origins.human.human_f052",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2491,7 +2491,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_055",
+                    "failNext": "origins.human.human_f053",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2726,7 +2726,7 @@
                         "stat": "luck",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_058",
+                    "failNext": "origins.human.human_f059",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2878,7 +2878,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_063",
+                    "failNext": "origins.human.human_f062",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3098,7 +3098,7 @@
                         "stat": "dexterity",
                         "dc": 11
                     },
-                    "failNext": "origins.human.human_069",
+                    "failNext": "origins.human.human_f067",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3168,7 +3168,7 @@
                         "stat": "constitution",
                         "dc": 11
                     },
-                    "failNext": "origins.human.human_072",
+                    "failNext": "origins.human.human_f068",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3238,7 +3238,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_086",
+                    "failNext": "origins.human.human_f069",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3343,7 +3343,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_067",
+                    "failNext": "origins.human.human_f071",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3647,7 +3647,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_058",
+                    "failNext": "origins.human.human_f085",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3716,7 +3716,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_073",
+                    "failNext": "origins.human.human_f086",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3848,7 +3848,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_090",
+                    "failNext": "origins.human.human_f089",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3972,7 +3972,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_093",
+                    "failNext": "origins.human.human_f092",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4068,7 +4068,7 @@
                         "stat": "charisma",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_095",
+                    "failNext": "origins.human.human_f094",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4199,7 +4199,7 @@
                         "stat": "intelligence",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_096",
+                    "failNext": "origins.human.human_f097",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4298,7 +4298,7 @@
                         "stat": "wisdom",
                         "dc": 10
                     },
-                    "failNext": "origins.human.human_100",
+                    "failNext": "origins.human.human_f099",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -4598,6 +4598,1131 @@
             "mood": "digital",
             "effect": "datastream",
             "effectIntensity": 0.6
+        },
+        "human_f009": {
+            "id": "origins.human.human_f009",
+            "title": "Not Fast Enough",
+            "location": "lower_slums",
+            "text": [
+                "You run but your legs betray you — too slow, too tired, too many nights of bad sleep and worse food. They catch up in seconds, and a hand grabs the back of your jacket, spinning you around.",
+                "The impact against the wall drives the air from your lungs. Stars explode behind your eyes. By the time your vision clears, they're already going through your pockets.",
+                "You've always been fast. But not today. Today, the streets taught you that fast isn't the same as fast enough."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -10
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.caught_running",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Pick yourself up. You've survived worse.",
+                    "next": "origins.human.human_011"
+                },
+                {
+                    "text": "Remember their faces. This isn't over.",
+                    "next": "origins.human.human_011"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "human_f010": {
+            "id": "origins.human.human_f010",
+            "title": "Fear Sees Through You",
+            "location": "lower_slums",
+            "text": [
+                "You try to become harder — square your shoulders, set your jaw, make yourself into someone they'd think twice about crossing. But the performance is transparent. Your hands shake. Your voice cracks on the threat.",
+                "They laugh. Not cruelly, just honestly. You're a kid playing dress-up in a war zone, and everyone can see the costume doesn't fit.",
+                "The attempt to intimidate earns you a shove and a warning. 'Go home, kid. Before someone who isn't as nice as us finds you out here.'"
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.intimidation_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "They're right. Strength isn't about pretending. Find the real thing.",
+                    "next": "origins.human.human_012"
+                },
+                {
+                    "text": "Swallow the humiliation. Use it as motivation.",
+                    "next": "origins.human.human_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.5
+        },
+        "human_f014": {
+            "id": "origins.human.human_f014",
+            "title": "Caught at the Fence",
+            "location": "lower_slums",
+            "text": [
+                "You ran and survived — barely. But 'barely' has a price. Your foot catches on a drainage grate and you go down hard, skidding across wet asphalt. Your palms and knees leave skin on the pavement.",
+                "By the time you limp to safety, you're bleeding from a dozen scrapes, your ankle is swelling, and you've lost everything you were carrying. Survival, yes. But at what cost?",
+                "You huddle in an alley, cataloging your injuries, wondering how many more close calls you have left in you."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.rough_escape",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Patch yourself up and keep moving. Stopping is dying.",
+                    "next": "origins.human.human_015"
+                },
+                {
+                    "text": "Find somewhere safe to rest. Even survivors need to heal.",
+                    "next": "origins.human.human_015"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "rain",
+            "effectIntensity": 0.6
+        },
+        "human_f018": {
+            "id": "origins.human.human_f018",
+            "title": "Trust Misplaced Again",
+            "location": "lower_slums",
+            "text": [
+                "After Dace, you swore you'd trust no one. But old habits cling like rust. Someone offers a hand, a warm meal, a sympathetic ear, and you let your guard down just enough for them to see the vulnerability underneath.",
+                "They exploit it, of course. Not violently — just a whispered word to the wrong person, a shared secret that becomes leverage. By the time you realize what happened, the damage is done.",
+                "You learned nothing from Dace. Or rather, you learned the lesson but couldn't apply it. Knowing who to trust and actually trusting no one are very different skills."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -12
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.trust_exploited",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Harden. For real this time.",
+                    "next": "origins.human.human_016"
+                },
+                {
+                    "text": "The problem isn't trust — it's choosing the wrong people.",
+                    "next": "origins.human.human_016"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.6
+        },
+        "human_f023": {
+            "id": "origins.human.human_f023",
+            "title": "Something You Missed",
+            "location": "lower_slums",
+            "text": [
+                "You study the mission briefing, scanning for inconsistencies. The numbers blur together — routes, schedules, personnel counts. Something doesn't add up, you can feel it, but you can't isolate what.",
+                "Hours later, you give up. The discrepancy is there, hiding in the data, but your tired eyes and tired mind can't find it. You proceed with what you have, knowing there's a gap in your intelligence.",
+                "The thing you missed will come back to bite you. It always does."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.missed_briefing_detail",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Proceed with caution. Stay alert for the unknown variable.",
+                    "next": "origins.human.human_025"
+                },
+                {
+                    "text": "Ask someone else to review it. Fresh eyes might catch what you missed.",
+                    "next": "origins.human.human_025"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.4
+        },
+        "human_f026": {
+            "id": "origins.human.human_f026",
+            "title": "The Fight Leaves You",
+            "location": "lower_slums",
+            "text": [
+                "The mine incident took your career and left you with a body that doesn't work right anymore. You try to fight, to push through, to be the person you were before the collapse. But your shoulder seizes mid-swing and the pain drops you to your knees.",
+                "The old injury is a leash. Every time you reach for your former strength, it yanks you back. The fight isn't over, you tell yourself, but your body disagrees with increasing conviction.",
+                "You sit in the aftermath, massaging the shoulder that ended everything, wondering if willpower alone can bridge the gap between who you are and who you were."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.mine_injury_flared",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find a different kind of strength. Adaptation is survival.",
+                    "next": "origins.human.human_031"
+                },
+                {
+                    "text": "Push through it. Pain is just information.",
+                    "next": "origins.human.human_031"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.6
+        },
+        "human_f029": {
+            "id": "origins.human.human_f029",
+            "title": "No One Listens",
+            "location": "lower_slums",
+            "text": [
+                "You try to stop the others, appealing to conscience, to decency, to self-preservation. But your words bounce off hardened faces like rain off concrete. They've already made their choice, and your refusal makes you a liability, not a leader.",
+                "One of them shoves you. 'Stay out of it if you don't have the stomach.' The contempt in their voice is complete. You're not the moral compass — you're the weak link.",
+                "Refusing wasn't enough because refusal without power is just noise. And right now, you have no power at all."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_to_stop_others",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Walk away. You tried. That has to count for something.",
+                    "next": "origins.human.human_033"
+                },
+                {
+                    "text": "Stay and witness. If you can't stop it, at least remember it.",
+                    "next": "origins.human.human_033"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "human_f030": {
+            "id": "origins.human.human_f030",
+            "title": "Dignity Crumbles",
+            "location": "lower_slums",
+            "text": [
+                "You face the tribunal with your chin up, but dignity alone doesn't withstand cross-examination. They find every crack, every inconsistency, every moment of weakness in your testimony. Under the harsh lights, your composure dissolves into stammering and silence.",
+                "The verdict is predictable. Your dignity impressed no one because the system isn't designed to reward courage — it's designed to crush it.",
+                "You leave the hearing room diminished, your story officially discredited, your name attached to a ruling that will follow you through every background check for the rest of your life."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -15
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.tribunal_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Appeal. The truth doesn't change just because a tribunal ignores it.",
+                    "next": "origins.human.human_034"
+                },
+                {
+                    "text": "Accept it and rebuild. The system was never going to save you.",
+                    "next": "origins.human.human_034"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "human_f033": {
+            "id": "origins.human.human_f033",
+            "title": "Plans That Lead Nowhere",
+            "location": "lower_slums",
+            "text": [
+                "You tell yourself to stop drifting. Sit down. Make a plan. But the plan falls apart before the ink dries. Every step requires resources you don't have, contacts who've ghosted you, skills you never learned.",
+                "The gap between where you are and where you need to be is a canyon, and you don't even have rope. You stare at your scrawled notes until the words lose meaning.",
+                "Drifting, it turns out, isn't a choice you're making. It's the current, and right now you don't have the strength to swim against it."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.planning_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Start smaller. One step, not a whole staircase.",
+                    "next": "origins.human.human_035"
+                },
+                {
+                    "text": "Find someone who's figured it out. Copy their playbook.",
+                    "next": "origins.human.human_035"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "human_f042": {
+            "id": "origins.human.human_f042",
+            "title": "The Fight You Lose",
+            "location": "lower_slums",
+            "text": [
+                "You swing first and hard, channeling every ounce of frustration into the punch. It connects — barely. Then the counter-hit comes, and it's nothing like the fights in the stories. It's fast, clinical, and absolute.",
+                "You hit the ground before you understand what happened. Something warm runs down your face. Your vision doubles. Above you, shapes move with the casual efficiency of people who've done this a hundred times.",
+                "No more waiting, you said. But the fight didn't wait for you to be ready, either."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 7
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -10
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.lost_the_fight",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Crawl away. Living to fight another day is still winning.",
+                    "next": "origins.human.human_046"
+                },
+                {
+                    "text": "Remember their technique. Next time will be different.",
+                    "next": "origins.human.human_046"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "embers",
+            "effectIntensity": 0.7
+        },
+        "human_f043": {
+            "id": "origins.human.human_f043",
+            "title": "Noise in the Dark",
+            "location": "lower_slums",
+            "text": [
+                "The tunnels amplify every sound. Your breathing echoes off the walls. Your footstep splashes in an unseen puddle and the noise carries through the passage like a shout.",
+                "A light snaps on ahead. Someone calls out — not friendly, not hostile, just curious. But in these tunnels, curious is enough to get you killed. You freeze, caught between the light and the dark, too noisy to hide and too slow to run.",
+                "They find you, of course. Pressed against a damp wall, trying to become invisible through sheer willpower. It doesn't work."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.caught_in_tunnels",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Talk your way out. Charm is a kind of stealth.",
+                    "next": "origins.human.human_047"
+                },
+                {
+                    "text": "Bolt for the nearest exit. Speed over silence now.",
+                    "next": "origins.human.human_047"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "human_f046": {
+            "id": "origins.human.human_f046",
+            "title": "Dead End",
+            "location": "lower_slums",
+            "text": [
+                "The tunnel entrance you remembered is sealed — welded shut with industrial-grade plating sometime in the last month. You slam your palms against the metal in frustration, feeling the vibration travel up your arms.",
+                "Behind you, the sounds of pursuit grow closer. No tunnel. No escape route. Your mental map of the underground is outdated, and the city has been closing exits faster than you can find new ones.",
+                "You spin, scanning for alternatives, but the corridor offers nothing but dead concrete and a flickering maintenance light. Disappearing requires doors, and all of yours just closed."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.tunnel_sealed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Think. There's always another way out. Always.",
+                    "next": "origins.human.human_047"
+                },
+                {
+                    "text": "Turn and face what's coming. Running is over.",
+                    "next": "origins.human.human_047"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.7
+        },
+        "human_f047": {
+            "id": "origins.human.human_f047",
+            "title": "Legs Give Out",
+            "location": "lower_slums",
+            "text": [
+                "Your legs are screaming and then they stop screaming and just stop working. You stumble, catch yourself, stumble again, and finally your knees buckle. You crash to the ground in a heap of exhaustion and adrenaline comedown.",
+                "The ground is cold and wet and you lie there for a long time, chest heaving, heart hammering so hard you can feel it in your teeth. You're alive. But you can't run anymore.",
+                "When you finally drag yourself upright, every step is agony. The body has limits, and you just found yours."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.collapsed_from_exhaustion",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Rest. Even a few minutes will help.",
+                    "next": "origins.human.human_048"
+                },
+                {
+                    "text": "Force yourself up. Walk if you can't run.",
+                    "next": "origins.human.human_048"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "rain",
+            "effectIntensity": 0.6
+        },
+        "human_f049": {
+            "id": "origins.human.human_f049",
+            "title": "Blind Trust",
+            "location": "lower_slums",
+            "text": [
+                "You try to research the surgeon but the underground medical scene is deliberately opaque. Every lead dead-ends. The reviews are anonymous and contradictory. The best you find is a forum post that says 'didn't die,' which is alarmingly the most positive endorsement available.",
+                "You go in blind, trusting a stranger with a scalpel and a basement operating table. The procedure goes... adequately. But 'adequate' underground surgery means new scars, lingering pain, and the nagging suspicion that something wasn't done quite right.",
+                "Research would have found you a better option. Instead, you're patched up by the first name that came along."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -20
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.bad_surgery",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "At least you're alive. Heal and move on.",
+                    "next": "origins.human.human_051"
+                },
+                {
+                    "text": "Find a real doctor to check the work. Better late than never.",
+                    "next": "origins.human.human_051"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "human_f052": {
+            "id": "origins.human.human_f052",
+            "title": "Gratitude Gone Wrong",
+            "location": "lower_slums",
+            "text": [
+                "You try to thank Marta but the words come out wrong — stiff, formal, like you're reading from a script. She helped you when nobody else would, and you can't even express basic gratitude without making it awkward.",
+                "She waves you off, but you can see the hurt in her eyes. She expected warmth, maybe even friendship. Instead she got a transaction.",
+                "Another bridge half-built. Another connection fumbled. The streets taught you to guard yourself so well that now you can't let anyone in, even when they've earned it."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.fumbled_gratitude",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Show gratitude through actions instead. Help her with something real.",
+                    "next": "origins.human.human_054"
+                },
+                {
+                    "text": "Let it go. Not everyone needs to be your friend.",
+                    "next": "origins.human.human_054"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.4
+        },
+        "human_f053": {
+            "id": "origins.human.human_f053",
+            "title": "Same Mistakes, Different Day",
+            "location": "lower_slums",
+            "text": [
+                "Build carefully this time, you tell yourself. Learn from the past. But the past is a terrible teacher when you can't see the lesson clearly. You make the same choices in different clothes — the same shortcuts, the same compromises, the same refusal to see warning signs.",
+                "The foundation you're building is already cracked, and you can feel it. But you keep going because starting over again would require admitting that you haven't learned anything in all these years.",
+                "Wisdom requires honesty, and the hardest person to be honest with is yourself."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -7
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.repeated_mistakes",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Stop. Assess. Actually listen to the voice saying 'this is wrong.'",
+                    "next": "origins.human.human_055"
+                },
+                {
+                    "text": "Maybe perfection isn't the goal. Just do better than last time.",
+                    "next": "origins.human.human_055"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.6
+        },
+        "human_f059": {
+            "id": "origins.human.human_f059",
+            "title": "Nothing Turns Up",
+            "location": "lower_slums",
+            "text": [
+                "Maybe something will turn up. That's been your operating philosophy for years, and it's a philosophy that produces exactly what it promises: maybe. Sometimes. Usually not.",
+                "Today, nothing turns up. The leads are cold, the opportunities are taken, and the universe declines to provide a convenient break. You sit on a bench in a transit station, watching people with somewhere to go, and realize that luck isn't a strategy.",
+                "It usually does, you told yourself. But 'usually' has an ugly opposite, and you're living in it."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.luck_ran_out",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Make your own luck. Get out there and hustle.",
+                    "next": "origins.human.human_058"
+                },
+                {
+                    "text": "Lower your standards. Any opportunity is better than none.",
+                    "next": "origins.human.human_058"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "human_f062": {
+            "id": "origins.human.human_f062",
+            "title": "The System Has No Weaknesses You Can Find",
+            "location": "lower_slums",
+            "text": [
+                "Seven years of observation and you still can't crack it. The system's weaknesses exist — they must — but they're buried under layers of bureaucracy and corporate obfuscation that your street education can't penetrate.",
+                "You stare at your notes, pages of half-formed theories and dead-end observations, and feel the weight of wasted time. Seven years is long enough to build a life, and you spent it looking for a flaw in a wall instead of finding a door.",
+                "The system doesn't have weaknesses. It has features that look like weaknesses but are actually traps. And you've walked into several."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.system_analysis_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Stop trying to outsmart the system. Outwork it instead.",
+                    "next": "origins.human.human_063"
+                },
+                {
+                    "text": "Find allies who know the system from the inside.",
+                    "next": "origins.human.human_063"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.5
+        },
+        "human_f067": {
+            "id": "origins.human.human_f067",
+            "title": "The Storm Wins",
+            "location": "lower_slums",
+            "text": [
+                "You try to move like a ghost through the storm but the wind has other ideas. A gust catches you broadside and slams you into a wall. Rain hammers your face until you can't see, can't hear, can't think.",
+                "You crawl the last twenty meters to cover, soaked and battered, having made more noise than a freight hauler. Anyone watching the feeds knows exactly where you are and which direction you're heading.",
+                "Ghosts don't exist in weather like this. There's just the storm and the fools who think they can walk through it unseen."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.storm_defeated_you",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Wait out the storm. Patience isn't cowardice.",
+                    "next": "origins.human.human_069"
+                },
+                {
+                    "text": "Use the storm as cover. If you can't see, neither can they.",
+                    "next": "origins.human.human_069"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "rain",
+            "effectIntensity": 0.9
+        },
+        "human_f068": {
+            "id": "origins.human.human_f068",
+            "title": "The Channel Fights Back",
+            "location": "lower_slums",
+            "text": [
+                "The channel is narrower than you expected, filled with freezing water that rises to your chest. The current pushes against you with relentless force. You push back, step by agonizing step, but your muscles cramp and your grip on the safety line fails.",
+                "The water pulls you under. You surface gasping, choking, clawing at the walls. By the time you drag yourself out the far end, you're hypothermic and shaking so badly you can barely stand.",
+                "You pushed through. But the channel pushed back harder."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 7
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.nearly_drowned",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Find warmth. Hypothermia kills slower than bullets but just as dead.",
+                    "next": "origins.human.human_072"
+                },
+                {
+                    "text": "Keep moving. Stopping now means the channel wins.",
+                    "next": "origins.human.human_072"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "rain",
+            "effectIntensity": 0.8
+        },
+        "human_f069": {
+            "id": "origins.human.human_f069",
+            "title": "Loose Ends Everywhere",
+            "location": "lower_slums",
+            "text": [
+                "You plan the disappearance but loose ends keep multiplying. A data trail you can't erase. A witness you can't account for. A financial footprint that leads straight to your new identity like a neon arrow.",
+                "By the time you realize the plan has too many holes, you've already started executing it. Half-disappeared is worse than not disappeared at all — now you're in the gap between two lives, belonging to neither.",
+                "No loose ends, you promised yourself. But you're the loosest end of all."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -15
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.botched_disappearance",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Commit. Close the gaps as you go.",
+                    "next": "origins.human.human_086"
+                },
+                {
+                    "text": "Abort and try again with a better plan.",
+                    "next": "origins.human.human_086"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "human_f071": {
+            "id": "origins.human.human_f071",
+            "title": "Rho Walks Away",
+            "location": "lower_slums",
+            "text": [
+                "You make your pitch to Rho — together is safer, strength in numbers, all the logical arguments. But Rho's eyes are flat and unreadable. Trust isn't built with words, and you're asking a stranger to bet their life on your sincerity.",
+                "'I work alone,' Rho says, and means it. They turn and walk away, disappearing into the crowd with the practiced ease of someone who's been disappearing their whole life.",
+                "You're left standing alone, your offer of partnership echoing in empty air. Together is safer, but only if both people believe it."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.rho_rejected_partnership",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Respect their choice. Maybe your paths will cross again.",
+                    "next": "origins.human.human_067"
+                },
+                {
+                    "text": "Follow at a distance. They might change their mind.",
+                    "next": "origins.human.human_067"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "human_f085": {
+            "id": "origins.human.human_f085",
+            "title": "Blind to the Cage",
+            "location": "lower_slums",
+            "text": [
+                "You try to see the routine for what it is — a cage, a trap, a comfortable prison. But the cage is well-designed, and the bars are invisible. Wake up, work, eat, sleep, repeat. It looks like a life from the inside.",
+                "The moment of clarity you reached for slips away, replaced by the familiar numbness of daily survival. The routine isn't a cage if you don't notice the bars. And right now, you can't see them anymore.",
+                "Tomorrow will be the same. And the day after. Until something breaks the pattern from outside, because you just proved you can't break it from within."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.trapped_in_routine",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Shake it off. One moment of weakness doesn't define you.",
+                    "next": "origins.human.human_058"
+                },
+                {
+                    "text": "Maybe the routine isn't the enemy. Maybe it's the foundation.",
+                    "next": "origins.human.human_058"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.6
+        },
+        "human_f086": {
+            "id": "origins.human.human_f086",
+            "title": "Overthinking It",
+            "location": "lower_slums",
+            "text": [
+                "You think it through. And through. And through again. Analysis paralysis sets in like a fog, and every option leads to three more options, each with their own branching consequences that you can't stop calculating.",
+                "Stability on your own terms requires decisive action, and you're incapable of it right now. The weight of possibilities crushes every initiative before it begins.",
+                "You end the day exactly where you started, surrounded by plans but paralyzed by the fear of choosing wrong. Thinking it through, it turns out, is just a sophisticated way of doing nothing."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.analysis_paralysis",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Stop thinking. Start doing. Any direction is better than none.",
+                    "next": "origins.human.human_073"
+                },
+                {
+                    "text": "Narrow it down to two options. Then flip a coin.",
+                    "next": "origins.human.human_073"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "glitch",
+            "effectIntensity": 0.4
+        },
+        "human_f089": {
+            "id": "origins.human.human_f089",
+            "title": "Lost in Translation",
+            "location": "lower_slums",
+            "text": [
+                "Vasquez talks fast, in the shorthand of someone who's lived in this city for decades. Half the references go over your head. Sector names you don't recognize, people you've never heard of, power structures that shift too fast to map.",
+                "You nod along, pretending to understand, but the real information — the survival-critical details — slides past while you're still trying to parse the last sentence. By the time Vasquez finishes, you've retained maybe a third of what was said.",
+                "The city has a language, and you don't speak it yet."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.failed_to_listen",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Ask Vasquez to slow down and repeat the important parts.",
+                    "next": "origins.human.human_090"
+                },
+                {
+                    "text": "Learn the hard way. The city will teach you what Vasquez couldn't.",
+                    "next": "origins.human.human_090"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.4
+        },
+        "human_f092": {
+            "id": "origins.human.human_f092",
+            "title": "Inventory of Nothing",
+            "location": "lower_slums",
+            "text": [
+                "You try to inventory everything but the exercise is depressing. A handful of credits, some worn clothes, a few tools of questionable utility, and a collection of favors owed by people who may or may not remember owing them.",
+                "Knowledge is survival, you tell yourself. But this knowledge — the knowledge of exactly how little you have — doesn't feel like power. It feels like a countdown.",
+                "You close the notebook and shove it in your pocket. Some inventories are better left incomplete."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.depressing_inventory",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Focus on what you can get, not what you have.",
+                    "next": "origins.human.human_093"
+                },
+                {
+                    "text": "Resources are everywhere if you know where to look.",
+                    "next": "origins.human.human_093"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "human_f094": {
+            "id": "origins.human.human_f094",
+            "title": "The City Sees Through You",
+            "location": "lower_slums",
+            "text": [
+                "You meet the city with confidence — chest out, chin up, eyes forward. The performance lasts about three blocks before someone calls you out. 'New here?' they ask, with the casual cruelty of someone who enjoys watching outsiders fail.",
+                "Fake it if you must, you told yourself. But the city can smell a faker the way a dog smells fear. Every wrong turn, every confused glance at a street sign, every flinch at an unexpected noise broadcasts your inexperience.",
+                "Confidence requires knowledge, and you don't have enough of either yet."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 3
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.exposed_as_newcomer",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Own it. Being new isn't a weakness if you learn fast.",
+                    "next": "origins.human.human_095"
+                },
+                {
+                    "text": "Watch more, walk less. Study the city before trying to own it.",
+                    "next": "origins.human.human_095"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "human_f097": {
+            "id": "origins.human.human_f097",
+            "title": "Scammed on the Board",
+            "location": "lower_slums",
+            "text": [
+                "You study the job board, looking for the best opportunity, comparing rates and requirements with the careful eye of someone who can't afford to waste time. You pick what looks like a solid gig — good pay, reasonable risk.",
+                "It's a setup. The job listing is a front for a data-harvesting scheme that captures your ID scan and biometric profile. By the time you realize what happened, they have enough information to clone your identity or sell it to the highest bidder.",
+                "The best opportunity on the board was a trap, and your careful analysis walked you right into it."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "modify_currency",
+                    "amount": -12
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.job_board_scam",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Lock down your identity. Damage control, fast.",
+                    "next": "origins.human.human_096"
+                },
+                {
+                    "text": "Find who posted the listing. Turn the hunter into the hunted.",
+                    "next": "origins.human.human_096"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "glitch",
+            "effectIntensity": 0.6
+        },
+        "human_f099": {
+            "id": "origins.human.human_f099",
+            "title": "Sleep Won't Come",
+            "location": "lower_slums",
+            "text": [
+                "You close your eyes and command sleep to come. Tomorrow everything changes, and you need to be sharp. But your mind won't quiet. It replays every failure, every close call, every face you've left behind.",
+                "Hours pass. The ceiling stares back. The sounds of the city filter through thin walls — sirens, arguments, the eternal hum of machinery that never sleeps. And neither do you.",
+                "When dawn finally arrives, you greet it with gritty eyes and a body that feels like it's been dragged through gravel. Everything changes tomorrow, but tomorrow arrived and you're already running on empty."
+            ],
+            "onEnter": [
+                {
+                    "type": "damage",
+                    "amount": 4
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "origin.sleepless_night",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Caffeine and willpower. You've operated on less.",
+                    "next": "origins.human.human_100"
+                },
+                {
+                    "text": "Take it slow today. Pushing hard on no sleep is how mistakes happen.",
+                    "next": "origins.human.human_100"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "blue",
+            "effect": "rain",
+            "effectIntensity": 0.4
         }
     }
 }

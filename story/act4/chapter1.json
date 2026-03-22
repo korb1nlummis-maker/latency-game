@@ -1305,7 +1305,7 @@
                         "dc": 15
                     },
                     "next": "act4.chapter1.act4_024",
-                    "failNext": "act4.chapter1.act4_024",
+                    "failNext": "act4.chapter1.act4_022_fail_str",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -1336,7 +1336,7 @@
                         "dc": 16
                     },
                     "next": "act4.chapter1.act4_024",
-                    "failNext": "act4.chapter1.act4_024",
+                    "failNext": "act4.chapter1.act4_022_fail_dex",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -2766,6 +2766,80 @@
             "isEnding": false,
             "mood": "digital",
             "effect": "datastream",
+            "effectIntensity": 0.5
+        },
+        "act4_022_fail_str": {
+            "id": "act4.chapter1.act4_022_fail_str",
+            "title": "Grip Fails",
+            "location": "highcity_maintenance_gantry",
+            "text": [
+                "Metal slick. Grip fails. Slam into platform below.",
+                "Escape route gone."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "gantry_fall",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Pain is temporary.",
+                    "next": "act4.chapter1.act4_024"
+                },
+                {
+                    "text": "Check for breaks.",
+                    "next": "act4.chapter1.act4_024"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_highcity_gantry",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
+        },
+        "act4_022_fail_dex": {
+            "id": "act4.chapter1.act4_022_fail_dex",
+            "title": "Not Fast Enough",
+            "location": "highcity_maintenance_gantry",
+            "text": [
+                "Gantry longer than it looked. Warning shot scorches railing.",
+                "Dive for cover. Fifty meters to go."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -6
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "gantry_pinned",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Wait for a gap.",
+                    "next": "act4.chapter1.act4_024"
+                },
+                {
+                    "text": "Alternate path.",
+                    "next": "act4.chapter1.act4_024"
+                }
+            ],
+            "ascii": null,
+            "music": "combat_highcity_gantry",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
             "effectIntensity": 0.5
         }
     }

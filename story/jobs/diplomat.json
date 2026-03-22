@@ -2892,7 +2892,7 @@
                         "dc": 13
                     },
                     "next": "jobs.diplomat.jdip_086",
-                    "failNext": "jobs.diplomat.jdip_086",
+                    "failNext": "jobs.diplomat.jdip_084_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3439,7 +3439,7 @@
                         "dc": 16
                     },
                     "next": "jobs.diplomat.jdip_098",
-                    "failNext": "jobs.diplomat.jdip_098",
+                    "failNext": "jobs.diplomat.jdip_097_fail",
                     "onFailure": [
                         {
                             "type": "modify_stat",
@@ -3578,6 +3578,80 @@
             "mood": "tension",
             "effect": "sparks",
             "effectIntensity": 0.7
+        },
+        "jdip_084_fail": {
+            "id": "jobs.diplomat.jdip_084_fail",
+            "title": "Wrong Choice",
+            "location": "sector_7_bar",
+            "text": [
+                "Priya is brilliant but negotiations need warmth.",
+                "Deal stalls. Your judgment questioned."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "priya_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Coach Priya.",
+                    "next": "jobs.diplomat.jdip_086"
+                },
+                {
+                    "text": "Adjust the team.",
+                    "next": "jobs.diplomat.jdip_086"
+                }
+            ],
+            "ascii": null,
+            "music": "tension_building",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "jdip_097_fail": {
+            "id": "jobs.diplomat.jdip_097_fail",
+            "title": "Too Late to Mend",
+            "location": "lower_slums",
+            "text": [
+                "Grievances hardened into grudges. Doors close.",
+                "Some bridges stay burned."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -5
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Some failures are permanent.",
+                    "next": "jobs.diplomat.jdip_098"
+                },
+                {
+                    "text": "Persistence is diplomacy.",
+                    "next": "jobs.diplomat.jdip_098"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
         }
     }
 }

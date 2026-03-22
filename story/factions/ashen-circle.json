@@ -536,7 +536,7 @@
                         "dc": 14
                     },
                     "next": "factions.ashen-circle.ac_012",
-                    "failNext": "factions.ashen-circle.ac_012",
+                    "failNext": "factions.ashen-circle.ac_011_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -909,7 +909,7 @@
                         "dc": 15
                     },
                     "next": "factions.ashen-circle.ac_018",
-                    "failNext": "factions.ashen-circle.ac_018",
+                    "failNext": "factions.ashen-circle.ac_017_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -1080,7 +1080,7 @@
                         "dc": 14
                     },
                     "next": "factions.ashen-circle.ac_021",
-                    "failNext": "factions.ashen-circle.ac_021",
+                    "failNext": "factions.ashen-circle.ac_020_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -1458,7 +1458,7 @@
                         "dc": 16
                     },
                     "next": "factions.ashen-circle.ac_027",
-                    "failNext": "factions.ashen-circle.ac_027",
+                    "failNext": "factions.ashen-circle.ac_026_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -1673,7 +1673,7 @@
                         "dc": 16
                     },
                     "next": "factions.ashen-circle.ac_030",
-                    "failNext": "factions.ashen-circle.ac_030",
+                    "failNext": "factions.ashen-circle.ac_029_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -1948,7 +1948,7 @@
                         "dc": 16
                     },
                     "next": "factions.ashen-circle.ac_034",
-                    "failNext": "factions.ashen-circle.ac_034",
+                    "failNext": "factions.ashen-circle.ac_033_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -3761,7 +3761,7 @@
                         "dc": 16
                     },
                     "next": "factions.ashen-circle.ac_077",
-                    "failNext": "factions.ashen-circle.ac_077",
+                    "failNext": "factions.ashen-circle.ac_076_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -4442,7 +4442,7 @@
                         "dc": 17
                     },
                     "next": "factions.ashen-circle.ac_091",
-                    "failNext": "factions.ashen-circle.ac_091",
+                    "failNext": "factions.ashen-circle.ac_090_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -4805,7 +4805,7 @@
                         "dc": 16
                     },
                     "next": "factions.ashen-circle.ac_099",
-                    "failNext": "factions.ashen-circle.ac_099",
+                    "failNext": "factions.ashen-circle.ac_097_fail",
                     "onSelect": [
                         {
                             "type": "set_flag",
@@ -5016,6 +5016,339 @@
             "mood": "red",
             "effect": "embers",
             "effectIntensity": 0.8
+        },
+        "ac_011_fail": {
+            "id": "factions.ashen-circle.ac_011_fail",
+            "title": "Words Ring Hollow",
+            "location": "ashen_safehouse",
+            "text": [
+                "Right words, wrong delivery. Faith is felt, not analyzed.",
+                "Connection remains unbuilt."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Learn from the silence.",
+                    "next": "factions.ashen-circle.ac_012"
+                },
+                {
+                    "text": "Try with more heart.",
+                    "next": "factions.ashen-circle.ac_012"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy_warm",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "ac_017_fail": {
+            "id": "factions.ashen-circle.ac_017_fail",
+            "title": "Proposal Collapses",
+            "location": "ossuary_chamber",
+            "text": [
+                "Theologians pick it apart. Who defines 'involuntary'?",
+                "Middle path satisfies no one."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "ac_compromise_rejected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Accept their framework.",
+                    "next": "factions.ashen-circle.ac_018"
+                },
+                {
+                    "text": "Present new evidence.",
+                    "next": "factions.ashen-circle.ac_018"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "ac_020_fail": {
+            "id": "factions.ashen-circle.ac_020_fail",
+            "title": "Server Access Denied",
+            "location": "neurovault_clinic",
+            "text": [
+                "Circle encryption needs spiritual handshake.",
+                "Consciousnesses beyond reach."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "ac_server_locked",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Ask the Circle. Swallow pride.",
+                    "next": "factions.ashen-circle.ac_021"
+                },
+                {
+                    "text": "Study their protocols.",
+                    "next": "factions.ashen-circle.ac_021"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_dread",
+            "isEnding": false,
+            "mood": "purple",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "ac_026_fail": {
+            "id": "factions.ashen-circle.ac_026_fail",
+            "title": "Truth Unwelcome",
+            "location": "undergrid_residential",
+            "text": [
+                "'You haven't felt what I've felt.' They're right.",
+                "Analysis correct, beside the point."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "ac_healing_rejected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Listen instead of diagnose.",
+                    "next": "factions.ashen-circle.ac_027"
+                },
+                {
+                    "text": "Give them space.",
+                    "next": "factions.ashen-circle.ac_027"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_melancholy_warm",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "ac_029_fail": {
+            "id": "factions.ashen-circle.ac_029_fail",
+            "title": "Strategy Too Conservative",
+            "location": "sector_22_safehouse",
+            "text": [
+                "'Half-measures damn us all.'",
+                "Approach fails the moral test."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "ac_strategy_rejected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "All-or-nothing.",
+                    "next": "factions.ashen-circle.ac_030"
+                },
+                {
+                    "text": "Argue pragmatism.",
+                    "next": "factions.ashen-circle.ac_030"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "ac_033_fail": {
+            "id": "factions.ashen-circle.ac_033_fail",
+            "title": "Deception Backfires",
+            "location": "emergency_safehouse",
+            "text": [
+                "'We burn clean. No false flames.'",
+                "Marked as thinking like the enemy."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -8
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "ac_deception_rejected",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Adopt their principles.",
+                    "next": "factions.ashen-circle.ac_034"
+                },
+                {
+                    "text": "Disagree, but follow.",
+                    "next": "factions.ashen-circle.ac_034"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_tension",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "ac_076_fail": {
+            "id": "factions.ashen-circle.ac_076_fail",
+            "title": "Argument Turned Against You",
+            "location": "undergrid_bar",
+            "text": [
+                "'Agreement through manipulation is coercion.'",
+                "Cleverness read as dishonesty."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                },
+                {
+                    "type": "set_flag",
+                    "flag": "ac_rhetoric_failed",
+                    "value": true
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Genuinely apologize.",
+                    "next": "factions.ashen-circle.ac_077"
+                },
+                {
+                    "text": "Let someone else argue.",
+                    "next": "factions.ashen-circle.ac_077"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_bar",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "none",
+            "effectIntensity": 0.5
+        },
+        "ac_090_fail": {
+            "id": "factions.ashen-circle.ac_090_fail",
+            "title": "Philosophical Overreach",
+            "location": "university_ruins",
+            "text": [
+                "'My daughter is in that machine. I care if she's suffering.'",
+                "Framework crumbles against grief."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -2
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Address their pain.",
+                    "next": "factions.ashen-circle.ac_091"
+                },
+                {
+                    "text": "Presence is the answer.",
+                    "next": "factions.ashen-circle.ac_091"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_sacred_low",
+            "isEnding": false,
+            "mood": "grey",
+            "effect": "rain",
+            "effectIntensity": 0.5
+        },
+        "ac_097_fail": {
+            "id": "factions.ashen-circle.ac_097_fail",
+            "title": "Ritual Interrupted",
+            "location": "medical_district",
+            "text": [
+                "'The dead don't consent to deletion.'",
+                "Violated their deepest taboo."
+            ],
+            "onEnter": [
+                {
+                    "type": "modify_stat",
+                    "stat": "health",
+                    "amount": -3
+                },
+                {
+                    "type": "modify_stat",
+                    "stat": "reputation",
+                    "amount": -5
+                }
+            ],
+            "choices": [
+                {
+                    "text": "Stop. Respect their beliefs.",
+                    "next": "factions.ashen-circle.ac_099"
+                },
+                {
+                    "text": "Explain. Backup was compromised.",
+                    "next": "factions.ashen-circle.ac_099"
+                }
+            ],
+            "ascii": null,
+            "music": "ambient_sacred_low",
+            "isEnding": false,
+            "mood": "red",
+            "effect": "shake",
+            "effectIntensity": 0.5
         }
     }
 }
