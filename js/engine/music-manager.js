@@ -278,8 +278,9 @@ window.Latency.MusicManager = (function () {
         document.body.removeEventListener('touchstart', _onFirstInteraction, true);
         document.body.removeEventListener('keydown', _onFirstInteraction, true);
 
-        // Always start music on first interaction — the main menu should have music.
-        if (_audio && _audio.paused && _playlist.length > 0) {
+        // Start music on first interaction — but respect mute state.
+        if (_audio && _audio.paused && _playlist.length > 0 && !_isMuted) {
+            _audio.volume = _volume;
             _isPlaying = true;
             _safePlay();
             _emit('music:play', { trackIndex: _currentIndex });
@@ -430,6 +431,13 @@ window.Latency.MusicManager = (function () {
 
         _audio.src = _playlist[index].src;
         _audio.currentTime = 0;
+        _audio.volume = _isMuted ? 0 : _volume;
+
+        if (_isMuted) {
+            // Don't play if muted — just load the track
+            _isPlaying = false;
+            return;
+        }
 
         _isPlaying = true;
         _safePlay();
@@ -493,7 +501,15 @@ window.Latency.MusicManager = (function () {
         _isMuted = !_isMuted;
 
         if (_audio) {
-            _audio.volume = _isMuted ? 0 : _volume;
+            if (_isMuted) {
+                _audio.volume = 0;
+                _audio.pause();
+                _isPlaying = false;
+            } else {
+                _audio.volume = _volume;
+                _isPlaying = true;
+                _safePlay();
+            }
         }
 
         _persist();
