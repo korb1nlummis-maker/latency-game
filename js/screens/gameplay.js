@@ -1239,6 +1239,13 @@ window.Latency.Screens.Gameplay = (function () {
                         if (window.Latency.SfxManager) {
                             window.Latency.SfxManager.play('click');
                         }
+
+                        // Stat check choices: show click-to-roll dice UI
+                        if (choiceData.statCheck) {
+                            _showClickToRollUI(choiceData, choiceIndex);
+                            return;
+                        }
+
                         if (window.Latency.Narrative && window.Latency.Narrative.makeChoice) {
                             window.Latency.Narrative.makeChoice(choiceIndex, choiceData);
                         } else {
@@ -1254,6 +1261,134 @@ window.Latency.Screens.Gameplay = (function () {
 
             _els.choices.appendChild(btn);
         }
+    }
+
+    // --------------------------------------------------------
+    // Click-to-roll dice UI (interactive stat checks)
+    // --------------------------------------------------------
+
+    /**
+     * Show a click-to-roll dice interface when the player selects
+     * a stat check choice. The player must click the dice to roll,
+     * adding tactile engagement before the result resolves.
+     *
+     * @param {Object} choiceData - The choice object with statCheck info
+     * @param {number} choiceIndex - Index of the choice in _currentChoices
+     */
+    function _showClickToRollUI(choiceData, choiceIndex) {
+        // Hide choices
+        if (_els.choices) {
+            _els.choices.innerHTML = '';
+        }
+
+        // Get stat info
+        var stat = choiceData.statCheck.stat;
+        var dc = choiceData.statCheck.dc || choiceData.dc || 10;
+        var statLabel = STAT_LABELS[stat]
+            ? STAT_LABELS[stat].name
+            : stat.charAt(0).toUpperCase() + stat.slice(1);
+        var statShort = STAT_LABELS[stat]
+            ? STAT_LABELS[stat].short
+            : stat.toUpperCase().substring(0, 3);
+
+        // Build the click-to-roll UI in the dice result area
+        var area = _els.diceResult;
+        if (!area) return;
+
+        area.innerHTML =
+            '<div class="gp-dice-header">' +
+                '<span class="gp-dice-label">' + statLabel + ' Check — DC ' + dc + '</span>' +
+            '</div>' +
+            '<div class="gp-click-dice-wrap">' +
+                '<div class="gp-click-dice" tabindex="0" role="button" aria-label="Click to roll d20">' +
+                    '<span class="gp-click-dice-face">d20</span>' +
+                '</div>' +
+                '<div class="gp-click-dice-hint">CLICK TO ROLL</div>' +
+            '</div>';
+
+        area.style.display = 'block';
+        area.className = 'gp-dice-result gp-dice-clickable';
+
+        // Get the dice element
+        var diceEl = area.querySelector('.gp-click-dice');
+        var diceFace = area.querySelector('.gp-click-dice-face');
+        var hintEl = area.querySelector('.gp-click-dice-hint');
+
+        if (!diceEl) return;
+
+        var rolled = false;
+
+        function onDiceClick() {
+            if (rolled) return;
+            rolled = true;
+
+            // Play dice roll SFX
+            if (window.Latency.SfxManager) {
+                window.Latency.SfxManager.play('dice-roll');
+            }
+
+            // Remove clickable styling, start rolling animation
+            diceEl.classList.add('gp-click-dice-rolling');
+            diceEl.classList.remove('gp-click-dice');
+            area.classList.remove('gp-dice-clickable');
+            if (hintEl) hintEl.style.display = 'none';
+
+            // Animate random numbers cycling for 1.5 seconds
+            var animDuration = 1500;
+            var fastTick = 50;
+            var slowTick = 150;
+            var fastPhase = animDuration * 0.6;
+            var startTime = Date.now();
+            var choiceFired = false;
+            var switchedToSlow = false;
+
+            function finishRoll() {
+                if (choiceFired) return;
+                choiceFired = true;
+                if (window.Latency.Narrative && window.Latency.Narrative.makeChoice) {
+                    window.Latency.Narrative.makeChoice(choiceIndex, choiceData);
+                }
+            }
+
+            var tickTimer = setInterval(function () {
+                var elapsed = Date.now() - startTime;
+
+                if (elapsed >= animDuration) {
+                    clearInterval(tickTimer);
+                    finishRoll();
+                    return;
+                }
+
+                // Show random number
+                diceFace.textContent = Math.floor(Math.random() * 20) + 1;
+
+                // Switch to slow phase
+                if (!switchedToSlow && elapsed >= fastPhase) {
+                    switchedToSlow = true;
+                    clearInterval(tickTimer);
+                    tickTimer = setInterval(function () {
+                        var elapsed2 = Date.now() - startTime;
+                        if (elapsed2 >= animDuration) {
+                            clearInterval(tickTimer);
+                            finishRoll();
+                            return;
+                        }
+                        diceFace.textContent = Math.floor(Math.random() * 20) + 1;
+                    }, slowTick);
+                }
+            }, fastTick);
+        }
+
+        _bind(diceEl, 'click', onDiceClick);
+        _bind(diceEl, 'keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onDiceClick();
+            }
+        });
+
+        // Focus the dice for keyboard accessibility
+        diceEl.focus();
     }
 
     // --------------------------------------------------------
