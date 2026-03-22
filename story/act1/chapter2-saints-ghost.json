@@ -35,7 +35,10 @@
       ],
       "ascii": null,
       "music": "ambient_observatory",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "fac_saints_001a": {
       "id": "act1.chapter2-saints-ghost.fac_saints_001a",
@@ -73,11 +76,26 @@
         {
           "text": "Follow the acolyte inside to meet the High Compiler",
           "next": "act1.chapter2-saints-ghost.fac_saints_002"
+        },
+        {
+          "text": "[Wisdom 12] Study the temple's layout as you enter",
+          "next": "act1.chapter2-saints-ghost.fac_saints_002",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 12
+          }
+        },
+        {
+          "text": "Ask the acolyte what to expect from the High Compiler",
+          "next": "act1.chapter2-saints-ghost.fac_saints_002"
         }
       ],
       "ascii": null,
       "music": "ambient_observatory",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "fac_saints_002": {
       "id": "act1.chapter2-saints-ghost.fac_saints_002",
@@ -118,7 +136,10 @@
       ],
       "ascii": null,
       "music": "ambient_observatory",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "fac_saints_002a": {
       "id": "act1.chapter2-saints-ghost.fac_saints_002a",
@@ -140,11 +161,22 @@
         {
           "text": "\"What do you need from me?\"",
           "next": "act1.chapter2-saints-ghost.fac_saints_003"
+        },
+        {
+          "text": "[Intelligence 13] Ask about the Saints' technological capabilities",
+          "next": "act1.chapter2-saints-ghost.fac_saints_003",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_observatory",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "fac_saints_002b": {
       "id": "act1.chapter2-saints-ghost.fac_saints_002b",
@@ -161,11 +193,18 @@
         {
           "text": "\"Talk specifics. I'm listening.\"",
           "next": "act1.chapter2-saints-ghost.fac_saints_003"
+        },
+        {
+          "text": "Ask what happened to the last person who did this job",
+          "next": "act1.chapter2-saints-ghost.fac_saints_003"
         }
       ],
       "ascii": null,
       "music": "ambient_observatory",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "fac_saints_003": {
       "id": "act1.chapter2-saints-ghost.fac_saints_003",
@@ -202,7 +241,10 @@
       ],
       "ascii": null,
       "music": "music_saints_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "fac_saints_003a": {
       "id": "act1.chapter2-saints-ghost.fac_saints_003a",
@@ -218,11 +260,22 @@
         {
           "text": "\"Good enough. Brief me on the tunnels.\"",
           "next": "act1.chapter2-saints-ghost.fac_saints_004"
+        },
+        {
+          "text": "[Tech 12] Ask about the tunnel's electronic defenses",
+          "next": "act1.chapter2-saints-ghost.fac_saints_004",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 12
+          }
         }
       ],
       "ascii": null,
       "music": "music_saints_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "fac_saints_003b": {
       "id": "act1.chapter2-saints-ghost.fac_saints_003b",
@@ -246,11 +299,18 @@
         {
           "text": "\"Then let's make sure you get it first.\"",
           "next": "act1.chapter2-saints-ghost.fac_saints_004"
+        },
+        {
+          "text": "Request backup in case things go wrong",
+          "next": "act1.chapter2-saints-ghost.fac_saints_004"
         }
       ],
       "ascii": null,
       "music": "music_saints_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "fac_saints_004": {
       "id": "act1.chapter2-saints-ghost.fac_saints_004",
@@ -307,7 +367,10 @@
       ],
       "ascii": null,
       "music": "ambient_tunnels",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.7
     },
     "fac_saints_005a": {
       "id": "act1.chapter2-saints-ghost.fac_saints_005a",
@@ -333,11 +396,22 @@
         {
           "text": "Descend to sub-level nine",
           "next": "act1.chapter2-saints-ghost.fac_saints_006"
+        },
+        {
+          "text": "[Constitution 12] Steel yourself against the oppressive atmosphere of the deep tunnels",
+          "next": "act1.chapter2-saints-ghost.fac_saints_006",
+          "statCheck": {
+            "stat": "constitution",
+            "dc": 12
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_tunnels",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "fac_saints_005b": {
       "id": "act1.chapter2-saints-ghost.fac_saints_005b",
@@ -367,11 +441,22 @@
         {
           "text": "Push through to sub-level nine",
           "next": "act1.chapter2-saints-ghost.fac_saints_006"
+        },
+        {
+          "text": "[Strength 12] Force your way past the blocked section of tunnel",
+          "next": "act1.chapter2-saints-ghost.fac_saints_006",
+          "statCheck": {
+            "stat": "strength",
+            "dc": 12
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_tunnels",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "fac_saints_006": {
       "id": "act1.chapter2-saints-ghost.fac_saints_006",
@@ -408,7 +493,10 @@
       ],
       "ascii": null,
       "music": "music_anamnesis",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.8
     },
     "fac_saints_007": {
       "id": "act1.chapter2-saints-ghost.fac_saints_007",
@@ -441,7 +529,10 @@
       ],
       "ascii": null,
       "music": "music_anamnesis",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "fac_saints_007a": {
       "id": "act1.chapter2-saints-ghost.fac_saints_007a",
@@ -463,11 +554,22 @@
         {
           "text": "\"There are people who want to protect what you have left.\"",
           "next": "act1.chapter2-saints-ghost.fac_saints_008"
+        },
+        {
+          "text": "[Charisma 13] Speak from genuine empathy — share something personal",
+          "next": "act1.chapter2-saints-ghost.fac_saints_008",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "music_anamnesis",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "fac_saints_007b": {
       "id": "act1.chapter2-saints-ghost.fac_saints_007b",
@@ -495,11 +597,22 @@
         {
           "text": "\"You don't have to be alone anymore.\"",
           "next": "act1.chapter2-saints-ghost.fac_saints_008"
+        },
+        {
+          "text": "[Wisdom 12] Offer practical help instead of just words",
+          "next": "act1.chapter2-saints-ghost.fac_saints_008",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 12
+          }
         }
       ],
       "ascii": null,
       "music": "music_anamnesis",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "fac_saints_008": {
       "id": "act1.chapter2-saints-ghost.fac_saints_008",
@@ -530,7 +643,10 @@
       ],
       "ascii": null,
       "music": "music_anamnesis",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "fac_saints_009a": {
       "id": "act1.chapter2-saints-ghost.fac_saints_009a",
@@ -567,11 +683,22 @@
         {
           "text": "Leave the Observatory, carrying the memory of what you heard in the deep",
           "next": "act1.chapter2-saints-ghost.fac_saints_010"
+        },
+        {
+          "text": "[Wisdom 13] Reflect on the moral implications of what the Saints are doing",
+          "next": "act1.chapter2-saints-ghost.fac_saints_010",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "music_saints_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "fac_saints_009b": {
       "id": "act1.chapter2-saints-ghost.fac_saints_009b",
@@ -605,11 +732,18 @@
         {
           "text": "Rest. Tomorrow is another day in a city that has forgotten everything except how to survive.",
           "next": "act1.chapter2-saints-ghost.fac_saints_010"
+        },
+        {
+          "text": "Write down what you experienced before the details fade",
+          "next": "act1.chapter2-saints-ghost.fac_saints_010"
         }
       ],
       "ascii": null,
       "music": "ambient_apartment",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "fac_saints_009c": {
       "id": "act1.chapter2-saints-ghost.fac_saints_009c",
@@ -653,11 +787,22 @@
         {
           "text": "Walk away. Don't look back.",
           "next": "act1.chapter2-saints-ghost.fac_saints_010"
+        },
+        {
+          "text": "[Constitution 12] Push through the emotional weight and keep moving",
+          "next": "act1.chapter2-saints-ghost.fac_saints_010",
+          "statCheck": {
+            "stat": "constitution",
+            "dc": 12
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_deepnet",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "fac_saints_010": {
       "id": "act1.chapter2-saints-ghost.fac_saints_010",
@@ -697,11 +842,18 @@
         {
           "text": "Continue",
           "next": "act1.chapter2-saints-ghost.fac_ghost_001"
+        },
+        {
+          "text": "Take a moment to process what you learned from the Saints",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_001"
         }
       ],
       "ascii": null,
       "music": "ambient_slums",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.5
     },
     "fac_ghost_001": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_001",
@@ -733,7 +885,10 @@
       ],
       "ascii": null,
       "music": "ambient_market",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "fac_ghost_001a": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_001a",
@@ -754,11 +909,26 @@
         {
           "text": "Go to the meeting. You've already passed the first test.",
           "next": "act1.chapter2-saints-ghost.fac_ghost_002"
+        },
+        {
+          "text": "[Dexterity 12] Take a counter-surveillance route to the meeting",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_002",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 12
+          }
+        },
+        {
+          "text": "Arrive early to scope out the location",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_002"
         }
       ],
       "ascii": null,
       "music": "ambient_market",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "fac_ghost_002": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_002",
@@ -800,7 +970,10 @@
       ],
       "ascii": null,
       "music": "ambient_ghost_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "fac_ghost_002a": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_002a",
@@ -823,11 +996,22 @@
         {
           "text": "\"Alright. What's the job?\"",
           "next": "act1.chapter2-saints-ghost.fac_ghost_003"
+        },
+        {
+          "text": "[Intelligence 12] Ask about the pay and the risks involved",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_003",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 12
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_ghost_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "fac_ghost_002b": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_002b",
@@ -849,11 +1033,18 @@
         {
           "text": "\"Point taken. I'm in. What's the job?\"",
           "next": "act1.chapter2-saints-ghost.fac_ghost_003"
+        },
+        {
+          "text": "Ask for a guarantee of extraction if things go sideways",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_003"
         }
       ],
       "ascii": null,
       "music": "ambient_ghost_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "fac_ghost_003": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_003",
@@ -886,7 +1077,10 @@
       ],
       "ascii": null,
       "music": "ambient_ghost_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "fac_ghost_003a": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_003a",
@@ -907,11 +1101,22 @@
         {
           "text": "\"Fair enough. How do I get into Senate Hall?\"",
           "next": "act1.chapter2-saints-ghost.fac_ghost_004"
+        },
+        {
+          "text": "[Tech 13] Ask about electronic countermeasures at Senate Hall",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_004",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_ghost_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "fac_ghost_004": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_004",
@@ -963,7 +1168,10 @@
       ],
       "ascii": null,
       "music": "ambient_senate",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "fac_ghost_005a": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_005a",
@@ -990,11 +1198,22 @@
         {
           "text": "Look at the file",
           "next": "act1.chapter2-saints-ghost.fac_ghost_006"
+        },
+        {
+          "text": "[Intelligence 13] Memorize the file contents in case you need to destroy the physical copy",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_006",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_senate",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.7
     },
     "fac_ghost_005b": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_005b",
@@ -1022,11 +1241,18 @@
         {
           "text": "Look at the file",
           "next": "act1.chapter2-saints-ghost.fac_ghost_006"
+        },
+        {
+          "text": "Make a backup copy before reading",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_006"
         }
       ],
       "ascii": null,
       "music": "ambient_senate",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "fac_ghost_006": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_006",
@@ -1070,7 +1296,10 @@
       ],
       "ascii": null,
       "music": "music_ghost_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "fac_ghost_007": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_007",
@@ -1109,7 +1338,10 @@
       ],
       "ascii": null,
       "music": "ambient_ghost_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "fac_ghost_008a": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_008a",
@@ -1146,11 +1378,22 @@
         {
           "text": "Leave the Deep Net Cafe",
           "next": "act1.chapter2-saints-ghost.fac_ghost_009"
+        },
+        {
+          "text": "[Dexterity 13] Take the back exit and disappear through the service tunnels",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_009",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_ghost_theme",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "cold",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "fac_ghost_008b": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_008b",
@@ -1196,11 +1439,22 @@
         {
           "text": "Disappear into the city before anyone notices",
           "next": "act1.chapter2-saints-ghost.fac_ghost_009"
+        },
+        {
+          "text": "[Luck 12] Blend into a passing crowd to cover your exit",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_009",
+          "statCheck": {
+            "stat": "luck",
+            "dc": 12
+          }
         }
       ],
       "ascii": null,
       "music": "music_ghost_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "fac_ghost_008c": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_008c",
@@ -1244,11 +1498,18 @@
         {
           "text": "Pocket the credits. This is how the city works.",
           "next": "act1.chapter2-saints-ghost.fac_ghost_009"
+        },
+        {
+          "text": "Check if the Syndicate left you any additional instructions",
+          "next": "act1.chapter2-saints-ghost.fac_ghost_009"
         }
       ],
       "ascii": null,
       "music": "ambient_dark",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.7
     },
     "fac_ghost_009": {
       "id": "act1.chapter2-saints-ghost.fac_ghost_009",
@@ -1315,7 +1576,10 @@
       ],
       "ascii": null,
       "music": "ambient_slums",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.6
     }
   }
 }

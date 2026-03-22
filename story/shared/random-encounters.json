@@ -1,989 +1,1487 @@
 {
-    "meta": {
-        "title": "Random Encounters",
-        "category": "shared",
-        "file": "random-encounters",
-        "totalNodes": 50
-    },
-    "nodes": {
-        "re_001": {
-            "text": "A shadow peels away from a doorway and steps into your path. Two more materialize behind you. The one in front is tall, twitchy, holding a blade that catches the neon light. <span class='highlight'>\"Credits. All of them. Now.\"</span> The mugger's eyes are dilated — stim-jacked, probably, running on cheap combat enhancers that make them fast but stupid. The two behind you are armed with pipes.",
-            "choices": [
-                {
-                    "text": "Fight all three of them",
-                    "next": "shared.random-encounters.re_002",
-                    "statCheck": {
-                        "stat": "strength",
-                        "dc": 13
-                    }
-                },
-                {
-                    "text": "Try to talk your way out",
-                    "next": "shared.random-encounters.re_003",
-                    "statCheck": {
-                        "stat": "charisma",
-                        "dc": 12
-                    }
-                },
-                {
-                    "text": "Hand over your credits and walk away",
-                    "next": "shared.random-encounters.re_004"
-                }
-            ],
-            "actions": [],
-            "music": "action"
+  "meta": {
+    "title": "Random Encounters",
+    "category": "shared",
+    "file": "random-encounters",
+    "totalNodes": 50
+  },
+  "nodes": {
+    "re_001": {
+      "text": "A shadow peels away from a doorway and steps into your path. Two more materialize behind you. The one in front is tall, twitchy, holding a blade that catches the neon light. <span class='highlight'>\"Credits. All of them. Now.\"</span> The mugger's eyes are dilated — stim-jacked, probably, running on cheap combat enhancers that make them fast but stupid. The two behind you are armed with pipes.",
+      "choices": [
+        {
+          "text": "Fight all three of them",
+          "next": "shared.random-encounters.re_002",
+          "statCheck": {
+            "stat": "strength",
+            "dc": 13
+          }
         },
-        "re_002": {
-            "text": "The stim-jacker lunges, blade first. You sidestep, grab the outstretched arm, and twist. The blade clatters to the ground. A quick elbow to the jaw sends the first attacker sprawling. The two behind you hesitate — they signed up to rob someone helpless, not fight someone who hits back. One drops the pipe and runs. The other takes a swing that you duck under before planting a fist in their stomach. Thirty seconds later, you're standing over three groaning bodies, breathing hard but uncut.",
-            "choices": [
-                {
-                    "text": "Search their pockets for credits",
-                    "next": "shared.random-encounters.re_005"
-                },
-                {
-                    "text": "Leave them and move on",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 20
-                }
-            ],
-            "music": "action"
+        {
+          "text": "Try to talk your way out",
+          "next": "shared.random-encounters.re_003",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 12
+          }
         },
-        "re_003": {
-            "text": "You raise your hands, palms out, and lock eyes with the lead mugger. \"Look at me. Really look. Do I look like someone carrying credits? I'm Lower District. Same as you. You want to rob someone, hit the Midtown tourists — they carry more in their pocket lint than I've seen all month.\" The mugger squints, reassessing. Something in your voice or your eyes convinces them. The blade lowers. \"Get lost,\" they mutter, and the three of them melt back into the shadows.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_004": {
-            "text": "You transfer a handful of credits to the mugger's outstretched data pad. They check the balance, scowl at the meager amount, but take it. \"Slim pickings,\" they mutter, waving you past. The three of them vanish back into the alley, looking for richer prey. You walk on, lighter in the wallet but still breathing. In the Lower District, that counts as a win.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "value": -50
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_005": {
-            "text": "The muggers are carrying a combined total of eighty credits and a half-empty stim inhaler. Hardly a fortune, but it's something. You pocket the credits and leave the stim — that stuff rots your brain faster than it enhances anything. As you stand, you notice one of them has a tattoo on their wrist: a coiled serpent around a dagger. Gang ink. These aren't freelancers; they're recruiting territory. You might want to watch your back in this sector.",
-            "choices": [
-                {
-                    "text": "Move on, keeping alert",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_006": {
-            "text": "A vendor's cart blocks half the corridor, draped in flickering LED strips and piled high with merchandise of questionable origin. The vendor — a grinning woman with chrome teeth and mismatched cybernetic eyes — beckons you over. <span class='highlight'>\"Best deals in the district! Military surplus, medical supplies, things that fell off a transport, if you know what I mean!\"</span> She winks with the eye that's clearly stolen from a different model.",
-            "choices": [
-                {
-                    "text": "Browse the military surplus",
-                    "next": "shared.random-encounters.re_007"
-                },
-                {
-                    "text": "Ask about medical supplies",
-                    "next": "shared.random-encounters.re_008"
-                },
-                {
-                    "text": "Keep walking",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_007": {
-            "text": "The military surplus section includes a battered tactical vest, a signal jammer the size of a cigarette pack, and what she claims is a Meridian security override key. \"That little beauty opens any standard corp lock in the city. One hundred credits. Bargain of the century.\" She sees your skepticism. \"Fine, fine — fifty credits. But you didn't get it from me, and if it doesn't work, you didn't buy it from me either.\"",
-            "choices": [
-                {
-                    "text": "Buy the security override key for 50 credits",
-                    "next": "shared.random-encounters.re_009"
-                },
-                {
-                    "text": "\"No thanks.\" Move on.",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_008": {
-            "text": "She produces a case of auto-injectors from under the cart. \"Stimulants, painkillers, anti-rad shots, adrenaline boosters. All genuine, all sealed, all definitely not stolen from a Meridian medical transport that had an unfortunate accident last Tuesday.\" She shows you a medkit sealed in its original packaging. \"Hundred credits for the kit. Thirty each for individual injectors. I also have some... recreational items, if you're interested.\" Her grin widens.",
-            "choices": [
-                {
-                    "text": "Buy the medkit for 100 credits",
-                    "next": "shared.random-encounters.re_010"
-                },
-                {
-                    "text": "Pass on the medical supplies",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_009": {
-            "text": "You hand over the credits and pocket the override key. It's scratched and dented but the indicator light glows a steady green when you thumb the activation switch. Whether it actually works on corp locks remains to be seen, but for fifty credits, it's worth the gamble. The vendor is already hawking her wares to the next passerby before you've taken three steps.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_item",
-                    "item": "security_override_key"
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "value": -50
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_010": {
-            "text": "The medkit is genuine — you can tell by the weight and the unbroken Meridian seal. Whatever \"accident\" this fell off, it's the real thing. Inside, you find bandages, antiseptic, two auto-injectors of broad-spectrum antibiotics, and a neural pain suppressor. In a city where a trip to a real doctor can cost a month's wages, this kit is worth its weight in gold.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_item",
-                    "item": "medkit_standard"
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "value": -100
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_011": {
-            "text": "The corridor ahead is blocked by a security checkpoint that wasn't here yesterday. Two Meridian Corp security officers in full tactical gear stand behind a portable barricade, scanning everyone who passes with handheld ID readers. A line of sullen Lower District residents shuffles forward, presenting their documents. One of the officers spots you. <span class='highlight'>\"You. Step forward. ID and stack registration.\"</span>",
-            "choices": [
-                {
-                    "text": "Present your identification",
-                    "next": "shared.random-encounters.re_012"
-                },
-                {
-                    "text": "Try to bluff with fake credentials",
-                    "next": "shared.random-encounters.re_013",
-                    "statCheck": {
-                        "stat": "charisma",
-                        "dc": 14
-                    }
-                },
-                {
-                    "text": "Slip away before they get a good look at you",
-                    "next": "shared.random-encounters.re_014",
-                    "statCheck": {
-                        "stat": "dexterity",
-                        "dc": 13
-                    }
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_012": {
-            "text": "The officer scans your ID with professional disinterest. The reader beeps, processing. For a long three seconds, you watch the officer's face for any change in expression. Then the reader chirps green and the officer waves you through. \"Move along.\" You exhale and pass the barricade, feeling the weight of their surveillance equipment on your back until you turn the corner. Just a routine check. This time.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_013": {
-            "text": "You produce credentials that identify you as a Meridian maintenance contractor — a cover identity you've cultivated for exactly these situations. The officer scans it, frowns at the screen, then nods. \"Maintenance? What sector?\" You name a plausible assignment and the officer loses interest immediately. Nobody questions the maintenance crew. You're waved through with barely a second glance.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_014": {
-            "text": "You spot a service corridor branching off before the checkpoint and angle toward it without breaking stride. The trick is to move like you belong — no hurrying, no looking back. You duck into the corridor and navigate a maze of maintenance tunnels that parallel the main route, emerging two blocks past the checkpoint. The sec-officers never see you. In the Lower District, knowing the back ways is a survival skill.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_015": {
-            "text": "A figure lies crumpled against a wall, one hand pressed to their side where dark fluid seeps between their fingers. They look up at you with glassy eyes. \"Please... I need help. They stabbed me. Over nothing — a pack of rations.\" Their breathing is shallow, ragged. Without medical attention, they'll bleed out within the hour. But stopping to help in the open makes you a target too. People are walking past, eyes averted, pretending not to see.",
-            "choices": [
-                {
-                    "text": "Stop and administer first aid",
-                    "next": "shared.random-encounters.re_016",
-                    "statCheck": {
-                        "stat": "intelligence",
-                        "dc": 11
-                    }
-                },
-                {
-                    "text": "Give them credits for a clinic visit",
-                    "next": "shared.random-encounters.re_017"
-                },
-                {
-                    "text": "Keep walking like everyone else",
-                    "next": "shared.random-encounters.re_018"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_016": {
-            "text": "You kneel beside them and examine the wound. A shallow stab — it missed the major organs, but the bleeding needs to be stopped. You tear a strip from their shirt, pack the wound, and apply pressure until the bleeding slows. Color returns to their face. \"Thank you,\" they breathe. \"Most people just... walk past.\" They press something into your hand — a small data chip. \"Take this. It's a map of the maintenance tunnels under Sector 5. Might save your life someday like you saved mine.\"",
-            "choices": [
-                {
-                    "text": "Accept the chip and help them to a clinic",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_item",
-                    "item": "sector5_tunnel_map"
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "helped_stabbing_victim",
-                    "value": true
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_017": {
-            "text": "You transfer enough credits to cover a back-alley clinic visit and help them to their feet. They lean against the wall, shaking but grateful. \"The clinic on Fifth Corridor... they'll patch me up. Thank you. You're a rare thing in this city — someone who gives a damn.\" They limp away, one hand still pressed to their side. You watch them go, wondering if they'll make it, knowing you did what you could.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "value": -30
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "helped_stabbing_victim",
-                    "value": true
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_018": {
-            "text": "You keep walking. Just like everyone else. The stranger's pleading eyes follow you as you pass, then they slump back against the wall, alone. Somewhere behind you, you hear their breathing grow fainter. This city teaches its lessons well: compassion is a luxury, survival is mandatory. But the weight of the choice sits in your chest like a stone, and it stays there long after you've turned the corner.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "set_flag",
-                    "flag": "ignored_stabbing_victim",
-                    "value": true
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_019": {
-            "text": "A hand brushes your pocket — so light, so quick, that you almost miss it. <span class='highlight'>Almost.</span> A small figure darts away into the crowd, weaving between bodies with practiced agility. Your credit chip is gone. The pickpocket is fast, but they're heading toward a dead-end corridor that you know from experience has no exit.",
-            "choices": [
-                {
-                    "text": "Chase them down",
-                    "next": "shared.random-encounters.re_020",
-                    "statCheck": {
-                        "stat": "dexterity",
-                        "dc": 12
-                    }
-                },
-                {
-                    "text": "Let them go — it's not worth the trouble",
-                    "next": "shared.random-encounters.re_021"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_020": {
-            "text": "You sprint after the pickpocket, dodging through the crowd. They're fast, but you're faster — or at least more determined. You corner them in the dead-end corridor. It's a kid, maybe fourteen, rail-thin, eyes wide with fear. They hold up your credit chip with a trembling hand. \"I'm sorry, I'm sorry, please don't hurt me. I just needed —\" Their stomach growls loud enough to finish the sentence.",
-            "choices": [
-                {
-                    "text": "Take your chip back but give them some credits",
-                    "next": "shared.random-encounters.re_022"
-                },
-                {
-                    "text": "Take your chip back and warn them off",
-                    "next": "shared.random-encounters.re_023"
-                },
-                {
-                    "text": "Let them keep a few credits from the chip",
-                    "next": "shared.random-encounters.re_024"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_021": {
-            "text": "You pat your empty pocket and sigh. The pickpocket has vanished into the crowd like smoke. Losing credits is never pleasant, but chasing a thief through the Lower District's corridors is a good way to get led into an ambush. You write off the loss and keep moving. The city takes its tax one way or another.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "value": -40
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_022": {
-            "text": "You take your chip back and transfer twenty credits to the kid's battered comm device. Their eyes go wide. \"For real? You're... you're not going to turn me in?\" You shake your head. The kid's face breaks into a grin that makes them look their actual age for the first time. \"Thank you. I won't forget this. If you ever need information about what's happening on the streets, find me at the Sector 7 market. Name's <span class='highlight'>Pip</span>.\" They scamper off, twenty credits richer and considerably less scared.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "value": -20
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "met_pip_pickpocket",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_023": {
-            "text": "You snatch the chip back and fix the kid with a hard stare. \"Next time you try this, pick someone who can't catch you. And next time might not be someone who lets you walk away.\" The kid nods frantically, then bolts the moment you step aside. You pocket your credits and rejoin the foot traffic. Harsh, maybe. But in the Lower District, a scare now might save their life later.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_024": {
-            "text": "\"Keep twenty,\" you say, taking the chip back after transferring a handful of credits. The kid stares at you like you've grown a second head. Generosity is so rare down here it's almost suspicious. But the growling stomach wins out over suspicion, and they pocket the credits with a whispered \"thanks\" before disappearing. You continue on, slightly poorer, slightly lighter.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "value": -20
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_025": {
-            "text": "The crack of gunfire echoes through the corridor ahead. People scatter, ducking into doorways and behind vendor stalls. Two groups face each other across a wide intersection — one wearing red armbands, the other with blue face paint. <span class='highlight'>Gang turf war.</span> Bullets and energy bolts crisscross the open space. You're caught on the wrong side, with the firefight between you and where you need to go.",
-            "choices": [
-                {
-                    "text": "Wait for a lull and sprint across",
-                    "next": "shared.random-encounters.re_026",
-                    "statCheck": {
-                        "stat": "dexterity",
-                        "dc": 14
-                    }
-                },
-                {
-                    "text": "Find an alternate route around the fight",
-                    "next": "shared.random-encounters.re_027"
-                },
-                {
-                    "text": "Hit the ground and crawl through",
-                    "next": "shared.random-encounters.re_028",
-                    "statCheck": {
-                        "stat": "dexterity",
-                        "dc": 12
-                    }
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_026": {
-            "text": "A brief pause in the firing — someone reloading, someone ducking. You explode from cover and sprint across the intersection, boots pounding the concrete. A burst of gunfire tears the air behind you. Something hot clips your shoulder — a graze, nothing serious. You slam into cover on the far side, heart hammering, adrenaline turning your vision sharp and bright. Behind you, the battle resumes as if you were never there.",
-            "choices": [
-                {
-                    "text": "Keep moving before the fight spreads",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                }
-            ],
-            "music": "action"
-        },
-        "re_027": {
-            "text": "You backtrack and duck into a maintenance corridor that runs parallel to the main route. It adds ten minutes to your journey, navigating through dimly lit tunnels that smell of recycled air and rust. But you emerge on the far side of the conflict zone, unscathed, with the sound of distant gunfire fading behind you. Sometimes the smart move is the boring one.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_028": {
-            "text": "You drop flat and belly-crawl through the intersection, hugging the gutter where the angles of fire create a narrow dead zone. Bullets crack overhead. Someone's boot nearly steps on your hand. Spent casings rain down like hot metal confetti. It feels like an eternity, but you reach the far side with nothing worse than scraped elbows and a profound appreciation for horizontal travel.",
-            "choices": [
-                {
-                    "text": "Get to your feet and move on quickly",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_029": {
-            "text": "A service bot has stalled in the middle of the corridor, its treads grinding uselessly against the floor. The machine is old — a cargo hauler model, at least a decade past its service life — and it's completely blocking the narrow passageway. Sparks spit from an exposed panel on its side. A small crowd has gathered, some trying to push past, others just staring. The bot's warning light blinks a pathetic orange as it tries and fails to restart its navigation subroutine.",
-            "choices": [
-                {
-                    "text": "Try to repair the bot's navigation system",
-                    "next": "shared.random-encounters.re_030",
-                    "statCheck": {
-                        "stat": "intelligence",
-                        "dc": 11
-                    }
-                },
-                {
-                    "text": "Shove the bot aside with brute force",
-                    "next": "shared.random-encounters.re_031",
-                    "statCheck": {
-                        "stat": "strength",
-                        "dc": 13
-                    }
-                },
-                {
-                    "text": "Squeeze past through the gap on the left",
-                    "next": "shared.random-encounters.re_032"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_030": {
-            "text": "You pop the exposed panel and examine the internals. The nav chip has come loose from its socket — a simple fix. You reseat the chip, bypass the faulty diagnostic routine, and the bot's treads engage properly. It rolls forward with a grateful-sounding beep, clearing the corridor. A few people in the crowd nod their appreciation. The bot pauses and its cargo bay opens, revealing a forgotten crate. Inside: a handful of energy cells, still charged. Payment for services rendered.",
-            "choices": [
-                {
-                    "text": "Take the energy cells and continue",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_item",
-                    "item": "energy_cells_pack"
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_031": {
-            "text": "You brace yourself against the wall and shove. The bot weighs a ton, but it's on treads, and once you get it moving, momentum does the rest. It slides sideways with a screech of metal on concrete, clearing just enough space for people to pass. The crowd files through, a few muttering thanks. Your arms ache and your back won't forgive you, but the corridor is clear.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_032": {
-            "text": "You turn sideways and squeeze through the narrow gap between the bot and the corridor wall. It's a tight fit — the bot's sparking panel singes your jacket as you pass. But you make it through, leaving the growing crowd and the malfunctioning machine behind. Someone else's problem now.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_033": {
-            "text": "Something catches your eye on the ground — a data pad, half-hidden under a crumpled food wrapper. It's still powered on, its screen displaying a partially encrypted file. Someone dropped this recently; the screen hasn't even gone to sleep mode yet. A quick glance at the visible text shows fragments: <span class='highlight'>\"...shipment arrives at Dock 7... midnight... Meridian doesn't know... worth 50K...\"</span>",
-            "choices": [
-                {
-                    "text": "Try to decrypt the rest of the file",
-                    "next": "shared.random-encounters.re_034",
-                    "statCheck": {
-                        "stat": "intelligence",
-                        "dc": 13
-                    }
-                },
-                {
-                    "text": "Pocket the data pad for later",
-                    "next": "shared.random-encounters.re_035"
-                },
-                {
-                    "text": "Leave it — could be bait for a trap",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "mystery"
-        },
-        "re_034": {
-            "text": "The encryption is commercial-grade but dated. You crack it in under a minute. The full document reveals a smuggling operation: a shipment of unregistered memory stacks arriving at Dock 7 tonight. The stacks are blank — clean, untraceable, worth a fortune on the black market. The document includes names, times, and security details. This information is valuable to the right buyer. Or the wrong one.",
-            "choices": [
-                {
-                    "text": "Keep the intel for potential use later",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_item",
-                    "item": "smuggling_intel_datapad"
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "found_smuggling_intel",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 15
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_035": {
-            "text": "You slip the data pad into your jacket. The encryption might be crackable later with better tools, or you might find someone willing to pay for the device itself. Either way, finders keepers in the Lower District. You just hope whoever dropped it doesn't come looking for it — or for you.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_item",
-                    "item": "encrypted_datapad"
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_036": {
-            "text": "Music fills the corridor — real music, not the tinny output of a cheap speaker, but the sound of an actual instrument being played with skill and feeling. A street performer sits cross-legged against the wall, playing a battered acoustic guitar. The melody is haunting, melancholy, beautiful. People slow as they pass, some stopping to listen. A few drop credits into a worn cap on the ground. The performer's eyes are closed, lost in the music, fingers moving across the strings with a grace that seems impossible in a place like this.",
-            "choices": [
-                {
-                    "text": "Stop and listen for a while",
-                    "next": "shared.random-encounters.re_037"
-                },
-                {
-                    "text": "Drop some credits and keep moving",
-                    "next": "shared.random-encounters.re_038"
-                },
-                {
-                    "text": "Keep walking",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_037": {
-            "text": "You lean against the wall and let the music wash over you. The performer plays three songs, each one a story told in notes and chords — loss, hope, defiance. The small crowd grows. For a few minutes, the Lower District is something other than what it usually is. When the performer finally opens their eyes and stops, the silence feels like waking from a dream. They notice you and nod. \"Thanks for listening. Most people don't stop.\" Something about the music has settled inside you, a calm you haven't felt in weeks.",
-            "choices": [
-                {
-                    "text": "Drop some credits and move on, feeling better",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                },
-                {
-                    "type": "modify_stat",
-                    "stat": "morale",
-                    "value": 1
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_038": {
-            "text": "You drop a few credits into the cap without breaking stride. The performer opens one eye, catches your gesture, and nods in thanks without missing a note. The music follows you down the corridor, growing fainter with distance until it's swallowed by the ambient noise of the district. A small moment of beauty in an ugly world. You hold onto it.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "modify_stat",
-                    "stat": "credits",
-                    "value": -5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_039": {
-            "text": "The lights die. Every light — overhead strips, neon signs, holographic advertisements, indicator panels — all of it, gone in an instant. The corridor plunges into absolute darkness. People around you gasp, stumble, curse. <span class='highlight'>Power outage.</span> Your comm device provides a feeble glow, illuminating a meter of floor in front of you. From deeper in the darkness, you hear sounds: running footsteps, a crash, a scream cut short. The blackout won't last long, but in the Lower District, a few minutes of darkness is an invitation for every predator in the sector.",
-            "choices": [
-                {
-                    "text": "Stay still and wait for power to return",
-                    "next": "shared.random-encounters.re_040"
-                },
-                {
-                    "text": "Navigate by comm light toward the nearest exit",
-                    "next": "shared.random-encounters.re_041",
-                    "statCheck": {
-                        "stat": "dexterity",
-                        "dc": 11
-                    }
-                },
-                {
-                    "text": "Use the darkness to your advantage — move quickly",
-                    "next": "shared.random-encounters.re_042",
-                    "statCheck": {
-                        "stat": "intelligence",
-                        "dc": 12
-                    }
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_040": {
-            "text": "You press yourself against the wall and wait. Ninety seconds of darkness that feels like ninety minutes. You hear the sounds of opportunistic theft, a scuffle nearby, someone crying. Then the emergency generators kick in and dim red lighting floods the corridor. People blink at each other, dazed, checking their pockets and belongings. The main power follows a minute later, and the corridor returns to its normal state of fluorescent grimness. You've survived the blackout unscathed.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_041": {
-            "text": "You move quickly through the darkness, comm light leading the way. Twice you hear movement near you — once a hand brushes your shoulder and you twist away. Your eyes adjust, picking up the faint glow of emergency markers on the floor. You follow them to a stairwell door and push through just as the emergency generators kick in, bathing the corridor behind you in dim red light. Safe. But your heart is still racing.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_042": {
-            "text": "In the chaos of the blackout, you move with purpose. While everyone else is stumbling blind, you navigate by memory and the faint glow of your comm, covering ground quickly. Near a vendor stall, the darkness has knocked loose a crate that's spilled its contents across the floor. You grab what you can by touch — turns out to be a sealed ration pack and a small tool kit. By the time the lights flicker back, you're well past the outage zone and better supplied for it.",
-            "choices": [
-                {
-                    "text": "Continue on your way",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_item",
-                    "item": "ration_pack"
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 10
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_043": {
-            "text": "An old man at a noodle stand beckons you over as you pass. His face is a map of scars and tattoos, and his eyes are sharp despite his age. <span class='highlight'>\"You look like someone who could use a tip,\"</span> he says, stirring a pot of something that smells surprisingly good. \"Word in the pipes is that Meridian's running a sweep through Sector 3 tonight. Anyone with warrants, unpaid fines, or expired stack registrations is getting picked up. Might want to avoid that sector. Or might want to know who's going to be out of the way tonight.\"",
-            "choices": [
-                {
-                    "text": "\"Thanks for the warning. What do I owe you?\"",
-                    "next": "shared.random-encounters.re_044"
-                },
-                {
-                    "text": "\"Why are you telling me this?\"",
-                    "next": "shared.random-encounters.re_045"
-                },
-                {
-                    "text": "Note the information and keep moving",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "set_flag",
-                    "flag": "rumor_sector3_sweep",
-                    "value": true
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_044": {
-            "text": "The old man waves off your offer. \"Keep your credits. I've survived sixty years in this district by paying attention and sharing what I know with the right people. You've got a look about you — someone who does things, not just someone who survives. That's rare down here.\" He ladles noodles into a bowl and slides it across the counter. \"On the house. Now get moving. The sweep starts at midnight.\"",
-            "choices": [
-                {
-                    "text": "Accept the noodles and move on",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_045": {
-            "text": "The old man's scarred face creases into something between a smile and a grimace. \"Because I've been where you are. Young, hungry, trying to make sense of a city that doesn't care if you live or die. Someone tipped me off once, years ago, saved my skin. I'm paying it forward.\" He pauses, stirring the pot. \"Besides, you might be useful someday. And I'd rather you owe me a favor than be rotting in a Meridian holding cell.\"",
-            "choices": [
-                {
-                    "text": "Thank him and move on, remembering the favor",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "set_flag",
-                    "flag": "owes_favor_noodle_man",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_046": {
-            "text": "A small, mangy creature slinks out from under a pile of debris and regards you with wary, golden eyes. A cat — an actual living cat, not a synthetic replica. You haven't seen a real animal in months. The cat is thin, scarred, and missing the tip of one ear, but it's <em>alive</em>, which makes it almost miraculous in the Lower District. It meows once, a raspy sound, and begins to follow you at a cautious distance.",
-            "choices": [
-                {
-                    "text": "Offer it some food",
-                    "next": "shared.random-encounters.re_047"
-                },
-                {
-                    "text": "Try to shoo it away",
-                    "next": "shared.random-encounters.re_048"
-                },
-                {
-                    "text": "Let it follow if it wants",
-                    "next": "shared.random-encounters.re_049"
-                }
-            ],
-            "actions": [],
-            "music": "ambient"
-        },
-        "re_047": {
-            "text": "You crouch and offer a piece of protein bar. The cat approaches with the extreme caution of something that has learned the hard way not to trust. But hunger wins. It takes the food from your fingers, then butts its head against your hand with a rough, rumbling purr. The sensation is unexpectedly comforting. The cat seems to make a decision and settles beside your feet, looking up with an expression that clearly says: \"I'm with you now.\"",
-            "choices": [
-                {
-                    "text": "Keep the cat as a companion",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "add_item",
-                    "item": "stray_cat_companion"
-                },
-                {
-                    "type": "set_flag",
-                    "flag": "has_cat_companion",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_048": {
-            "text": "You wave your hand and make shooing noises. The cat flattens its ears, gives you a look of withering disdain, and slinks away. But when you glance back a minute later, it's still there, following at a greater distance but following nonetheless. Apparently, you've been chosen whether you like it or not. In the Lower District, even the strays are stubborn.",
-            "choices": [
-                {
-                    "text": "Accept your new shadow and move on",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "set_flag",
-                    "flag": "has_cat_companion",
-                    "value": true
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_049": {
-            "text": "The cat pads along behind you, keeping a steady three meters back. Occasionally it darts off to investigate something, but it always returns, golden eyes fixed on you with quiet intensity. Other passersby give you odd looks — a real animal is a rare sight, and the superstitious Lower District residents might see it as an omen, good or bad. Either way, you have a companion now. The cat seems to know where you're going before you do.",
-            "choices": [
-                {
-                    "text": "Continue with your feline shadow",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "set_flag",
-                    "flag": "has_cat_companion",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 3
-                }
-            ],
-            "music": "ambient"
-        },
-        "re_050": {
-            "text": "\"Wait — is that you?\" A voice from the crowd stops you cold. You turn to find a face you haven't seen in years. <span class='highlight'>An old friend</span> — someone you knew before everything went sideways. They look different now, harder, with new scars and new chrome. But the smile is the same. \"I thought you were dead. Everyone thought you were dead.\" They grip your arm, eyes bright with genuine feeling. \"We need to catch up. I know a place nearby. Come on — one drink. For old times.\"",
-            "choices": [
-                {
-                    "text": "\"One drink. For old times.\"",
-                    "next": "shared.prologue.node_001"
-                },
-                {
-                    "text": "\"I can't right now, but let's exchange contacts.\"",
-                    "next": "shared.prologue.node_001"
-                }
-            ],
-            "actions": [
-                {
-                    "type": "set_flag",
-                    "flag": "old_friend_encounter",
-                    "value": true
-                },
-                {
-                    "type": "add_experience",
-                    "amount": 5
-                }
-            ],
-            "music": "ambient"
+        {
+          "text": "Hand over your credits and walk away",
+          "next": "shared.random-encounters.re_004"
         }
+      ],
+      "actions": [],
+      "music": "action",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
+    },
+    "re_002": {
+      "text": "The stim-jacker lunges, blade first. You sidestep, grab the outstretched arm, and twist. The blade clatters to the ground. A quick elbow to the jaw sends the first attacker sprawling. The two behind you hesitate — they signed up to rob someone helpless, not fight someone who hits back. One drops the pipe and runs. The other takes a swing that you duck under before planting a fist in their stomach. Thirty seconds later, you're standing over three groaning bodies, breathing hard but uncut.",
+      "choices": [
+        {
+          "text": "Search their pockets for credits",
+          "next": "shared.random-encounters.re_005"
+        },
+        {
+          "text": "Leave them and move on",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 20
+        }
+      ],
+      "music": "action",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
+    },
+    "re_003": {
+      "text": "You raise your hands, palms out, and lock eyes with the lead mugger. \"Look at me. Really look. Do I look like someone carrying credits? I'm Lower District. Same as you. You want to rob someone, hit the Midtown tourists — they carry more in their pocket lint than I've seen all month.\" The mugger squints, reassessing. Something in your voice or your eyes convinces them. The blade lowers. \"Get lost,\" they mutter, and the three of them melt back into the shadows.",
+      "choices": [
+        {
+          "text": "Slip away before they change their minds",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Follow them at a distance — find out where their hideout is",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 12
+          }
+        },
+        {
+          "text": "Warn nearby vendors about the muggers",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 15
+        }
+      ],
+      "music": "ambient",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
+    },
+    "re_004": {
+      "text": "You transfer a handful of credits to the mugger's outstretched data pad. They check the balance, scowl at the meager amount, but take it. \"Slim pickings,\" they mutter, waving you past. The three of them vanish back into the alley, looking for richer prey. You walk on, lighter in the wallet but still breathing. In the Lower District, that counts as a win.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Memorize their faces. You'll find them again.",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Wisdom 11] Note a detail about their gear — they're working for someone",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 11
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "modify_stat",
+          "stat": "credits",
+          "value": -50
+        }
+      ],
+      "music": "ambient",
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
+    },
+    "re_005": {
+      "text": "The muggers are carrying a combined total of eighty credits and a half-empty stim inhaler. Hardly a fortune, but it's something. You pocket the credits and leave the stim — that stuff rots your brain faster than it enhances anything. As you stand, you notice one of them has a tattoo on their wrist: a coiled serpent around a dagger. Gang ink. These aren't freelancers; they're recruiting territory. You might want to watch your back in this sector.",
+      "choices": [
+        {
+          "text": "Move on, keeping alert",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Snap a photo of the gang tattoo for later",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Intelligence 12] Analyze the tattoo — you've seen it before",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 12
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_006": {
+      "text": "A vendor's cart blocks half the corridor, draped in flickering LED strips and piled high with merchandise of questionable origin. The vendor — a grinning woman with chrome teeth and mismatched cybernetic eyes — beckons you over. <span class='highlight'>\"Best deals in the district! Military surplus, medical supplies, things that fell off a transport, if you know what I mean!\"</span> She winks with the eye that's clearly stolen from a different model.",
+      "choices": [
+        {
+          "text": "Browse the military surplus",
+          "next": "shared.random-encounters.re_007"
+        },
+        {
+          "text": "Ask about medical supplies",
+          "next": "shared.random-encounters.re_008"
+        },
+        {
+          "text": "Keep walking",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_007": {
+      "text": "The military surplus section includes a battered tactical vest, a signal jammer the size of a cigarette pack, and what she claims is a Meridian security override key. \"That little beauty opens any standard corp lock in the city. One hundred credits. Bargain of the century.\" She sees your skepticism. \"Fine, fine — fifty credits. But you didn't get it from me, and if it doesn't work, you didn't buy it from me either.\"",
+      "choices": [
+        {
+          "text": "Buy the security override key for 50 credits",
+          "next": "shared.random-encounters.re_009"
+        },
+        {
+          "text": "\"No thanks.\" Move on.",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
+    },
+    "re_008": {
+      "text": "She produces a case of auto-injectors from under the cart. \"Stimulants, painkillers, anti-rad shots, adrenaline boosters. All genuine, all sealed, all definitely not stolen from a Meridian medical transport that had an unfortunate accident last Tuesday.\" She shows you a medkit sealed in its original packaging. \"Hundred credits for the kit. Thirty each for individual injectors. I also have some... recreational items, if you're interested.\" Her grin widens.",
+      "choices": [
+        {
+          "text": "Buy the medkit for 100 credits",
+          "next": "shared.random-encounters.re_010"
+        },
+        {
+          "text": "Pass on the medical supplies",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_009": {
+      "text": "You hand over the credits and pocket the override key. It's scratched and dented but the indicator light glows a steady green when you thumb the activation switch. Whether it actually works on corp locks remains to be seen, but for fifty credits, it's worth the gamble. The vendor is already hawking her wares to the next passerby before you've taken three steps.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Ask the vendor where she gets her stock",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Test the key on a nearby service panel",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item": "security_override_key"
+        },
+        {
+          "type": "modify_stat",
+          "stat": "credits",
+          "value": -50
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_010": {
+      "text": "The medkit is genuine — you can tell by the weight and the unbroken Meridian seal. Whatever \"accident\" this fell off, it's the real thing. Inside, you find bandages, antiseptic, two auto-injectors of broad-spectrum antibiotics, and a neural pain suppressor. In a city where a trip to a real doctor can cost a month's wages, this kit is worth its weight in gold.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Ask if she has anything stronger for emergencies",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Check the medkit's expiration date",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item": "medkit_standard"
+        },
+        {
+          "type": "modify_stat",
+          "stat": "credits",
+          "value": -100
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_011": {
+      "text": "The corridor ahead is blocked by a security checkpoint that wasn't here yesterday. Two Meridian Corp security officers in full tactical gear stand behind a portable barricade, scanning everyone who passes with handheld ID readers. A line of sullen Lower District residents shuffles forward, presenting their documents. One of the officers spots you. <span class='highlight'>\"You. Step forward. ID and stack registration.\"</span>",
+      "choices": [
+        {
+          "text": "Present your identification",
+          "next": "shared.random-encounters.re_012"
+        },
+        {
+          "text": "Try to bluff with fake credentials",
+          "next": "shared.random-encounters.re_013",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Slip away before they get a good look at you",
+          "next": "shared.random-encounters.re_014",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 13
+          }
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_012": {
+      "text": "The officer scans your ID with professional disinterest. The reader beeps, processing. For a long three seconds, you watch the officer's face for any change in expression. Then the reader chirps green and the officer waves you through. \"Move along.\" You exhale and pass the barricade, feeling the weight of their surveillance equipment on your back until you turn the corner. Just a routine check. This time.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Tech 11] Study the drone's patrol pattern before moving on",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 11
+          }
+        },
+        {
+          "text": "Take a different route to avoid the patrol loop",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_013": {
+      "text": "You produce credentials that identify you as a Meridian maintenance contractor — a cover identity you've cultivated for exactly these situations. The officer scans it, frowns at the screen, then nods. \"Maintenance? What sector?\" You name a plausible assignment and the officer loses interest immediately. Nobody questions the maintenance crew. You're waved through with barely a second glance.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Dexterity 12] Disable the drone's tracking beacon as it passes",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 12
+          }
+        },
+        {
+          "text": "Report the encounter to a friendly contact",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_014": {
+      "text": "You spot a service corridor branching off before the checkpoint and angle toward it without breaking stride. The trick is to move like you belong — no hurrying, no looking back. You duck into the corridor and navigate a maze of maintenance tunnels that parallel the main route, emerging two blocks past the checkpoint. The sec-officers never see you. In the Lower District, knowing the back ways is a survival skill.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Mark the incident location on your map for future reference",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Check your gear wasn't damaged in the encounter",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_015": {
+      "text": "A figure lies crumpled against a wall, one hand pressed to their side where dark fluid seeps between their fingers. They look up at you with glassy eyes. \"Please... I need help. They stabbed me. Over nothing — a pack of rations.\" Their breathing is shallow, ragged. Without medical attention, they'll bleed out within the hour. But stopping to help in the open makes you a target too. People are walking past, eyes averted, pretending not to see.",
+      "choices": [
+        {
+          "text": "Stop and administer first aid",
+          "next": "shared.random-encounters.re_016",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 11
+          }
+        },
+        {
+          "text": "Give them credits for a clinic visit",
+          "next": "shared.random-encounters.re_017"
+        },
+        {
+          "text": "Keep walking like everyone else",
+          "next": "shared.random-encounters.re_018"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.6
+    },
+    "re_016": {
+      "text": "You kneel beside them and examine the wound. A shallow stab — it missed the major organs, but the bleeding needs to be stopped. You tear a strip from their shirt, pack the wound, and apply pressure until the bleeding slows. Color returns to their face. \"Thank you,\" they breathe. \"Most people just... walk past.\" They press something into your hand — a small data chip. \"Take this. It's a map of the maintenance tunnels under Sector 5. Might save your life someday like you saved mine.\"",
+      "choices": [
+        {
+          "text": "Accept the chip and help them to a clinic",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Wisdom 12] Examine the chip first — it could be a tracker",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 12
+          }
+        },
+        {
+          "text": "Refuse the chip but help them anyway",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item": "sector5_tunnel_map"
+        },
+        {
+          "type": "add_experience",
+          "amount": 15
+        },
+        {
+          "type": "set_flag",
+          "flag": "helped_stabbing_victim",
+          "value": true
+        }
+      ],
+      "music": "ambient",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
+    },
+    "re_017": {
+      "text": "You transfer enough credits to cover a back-alley clinic visit and help them to their feet. They lean against the wall, shaking but grateful. \"The clinic on Fifth Corridor... they'll patch me up. Thank you. You're a rare thing in this city — someone who gives a damn.\" They limp away, one hand still pressed to their side. You watch them go, wondering if they'll make it, knowing you did what you could.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Search the area for any clues about what happened",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Intelligence 11] Analyze the scene — something doesn't add up",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 11
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "modify_stat",
+          "stat": "credits",
+          "value": -30
+        },
+        {
+          "type": "add_experience",
+          "amount": 10
+        },
+        {
+          "type": "set_flag",
+          "flag": "helped_stabbing_victim",
+          "value": true
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_018": {
+      "text": "You keep walking. Just like everyone else. The stranger's pleading eyes follow you as you pass, then they slump back against the wall, alone. Somewhere behind you, you hear their breathing grow fainter. This city teaches its lessons well: compassion is a luxury, survival is mandatory. But the weight of the choice sits in your chest like a stone, and it stays there long after you've turned the corner.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Double back to make sure you weren't followed",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Luck 10] Search the area for anything useful left behind",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "luck",
+            "dc": 10
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "set_flag",
+          "flag": "ignored_stabbing_victim",
+          "value": true
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_019": {
+      "text": "A hand brushes your pocket — so light, so quick, that you almost miss it. <span class='highlight'>Almost.</span> A small figure darts away into the crowd, weaving between bodies with practiced agility. Your credit chip is gone. The pickpocket is fast, but they're heading toward a dead-end corridor that you know from experience has no exit.",
+      "choices": [
+        {
+          "text": "Chase them down",
+          "next": "shared.random-encounters.re_020",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 12
+          }
+        },
+        {
+          "text": "Let them go — it's not worth the trouble",
+          "next": "shared.random-encounters.re_021"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_020": {
+      "text": "You sprint after the pickpocket, dodging through the crowd. They're fast, but you're faster — or at least more determined. You corner them in the dead-end corridor. It's a kid, maybe fourteen, rail-thin, eyes wide with fear. They hold up your credit chip with a trembling hand. \"I'm sorry, I'm sorry, please don't hurt me. I just needed —\" Their stomach growls loud enough to finish the sentence.",
+      "choices": [
+        {
+          "text": "Take your chip back but give them some credits",
+          "next": "shared.random-encounters.re_022"
+        },
+        {
+          "text": "Take your chip back and warn them off",
+          "next": "shared.random-encounters.re_023"
+        },
+        {
+          "text": "Let them keep a few credits from the chip",
+          "next": "shared.random-encounters.re_024"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.7
+    },
+    "re_021": {
+      "text": "You pat your empty pocket and sigh. The pickpocket has vanished into the crowd like smoke. Losing credits is never pleasant, but chasing a thief through the Lower District's corridors is a good way to get led into an ambush. You write off the loss and keep moving. The city takes its tax one way or another.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Try to haggle for a better deal next time",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Charisma 11] Negotiate a future discount from the vendor",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 11
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "modify_stat",
+          "stat": "credits",
+          "value": -40
+        }
+      ],
+      "music": "ambient",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
+    },
+    "re_022": {
+      "text": "You take your chip back and transfer twenty credits to the kid's battered comm device. Their eyes go wide. \"For real? You're... you're not going to turn me in?\" You shake your head. The kid's face breaks into a grin that makes them look their actual age for the first time. \"Thank you. I won't forget this. If you ever need information about what's happening on the streets, find me at the Sector 7 market. Name's <span class='highlight'>Pip</span>.\" They scamper off, twenty credits richer and considerably less scared.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Make a mental note of this location",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Check if anyone else saw what happened",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "modify_stat",
+          "stat": "credits",
+          "value": -20
+        },
+        {
+          "type": "set_flag",
+          "flag": "met_pip_pickpocket",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.5
+    },
+    "re_023": {
+      "text": "You snatch the chip back and fix the kid with a hard stare. \"Next time you try this, pick someone who can't catch you. And next time might not be someone who lets you walk away.\" The kid nods frantically, then bolts the moment you step aside. You pocket your credits and rejoin the foot traffic. Harsh, maybe. But in the Lower District, a scare now might save their life later.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Wisdom 10] Reflect on what you learned from the encounter",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 10
+          }
+        },
+        {
+          "text": "Pick up the pace — you've lingered too long",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_024": {
+      "text": "\"Keep twenty,\" you say, taking the chip back after transferring a handful of credits. The kid stares at you like you've grown a second head. Generosity is so rare down here it's almost suspicious. But the growling stomach wins out over suspicion, and they pocket the credits with a whispered \"thanks\" before disappearing. You continue on, slightly poorer, slightly lighter.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Stash half the credits somewhere safe for later",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Spend a few credits at the nearest vendor while you can",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "modify_stat",
+          "stat": "credits",
+          "value": -20
+        },
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_025": {
+      "text": "The crack of gunfire echoes through the corridor ahead. People scatter, ducking into doorways and behind vendor stalls. Two groups face each other across a wide intersection — one wearing red armbands, the other with blue face paint. <span class='highlight'>Gang turf war.</span> Bullets and energy bolts crisscross the open space. You're caught on the wrong side, with the firefight between you and where you need to go.",
+      "choices": [
+        {
+          "text": "Wait for a lull and sprint across",
+          "next": "shared.random-encounters.re_026",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Find an alternate route around the fight",
+          "next": "shared.random-encounters.re_027"
+        },
+        {
+          "text": "Hit the ground and crawl through",
+          "next": "shared.random-encounters.re_028",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 12
+          }
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.7
+    },
+    "re_026": {
+      "text": "A brief pause in the firing — someone reloading, someone ducking. You explode from cover and sprint across the intersection, boots pounding the concrete. A burst of gunfire tears the air behind you. Something hot clips your shoulder — a graze, nothing serious. You slam into cover on the far side, heart hammering, adrenaline turning your vision sharp and bright. Behind you, the battle resumes as if you were never there.",
+      "choices": [
+        {
+          "text": "Keep moving before the fight spreads",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Strength 12] Shove through the crowd to get clear faster",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "strength",
+            "dc": 12
+          }
+        },
+        {
+          "text": "Duck into a side alley and wait for things to calm down",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 15
+        }
+      ],
+      "music": "action",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
+    },
+    "re_027": {
+      "text": "You backtrack and duck into a maintenance corridor that runs parallel to the main route. It adds ten minutes to your journey, navigating through dimly lit tunnels that smell of recycled air and rust. But you emerge on the far side of the conflict zone, unscathed, with the sound of distant gunfire fading behind you. Sometimes the smart move is the boring one.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Scan the rooftops — you feel like you're being watched",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Dexterity 11] Take an evasive route home",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 11
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_028": {
+      "text": "You drop flat and belly-crawl through the intersection, hugging the gutter where the angles of fire create a narrow dead zone. Bullets crack overhead. Someone's boot nearly steps on your hand. Spent casings rain down like hot metal confetti. It feels like an eternity, but you reach the far side with nothing worse than scraped elbows and a profound appreciation for horizontal travel.",
+      "choices": [
+        {
+          "text": "Get to your feet and move on quickly",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Constitution 11] Push through the pain and keep your head up",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "constitution",
+            "dc": 11
+          }
+        },
+        {
+          "text": "Find a wall to lean against and catch your breath first",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "music": "ambient",
+      "mood": "industrial",
+      "effect": "smoke",
+      "effectIntensity": 0.5
+    },
+    "re_029": {
+      "text": "A service bot has stalled in the middle of the corridor, its treads grinding uselessly against the floor. The machine is old — a cargo hauler model, at least a decade past its service life — and it's completely blocking the narrow passageway. Sparks spit from an exposed panel on its side. A small crowd has gathered, some trying to push past, others just staring. The bot's warning light blinks a pathetic orange as it tries and fails to restart its navigation subroutine.",
+      "choices": [
+        {
+          "text": "Try to repair the bot's navigation system",
+          "next": "shared.random-encounters.re_030",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 11
+          }
+        },
+        {
+          "text": "Shove the bot aside with brute force",
+          "next": "shared.random-encounters.re_031",
+          "statCheck": {
+            "stat": "strength",
+            "dc": 13
+          }
+        },
+        {
+          "text": "Squeeze past through the gap on the left",
+          "next": "shared.random-encounters.re_032"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.7
+    },
+    "re_030": {
+      "text": "You pop the exposed panel and examine the internals. The nav chip has come loose from its socket — a simple fix. You reseat the chip, bypass the faulty diagnostic routine, and the bot's treads engage properly. It rolls forward with a grateful-sounding beep, clearing the corridor. A few people in the crowd nod their appreciation. The bot pauses and its cargo bay opens, revealing a forgotten crate. Inside: a handful of energy cells, still charged. Payment for services rendered.",
+      "choices": [
+        {
+          "text": "Take the energy cells and continue",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Search the area for more salvage",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Tech 11] Check if the cells are modified or tracked",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 11
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item": "energy_cells_pack"
+        },
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_031": {
+      "text": "You brace yourself against the wall and shove. The bot weighs a ton, but it's on treads, and once you get it moving, momentum does the rest. It slides sideways with a screech of metal on concrete, clearing just enough space for people to pass. The crowd files through, a few muttering thanks. Your arms ache and your back won't forgive you, but the corridor is clear.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Quicken your pace — the district feels dangerous tonight",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Wisdom 10] Stay alert and observe your surroundings carefully",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 10
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "industrial",
+      "effect": "smoke",
+      "effectIntensity": 0.5
+    },
+    "re_032": {
+      "text": "You turn sideways and squeeze through the narrow gap between the bot and the corridor wall. It's a tight fit — the bot's sparking panel singes your jacket as you pass. But you make it through, leaving the growing crowd and the malfunctioning machine behind. Someone else's problem now.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Take a moment to rest before continuing",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Keep a hand near your weapon as you walk",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_033": {
+      "text": "Something catches your eye on the ground — a data pad, half-hidden under a crumpled food wrapper. It's still powered on, its screen displaying a partially encrypted file. Someone dropped this recently; the screen hasn't even gone to sleep mode yet. A quick glance at the visible text shows fragments: <span class='highlight'>\"...shipment arrives at Dock 7... midnight... Meridian doesn't know... worth 50K...\"</span>",
+      "choices": [
+        {
+          "text": "Try to decrypt the rest of the file",
+          "next": "shared.random-encounters.re_034",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 13
+          }
+        },
+        {
+          "text": "Pocket the data pad for later",
+          "next": "shared.random-encounters.re_035"
+        },
+        {
+          "text": "Leave it — could be bait for a trap",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [],
+      "music": "mystery",
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
+    },
+    "re_034": {
+      "text": "The encryption is commercial-grade but dated. You crack it in under a minute. The full document reveals a smuggling operation: a shipment of unregistered memory stacks arriving at Dock 7 tonight. The stacks are blank — clean, untraceable, worth a fortune on the black market. The document includes names, times, and security details. This information is valuable to the right buyer. Or the wrong one.",
+      "choices": [
+        {
+          "text": "Keep the intel for potential use later",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Intelligence 12] Cross-reference the intel with what you already know",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 12
+          }
+        },
+        {
+          "text": "Destroy the intel after memorizing it — no paper trail",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item": "smuggling_intel_datapad"
+        },
+        {
+          "type": "set_flag",
+          "flag": "found_smuggling_intel",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 15
+        }
+      ],
+      "music": "ambient",
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.5
+    },
+    "re_035": {
+      "text": "You slip the data pad into your jacket. The encryption might be crackable later with better tools, or you might find someone willing to pay for the device itself. Either way, finders keepers in the Lower District. You just hope whoever dropped it doesn't come looking for it — or for you.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Examine the item more closely before pocketing it",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Offer the item to the next person who looks like they need it",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item": "encrypted_datapad"
+        }
+      ],
+      "music": "ambient",
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
+    },
+    "re_036": {
+      "text": "Music fills the corridor — real music, not the tinny output of a cheap speaker, but the sound of an actual instrument being played with skill and feeling. A street performer sits cross-legged against the wall, playing a battered acoustic guitar. The melody is haunting, melancholy, beautiful. People slow as they pass, some stopping to listen. A few drop credits into a worn cap on the ground. The performer's eyes are closed, lost in the music, fingers moving across the strings with a grace that seems impossible in a place like this.",
+      "choices": [
+        {
+          "text": "Stop and listen for a while",
+          "next": "shared.random-encounters.re_037"
+        },
+        {
+          "text": "Drop some credits and keep moving",
+          "next": "shared.random-encounters.re_038"
+        },
+        {
+          "text": "Keep walking",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_037": {
+      "text": "You lean against the wall and let the music wash over you. The performer plays three songs, each one a story told in notes and chords — loss, hope, defiance. The small crowd grows. For a few minutes, the Lower District is something other than what it usually is. When the performer finally opens their eyes and stops, the silence feels like waking from a dream. They notice you and nod. \"Thanks for listening. Most people don't stop.\" Something about the music has settled inside you, a calm you haven't felt in weeks.",
+      "choices": [
+        {
+          "text": "Drop some credits and move on, feeling better",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Stay and listen to another song",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Charisma 10] Chat with the performer — they see everything on this street",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 10
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 5
+        },
+        {
+          "type": "modify_stat",
+          "stat": "morale",
+          "value": 1
+        }
+      ],
+      "music": "ambient",
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.7
+    },
+    "re_038": {
+      "text": "You drop a few credits into the cap without breaking stride. The performer opens one eye, catches your gesture, and nods in thanks without missing a note. The music follows you down the corridor, growing fainter with distance until it's swallowed by the ambient noise of the district. A small moment of beauty in an ugly world. You hold onto it.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Look back one more time, then walk on",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Pick up the pace — curfew is approaching",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "modify_stat",
+          "stat": "credits",
+          "value": -5
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_039": {
+      "text": "The lights die. Every light — overhead strips, neon signs, holographic advertisements, indicator panels — all of it, gone in an instant. The corridor plunges into absolute darkness. People around you gasp, stumble, curse. <span class='highlight'>Power outage.</span> Your comm device provides a feeble glow, illuminating a meter of floor in front of you. From deeper in the darkness, you hear sounds: running footsteps, a crash, a scream cut short. The blackout won't last long, but in the Lower District, a few minutes of darkness is an invitation for every predator in the sector.",
+      "choices": [
+        {
+          "text": "Stay still and wait for power to return",
+          "next": "shared.random-encounters.re_040"
+        },
+        {
+          "text": "Navigate by comm light toward the nearest exit",
+          "next": "shared.random-encounters.re_041",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 11
+          }
+        },
+        {
+          "text": "Use the darkness to your advantage — move quickly",
+          "next": "shared.random-encounters.re_042",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 12
+          }
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
+    },
+    "re_040": {
+      "text": "You press yourself against the wall and wait. Ninety seconds of darkness that feels like ninety minutes. You hear the sounds of opportunistic theft, a scuffle nearby, someone crying. Then the emergency generators kick in and dim red lighting floods the corridor. People blink at each other, dazed, checking their pockets and belongings. The main power follows a minute later, and the corridor returns to its normal state of fluorescent grimness. You've survived the blackout unscathed.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Mark this spot on your mental map",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Luck 11] Something catches your eye in the debris nearby",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "luck",
+            "dc": 11
+          }
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_041": {
+      "text": "You move quickly through the darkness, comm light leading the way. Twice you hear movement near you — once a hand brushes your shoulder and you twist away. Your eyes adjust, picking up the faint glow of emergency markers on the floor. You follow them to a stairwell door and push through just as the emergency generators kick in, bathing the corridor behind you in dim red light. Safe. But your heart is still racing.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Take a detour through a busier street for safety",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Keep to the shadows — fewer witnesses means fewer problems",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
+    },
+    "re_042": {
+      "text": "In the chaos of the blackout, you move with purpose. While everyone else is stumbling blind, you navigate by memory and the faint glow of your comm, covering ground quickly. Near a vendor stall, the darkness has knocked loose a crate that's spilled its contents across the floor. You grab what you can by touch — turns out to be a sealed ration pack and a small tool kit. By the time the lights flicker back, you're well past the outage zone and better supplied for it.",
+      "choices": [
+        {
+          "text": "Continue on your way",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Secure the item carefully in your pack",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Tech 10] Scan the item for tracking devices first",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 10
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item": "ration_pack"
+        },
+        {
+          "type": "add_experience",
+          "amount": 10
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_043": {
+      "text": "An old man at a noodle stand beckons you over as you pass. His face is a map of scars and tattoos, and his eyes are sharp despite his age. <span class='highlight'>\"You look like someone who could use a tip,\"</span> he says, stirring a pot of something that smells surprisingly good. \"Word in the pipes is that Meridian's running a sweep through Sector 3 tonight. Anyone with warrants, unpaid fines, or expired stack registrations is getting picked up. Might want to avoid that sector. Or might want to know who's going to be out of the way tonight.\"",
+      "choices": [
+        {
+          "text": "\"Thanks for the warning. What do I owe you?\"",
+          "next": "shared.random-encounters.re_044"
+        },
+        {
+          "text": "\"Why are you telling me this?\"",
+          "next": "shared.random-encounters.re_045"
+        },
+        {
+          "text": "Note the information and keep moving",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "set_flag",
+          "flag": "rumor_sector3_sweep",
+          "value": true
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.7
+    },
+    "re_044": {
+      "text": "The old man waves off your offer. \"Keep your credits. I've survived sixty years in this district by paying attention and sharing what I know with the right people. You've got a look about you — someone who does things, not just someone who survives. That's rare down here.\" He ladles noodles into a bowl and slides it across the counter. \"On the house. Now get moving. The sweep starts at midnight.\"",
+      "choices": [
+        {
+          "text": "Accept the noodles and move on",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Charisma 11] Ask the vendor about local rumors while you eat",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 11
+          }
+        },
+        {
+          "text": "Savor the noodles slowly — small pleasures matter in this city",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_045": {
+      "text": "The old man's scarred face creases into something between a smile and a grimace. \"Because I've been where you are. Young, hungry, trying to make sense of a city that doesn't care if you live or die. Someone tipped me off once, years ago, saved my skin. I'm paying it forward.\" He pauses, stirring the pot. \"Besides, you might be useful someday. And I'd rather you owe me a favor than be rotting in a Meridian holding cell.\"",
+      "choices": [
+        {
+          "text": "Thank him and move on, remembering the favor",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Ask if there's anything you can do for him in return",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Offer to spread the word about his kindness",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "set_flag",
+          "flag": "owes_favor_noodle_man",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
+    },
+    "re_046": {
+      "text": "A small, mangy creature slinks out from under a pile of debris and regards you with wary, golden eyes. A cat — an actual living cat, not a synthetic replica. You haven't seen a real animal in months. The cat is thin, scarred, and missing the tip of one ear, but it's <em>alive</em>, which makes it almost miraculous in the Lower District. It meows once, a raspy sound, and begins to follow you at a cautious distance.",
+      "choices": [
+        {
+          "text": "Offer it some food",
+          "next": "shared.random-encounters.re_047"
+        },
+        {
+          "text": "Try to shoo it away",
+          "next": "shared.random-encounters.re_048"
+        },
+        {
+          "text": "Let it follow if it wants",
+          "next": "shared.random-encounters.re_049"
+        }
+      ],
+      "actions": [],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_047": {
+      "text": "You crouch and offer a piece of protein bar. The cat approaches with the extreme caution of something that has learned the hard way not to trust. But hunger wins. It takes the food from your fingers, then butts its head against your hand with a rough, rumbling purr. The sensation is unexpectedly comforting. The cat seems to make a decision and settles beside your feet, looking up with an expression that clearly says: \"I'm with you now.\"",
+      "choices": [
+        {
+          "text": "Keep the cat as a companion",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Try to find the cat some food first",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "[Wisdom 11] Check the cat for a tracking chip or collar",
+          "next": "shared.prologue.node_001",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 11
+          }
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item": "stray_cat_companion"
+        },
+        {
+          "type": "set_flag",
+          "flag": "has_cat_companion",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
+    },
+    "re_048": {
+      "text": "You wave your hand and make shooing noises. The cat flattens its ears, gives you a look of withering disdain, and slinks away. But when you glance back a minute later, it's still there, following at a greater distance but following nonetheless. Apparently, you've been chosen whether you like it or not. In the Lower District, even the strays are stubborn.",
+      "choices": [
+        {
+          "text": "Accept your new shadow and move on",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Name the cat something fitting for the district",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Try to coax it to a safer part of the street",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "set_flag",
+          "flag": "has_cat_companion",
+          "value": true
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_049": {
+      "text": "The cat pads along behind you, keeping a steady three meters back. Occasionally it darts off to investigate something, but it always returns, golden eyes fixed on you with quiet intensity. Other passersby give you odd looks — a real animal is a rare sight, and the superstitious Lower District residents might see it as an omen, good or bad. Either way, you have a companion now. The cat seems to know where you're going before you do.",
+      "choices": [
+        {
+          "text": "Continue with your feline shadow",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Share a bit of your rations with your new companion",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "Let the cat lead — it seems to know where it's going",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "set_flag",
+          "flag": "has_cat_companion",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 3
+        }
+      ],
+      "music": "ambient",
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
+    },
+    "re_050": {
+      "text": "\"Wait — is that you?\" A voice from the crowd stops you cold. You turn to find a face you haven't seen in years. <span class='highlight'>An old friend</span> — someone you knew before everything went sideways. They look different now, harder, with new scars and new chrome. But the smile is the same. \"I thought you were dead. Everyone thought you were dead.\" They grip your arm, eyes bright with genuine feeling. \"We need to catch up. I know a place nearby. Come on — one drink. For old times.\"",
+      "choices": [
+        {
+          "text": "\"One drink. For old times.\"",
+          "next": "shared.prologue.node_001"
+        },
+        {
+          "text": "\"I can't right now, but let's exchange contacts.\"",
+          "next": "shared.prologue.node_001"
+        }
+      ],
+      "actions": [
+        {
+          "type": "set_flag",
+          "flag": "old_friend_encounter",
+          "value": true
+        },
+        {
+          "type": "add_experience",
+          "amount": 5
+        }
+      ],
+      "music": "ambient",
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     }
+  }
 }

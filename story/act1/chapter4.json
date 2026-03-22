@@ -56,7 +56,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "climax_002": {
       "id": "act1.chapter4.climax_002",
@@ -103,7 +106,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "climax_003": {
       "id": "act1.chapter4.climax_003",
@@ -156,7 +162,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "climax_004": {
       "id": "act1.chapter4.climax_004",
@@ -207,7 +216,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.6
     },
     "climax_005": {
       "id": "act1.chapter4.climax_005",
@@ -253,7 +265,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "climax_006": {
       "id": "act1.chapter4.climax_006",
@@ -304,7 +319,10 @@
       ],
       "ascii": null,
       "music": "ambient_slum_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "rain",
+      "effectIntensity": 0.6
     },
     "climax_007": {
       "id": "act1.chapter4.climax_007",
@@ -351,7 +369,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.6
     },
     "climax_008": {
       "id": "act1.chapter4.climax_008",
@@ -395,7 +416,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "climax_009": {
       "id": "act1.chapter4.climax_009",
@@ -442,7 +466,10 @@
       ],
       "ascii": null,
       "music": "ambient_crowd_tension",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "climax_010": {
       "id": "act1.chapter4.climax_010",
@@ -484,7 +511,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_strip",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "climax_011": {
       "id": "act1.chapter4.climax_011",
@@ -535,7 +565,10 @@
       ],
       "ascii": null,
       "music": "combat_buildup",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "climax_012": {
       "id": "act1.chapter4.climax_012",
@@ -596,7 +629,10 @@
       ],
       "ascii": null,
       "music": "combat_buildup",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "climax_013": {
       "id": "act1.chapter4.climax_013",
@@ -646,7 +682,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_strip",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "climax_014": {
       "id": "act1.chapter4.climax_014",
@@ -695,7 +734,10 @@
       ],
       "ascii": null,
       "music": "combat_buildup",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "anger",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "climax_015": {
       "id": "act1.chapter4.climax_015",
@@ -756,7 +798,10 @@
       ],
       "ascii": null,
       "music": "combat_buildup",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "smoke",
+      "effectIntensity": 0.7
     },
     "climax_016": {
       "id": "act1.chapter4.climax_016",
@@ -801,7 +846,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "climax_017": {
       "id": "act1.chapter4.climax_017",
@@ -852,7 +900,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "climax_018": {
       "id": "act1.chapter4.climax_018",
@@ -893,7 +944,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_strip",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "climax_019": {
       "id": "act1.chapter4.climax_019",
@@ -935,7 +989,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_strip",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "climax_020": {
       "id": "act1.chapter4.climax_020",
@@ -971,7 +1028,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_strip",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "climax_021": {
       "id": "act1.chapter4.climax_021",
@@ -1012,7 +1072,10 @@
       ],
       "ascii": null,
       "music": "ambient_sewer",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.7
     },
     "climax_022": {
       "id": "act1.chapter4.climax_022",
@@ -1053,7 +1116,10 @@
       ],
       "ascii": null,
       "music": "combat_buildup",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "smoke",
+      "effectIntensity": 0.6
     },
     "climax_023": {
       "id": "act1.chapter4.climax_023",
@@ -1109,7 +1175,10 @@
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "smoke",
+      "effectIntensity": 0.7
     },
     "climax_023a": {
       "id": "act1.chapter4.climax_023a",
@@ -1136,7 +1205,10 @@
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.9
     },
     "climax_024": {
       "id": "act1.chapter4.climax_024",
@@ -1190,7 +1262,10 @@
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "smoke",
+      "effectIntensity": 0.6
     },
     "climax_024a": {
       "id": "act1.chapter4.climax_024a",
@@ -1239,7 +1314,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "climax_024b": {
       "id": "act1.chapter4.climax_024b",
@@ -1277,7 +1355,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "climax_024c": {
       "id": "act1.chapter4.climax_024c",
@@ -1314,7 +1395,10 @@
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "climax_025": {
       "id": "act1.chapter4.climax_025",
@@ -1354,7 +1438,10 @@
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "climax_026": {
       "id": "act1.chapter4.climax_026",
@@ -1400,7 +1487,10 @@
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "climax_027": {
       "id": "act1.chapter4.climax_027",
@@ -1444,7 +1534,10 @@
       ],
       "ascii": null,
       "music": "combat_buildup",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "datastream",
+      "effectIntensity": 0.8
     },
     "climax_028": {
       "id": "act1.chapter4.climax_028",
@@ -1501,7 +1594,10 @@
       ],
       "ascii": null,
       "music": "ambient_void",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "climax_029": {
       "id": "act1.chapter4.climax_029",
@@ -1547,7 +1643,10 @@
       ],
       "ascii": null,
       "music": "ambient_void",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "climax_030": {
       "id": "act1.chapter4.climax_030",
@@ -1571,7 +1670,10 @@
       ],
       "ascii": null,
       "music": "ambient_void",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "climax_031": {
       "id": "act1.chapter4.climax_031",
@@ -1617,7 +1719,10 @@
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "climax_032": {
       "id": "act1.chapter4.climax_032",
@@ -1674,7 +1779,10 @@
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "climax_032a": {
       "id": "act1.chapter4.climax_032a",
@@ -1706,7 +1814,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "datastream",
+      "effectIntensity": 0.8
     },
     "climax_033": {
       "id": "act1.chapter4.climax_033",
@@ -1746,7 +1857,10 @@
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "climax_034": {
       "id": "act1.chapter4.climax_034",
@@ -1790,7 +1904,10 @@
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "climax_035": {
       "id": "act1.chapter4.climax_035",
@@ -1830,7 +1947,10 @@
       ],
       "ascii": null,
       "music": "combat_buildup",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "climax_036": {
       "id": "act1.chapter4.climax_036",
@@ -1889,7 +2009,10 @@
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.9
     },
     "climax_037": {
       "id": "act1.chapter4.climax_037",
@@ -1938,7 +2061,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "climax_038": {
       "id": "act1.chapter4.climax_038",
@@ -1986,7 +2112,10 @@
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "climax_039": {
       "id": "act1.chapter4.climax_039",
@@ -2030,7 +2159,10 @@
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "climax_039a": {
       "id": "act1.chapter4.climax_039a",
@@ -2069,7 +2201,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "climax_040": {
       "id": "act1.chapter4.climax_040",
@@ -2113,7 +2248,10 @@
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "smoke",
+      "effectIntensity": 0.7
     },
     "climax_041": {
       "id": "act1.chapter4.climax_041",
@@ -2158,7 +2296,10 @@
       ],
       "ascii": null,
       "music": "ambient_aftermath",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "climax_042": {
       "id": "act1.chapter4.climax_042",
@@ -2199,7 +2340,10 @@
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.9
     },
     "climax_043": {
       "id": "act1.chapter4.climax_043",
@@ -2239,7 +2383,10 @@
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "climax_043a": {
       "id": "act1.chapter4.climax_043a",
@@ -2275,7 +2422,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.7
     },
     "climax_044": {
       "id": "act1.chapter4.climax_044",
@@ -2316,7 +2466,10 @@
       ],
       "ascii": null,
       "music": "ambient_aftermath",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "smoke",
+      "effectIntensity": 0.7
     },
     "climax_045": {
       "id": "act1.chapter4.climax_045",
@@ -2365,7 +2518,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.9
     },
     "climax_046": {
       "id": "act1.chapter4.climax_046",
@@ -2418,7 +2574,10 @@
       "autoNext": "act2.chapter1.start",
       "ascii": null,
       "music": "chapter_end",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "stars",
+      "effectIntensity": 0.5
     },
     "ending_act1_001": {
       "id": "act1.chapter4.ending_act1_001",
@@ -2447,7 +2606,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_killed_in_riot"
+      "endingId": "ending_killed_in_riot",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.9
     },
     "ending_act1_002": {
       "id": "act1.chapter4.ending_act1_002",
@@ -2477,7 +2639,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_arrested_stacked"
+      "endingId": "ending_arrested_stacked",
+      "mood": "dark",
+      "effect": "void",
+      "effectIntensity": 0.8
     },
     "ending_act1_003": {
       "id": "act1.chapter4.ending_act1_003",
@@ -2507,7 +2672,10 @@
       "music": "ambient_ending_melancholy",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_fled_city"
+      "endingId": "ending_fled_city",
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.7
     },
     "ending_act1_004": {
       "id": "act1.chapter4.ending_act1_004",
@@ -2554,7 +2722,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_betrayed_everyone"
+      "endingId": "ending_betrayed_everyone",
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.8
     },
     "ending_act1_005": {
       "id": "act1.chapter4.ending_act1_005",
@@ -2585,7 +2756,10 @@
       "music": "ambient_ending_melancholy",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_died_saving_mako"
+      "endingId": "ending_died_saving_mako",
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.9
     },
     "ending_act1_006": {
       "id": "act1.chapter4.ending_act1_006",
@@ -2615,7 +2789,10 @@
       "music": "ambient_ending_melancholy",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_unnamed_hero"
+      "endingId": "ending_unnamed_hero",
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.7
     },
     "ending_act1_007": {
       "id": "act1.chapter4.ending_act1_007",
@@ -2647,7 +2824,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_executed_by_faction"
+      "endingId": "ending_executed_by_faction",
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.9
     },
     "ending_act1_008": {
       "id": "act1.chapter4.ending_act1_008",
@@ -2678,7 +2858,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_stack_overload"
+      "endingId": "ending_stack_overload",
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.9
     },
     "ending_act1_009": {
       "id": "act1.chapter4.ending_act1_009",
@@ -2719,7 +2902,10 @@
       "music": "ambient_ending_melancholy",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_neon_court_property"
+      "endingId": "ending_neon_court_property",
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.8
     },
     "ending_act1_010": {
       "id": "act1.chapter4.ending_act1_010",
@@ -2756,7 +2942,10 @@
       "music": "ambient_void",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_consumed_by_void"
+      "endingId": "ending_consumed_by_void",
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.9
     }
   }
 }

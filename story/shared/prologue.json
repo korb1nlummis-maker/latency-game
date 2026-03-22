@@ -68,7 +68,10 @@
       ],
       "ascii": null,
       "music": "ambient_slum_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "node_002": {
       "id": "shared.prologue.node_002",
@@ -104,7 +107,10 @@
       ],
       "ascii": null,
       "music": "ambient_slum_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "node_003": {
       "id": "shared.prologue.node_003",
@@ -157,7 +163,10 @@
       ],
       "ascii": null,
       "music": "ambient_slum_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "fog",
+      "effectIntensity": 0.4
     },
     "node_004": {
       "id": "shared.prologue.node_004",
@@ -184,7 +193,10 @@
       ],
       "ascii": null,
       "music": "ambient_slum_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "node_005": {
       "id": "shared.prologue.node_005",
@@ -231,7 +243,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "node_006": {
       "id": "shared.prologue.node_006",
@@ -288,7 +303,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.7
     },
     "node_007": {
       "id": "shared.prologue.node_007",
@@ -324,7 +342,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "node_007a": {
       "id": "shared.prologue.node_007a",
@@ -363,7 +384,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "node_007b": {
       "id": "shared.prologue.node_007b",
@@ -392,7 +416,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "node_007c": {
       "id": "shared.prologue.node_007c",
@@ -431,7 +458,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "neon",
+      "effectIntensity": 0.4
     },
     "node_007d": {
       "id": "shared.prologue.node_007d",
@@ -470,7 +500,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "neon",
+      "effectIntensity": 0.4
     },
     "node_007e": {
       "id": "shared.prologue.node_007e",
@@ -509,7 +542,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "node_008": {
       "id": "shared.prologue.node_008",
@@ -551,7 +587,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.5
     },
     "node_008a": {
       "id": "shared.prologue.node_008a",
@@ -586,7 +625,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "node_009": {
       "id": "shared.prologue.node_009",
@@ -616,7 +658,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "node_010": {
       "id": "shared.prologue.node_010",
@@ -659,7 +704,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "node_011": {
       "id": "shared.prologue.node_011",
@@ -688,7 +736,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "node_012": {
       "id": "shared.prologue.node_012",
@@ -728,7 +779,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "node_013": {
       "id": "shared.prologue.node_013",
@@ -767,7 +821,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "node_013a": {
       "id": "shared.prologue.node_013a",
@@ -797,7 +854,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "node_014": {
       "id": "shared.prologue.node_014",
@@ -836,7 +896,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "node_014a": {
       "id": "shared.prologue.node_014a",
@@ -854,7 +917,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neutral",
+      "effect": "sparks",
+      "effectIntensity": 0.3
     },
     "node_014b": {
       "id": "shared.prologue.node_014b",
@@ -899,7 +965,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_medium",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "node_015": {
       "id": "shared.prologue.node_015",
@@ -934,7 +1003,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "node_015a": {
       "id": "shared.prologue.node_015a",
@@ -968,7 +1040,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "rain",
+      "effectIntensity": 0.5
     },
     "node_016": {
       "id": "shared.prologue.node_016",
@@ -1039,7 +1114,10 @@
       ],
       "ascii": null,
       "music": "combat_tension",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.8
     },
     "node_017": {
       "id": "shared.prologue.node_017",
@@ -1081,7 +1159,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.9
     },
     "node_017a": {
       "id": "shared.prologue.node_017a",
@@ -1119,7 +1200,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "node_017b": {
       "id": "shared.prologue.node_017b",
@@ -1162,7 +1246,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.6
     },
     "node_017c": {
       "id": "shared.prologue.node_017c",
@@ -1196,7 +1283,10 @@
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.8
     },
     "node_017d": {
       "id": "shared.prologue.node_017d",
@@ -1232,7 +1322,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "node_018": {
       "id": "shared.prologue.node_018",
@@ -1272,7 +1365,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "node_018a": {
       "id": "shared.prologue.node_018a",
@@ -1300,7 +1396,10 @@
       ],
       "ascii": null,
       "music": "combat_tension",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "node_019": {
       "id": "shared.prologue.node_019",
@@ -1330,7 +1429,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "node_019a": {
       "id": "shared.prologue.node_019a",
@@ -1364,7 +1466,10 @@
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "node_020": {
       "id": "shared.prologue.node_020",
@@ -1427,7 +1532,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neutral",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "node_021": {
       "id": "shared.prologue.node_021",
@@ -1457,7 +1565,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "smoke",
+      "effectIntensity": 0.5
     },
     "node_022": {
       "id": "shared.prologue.node_022",
@@ -1492,7 +1603,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "node_023": {
       "id": "shared.prologue.node_023",
@@ -1532,7 +1646,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "snow",
+      "effectIntensity": 0.4
     },
     "node_024": {
       "id": "shared.prologue.node_024",
@@ -1562,7 +1679,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "node_025": {
       "id": "shared.prologue.node_025",
@@ -1597,7 +1717,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_medium",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "node_026": {
       "id": "shared.prologue.node_026",
@@ -1646,7 +1769,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_medium",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "node_027": {
       "id": "shared.prologue.node_027",
@@ -1680,7 +1806,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_medium",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "node_028": {
       "id": "shared.prologue.node_028",
@@ -1714,7 +1843,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_medium",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "node_029": {
       "id": "shared.prologue.node_029",
@@ -1748,7 +1880,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "node_029a": {
       "id": "shared.prologue.node_029a",
@@ -1784,7 +1919,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "node_030": {
       "id": "shared.prologue.node_030",
@@ -1830,7 +1968,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_medium",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "node_030a": {
       "id": "shared.prologue.node_030a",
@@ -1877,7 +2018,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_medium",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "node_030b": {
       "id": "shared.prologue.node_030b",
@@ -1900,7 +2044,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_medium",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "void",
+      "effectIntensity": 0.5
     },
     "node_031": {
       "id": "shared.prologue.node_031",
@@ -1936,7 +2083,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "node_032": {
       "id": "shared.prologue.node_032",
@@ -1988,7 +2138,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "smoke",
+      "effectIntensity": 0.5
     },
     "node_033": {
       "id": "shared.prologue.node_033",
@@ -2031,7 +2184,10 @@
       ],
       "ascii": null,
       "music": "ambient_street_bustle",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "smoke",
+      "effectIntensity": 0.6
     },
     "node_034": {
       "id": "shared.prologue.node_034",
@@ -2066,7 +2222,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_court",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "node_035": {
       "id": "shared.prologue.node_035",
@@ -2106,7 +2265,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_court",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "node_036": {
       "id": "shared.prologue.node_036",
@@ -2139,7 +2301,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "node_037": {
       "id": "shared.prologue.node_037",
@@ -2179,7 +2344,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "node_038": {
       "id": "shared.prologue.node_038",
@@ -2220,7 +2388,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "node_039": {
       "id": "shared.prologue.node_039",
@@ -2262,7 +2433,10 @@
       ],
       "ascii": null,
       "music": "ambient_slum_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.5
     },
     "node_040": {
       "id": "shared.prologue.node_040",
@@ -2357,7 +2531,10 @@
       ],
       "ascii": null,
       "music": "ambient_prologue_end",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "sparks",
+      "effectIntensity": 0.6
     }
   }
 }

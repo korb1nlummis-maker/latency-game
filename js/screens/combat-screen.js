@@ -434,18 +434,32 @@ window.Latency.Screens.CombatScreen = (function () {
     }
 
     // --------------------------------------------------------
+    // Settings helper
+    // --------------------------------------------------------
+    function _isShakeEnabled() {
+        var Settings = window.Latency.Screens && window.Latency.Screens.SettingsScreen;
+        if (Settings && Settings.getSetting) {
+            var val = Settings.getSetting('screenShake');
+            return val !== false; // default true
+        }
+        return true;
+    }
+
+    // --------------------------------------------------------
     // Visual Feedback: Screen Shake
     // --------------------------------------------------------
-    function _triggerShake() {
+    function _triggerShake(isCrit) {
+        if (!_isShakeEnabled()) return;
         var screen = _container ? _container.querySelector('.combat-screen') : null;
         if (!screen) return;
-        screen.classList.remove('cb-shake');
+        var cls = isCrit ? 'cb-crit-shake' : 'cb-shake';
+        screen.classList.remove('cb-shake', 'cb-crit-shake');
         // Force reflow so re-adding the class restarts the animation
         void screen.offsetWidth;
-        screen.classList.add('cb-shake');
+        screen.classList.add(cls);
         _pendingTimers.push(setTimeout(function () {
-            screen.classList.remove('cb-shake');
-        }, 350));
+            screen.classList.remove(cls);
+        }, isCrit ? 450 : 350));
     }
 
     // --------------------------------------------------------
@@ -510,6 +524,69 @@ window.Latency.Screens.CombatScreen = (function () {
     }
 
     // --------------------------------------------------------
+    // Visual Feedback: Panel Hit Flash
+    // --------------------------------------------------------
+    function _flashPanel(target, isCrit) {
+        var panel = _container ? _container.querySelector(
+            target === 'player' ? '.cb-player-panel' : '.cb-enemy-panel'
+        ) : null;
+        if (!panel) return;
+        var cls = isCrit ? 'cb-panel-crit-flash' : 'cb-panel-hit-flash';
+        panel.classList.remove('cb-panel-hit-flash', 'cb-panel-crit-flash');
+        void panel.offsetWidth;
+        panel.classList.add(cls);
+        _pendingTimers.push(setTimeout(function () {
+            panel.classList.remove(cls);
+        }, 300));
+    }
+
+    // --------------------------------------------------------
+    // Visual Feedback: Floating Miss Text
+    // --------------------------------------------------------
+    function _showMissText(target) {
+        var panel = _container ? _container.querySelector(
+            target === 'player' ? '.cb-player-panel' : '.cb-enemy-panel'
+        ) : null;
+        if (!panel) return;
+        if (getComputedStyle(panel).position === 'static') {
+            panel.style.position = 'relative';
+        }
+        var missEl = _el('div', 'cb-dmg-number cb-dmg-miss');
+        missEl.textContent = 'MISS';
+        missEl.style.top = (15 + Math.random() * 15) + 'px';
+        missEl.style.left = (25 + Math.random() * 30) + '%';
+        panel.appendChild(missEl);
+        _pendingTimers.push(setTimeout(function () {
+            if (missEl.parentNode) missEl.parentNode.removeChild(missEl);
+        }, 850));
+    }
+
+    // --------------------------------------------------------
+    // Visual Feedback: Low HP Warning Overlay
+    // --------------------------------------------------------
+    var _lowHpActive = false;
+
+    function _checkLowHp() {
+        var state = window.Latency.Combat ? window.Latency.Combat.getState() : null;
+        if (!state) return;
+        var screen = _container ? _container.querySelector('.combat-screen') : null;
+        if (!screen) return;
+
+        var pct = state.player.derived.currentHp / state.player.derived.maxHp;
+        if (pct <= 0.25 && pct > 0) {
+            if (!_lowHpActive) {
+                _lowHpActive = true;
+                screen.classList.add('cb-low-hp-warning');
+            }
+        } else {
+            if (_lowHpActive) {
+                _lowHpActive = false;
+                screen.classList.remove('cb-low-hp-warning');
+            }
+        }
+    }
+
+    // --------------------------------------------------------
     // Visual Feedback: Turn Indicator Banner
     // --------------------------------------------------------
     function _showTurnBanner(phase) {
@@ -542,24 +619,40 @@ window.Latency.Screens.CombatScreen = (function () {
         var result = data.result;
         var actor = data.actor;
         var damage = data.damage || 0;
+        var isCrit = result === 'crit';
 
-        // Screen shake on crits
-        if (result === 'crit') {
-            _triggerShake();
-        }
-
-        // Floating damage numbers
-        if ((result === 'hit' || result === 'crit') && damage > 0) {
+        // Hits and crits
+        if ((result === 'hit' || isCrit) && damage > 0) {
             if (actor === 'player') {
                 // Player dealt damage to enemy
-                _showDamageNumber('enemy', damage, result === 'crit');
+                _showDamageNumber('enemy', damage, isCrit);
                 _flashHpBar('enemy');
+                _flashPanel('enemy', isCrit);
+                if (isCrit) _triggerShake(true);
             } else if (actor === 'enemy') {
                 // Enemy dealt damage to player
-                _showDamageNumber('player', damage, result === 'crit');
+                _showDamageNumber('player', damage, isCrit);
                 _flashHpBar('player');
-                if (result === 'crit') _triggerShake();
+                _flashPanel('player', isCrit);
+                // Shake on any enemy hit; stronger on crit
+                _triggerShake(isCrit);
+                // Check low HP after taking damage
+                _pendingTimers.push(setTimeout(_checkLowHp, 100));
             }
+        }
+
+        // Misses: show floating MISS text
+        if (result === 'miss') {
+            if (actor === 'player') {
+                _showMissText('enemy');
+            } else if (actor === 'enemy') {
+                _showMissText('player');
+            }
+        }
+
+        // Heal floating numbers
+        if (result === 'used' && data.action === 'item') {
+            // Item use — heal numbers handled via stateChange
         }
     }
 
@@ -931,6 +1024,7 @@ window.Latency.Screens.CombatScreen = (function () {
 
     function _onStateChange() {
         _refreshCombatants();
+        _checkLowHp();
     }
 
     function _onCombatLog(data) {
@@ -995,6 +1089,12 @@ window.Latency.Screens.CombatScreen = (function () {
             // Build screen
             var screen = _el('div', 'combat-screen');
 
+            // Cinematic canvas for atmospheric background
+            var cinematicCanvas = document.createElement('canvas');
+            cinematicCanvas.className = 'cb-cinematic-canvas';
+            _els.cinematicCanvas = cinematicCanvas;
+            screen.appendChild(cinematicCanvas);
+
             // Header
             screen.appendChild(_buildHeader());
 
@@ -1021,6 +1121,12 @@ window.Latency.Screens.CombatScreen = (function () {
             _subscribe('combat:action', _onCombatAction);
             _subscribe('dice:roll', _onDiceRoll);
 
+            // Initialize cinematic renderer for atmospheric embers
+            if (window.Latency.CinematicRenderer && _els.cinematicCanvas) {
+                window.Latency.CinematicRenderer.init(_els.cinematicCanvas);
+                window.Latency.CinematicRenderer.setEffect('embers', { intensity: 0.3 });
+            }
+
             // If combat is already in progress, populate immediately
             if (window.Latency.Combat && window.Latency.Combat.isInCombat()) {
                 var state = window.Latency.Combat.getState();
@@ -1045,6 +1151,14 @@ window.Latency.Screens.CombatScreen = (function () {
          * Unmount the combat screen.
          */
         unmount: function () {
+            // Stop cinematic renderer
+            if (window.Latency.CinematicRenderer) {
+                window.Latency.CinematicRenderer.stop();
+            }
+
+            // Reset low HP state
+            _lowHpActive = false;
+
             // Clear pending timers
             for (var t = 0; t < _pendingTimers.length; t++) {
                 clearTimeout(_pendingTimers[t]);

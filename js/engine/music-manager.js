@@ -43,6 +43,9 @@ window.Latency.MusicManager = (function () {
     /** @type {number} Master volume 0.0 - 1.0 */
     var _volume = 0.5;
 
+    /** @type {string} localStorage key for music settings */
+    var MUSIC_STORAGE_KEY = 'latency_music_settings';
+
     /** @type {number} Default crossfade duration in ms */
     var _fadeDuration = 2000;
 
@@ -74,6 +77,36 @@ window.Latency.MusicManager = (function () {
         if (window.Latency && window.Latency.EventBus && typeof window.Latency.EventBus.emit === 'function') {
             window.Latency.EventBus.emit(event, data);
         }
+    }
+
+    /**
+     * Persist volume and mute state to localStorage.
+     */
+    function _persist() {
+        try {
+            localStorage.setItem(MUSIC_STORAGE_KEY, JSON.stringify({
+                volume: _volume,
+                muted: _isMuted
+            }));
+        } catch (e) { /* ignore */ }
+    }
+
+    /**
+     * Restore volume and mute state from localStorage.
+     */
+    function _restorePersisted() {
+        try {
+            var raw = localStorage.getItem(MUSIC_STORAGE_KEY);
+            if (raw) {
+                var data = JSON.parse(raw);
+                if (typeof data.volume === 'number') {
+                    _volume = _clamp(data.volume, 0, 1);
+                }
+                if (typeof data.muted === 'boolean') {
+                    _isMuted = data.muted;
+                }
+            }
+        } catch (e) { /* ignore */ }
     }
 
     /**
@@ -442,6 +475,7 @@ window.Latency.MusicManager = (function () {
             _audio.volume = _isMuted ? 0 : _volume;
         }
 
+        _persist();
         _emit('music:volume', { volume: _volume });
     }
 
@@ -462,6 +496,7 @@ window.Latency.MusicManager = (function () {
             _audio.volume = _isMuted ? 0 : _volume;
         }
 
+        _persist();
         _emit('music:mute', { isMuted: _isMuted });
     }
 
@@ -707,6 +742,9 @@ window.Latency.MusicManager = (function () {
         // Wire up audio events.
         _audio.addEventListener('ended', _onTrackEnded);
         _audio.addEventListener('error', _onTrackError);
+
+        // Restore persisted volume/mute settings from localStorage.
+        _restorePersisted();
 
         // Set initial volume.
         _audio.volume = _isMuted ? 0 : _volume;

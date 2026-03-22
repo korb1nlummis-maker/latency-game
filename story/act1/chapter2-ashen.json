@@ -81,7 +81,10 @@
       ],
       "ascii": null,
       "music": "ambient_sacred_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "fac_ashen_002": {
       "id": "act1.chapter2-ashen.fac_ashen_002",
@@ -121,7 +124,10 @@
       ],
       "ascii": null,
       "music": "ambient_sacred_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "void",
+      "effectIntensity": 0.5
     },
     "fac_ashen_003": {
       "id": "act1.chapter2-ashen.fac_ashen_003",
@@ -174,7 +180,10 @@
       ],
       "ascii": null,
       "music": "ambient_sacred_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "fac_ashen_004": {
       "id": "act1.chapter2-ashen.fac_ashen_004",
@@ -238,7 +247,10 @@
       ],
       "ascii": null,
       "music": "ambient_melancholy_warm",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "fac_ashen_005": {
       "id": "act1.chapter2-ashen.fac_ashen_005",
@@ -293,7 +305,10 @@
       ],
       "ascii": null,
       "music": "ambient_melancholy_warm",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "fac_ashen_006": {
       "id": "act1.chapter2-ashen.fac_ashen_006",
@@ -378,7 +393,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "void",
+      "effectIntensity": 0.4
     },
     "fac_ashen_007": {
       "id": "act1.chapter2-ashen.fac_ashen_007",
@@ -419,7 +437,10 @@
       ],
       "ascii": null,
       "music": "ambient_melancholy_warm",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "fac_ashen_008": {
       "id": "act1.chapter2-ashen.fac_ashen_008",
@@ -451,7 +472,10 @@
       ],
       "ascii": null,
       "music": "ambient_descent_echoes",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.7
     },
     "fac_ashen_009": {
       "id": "act1.chapter2-ashen.fac_ashen_009",
@@ -495,7 +519,10 @@
       ],
       "ascii": "assets/ascii/locations/ossuary.txt",
       "music": "ambient_ossuary_sacred",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.8
     },
     "fac_ashen_010": {
       "id": "act1.chapter2-ashen.fac_ashen_010",
@@ -537,7 +564,10 @@
       ],
       "ascii": null,
       "music": "ambient_ossuary_sacred",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "fac_ashen_011": {
       "id": "act1.chapter2-ashen.fac_ashen_011",
@@ -572,7 +602,10 @@
       ],
       "ascii": null,
       "music": "ambient_ceremony_rising",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "fac_ashen_012": {
       "id": "act1.chapter2-ashen.fac_ashen_012",
@@ -619,7 +652,10 @@
       ],
       "ascii": null,
       "music": "ambient_ceremony_transcendence",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "stars",
+      "effectIntensity": 0.8
     },
     "fac_ashen_013": {
       "id": "act1.chapter2-ashen.fac_ashen_013",
@@ -713,7 +749,10 @@
       ],
       "ascii": null,
       "music": "ambient_ossuary_sacred",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "peaceful",
+      "effect": "stars",
+      "effectIntensity": 0.5
     },
     "fac_ashen_014": {
       "id": "act1.chapter2-ashen.fac_ashen_014",
@@ -791,7 +830,10 @@
       ],
       "ascii": null,
       "music": "ambient_resolution_quiet",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "void",
+      "effectIntensity": 0.5
     },
     "fac_ashen_015": {
       "id": "act1.chapter2-ashen.fac_ashen_015",
@@ -858,7 +900,10 @@
       ],
       "ascii": null,
       "music": "ambient_aftermath_hollow",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     }
   }
 }

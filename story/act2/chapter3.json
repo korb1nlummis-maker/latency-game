@@ -100,7 +100,10 @@
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.5
     },
     "act2ch3_002": {
       "id": "act2.chapter3.act2ch3_002",
@@ -149,7 +152,10 @@
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "act2ch3_003": {
       "id": "act2.chapter3.act2ch3_003",
@@ -195,7 +201,10 @@
       ],
       "ascii": null,
       "music": "ambient_dread_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2ch3_003a": {
       "id": "act2.chapter3.act2ch3_003a",
@@ -230,11 +239,22 @@
         {
           "text": "Continue to the sublevel",
           "next": "act2.chapter3.act2ch3_003"
+        },
+        {
+          "text": "[Dexterity 14] Take the service ladder instead — less exposed",
+          "next": "act2.chapter3.act2ch3_003",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2ch3_004": {
       "id": "act2.chapter3.act2ch3_004",
@@ -277,7 +297,10 @@
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "act2ch3_004a": {
       "id": "act2.chapter3.act2ch3_004a",
@@ -318,11 +341,22 @@
         {
           "text": "Give Kira a moment alone with her brother",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Wisdom 15] Watch from a distance and read the emotional subtext",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 15
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "act2ch3_004b": {
       "id": "act2.chapter3.act2ch3_004b",
@@ -357,11 +391,18 @@
         {
           "text": "Follow her. Give her space.",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "Stand guard nearby in case of trouble",
+          "next": "act2.chapter3.act2ch3_001"
         }
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.5
     },
     "act2ch3_005": {
       "id": "act2.chapter3.act2ch3_005",
@@ -404,7 +445,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2ch3_006": {
       "id": "act2.chapter3.act2ch3_006",
@@ -450,7 +494,10 @@
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2ch3_006a": {
       "id": "act2.chapter3.act2ch3_006a",
@@ -485,11 +532,22 @@
         {
           "text": "\"He's gone. For now. But we need to talk about who that was.\"",
           "next": "act2.chapter3.act2ch3_006"
+        },
+        {
+          "text": "[Intelligence 14] Describe exactly what you observed about the attacker",
+          "next": "act2.chapter3.act2ch3_006",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2ch3_006b": {
       "id": "act2.chapter3.act2ch3_006b",
@@ -506,11 +564,22 @@
         {
           "text": "Take Jade through the fighters' exit",
           "next": "act2.chapter3.act2ch3_006"
+        },
+        {
+          "text": "[Strength 14] Carry her if she can't walk on her own",
+          "next": "act2.chapter3.act2ch3_006",
+          "statCheck": {
+            "stat": "strength",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2ch3_007": {
       "id": "act2.chapter3.act2ch3_007",
@@ -548,11 +617,26 @@
         {
           "text": "Walk her home through the rain",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Charisma 14] Talk about anything else — she needs the distraction",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Walk in silence. Sometimes presence is enough.",
+          "next": "act2.chapter3.act2ch3_001"
         }
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "act2ch3_007a": {
       "id": "act2.chapter3.act2ch3_007a",
@@ -588,11 +672,22 @@
         {
           "text": "\"So what do you want to do?\"",
           "next": "act2.chapter3.act2ch3_007"
+        },
+        {
+          "text": "[Wisdom 14] Listen carefully — the answer matters more than the question",
+          "next": "act2.chapter3.act2ch3_007",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2ch3_008": {
       "id": "act2.chapter3.act2ch3_008",
@@ -634,7 +729,10 @@
       ],
       "ascii": null,
       "music": "ambient_rooftop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "act2ch3_009": {
       "id": "act2.chapter3.act2ch3_009",
@@ -672,7 +770,10 @@
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "act2ch3_009a": {
       "id": "act2.chapter3.act2ch3_009a",
@@ -699,11 +800,22 @@
         {
           "text": "Let it go for now. They'll come to you when they're ready.",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Wisdom 14] Make yourself available without being pushy",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_rooftop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "act2ch3_009b": {
       "id": "act2.chapter3.act2ch3_009b",
@@ -736,11 +848,22 @@
         {
           "text": "Try to sleep",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Constitution 14] Stay alert despite your exhaustion — the night isn't safe",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "constitution",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2ch3_009c": {
       "id": "act2.chapter3.act2ch3_009c",
@@ -774,11 +897,18 @@
         {
           "text": "Stay a while longer",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "Offer to share a meal while you wait",
+          "next": "act2.chapter3.act2ch3_001"
         }
       ],
       "ascii": null,
       "music": "ambient_rooftop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.5
     },
     "act2ch3_010": {
       "id": "act2.chapter3.act2ch3_010",
@@ -816,7 +946,10 @@
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "act2ch3_010a": {
       "id": "act2.chapter3.act2ch3_010a",
@@ -844,11 +977,22 @@
         {
           "text": "Walk Zero home",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Dexterity 14] Take the rooftop route — fewer patrols at this hour",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "act2ch3_011": {
       "id": "act2.chapter3.act2ch3_011",
@@ -891,7 +1035,10 @@
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "act2ch3_012": {
       "id": "act2.chapter3.act2ch3_012",
@@ -937,7 +1084,10 @@
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.7
     },
     "act2ch3_012a": {
       "id": "act2.chapter3.act2ch3_012a",
@@ -972,11 +1122,22 @@
         {
           "text": "\"Tell me everything. I'm not going anywhere.\"",
           "next": "act2.chapter3.act2ch3_012"
+        },
+        {
+          "text": "[Charisma 15] Create a safe space — share something vulnerable first",
+          "next": "act2.chapter3.act2ch3_012",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 15
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "act2ch3_012b": {
       "id": "act2.chapter3.act2ch3_012b",
@@ -1022,7 +1183,10 @@
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "act2ch3_012c": {
       "id": "act2.chapter3.act2ch3_012c",
@@ -1056,11 +1220,22 @@
         {
           "text": "\"Then let's start today. What do you want to do first?\"",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Wisdom 14] Suggest starting with something small and achievable",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.8
     },
     "act2ch3_012d": {
       "id": "act2.chapter3.act2ch3_012d",
@@ -1094,11 +1269,18 @@
         {
           "text": "\"That's all I'm asking. Just think about it.\"",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "Give them space to think. Don't push.",
+          "next": "act2.chapter3.act2ch3_001"
         }
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "act2ch3_013": {
       "id": "act2.chapter3.act2ch3_013",
@@ -1146,7 +1328,10 @@
       ],
       "ascii": null,
       "music": "ambient_dread_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.6
     },
     "act2ch3_014": {
       "id": "act2.chapter3.act2ch3_014",
@@ -1187,7 +1372,10 @@
       ],
       "ascii": null,
       "music": "ambient_dread_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.6
     },
     "act2ch3_014a": {
       "id": "act2.chapter3.act2ch3_014a",
@@ -1223,7 +1411,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2ch3_015": {
       "id": "act2.chapter3.act2ch3_015",
@@ -1259,11 +1450,22 @@
         {
           "text": "Begin planning the extraction",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Intelligence 15] Map out every possible approach and escape route",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 15
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "act2ch3_015a": {
       "id": "act2.chapter3.act2ch3_015a",
@@ -1299,7 +1501,10 @@
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.3
     },
     "act2ch3_015b": {
       "id": "act2.chapter3.act2ch3_015b",
@@ -1333,11 +1538,22 @@
         {
           "text": "Start planning. Together.",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Tech 14] Set up an encrypted communication channel for the operation",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.5
     },
     "act2ch3_016": {
       "id": "act2.chapter3.act2ch3_016",
@@ -1397,7 +1613,10 @@
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "act2ch3_017": {
       "id": "act2.chapter3.act2ch3_017",
@@ -1429,11 +1648,18 @@
         {
           "text": "See who else is around the base",
           "next": "act2.chapter3.act2ch3_021"
+        },
+        {
+          "text": "Head straight to the common room and announce yourself",
+          "next": "act2.chapter3.act2ch3_021"
         }
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neutral",
+      "effect": "fog",
+      "effectIntensity": 0.3
     },
     "act2ch3_018": {
       "id": "act2.chapter3.act2ch3_018",
@@ -1466,11 +1692,22 @@
         {
           "text": "See who else is around the base",
           "next": "act2.chapter3.act2ch3_021"
+        },
+        {
+          "text": "[Charisma 14] Check on morale before looking for specific people",
+          "next": "act2.chapter3.act2ch3_021",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "snow",
+      "effectIntensity": 0.3
     },
     "act2ch3_019": {
       "id": "act2.chapter3.act2ch3_019",
@@ -1506,11 +1743,18 @@
         {
           "text": "See who else is around the base",
           "next": "act2.chapter3.act2ch3_021"
+        },
+        {
+          "text": "Take a moment alone first — you need to decompress",
+          "next": "act2.chapter3.act2ch3_021"
         }
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "act2ch3_020": {
       "id": "act2.chapter3.act2ch3_020",
@@ -1542,11 +1786,22 @@
         {
           "text": "See who else is around the base",
           "next": "act2.chapter3.act2ch3_021"
+        },
+        {
+          "text": "[Wisdom 14] Read the room before engaging — something feels different",
+          "next": "act2.chapter3.act2ch3_021",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.4
     },
     "act2ch3_021": {
       "id": "act2.chapter3.act2ch3_021",
@@ -1586,7 +1841,10 @@
       ],
       "ascii": null,
       "music": "ambient_home",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.3
     },
     "act2ch3_022": {
       "id": "act2.chapter3.act2ch3_022",
@@ -1618,11 +1876,26 @@
         {
           "text": "After dinner, head to bed. Tomorrow is another day.",
           "next": "act2.chapter3.act2ch3_026"
+        },
+        {
+          "text": "[Constitution 14] Stay up to review tomorrow's plans",
+          "next": "act2.chapter3.act2ch3_026",
+          "statCheck": {
+            "stat": "constitution",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Write a message to someone you care about before sleep",
+          "next": "act2.chapter3.act2ch3_026"
         }
       ],
       "ascii": null,
       "music": "ambient_home",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.4
     },
     "act2ch3_023": {
       "id": "act2.chapter3.act2ch3_023",
@@ -1657,11 +1930,26 @@
         {
           "text": "After dinner, head to bed. Tomorrow is another day.",
           "next": "act2.chapter3.act2ch3_026"
+        },
+        {
+          "text": "Check the perimeter security before turning in",
+          "next": "act2.chapter3.act2ch3_026"
+        },
+        {
+          "text": "[Wisdom 15] Meditate on the day's events to find clarity",
+          "next": "act2.chapter3.act2ch3_026",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 15
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_home",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "neon",
+      "effectIntensity": 0.4
     },
     "act2ch3_024": {
       "id": "act2.chapter3.act2ch3_024",
@@ -1694,11 +1982,26 @@
         {
           "text": "After dinner, head to bed. Tomorrow is another day.",
           "next": "act2.chapter3.act2ch3_026"
+        },
+        {
+          "text": "Clean and maintain your equipment before bed",
+          "next": "act2.chapter3.act2ch3_026"
+        },
+        {
+          "text": "[Intelligence 14] Review the intel you gathered today",
+          "next": "act2.chapter3.act2ch3_026",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_home",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "stars",
+      "effectIntensity": 0.4
     },
     "act2ch3_025": {
       "id": "act2.chapter3.act2ch3_025",
@@ -1732,11 +2035,26 @@
         {
           "text": "After dinner, head to bed. Tomorrow is another day.",
           "next": "act2.chapter3.act2ch3_026"
+        },
+        {
+          "text": "Help with the night watch rotation",
+          "next": "act2.chapter3.act2ch3_026"
+        },
+        {
+          "text": "[Luck 13] Trust that tomorrow will bring better odds",
+          "next": "act2.chapter3.act2ch3_026",
+          "statCheck": {
+            "stat": "luck",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_home",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "act2ch3_026": {
       "id": "act2.chapter3.act2ch3_026",
@@ -1773,7 +2091,10 @@
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "peaceful",
+      "effect": "stars",
+      "effectIntensity": 0.4
     },
     "act2ch3_027": {
       "id": "act2.chapter3.act2ch3_027",
@@ -1807,7 +2128,10 @@
       ],
       "ascii": null,
       "music": "ambient_gentle_rain",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "act2ch3_028": {
       "id": "act2.chapter3.act2ch3_028",
@@ -1845,11 +2169,22 @@
         {
           "text": "Show Pixel to a room. Make sure they eat.",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Charisma 14] Talk to Pixel — they look like they need it more than food",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "act2ch3_028a": {
       "id": "act2.chapter3.act2ch3_028a",
@@ -1880,11 +2215,22 @@
         {
           "text": "Sleep. Try not to think about it.",
           "next": "act2.chapter3.act2ch3_001"
+        },
+        {
+          "text": "[Constitution 15] Lie awake and plan. Sleep can wait.",
+          "next": "act2.chapter3.act2ch3_001",
+          "statCheck": {
+            "stat": "constitution",
+            "dc": 15
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_somber",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "ending_101": {
       "id": "act2.chapter3.ending_101",
@@ -1921,7 +2267,10 @@
       "music": "ambient_ending_somber",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_101_ember_dies"
+      "endingId": "ending_101_ember_dies",
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.8
     },
     "ending_102": {
       "id": "act2.chapter3.ending_102",
@@ -1958,7 +2307,10 @@
       "music": "ambient_ending_bittersweet",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_102_love_ending"
+      "endingId": "ending_102_love_ending",
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.7
     },
     "ending_103": {
       "id": "act2.chapter3.ending_103",
@@ -2000,7 +2352,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_103_rust_betrayal"
+      "endingId": "ending_103_rust_betrayal",
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.8
     },
     "ending_104": {
       "id": "act2.chapter3.ending_104",
@@ -2040,7 +2395,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_104_zero_self_destructs"
+      "endingId": "ending_104_zero_self_destructs",
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.8
     },
     "ending_105": {
       "id": "act2.chapter3.ending_105",
@@ -2078,7 +2436,10 @@
       "music": "ambient_ending_warm",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_105_domestic"
+      "endingId": "ending_105_domestic",
+      "mood": "warm",
+      "effect": "stars",
+      "effectIntensity": 0.6
     }
   }
 }

@@ -60,11 +60,26 @@
         {
           "text": "Survey the district from the rooftop",
           "next": "act2.chapter1.act2_002"
+        },
+        {
+          "text": "Check your encrypted comm channels first",
+          "next": "act2.chapter1.act2_002"
+        },
+        {
+          "text": "[Wisdom 14] Scan the rooftops for surveillance drones before exposing yourself",
+          "next": "act2.chapter1.act2_002",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_martial_law",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "smoke",
+      "effectIntensity": 0.5
     },
     "act2_002": {
       "id": "act2.chapter1.act2_002",
@@ -93,11 +108,26 @@
         {
           "text": "Head to your quarters",
           "next": "act2.chapter1.act2_003"
+        },
+        {
+          "text": "[Intelligence 13] Study the drone patrol patterns — there may be blind spots",
+          "next": "act2.chapter1.act2_003",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 13
+          }
+        },
+        {
+          "text": "Visit a trusted contact before heading home",
+          "next": "act2.chapter1.act2_003"
         }
       ],
       "ascii": null,
       "music": "ambient_martial_law",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "smoke",
+      "effectIntensity": 0.6
     },
     "act2_003": {
       "id": "act2.chapter1.act2_003",
@@ -127,11 +157,26 @@
         {
           "text": "Think about what this means",
           "next": "act2.chapter1.act2_004"
+        },
+        {
+          "text": "[Tech 14] Attempt to trace the message's origin despite the proxy chain",
+          "next": "act2.chapter1.act2_004",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Delete any local traces of the message from your datapad",
+          "next": "act2.chapter1.act2_004"
         }
       ],
       "ascii": null,
       "music": "ambient_mystery",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "act2_004": {
       "id": "act2.chapter1.act2_004",
@@ -155,11 +200,26 @@
         {
           "text": "Head to work. The day waits for no one under martial law.",
           "next": "act2.chapter1.act2_005"
+        },
+        {
+          "text": "Skip work. The LATENCY revelation demands immediate investigation.",
+          "next": "act2.chapter1.act2_005"
+        },
+        {
+          "text": "[Charisma 13] Contact a trusted ally to discuss the message before work",
+          "next": "act2.chapter1.act2_005",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_mystery",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "act2_005": {
       "id": "act2.chapter1.act2_005",
@@ -211,7 +271,10 @@
       ],
       "ascii": null,
       "music": "ambient_martial_law",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "smoke",
+      "effectIntensity": 0.6
     },
     "act2_006": {
       "id": "act2.chapter1.act2_006",
@@ -260,7 +323,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "smoke",
+      "effectIntensity": 0.5
     },
     "act2_007a": {
       "id": "act2.chapter1.act2_007a",
@@ -292,11 +358,26 @@
         {
           "text": "Finish your shift and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "Warn one of the unregistered families about an upcoming sweep",
+          "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Charisma 14] Build a network of informants among the civilians you've helped",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "smoke",
+      "effectIntensity": 0.4
     },
     "act2_007b": {
       "id": "act2.chapter1.act2_007b",
@@ -325,11 +406,26 @@
         {
           "text": "Finish your shift and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "File the patrol reports exactly as Meridian expects",
+          "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Wisdom 14] Quietly observe which officers are true believers and which are just following orders",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2_007c": {
       "id": "act2.chapter1.act2_007c",
@@ -365,11 +461,26 @@
         {
           "text": "Finish your shift and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Intelligence 14] Document the patrol routes and checkpoint schedules for your own purposes",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Keep your head down until you figure out who to trust",
+          "next": "act2.chapter1.act2_015"
         }
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2_008": {
       "id": "act2.chapter1.act2_008",
@@ -420,7 +531,10 @@
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "act2_009a": {
       "id": "act2.chapter1.act2_009a",
@@ -447,11 +561,26 @@
         {
           "text": "Log off and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Tech 15] Set up a hidden backdoor before logging off",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Wipe your access logs clean",
+          "next": "act2.chapter1.act2_015"
         }
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "act2_009b": {
       "id": "act2.chapter1.act2_009b",
@@ -479,11 +608,26 @@
         {
           "text": "Leave the server room and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "Pocket a backup drive of the data you found",
+          "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Dexterity 14] Slip out through the maintenance corridor to avoid cameras",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "act2_009c": {
       "id": "act2.chapter1.act2_009c",
@@ -510,11 +654,22 @@
         {
           "text": "Head out and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "Share a carefully redacted version of what you found with a contact",
+          "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "Destroy the evidence and trust your memory",
+          "next": "act2.chapter1.act2_015"
         }
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "act2_010": {
       "id": "act2.chapter1.act2_010",
@@ -564,7 +719,10 @@
       ],
       "ascii": null,
       "music": "ambient_clinic",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "snow",
+      "effectIntensity": 0.4
     },
     "act2_011a": {
       "id": "act2.chapter1.act2_011a",
@@ -591,11 +749,26 @@
         {
           "text": "Secure the evidence and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Wisdom 15] Analyze the evidence for patterns that point to the source",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Hide a copy of the evidence in a dead drop only you know about",
+          "next": "act2.chapter1.act2_015"
         }
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "act2_011b": {
       "id": "act2.chapter1.act2_011b",
@@ -622,11 +795,26 @@
         {
           "text": "Close the clinic for the night and prepare for the real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "Check on the most critical patients one last time before leaving",
+          "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Constitution 14] Push through your exhaustion and review tonight's medical logs",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "constitution",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_clinic",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.6
     },
     "act2_012": {
       "id": "act2.chapter1.act2_012",
@@ -683,7 +871,10 @@
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "act2_013a": {
       "id": "act2.chapter1.act2_013a",
@@ -715,11 +906,26 @@
         {
           "text": "Head home and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Dexterity 15] Take the long route home through the checkpoint blind spots",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Stash your contraband before passing through the checkpoint",
+          "next": "act2.chapter1.act2_015"
         }
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2_013b": {
       "id": "act2.chapter1.act2_013b",
@@ -747,11 +953,26 @@
         {
           "text": "Head home and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "Contact your fence about moving the goods quickly",
+          "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Luck 13] Take a gamble on a shortcut through contested territory",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "luck",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2_013c": {
       "id": "act2.chapter1.act2_013c",
@@ -782,11 +1003,26 @@
         {
           "text": "Head home and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "Check in with your network before heading home",
+          "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Charisma 14] Convince a checkpoint guard to look the other way",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2_014": {
       "id": "act2.chapter1.act2_014",
@@ -813,11 +1049,26 @@
         {
           "text": "Head home and prepare for the night's real mission",
           "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "Stop at a street vendor for rations before curfew",
+          "next": "act2.chapter1.act2_015"
+        },
+        {
+          "text": "[Wisdom 13] Take note of the new checkpoint positions on your route home",
+          "next": "act2.chapter1.act2_015",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_tension_low",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neutral",
+      "effect": "rain",
+      "effectIntensity": 0.4
     },
     "act2_015": {
       "id": "act2.chapter1.act2_015",
@@ -855,7 +1106,10 @@
       ],
       "ascii": null,
       "music": "ambient_night",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "rain",
+      "effectIntensity": 0.6
     },
     "act2_016": {
       "id": "act2.chapter1.act2_016",
@@ -882,11 +1136,26 @@
         {
           "text": "Follow her inside",
           "next": "act2.chapter1.act2_017"
+        },
+        {
+          "text": "[Dexterity 14] Check for traps or surveillance before entering",
+          "next": "act2.chapter1.act2_017",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Hesitate. This could easily be an ambush.",
+          "next": "act2.chapter1.act2_017"
         }
       ],
       "ascii": null,
       "music": "ambient_mystery",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2_016b": {
       "id": "act2.chapter1.act2_016b",
@@ -912,11 +1181,26 @@
         {
           "text": "Head to the Stack Clinic maintenance entrance",
           "next": "act2.chapter1.act2_016"
+        },
+        {
+          "text": "[Tech 14] Scan for electronic security on the entrance first",
+          "next": "act2.chapter1.act2_016",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Circle the building once to identify escape routes",
+          "next": "act2.chapter1.act2_016"
         }
       ],
       "ascii": null,
       "music": "ambient_mystery",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "act2_017": {
       "id": "act2.chapter1.act2_017",
@@ -952,7 +1236,10 @@
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "act2_018": {
       "id": "act2.chapter1.act2_018",
@@ -988,7 +1275,10 @@
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2_019": {
       "id": "act2.chapter1.act2_019",
@@ -1023,7 +1313,10 @@
       ],
       "ascii": null,
       "music": "ambient_mystery",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2_020": {
       "id": "act2.chapter1.act2_020",
@@ -1056,11 +1349,26 @@
         {
           "text": "Take the data and leave. Time to decide what to do with it.",
           "next": "act2.chapter1.act2_025"
+        },
+        {
+          "text": "[Intelligence 15] Make an encrypted backup of the most critical data",
+          "next": "act2.chapter1.act2_025",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Destroy any physical evidence linking you to the clinic break-in",
+          "next": "act2.chapter1.act2_025"
         }
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "act2_021": {
       "id": "act2.chapter1.act2_021",
@@ -1092,11 +1400,26 @@
         {
           "text": "Head home. The real work starts tomorrow.",
           "next": "act2.chapter1.act2_025"
+        },
+        {
+          "text": "Check if you were followed before going inside",
+          "next": "act2.chapter1.act2_025"
+        },
+        {
+          "text": "[Wisdom 14] Assess whether the informant can truly be trusted",
+          "next": "act2.chapter1.act2_025",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_night",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "act2_022": {
       "id": "act2.chapter1.act2_022",
@@ -1128,11 +1451,26 @@
         {
           "text": "Head home with the data. Time to choose who gets it.",
           "next": "act2.chapter1.act2_025"
+        },
+        {
+          "text": "[Intelligence 14] Analyze the data to determine its true value before choosing a buyer",
+          "next": "act2.chapter1.act2_025",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 14
+          }
+        },
+        {
+          "text": "Sleep on it. Decisions this big shouldn't be rushed.",
+          "next": "act2.chapter1.act2_025"
         }
       ],
       "ascii": null,
       "music": "ambient_night",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2_023": {
       "id": "act2.chapter1.act2_023",
@@ -1163,7 +1501,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2_025": {
       "id": "act2.chapter1.act2_025",
@@ -1244,7 +1585,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.5
     },
     "act2_026": {
       "id": "act2.chapter1.act2_026",
@@ -1294,7 +1638,10 @@
       ],
       "ascii": null,
       "music": "combat_buildup",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "industrial",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2_027a": {
       "id": "act2.chapter1.act2_027a",
@@ -1332,11 +1679,26 @@
         {
           "text": "Return to the Foundry for debriefing",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Charisma 14] Request a private meeting with Hammer about what you found",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 14
+          }
+        },
+        {
+          "text": "File your report through official channels and wait",
+          "next": "act2.chapter1.act2_040"
         }
       ],
       "ascii": null,
       "music": "combat_victory",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2_027b": {
       "id": "act2.chapter1.act2_027b",
@@ -1374,11 +1736,26 @@
         {
           "text": "Return to the Foundry for debriefing",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "Report only what they need to know. Keep the rest to yourself.",
+          "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Wisdom 14] Gauge the Foundry leadership's reaction to your intel",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2_027c": {
       "id": "act2.chapter1.act2_027c",
@@ -1410,11 +1787,26 @@
         {
           "text": "Return to the Foundry for debriefing",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "Request additional resources for the next mission",
+          "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Strength 14] Demand combat training from the Foundry veterans",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "strength",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "act2_028": {
       "id": "act2.chapter1.act2_028",
@@ -1460,7 +1852,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_court",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "act2_029a": {
       "id": "act2.chapter1.act2_029a",
@@ -1502,11 +1897,26 @@
         {
           "text": "Return home to consider what you've done",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Wisdom 15] Meditate on the moral weight of your actions",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "wisdom",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Pour a drink. Stop thinking. Just for tonight.",
+          "next": "act2.chapter1.act2_040"
         }
       ],
       "ascii": null,
       "music": "ambient_neon_court",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.7
     },
     "act2_029b": {
       "id": "act2.chapter1.act2_029b",
@@ -1543,11 +1953,26 @@
         {
           "text": "Return home to consider what you've done",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "Clean up any traces of your involvement",
+          "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Dexterity 14] Take a circuitous route to avoid any tail",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_neon_court",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "neon",
+      "effect": "neon",
+      "effectIntensity": 0.5
     },
     "act2_029c": {
       "id": "act2.chapter1.act2_029c",
@@ -1571,11 +1996,26 @@
         {
           "text": "Proceed with the infiltration",
           "next": "act2.chapter1.act2_029b"
+        },
+        {
+          "text": "[Tech 15] Hack the security panel to create a distraction first",
+          "next": "act2.chapter1.act2_029b",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Find an alternate entry point — the main route feels too obvious",
+          "next": "act2.chapter1.act2_029b"
         }
       ],
       "ascii": null,
       "music": "ambient_neon_court",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "neon",
+      "effectIntensity": 0.6
     },
     "act2_030": {
       "id": "act2.chapter1.act2_030",
@@ -1617,7 +2057,10 @@
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "act2_031a": {
       "id": "act2.chapter1.act2_031a",
@@ -1657,11 +2100,26 @@
         {
           "text": "Return to your quarters. The remaining fragments will require planning.",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Tech 15] Begin decryption analysis on the fragments immediately",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Secure the fragments in multiple hidden locations for safety",
+          "next": "act2.chapter1.act2_040"
         }
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "act2_031b": {
       "id": "act2.chapter1.act2_031b",
@@ -1693,11 +2151,26 @@
         {
           "text": "Return to your quarters. More work lies ahead.",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "Send an encrypted status update to your Saints contact",
+          "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Intelligence 14] Review the mission for operational mistakes to avoid next time",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "intelligence",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_digital",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "act2_032": {
       "id": "act2.chapter1.act2_032",
@@ -1743,7 +2216,10 @@
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2_033a": {
       "id": "act2.chapter1.act2_033a",
@@ -1783,11 +2259,26 @@
         {
           "text": "Collect your payment and disappear into the night",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Dexterity 15] Vanish through three different transit routes to lose any followers",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "dexterity",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Leave a false trail before heading to your real safe house",
+          "next": "act2.chapter1.act2_040"
         }
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2_033b": {
       "id": "act2.chapter1.act2_033b",
@@ -1824,11 +2315,26 @@
         {
           "text": "Collect your payment and disappear into the night",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "Count the payment carefully. Trust is earned, not given.",
+          "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Luck 13] Check if any of the payment is marked or traceable",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "luck",
+            "dc": 13
+          }
         }
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2_033c": {
       "id": "act2.chapter1.act2_033c",
@@ -1854,7 +2360,10 @@
       ],
       "ascii": null,
       "music": "combat_stealth",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2_034": {
       "id": "act2.chapter1.act2_034",
@@ -1896,7 +2405,10 @@
       ],
       "ascii": null,
       "music": "ambient_void",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "act2_035a": {
       "id": "act2.chapter1.act2_035a",
@@ -1934,11 +2446,26 @@
         {
           "text": "Return to the Ossuary to report",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Charisma 15] Request an audience with the inner circle based on your results",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "charisma",
+            "dc": 15
+          }
+        },
+        {
+          "text": "File your report and maintain your cover",
+          "next": "act2.chapter1.act2_040"
         }
       ],
       "ascii": null,
       "music": "ambient_void",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.8
     },
     "act2_035b": {
       "id": "act2.chapter1.act2_035b",
@@ -1970,11 +2497,26 @@
         {
           "text": "Return home to rest",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "Perform a cleansing ritual to settle your mind",
+          "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Constitution 14] Tend to your wounds before they get infected",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "constitution",
+            "dc": 14
+          }
         }
       ],
       "ascii": null,
       "music": "ambient_void",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.6
     },
     "act2_036": {
       "id": "act2.chapter1.act2_036",
@@ -2028,7 +2570,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "act2_037": {
       "id": "act2.chapter1.act2_037",
@@ -2055,11 +2600,26 @@
         {
           "text": "See the mission through",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Strength 15] Push through by sheer force of will",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "strength",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Take a calculated approach. Rushing gets people killed.",
+          "next": "act2.chapter1.act2_040"
         }
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.6
     },
     "act2_038": {
       "id": "act2.chapter1.act2_038",
@@ -2087,11 +2647,26 @@
         {
           "text": "Secure the data and plan your next move",
           "next": "act2.chapter1.act2_040"
+        },
+        {
+          "text": "[Tech 15] Encrypt the data with a custom cipher before storing it",
+          "next": "act2.chapter1.act2_040",
+          "statCheck": {
+            "stat": "tech",
+            "dc": 15
+          }
+        },
+        {
+          "text": "Split the data across multiple devices so no one theft compromises everything",
+          "next": "act2.chapter1.act2_040"
         }
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "cold",
+      "effect": "rain",
+      "effectIntensity": 0.6
     },
     "act2_040": {
       "id": "act2.chapter1.act2_040",
@@ -2156,12 +2731,19 @@
         {
           "text": "Continue",
           "next": "act2.chapter2.act2ch2_001"
+        },
+        {
+          "text": "Rest first. Tomorrow the real fight begins.",
+          "next": "act2.chapter2.act2ch2_001"
         }
       ],
       "autoNext": "act2.chapter2.act2ch2_001",
       "ascii": null,
       "music": "chapter_end",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "smoke",
+      "effectIntensity": 0.7
     }
   }
 }

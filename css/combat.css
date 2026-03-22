@@ -1017,6 +1017,86 @@
 }
 
 /* ----------------------------------------------------------
+ * Panel hit flash effects
+ * ---------------------------------------------------------- */
+
+@keyframes cbPanelHitFlash {
+    0% { background-color: rgba(255, 45, 117, 0.25); }
+    100% { background-color: transparent; }
+}
+
+@keyframes cbPanelCritFlash {
+    0% {
+        background-color: rgba(255, 215, 0, 0.3);
+        box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        background-color: rgba(255, 215, 0, 0.15);
+    }
+    100% {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+.cb-panel-hit-flash {
+    animation: cbPanelHitFlash 0.25s ease-out;
+}
+
+.cb-panel-crit-flash {
+    animation: cbPanelCritFlash 0.35s ease-out;
+}
+
+/* ----------------------------------------------------------
+ * Floating miss text
+ * ---------------------------------------------------------- */
+
+.cb-dmg-miss {
+    color: var(--text-dim, #445566);
+    font-size: var(--text-sm, 0.75rem);
+    text-shadow: none;
+    opacity: 0.8;
+}
+
+/* ----------------------------------------------------------
+ * Low HP warning overlay (pulsing red vignette)
+ * ---------------------------------------------------------- */
+
+@keyframes cbLowHpPulse {
+    0%, 100% { box-shadow: inset 0 0 40px rgba(255, 0, 0, 0.15); }
+    50% { box-shadow: inset 0 0 80px rgba(255, 0, 0, 0.3); }
+}
+
+.cb-low-hp-warning {
+    animation: cbLowHpPulse 2s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------------
+ * Cinematic canvas (atmospheric background)
+ * ---------------------------------------------------------- */
+
+.cb-cinematic-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+}
+
+/* Ensure all combat content sits above the canvas */
+.cb-header,
+.cb-combatants,
+.cb-dice-area,
+.cb-log-section,
+.cb-action-bar {
+    position: relative;
+    z-index: 1;
+}
+
+/* ----------------------------------------------------------
  * Responsive adjustments
  * ---------------------------------------------------------- */
 

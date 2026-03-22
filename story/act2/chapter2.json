@@ -82,7 +82,10 @@
       ],
       "ascii": null,
       "music": "ambient_war_drums",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "act2ch2_002": {
       "id": "act2.chapter2.act2ch2_002",
@@ -144,7 +147,10 @@
       ],
       "ascii": null,
       "music": "ambient_faction_tension",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "act2ch2_003": {
       "id": "act2.chapter2.act2ch2_003",
@@ -193,7 +199,10 @@
       ],
       "ascii": null,
       "music": "ambient_mako_shop",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "sparks",
+      "effectIntensity": 0.6
     },
     "act2ch2_004": {
       "id": "act2.chapter2.act2ch2_004",
@@ -245,7 +254,10 @@
       ],
       "ascii": null,
       "music": "ambient_battlefield",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.9
     },
     "act2ch2_005": {
       "id": "act2.chapter2.act2ch2_005",
@@ -305,7 +317,10 @@
       ],
       "ascii": null,
       "music": "combat_ambient",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "act2ch2_006": {
       "id": "act2.chapter2.act2ch2_006",
@@ -355,7 +370,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "act2ch2_007": {
       "id": "act2.chapter2.act2ch2_007",
@@ -406,7 +424,10 @@
       ],
       "ascii": null,
       "music": "ambient_investigation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "smoke",
+      "effectIntensity": 0.6
     },
     "act2ch2_008": {
       "id": "act2.chapter2.act2ch2_008",
@@ -460,7 +481,10 @@
       ],
       "ascii": null,
       "music": "ambient_neon_strip",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "anger",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2ch2_009": {
       "id": "act2.chapter2.act2ch2_009",
@@ -507,7 +531,10 @@
       ],
       "ascii": null,
       "music": "ambient_aftermath",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "warm",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "act2ch2_010": {
       "id": "act2.chapter2.act2ch2_010",
@@ -559,7 +586,10 @@
       ],
       "ascii": null,
       "music": "ambient_war_drums",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2ch2_011": {
       "id": "act2.chapter2.act2ch2_011",
@@ -627,7 +657,10 @@
       ],
       "ascii": null,
       "music": "ambient_investigation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.7
     },
     "act2ch2_012": {
       "id": "act2.chapter2.act2ch2_012",
@@ -689,7 +722,10 @@
       ],
       "ascii": null,
       "music": "ambient_suspense",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "digital",
+      "effect": "datastream",
+      "effectIntensity": 0.5
     },
     "act2ch2_013": {
       "id": "act2.chapter2.act2ch2_013",
@@ -730,7 +766,10 @@
       ],
       "ascii": null,
       "music": "ambient_suspense",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "act2ch2_014": {
       "id": "act2.chapter2.act2ch2_014",
@@ -808,7 +847,10 @@
       ],
       "ascii": null,
       "music": "ambient_faction_tension",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "anger",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2ch2_015": {
       "id": "act2.chapter2.act2ch2_015",
@@ -879,7 +921,10 @@
       ],
       "ascii": null,
       "music": "ambient_confrontation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "act2ch2_016": {
       "id": "act2.chapter2.act2ch2_016",
@@ -938,7 +983,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2ch2_017": {
       "id": "act2.chapter2.act2ch2_017",
@@ -1003,7 +1051,10 @@
       ],
       "ascii": null,
       "music": "ambient_emotional",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2ch2_018": {
       "id": "act2.chapter2.act2ch2_018",
@@ -1070,7 +1121,10 @@
       ],
       "ascii": null,
       "music": "ambient_suspense",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2ch2_019": {
       "id": "act2.chapter2.act2ch2_019",
@@ -1132,7 +1186,10 @@
       ],
       "ascii": null,
       "music": "ambient_aftermath",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "embers",
+      "effectIntensity": 0.6
     },
     "act2ch2_020": {
       "id": "act2.chapter2.act2ch2_020",
@@ -1169,7 +1226,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.6
     },
     "act2ch2_021": {
       "id": "act2.chapter2.act2ch2_021",
@@ -1224,7 +1284,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.7
     },
     "act2ch2_022": {
       "id": "act2.chapter2.act2ch2_022",
@@ -1269,7 +1332,10 @@
       ],
       "ascii": null,
       "music": "ambient_underground",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2ch2_023": {
       "id": "act2.chapter2.act2ch2_023",
@@ -1319,7 +1385,10 @@
       ],
       "ascii": null,
       "music": "combat_ambient",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.7
     },
     "act2ch2_024": {
       "id": "act2.chapter2.act2ch2_024",
@@ -1372,7 +1441,10 @@
       ],
       "ascii": null,
       "music": "ambient_underground",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "fog",
+      "effectIntensity": 0.6
     },
     "act2ch2_025": {
       "id": "act2.chapter2.act2ch2_025",
@@ -1404,7 +1476,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "fog",
+      "effectIntensity": 0.5
     },
     "act2ch2_026": {
       "id": "act2.chapter2.act2ch2_026",
@@ -1458,7 +1533,10 @@
       "choices": [],
       "ascii": null,
       "music": "combat_active",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "act2ch2_027": {
       "id": "act2.chapter2.act2ch2_027",
@@ -1515,7 +1593,10 @@
       ],
       "ascii": null,
       "music": "ambient_tension_high",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "embers",
+      "effectIntensity": 0.7
     },
     "act2ch2_028": {
       "id": "act2.chapter2.act2ch2_028",
@@ -1569,7 +1650,10 @@
       ],
       "ascii": null,
       "music": "combat_desperate",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "red",
+      "effect": "embers",
+      "effectIntensity": 0.8
     },
     "act2ch2_029": {
       "id": "act2.chapter2.act2ch2_029",
@@ -1601,7 +1685,10 @@
       ],
       "ascii": null,
       "music": "ambient_ending_dark",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.8
     },
     "act2ch2_030": {
       "id": "act2.chapter2.act2ch2_030",
@@ -1651,7 +1738,10 @@
       ],
       "ascii": null,
       "music": "combat_desperate",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "smoke",
+      "effectIntensity": 0.8
     },
     "act2ch2_ending_011": {
       "id": "act2.chapter2.act2ch2_ending_011",
@@ -1683,7 +1773,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_chen_dies_captured"
+      "endingId": "ending_chen_dies_captured",
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.8
     },
     "act2ch2_ending_012": {
       "id": "act2.chapter2.act2ch2_ending_012",
@@ -1718,7 +1811,10 @@
       "music": "ambient_ending_heroic",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_heroic_sacrifice"
+      "endingId": "ending_heroic_sacrifice",
+      "mood": "blue",
+      "effect": "rain",
+      "effectIntensity": 0.9
     },
     "act2ch2_ending_013": {
       "id": "act2.chapter2.act2ch2_ending_013",
@@ -1771,7 +1867,10 @@
       "music": "ambient_ending_melancholy",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_chen_captured_you_fled"
+      "endingId": "ending_chen_captured_you_fled",
+      "mood": "melancholy",
+      "effect": "rain",
+      "effectIntensity": 0.8
     },
     "act2ch2_ending_014": {
       "id": "act2.chapter2.act2ch2_ending_014",
@@ -1832,7 +1931,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_sold_chen_to_meridian"
+      "endingId": "ending_sold_chen_to_meridian",
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.8
     },
     "act2ch2_ending_015": {
       "id": "act2.chapter2.act2ch2_ending_015",
@@ -1867,7 +1969,10 @@
       "music": "ambient_ending_dark",
       "isEnding": true,
       "ending": true,
-      "endingId": "ending_both_died_tunnel"
+      "endingId": "ending_both_died_tunnel",
+      "mood": "dark",
+      "effect": "smoke",
+      "effectIntensity": 0.9
     },
     "act2ch2_031": {
       "id": "act2.chapter2.act2ch2_031",
@@ -1905,7 +2010,10 @@
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "sparks",
+      "effectIntensity": 0.5
     },
     "act2ch2_032": {
       "id": "act2.chapter2.act2ch2_032",
@@ -1941,7 +2049,10 @@
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "act2ch2_033": {
       "id": "act2.chapter2.act2ch2_033",
@@ -1979,7 +2090,10 @@
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "datastream",
+      "effectIntensity": 0.6
     },
     "act2ch2_034": {
       "id": "act2.chapter2.act2ch2_034",
@@ -2028,7 +2142,10 @@
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.8
     },
     "act2ch2_035": {
       "id": "act2.chapter2.act2ch2_035",
@@ -2069,7 +2186,10 @@
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "tension",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "act2ch2_036": {
       "id": "act2.chapter2.act2ch2_036",
@@ -2126,7 +2246,10 @@
       ],
       "ascii": null,
       "music": "ambient_revelation",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.8
     },
     "act2ch2_037": {
       "id": "act2.chapter2.act2ch2_037",
@@ -2173,7 +2296,10 @@
       ],
       "ascii": null,
       "music": "ambient_planning",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "determination",
+      "effect": "sparks",
+      "effectIntensity": 0.6
     },
     "act2ch2_038": {
       "id": "act2.chapter2.act2ch2_038",
@@ -2216,7 +2342,10 @@
       ],
       "ascii": null,
       "music": "ambient_underground",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "dark",
+      "effect": "fog",
+      "effectIntensity": 0.7
     },
     "act2ch2_039": {
       "id": "act2.chapter2.act2ch2_039",
@@ -2253,7 +2382,10 @@
       ],
       "ascii": null,
       "music": "ambient_suspense",
-      "isEnding": false
+      "isEnding": false,
+      "mood": "eerie",
+      "effect": "void",
+      "effectIntensity": 0.7
     },
     "act2ch2_040": {
       "id": "act2.chapter2.act2ch2_040",
@@ -2327,7 +2459,10 @@
       "ascii": null,
       "music": "ambient_chapter_end",
       "isEnding": false,
-      "autoNext": "act2.chapter3.act2ch3_001"
+      "autoNext": "act2.chapter3.act2ch3_001",
+      "mood": "determination",
+      "effect": "sparks",
+      "effectIntensity": 0.6
     }
   }
 }

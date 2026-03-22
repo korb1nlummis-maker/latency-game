@@ -27,7 +27,9 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "icon": "build-resources/icon.ico"
@@ -46,8 +48,9 @@
   "devDependencies": {
     "electron": "^33.0.0",
     "electron-builder": "^25.0.0",
-    "javascript-obfuscator": "^4.1.0",
     "html-minifier-terser": "^7.2.0",
+    "javascript-obfuscator": "^4.1.0",
+    "puppeteer": "^24.40.0",
     "terser": "^5.36.0"
   }
 }
