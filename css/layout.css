@@ -156,8 +156,8 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-family: 'Courier New', Consolas, monospace;
-  font-size: 0.625rem;
-  opacity: 0.5;
+  font-size: 0.75rem;
+  opacity: 0.75;
   transition: opacity 0.3s ease;
 }
 
@@ -166,14 +166,19 @@ body {
 }
 
 #music-controls button {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(0, 255, 136, 0.2);
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(0, 255, 136, 0.3);
   color: #00ff88;
   font-family: 'Courier New', Consolas, monospace;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.4rem 0.65rem;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 3px;
+  min-width: 38px;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
@@ -184,11 +189,12 @@ body {
 }
 
 #music-track-name {
-  color: #445566;
-  max-width: 200px;
+  color: #667788;
+  max-width: 180px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 0.65rem;
 }
 
 /* ============================================================
