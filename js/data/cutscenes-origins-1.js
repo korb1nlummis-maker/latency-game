@@ -49,6 +49,7 @@ window.Latency.CutsceneData['origin_human'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/human-duct-scrubbing.png',
             text: 'The general pool means the jobs nobody else wants. You scrub ventilation ducts too narrow for orcs, too filthy for elves, too analog for cyborgs. Your hands crack and bleed from the chemical cleaners. At the end of each shift, you count your credits and realize you are worth less per hour than the electricity that powers the lights above your head.',
             mood: 'melancholy',
             effect: 'smoke',
@@ -72,6 +73,7 @@ window.Latency.CutsceneData['origin_human'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/human-bunk-room-grief.png',
             text: 'One night, huddled in your bunk in a housing block shared with forty strangers, you hear a woman weeping through the thin wall. She lost her position. Replaced by an automated system. She has three children and no savings. Tomorrow she will be general pool, just like you. You press your hand flat against the wall and feel the vibrations of her grief in your fingertips.',
             mood: 'melancholy',
             effect: 'rain',
@@ -87,7 +89,7 @@ window.Latency.CutsceneData['origin_human'] = {
             duration: 0
         },
         {
-            art: 'assets/images/scenes/city-skyline-night.jpg',
+            art: 'assets/images/scenes/human-cityscape-dawn.png',
             artAnim: 'alt',
             text: 'You stand at the threshold of your housing block as the district lights cycle to their pale imitation of dawn. The megacity stretches above you, tier upon tier of steel and light and indifference. Millions of souls stacked like cargo, and somewhere in that vertical maze, there is a version of your life that is not this.',
             mood: 'dark',
@@ -126,7 +128,7 @@ window.Latency.CutsceneData['origin_orc'] = {
             duration: 0
         },
         {
-            art: 'assets/images/scenes/foundry.jpg',
+            art: 'assets/images/scenes/orc-foundry-smelting.png',
             text: 'Your earliest memory is the color orange. Not a sunset. Not a flower. The blinding, liquid orange of molten metal as it pours from the crucible into the casting mold, close enough to feel the skin on your face tighten. Your mother shields you with her body. The slag splashes. She does not flinch. She never flinches.',
             mood: 'warm',
             effect: 'embers',
@@ -186,6 +188,7 @@ window.Latency.CutsceneData['origin_orc'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/orc-foreman-knockout.png',
             text: 'You hit him so hard his feet leave the ground. The shock prod clatters across the floor. The foundry goes silent except for the roar of the furnaces. Every orc on the line turns to look. Not at the foreman crumpled against the wall. At you. They are waiting. They have always been waiting.',
             mood: 'red',
             effect: 'embers',
@@ -194,7 +197,7 @@ window.Latency.CutsceneData['origin_orc'] = {
             duration: 0
         },
         {
-            art: 'assets/images/scenes/slum-street.jpg',
+            art: 'assets/images/scenes/orc-gate-departure.png',
             text: 'You walk out through the main gate with the foreman\'s blood drying on your knuckles and your mother\'s worker number burned into your memory. Behind you, the foundry sirens begin to wail. Ahead of you, the megacity spreads like an open wound. You are done being raw material. Whatever comes next, it will be on your terms, paid for in someone else\'s blood.',
             mood: 'determination',
             effect: 'sparks',
@@ -240,6 +243,7 @@ window.Latency.CutsceneData['origin_wood_elf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/wood-elf-surveyor-flags.png',
             text: 'The surveyors arrive in spring. You spot their orange vests from a watchtower — four humans with scanning equipment, marking trees with spray paint. Your scouts shadow them for three days. On the fourth day, the lead surveyor plants a flag bearing the Meridian Industries logo at the edge of the grove. Your elder reads the attached notice. The sector has been rezoned for industrial development. You have ninety days to vacate.',
             mood: 'tension',
             effect: 'datastream',
@@ -255,7 +259,7 @@ window.Latency.CutsceneData['origin_wood_elf'] = {
             duration: 0
         },
         {
-            art: 'assets/images/scenes/wasteland.jpg',
+            art: 'assets/images/scenes/wood-elf-grove-clearing.png',
             text: 'The clearing begins at the outer ring. You hear it before you see it — a sound like bones breaking, amplified a thousandfold, as the industrial cutters chew through trunks that took thirty years to grow. The canopy shudders. Birds explode from the treetops in panicked clouds. The air fills with the smell of sap and sawdust and diesel exhaust, and something deep in your chest begins to scream without making a sound.',
             mood: 'red',
             effect: 'smoke',
@@ -271,6 +275,7 @@ window.Latency.CutsceneData['origin_wood_elf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/wood-elf-mother-tree-falls.png',
             text: 'They reach the Mother Tree at dusk. The industrial cutter is a massive thing, all spinning teeth and hydraulic arms, and it takes the first bite from her trunk with a shriek of metal on living wood. You feel it in your spine. Your knees buckle. Sap runs from the wound like blood, catching the last light, and you understand with absolute certainty that something irreplaceable is dying in front of you and there is nothing you can do to stop it.',
             mood: 'red',
             effect: 'embers',
@@ -324,7 +329,7 @@ window.Latency.CutsceneData['origin_dark_elf'] = {
             duration: 0
         },
         {
-            art: 'assets/images/scenes/tunnel-network.jpg',
+            art: 'assets/images/scenes/dark-elf-creche-darkness.png',
             text: 'The crèche is a long, lightless hall where dark elf children learn to navigate by sound, by touch, by the faint currents of air that map the tunnel network like a circulatory system. You crawl before you walk. You listen before you speak. By the time you are three, you can identify twenty-seven different tunnel junctions by the echo pattern of a dropped stone. The dark is not empty. It is full of information for those who know how to read it.',
             mood: 'eerie',
             effect: 'void',
@@ -332,6 +337,7 @@ window.Latency.CutsceneData['origin_dark_elf'] = {
             duration: 0
         },
         {
+            art: 'assets/images/scenes/dark-elf-mentor-blade.png',
             text: 'At seven, you are assigned a mentor. Her name is Yvenne, and she is the most dangerous person you have ever met. She moves through the tunnels like smoke, appearing behind you without a sound, correcting your posture with a tap of her blade against your spine. She teaches you to pick locks, to read micro-expressions in dim light, to lie with your entire body. She never praises you. She never needs to. The fact that you are still alive is praise enough.',
             mood: 'dark',
             effect: 'fog',
@@ -393,7 +399,7 @@ window.Latency.CutsceneData['origin_dark_elf'] = {
             duration: 0
         },
         {
-            art: 'assets/images/scenes/underground-market.jpg',
+            art: 'assets/images/scenes/dark-elf-surface-emergence.png',
             text: 'You emerge from the tunnel mouth into the sodium-lit sprawl of the lower districts. The surface world is loud and bright and full of people who wear their intentions on their faces like open books. Somewhere up here is the other student in Yvenne\'s locket. Somewhere up here is a debt that needs settling. You pull your hood forward, adjust the blade at your hip, and step into the crowd. The tunnels made you. The surface will learn what that means.',
             mood: 'determination',
             effect: 'neon',
@@ -424,7 +430,7 @@ window.Latency.CutsceneData['origin_dwarf'] = {
             duration: 0
         },
         {
-            art: 'assets/images/scenes/engineering-workshop.jpg',
+            art: 'assets/images/scenes/dwarf-grandmother-workshop.png',
             text: 'The engineering commune of Deephold sits in the lower industrial sector, carved into the foundations the dwarves themselves poured a hundred years ago. Every pipe in the district bears dwarf maker\'s marks. Every junction box has a dwarf serial number stamped into its casing. Your people built the geothermal grid that powers the eastern half of the megacity. They designed the water filtration system that keeps twelve million people alive. They invented the memory stack. They have the blueprints to prove it.',
             mood: 'warm',
             effect: 'neon',
