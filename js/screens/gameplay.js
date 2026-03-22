@@ -43,6 +43,7 @@ window.Latency.Screens.Gameplay = (function () {
     var _pendingChoices = null;    // choices waiting to render after typewriter
     var _pendingTimers = [];       // tracked setTimeout IDs for cleanup
     var _lastDisplayedNodeId = null; // Track last displayed node to avoid re-typing on remount
+    var _currentAtmoEffect = null;  // Current atmospheric effect name for CinematicRenderer
 
     // DOM references (set during mount, nulled on unmount)
     var _els = {};
@@ -121,6 +122,81 @@ window.Latency.Screens.Gameplay = (function () {
         sewer_network:      'Sewer Network',
         senate_hall:        'Senate Hall'
     };
+
+    // --------------------------------------------------------
+    // Location-to-effect mapping for atmospheric canvas
+    // --------------------------------------------------------
+    var LOCATION_EFFECT_RULES = [
+        { keywords: ['slum', 'lower', 'street', 'alley'],                    effect: 'rain' },
+        { keywords: ['foundry', 'forge', 'factory', 'industrial'],           effect: 'smoke' },
+        { keywords: ['tunnel', 'underground', 'sewer'],                      effect: 'fog' },
+        { keywords: ['tower', 'stack', 'upper', 'cloud', 'spire'],           effect: 'stars' },
+        { keywords: ['club', 'bar', 'neon', 'court', 'strip'],              effect: 'neon' },
+        { keywords: ['clinic', 'lab', 'medical'],                            effect: 'snow' },
+        { keywords: ['void', 'rift', 'shadow'],                              effect: 'void' },
+        { keywords: ['market', 'bazaar', 'vendor'],                          effect: 'sparks' },
+        { keywords: ['rooftop', 'roof', 'observatory'],                      effect: 'stars' },
+        { keywords: ['hack', 'net', 'cyber', 'terminal', 'deep_net'],        effect: 'datastream' },
+        { keywords: ['arena'],                                                effect: 'embers' },
+        { keywords: ['transit', 'hub'],                                       effect: 'smoke' },
+        { keywords: ['ossuary', 'crypt', 'tomb'],                            effect: 'void' },
+        { keywords: ['scrap', 'yard', 'junk'],                               effect: 'sparks' }
+    ];
+
+    function _getEffectForLocation(locationStr) {
+        if (!locationStr) return 'fog';
+        var loc = locationStr.toLowerCase();
+        for (var i = 0; i < LOCATION_EFFECT_RULES.length; i++) {
+            var rule = LOCATION_EFFECT_RULES[i];
+            for (var j = 0; j < rule.keywords.length; j++) {
+                if (loc.indexOf(rule.keywords[j]) !== -1) {
+                    return rule.effect;
+                }
+            }
+        }
+        return 'fog'; // default
+    }
+
+    function _updateAtmosphericEffect(node) {
+        var CR = window.Latency.CinematicRenderer;
+        if (!CR || !_els.cinematicCanvas) return;
+
+        var raw = (node && node.raw) ? node.raw : {};
+        var effect = null;
+        var intensity = 0.4; // subtle default
+
+        // Priority 1: node-level mood/effect override
+        if (raw.effect) {
+            effect = raw.effect;
+            intensity = raw.effectIntensity || 0.5;
+        } else if (raw.mood) {
+            effect = raw.mood;
+            intensity = 0.5;
+        }
+
+        // Priority 2: combat node → embers at high intensity
+        if (!effect && raw.combat && raw.combat.enemies && raw.combat.enemies.length > 0) {
+            effect = 'embers';
+            intensity = 0.8;
+        }
+
+        // Priority 3: location-based mapping
+        if (!effect) {
+            var locStr = raw.location || raw.title || '';
+            // Also check the node id for location hints
+            if (node && node.id) {
+                locStr = locStr + ' ' + node.id;
+            }
+            effect = _getEffectForLocation(locStr);
+            intensity = 0.4;
+        }
+
+        // Only change if the effect actually changed
+        if (effect !== _currentAtmoEffect) {
+            _currentAtmoEffect = effect;
+            CR.setEffect(effect, { intensity: intensity });
+        }
+    }
 
     // District color coding for minimap
     var DISTRICT_COLORS = {
@@ -538,6 +614,12 @@ window.Latency.Screens.Gameplay = (function () {
     // --------------------------------------------------------
     function _buildNarrativePanel() {
         var panel = _el('div', 'gp-narrative-panel');
+
+        // Cinematic canvas for atmospheric background effects
+        var cinematicCanvas = document.createElement('canvas');
+        cinematicCanvas.className = 'gp-cinematic-canvas';
+        _els.cinematicCanvas = cinematicCanvas;
+        panel.appendChild(cinematicCanvas);
 
         // ASCII art area
         var artArea = _el('pre', 'gp-ascii-art');
@@ -1090,6 +1172,9 @@ window.Latency.Screens.Gameplay = (function () {
 
         // Show choices immediately
         _renderChoices(node.choices || []);
+
+        // Restore atmospheric effect for this location
+        _updateAtmosphericEffect(node);
     }
 
     // --------------------------------------------------------
@@ -1277,6 +1362,10 @@ window.Latency.Screens.Gameplay = (function () {
         }
         _refreshSidebar();
 
+        // Update atmospheric canvas effect based on location/mood
+        var node = data && data.node ? data.node : null;
+        _updateAtmosphericEffect(node);
+
         // Check if this story node triggers a combat encounter
         var node = data && data.node ? data.node : null;
         var raw = node ? (node.raw || {}) : {};
@@ -1390,6 +1479,12 @@ window.Latency.Screens.Gameplay = (function () {
 
             _container.appendChild(screen);
 
+            // Initialize cinematic renderer for atmospheric effects
+            if (window.Latency.CinematicRenderer && _els.cinematicCanvas) {
+                window.Latency.CinematicRenderer.init(_els.cinematicCanvas);
+                _currentAtmoEffect = null; // reset so first node triggers effect
+            }
+
             // Allow clicking narrative area to skip typewriter
             _bind(_els.narrativeText, 'click', function () {
                 _skipTypewriter();
@@ -1495,6 +1590,12 @@ window.Latency.Screens.Gameplay = (function () {
          * Unmount the gameplay screen, cleaning up event listeners and DOM.
          */
         unmount: function () {
+            // Stop cinematic renderer
+            if (window.Latency.CinematicRenderer) {
+                window.Latency.CinematicRenderer.destroy();
+            }
+            _currentAtmoEffect = null;
+
             // Stop minimap animation
             _stopMinimapAnimation();
 
