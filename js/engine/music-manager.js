@@ -1,6 +1,6 @@
 /**
  * LATENCY - MusicManager
- * Persistent 30-track music system that runs independently of screen transitions.
+ * Persistent 52-track music system that runs independently of screen transitions.
  *
  * The audio element (#music-player) lives inside #music-layer, which is completely
  * separate from #screen-container. This manager is the ONLY system that touches
@@ -125,10 +125,14 @@ window.Latency.MusicManager = (function () {
     // ---------------------------------------------------------------------------
 
     /**
-     * Build the 30-track playlist with metadata.
-     * Tracks are categorised into five mood groups of six tracks each.
+     * Build the 52-track playlist with metadata.
+     * Tracks 01-30 are local files in five mood groups of six tracks each.
+     * Tracks 31-52 are streamed from silvermansound.com (CC BY 4.0) across
+     * seven new thematic categories targeting content gaps.
      */
     function _buildPlaylist() {
+        var _cdnBase = 'https://www.silvermansound.com/wp-content/uploads/';
+
         _playlist = [
             // 01-06: Dark Ambient / Dystopian Slum (synth, industrial, atmospheric)
             { src: 'assets/music/track-01-underglow.mp3',                 title: 'Underglow',                 artist: 'Shane Ivers', category: 'ambient' },
@@ -168,7 +172,57 @@ window.Latency.MusicManager = (function () {
             { src: 'assets/music/track-27-sailing-away.mp3',              title: 'Sailing Away',              artist: 'Shane Ivers', category: 'emotional' },
             { src: 'assets/music/track-28-suspended-animation.mp3',       title: 'Suspended Animation',       artist: 'Shane Ivers', category: 'emotional' },
             { src: 'assets/music/track-29-faded-dream.mp3',               title: 'Faded Dream',               artist: 'Shane Ivers', category: 'emotional' },
-            { src: 'assets/music/track-30-ascension.mp3',                 title: 'Ascension',                 artist: 'Shane Ivers', category: 'emotional' }
+            { src: 'assets/music/track-30-ascension.mp3',                 title: 'Ascension',                 artist: 'Shane Ivers', category: 'emotional' },
+
+            // -----------------------------------------------------------------
+            // 31-33: Birth / Origin — soft, ethereal, wonder mixed with melancholy
+            // -----------------------------------------------------------------
+            { src: _cdnBase + 'snowdrops.mp3',        title: 'Snowdrops',        artist: 'Shane Ivers', category: 'origin' },
+            { src: _cdnBase + 'breathe.mp3',          title: 'Breathe',          artist: 'Shane Ivers', category: 'origin' },
+            { src: _cdnBase + 'tape-star.mp3',        title: 'Tape Star',        artist: 'Shane Ivers', category: 'origin' },
+
+            // -----------------------------------------------------------------
+            // 34-37: Underground / Dark — deep bass, cave ambience, tunnels
+            // -----------------------------------------------------------------
+            { src: _cdnBase + 'op8.mp3',              title: 'OP8',              artist: 'Shane Ivers', category: 'underground' },
+            { src: _cdnBase + 'dark-flashes.mp3',     title: 'Dark Flashes',     artist: 'Shane Ivers', category: 'underground' },
+            { src: _cdnBase + 'the-counts-castle.mp3', title: "The Count's Castle", artist: 'Shane Ivers', category: 'underground' },
+            { src: _cdnBase + 'haunted-harpsichord.mp3', title: 'Haunted Harpsichord', artist: 'Shane Ivers', category: 'underground' },
+
+            // -----------------------------------------------------------------
+            // 38-40: Industrial / Forge — hammering, machinery, heat
+            // -----------------------------------------------------------------
+            { src: _cdnBase + 'i-domine.mp3',         title: 'I Domine',         artist: 'Shane Ivers', category: 'industrial' },
+            { src: _cdnBase + 'janus-turning.mp3',    title: 'Janus Turning',    artist: 'Shane Ivers', category: 'industrial' },
+            { src: _cdnBase + 'they-come-at-night.mp3', title: 'They Come At Night', artist: 'Shane Ivers', category: 'industrial' },
+
+            // -----------------------------------------------------------------
+            // 41-44: Nature Reclaimed — organic sounds meeting synthetic, bittersweet
+            // -----------------------------------------------------------------
+            { src: _cdnBase + 'save-us-now.mp3',      title: 'Save Us Now',      artist: 'Shane Ivers', category: 'nature' },
+            { src: _cdnBase + 'synapse.mp3',          title: 'Synapse',          artist: 'Shane Ivers', category: 'nature' },
+            { src: _cdnBase + 'diaphanous.mp3',       title: 'Diaphanous (Reprise)', artist: 'Shane Ivers', category: 'nature' },
+            { src: _cdnBase + 'ascension.mp3',        title: 'Ascension (Reprise)',  artist: 'Shane Ivers', category: 'nature' },
+
+            // -----------------------------------------------------------------
+            // 45-47: Cyber-Noir Investigation — detective, mystery, neon rain
+            // -----------------------------------------------------------------
+            { src: _cdnBase + 'signs-to-nowhere.mp3', title: 'Signs To Nowhere', artist: 'Shane Ivers', category: 'noir' },
+            { src: _cdnBase + 'mystery-unsolved.mp3', title: 'Mystery Unsolved', artist: 'Shane Ivers', category: 'noir' },
+            { src: _cdnBase + 'neon-noir.mp3',        title: 'Neon Noir (Extended)', artist: 'Shane Ivers', category: 'noir' },
+
+            // -----------------------------------------------------------------
+            // 48-50: Emotional Climax — building tension to release, tearjerker
+            // -----------------------------------------------------------------
+            { src: _cdnBase + 'the-fall-of-heroes.mp3',   title: 'The Fall of Heroes (Climax)', artist: 'Shane Ivers', category: 'climax' },
+            { src: _cdnBase + 'the-rise-of-heroes.mp3',   title: 'The Rise of Heroes (Climax)', artist: 'Shane Ivers', category: 'climax' },
+            { src: _cdnBase + 'endings.mp3',               title: 'Endings (Reprise)',           artist: 'Shane Ivers', category: 'climax' },
+
+            // -----------------------------------------------------------------
+            // 51-52: Void / Alien — otherworldly, unsettling, cosmic
+            // -----------------------------------------------------------------
+            { src: _cdnBase + 'amunet-prime.mp3',     title: 'Amunet Prime (Void)', artist: 'Shane Ivers', category: 'void' },
+            { src: _cdnBase + 'the-visitor.mp3',      title: 'The Visitor',         artist: 'Shane Ivers', category: 'void' }
         ];
     }
 
@@ -647,7 +701,7 @@ window.Latency.MusicManager = (function () {
             return;
         }
 
-        // Build the 30-track playlist.
+        // Build the 52-track playlist.
         _buildPlaylist();
 
         // Wire up audio events.
@@ -696,7 +750,9 @@ window.Latency.MusicManager = (function () {
 
         /**
          * Play a random track from the given category.
-         * Categories: 'ambient', 'action', 'mystery', 'epic', 'emotional'
+         * Categories: 'ambient', 'action', 'mystery', 'epic', 'emotional',
+         *             'origin', 'underground', 'industrial', 'nature',
+         *             'noir', 'climax', 'void'
          * @param {string} category
          */
         playByCategory: function (category) {
