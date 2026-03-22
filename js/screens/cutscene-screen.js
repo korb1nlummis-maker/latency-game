@@ -184,6 +184,12 @@ window.Latency.Screens.CutsceneScreen = (function () {
             window.Latency.Typewriter.skip();
             _typewriterRunning = false;
             _typewriterCancel = null;
+
+            // Stop narration audio when text is skipped
+            if (window.Latency.NarrationManager) {
+                window.Latency.NarrationManager.stop();
+            }
+
             return true;
         }
         return false;
@@ -349,6 +355,11 @@ window.Latency.Screens.CutsceneScreen = (function () {
         // Cancel any running typewriter
         _cancelTypewriter();
 
+        // Stop any playing narration audio
+        if (window.Latency.NarrationManager) {
+            window.Latency.NarrationManager.stop();
+        }
+
         // Hide prompt
         if (_els.prompt) {
             _els.prompt.style.visibility = 'hidden';
@@ -503,6 +514,15 @@ window.Latency.Screens.CutsceneScreen = (function () {
                 if (slide.mood) voiceOpts.mood = slide.mood;
                 if (slide.speaker) voiceOpts.speaker = slide.speaker;
                 window.Latency.VoiceManager.speak(cleanText, voiceOpts);
+            }
+
+            // Play pre-generated narration audio for this slide
+            if (window.Latency.NarrationManager && _cutsceneData && _cutsceneData.id != null) {
+                var slideIdx = String(_currentSlideIndex);
+                while (slideIdx.length < 2) slideIdx = '0' + slideIdx;
+                var narrationPath = 'assets/narration/cutscenes/' +
+                    _cutsceneData.id + '/slide_' + slideIdx + '.mp3';
+                window.Latency.NarrationManager.play(narrationPath);
             }
 
             _els.narrativeText.setAttribute('data-full-text', slide.text);

@@ -1061,6 +1061,11 @@ window.Latency.Screens.Gameplay = (function () {
         if (_typewriterRunning && window.Latency.Typewriter) {
             // Use Typewriter's own skip — it fires onComplete which renders choices
             window.Latency.Typewriter.skip();
+
+            // Stop narration audio when text is skipped
+            if (window.Latency.NarrationManager) {
+                window.Latency.NarrationManager.stop();
+            }
         }
     }
 
@@ -1494,6 +1499,15 @@ window.Latency.Screens.Gameplay = (function () {
         _renderStoryNode(data);
         if (data && data.nodeId) {
             _lastDisplayedNodeId = data.nodeId;
+
+            // Play narration audio for this node (gracefully skips if file missing)
+            if (window.Latency.NarrationManager) {
+                // Convert node ID like 'shared.prologue.node_001' to path
+                // 'assets/narration/story/shared/prologue/node_001.mp3'
+                var narrationPath = 'assets/narration/story/' +
+                    data.nodeId.replace(/\./g, '/') + '.mp3';
+                window.Latency.NarrationManager.play(narrationPath);
+            }
         }
         _refreshSidebar();
 

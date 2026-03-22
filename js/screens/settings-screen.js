@@ -328,6 +328,19 @@ window.Latency.Screens.SettingsScreen = (function () {
             }
         })));
 
+        // Narration Volume
+        var narrationVolume = _getNarrationVolume();
+        rows.appendChild(_buildRow('Narration Volume', _buildSlider({
+            min: 0, max: 100, step: 5, value: Math.round(narrationVolume * 100),
+            blocks: 10,
+            formatValue: function (v) { return v + '%'; },
+            onChange: function (v) {
+                if (window.Latency.NarrationManager && window.Latency.NarrationManager.setVolume) {
+                    window.Latency.NarrationManager.setVolume(v / 100);
+                }
+            }
+        })));
+
         // ── DISPLAY section ──
         rows.appendChild(_el('div', 'settings-section-header', 'DISPLAY'));
 
@@ -500,6 +513,13 @@ window.Latency.Screens.SettingsScreen = (function () {
             return window.Latency.VoiceManager.isEnabled();
         }
         return true;
+    }
+
+    function _getNarrationVolume() {
+        if (window.Latency.NarrationManager && typeof window.Latency.NarrationManager.getVolume === 'function') {
+            return window.Latency.NarrationManager.getVolume();
+        }
+        return 0.8;
     }
 
     // -------------------------------------------------------------------

@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('[LATENCY] SfxManager initialized.');
     }
 
+    // ── 1d. Narration Manager (pre-generated MP3 narration audio) ──
+    if (L.NarrationManager && L.NarrationManager.init) {
+        L.NarrationManager.init();
+        console.log('[LATENCY] NarrationManager initialized.');
+    }
+
     // ── 2. Notification system ──
     if (L.Notification && L.Notification.init) {
         L.Notification.init();
